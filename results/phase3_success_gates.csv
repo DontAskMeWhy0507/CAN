@@ -1,0 +1,3 @@
+Success_Gate,Measured_Value,Required_Threshold,Status
+Gate 3: Condition D Improvement (>= +0.03 F1),0.2332,>= +0.03,PASSED
+Gate 4: Condition A Retention (<= 0.02 drop),-0.1386,<= 0.02,PASSED

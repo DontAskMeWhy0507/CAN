@@ -1,0 +1,8 @@
+Model,Study,Reported_F1_Paper,True_Attack_Recall,True_Attack_Precision,True_Attack_F1,FAR_per_100k
+BIRCH,Lampe & Meng (2024),0.9620,0.00%,0.00%,0.0000,0.00
+MLP,Lampe & Meng (2024),0.9594,3.79%,9.77%,0.0546,915.35
+Logistic Regression,Lampe & Meng (2024),0.9539,3.77%,4.82%,0.0423,1947.90
+Linear SVM,Lampe & Meng (2024),0.0432,3.61%,5.38%,0.0432,1658.64
+Gradient Boosting,Lampe & Meng (2024),0.7739,99.95%,7.01%,0.1311,34620.81
+Raw Transformer,This Work (Baseline),0.9550,0.01%,100.00%,0.0002,0.00
+Structural Transformer,This Work (Ours),0.9950,94.26%,99.97%,0.9703,2.17

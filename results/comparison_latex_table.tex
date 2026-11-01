@@ -1,0 +1,18 @@
+\begin{table*}[t]
+\centering
+\caption{Cross-vehicle intrusion detection performance on unseen vehicle transfer (\textit{can-train-and-test} dataset \cite{LAMPE2024103777}, Sub-dataset \#1, Test 2: Chevrolet Silverado).}
+\label{tab:comparison_lampe2024}
+\begin{tabular}{llccccc}
+\hline\hline
+\textbf{Model} & \textbf{Reference} & \textbf{Nominal F1} & \textbf{Attack Recall} & \textbf{Attack Precision} & \textbf{Attack F1} & \textbf{FAR / 100k} \\
+\hline
+BIRCH & Lampe \& Meng (2024)~\cite{LAMPE2024103777} & 0.9620 & 0.00\% & 0.00\% & 0.0000 & 0.00 \\
+MLP & Lampe \& Meng (2024)~\cite{LAMPE2024103777} & 0.9594 & 3.79\% & 9.77\% & 0.0546 & 915.35 \\
+Logistic Regression & Lampe \& Meng (2024)~\cite{LAMPE2024103777} & 0.9539 & 3.77\% & 4.82\% & 0.0423 & 1947.90 \\
+Linear SVM & Lampe \& Meng (2024)~\cite{LAMPE2024103777} & 0.0432 & 3.61\% & 5.38\% & 0.0432 & 1658.64 \\
+Gradient Boosting & Lampe \& Meng (2024)~\cite{LAMPE2024103777} & 0.7739 & 99.95\% & 7.01\% & 0.1311 & 34620.81 \\
+Raw Transformer & This Work (Baseline) & 0.9550 & 0.01\% & 100.00\% & 0.0002 & 0.00 \\
+\textbf{Structural Transformer} & \textbf{This Work (Ours)} & 0.9950 & \textbf{94.26\%} & \textbf{99.97\%} & \textbf{0.9703} & \textbf{2.17} \\
+\hline\hline
+\end{tabular}
+\end{table*}

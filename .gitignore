@@ -1,0 +1,54 @@
+# =====================================================================
+# Raw CAN Datasets (Large Data Files)
+# =====================================================================
+Automotive CAN Bus Intrusion Dataset v2-*/
+CAN-MIRGU/
+can-train-and-test/
+CAN_HCRL_OTIDS/
+CICIoV2024/
+
+# Thesis draft folder
+Thesis_Trung/
+
+# Raw data and log files
+*.log
+*.parquet
+*.pcap
+*.pcapng
+*.csv.gz
+*.zip
+*.tar.gz
+*.bin
+*.pt
+*.pth
+*.pkl
+*.h5
+
+# Keep publication result metrics, figures, and tables in results/
+!results/*.csv
+!results/*.tex
+!results/*.png
+
+# =====================================================================
+# Python Environments & Cache
+# =====================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+ENV/
+.env
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# IDE & Operating System
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini

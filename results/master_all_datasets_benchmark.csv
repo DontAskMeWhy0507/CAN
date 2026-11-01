@@ -1,0 +1,88 @@
+Dataset,Scenario,Model,Attack_F1,FAR_per_100k
+can-train-and-test (set_01),A: Known V + Known A,Raw Transformer,0.7616,0.0
+can-train-and-test (set_01),A: Known V + Known A,Structural Transformer,0.7741,0.0
+can-train-and-test (set_01),A: Known V + Known A,Structural XGBoost,0.7854,1.16
+can-train-and-test (set_01),B: Unknown V + Known A,Raw Transformer,0.0,0.0
+can-train-and-test (set_01),B: Unknown V + Known A,Structural Transformer,0.9635,0.0
+can-train-and-test (set_01),B: Unknown V + Known A,Structural XGBoost,0.8981,0.0
+can-train-and-test (set_01),C: Known V + Unknown A,Raw Transformer,0.0,0.0
+can-train-and-test (set_01),C: Known V + Unknown A,Structural Transformer,0.0976,0.0
+can-train-and-test (set_01),C: Known V + Unknown A,Structural XGBoost,0.0177,0.79
+can-train-and-test (set_01),D: Unknown V + Unknown A,Raw Transformer,0.0,0.0
+can-train-and-test (set_01),D: Unknown V + Unknown A,Structural Transformer,0.001,0.0
+can-train-and-test (set_01),D: Unknown V + Unknown A,Structural XGBoost,0.0056,25.92
+can-train-and-test (set_02),A: Known V + Known A,Raw Transformer,0.1154,5690.15
+can-train-and-test (set_02),A: Known V + Known A,Structural Transformer,0.8028,16.63
+can-train-and-test (set_02),A: Known V + Known A,Structural XGBoost,0.4868,366.79
+can-train-and-test (set_02),B: Unknown V + Known A,Raw Transformer,0.0383,100000.0
+can-train-and-test (set_02),B: Unknown V + Known A,Structural Transformer,0.8476,304.54
+can-train-and-test (set_02),B: Unknown V + Known A,Structural XGBoost,0.3863,2036.71
+can-train-and-test (set_02),C: Known V + Unknown A,Raw Transformer,0.1892,2991.28
+can-train-and-test (set_02),C: Known V + Unknown A,Structural Transformer,0.9649,14.86
+can-train-and-test (set_02),C: Known V + Unknown A,Structural XGBoost,0.812,256.26
+can-train-and-test (set_02),D: Unknown V + Unknown A,Raw Transformer,0.0291,100000.0
+can-train-and-test (set_02),D: Unknown V + Unknown A,Structural Transformer,0.8801,307.86
+can-train-and-test (set_02),D: Unknown V + Unknown A,Structural XGBoost,0.3642,2766.7
+can-train-and-test (set_03),A: Known V + Known A,Raw Transformer,0.0,0.0
+can-train-and-test (set_03),A: Known V + Known A,Structural Transformer,0.0,0.0
+can-train-and-test (set_03),A: Known V + Known A,Structural XGBoost,0.0,0.0
+can-train-and-test (set_03),B: Unknown V + Known A,Raw Transformer,0.0,0.0
+can-train-and-test (set_03),B: Unknown V + Known A,Structural Transformer,0.0,0.0
+can-train-and-test (set_03),B: Unknown V + Known A,Structural XGBoost,0.0,0.0
+can-train-and-test (set_03),C: Known V + Unknown A,Raw Transformer,0.0,0.0
+can-train-and-test (set_03),C: Known V + Unknown A,Structural Transformer,0.0,0.0
+can-train-and-test (set_03),C: Known V + Unknown A,Structural XGBoost,0.0,0.0
+can-train-and-test (set_03),D: Unknown V + Unknown A,Raw Transformer,0.0,0.0
+can-train-and-test (set_03),D: Unknown V + Unknown A,Structural Transformer,0.0,0.0
+can-train-and-test (set_03),D: Unknown V + Unknown A,Structural XGBoost,0.0,0.0
+can-train-and-test (set_04),A: Known V + Known A,Raw Transformer,0.0,0.0
+can-train-and-test (set_04),A: Known V + Known A,Structural Transformer,0.9029,21.79
+can-train-and-test (set_04),A: Known V + Known A,Structural XGBoost,0.4552,7.26
+can-train-and-test (set_04),B: Unknown V + Known A,Raw Transformer,0.0916,18138.9
+can-train-and-test (set_04),B: Unknown V + Known A,Structural Transformer,0.3032,541.41
+can-train-and-test (set_04),B: Unknown V + Known A,Structural XGBoost,0.1005,18.98
+can-train-and-test (set_04),C: Known V + Unknown A,Raw Transformer,0.0034,0.0
+can-train-and-test (set_04),C: Known V + Unknown A,Structural Transformer,0.8635,11.19
+can-train-and-test (set_04),C: Known V + Unknown A,Structural XGBoost,0.8252,4.07
+can-train-and-test (set_04),D: Unknown V + Unknown A,Raw Transformer,0.0827,19328.83
+can-train-and-test (set_04),D: Unknown V + Unknown A,Structural Transformer,0.5859,579.44
+can-train-and-test (set_04),D: Unknown V + Unknown A,Structural XGBoost,0.5255,28.01
+CAN_HCRL_OTIDS (Hyundai),OTIDS: DoS Attack,Raw Transformer,1.0,0.0
+CAN_HCRL_OTIDS (Hyundai),OTIDS: DoS Attack,Structural Transformer,1.0,0.0
+CAN_HCRL_OTIDS (Hyundai),OTIDS: DoS Attack,Structural XGBoost,0.9876,0.0
+CAN_HCRL_OTIDS (Hyundai),OTIDS: Fuzzy Attack,Raw Transformer,0.9928,0.0
+CAN_HCRL_OTIDS (Hyundai),OTIDS: Fuzzy Attack,Structural Transformer,0.9143,0.0
+CAN_HCRL_OTIDS (Hyundai),OTIDS: Fuzzy Attack,Structural XGBoost,0.5545,0.0
+CAN_HCRL_OTIDS (Hyundai),OTIDS: Impersonation Attack,Raw Transformer,1.0,0.0
+CAN_HCRL_OTIDS (Hyundai),OTIDS: Impersonation Attack,Structural Transformer,0.4637,0.0
+CAN_HCRL_OTIDS (Hyundai),OTIDS: Impersonation Attack,Structural XGBoost,0.0031,0.0
+CAN_HCRL_OTIDS (Hyundai),OTIDS: Benign Driving (FAR Test),Raw Transformer,0.0,100000.0
+CAN_HCRL_OTIDS (Hyundai),OTIDS: Benign Driving (FAR Test),Structural Transformer,0.0,97806.25
+CAN_HCRL_OTIDS (Hyundai),OTIDS: Benign Driving (FAR Test),Structural XGBoost,0.0,637.5
+CAN_HCRL_OTIDS (Hyundai),OTIDS: Balanced Benchmark (Mixed),Raw Transformer,0.0,0.0
+CAN_HCRL_OTIDS (Hyundai),OTIDS: Balanced Benchmark (Mixed),Structural Transformer,0.0514,0.0
+CAN_HCRL_OTIDS (Hyundai),OTIDS: Balanced Benchmark (Mixed),Structural XGBoost,0.046,0.0
+Automotive v2 (Europe),Opel Astra (Normal Driving - FAR),Raw Transformer,0.0,100000.0
+Automotive v2 (Europe),Opel Astra (Normal Driving - FAR),Structural Transformer,0.0,0.0
+Automotive v2 (Europe),Opel Astra (Normal Driving - FAR),Structural XGBoost,0.0,0.0
+Automotive v2 (Europe),Opel Astra (DoS Attack),Raw Transformer,1.0,0.0
+Automotive v2 (Europe),Opel Astra (DoS Attack),Structural Transformer,0.3052,0.0
+Automotive v2 (Europe),Opel Astra (DoS Attack),Structural XGBoost,0.3052,0.0
+Automotive v2 (Europe),Renault Clio (Normal Driving - FAR),Raw Transformer,0.0,99282.56
+Automotive v2 (Europe),Renault Clio (Normal Driving - FAR),Structural Transformer,0.0,165.56
+Automotive v2 (Europe),Renault Clio (Normal Driving - FAR),Structural XGBoost,0.0,0.0
+Automotive v2 (Europe),Renault Clio (DoS Attack),Raw Transformer,0.9984,0.0
+Automotive v2 (Europe),Renault Clio (DoS Attack),Structural Transformer,0.4409,0.0
+Automotive v2 (Europe),Renault Clio (DoS Attack),Structural XGBoost,0.4398,0.0
+CAN-MIRGU,MIRGU: Benign Driving (FAR Test),Raw Transformer,0.0,100000.0
+CAN-MIRGU,MIRGU: Benign Driving (FAR Test),Structural Transformer,0.0,0.0
+CAN-MIRGU,MIRGU: Benign Driving (FAR Test),Structural XGBoost,0.0,0.0
+CICIoV2024 (Ford 2019),Ford 2019 (Benign - FAR),Raw Transformer,0.0,100000.0
+CICIoV2024 (Ford 2019),Ford 2019 (Benign - FAR),Structural Transformer,0.0,0.0
+CICIoV2024 (Ford 2019),Ford 2019 (Benign - FAR),Structural XGBoost,0.0,0.0
+CICIoV2024 (Ford 2019),Ford 2019 (DoS Attack),Raw Transformer,1.0,0.0
+CICIoV2024 (Ford 2019),Ford 2019 (DoS Attack),Structural Transformer,1.0,0.0
+CICIoV2024 (Ford 2019),Ford 2019 (DoS Attack),Structural XGBoost,1.0,0.0
+CICIoV2024 (Ford 2019),Ford 2019 (Spoofing GAS),Raw Transformer,1.0,0.0
+CICIoV2024 (Ford 2019),Ford 2019 (Spoofing GAS),Structural Transformer,1.0,0.0
+CICIoV2024 (Ford 2019),Ford 2019 (Spoofing GAS),Structural XGBoost,1.0,0.0
