@@ -7,8 +7,8 @@ can-train-and-test/
 CAN_HCRL_OTIDS/
 CICIoV2024/
 
-# Thesis draft folder
-Thesis_Trung/
+# Temporary folder
+tmp/
 
 # Raw data and log files
 *.log
@@ -32,6 +32,7 @@ Thesis_Trung/
 # =====================================================================
 # Python Environments & Cache
 # =====================================================================
+.tools/
 __pycache__/
 *.py[cod]
 *$py.class
