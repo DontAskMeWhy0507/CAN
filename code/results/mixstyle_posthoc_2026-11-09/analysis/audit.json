@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "new_fits": 12,
+  "reused_baselines": 24,
+  "post_hoc": true,
+  "prediction_metrics_recomputed": true,
+  "source_only": true
+}

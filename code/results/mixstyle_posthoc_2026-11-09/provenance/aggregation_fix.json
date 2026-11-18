@@ -1,0 +1,8 @@
+{
+  "status": "VERIFIED",
+  "original_runner_sha256": "28cfe2c7bf2e5fb0436a09337b7f30c09ba2fc808461840117ac12ecbaff5585",
+  "corrected_runner_sha256": "471530e638d92b665a376db037779d1e98d3d4bb26fa4e4e107b4e3d83722ef5",
+  "change": "Aggregation now filters baseline default_0.5 rows. Training and scoring functions unchanged.",
+  "original_notebook": "Historical notebook 10 preserves the first failed aggregation; notebook 11 completes corrected verification.",
+  "historical_archive_sha256": "08eb6a536bb9147a70b902ddd35bda06d154c67bb9610cabc55c69b23ffce2b6"
+}

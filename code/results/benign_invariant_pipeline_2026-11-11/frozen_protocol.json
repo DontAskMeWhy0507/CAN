@@ -1,0 +1,65 @@
+{
+  "config": {
+    "protocol": "benign-calibrated-normalization-and-source-erasure-v1",
+    "post_hoc": true,
+    "parent": "multisource_lovo_v2_2026-11-10",
+    "encoder": "12 frozen Structural checkpoints; 4 held-out vehicles x 3 seeds",
+    "methods": [
+      "frozen_source",
+      "frozen_targetq",
+      "lr_targetq",
+      "diag_lr",
+      "white_lr",
+      "white_leace_lr",
+      "white_pca8_lr",
+      "white_inlp8_lr"
+    ],
+    "target_data_authorized": "User explicitly allows a separate confirmed-benign target capture",
+    "calibration_capture": "canonical train_01 attack-free capture with largest recording suffix for each vehicle; verify all labels benign; never choose boundaries from attack labels",
+    "calibration_budget": 2000,
+    "calibration_selection": "2000 equally spaced distinct windows across entire reserved capture; even indices for normalization (1000), odd for threshold (1000). Requires observation of full capture, not 2000 initial windows.",
+    "evaluation_exclusion": "exclude ENTIRE reserved calibration capture and every identical alias; report separate exact-content-overlap-free sensitivity",
+    "overlap_detection": "SHA256 of aligned W64 identifier/DLC/payload bytes, excluding timestamps/labels; overlap reference all 2000 calibration windows",
+    "primary_alpha": 0.01,
+    "secondary_alpha": 0.001,
+    "threshold": "conservative order statistic ceil((n+1)*(1-alpha)), nextafter above score, no target attack labels",
+    "normalization": "source and target fit only own reserved benign first-half selection; diagonal variance floor or symmetric covariance whitening with fixed0.1 isotropic shrinkage; clip normalized coordinates to +/-10",
+    "source_fit": "reuse matched sampled source training windows; source vehicle x binary label weights; no target samples in eraser/PCA/INLP/task head",
+    "LEACE": "weighted empirical conditional vehicle-residual concepts; shared affine eraser fitted only to three sources",
+    "INLP": "conditional LR vehicle decoders C0.1; up to200 samples per source vehicle/class; remove decoder rowspaces until8 dimensions or no remaining direction; fixed protocol, no target tuning",
+    "PCA": "source-weighted top8 components, compression control",
+    "task_head": "weighted source StandardScaler + LR C1 max_iter2000",
+    "probes": "matched balanced vehicle x attack samples, exclude calibration captures and aligned content overlap; LR + MLP(64,32), max_iter300; vehicle probes learned/constant/permuted; attack LR learned; inspect embedding and deployed scalar risk separately",
+    "probe_cap_per_cell": 200,
+    "probe_seed": 20261111,
+    "primary_success_check": "vehicle probes of the transformed embedding approach chance without loss of target detection; risk-only probe reduction does NOT establish encoder independence",
+    "limitations": [
+      "record-disjoint calibration is verifiable; independent driving sessions are not established",
+      "observed vehicles were used during previous research",
+      "zero mean/covariance or linear erasure is not nonlinear independence",
+      "no distribution-free FAR guarantee under dependent/drifting CAN windows",
+      "scalar risk compression is reported separately from64-dimensional embedding",
+      "new target-calibrated regime cannot be called strict zero-shot"
+    ]
+  },
+  "code": {
+    "scripts/run_benign_invariant_pipeline.py": "900e54ac0566d3af706707d4dcb0aa8a769e9312dc0b8c568dc465a8aa67ac88",
+    "configs/benign_invariant_pipeline_2026-11-11.json": "e002343657451ecfb4bfdb786fb81f33c16200172df305768fcfc23730e7467c",
+    "research_multisource/invariant_pipeline.py": "044d74e121e570b053ebcecc0d832c43c6767237a86dc2a62f48cd88c2e63cb2",
+    "research_multisource/model.py": "6b75479ae45e857182aa17e5a0338381a5ebd3c6aefb836c6524f333685adf7b",
+    "scripts/run_multisource_lovo.py": "56e490a7ba8c42181a815723fb85647e26e8adc1f2e207bf9f28776f2130d5bd",
+    "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+    "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+    "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd"
+  },
+  "parent_manifest": "bd1f7af72851196a9a2528a7d831f45ad643e5b4496f68d800f2a94b3084ac7f",
+  "parent_audit": "fde273f7503f1ba8eccc59ab7951b2203385c8917479493995e0b8c6aa5e5277",
+  "torch": "2.11.0+cu128",
+  "numpy": "2.4.6",
+  "calibration_tokens": [
+    "cfc622c0f26b8bf2752772b2",
+    "1eb029c2ac266223954b2a54",
+    "a662c434875ea976650c164c",
+    "de012dd85da143b8d26a9f8b"
+  ]
+}

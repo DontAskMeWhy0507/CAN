@@ -1,0 +1,40 @@
+[
+  {
+    "target": "Impala",
+    "seed": 43,
+    "method": "frozen_source",
+    "balanced_accuracy": 0.9275,
+    "n_iter": 108,
+    "training_loss": 0.0017967364795534822,
+    "warnings": []
+  },
+  {
+    "target": "Impala",
+    "seed": 43,
+    "method": "white_leace_lr",
+    "balanced_accuracy": 0.578125,
+    "n_iter": 352,
+    "training_loss": 0.00421739960575397,
+    "warnings": []
+  },
+  {
+    "target": "Impala",
+    "seed": 43,
+    "method": "white_pca8_lr",
+    "balanced_accuracy": 0.5262500000000001,
+    "n_iter": 1000,
+    "training_loss": 0.26750464193601114,
+    "warnings": []
+  },
+  {
+    "target": "Impala",
+    "seed": 43,
+    "method": "white_inlp8_lr",
+    "balanced_accuracy": 0.385625,
+    "n_iter": 1500,
+    "training_loss": 0.0628340972670489,
+    "warnings": [
+      "Stochastic Optimizer: Maximum iterations (1500) reached and the optimization hasn't converged yet."
+    ]
+  }
+]

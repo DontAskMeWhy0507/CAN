@@ -1,0 +1,15 @@
+[
+  {
+    "dataset": "CICIoV2024",
+    "file": "F:\\00_Research\\data\\raw\\CICIoV2024\\hexadecimal\\hexadecimal_spoofing-SPEED.csv",
+    "reason": "Quarantined: DATA_6 differs from the decimal companion in 4989 of 24951 aligned rows. Verify the canonical publisher version before re-enabling; do not silently replace bytes."
+  },
+  {
+    "dataset": "OTIDS_converted_csv",
+    "reason": "Need provenance of frame labels and original chronological captures; do not infer labels from attack filename."
+  },
+  {
+    "dataset": "OTIDS_shuffled",
+    "reason": "Shuffled rows invalidate temporal windows; excluded from sequence evaluation."
+  }
+]

@@ -1,0 +1,7 @@
+condition,file,windows,tail_frames
+validation,data/can-train-and-test/set_01/train_01/accessory-2.csv,4,54
+validation,data/can-train-and-test/set_01/train_01/attack-free-2.csv,4,63
+validation,data/can-train-and-test/set_01/train_01/DoS-2.csv,8,5
+validation,data/can-train-and-test/set_01/train_01/force-neutral-2.csv,8,21
+validation,data/can-train-and-test/set_01/train_01/rpm-2.csv,8,59
+validation,data/can-train-and-test/set_01/train_01/standstill-2.csv,8,8

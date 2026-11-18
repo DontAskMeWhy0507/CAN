@@ -1,0 +1,89 @@
+REFERENCE CORRECTIONS AND SOURCE PROVENANCE — 2026-11-04
+
+Scope: metadata corrections and the specific claims/rows noted below. This is
+not a certification that every claim in every cited paper has been independently
+replicated, nor a plagiarism/similarity assessment.
+
+Corrected problematic records:
+
+lee2017otids
+  First author: Hyunsung Lee; Seong Hoon Jeong; Huy Kang Kim.
+  PST 2017, pp. 57–66. DOI 10.1109/PST.2017.00017.
+  https://pstnet.ca/pst2017/www.ucalgary.ca/pst2017/files/pst2017/paper-67.pdf
+
+rajapaksha2024canmirgu
+  Sampath Rajapaksha; Garikayi Madzudzo; Harsha Kalutarage; Andrei Petrovski;
+  M. Omar Al-Kadri. VehicleSec 2024. DOI 10.14722/vehiclesec.2024.23043.
+  https://rgu-repository.worktribe.com/preview/2577488/RAJAPAKSHA%202024%20CAN-MIRGU%20%28VOR%29.pdf
+  Author repository and dataset link:
+  https://github.com/sampathrajapaksha/CAN-MIRGU
+
+neto2024ciciov2024
+  Euclides Carlos Pinto Neto; Hamideh Taslimasa; Sajjad Dadkhah; Shahrear Iqbal;
+  Pulei Xiong; Taufiq Rahman; Ali A. Ghorbani.
+  Internet of Things 26 (2024), 101209. DOI 10.1016/j.iot.2024.101209.
+  Crossref registration uses family=Neto, given=Euclides Carlos Pinto.
+  https://api.crossref.org/works/10.1016/j.iot.2024.101209
+  https://nrc-publications.canada.ca/eng/view/ft/?id=f3836749-f395-494d-84f6-6c15dae1dc14
+  https://www.unb.ca/cic/datasets/iov-dataset-2024.html
+  Local SPEED export disagreement is our own data check, not a publisher claim.
+
+islam2020graph
+  Riadul Islam; Rafi Ud Daula Refat; Sai Manikanta Yerram; Hafiz Malik.
+  IEEE Transactions on Intelligent Transportation Systems 23(3), 1727–1736,
+  2022. DOI 10.1109/TITS.2020.3025685. Bib key retains its historical spelling;
+  the entry year is corrected to the journal issue year.
+  https://arxiv.org/abs/2009.11440
+  https://api.crossref.org/works/10.1109/TITS.2020.3025685
+
+tariq2020cantransfer
+  Shahroz Tariq; Sangyup Lee (not Sangwon); Simon S. Woo.
+  SAC 2020, 1048–1055. DOI 10.1145/3341105.3373868.
+  One-shot adaptation differs from the thesis's strict zero-shot protocol.
+  https://pure.skku.edu/en/publications/cantransfer-transfer-learning-based-intrusion-detection-on-a-cont/
+
+dupont2019automotive
+  Alexios Lekidis replaces the incorrect Apostolos. Dataset citation is retained
+  separately from a research article. Local README intervals and actual frame
+  signatures were checked on all four included logs.
+  https://doi.org/10.4121/uuid:b74b4928-c377-4585-9432-2004dfa20a5d
+  https://data.4tu.nl/articles/dataset/Automotive_Controller_Area_Network_CAN_Bus_Intrusion_Dataset/12696950/2
+  The repository endpoint intermittently timed out during this revision; local
+  label evidence and hashes are in results/data_quality_automotive_v2.csv.
+
+khreasat2026relational
+  Mohammad Khalaf Khreasat; Gabriel Villarrubia González. Sensors 26(10), 2964.
+  DOI 10.3390/s26102964. Structural transitions/topology and transfer limits;
+  target-normal calibration is a separate regime, not our strict zero-shot.
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC13210679/
+  https://api.crossref.org/works/10.3390/s26102964
+
+s26051489
+  Md Rezanur Islam; Mahdi Sahlabadi; Munkhdelgerekh Batzorig; Kangbin Yim.
+  Sensors 26(5), 1489 (2026). DOI 10.3390/s26051489.
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC12986820/
+  https://pubmed.ncbi.nlm.nih.gov/41829451/
+
+Version-specific published count audit:
+
+lampe2024curated is the journal benchmark citation (Computers & Security 140,
+103777; DOI 10.1016/j.cose.2024.103777). lampe2023appendix deliberately cites
+arXiv:2308.04972v1 for the exact appendix used. These are distinct version uses,
+not accidental duplicate citations for the same claim.
+
+https://arxiv.org/pdf/2308.04972v1
+All five rows: dataset #1 / subset #2, frame decisions.
+  Logistic Regression: Table A.15, PDF p.38.
+  Linear SVM:          Table A.16, PDF p.38.
+  Gradient Boosting:   Table A.21, PDF p.39.
+  BIRCH:               Table A.26, PDF p.41.
+  MLP:                 Table A.28, PDF p.41.
+TP/TN/FP/FN checked in text and rendered source pages. The source's F1 column
+matches rounded weighted F1 for four rows and attack F1 for Linear SVM. This
+is an arithmetic observation, not proof of implementation intent. Counts and
+formula outputs are in results/published_metric_audit.csv. Journal-appendix
+equivalence is not assumed, and no frame/window superiority comparison is made.
+
+Faculty format:
+https://uet.edu.vn/mau-bieu-ve-trinh-bay-khoa-luan-tot-nghiep-va-tot-nghiep-cho-sinh-vien/
+This is an older official source, not confirmation of the current cohort rubric.

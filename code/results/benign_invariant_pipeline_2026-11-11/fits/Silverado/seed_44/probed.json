@@ -1,0 +1,94 @@
+{
+  "status": "COMPLETE",
+  "warnings": [
+    {
+      "method": "frozen_source",
+      "scope": "embedding",
+      "task": "vehicle",
+      "decoder": "MLP",
+      "control": "permuted",
+      "message": "Stochastic Optimizer: Maximum iterations (300) reached and the optimization hasn't converged yet."
+    },
+    {
+      "method": "lr_targetq",
+      "scope": "risk",
+      "task": "vehicle",
+      "decoder": "MLP",
+      "control": "learned",
+      "message": "Stochastic Optimizer: Maximum iterations (300) reached and the optimization hasn't converged yet."
+    },
+    {
+      "method": "diag_lr",
+      "scope": "embedding",
+      "task": "vehicle",
+      "decoder": "MLP",
+      "control": "learned",
+      "message": "Stochastic Optimizer: Maximum iterations (300) reached and the optimization hasn't converged yet."
+    },
+    {
+      "method": "diag_lr",
+      "scope": "embedding",
+      "task": "vehicle",
+      "decoder": "MLP",
+      "control": "permuted",
+      "message": "Stochastic Optimizer: Maximum iterations (300) reached and the optimization hasn't converged yet."
+    },
+    {
+      "method": "white_lr",
+      "scope": "embedding",
+      "task": "vehicle",
+      "decoder": "MLP",
+      "control": "permuted",
+      "message": "Stochastic Optimizer: Maximum iterations (300) reached and the optimization hasn't converged yet."
+    },
+    {
+      "method": "white_lr",
+      "scope": "risk",
+      "task": "vehicle",
+      "decoder": "MLP",
+      "control": "learned",
+      "message": "Stochastic Optimizer: Maximum iterations (300) reached and the optimization hasn't converged yet."
+    },
+    {
+      "method": "white_leace_lr",
+      "scope": "embedding",
+      "task": "vehicle",
+      "decoder": "MLP",
+      "control": "permuted",
+      "message": "Stochastic Optimizer: Maximum iterations (300) reached and the optimization hasn't converged yet."
+    },
+    {
+      "method": "white_pca8_lr",
+      "scope": "embedding",
+      "task": "vehicle",
+      "decoder": "MLP",
+      "control": "learned",
+      "message": "Stochastic Optimizer: Maximum iterations (300) reached and the optimization hasn't converged yet."
+    },
+    {
+      "method": "white_pca8_lr",
+      "scope": "embedding",
+      "task": "vehicle",
+      "decoder": "MLP",
+      "control": "permuted",
+      "message": "Stochastic Optimizer: Maximum iterations (300) reached and the optimization hasn't converged yet."
+    },
+    {
+      "method": "white_inlp8_lr",
+      "scope": "embedding",
+      "task": "vehicle",
+      "decoder": "MLP",
+      "control": "learned",
+      "message": "Stochastic Optimizer: Maximum iterations (300) reached and the optimization hasn't converged yet."
+    },
+    {
+      "method": "white_inlp8_lr",
+      "scope": "embedding",
+      "task": "vehicle",
+      "decoder": "MLP",
+      "control": "permuted",
+      "message": "Stochastic Optimizer: Maximum iterations (300) reached and the optimization hasn't converged yet."
+    }
+  ],
+  "sha256": "8698bcf2842f369bd116b9d70b0fcc5f19c98d3f98c951de62c594f6fef799df"
+}

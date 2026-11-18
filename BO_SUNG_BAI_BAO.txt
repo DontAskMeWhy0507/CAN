@@ -1,0 +1,37 @@
+BỔ SUNG BẢN THẢO SAU SO SÁNH — 08/11/2026
+
+Đã bổ sung phương pháp so sánh và giới hạn vào thesis/vi/main.tex và thesis/en/main.tex.
+Đã lưu bản trước chỉnh sửa tại revision_backup/before_comparison_manuscript_2026-11-08.zip.
+
+Đã hoàn tất 60/60 lượt (4 set x 3 seed x 5 mô hình), cả ba notebook đã thực thi.
+Phần so sánh đã được bổ sung vào hai bản Việt–Anh:
+- Xác minh lại manifest, hash, cấu hình, đủ cell và mẫu số ghép cặp.
+- Nhập bảng năm phương pháp A–D; bảng chênh lệch Structural so với từng đối thủ.
+- Báo mẫu số test, B/D theo set, biến thiên seed, bootstrap theo capture,
+  các capture recall thấp, thời gian fit và bốn hình Recall/FAR/F1/AP.
+- Cập nhật đồng thời abstract Việt/Anh, kết quả, thảo luận và kết luận.
+- Biên dịch hai PDF, xuất ảnh các trang để kiểm tra và đóng gói bản thảo.
+
+Trạng thái nhập bài: code/results/manuscript_comparison_update.json.
+PDF: code/output/thesis_comparison_2026-11-08/{vi,en}/main.pdf.
+PDF hiện đã có bảng số thực, hình, phân tích và kết luận của ma trận đầy đủ.
+ZIP sau nhập kết quả: code/output/manuscript_comparison_2026-11-08.zip.
+Notebook và bảng/hình: code/output/notebook_comparison_executed_2026-11-08.zip.
+
+Kết quả cần ghi đúng:
+- Structural có AP cao hơn Raw ở B/D nhưng recall trung bình thấp hơn.
+- Recall B: Structural 0,7383; Raw 0,8541. AP B: 0,5554 so với 0,3781.
+- FAR đích Structural B/D còn khoảng 52,46%/54,64%; chưa phù hợp triển khai.
+- AssocRules có ngưỡng nguồn vượt 1 ở cả 12 cell; dự đoán toàn bộ benign tại
+  operating point này. Recall/FAR bằng 0 không phải thành tích phát hiện tốt.
+- Đây là các bản đối thủ thích ứng giao thức; không phải tái lập nguyên trạng
+  các điểm số trong bài công bố. Không kết luận vượt trội toàn diện.
+
+Những phần vẫn cần bằng chứng riêng:
+1. Ablation/probe xe và nhãn tấn công tương thích nhánh content.
+2. Độ nhạy W32/W128, đánh giá ngoại bộ đã xác minh nhãn và thứ tự.
+3. Độ trễ toàn pipeline/tài nguyên triển khai; thời gian fit không thay thế được.
+4. Kiểm tra trực quan PDF sau khi nhập số cuối và xác nhận mẫu/rubric với GVHD.
+
+Không cần tự nhập số hoặc sửa bảng. Các phép đo chưa thực hiện tiếp tục được
+ghi là chưa có; ma trận năm mô hình không tự hoàn tất bốn mục bằng chứng trên.

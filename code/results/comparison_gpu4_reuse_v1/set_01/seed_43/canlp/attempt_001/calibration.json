@@ -1,0 +1,25 @@
+{
+  "threshold": 5.791521289211232e-07,
+  "source_only": true,
+  "benign": 75185,
+  "attack": 1232,
+  "metrics": {
+    "Total_Windows": 76417,
+    "Attack_Windows": 1232,
+    "Benign_Windows": 75185,
+    "TP": 145,
+    "FP": 24,
+    "TN": 75161,
+    "FN": 1087,
+    "Attack_F1": 0.20699500356887937,
+    "Precision": 0.8579881656804734,
+    "Recall": 0.1176948051948052,
+    "AP": 0.5534119264815504,
+    "PR_AUC": 0.5534119264815504,
+    "FAR_per_100k": 31.921260889805147,
+    "Accuracy": 0.9854613502231179,
+    "Attack_Prevalence": 0.016122067079314812,
+    "Metric_Status": "two_class",
+    "AP_Status": "ok"
+  }
+}

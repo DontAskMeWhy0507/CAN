@@ -1,0 +1,93 @@
+{
+  "status": "COMPLETE",
+  "signature": {
+    "config": {
+      "protocol": "ctt-content-order-comparison-v1",
+      "tier": "content",
+      "sets": [
+        "set_01"
+      ],
+      "seeds": [
+        42
+      ],
+      "methods": [
+        "raw_transformer",
+        "structural_transformer",
+        "canbertplus",
+        "canlp",
+        "assoc_rules_crysys"
+      ],
+      "window_size": 64,
+      "sampling_seed": 20261103,
+      "train_windows_per_class_per_file": 2,
+      "epochs": 1,
+      "batch_size": 128,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "cpu_threads": 4,
+      "far_budget_per_100k": 100.0,
+      "eval_batch_windows": 128,
+      "bert_hidden": 12,
+      "bert_layers": 2,
+      "bert_heads": 4,
+      "bert_batch_size": 4,
+      "bert_pretrain_epochs": 1,
+      "bert_finetune_epochs": 1,
+      "canlp_epochs": 1,
+      "assoc_params": {
+        "k_cla": 2,
+        "n_knn": 2,
+        "n_centroid_clusters": 2,
+        "n_bound_bins": 2
+      },
+      "save_frame_scores": true
+    },
+    "cache_manifest_sha256": "9655218b3f58518c7a19b85c930720d0186a7c81ec30088f973347bb57951cd9",
+    "code": {
+      "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+      "comparison/adapters.py": "e2200ae803d526b671e60347f6fea8b21acd2fcb92f1e49792112b3f7d05c3aa",
+      "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+      "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+      "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+      "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+      "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+      "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+      "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+      "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+      "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+      "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+    },
+    "environment": {
+      "python": "3.11.15",
+      "packages": {
+        "torch": "2.15.0",
+        "numpy": "2.4.6",
+        "pandas": "3.1.0",
+        "scipy": "1.17.1",
+        "scikit-learn": "1.9.1"
+      },
+      "device": "CPU"
+    },
+    "set": "set_01",
+    "software_validation_only": true,
+    "seed": 42,
+    "method": "raw_transformer"
+  },
+  "method": "raw_transformer",
+  "software_validation_only": true,
+  "artifact_hashes": {
+    "calibration.json": "1bcc8bdeb42280645736eb2e8803c01db2ce12ec928625c8049f58a424d6167d",
+    "checkpoint.pt": "3aadad5fd9ab0c22b6cfc4783f0b5f1e29545ee240e23269225f4370eddab93e",
+    "coverage.csv": "02969da7b59363510b1a3ae2e01b9c115378d6be933516bf864f27d234ba26f9",
+    "metrics.csv": "8b08b63c0ff8c3f497844e896c4a9bcde1964af5ad8da26029677dd48759dd6b",
+    "predictions/validation/39cc381a9b2384d5.csv.gz": "1ca7877156cf0cfa00604127d9fd5c65290816f3f54b58eb637ab86c8816c5b8",
+    "predictions/validation/3b9abc3c32e0b6c5.csv.gz": "cbf2b50345d3313c7769d5b77c533f37041049031c8af4c008dbbfd6263d4638",
+    "predictions/validation/3ca4d160d15515c7.csv.gz": "49c85a80bf3d3204b7dac53c0ebeb034aca1b121438177aaf448cbc7beec3c8c",
+    "predictions/validation/66e6b834b0e341d4.csv.gz": "c139fc8800aca0dbc96fc3e128e56ea6bbc9e6abfe35466b3905c5dfca10255e",
+    "predictions/validation/7ed04b9daf22136b.csv.gz": "c4b1e652d3ca94c664e3811a5e773b7188fe5c4f4656cbf79e280e3f4bdb9e65",
+    "predictions/validation/9426a7748acf008d.csv.gz": "5db7a2009202ee07b9c873bc713a7f33ffef687a4eb9f2bfe1c3c6dcb86c6a5b",
+    "selected_source_windows.json": "954b69ebdd375d6ef3dcfb0014dcceeced4be02dee6ad830bda8917f63b06294",
+    "split.json": "da120244a259955aa0824d59006df00d2306ab2cd82bc56e77695bacc22c8655",
+    "training.json": "397ced9b148787d8a72315fe1b29aca71f6ba8bf7598db405f55fee0f32435cb"
+  }
+}

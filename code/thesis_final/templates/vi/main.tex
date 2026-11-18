@@ -1,0 +1,1061 @@
+\documentclass[12pt,a4paper,oneside,openany]{extbook}
+\usepackage[fontsize=13pt]{scrextend}
+\usepackage{fix-cm}
+\usepackage[left=3cm,right=2cm,top=2.5cm,bottom=3cm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Consolas}[Scale=0.85]
+\usepackage[vietnamese,english]{babel}
+\usepackage{amsmath,amssymb,graphicx,booktabs,longtable,array,tabularx}
+\usepackage{setspace,indentfirst,fancyhdr,enumitem,microtype}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage[numbers,square,sort&compress]{natbib}
+\usepackage[hidelinks,bookmarksnumbered]{hyperref}
+\usepackage{caption}
+\usepackage{placeins}
+\captionsetup{font=small,labelfont=bf}
+\setstretch{1.3}
+\setlength{\parindent}{1cm}
+\setlength{\parskip}{6pt}
+\setlength{\headheight}{18pt}
+\setlength{\emergencystretch}{5em}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\setlist{itemsep=2pt,topsep=4pt}
+\fancyhf{}
+\fancyhead[L]{\small Khóa luận tốt nghiệp: Phát hiện xâm nhập mạng CAN}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\newcommand{\pending}{\textit{Chờ chạy lại theo giao thức v2.1; chưa có kết quả xác nhận.}}
+\DeclareRobustCommand{\code}[1]{\texttt{\detokenize{#1}}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\frontchapter}[1]{\chapter*{#1}\phantomsection\addcontentsline{toc}{chapter}{#1}}
+\newcommand{\abstractchapter}[1]{\clearpage\phantomsection\addcontentsline{toc}{chapter}{#1}{\centering\fontsize{13}{13}\selectfont\bfseries\MakeUppercase{#1}\par}\vspace{12pt}}
+\begin{document}
+\hypersetup{pageanchor=false}
+
+\selectlanguage{vietnamese}
+\begin{titlepage}\centering
+{\fontsize{12}{12}\selectfont\bfseries ĐẠI HỌC QUỐC GIA HÀ NỘI\par TRƯỜNG ĐẠI HỌC CÔNG NGHỆ\par}
+\vspace{1.3cm}\includegraphics[width=3cm]{figs/uet.jpg}\par\vspace{1cm}
+{\fontsize{14}{14}\selectfont\bfseries Vũ Tiến Tuấn Trung\par}\vspace{1.6cm}
+{\fontsize{18}{18}\selectfont\bfseries HỌC BIỂU DIỄN ĐỘC LẬP ĐẶC THÙ XE\\CHO HỆ THỐNG PHÁT HIỆN XÂM NHẬP\\MẠNG CAN BUS ĐA PHƯƠNG TIỆN\par}\vspace{1.8cm}
+{\fontsize{14}{14}\selectfont\bfseries KHÓA LUẬN TỐT NGHIỆP ĐẠI HỌC HỆ CHÍNH QUY\par}\vspace{0.3cm}{\fontsize{14}{14}\selectfont\bfseries Ngành: Hệ thống thông tin\par}
+\vfill{\fontsize{12}{12}\selectfont\bfseries HÀ NỘI -- 2026\par}\end{titlepage}
+\begin{titlepage}\centering
+{\fontsize{12}{12}\selectfont\bfseries ĐẠI HỌC QUỐC GIA HÀ NỘI\par TRƯỜNG ĐẠI HỌC CÔNG NGHỆ\par}
+\vspace{1.3cm}\includegraphics[width=3cm]{figs/uet.jpg}\par\vspace{1cm}
+{\fontsize{14}{14}\selectfont\bfseries Vũ Tiến Tuấn Trung\par}\vspace{1.6cm}
+{\fontsize{18}{18}\selectfont\bfseries HỌC BIỂU DIỄN ĐỘC LẬP ĐẶC THÙ XE\\CHO HỆ THỐNG PHÁT HIỆN XÂM NHẬP\\MẠNG CAN BUS ĐA PHƯƠNG TIỆN\par}\vspace{1.8cm}
+{\fontsize{14}{14}\selectfont\bfseries KHÓA LUẬN TỐT NGHIỆP ĐẠI HỌC HỆ CHÍNH QUY\par}\vspace{0.3cm}{\fontsize{14}{14}\selectfont\bfseries Ngành: Hệ thống thông tin\par}
+\vspace{1.3cm}{\fontsize{14}{14}\selectfont\bfseries Cán bộ hướng dẫn: PGS. TS. Nguyễn Ngọc Hóa\par}
+\vfill{\fontsize{12}{12}\selectfont\bfseries HÀ NỘI -- 2026\par}\end{titlepage}
+\frontmatter\hypersetup{pageanchor=true}\pagestyle{fancy}
+
+% Begin inlined front_vi.tex
+\frontchapter{Lời cảm ơn}
+Em xin chân thành cảm ơn PGS. TS. Nguyễn Ngọc Hóa đã hướng dẫn, góp ý và định hướng nghiên cứu trong quá trình thực hiện khóa luận. Em cảm ơn các tác giả đã công bố dữ liệu và công trình về an ninh mạng CAN, tạo điều kiện cho việc kiểm chứng thực nghiệm.
+
+Các công cụ AI được sử dụng để hỗ trợ soạn thảo, dịch thuật, rà soát tài liệu và phát triển mã nguồn. Tác giả có trách nhiệm kiểm tra nguồn trích dẫn, hiểu và xác nhận mã nguồn, chạy thực nghiệm và chịu trách nhiệm đối với nội dung cuối cùng. Phần kết quả phân biệt số liệu thăm dò được lưu trước khi hiệu chỉnh với các thí nghiệm cần chạy lại theo giao thức đã sửa.
+
+\frontchapter{Lời cam đoan}
+Tôi cam đoan ghi rõ nguồn của các ý tưởng, dữ liệu và công trình được sử dụng. Tôi không trình bày kết quả chưa được chạy như kết quả đã thực nghiệm, và không gán số liệu của một cấu hình cho cấu hình khác. Các giới hạn về dữ liệu, phạm vi kiểm chứng và khả năng tái lập được nêu trong nội dung khóa luận. Tôi chịu trách nhiệm kiểm tra và xác nhận bản cuối cùng trước khi nộp.
+\begin{flushright}Tác giả khóa luận\\[1.5cm]Vũ Tiến Tuấn Trung\end{flushright}
+
+\abstractchapter{Tóm tắt}
+
+% Begin inlined abstract_vi.tex
+\begingroup\fontsize{12}{12}\selectfont
+\noindent\textbf{Tóm tắt:} Khóa luận khảo sát chuyển giao phát hiện xâm nhập CAN khi đổi xe và kiểu tấn công. Biểu diễn structural bỏ bit ID thô ở đầu vào bộ phân loại nhưng vẫn dùng ID làm khóa lịch sử payload và quan hệ cục bộ. Nhãn cửa sổ dương khi có ít nhất một frame mang nhãn 1 theo chính sách dữ liệu.
+
+Phép so chính hiện thực thi theo nội dung và thứ tự file: raw 28 chiều, structural 30 chiều, W64, bốn set, ba seed và năm phương pháp. Timestamp đi lùi được giữ để kiểm toán và không dùng làm đặc trưng; không khẳng định thứ tự dòng là chronology vật lý. CANBERT+, CANLP-char-DNN và CrySyS-AssocRules/W64 là các bản thích ứng có công bố thay đổi, không dùng trực tiếp điểm số công bố gốc để xếp hạng. Ma trận 60 cell đã được xác minh; số liệu và đánh đổi recall/FAR được trình bày tại Mục~\ref{sec:comparison-results}. Kết quả này không tự trả lời các câu hỏi về loại trừ đặc trưng, probe xe, ngoại bộ hay độ trễ triển khai. Ở B, Structural trừ Raw có chênh lệch recall trung bình -0.1159 và FAR -12839.95/100.000, với trọng số ngang nhau giữa set; hai đại lượng phải được diễn giải cùng nhau.
+
+% BEGIN COMPARISON POSTHOC_ABSTRACT_VI
+Phân tích hậu nghiệm bổ sung đánh giá 10 biểu diễn nội dung, độ nhạy W32/W128, probe cân bằng, ngoại bộ theo ledger và runtime máy thực nghiệm. Probe xe Raw/Structural đạt 0.9925/0.9488 balanced accuracy, cho thấy vẫn còn nhiều thông tin về xe; các bằng chứng này không xác nhận độc lập xe hay khả năng triển khai thời gian thực.
+% END COMPARISON POSTHOC_ABSTRACT_VI
+
+\noindent\textbf{\textit{Từ khóa:}} CAN; phát hiện xâm nhập; chuyển dịch phân phối; biểu diễn cấu trúc.
+\par\endgroup
+% End inlined abstract_vi.tex
+
+\abstractchapter{Abstract}
+
+% Begin inlined ../en/abstract_en.tex
+\begingroup\fontsize{12}{12}\selectfont
+\noindent\textbf{Abstract:} This thesis examines transfer of CAN intrusion detection across vehicles and attack types. Structural inputs exclude raw ID bits while still using IDs as keys for payload history and local relations. A window is positive when at least one frame carries label 1 under the dataset annotation policy.
+
+The primary comparison uses content and file order: 28 raw dimensions, 30 structural dimensions, W64, four sets, three seeds and five methods. Reversed timestamps are retained for audit and excluded from features; physical chronology is not asserted. CANBERT+, CANLP-char-DNN and CrySyS-AssocRules/W64 are disclosed adaptations, and original published scores are not directly ranked. The 60-cell matrix has been verified; measured recall/FAR tradeoffs appear in Section~\ref{sec:comparison-results}. This comparison does not itself answer feature-ablation, vehicle-probe, external-transfer or deployment-latency questions. In B, Structural minus Raw yields mean recall difference -0.1159 and FAR difference -12839.95/100,000 under equal set weights; these quantities must be interpreted together.
+
+% BEGIN COMPARISON POSTHOC_ABSTRACT_EN
+Additional post-hoc analyses cover ten content representations, W32/W128 sensitivity, balanced probes, ledger-governed external evaluation and host runtime. Raw/Structural vehicle probes reach 0.9925/0.9488 balanced accuracy, indicating substantial remaining vehicle information; these results do not establish vehicle independence or real-time deployment readiness.
+% END COMPARISON POSTHOC_ABSTRACT_EN
+
+\noindent\textbf{\textit{Keywords:}} CAN; intrusion detection; distribution shift; structural representation.
+\par\endgroup
+% End inlined ../en/abstract_en.tex
+
+\frontchapter{Trạng thái thực nghiệm của bản chỉnh sửa}
+Phép so chính dùng content/file-order theo Mục~\ref{sec:comparison-protocol}. Đã đủ 60 cell; kết quả mới ở Mục~\ref{sec:comparison-results}. Các bảng thăm dò và thiết kế timed v2.1 vẫn được ghi riêng. Bằng chứng bổ sung theo nhánh nội dung nằm tại Mục~\ref{sec:completion}; các kết luận timing và triển khai vật lý vẫn chưa được xác nhận.
+% BEGIN COMPARISON SCOPE
+Các kết quả mới chỉ thuộc nhánh content/file-order tại Mục~\ref{sec:comparison-results}. Các đoạn nói chưa có xác nhận v2.1 bên dưới chỉ nhánh timed và các thí nghiệm mở rộng; số lịch sử không được trộn vào ma trận mới.
+% END COMPARISON SCOPE
+
+% End inlined front_vi.tex
+
+\tableofcontents\listoffigures\listoftables
+
+% Begin inlined abbreviations_vi.tex
+\frontchapter{Danh mục từ viết tắt}
+\begin{longtable}{P{2cm}P{11cm}}
+\toprule Ký hiệu & Ý nghĩa\\\midrule
+AP & Average Precision; độ chính xác trung bình trên các mức recall\\
+CAN & Controller Area Network\\
+CI & Confidence Interval; khoảng tin cậy\\
+DBC & Cơ sở dữ liệu mô tả tín hiệu CAN\\
+DLC & Data Length Code; mã độ dài dữ liệu\\
+DoS & Denial of Service; từ chối dịch vụ\\
+ECU & Electronic Control Unit; bộ điều khiển điện tử\\
+FAR & False Alarm Rate; trong khóa luận tính trên 100.000 cửa sổ bình thường\\
+FN/FP & False Negative/False Positive; âm tính giả/dương tính giả\\
+FPR & False Positive Rate; FP/(FP+TN)\\
+IDS & Intrusion Detection System; hệ thống phát hiện xâm nhập\\
+LR & Logistic Regression; hồi quy logistic\\
+PR & Precision--Recall\\
+TF & Transformer\\
+TN/TP & True Negative/True Positive; âm tính đúng/dương tính đúng\\
+XGB & XGBoost; mô hình cây tăng cường\\\bottomrule
+\end{longtable}
+% End inlined abbreviations_vi.tex
+\mainmatter
+
+% Begin inlined introduction_vi.tex
+\chapter{Mở đầu}\label{chap:introduction}
+\section{Động cơ nghiên cứu}
+Mạng CAN kết nối các bộ điều khiển điện tử trong phương tiện. Thiết kế giao thức ưu tiên truyền thông và phân xử truy cập bus, không cung cấp sẵn xác thực mật mã cho từng nguồn phát. Các thực nghiệm an ninh ô tô đã chỉ ra rằng khi có quyền truy cập phù hợp, kẻ tấn công có thể tác động tới thông điệp và chức năng điều khiển~\cite{koscher2010experimental,checkoway2011comprehensive}. Một IDS thụ động có thể giám sát lưu lượng mà không yêu cầu thay đổi mọi ECU, nhưng chất lượng phát hiện cần được đo trong các điều kiện triển khai có ý nghĩa.
+
+Hiệu năng của IDS có thể thay đổi đáng kể giữa các bộ dữ liệu và điều kiện đánh giá~\cite{koltai2026trust}. Một mô hình học từ xe nguồn có thể khai thác tương quan giữa nhãn tấn công với CAN-ID, payload hoặc chu kỳ truyền của riêng xe đó; các tương quan này có thể đổi khi chuyển xe. Tuy nhiên, hiệu năng suy giảm không tự động chứng minh mô hình học thuộc ID: ngưỡng phân loại, cách lấy mẫu, chính sách nhãn và cơ chế tấn công cũng có thể góp phần. Nghiên cứu vì vậy tách phép đo hiệu năng khỏi giả thuyết giải thích nguyên nhân.
+
+Khóa luận chọn can-train-and-test làm đối chuẩn chính vì bộ dữ liệu đã tổ chức bốn điều kiện xe quen/lạ và tấn công quen/lạ~\cite{lampe2024curated}; bốn điều kiện này không phải đóng góp mới của khóa luận. Các nghiên cứu gần đây cũng đã dùng quan hệ chuyển tiếp ID, lịch sử thông điệp và đánh giá xuyên bộ dữ liệu~\cite{khreasat2026relational,dong2026mtff,koltai2026trust}. Khoảng trống được khảo sát ở đây là tác động của việc bỏ giá trị ID thô và thêm lịch sử payload cùng quan hệ cục bộ, khi giữ cùng dữ liệu nguồn, mẫu cửa sổ, kiến trúc bộ mã hóa và quy tắc chọn ngưỡng chỉ từ nguồn. Mục tiêu là chỉ ra điều kiện có lợi, có hại và giới hạn bằng chứng của biểu diễn, thay vì lấy một điểm F1 cao làm kết luận chung.
+
+\section{Vấn đề và phạm vi}
+Với luồng CAN được ghi theo thứ tự, hệ thống đưa ra một quyết định nhị phân bình thường/tấn công sau mỗi cửa sổ hoàn chỉnh gồm 64 khung tin không chồng lặp. Các cửa sổ không nối qua biên file. Nhãn cửa sổ dương tính khi chứa ít nhất một khung tin được bộ dữ liệu gán nhãn 1; ý nghĩa nhãn 1 phụ thuộc chính sách gán nhãn, chẳng hạn có thể đánh dấu khoảng suspension mà không có khung tin độc hại được chèn~\cite{rajapaksha2024canmirgu}. Nghiên cứu không khẳng định nhận diện được ECU bị xâm nhập hoặc ý nghĩa vật lý của từng tín hiệu. Việc phát hiện trước thời điểm gây hại cần phép đo độ trễ theo sự kiện riêng, không suy từ F1 cửa sổ.
+
+Mô hình, các tham số chuẩn hóa cần học và ngưỡng quyết định chỉ được huấn luyện hoặc chọn bằng dữ liệu nguồn; khi đánh giá xe đích, chúng được giữ cố định. Bộ trích xuất có thể dùng các khung tin quá khứ của chính bản ghi đích để tính đặc trưng, nhưng không dùng nhãn đích và không cập nhật mô hình hoặc ngưỡng. Đây là phạm vi chuyển giao không hiệu chỉnh theo xe đích được khảo sát trong khóa luận.
+
+Trong phạm vi triển khai hiện tại, dữ liệu là CAN cổ điển với ID chuẩn 11 bit và tối đa 8 byte payload. Khung CAN-FD, ID mở rộng hoặc nhãn chưa xác định sẽ bị từ chối. Nhánh có thời gian từ chối timestamp đảo; phép so content/file-order giữ timestamp để kiểm toán nhưng không sử dụng làm đặc trưng. Bộ phân loại không nhận trực tiếp giá trị ID toàn cục trong nhánh cấu trúc; bộ trích xuất vẫn dùng ID làm khóa để tìm khung tin trước cùng ID. Vì vậy thuật ngữ ``độc lập đặc thù xe'' trong tên đề tài biểu thị mục tiêu nghiên cứu, không phải một tính chất đã được chứng minh cho toàn bộ hệ thống.
+
+\section{Câu hỏi nghiên cứu}
+\begin{enumerate}[label=\textbf{RQ\arabic*.}]
+\item Tại ngưỡng chọn theo cùng ngân sách FAR trên validation nguồn, recall lớp tấn công và FAR trên từng tập kiểm thử A--D thay đổi ra sao giữa raw và structural ở bốn set của đối chuẩn?
+\item Với cùng Transformer và mẫu nguồn, tác động của việc bỏ bit ID thô khác tác động của việc thêm lịch sử payload, thời gian và quan hệ ID cục bộ như thế nào?
+\item Khi thay raw bằng structural, khả năng giải mã tuyến tính nhãn xe từ embedding thay đổi ra sao, và thay đổi đó đi cùng chất lượng phát hiện tấn công như thế nào?
+\item Khi áp dụng mô hình nguồn đã đóng băng lên các bộ dữ liệu khác nguồn có nhãn và schema được kiểm chứng, phương pháp thành công hoặc thất bại theo cơ chế tấn công nào?
+\end{enumerate}
+Trong RQ1, phép so chính về chuyển xe là điều kiện B (xe lạ, tấn công quen); D kiểm tra thêm giới hạn khi tấn công cũng lạ. Recall lớp tấn công tại ngưỡng chọn trên nguồn luôn được báo cùng FAR đích, số cửa sổ dương/âm và kết quả từng set; F1, AP và ngưỡng mặc định 0,5 là phép đo bổ sung. Bốn set dùng lại một số xe, nên không được xem là bốn cặp xe độc lập. RQ2 cần các ablation ghép cặp. RQ3 là phép chẩn đoán bằng probe tuyến tính, không đo toàn bộ thông tin về xe trong embedding.
+
+\section{Giả thuyết và tiêu chí bác bỏ}
+Giả thuyết chính là biểu diễn structural cho recall lớp tấn công cao hơn raw Transformer trên điều kiện B khi mỗi mô hình dùng ngưỡng chọn bằng cùng quy tắc FAR trên validation nguồn. Chênh lệch recall được tính ghép cặp theo từng set và seed, lấy trung bình ba seed trong mỗi set rồi trung bình ngang nhau giữa bốn set; từng chênh lệch và FAR đích vẫn được báo. Nếu trung bình không dương, giả thuyết lợi ích trung bình không được ủng hộ; nếu có set không dương, không tuyên bố cải thiện nhất quán trên cả bốn set. FAR đích tăng có thể làm lợi ích recall không còn phù hợp vận hành, nên không gọi một chênh lệch recall dương đơn lẻ là ưu thế tổng thể. Điều kiện D và từng cơ chế tấn công kiểm tra ranh giới của giả thuyết, đặc biệt với tấn công thay đổi payload nhưng giữ nhịp và thứ tự truyền.
+
+Giả thuyết phụ là biểu diễn structural giảm khả năng giải mã tuyến tính nhãn xe so với raw mà vẫn giữ tín hiệu tấn công. Nếu probe xe không giảm, hoặc probe tấn công và chất lượng phát hiện cùng suy giảm, không kết luận giảm phụ thuộc xe một cách hữu ích. Probe xe gần mức ngẫu nhiên cũng không chứng minh độc lập thống kê. Kết quả thăm dò đích đã được xem; các tiêu chí này được chốt trước khi chạy xác nhận v2.1, không coi test là dữ liệu hoàn toàn chưa tiếp xúc. Kết quả âm tính có thể tái lập vẫn có giá trị.
+
+\section{Đóng góp và trạng thái bằng chứng}
+\begin{enumerate}
+\item Đặc tả và triển khai biểu diễn structural (30 chiều trong phép so nội dung; 32 chiều trong đặc tả có thời gian) không đưa bit CAN-ID thô vào bộ phân loại, duy trì lịch sử trong từng file và kiểm tra tính bất biến dưới phép đổi tên ID một-một nhất quán. Tính chất này không đồng nghĩa độc lập với xe.
+\item Xây dựng giao thức so sánh raw/structural và các ablation cùng Transformer, cửa sổ và mẫu nguồn; ngưỡng được chọn chỉ trên nguồn, còn dự đoán lưu theo file để kiểm tra lại.
+\item Hiệu chỉnh việc kiểm tra schema/nhãn, tính metric và lưu provenance; xác định các vấn đề cụ thể trong kết quả thăm dò trước khi chạy lại.
+\end{enumerate}
+Ngoài phương pháp và kiểm chứng dữ liệu, ma trận content/file-order bốn set, ba seed và năm mô hình đã hoàn tất tại Mục~\ref{sec:comparison-results}. Kết quả phân biệt chất lượng xếp hạng với recall và FAR tại ngưỡng nguồn; probe và ngoại suy vẫn cần bằng chứng riêng.
+
+\section{Tổ chức khóa luận}
+Chương~\ref{chap:background} định nghĩa dữ liệu, mô hình đe dọa và bài toán. Chương~\ref{chap:related} trình bày nghiên cứu liên quan. Chương~\ref{chap:method} mô tả đặc trưng và giao thức. Chương~\ref{chap:results} phân biệt bằng chứng đã kiểm tra với ma trận so sánh nội dung đã hoàn tất và các thực nghiệm mở rộng còn thiếu. Chương~\ref{chap:conclusion} giới hạn kết luận và nêu việc còn lại. Phụ lục gồm quy cách đầu ra, danh sách tái lập và ví dụ kiểm tra đặc trưng.
+% End inlined introduction_vi.tex
+
+% Begin inlined background_vi.tex
+\chapter{Cơ sở và phát biểu bài toán}\label{chap:background}
+\section{Thông điệp CAN và quan sát của IDS}
+CAN sử dụng mã định danh để phân xử truy cập đường truyền và biểu thị loại thông điệp. ID không phải địa chỉ nguồn xác thực. IDS trong nghiên cứu quan sát bản ghi khung tin sau khi truyền, không quan sát trực tiếp mọi trạng thái vật lý của ECU. Chênh lệch thời gian trong log còn phụ thuộc phần cứng thu, độ phân giải timestamp và tải bus. Vì vậy không được diễn giải mọi thay đổi nhịp là hành vi tấn công~\cite{bozdal2020evaluation,verma2024road}.
+
+Ký hiệu khung tin thứ $i$ là
+\begin{equation}
+F_i=(t_i,c_i,d_i,\mathbf{b}_i,y_i),\quad d_i\in\{0,\ldots,8\},\quad y_i\in\{0,1\},
+\end{equation}
+trong đó $t_i$ là timestamp, $c_i$ là ID, $d_i$ là số byte hữu hiệu, $\mathbf{b}_i$ là payload đã đệm và $y_i$ là nhãn nhị phân sau khi kiểm tra chính sách gán nhãn của bộ dữ liệu. Timestamp do công cụ ghi nhận, không phải một trường payload được xác thực. Byte đệm mang giá trị 0 nhưng mặt nạ phân biệt byte không tồn tại với byte thực bằng 0.
+
+\section{Mô hình đe dọa}
+Kẻ tấn công được giả định có khả năng phát, thay đổi hoặc làm gián đoạn lưu lượng trong phạm vi các kịch bản đã ghi trong bộ dữ liệu. Các cơ chế quan tâm gồm flooding/DoS, fuzzing, injection/spoofing, thay đổi payload và suspension. IDS chỉ đọc dữ liệu; nó không ngăn chặn frame và không thay thế cơ chế xác thực hoặc điều khiển an toàn. Tấn công sửa đồng thời nhãn chuẩn và log của hệ thống thu nằm ngoài phạm vi, bởi khi đó ground truth không còn đáng tin.
+
+Đối với dữ liệu mô phỏng hoặc sửa bản ghi, nghiên cứu chỉ kết luận về dấu vết đã tạo, không khẳng định tác động vật lý ngoài đời. Với Automotive v2, tấn công DoS là đoạn dữ liệu bị thay thế trong bản sao trace bình thường. Với CAN-MIRGU, nhãn cuối dòng là nguồn nhãn được parser yêu cầu. Không dùng tên file chứa chữ ``attack'' làm nhãn cho mọi frame.
+
+\section{Đơn vị đánh giá và nhãn cửa sổ}
+Với kích thước $W$ và stride $W$, cửa sổ thứ $k$ trong một file gồm
+\begin{equation}
+\mathcal{W}_k=(F_{kW},\ldots,F_{kW+W-1}),\qquad Y_k=\max_{i=kW}^{kW+W-1}y_i.
+\end{equation}
+Phần dư cuối file nhỏ hơn $W$ bị bỏ và số frame bị bỏ được ghi lại. Cửa sổ dương có thể chứa phần lớn frame mang nhãn 0; do đó precision/recall theo cửa sổ không bằng precision/recall theo frame. Với nhãn của tấn công chèn, một cửa sổ 64 frame chứa một frame được gán nhãn 1 vẫn là cửa sổ dương; cảnh báo đúng không có nghĩa định vị được frame đó. Với CAN-MIRGU suspension, toàn bộ khoảng đình chỉ được gán nhãn 1 dù không có frame tấn công được chèn~\cite{rajapaksha2024canmirgu}. Vì vậy nhãn 1 không được diễn giải chung là một frame độc hại được chèn.
+
+Khi so sánh với công trình khác, cần trùng đơn vị quyết định, quy tắc nhãn, split và mẫu đánh giá. Không thể chỉ nhân mẫu số FAR theo 64 để biến một bài toán window thành bài toán frame, vì phép gộp nhãn là phi tuyến và quyết định của mô hình không phân bổ ngược duy nhất về các frame.
+
+\section{Chuyển dịch xe, tấn công và dữ liệu}
+
+Bốn điều kiện là các tập con đối chuẩn được thiết kế để khảo sát hai loại chuyển dịch. Chúng không tạo một thí nghiệm nhân quả chỉ thay đúng một yếu tố: phiên ghi, trạng thái vận hành, tỷ lệ lớp và hiện thực tấn công có thể đồng thời thay đổi. Các chênh lệch A--B hoặc C--D vì vậy được diễn giải trong phạm vi bộ dữ liệu.
+Gọi $v_s,v_t$ là miền xe nguồn và đích; $a_s,a_t$ là tập kiểu tấn công xuất hiện trong train và test. Điều kiện A/B/C/D giữ hoặc thay đổi hai yếu tố này. ``Quen'' phải được kiểm tra trên dữ liệu thực sự đi vào huấn luyện: một attack family có tên trong thư mục nhưng bị bỏ hết bởi sampling chưa thể coi là đã được học.
+
+\begin{table}[htbp]\centering
+\caption{Bốn điều kiện kiểm thử được kế thừa từ đối chuẩn}\label{tab:conditions}
+\begin{tabular}{clll}\toprule Điều kiện & Xe & Tấn công & Vai trò\\\midrule
+A & Quen & Quen & Đối chứng trong miền\\
+B & Lạ & Quen & Chuyển dịch xe\\
+C & Quen & Lạ & Chuyển dịch tấn công\\
+D & Lạ & Lạ & Chuyển dịch đồng thời\\\bottomrule\end{tabular}
+\end{table}
+
+Ngoại suy sang dataset khác còn thay đổi công cụ thu, định dạng nhãn và môi trường. Nó không phải phép thay đổi riêng xe. Các dataset hoặc trace chia sẻ nguồn ghi cũng không phải các quan sát độc lập chỉ vì có tên file khác.
+
+\begin{table}[htbp]\centering
+\caption{Ánh xạ xe nguồn và xe đích của bốn set}\label{tab:vehicle_pairs}
+\begin{tabular}{lll}\toprule Set & Xe nguồn & Xe đích\\\midrule
+1 & Chevrolet Impala & Chevrolet Silverado\\
+2 & Chevrolet Traverse & Subaru Forester\\
+3 & Chevrolet Silverado & Subaru Forester\\
+4 & Subaru Forester & Chevrolet Traverse\\\bottomrule\end{tabular}
+\end{table}
+
+Bốn set chỉ sử dụng bốn xe và ba xe đích phân biệt. Không gộp ba thư mục set rồi xem set thứ tư là xe chưa thấy: Silverado của test Set 1 đã là nguồn trong Set 3. Mọi mở rộng đa nguồn phải tách theo danh tính xe và bản ghi gốc trên toàn bộ tập dữ liệu.
+
+\clearpage
+\section{Nguồn dữ liệu và phạm vi sử dụng}
+\begin{longtable}{P{3.3cm}P{4.4cm}P{5.2cm}}
+\caption{Vai trò và điều kiện hợp lệ của dữ liệu}\label{tab:datasets}\\\toprule
+Dataset & Vai trò & Điều kiện\\\midrule\endfirsthead
+\toprule Dataset & Vai trò & Điều kiện\\\midrule\endhead
+can-train-and-test~\cite{lampe2024curated} & Đối chuẩn chính, bốn set & Tách source-validation; không thay test chính thức\\
+Automotive v2~\cite{dupont2019automotive} & DoS và benign trên Opel/Renault & Nhãn theo interval và chữ ký frame; không gán cả file\\
+CAN-MIRGU~\cite{rajapaksha2024canmirgu} & Ngoại suy timestamped & Yêu cầu nhãn từng frame; log tấn công nằm trong thư mục con; cần preflight toàn file\\
+CICIoV2024~\cite{neto2024ciciov2024} & Ngoại suy không dùng timing & CSV hexadecimal không cung cấp timestamp đo; giữ giới hạn row-order\\
+OTIDS~\cite{lee2017otids} & Chưa đưa vào kết luận xác nhận & Cần xác minh nhãn bản chuyển đổi; loại các file shuffled\\\bottomrule
+\end{longtable}
+Không đồng nhất HCRL OTIDS với Car-Hacking Dataset. Trang phát hành OTIDS mô tả xe Kia Soul; tên Hyundai trong notebook cũ không được dùng làm căn cứ định danh. Với CAN-MIRGU, không suy ra hãng hoặc mẫu xe không được nguồn công bố.
+
+\section{Mục tiêu tối ưu và ý nghĩa của biểu diễn}
+Bộ trích xuất $\Phi$ biến cửa sổ thành ma trận $X\in\mathbb{R}^{W\times D}$. Bộ phân loại $f_\theta$ trả xác suất lớp 1 và dự đoán
+\begin{equation}
+p_k=\operatorname{softmax}(f_\theta(\Phi(\mathcal{W}_k)))_1,
+\qquad \widehat Y_k=\mathbb{1}[p_k\geq\tau].
+\end{equation}
+Tham số $\theta$ chỉ học từ phần train nguồn. Ngưỡng $\tau$ chỉ chọn từ validation nguồn và được đóng băng trước test. Các số chia cố định trong feature không được fit lại trên xe đích. Điều này vẫn cho phép đọc lịch sử quá khứ của chính trace đích để tính khoảng cách cùng ID: đó là xử lý đầu vào nhân quả, không phải huấn luyện bằng nhãn đích.
+
+Khác biệt quan trọng là giữa bất biến đổi tên ID và bất biến miền xe. Một phép đổi tên một-một bảo toàn quan hệ cùng ID có thể không thay đổi feature cấu trúc; chuyển xe thực lại thay cả payload, chu kỳ và cấu trúc thông điệp. Chứng minh tính chất thứ nhất không kéo theo tính chất thứ hai.
+Để thể hiện phụ thuộc vào quá khứ, có thể viết chính xác đầu vào là $\Phi(\mathcal W_k;H_k)$, với $H_k$ là trạng thái lịch sử trước cửa sổ. Trạng thái bắt đầu rỗng ở mỗi file. Các công thức rút gọn $\Phi(\mathcal W_k)$ trong khóa luận luôn đi kèm quy tắc trạng thái này; mỗi cửa sổ không phải một đoạn độc lập được trích xuất lại từ đầu.
+
+% End inlined background_vi.tex
+
+% Begin inlined related_vi.tex
+\chapter{Các nghiên cứu liên quan}\label{chap:related}
+Rajapaksha và cộng sự hệ thống hóa các hướng IDS dùng AI trên mạng nội xe~\cite{rajapaksha2023survey}; đây là nguồn phân loại phương pháp, không phải kết quả đối chuẩn trực tiếp cho giao thức xuyên xe của khóa luận. Sharmin và cộng sự chỉ ra các nghiên cứu CAN IDS dùng điều kiện thực nghiệm, đặc trưng và metric khác nhau, khiến so sánh điểm số giữa bài báo thiếu cơ sở nếu không khớp giao thức~\cite{sharmin2024benchmark}. Vì vậy phần dưới đối chiếu đầu vào, đơn vị dự đoán, ngân sách dữ liệu xe đích và cách chia dữ liệu trước khi bàn về hiệu năng.
+
+\section{Phát hiện dựa trên thời gian và chuỗi thông điệp}
+Cho và Shin sử dụng sai lệch đồng hồ của ECU suy ra từ khoảng cách giữa thông điệp tuần hoàn để phát hiện và truy nguồn tấn công~\cite{cho2016fingerprint}. Cách này cần xây dựng fingerprint theo ECU/xe; vì vậy không thể đồng nhất với đặc trưng thời gian không gắn danh tính ECU của khóa luận. Chiscop và cộng sự nghiên cứu sửa đổi thông điệp mà không thay đổi mẫu thời gian, với mạng tích chập theo thời gian trên tín hiệu CAN~\cite{chiscop2021modification}. Đây là động cơ cụ thể để kiểm tra nhánh payload, nhưng chưa chứng minh nhánh đó tổng quát hóa xuyên xe.
+
+OTIDS phân tích quan hệ thời gian liên quan tới remote frame~\cite{lee2017otids}; phương pháp này cho thấy thời gian có thể là tín hiệu phát hiện, nhưng không làm mọi tấn công payload trở nên quan sát được. Song và cộng sự nghiên cứu bộ phát hiện dùng mạng tích chập trên lưu lượng nội xe~\cite{song2020dcnn}. Hai hướng này cung cấp đối chứng về thông tin đầu vào và kiến trúc, không phải bằng chứng sẵn có rằng mọi mô hình tương ứng đều thất bại trên xe lạ.
+
+Trong khóa luận, timing-only và payload-only được dùng như ablation của cùng pipeline. Chúng không được gọi là tái lập OTIDS hoặc DCNN vì khác thuật toán, dữ liệu đầu vào và giao thức. Việc tái lập một phương pháp công bố đòi hỏi mô tả chính xác cửa sổ, tiền xử lý, hyperparameter và cơ chế quyết định của phương pháp đó.
+
+Jo và Kim kết hợp một bộ phát hiện dựa trên payload với một bộ phát hiện dựa trên tính chu kỳ qua chính sách hợp nhất quyết định~\cite{jo2026fusion}. Thông tin công khai được đối chiếu ở mức abstract; chưa có toàn văn để khẳng định chi tiết split, ngân sách dữ liệu đích hoặc độ trễ. Dong và cộng sự xây dựng hai nhánh lịch sử cùng ID và lịch truyền giữa các ID, sau đó hợp nhất bằng attention cho bài toán spoofing tác động trạng thái~\cite{dong2026mtff}. Vì vậy tổ hợp payload history với quan hệ thời gian không phải ý tưởng chưa từng được nghiên cứu. Khóa luận phải phân biệt biểu diễn một luồng 32 chiều, đơn vị quyết định theo cửa sổ và giao thức source-only của mình với hai hướng này; khác biệt thiết kế chưa phải bằng chứng vượt trội.
+
+\section{Mô hình tái tạo, Transformer và biểu diễn ngôn ngữ}
+CANet sử dụng một nhánh LSTM theo từng ID và ghép trạng thái để tái tạo tín hiệu CAN~\cite{hanselmann2020canet}. Cấu trúc này xử lý thông điệp không đồng bộ nhưng cần ánh xạ ID và tín hiệu tương ứng. Từ kiến trúc đó, không thể suy ra khả năng áp dụng nguyên trạng lên một xe có tập ID khác; đây là khác biệt giả định đầu vào, chưa phải kết quả so sánh hiệu năng.
+
+CAN-BERT học chuỗi ID bằng mục tiêu dự đoán token bị che~\cite{alkhatib2022canbert}. CANBERT+ mở rộng biểu diễn mỗi thông điệp bằng ID, DLC và payload, với tiền huấn luyện tự giám sát và tinh chỉnh có giám sát~\cite{won2026canbertplus}. Chính bài CANBERT+ nêu khác biệt từ điển ID và tín hiệu giữa xe là giới hạn chuyển giao. Các nghiên cứu này làm rõ rằng Transformer và việc kết hợp payload với ngữ cảnh đều đã có tiền lệ; đóng góp ở đây phải được kiểm tra qua giao thức và đối chứng biểu diễn cụ thể.
+
+CANLP dùng TF-IDF và học máy để phát hiện ở mức frame~\cite{balasubramanian2025canlp}. Đây là hướng biểu diễn lấy cảm hứng từ ngôn ngữ nhưng không đồng nghĩa với Transformer. Khác biệt về đơn vị quyết định và thiết bị đo khiến điểm số hoặc độ trễ của CANLP không thể được xếp hạng trực tiếp với cửa sổ 64 frame.
+
+Jo và Kim dự đoán ID ở giữa cửa sổ, chọn tâm bình thường để huấn luyện nhưng cho phép ngữ cảnh chứa tấn công~\cite{jo2025indirect}. Vì có dùng nhãn để lọc tâm và có ngữ cảnh hai phía, cách này khác việc chỉ dùng cửa sổ hoàn toàn lành hoặc dự đoán tức thời tại tâm. Bài này được đọc như một phương pháp riêng, không thay thế việc kiểm chứng toàn văn bài hợp nhất năm 2026.
+
+\section{Đồ thị và biểu diễn quan hệ}
+X-CANIDS giải mã payload thành tín hiệu có thể diễn giải bằng cơ sở dữ liệu CAN rồi phát hiện bất thường trên các tín hiệu này~\cite{jeong2024xcanids}. Đó là một hướng đối chiếu quan trọng về khả năng diễn giải, nhưng giả định có CAN database và đơn vị đầu vào khác với biểu diễn byte/bit không cần DBC đang được khảo sát ở đây. Chưa có phép so sánh định lượng cùng tập dữ liệu và cùng giao thức.
+
+Islam và cộng sự xây dựng IDS theo đồ thị cho CAN~\cite{islam2020graph}. Khreasat và González nghiên cứu đặc trưng thống kê, chuyển tiếp ID và topology, đồng thời phân tích ranh giới transfer và một thí nghiệm hiệu chuẩn bằng dữ liệu bình thường của xe đích~\cite{khreasat2026relational}. Vì vậy không thể tuyên bố rằng việc dùng quan hệ ID hoặc phân tích giới hạn ngoại suy tự nó là mới.
+
+Khác biệt cần kiểm chứng ở đây là sự kết hợp biến thiên payload cùng ID với quan hệ trong cửa sổ và mô hình chuỗi, dưới điều kiện không hiệu chuẩn bằng dữ liệu đích. Đồ thị chuyển tiếp mô tả thứ tự thông điệp quan sát được; không nên gọi cạnh đó là đường giao tiếp vật lý giữa hai ECU. Hai ID liên tiếp có thể xuất phát từ các nguồn khác nhau mà dataset không định danh.
+
+\section{Transfer learning và mục tiêu universal IDS}
+CANTransfer sử dụng convolutional LSTM và thích nghi từ dữ liệu mới hạn chế theo hướng one-shot~\cite{tariq2020cantransfer}. Khóa luận sử dụng strict zero-shot nên không đặt điểm của hai chế độ cạnh nhau để kết luận hơn kém mà không nêu lượng dữ liệu đích đã dùng.
+
+Islam và cộng sự đề xuất một hướng universal IDS kết hợp thống kê thời gian/lưu lượng, biểu diễn đa độ phân giải, học sâu và kiểm tra tương quan~\cite{s26051489}. Đây là công trình cần đối chiếu gần với mục tiêu tổng quát hóa. Điểm khác cần kiểm chứng của khóa luận là giữ payload và biến thiên cùng ID, dùng A--D và tách nhánh content-only khi không có timestamp. Các khác biệt thiết kế chưa chứng minh ưu thế hiệu năng.
+
+Obafemi báo cáo sự sụt giảm khi chuyển bộ dữ liệu và thử đặc trưng không dùng ID one-hot kết hợp hiệu chỉnh thống kê bằng một đoạn lưu lượng lành của xe đích~\cite{obafemi2026travel}. Ý tưởng bỏ ID thô do đó không thể xem là mới riêng của khóa luận. Vì bài này sử dụng dữ liệu lành đích, điểm số của nó thuộc chế độ thích nghi khác với giao thức source-only ở đây; chưa có tái lập cùng dữ liệu và đơn vị quyết định.
+
+\section{Học tương phản và đối kháng miền}
+Hoang và Kim nghiên cứu SupCon ResNet cùng transfer learning trên dữ liệu CAN~\cite{hoang2022supcon}. Kết quả của họ tạo động cơ khảo sát hàm mục tiêu, nhưng khác dữ liệu và phép chia nên không chứng minh contrastive loss chắc chắn vượt cross-entropy trong giao thức này. Cross-entropy vẫn học biểu diễn qua encoder; việc chưa thêm điều chuẩn bất biến không có nghĩa không học biểu diễn.
+
+DANN gốc sử dụng dữ liệu nguồn có nhãn và dữ liệu đích không nhãn~\cite{ganin2016dann}. Vì vậy sao chép nguyên chế độ đó sẽ thay đổi giả định source-only. Trong một biến thể đối kháng trên nhiều miền nguồn, bộ phân loại miền giảm lỗi miền còn encoder nhận gradient theo chiều ngược lại; quy tắc tối ưu phải được nêu tách biệt. Độ chính xác một probe gần ngẫu nhiên không chứng minh toàn bộ thông tin xe đã biến mất. Zhao và cộng sự chỉ ra bất biến biểu diễn cùng lỗi nguồn thấp chưa đủ bảo đảm thích nghi thành công khi có dịch chuyển điều kiện~\cite{zhao2019invariant}. Các hướng này là mở rộng có thể kiểm chứng, không phải điều kiện bắt buộc để công nhận giá trị của một nghiên cứu thực nghiệm.
+
+\section{Chất lượng bộ dữ liệu và đánh giá xuyên miền}
+Kidmose và cộng sự phân tích giới hạn của các bộ dữ liệu CAN, mở rộng can-train-and-test thành v1.5 với suppress và masquerade, đồng thời cảnh báo đánh giá suppress bằng nhãn frame thông thường có thể gây hiểu sai~\cite{kidmose2025cansleuth}. Bộ v1.5 chưa được dùng trong các run hiện tại. Koltai và cộng sự đánh giá năm hướng IDS trên bảy bộ dữ liệu, cho thấy kết quả phụ thuộc mạnh vào dữ liệu và giao thức đánh giá~\cite{koltai2026trust}. Vì vậy đánh giá trên nhiều dataset tự nó không tạo tính mới; cần chỉ ra khác biệt về phép biểu diễn, ngân sách dữ liệu đích, nhãn và đơn vị metric.
+
+Trong nghiên cứu tổng quát hóa miền, Gulrajani và Lopez-Paz nhấn mạnh việc chọn mô hình theo nguồn và so sánh trong điều kiện nhất quán~\cite{gulrajani2021domainbed}. Đây là nguyên tắc thiết kế từ benchmark ngoài CAN, không phải bằng chứng một thuật toán cụ thể sẽ tốt trên CAN. Khóa luận chốt quy tắc chọn checkpoint/ngưỡng trên nguồn trước khi diễn giải điểm đích.
+
+\section{Ma trận đối chiếu và phạm vi tuyên bố mới}
+\begin{longtable}{P{3.4cm}P{4.3cm}P{5.2cm}}
+\caption{Đối chiếu định tính với các công trình gần nhất}\label{tab:related}\\\toprule
+Công trình & Hướng tiếp cận & Phép đối chiếu cần thực hiện\\\midrule\endfirsthead
+\toprule Công trình & Hướng tiếp cận & Phép đối chiếu cần thực hiện\\\midrule\endhead
+OTIDS~\cite{lee2017otids} & Thông tin thời gian & Timing ablation; không tự nhận là tái lập OTIDS\\
+DCNN~\cite{song2020dcnn} & Mạng tích chập & Baseline chuỗi cùng dữ liệu nếu mở rộng kiến trúc\\
+Graph IDS~\cite{islam2020graph} & Biểu diễn đồ thị & Thêm baseline đồ thị được tái lập từ đặc tả gốc\\
+CANTransfer~\cite{tariq2020cantransfer} & Thích nghi ít mẫu & Báo riêng ngân sách target adaptation\\
+Lampe--Meng~\cite{lampe2024curated} & Đối chuẩn nhiều xe & Cùng split và đơn vị window khi so model\\
+Relational modelling~\cite{khreasat2026relational} & Chuyển tiếp/topology & So structural-only với payload+structure\\
+Hybrid UIDS~\cite{s26051489} & Thống kê timing/lưu lượng & Phân biệt dữ liệu, tần suất injection và calibration\\
+MTFF~\cite{dong2026mtff} & Lịch sử cùng ID, lịch truyền, attention & Khác đầu vào, đơn vị frame/window và giao thức\\
+Jo--Kim~\cite{jo2026fusion} & Hợp nhất payload và chu kỳ & Chỉ đối chiếu thiết kế khi chưa có full text\\
+Obafemi~\cite{obafemi2026travel} & Bỏ ID one-hot, hiệu chỉnh lành đích & Tách ngân sách dữ liệu đích khỏi source-only\\
+Koltai~\cite{koltai2026trust} & Benchmark nhiều dataset & Kiểm phép chia và đơn vị đo trước định lượng\\
+Khóa luận & Payload, history, structure, Transformer & Ablation cùng model, source-only threshold, tái lập\\\bottomrule
+\end{longtable}
+Ma trận này nêu sự liên quan, không xếp hạng. Các hàng ``cần thực hiện'' là công việc bổ sung nếu muốn đưa ra so sánh định lượng với đúng thuật toán công bố. Trong phạm vi đã triển khai, các baseline trực tiếp là Raw Transformer, Structural Transformer, Structural XGBoost và LR; các mô hình này không được đổi tên thành phương pháp của bài báo khác.
+
+\section{Chất lượng đánh giá và diễn giải metric}
+Vấn đề base rate khiến xác suất một cảnh báo là tấn công phụ thuộc mạnh vào tần suất tấn công thực tế~\cite{axelsson2000base}. Weighted F1 vẫn là metric hợp lệ, nhưng không trả lời riêng khả năng bắt lớp tấn công. Tương tự, FAR thấp có thể đi kèm recall thấp nếu mô hình hiếm khi cảnh báo. Khóa luận vì vậy báo cáo cả denominators, precision, recall, F1, AP và FAR.
+
+Saito và Rehmsmeier giải thích vì sao đường precision--recall hữu ích khi lớp dương hiếm~\cite{saito2015pr}. Do AP phụ thuộc tỷ lệ lớp dương, mọi bảng ngoại bộ vẫn cần báo prevalence và số mẫu; bài này không làm ROC-AUC vô nghĩa trong mọi bối cảnh.
+
+Sommer và Paxson nhấn mạnh những khó khăn khi đưa học máy ra ngoài bối cảnh đánh giá đóng~\cite{sommer2010outside}. Trong nghiên cứu này, hệ quả phương pháp là phải kiểm tra nguồn nhãn, thứ tự thời gian, thay đổi phân phối và chi phí cảnh báo. Không sử dụng nhận định tổng quan đó để suy luận rằng một mô hình cụ thể chắc chắn thất bại khi chưa kiểm chứng.
+% End inlined related_vi.tex
+
+% Begin inlined method_vi.tex
+\chapter{Phương pháp và giao thức thực nghiệm}\label{chap:method}
+\section{Luồng xử lý và phân chia trách nhiệm}
+Giao thức v2.1 gồm bốn bước: kiểm chứng dữ liệu, trích xuất cửa sổ, huấn luyện/hiệu chuẩn trên nguồn và đánh giá đóng băng. Các bước dùng chung module thay vì sao chép hàm giữa notebook. Notebook chỉ khởi chạy cấu hình; phiên bản mã nguồn và thư viện được ghi vào manifest. Luồng dữ liệu đích không đi ngược về bước chọn mô hình hoặc ngưỡng.
+
+\begin{figure}[htbp]\centering
+\begin{tikzpicture}[node distance=0.6cm, every node/.style={draw,rounded corners,align=center,font=\small,text width=11cm,inner sep=7pt},>=Stealth]
+\node (a) {File gốc và nguồn nhãn: kiểm tra schema, thứ tự thời gian, hash};
+\node (b) [below=of a] {Cửa sổ hoàn chỉnh: raw 28 / structural 30 chiều (content)};
+\node (c) [below=of b] {Nhóm train nguồn: lấy mẫu toàn file, huấn luyện classifier};
+\node (d) [below=of c] {Nhóm validation nguồn: chọn ngưỡng theo ngân sách FAR};
+\node (e) [below=of d] {Đóng băng checkpoint và ngưỡng: A--D, ngoại suy theo schema};
+\node (f) [below=of e] {Dự đoán từng cửa sổ, confusion matrix, metric và báo cáo};
+\foreach \s/\t in {a/b,b/c,c/d,d/e,e/f} \draw[->] (\s)--(\t);
+\end{tikzpicture}
+\caption{Pipeline với ranh giới nguồn/đích rõ ràng. Nhánh content-only bỏ các chiều thời gian ở cả train và test.}\label{fig:pipeline}
+\end{figure}
+
+\section{Hợp đồng dữ liệu và kiểm tra đầu vào}
+Schema tối thiểu gồm \code{timestamp}, \code{arbitration_id}, \code{data_field} và \code{attack}; DLC được giữ nếu nguồn cung cấp. ID và payload được đọc như chuỗi để tránh mất số 0 đầu hoặc đổi hex thành số thập phân. Không loại ký tự tùy tiện để ``sửa'' một ID sai. Payload có số ký tự lẻ, dài quá 8 byte hoặc mâu thuẫn DLC sẽ gây lỗi. Nhãn thiếu không được mặc định là benign.
+
+Chỉ nhánh timed yêu cầu timestamp hữu hạn và không giảm trong capture, kể cả qua biên chunk. Phép so content hiện tại giữ nguyên timestamp để kiểm toán các lần giảm, nhưng không dùng chúng làm đặc trưng hoặc tự sắp xếp lại dữ liệu. Với dataset không có thời gian, timestamp được giữ là thiếu và chỉ nhánh content-only được phép chạy. Với dữ liệu không chứng minh được thứ tự bản ghi, ngay cả đặc trưng chuyển tiếp cũng cần giới hạn diễn giải: content-only không tự chứng minh thứ tự vật lý của các dòng CSV.
+
+Parser không tự sắp xếp lại theo timestamp vì nhiều capture khác nhau có thể dùng cùng gốc thời gian. Một bản ghi lỗi dừng run và ghi trạng thái FAILED. Điều này giữ nguyên thông tin cần điều tra, thay vì tạo bảng kết quả sau khi âm thầm bỏ các mẫu khó xử lý.
+
+\section{Cửa sổ, trạng thái và tính độc lập với khối đọc}
+Mỗi file có một đối tượng trích xuất riêng. Đối tượng lưu các frame chưa đủ cửa sổ, timestamp trước và lịch sử của mỗi ID. Khi đọc chunk tiếp theo, phần dư được nối với chunk trong cùng file. Khi file kết thúc, phần dư bị bỏ; trạng thái không chuyển sang file khác.
+
+Trong nhánh content, lịch sử payload cùng ID được giữ liên tục qua cửa sổ và chunk theo thứ tự file. Timestamp không tham gia đầu vào mô hình. Vì vậy thay chunksize không được làm thay đổi số cửa sổ hoặc feature. Tính chất này được kiểm bằng đối chiếu trích xuất toàn bộ với nhiều kích thước chunk không chia hết cho $W$.
+
+Thống kê tần suất và chuyển tiếp dùng đủ $W$ frame. Do đó thời điểm quyết định sớm nhất là khi có frame cuối cửa sổ. Đây là thiết kế causal ở cấp cửa sổ, không phải dự đoán ngay khi frame đầu tới. Không sử dụng frame của cửa sổ tương lai để tính feature của cửa sổ hiện tại.
+
+\section{Đặc trưng thô và cấu trúc}
+Giao thức thực nghiệm dùng raw 28 chiều: 11 bit ID, DLC chuẩn hóa, 8 byte payload và 8 mặt nạ. Structural có 30 chiều như Bảng~\ref{tab:features}. Cả hai không có đặc trưng thời gian. Chuẩn hóa dùng hằng số cố định, không học từ test.
+\begin{longtable}{P{2.4cm}P{1.2cm}P{9.2cm}}
+\caption{Định nghĩa biểu diễn structural ở cấp frame}\label{tab:features}\\\toprule
+Chỉ số & Chiều & Định nghĩa\\\midrule\endfirsthead
+\toprule Chỉ số & Chiều & Định nghĩa\\\midrule\endhead
+0 & 1 & $d_i/8$, với $d_i$ là độ dài payload được xác minh\\
+1--8 & 8 & $b_{i,j}/255$; byte ngoài DLC được đệm 0\\
+9--16 & 8 & $m_{i,j}=\mathbf{1}[j<d_i]$\\
+17--24 & 8 & $|b_{i,j}-b_{q,j}|m_{i,j}m_{q,j}/255$, $q$ là frame trước cùng ID trong file\\
+25 & 1 & Có lịch sử cùng ID hay không\\
+26 & 1 & Tần suất ID trong cửa sổ chia $W$\\
+27 & 1 & Hạng xuất hiện đầu tiên, bắt đầu 0, chia số ID phân biệt\\
+28 & 1 & Cùng hạng cục bộ chia $W$\\
+29 & 1 & Số lần cặp ID trước/hiện tại xuất hiện trong cửa sổ chia $W-1$; vị trí đầu bằng 0\\\bottomrule
+\end{longtable}
+Hai feature 27 và 28 cùng dựa trên thứ tự xuất hiện, với mẫu số khác nhau. Chúng không được tuyên bố là hai nguồn thông tin độc lập. Ablation nhóm local statistics kiểm tra liệu nhóm này có bổ sung giá trị ngoài lịch sử payload hay không. Hiệu payload chỉ được tính trên các byte hữu hiệu ở cả hai frame, tránh biến sự thay đổi padding thành tín hiệu cảm biến giả.
+
+Với $r_i>0$, tỷ số $f_{28}/f_{27}=U_k/W$ cố định trong cửa sổ $k$, nhưng $U_k$ có thể đổi giữa các cửa sổ. Không suy ra đồng tuyến toàn bộ dữ liệu hoặc tác hại tối ưu chỉ từ tỷ số này. Biến thể bỏ riêng chiều 28 kiểm tra vai trò của cách mã hóa thứ hai; biến thể bỏ byte payload tuyệt đối giữ DLC, mask và biến thiên để khảo sát tín hiệu phụ thuộc xe.
+
+Hiệu từng byte không phải khoảng cách tín hiệu vật lý: nếu hai byte mã hóa số nguyên 16 bit, chuyển $\texttt{00FF}\rightarrow\texttt{0100}$ chỉ tăng một đơn vị nhưng byte thấp thay đổi 255. Khoảng cách Hamming cũng đổi 9 bit trong ví dụ này. Vì vậy entropy hoặc Hamming chỉ là ứng viên mở rộng cần đối chứng, không được gọi là phép sửa đã chứng minh cải thiện.
+
+\subsection{Nhánh không dùng thời gian}
+So với đặc tả timed v2.1 lưu trong mã lịch sử, nhánh content loại raw index 28 và hai chiều thời gian structural cũ 26, 27; các chỉ số trong Bảng~\ref{tab:features} đã được đánh lại cho nhánh 30 chiều. Kích thước tương ứng là 28 và 30. Mô hình content phải được huấn luyện lại trên CTT với đúng các chiều bị loại; không đưa timestamp giả hoặc zero-fill vào mô hình đã học timing rồi gọi đó là phép so sánh cùng schema. Dataset đích vẫn cần giữ thứ tự hàng có căn cứ nếu sử dụng history và transition. Nếu thứ tự không được xác nhận, kết quả chỉ là đánh giá trên thứ tự cung cấp và không phải chứng minh tính thời gian thực.
+
+\subsection{Tính bất biến đổi tên ID}
+Xét một ánh xạ một-một $g$ áp dụng nhất quán cho toàn bộ ID trong một capture và trạng thái lịch sử, giữ nguyên timestamp và payload. Quan hệ $c_i=c_j$ tương đương $g(c_i)=g(c_j)$; tần suất, thứ tự xuất hiện đầu tiên, các cặp chuyển tiếp và vị trí frame trước cùng ID vì vậy được bảo toàn. Các feature structural không thay đổi dưới phép đổi tên này. Ánh xạ phải nằm trong miền ID được parser hỗ trợ.
+
+Nếu đổi tên độc lập ở từng cửa sổ mà không đổi lịch sử tương ứng, tính chất trên không còn được bảo đảm. Nếu thay đổi payload hoặc thời gian như khi đổi xe thực, chứng minh cũng không áp dụng. Kiểm thử invariance là kiểm tra phần triển khai của tính chất hẹp đã định nghĩa, không phải bằng chứng tổng quát hóa đa xe.
+
+\section{Kiến trúc và hàm mục tiêu}
+Mô hình dựa trên cơ chế attention~\cite{vaswani2017attention}. Mỗi vector được chiếu tuyến tính tới 64 chiều rồi cộng positional embedding học được kích thước $W\times64$. Hai Transformer encoder layers sử dụng 4 heads, feed-forward 128, GELU và dropout 0,1. Mean pooling tạo embedding 64 chiều; head gồm LayerNorm, Linear 64-to-32, ReLU và Linear 32-to-2.
+
+Với logits $z_{k,0},z_{k,1}$, mô hình tối ưu cross-entropy hai lớp:
+\begin{equation}
+\mathcal L(\theta)=-\frac1N\sum_{k=1}^N\log\frac{\exp z_{k,Y_k}}{\exp z_{k,0}+\exp z_{k,1}}.
+\end{equation}
+Không dùng Focal Loss hay contrastive loss trong cấu hình xác định ở đây. Các phương án đó chỉ có thể được bổ sung như thí nghiệm riêng có run ID riêng. Raw và structural giữ cùng encoder/head; số tham số tầng input thay đổi theo số chiều và được ghi trong manifest, nên ``cùng kiến trúc'' không có nghĩa số tham số tuyệt đối bằng nhau.
+
+\begin{table}[htbp]\centering
+\caption{Cấu hình huấn luyện được đóng băng trước khi chạy lại}\label{tab:config}
+\begin{tabular}{ll}\toprule Tham số & Giá trị\\\midrule
+Cửa sổ chính / độ nhạy & 64 / 32 và 128\\
+Hidden / layers / heads & 64 / 2 / 4\\
+Feed-forward / dropout & 128 / 0,1\\
+Optimizer & AdamW\\
+Learning rate / weight decay & 0,001 / $10^{-4}$\\
+Epochs / batch size & 10 / 128\\
+Scheduler & Cosine theo epoch\\
+Seed khởi tạo & 42, 43, 44\\
+Seed lấy mẫu chung & 20261103\\
+Giới hạn mỗi file, mỗi lớp train & 1.000 cửa sổ\\
+Ngân sách FAR validation & 100/100.000 cửa sổ benign\\\bottomrule\end{tabular}
+\end{table}
+
+Ngân sách FAR là một lựa chọn thiết kế để so sánh, không phải chuẩn an toàn vận hành ô tô. Các ngân sách khác cần cấu hình và phân tích riêng. XGBoost dùng 100 cây, depth 6, learning rate 0,1; LR dùng chuẩn hóa học chỉ trên train và tối đa 2.000 vòng tối ưu. Hai baseline truyền thống nhận cửa sổ làm phẳng, nên không hoàn toàn kiểm soát inductive bias như so hai Transformer.
+
+Cross-entropy ràng buộc dự đoán trên mẫu huấn luyện, không buộc mọi tấn công chưa thấy thuộc lớp bình thường. Điểm thấp ở C/D có thể liên quan tới độ phủ tấn công, biểu diễn, dịch chuyển phân phối hoặc ngưỡng. Chưa có đối chứng nên không quy toàn bộ thất bại lịch sử cho hàm mất mát và cũng không bảo đảm thêm nhánh tái tạo sẽ khắc phục được.
+
+\section{Tách nguồn, lấy mẫu và chống rò rỉ}
+Các file nguồn được nhóm theo hậu tố số vòng ghi; toàn bộ file cùng hậu tố ở cùng phía train hoặc validation. Nhóm hậu tố lớn nhất mặc định làm validation. Đây là cách chia bảo thủ hơn random windows, nhưng cần xác nhận metadata để chứng minh các vòng là những chuyến lái độc lập. Không tái huấn luyện với validation sau khi chọn ngưỡng, vì việc đó làm checkpoint và ngưỡng không còn tương ứng.
+
+Lấy mẫu giới hạn bộ nhớ bằng random-priority reservoir riêng cho mỗi lớp và file. Mỗi cửa sổ nhận một khóa ngẫu nhiên; giữ tối đa 1.000 khóa nhỏ nhất cho từng lớp. Toàn bộ file phải được đọc trước khi hoàn tất mẫu. Một attack ở cuối file vì vậy vẫn có cơ hội được chọn như một attack đầu file. Lấy mẫu diễn ra sau trích xuất trạng thái liên tục, không nối các frame đã chọn rời rạc thành chuỗi giả.
+
+Danh sách window index đã chọn, số cửa sổ có sẵn và số được chọn của từng lớp/file được xuất ra. Mọi representation dùng cùng mẫu. Validation và test được đánh giá đầy đủ với prevalence gốc, không cân bằng lại để làm đẹp metric. Cần xem coverage theo attack family để phát hiện một lớp hoặc cơ chế biến mất trong source.
+
+Trong v2.1, chuỗi ngẫu nhiên được tách theo file và lớp với seed xác định từ seed lấy mẫu và tên file. Vì vậy thay đổi chunksize hoặc thứ tự duyệt file không đổi lựa chọn cửa sổ trong cùng file. Thay đổi này làm lựa chọn khác phiên bản v2.0; hai phiên bản không được gộp.
+
+Lần chạy nghiên cứu yêu cầu manifest preflight toàn file có trạng thái PASS, khớp mã kiểm tra, ledger và hash dữ liệu hiện dùng. Preflight yêu cầu đủ bốn set và các thư mục A--D, ghi riêng dữ liệu ngoại bộ thiếu/bị loại, và phát hiện tệp trùng hệt liên quan nguồn trong cùng set. SHA-256 không loại trừ các đoạn trace dùng chung hoặc chứng minh các chuyến lái độc lập; nguồn gốc phiên ghi vẫn là giới hạn cần xác nhận.
+
+\section{Ngưỡng, metric và đơn vị mẫu số}
+Ngưỡng mặc định 0,5 được báo song song với ngưỡng source-calibrated. Ngưỡng hiệu chuẩn tối đa hóa recall validation với FAR quan sát không vượt ngân sách; khi hòa chọn ít FP hơn, rồi ngưỡng cao hơn. Các score bằng nhau được xử lý cùng nhóm, không tách tùy ý để thỏa ngân sách. Nếu không có lựa chọn phù hợp thì ngưỡng trên score lớn nhất cho quyết định toàn benign là lựa chọn khả thi và phải công khai recall 0.
+
+Với $N_+=TP+FN$ và $N_-=TN+FP$:
+\begin{align}
+P&=TP/(TP+FP), & R&=TP/N_+,\\
+F_1&=2TP/(2TP+FP+FN), & \operatorname{FAR}_{100k}&=10^5FP/N_-.
+\end{align}
+Khi $N_-=0$, FAR là N/A. Khi không có positive ground truth, attack metrics không dùng để kết luận phát hiện. Precision khi không có cảnh báo là N/A; nếu có attack nhưng không phát hiện, recall và F1 bằng 0. AP được tính từ continuous scores khi cả hai lớp hiện diện; không thay bằng F1 khi thiếu scores hoặc thiếu lớp. Cột PR\_AUC tương thích cũ là alias của AP, không phải diện tích hình thang của đường PR.
+
+Ngưỡng chỉ được lựa chọn một lần từ nguồn, sau đó giữ nguyên cho A--D và external tương thích. FAR mục tiêu trên nguồn không bảo đảm FAR đích. Độ phân giải nhỏ nhất của FAR thực nghiệm là $10^5/N_-$; do đó cần báo số mẫu và tránh suy luận ngân sách cực thấp từ validation quá nhỏ.
+
+\section{Thiết kế ablation, probe và uncertainty}
+\begin{longtable}{P{4cm}P{8.9cm}}
+\caption{Các đối chứng và câu hỏi được kiểm tra}\label{tab:ablations}\\\toprule
+Đối chứng & Mục tiêu\\\midrule\endfirsthead\toprule Đối chứng & Mục tiêu\\\midrule\endhead
+Raw vs raw-minus-ID & Cô lập loại bỏ 11 bit ID trong feature gốc\\
+Raw-plus-structural vs raw & Kiểm tra thêm history/structure khi vẫn giữ ID\\
+Structural vs raw-plus-structural & Kiểm tra ID trên nền feature phong phú hơn\\
+Structural-minus-delta & Vai trò biến thiên payload và cờ lịch sử\\
+Structural-minus-timing & Trùng structural trong nhánh content; không đếm thành thí nghiệm riêng\\
+Structural-minus-local & Vai trò tần suất và hạng ID cục bộ\\
+Structural-minus-transition & Vai trò tần suất bigram\\
+Structural-minus-payload & Bỏ byte tuyệt đối, giữ DLC/mask và history\\
+Structural-minus-rank-W & Bỏ riêng chiều 28 của content, giữ các thống kê khác\\
+ID-only / raw-minus-ID & Giới hạn từng nhóm nội dung; timing-only không áp dụng\\
+32/64/128 frame & Độ nhạy kích thước và thời gian chờ cửa sổ\\\bottomrule
+\end{longtable}
+Probe giữ nguyên encoder raw/structural đã huấn luyện. Dữ liệu chẩn đoán được chia theo nhóm bản ghi; cân bằng ô xe×nhãn tấn công trong mỗi phía để giảm việc đoán xe từ prevalence tấn công. Một LR học dự đoán xe hoặc attack từ embedding. Probe chỉ phục vụ phân tích sau khi đóng băng IDS, không chọn checkpoint/ngưỡng bằng target. Độ chính xác cơ hội là $1/V$ khi $V$ xe được cân bằng.
+
+Kết quả probe cần đi kèm embedding hằng/ngẫu nhiên làm đối chứng năng lực của bộ giải mã và attack-probe để kiểm tra việc giảm thông tin xe có đồng thời làm mất tín hiệu phát hiện hay không. Nguyên tắc control tasks được Hewitt và Liang đề xuất trong nghiên cứu biểu diễn ngôn ngữ~\cite{hewitt2019probes}; vận dụng sang CAN ở đây là lựa chọn thiết kế, chưa phải một kết quả thực nghiệm CAN đã xác nhận.
+
+Ba seed phản ánh biến thiên khởi tạo và thứ tự tối ưu, không tạo ba tập xe độc lập. Báo trung bình và độ lệch chuẩn theo seed với cùng phép chia. Bootstrap ghép cặp lấy mẫu lại toàn bản ghi và dùng cùng mẫu cho hai mô hình. Nếu quá ít nhóm, báo thiếu căn cứ thay vì tạo CI có vẻ chắc chắn. Với metadata mức file, CI chỉ là mô tả có điều kiện vì các file có thể dùng chung chuyến lái.
+
+Probe dùng LR với $C=1$, tối đa 2.000 vòng, chuẩn hóa fit trên probe-train và không chọn siêu tham số theo probe-test. Cùng các cửa sổ đã cân bằng được dùng cho raw và structural. Đối chứng gồm embedding hằng, Gaussian độc lập giữa train/test và hoán vị nhãn probe-train; hai đối chứng ngẫu nhiên lặp năm seed định trước. Nhãn test giữ nguyên. Các đối chứng được báo riêng, không chọn seed probe đẹp nhất hoặc gọi đây là tái lập nguyên bản control task của Hewitt--Liang.
+
+Phân tích ghép cặp báo chênh lệch recall, FAR và F1 tại cả hai ngưỡng, lấy structural trừ raw. Bootstrap lấy lại toàn file, sử dụng cùng số lần chọn file cho hai mô hình và tính lại từ ma trận nhầm lẫn. Báo số mẫu bootstrap hợp lệ; mẫu thiếu mẫu số của metric bị loại có ghi nhận. Dưới ba file không xuất khoảng. So sánh trung bình bốn set thực hiện đúng thứ tự trung bình seed trong set rồi cho mỗi set trọng số bằng nhau; không dùng số cửa sổ làm trọng số xe.
+
+\section{Khả năng tái lập và chi phí tính toán}
+Run manifest lưu schema version, config, phiên bản Python/thư viện, thiết bị và hash mã nguồn. Data manifest lưu đường dẫn tương đối, kích thước và SHA-256 toàn file. Mỗi checkpoint có số chiều, window size và ngưỡng; mỗi file dự đoán giữ window index, nhãn, score và timestamp đầu/cuối. Run mới không được ghi đè vào thư mục đã có kết quả.
+
+Attention có chi phí phụ thuộc bậc hai theo $W$, còn thống kê cửa sổ và cập nhật history tuyến tính theo số frame. Đo runtime cần bao gồm parser, feature extraction, inference và chờ đủ cửa sổ; đo riêng GPU batch throughput không tương đương độ trễ online. Bản hiện tại không khẳng định thông lượng 40.000 frame/s hoặc triển khai đạt chuẩn nhúng. Các phép đo đó chỉ được thêm khi có script, thiết bị, batch, warmup và số lần đo được ghi rõ.
+Manifest cuối lưu hash checkpoint, metadata, bảng số và file dự đoán. Bộ tổng hợp từ chối run chưa hoàn tất, đầu ra bị đổi, mã/giao thức khác hoặc ô set--seed--model lặp/thiếu trong run. Báo cáo độ phủ phân biệt một run hoàn tất với đủ ma trận nghiên cứu. Lệnh \code{run_study.py} kiểm tra và bỏ qua các đơn vị hoàn tất tương thích; lần bị ngắt được giữ và chạy lại trong thư mục attempt mới, không tiếp tục giả định từ epoch dở dang.
+
+Script \code{benchmark_runtime.py} đo một cửa sổ mỗi bước sau warmup trên tiền tố capture được công bố. Thời gian gồm đọc CSV, bộ trích xuất dùng chung tạo cả raw và structural, chuyển dữ liệu và inference; báo median/p95 cùng số lần lặp. Khoảng timestamp đầu/cuối cửa sổ được báo riêng như thời gian thu nhận. Phép đo này không phải độ trễ phát hiện theo sự kiện, không bao gồm hàng đợi triển khai và không chứng nhận đáp ứng thời gian thực trên ECU.
+
+% BEGIN COMPARISON METHOD
+\section{Phép so sánh thực thi trên CTT: nội dung và thứ tự file}\label{sec:comparison-protocol}
+\textbf{Giao thức đang thực thi là \code{ctt-content-order-comparison-v1}.}
+Thiết kế v2.1 có thời gian trong các mục trước là đặc tả tham chiếu; không phải lược đồ của ma trận năm mô hình này. Quét toàn bộ 236 file CTT cho thấy 193.240.845 khung dữ liệu, 3.019.271 cửa sổ W64 hoàn chỉnh và 12.527 lần timestamp giảm trong 100 file. Số cửa sổ trên là toàn bộ kho dữ liệu, bao gồm cả vai trò huấn luyện, validation và kiểm thử; không phải mẫu số test của mỗi mô hình. Chênh lệch 236 so với tổng số dòng 193.241.081 là một dòng tiêu đề mỗi file. Số dòng và số khung dữ liệu không được dùng thay thế nhau.
+
+Cache giữ nguyên ID, DLC, payload, nhãn, timestamp và thứ tự dòng; không sắp xếp lại, xóa trùng hay dựng thời gian. Phép so bỏ raw index 28 và structural index 26--27 theo chỉ số bắt đầu từ 0: raw còn 28 chiều và structural còn 30 chiều. Các đặc trưng lịch sử được tính theo thứ tự file, không diễn giải thành chu kỳ vật lý. Nhánh timed vẫn bị chặn cho tới khi nguồn timestamp được xác minh. Hash manifest cache là \code{03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29}.
+
+Ma trận gồm bốn set, seed 42/43/44 và năm phương pháp: tổng 60 đơn vị IDS, mỗi đơn vị đánh giá A--D. Pretrain và fine-tune của CANBERT+ là hai giai đoạn trong một đơn vị, không phải hai cell độc lập. W64 không chồng lặp và không nối file. Reservoir lấy tối đa 1.000 cửa sổ mỗi lớp mỗi file trên toàn bộ nhóm huấn luyện nguồn, sampling seed 20261103. Các phương pháp nhận cùng chỉ mục mẫu nguồn. Validation tách theo nhóm hậu tố recording-round; vocabulary, TF-IDF và mọi tham số học chỉ dùng nguồn.
+
+\subsection{Đối thủ, supervision và thay đổi so với công bố}
+Raw và Structural Transformer dùng cùng kiến trúc bộ mã hóa, mẫu nguồn, CE/AdamW/Cosine, 10 epoch, batch 128 và learning rate 0,001; khác biệt chính là biểu diễn 28/30 chiều. Chênh lệch này kiểm tra gói biểu diễn, chưa tách được ảnh hưởng bỏ ID khỏi từng đặc trưng cấu trúc.
+
+CANBERT+~\cite{won2026canbertplus} dùng module BERT/MLM của tác giả, hidden 768, 6 lớp và 12 head. Vocabulary chỉ từ nguồn; pretrain masked-ID 15\% trên benign nguồn trong 3 epoch, sau đó fine-tune nhãn frame 3 epoch, batch 8. Chuyển vòng lặp Lightning sang PyTorch, lấy mẫu nguồn chung, split theo nhóm, W64, epoch cố định và bảo đảm có token mask trong batch là các thay đổi được công bố ở đây. Điểm cửa sổ là điểm frame lớn nhất, không phải kết quả định vị frame.
+
+CANLP~\cite{balasubramanian2025canlp} được thích ứng thành char TF-IDF unigram, tối đa 256 bigram và ID/2048, tiếp theo Dense 128/64 với dropout 0,15 và hai lớp đầu ra. Bản PyTorch dùng Adam 0,001, batch 512, 30 epoch, nhãn frame gốc và max score/W64. TF-IDF fit trên các frame thuộc mẫu huấn luyện nguồn. Split nguồn theo nhóm, không xóa trùng, nhãn nhị phân và epoch cố định thay lựa chọn checkpoint của notebook gốc; tên báo cáo là CANLP-char-DNN adapted.
+
+CrySyS-AssocRules/W64 lấy implementation association rules trong framework~\cite{koltai2026trust}, fit chỉ benign nguồn. Độ dài/stride 64/64 thay 900/450 của implementation tham chiếu; không ghép quan hệ qua khoảng trống giữa mẫu được chọn. Giữ k-cluster mặc định 300, distance threshold 0,3 và itemset tối đa 3 khi học, 2 khi chấm. Đây là baseline được thích ứng từ framework, không phải tuyên bố tái lập nguyên trạng một phương pháp khác có tên gần giống. Các commit nguồn được ghim:
+\begin{itemize}
+\item CANBERT+: \code{4c81d9b08e6e0c17b8e70bdab518209e399f0dbe}
+\item CANLP: \code{8df8bb74a7aa9925187f4faff05d6c8b824ba5d1}
+\item CrySyS: \code{59b9f29f81b0f56f49c218cb1bd8e97552b8d22c}
+\end{itemize}
+
+Các điều kiện supervision và ngân sách tính toán khác nhau: Transformer học nhãn cửa sổ, CANBERT+ có thêm pretrain benign và nhãn frame, CANLP học nhãn frame, AssocRules chỉ học benign. Vì vậy đây là so sánh pipeline dưới giao thức dữ liệu/đánh giá chung, không phải ablation cùng ngân sách hay phép xếp hạng trực tiếp các điểm công bố gốc. Mọi bản thích ứng phải giữ tên tương ứng trong bảng.
+
+\subsection{Ngưỡng, ghép cặp, tăng tốc và giới hạn diễn giải}
+Ngưỡng được chọn từ validation nguồn để tối đa recall trong ngân sách FAR 100/100.000 cửa sổ benign nguồn. Không hiệu chỉnh bằng nhãn đích; FAR đích có thể vượt ngân sách. Báo recall cùng FAR, F1 lớp tấn công, AP và số đếm TP/FP/TN/FN. Max frame score/W64 chỉ đồng nhất đơn vị quyết định, không chứng minh nhãn supervision hoặc chi phí các phương pháp bằng nhau.
+
+Phép so chính lấy Structural trừ đối thủ trong cùng set và seed. Trung bình seed trước trong từng set, rồi trung bình ngang nhau bốn set. B và D được phân tích riêng; A và C vẫn phải báo. Bootstrap ghép cặp lấy lại toàn capture file và tính lại từ số đếm; khoảng này mô tả biến thiên có điều kiện trên các file quan sát được, không phải khoảng tin cậy cho quần thể xe. Bốn set dùng lại xe, các cửa sổ tương quan và chronology vật lý chưa xác minh là những giới hạn còn lại.
+
+Bốn phương pháp neural chạy trên RTX 5060; AssocRules chạy CPU bằng backend cache lời gọi chính xác. Backend giữ thuật toán học/score gốc, cache theo cặp ID--payload và giữ nguyên thứ tự cộng ở kiểm tra phân phối. Pilot nguồn k=2 cho score/rule/centroid trùng khớp và tăng tốc chấm khoảng 8,3 lần; đó là kiểm tra phần mềm, không phải bằng chứng cùng mức tăng tốc ở full k=300 hay cải thiện chất lượng IDS. Thời gian fit trong artifact không bao gồm toàn bộ đọc dữ liệu và đánh giá, không được đổi tên thành độ trễ online.
+
+Bốn cell GPU Set 1/seed 42 hoàn tất trước được tái sử dụng sau khi xác minh hash, môi trường và cấu hình khoa học; manifest gốc được giữ, lineage được lưu riêng. Các cell còn thiếu chạy mới. Bộ gộp từ chối pilot, thiếu/trùng cell hoặc khác dữ liệu/code/môi trường; chỉ danh sách phương pháp để chia lịch GPU/CPU được chuẩn hóa. Manifest thực thi không bị viết lại để làm giống nhau.
+% END COMPARISON METHOD
+
+% End inlined method_vi.tex
+
+% Begin inlined results_vi.tex
+\chapter{Bằng chứng, kết quả và giới hạn kiểm chứng}\label{chap:results}
+\section{Phân loại bằng chứng và cách diễn giải}
+Chương này phân biệt ba loại bằng chứng. Kiểm tra dữ liệu và kiểm thử phần mềm xác nhận những thuộc tính cụ thể của phiên bản đã sửa. Các bảng thăm dò mô tả đầu ra được lưu trước hiệu chỉnh. Kết quả mô hình theo giao thức v2.1 cần huấn luyện và đánh giá lại, hiện chưa có. Kiểm thử phần mềm thành công không chứng minh chất lượng phát hiện; điểm số cũ không thể gán cho checkpoint hay giao thức mới.
+
+Audit đi kèm chỉ ra cấu hình không nhất quán, lấy mẫu đầu file, nhãn ngoại bộ chưa đáng tin và chỉ số không xác định. Hiệu chỉnh thay đổi trạng thái lịch sử đặc trưng, lấy mẫu, chọn ngưỡng và đánh giá. Vì vậy không được trộn số liệu cũ và mới thành trung bình, khoảng tin cậy hoặc kết luận cải thiện. Các file gốc được lưu trữ để bảo toàn nguồn gốc.
+
+% BEGIN COMPARISON RESULTS
+\section{Kết quả xác minh của ma trận năm mô hình}\label{sec:comparison-results}
+Đã xác minh 60 cell và 240 tổ hợp cell--điều kiện A--D theo Mục~\ref{sec:comparison-protocol}. Mỗi số trong bảng chính là trung bình ba seed trong từng set rồi trung bình ngang nhau bốn set; không gộp mọi cửa sổ thành trọng số xe. Ký hiệu -- là chỉ số không xác định. Dữ liệu lịch sử phía sau vẫn được tách riêng.
+\begin{longtable}{P{1.2cm}P{4.0cm}P{1.7cm}P{2.2cm}P{1.7cm}P{1.7cm}}
+\caption{Content/file-order, W64; source-calibrated; equal set weights; FAR per 100,000 benign windows}\label{tab:comparison-main}\\\toprule
+Điều kiện & Phương pháp & Recall & FAR & F1 & AP\\\midrule\endfirsthead
+\toprule
+Điều kiện & Phương pháp & Recall & FAR & F1 & AP\\\midrule\endhead
+A & Raw TF & 0.6167 & 115.77 & 0.7258 & 0.7312\\
+A & Structural TF & 0.5886 & 81.67 & 0.7072 & 0.7483\\
+A & CANBERT+ adapted & 0.3843 & 79.27 & 0.4576 & 0.5335\\
+A & CANLP-char-DNN adapted & 0.1228 & 28.37 & 0.1789 & 0.5482\\
+A & CrySyS-AssocRules/W64 & 0.0000 & 0.00 & 0.0000 & 0.3338\\
+B & Raw TF & 0.8541 & 65301.41 & 0.3000 & 0.3781\\
+B & Structural TF & 0.7383 & 52461.46 & 0.2435 & 0.5554\\
+B & CANBERT+ adapted & 0.6395 & 64843.85 & 0.0593 & 0.0970\\
+B & CANLP-char-DNN adapted & 0.2854 & 29695.88 & 0.0329 & 0.0542\\
+B & CrySyS-AssocRules/W64 & 0.0000 & 0.00 & 0.0000 & 0.0591\\
+C & Raw TF & 0.2101 & 91.92 & 0.2314 & 0.2661\\
+C & Structural TF & 0.2230 & 75.82 & 0.2600 & 0.2928\\
+C & CANBERT+ adapted & 0.1037 & 62.54 & 0.1461 & 0.2218\\
+C & CANLP-char-DNN adapted & 0.0020 & 405.49 & 0.0038 & 0.2373\\
+C & CrySyS-AssocRules/W64 & 0.0000 & 0.00 & 0.0000 & 0.1732\\
+D & Raw TF & 0.6614 & 67982.89 & 0.1213 & 0.1648\\
+D & Structural TF & 0.6445 & 54643.37 & 0.2069 & 0.3357\\
+D & CANBERT+ adapted & 0.5549 & 54513.45 & 0.0644 & 0.1311\\
+D & CANLP-char-DNN adapted & 0.2491 & 25452.19 & 0.0119 & 0.0901\\
+D & CrySyS-AssocRules/W64 & 0.0000 & 0.00 & 0.0000 & 0.0912\\
+\bottomrule\end{longtable}
+\begin{longtable}{P{2.0cm}P{1.2cm}P{2.7cm}P{2.7cm}P{2.7cm}}
+\caption{Test-window denominators shared by five methods and three seeds}\label{tab:comparison-counts}\\\toprule
+Set & Cond. & Attack & Benign & Total\\\midrule\endfirsthead
+\toprule
+Set & Cond. & Attack & Benign & Total\\\midrule\endhead
+set\_01 & A & 2987 & 86114 & 89101\\
+set\_01 & B & 8430 & 92315 & 100745\\
+set\_01 & C & 8636 & 126284 & 134920\\
+set\_01 & D & 2088 & 204476 & 206564\\
+set\_02 & A & 2088 & 204476 & 206564\\
+set\_02 & B & 2578 & 129375 & 131953\\
+set\_02 & C & 1359 & 188481 & 189840\\
+set\_02 & D & 1104 & 73734 & 74838\\
+set\_03 & A & 9775 & 124217 & 133992\\
+set\_03 & B & 8834 & 98259 & 107093\\
+set\_03 & C & 6998 & 140620 & 147618\\
+set\_03 & D & 25140 & 82604 & 107744\\
+set\_04 & A & 25140 & 82604 & 107744\\
+set\_04 & B & 13782 & 258213 & 271995\\
+set\_04 & C & 8834 & 98259 & 107093\\
+set\_04 & D & 13615 & 114249 & 127864\\
+\bottomrule\end{longtable}
+\begin{longtable}{P{1.2cm}P{4.0cm}P{1.7cm}P{2.2cm}P{1.7cm}P{1.7cm}}
+\caption{Structural minus opponent; equal set weights; FAR per 100,000 benign windows}\label{tab:comparison-paired}\\\toprule
+Điều kiện & Phương pháp & $\Delta R$ & $\Delta$ FAR & $\Delta$ F1 & $\Delta$ AP\\\midrule\endfirsthead
+\toprule
+Điều kiện & Phương pháp & $\Delta R$ & $\Delta$ FAR & $\Delta$ F1 & $\Delta$ AP\\\midrule\endhead
+B & Raw TF & -0.1159 & -12839.95 & -0.0565 & 0.1774\\
+B & CANBERT+ adapted & 0.0988 & -12382.39 & 0.1842 & 0.4584\\
+B & CANLP-char-DNN adapted & 0.4529 & 22765.57 & 0.2106 & 0.5012\\
+B & CrySyS-AssocRules/W64 & 0.7383 & 52461.46 & 0.2435 & 0.4964\\
+D & Raw TF & -0.0169 & -13339.51 & 0.0856 & 0.1709\\
+D & CANBERT+ adapted & 0.0896 & 129.92 & 0.1425 & 0.2046\\
+D & CANLP-char-DNN adapted & 0.3953 & 29191.18 & 0.1950 & 0.2456\\
+D & CrySyS-AssocRules/W64 & 0.6445 & 54643.37 & 0.2069 & 0.2445\\
+\bottomrule\end{longtable}
+\subsection{Diễn giải phép so chính và đánh đổi}
+Điều kiện B: Structural trừ Raw có chênh lệch recall -0.1159, FAR -12839.95 trên 100.000, F1 -0.0565 và AP 0.1774; recall dương ở 1/4 set sau trung bình seed. Kết quả không ủng hộ giả thuyết tăng recall trung bình ở điều kiện này. 
+
+Điều kiện D: Structural trừ Raw có chênh lệch recall -0.0169, FAR -13339.51 trên 100.000, F1 0.0856 và AP 0.1709; recall dương ở 1/4 set sau trung bình seed. Kết quả không ủng hộ giả thuyết tăng recall trung bình ở điều kiện này. 
+
+Các đối thủ trong Bảng~\ref{tab:comparison-paired} được giữ nguyên kể cả khi tốt hơn Structural. Dấu dương của FAR là nhiều báo động giả hơn; dấu dương của recall/F1/AP là tăng chỉ số tương ứng. Không quy mọi chênh lệch cho tính độc lập xe khi supervision, pretrain và kiến trúc khác nhau.
+FAR đích của Structural ở B là 52.46\% và ở D là 54.64\%, trong khi ngân sách validation nguồn chỉ 0,1\%. Đây là thất bại chuyển giao điểm vận hành: giảm FAR so với Raw vẫn chưa tạo ra mức báo động giả phù hợp triển khai. Giả thuyết chính tăng recall ở B không được ủng hộ nếu chênh lệch B không dương. AP của Structural/Raw là 0.5554/0.3781 ở B và 0.3357/0.1648 ở D. AP tăng phản ánh chất lượng xếp hạng tốt hơn trong phép so này, nhưng là chỉ số bổ sung và không thay thế tiêu chí recall tại ngưỡng nguồn đã chọn. F1 ở từng điều kiện phải được giữ riêng, không chọn lại chỉ số chính sau khi xem test.
+
+AssocRules có recall và FAR bằng 0 ở cả 48 tổ hợp set--seed--điều kiện. Cả 12 ngưỡng nguồn đều bằng \code{1.0000000000000002}, lớn hơn miền score [0,1], nên operating point này dự đoán toàn bộ là bình thường. FAR bằng 0 vì vậy không phải bằng chứng phát hiện tốt; đây là điểm vận hành suy biến dưới ngân sách nguồn và bản thích ứng W64 hiện tại. AP vẫn đo xếp hạng trước ngưỡng. Kết quả này không chứng minh thuật toán gốc ở W900/stride450 thất bại; cần một nghiên cứu độ nhạy thiết kế riêng và không đổi ngưỡng bằng nhãn test để làm đẹp bảng.
+
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figs/comparison_v1_Recall.png}
+\caption{Content/file-order, W64: Recall; source-calibrated; equal set weights.}\label{fig:comparison-Recall}\end{figure}
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figs/comparison_v1_FAR_per_100k.png}
+\caption{Content/file-order, W64: FAR\_per\_100k; source-calibrated; equal set weights.}\label{fig:comparison-FAR_per_100k}\end{figure}
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figs/comparison_v1_Attack_F1.png}
+\caption{Content/file-order, W64: Attack\_F1; source-calibrated; equal set weights.}\label{fig:comparison-Attack_F1}\end{figure}
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figs/comparison_v1_AP.png}
+\caption{Content/file-order, W64: AP; source-calibrated; equal set weights.}\label{fig:comparison-AP}\end{figure}
+\FloatBarrier
+\subsection{Biến thiên, cơ chế thất bại và chi phí fit}
+\begin{longtable}{P{1.6cm}P{1.2cm}P{4.0cm}P{3.5cm}P{2.2cm}}
+\caption{B/D by set; recall mean and sample SD across three seeds; FAR per 100,000}\label{tab:comparison-sets}\\\toprule
+Set & Cond. & Method & Recall & FAR\\\midrule\endfirsthead
+\toprule
+Set & Cond. & Method & Recall & FAR\\\midrule\endhead
+set\_01 & B & Raw TF & 0.8165 $\pm$ 0.1960 & 168.99\\
+set\_01 & B & Structural TF & 0.4950 $\pm$ 0.3875 & 32.14\\
+set\_01 & B & CANBERT+ adapted & 0.5730 $\pm$ 0.5111 & 61471.41\\
+set\_01 & B & CANLP-char-DNN adapted & 0.1645 $\pm$ 0.0329 & 21741.86\\
+set\_01 & B & CrySyS-AssocRules/W64 & 0.0000 $\pm$ 0.0000 & 0.00\\
+set\_01 & D & Raw TF & 0.0714 $\pm$ 0.1170 & 10209.35\\
+set\_01 & D & Structural TF & 0.0005 $\pm$ 0.0008 & 77.43\\
+set\_01 & D & CANBERT+ adapted & 0.2344 $\pm$ 0.3023 & 20026.80\\
+set\_01 & D & CANLP-char-DNN adapted & 0.0540 $\pm$ 0.0078 & 4625.64\\
+set\_01 & D & CrySyS-AssocRules/W64 & 0.0000 $\pm$ 0.0000 & 0.00\\
+set\_02 & B & Raw TF & 1.0000 $\pm$ 0.0000 & 100000.00\\
+set\_02 & B & Structural TF & 0.9663 $\pm$ 0.0366 & 85422.22\\
+set\_02 & B & CANBERT+ adapted & 0.9984 $\pm$ 0.0024 & 99619.97\\
+set\_02 & B & CANLP-char-DNN adapted & 0.9772 $\pm$ 0.0059 & 97041.67\\
+set\_02 & B & CrySyS-AssocRules/W64 & 0.0000 $\pm$ 0.0000 & 0.00\\
+set\_02 & D & Raw TF & 1.0000 $\pm$ 0.0000 & 100000.00\\
+set\_02 & D & Structural TF & 0.8478 $\pm$ 0.1843 & 84374.46\\
+set\_02 & D & CANBERT+ adapted & 0.9943 $\pm$ 0.0084 & 99498.65\\
+set\_02 & D & CANLP-char-DNN adapted & 0.9426 $\pm$ 0.0055 & 97183.12\\
+set\_02 & D & CrySyS-AssocRules/W64 & 0.0000 $\pm$ 0.0000 & 0.00\\
+set\_03 & B & Raw TF & 0.6001 $\pm$ 0.3550 & 61036.65\\
+set\_03 & B & Structural TF & 0.9741 $\pm$ 0.0290 & 86686.55\\
+set\_03 & B & CANBERT+ adapted & 0.0027 $\pm$ 0.0024 & 35.28\\
+set\_03 & B & CANLP-char-DNN adapted & 0.0000 $\pm$ 0.0000 & 0.00\\
+set\_03 & B & CrySyS-AssocRules/W64 & 0.0000 $\pm$ 0.0000 & 0.00\\
+set\_03 & D & Raw TF & 0.5744 $\pm$ 0.4664 & 61722.19\\
+set\_03 & D & Structural TF & 0.9469 $\pm$ 0.0524 & 91180.01\\
+set\_03 & D & CANBERT+ adapted & 0.0004 $\pm$ 0.0006 & 43.18\\
+set\_03 & D & CANLP-char-DNN adapted & 0.0000 $\pm$ 0.0000 & 0.00\\
+set\_03 & D & CrySyS-AssocRules/W64 & 0.0000 $\pm$ 0.0000 & 0.00\\
+set\_04 & B & Raw TF & 1.0000 $\pm$ 0.0000 & 100000.00\\
+set\_04 & B & Structural TF & 0.5179 $\pm$ 0.2763 & 37704.92\\
+set\_04 & B & CANBERT+ adapted & 0.9838 $\pm$ 0.0276 & 98248.73\\
+set\_04 & B & CANLP-char-DNN adapted & 0.0000 $\pm$ 0.0000 & 0.00\\
+set\_04 & B & CrySyS-AssocRules/W64 & 0.0000 $\pm$ 0.0000 & 0.00\\
+set\_04 & D & Raw TF & 1.0000 $\pm$ 0.0000 & 100000.00\\
+set\_04 & D & Structural TF & 0.7827 $\pm$ 0.0870 & 42941.59\\
+set\_04 & D & CANBERT+ adapted & 0.9906 $\pm$ 0.0163 & 98485.18\\
+set\_04 & D & CANLP-char-DNN adapted & 0.0000 $\pm$ 0.0000 & 0.00\\
+set\_04 & D & CrySyS-AssocRules/W64 & 0.0000 $\pm$ 0.0000 & 0.00\\
+\bottomrule\end{longtable}
+\begin{longtable}{P{1.6cm}P{1.1cm}P{1.2cm}P{1.8cm}P{3.7cm}P{2.9cm}}
+\caption{Structural minus Raw: conditional whole-file recall bootstrap, 95 percent}\label{tab:comparison-ci}\\\toprule
+Set & Seed & Cond. & $\Delta R$ & Interval & Files; draws\\\midrule\endfirsthead
+\toprule
+Set & Seed & Cond. & $\Delta R$ & Interval & Files; draws\\\midrule\endhead
+set\_01 & 42 & B & -0.8782 & [-0.9602, -0.0012] & 8; 1000/1000\\
+set\_01 & 42 & D & -0.2064 & [-0.3391, -0.1134] & 12; 1000/1000\\
+set\_01 & 43 & B & 0.1820 & [0.0000, 0.1990] & 8; 1000/1000\\
+set\_01 & 43 & D & -0.0005 & [-0.0055, 0.0029] & 12; 1000/1000\\
+set\_01 & 44 & B & -0.2684 & [-0.2936, 0.0000] & 8; 1000/1000\\
+set\_01 & 44 & D & -0.0057 & [-0.0171, 0.0000] & 12; 1000/1000\\
+set\_02 & 42 & B & -0.0019 & [-0.0042, 0.0000] & 12; 1000/1000\\
+set\_02 & 42 & D & -0.0181 & [-0.0541, -0.0046] & 8; 1000/1000\\
+set\_02 & 43 & B & -0.0737 & [-0.1417, -0.0065] & 12; 1000/1000\\
+set\_02 & 43 & D & -0.3623 & [-0.6813, -0.1224] & 8; 1000/1000\\
+set\_02 & 44 & B & -0.0256 & [-0.0487, -0.0027] & 12; 1000/1000\\
+set\_02 & 44 & D & -0.0761 & [-0.1335, -0.0217] & 8; 1000/1000\\
+set\_03 & 42 & B & 0.1390 & [0.0407, 0.3676] & 10; 1000/1000\\
+set\_03 & 42 & D & 0.1164 & [0.0700, 0.1790] & 14; 1000/1000\\
+set\_03 & 43 & B & 0.1993 & [-0.0147, 0.3589] & 10; 1000/1000\\
+set\_03 & 43 & D & 0.0936 & [-0.0181, 0.1775] & 14; 1000/1000\\
+set\_03 & 44 & B & 0.7837 & [0.4389, 0.9840] & 10; 1000/1000\\
+set\_03 & 44 & D & 0.9076 & [0.8079, 0.9383] & 14; 1000/1000\\
+set\_04 & 42 & B & -0.2963 & [-0.3695, -0.0491] & 14; 1000/1000\\
+set\_04 & 42 & D & -0.1661 & [-0.4748, -0.0452] & 10; 1000/1000\\
+set\_04 & 43 & B & -0.3505 & [-0.4766, -0.0907] & 14; 1000/1000\\
+set\_04 & 43 & D & -0.1679 & [-0.4542, -0.0541] & 10; 1000/1000\\
+set\_04 & 44 & B & -0.7996 & [-0.9750, -0.1600] & 14; 1000/1000\\
+set\_04 & 44 & D & -0.3177 & [-0.7372, -0.1051] & 10; 1000/1000\\
+\bottomrule\end{longtable}
+\begin{longtable}{P{1.2cm}P{7.0cm}P{1.8cm}P{2.2cm}}
+\caption{Structural: eight lowest mean-recall B/D captures (descriptive); FAR per 100,000}\label{tab:comparison-failures}\\\toprule
+Cond. & Set/capture & Recall & FAR\\\midrule\endfirsthead
+\toprule
+Cond. & Set/capture & Recall & FAR\\\midrule\endhead
+B & set\_01/force-neutral-4.csv & 0.0000 & 20.78\\
+B & set\_01/force-neutral-3.csv & 0.0000 & 38.15\\
+B & set\_01/rpm-4.csv & 0.0000 & 36.44\\
+B & set\_01/rpm-3.csv & 0.0000 & 30.61\\
+B & set\_01/standstill-3.csv & 0.0000 & 24.16\\
+B & set\_01/standstill-4.csv & 0.0000 & 33.30\\
+D & set\_01/speed-3.csv & 0.0000 & 130.25\\
+D & set\_01/speed-4.csv & 0.0000 & 7.88\\
+\bottomrule\end{longtable}
+\begin{longtable}{P{6.0cm}P{6.0cm}}
+\caption{Recorded fit seconds: median [min, max] across 12 cells}\label{tab:comparison-cost}\\\toprule
+Method & Fit seconds\\\midrule\endfirsthead
+\toprule
+Method & Fit seconds\\\midrule\endhead
+Raw TF & 11.36 [6.84, 35.03]\\
+Structural TF & 7.83 [6.51, 11.16]\\
+CANBERT+ adapted & 421.37 [290.72, 508.61]\\
+CANLP-char-DNN adapted & 88.48 [69.64, 170.41]\\
+CrySyS-AssocRules/W64 & 66.52 [51.05, 85.52]\\
+\bottomrule\end{longtable}
+Thời gian trên chỉ đo đoạn fit được script ghi, trong môi trường có các job đồng thời; không phải benchmark thông lượng được cô lập. Khoảng bootstrap từng set/seed/capture nằm trong \code{paired_capture_bootstrap.json}; số đếm, hai operating point, per-file metrics và trường hợp không xác định nằm trong \code{all_metrics.csv}. Các khoảng bootstrap không được trung bình rồi gọi là CI đa xe. Kết quả bổ sung hậu nghiệm cho các phép đo này nằm tại Mục~\ref{sec:completion}; kết luận được giới hạn theo dữ liệu và giao thức tại đó.
+% END COMPARISON RESULTS
+
+\section{Bằng chứng kiểm tra chất lượng dữ liệu}
+\subsection{Khôi phục khoảng tấn công Automotive v2}
+Bốn bản ghi Opel/Renault cục bộ đã được quét toàn bộ. Nhãn DoS sử dụng timestamp đầu và cuối của khung tin chèn được tài liệu dữ liệu công bố, kết hợp dấu hiệu ID bằng không và payload gồm tám byte không. Kiểm tra xác nhận log phù hợp với quy tắc cụ thể này; quy tắc không được suy rộng sang cơ chế tấn công khác.
+
+\begin{table}[htbp]\centering\small
+\caption{Số đếm toàn file sau khôi phục nhãn; $W=64$. Loại phần cửa sổ cuối không đủ độ dài. Đây là số đếm dữ liệu, không phải kết quả mô hình.}\label{tab:quality}
+\begin{tabular}{lrrrr}\toprule
+Bản ghi & Frame & Frame tấn công & Window lành & Window tấn công\\\midrule
+
+% Begin inlined ../../code/results/latex_tables/quality_rows.tex
+Opel benign & 806,999 & 0 & 12,609 & 0 \\
+Opel DoS & 827,555 & 40,015 & 12,304 & 626 \\
+Renault benign & 115,971 & 0 & 1,812 & 0 \\
+Renault DoS & 141,927 & 40,001 & 1,591 & 626 \\
+\bottomrule
+% End inlined ../../code/results/latex_tables/quality_rows.tex
+\end{tabular}
+\end{table}
+
+Khoảng Opel chứa 40.015 frame trong file cục bộ, ít hơn một frame so với con số 40.016 trong README. Khóa luận giữ số đếm quan sát được, không thay đổi để khớp lời mô tả. Mã băm file và hai đầu mút timestamp được lưu trong báo cáo chất lượng đi kèm. Trước so sánh cuối cùng, cần đối chiếu khác biệt này với đúng phiên bản dữ liệu đã tải.
+
+Các log tấn công vẫn chứa nhiều lưu lượng lành ngoài khoảng tấn công. Gán mọi frame trong file có tên tấn công thành dương tính sẽ làm sai cả tỷ lệ lớp lẫn mẫu số báo động giả. Ngoài ra, bản ghi tấn công chỉnh sửa dùng chung lưu lượng nền với bản ghi kiểm tra bình thường. Kết quả được báo cáo riêng theo bản ghi; không coi chúng là các lần lặp độc lập khi ước lượng độ bất định.
+
+\subsection{Dữ liệu ngoại bộ thiếu thời gian hoặc thiếu file}
+Các CSV hexadecimal CICIoV2024 cục bộ không cung cấp timestamp đo được. Giao thức v2.1 giữ nguyên sự thiếu vắng này và chỉ đưa chúng vào tầng nội dung. Các kết luận chuyển giao dựa trên thời gian được rút lại. Thứ tự dòng vẫn là giới hạn đối với đặc trưng cấu trúc cục bộ ngay cả khi bỏ thời gian.
+
+File SPEED cục bộ còn có mâu thuẫn giữa các bản xuất. Trong 24.951 dòng, cột byte \code{DATA_6} chứa \code{2.0} hoặc \code{0.0}. Chuẩn hóa định dạng một chữ số không mất giá trị cho thấy 4.989 byte khác bản decimal khi đối chiếu cùng vị trí dòng; ID, nhãn và bảy byte còn lại khớp. Không mặc định bản nào là chuẩn đúng. File hex SPEED được tạm loại đến khi xác minh phiên bản chuẩn từ nơi phát hành; mã băm và số đếm khác biệt được lưu riêng. Năm file hexadecimal còn lại vẫn đủ điều kiện để kiểm tra toàn file ở tầng nội dung.
+
+Kiểm tra đệ quy lại thư mục CAN-MIRGU cục bộ xác định có log tấn công trong các thư mục con Real, Masquerade và Suspension. Danh mục trước đó chỉ đọc một cấp nên chưa đầy đủ. Các log này đã được đưa vào quy tắc tìm đệ quy; vẫn cần preflight toàn file và đánh giá mô hình. Log lành riêng lẻ chỉ hỗ trợ báo động giả, không hỗ trợ recall tấn công. File thiếu hoặc bị vô hiệu hóa được ghi rõ, không diễn giải thành kiểm tra thành công.
+
+Các file OTIDS đã chuyển đổi chưa có đủ nguồn gốc nhãn để đưa vào thực nghiệm xác nhận. Cụ thể, 1.024.000 dòng đầu của bản mixed đã xáo trộn chứa 512.363 frame lành nhưng cả 16.000 cửa sổ 64 frame đều dương tính. Cùng phần dữ liệu này có 511.946 chênh lệch timestamp âm. Điều đó cho thấy cách dựng chuỗi không phù hợp, không chứng minh bài toán OTIDS gốc không thể giải quyết. Các bản chuyển đổi và xáo trộn tiếp tục bị vô hiệu hóa cho đến khi có dữ liệu theo thời gian và nhãn frame được xác minh.
+
+\section{Số liệu thăm dò đã lưu}
+\subsection{Thực nghiệm tập trung trên Set 1}
+Bảng~\ref{tab:historical} giữ nguyên so sánh đã lưu và không nâng mức độ bằng chứng của nó. Bảng hữu ích để xác định giả thuyết và mâu thuẫn, nhưng không xác nhận phương pháp sau hiệu chỉnh. AP tương ứng trường cũ tên PR\_AUC; lần chạy gốc thiếu bộ thông tin nguồn gốc mà giao thức mới yêu cầu.
+
+\begin{table}[htbp]\centering\small
+\caption{Đầu ra Set 1 lịch sử từ \code{phase3_method_comparison.csv}; không phải kết quả v2.1. FAR tính trên 100.000 cửa sổ lành.}\label{tab:historical}
+\begin{tabular}{clrrrrr}\toprule
+ĐK & Mô hình & F1 & Precision & Recall & AP & FAR\\\midrule
+
+% Begin inlined ../../code/results/latex_tables/historical_rows.tex
+A & Raw TF & 0.7649 & 1.0000 & 0.6194 & 0.8146 & 0.00 \\
+A & Structural TF & 0.9035 & 1.0000 & 0.8239 & 0.9587 & 0.00 \\
+A & Structural XGB & 0.7812 & 0.9990 & 0.6414 & 0.8379 & 2.32 \\
+B & Raw TF & 0.0002 & 1.0000 & 0.0001 & 0.9505 & 0.00 \\
+B & Structural TF & 0.9703 & 0.9997 & 0.9426 & 0.9765 & 2.17 \\
+B & Structural XGB & 0.8902 & 1.0000 & 0.8021 & 0.9594 & 0.00 \\
+C & Raw TF & 0.0000 & 0.0000 & 0.0000 & 0.0643 & 0.00 \\
+C & Structural TF & 0.7094 & 1.0000 & 0.5497 & 0.8807 & 0.00 \\
+C & Structural XGB & 0.0078 & 0.9444 & 0.0039 & 0.1814 & 1.58 \\
+D & Raw TF & 0.0000 & 0.0000 & 0.0000 & 0.0115 & 0.00 \\
+D & Structural TF & 0.2332 & 0.9892 & 0.1322 & 0.6900 & 1.47 \\
+D & Structural XGB & 0.0009 & 0.0169 & 0.0005 & 0.2345 & 28.37 \\
+\bottomrule
+% End inlined ../../code/results/latex_tables/historical_rows.tex
+\end{tabular}
+\end{table}
+
+Kết quả B lịch sử của mô hình thô có AP 0,9505 nhưng F1 chỉ 0,0002. Mâu thuẫn này phù hợp với khả năng mô hình xếp hạng còn tốt nhưng ngưỡng quyết định không phù hợp. Nó không tự chứng minh biểu diễn sụp đổ hoặc mô hình ghi nhớ ID. Vì vậy giao thức v2.1 so sánh cả ngưỡng mặc định và ngưỡng hiệu chỉnh từ nguồn cho mọi mô hình. Không được dùng nhãn đích để chọn ngưỡng tốt hơn sau khi xem B.
+
+Kết quả D lịch sử của mô hình cấu trúc có recall 0,1322 và F1 0,2332. Ngay trong lần chạy thăm dò này, các số liệu không hỗ trợ kết luận phát hiện mạnh tấn công lạ trên xe lạ. Phần thảo luận phải giữ thất bại này bên cạnh kết quả B tốt hơn.
+
+\subsection{Mâu thuẫn giữa các lần chạy đã lưu}
+
+\begin{table}[htbp]\centering
+\caption{F1 lịch sử của Structural Transformer trên Set 1. Khác biệt lấy mẫu và huấn luyện không cho phép gộp kết quả.}\label{tab:disagreement}
+\begin{tabular}{lrrrr}\toprule
+Thực nghiệm đã lưu & A & B & C & D\\\midrule
+Phase 3 tập trung & 0.9035 & 0.9703 & 0.7094 & 0.2332\\
+Quét nhiều bộ dữ liệu & 0.7741 & 0.9635 & 0.0976 & 0.0010\\\bottomrule
+\end{tabular}
+\end{table}
+
+Khác biệt ở C và D quá lớn để bỏ qua. Các đầu ra đến từ giới hạn lấy mẫu và lần huấn luyện khác nhau, không có manifest checkpoint chung đầy đủ. Không thể diễn giải chúng thành nghiên cứu seed được kiểm soát. Bảng quét còn ghi nhận thất bại trên những set khác; chỉ chọn bảng Set 1 tập trung sẽ che khuất các giới hạn này.
+
+Cắt đầu file đặc biệt nguy hiểm với tấn công thưa. Phần đầu 102.400 dòng mỗi file huấn luyện Set 3 được audit chỉ có một frame tấn công, tạo một cửa sổ tấn công. Bộ phân loại học từ phần dữ liệu này không hỗ trợ so sánh cân bằng chất lượng biểu diễn. Lấy mẫu ưu tiên ngẫu nhiên trên toàn file sửa vấn đề thiết kế; việc nó cải thiện điểm số hay không vẫn phải kiểm chứng.
+
+\subsection{Các diễn giải ngoại bộ được rút lại}
+Đánh giá OTIDS lành lịch sử báo 38.880 báo động giả trên 100.000 cửa sổ lành đối với Structural Transformer. Diễn giải trước đây về không có báo động giả trên toàn dữ liệu ngoại bộ mâu thuẫn ngay với đầu ra đã lưu. File chỉ có cửa sổ tấn công không xác định được FAR; dữ liệu chỉ lành không xác định được recall tấn công hoặc AP.
+
+Một số trường AP lịch sử được thay bằng F1 khi thiếu thông tin cần thiết. Chúng không phải phép đo AP hợp lệ và bị loại khỏi các bảng so sánh xác nhận. Tương tự, rút lại kết quả Automotive v2 dùng nhãn tấn công toàn file và CICIoV dùng timestamp giả. Các hiệu chỉnh thu hẹp kết luận; không thay số liệu sai bằng mức cải thiện giả định.
+
+\section{So sánh công bố và kiểm tra công thức}
+Ma trận nhầm lẫn theo frame trong công bố và đầu ra theo window của khóa luận có đơn vị quyết định khác nhau. Nhân số frame hoặc gán dự đoán cửa sổ cho mọi frame không tái tạo bài toán gốc. Xếp hạng trực tiếp cần thống nhất dữ liệu, nhãn, cửa sổ, ngân sách huấn luyện và quy tắc ngưỡng.
+
+Một mâu thuẫn số học khác xuất hiện trong dòng so sánh cũ: $TP=1$, $FN=8.429$, $TN=92.315$ và $FP=0$ cho accuracy xấp xỉ 0,9163, F1 tấn công xấp xỉ 0,000237 và weighted F1 xấp xỉ 0,8763. Chúng không tạo ra ``reported F1'' bằng 0,9550 từng được hiển thị. Trường không được hỗ trợ và hình so sánh trực tiếp từ đó được ngừng sử dụng.
+
+Năm dòng công bố đã được đối chiếu với dataset 1, subset 2 trong phụ lục arXiv v1~\cite{lampe2023appendix}. Bảng~\ref{tab:published} trình bày cột nguồn và hai chỉ số tính lại từ ma trận nhầm lẫn. Sau làm tròn, F1 nguồn khớp weighted F1 ở bốn dòng nhưng khớp F1 tấn công ở Linear SVM; quan sát số học này chưa chứng minh lựa chọn triển khai của tác giả. Phiên bản preprint cụ thể được trích riêng vì chưa giả định nó tương đương phụ lục bản tạp chí. Không so trực tiếp với điểm theo cửa sổ của khóa luận.
+
+\begin{table}[htbp]\centering\small
+\caption{Kiểm tra số đếm công bố trong cùng bài toán theo frame: dataset 1, subset 2, arXiv v1. Hai chỉ số tính lại dùng cùng ma trận nhầm lẫn nguồn.}\label{tab:published}
+\begin{tabular}{llrrr}\toprule
+Mô hình & Bảng & F1 nguồn & F1 tấn công & Weighted F1\\\midrule
+
+% Begin inlined ../../code/results/latex_tables/published_rows.tex
+BIRCH & A.26 & 0.9620 & 0.0000 & 0.9620 \\
+MLP & A.28 & 0.9594 & 0.0546 & 0.9594 \\
+Logistic Regression & A.15 & 0.9539 & 0.0423 & 0.9539 \\
+Linear SVM & A.16 & 0.0432 & 0.0432 & 0.9554 \\
+Gradient Boosting & A.21 & 0.7739 & 0.1311 & 0.7739 \\
+\bottomrule
+% End inlined ../../code/results/latex_tables/published_rows.tex
+
+\end{tabular}\end{table}
+\FloatBarrier
+
+\section{Thực nghiệm mở rộng ngoài ma trận so sánh nội dung}
+\begin{longtable}{P{2.4cm}P{5.3cm}P{5.2cm}}
+\caption{Thực nghiệm cần để trả lời câu hỏi nghiên cứu}\label{tab:pending}\\\toprule
+Câu hỏi & Bằng chứng cần có & Trạng thái / triển khai\\\midrule\endfirsthead
+\toprule Câu hỏi & Bằng chứng cần có & Trạng thái / triển khai\\\midrule\endhead
+RQ1 & Bốn set, A--D, ba seed; số đếm, recall lớp tấn công, FAR đích, F1 và AP ở hai ngưỡng & Đã hoàn tất content/file-order; timed chờ xác minh timestamp\\
+RQ2 & Bỏ ID so với thêm cấu trúc; loại trừ theo thành phần và nhóm & Đã chạy 10 biểu diễn content; timing-only không áp dụng\\
+RQ3 & Chênh lệch ghép cặp raw/structural và probe xe/tấn công cân bằng trên encoder cố định & Đã probe 12 cặp encoder, cân bằng xe × nhãn và có đối chứng\\
+RQ4 & Mô hình Set 1 cố định trên log ngoại bộ có thời gian; mô hình tầng nội dung huấn luyện riêng & Đã kiểm thử ngoại bộ theo ledger; giữ mọi loại trừ\\
+Độ nhạy & Cửa sổ 32 và 128 với cùng phép chia nguồn & Đã chạy W32/W128, bốn set và ba seed\\
+Triển khai & Độ trễ toàn quy trình và tài nguyên phần cứng & Đã đo CPU/GPU batch một; chưa xác nhận ECU thời gian thực\\\bottomrule
+\end{longtable}
+Trạng thái content đã được cập nhật; nhánh timed cần chronology hợp lệ.
+
+Mỗi bảng cuối cùng phải chỉ rõ thư mục lần chạy, cấu hình, mã băm code/dữ liệu, set, seed, biểu diễn, độ dài cửa sổ và ngưỡng. AP và FAR phải đi cùng số mẫu dương/âm. Hình được sinh từ đầu ra hoàn tất, không nhập số thủ công. Lớp hoặc bộ dữ liệu thiếu phải được ghi rõ.
+
+\section{Quy cách phân tích kết quả xác nhận}
+Bảng RQ1 tổng hợp lần lượt chênh lệch theo seed, theo set và trung bình ngang nhau giữa các set, sau khi báo cáo độ phủ xác nhận đủ ma trận. Mỗi điều kiện báo recall, FAR, F1 và AP; không thay đổi chỉ số chính dựa trên kết quả thuận lợi. Khoảng bootstrap là mô tả theo file, còn độ lệch chuẩn ba seed mô tả khởi tạo. Không chuyển một trong hai thành khoảng tin cậy cho quần thể xe.
+
+Thiết kế timed ban đầu nêu 13 tên biến thể; nghiên cứu content kiểm tra 10 biểu diễn khác nhau vì loại timing-only và gộp các tên trùng. Trong đó hai đối chứng mới bỏ payload tuyệt đối hoặc riêng chiều 30 kiểm tra trực tiếp các nghi ngờ về dấu vân tay và mã hóa hạng. Cải thiện sau một ablation hỗ trợ ảnh hưởng của thành phần trong pipeline này, chưa xác định nguyên nhân vật lý duy nhất. RQ3 báo đồng thời probe xe/tấn công và các đối chứng; RQ4 báo từng capture với nguồn nhãn, tầng đặc trưng và mẫu số thích hợp. Dữ liệu bị loại tiếp tục xuất hiện trong danh mục loại trừ, không biến mất khỏi mô tả độ phủ.
+
+\section{Quy tắc diễn giải và đe dọa tính hợp lệ}
+So sánh chính ghép cặp trong từng set và từng ngưỡng. Chênh lệch B dương riêng lẻ chỉ hỗ trợ điều kiện chuyển giao tấn công quen tương ứng. Mục tiêu rộng hơn cần các điều kiện D và giới hạn ngoại bộ. Nếu hiệu chỉnh mô hình thô đóng khoảng cách lịch sử, thảo luận phải quy một phần khoảng cách đó cho lựa chọn ngưỡng, không khẳng định biểu diễn cấu trúc vượt trội duy nhất.
+
+Bộ phát hiện tấn công tốt hơn vẫn có thể mã hóa thông tin xe. Probe xe thấp hơn cũng có thể do biểu diễn yếu hơn. Cần đồng thời probe tấn công, probe xe, chia nhóm cân bằng và loại trừ để phân biệt các khả năng này. Chúng vẫn là quan hệ chẩn đoán, chưa phải chứng minh nhân quả hoàn chỉnh.
+
+Tính hợp lệ nội tại bị giới hạn bởi nguồn nhãn, khả năng bản ghi chồng lặp và lấy mẫu. Tính hợp lệ khái niệm bị giới hạn bởi nhãn cửa sổ: chỉ một frame tấn công cũng khiến cả cửa sổ dương tính; thay đổi kín đáo, thưa có thể rất khác chèn dày. Khả năng khái quát bị giới hạn bởi bốn cặp nguồn/đích, tấn công đặc thù bộ dữ liệu và việc chưa thử triển khai vật lý. Độ tin cậy thống kê bị giới hạn bởi số phiên lái độc lập; nhiều seed và nhiều cửa sổ không loại bỏ giới hạn này.
+% BEGIN COMPARISON POSTHOC
+\section{Thực nghiệm bổ sung sau phép so chính}\label{sec:completion}
+Các phân tích này được thiết kế sau khi đã xem kết quả chính. Chúng không phải một lần xác nhận độc lập trên test chưa tiếp xúc và không thay thế tiêu chí recall/FAR ban đầu. Có 144 fit mới và 24 baseline W64 được giữ nguyên: W64 gồm 10 biểu diễn khác nhau; W32/W128 gồm raw và structural. Payload-only trùng raw-no-ID trong nhánh nội dung; no-timing trùng structural, nên không tính thành bằng chứng độc lập. Không có thí nghiệm timing-only vì chronology chưa được xác minh.
+Mọi biến thể dùng cùng nhóm nguồn, quy tắc reservoir toàn file, seed 42/43/44, 10 epoch và ngân sách FAR validation nguồn 100/100.000. Mẫu được chọn lại cho W32/W128 vì đơn vị cửa sổ đổi; so sánh độ nhạy vì vậy bao gồm thay đổi nhãn cửa sổ, số mẫu sẵn có và độ dài chuỗi. Không so trực tiếp mẫu số giữa các W.
+Cấu hình encoder được giữ giống nhau nhưng số tham số lớp chiếu đầu vào thay đổi theo số chiều; đây không phải phép so có tổng số tham số hoàn toàn bằng nhau.
+\subsection{Ablation và độ nhạy cửa sổ}
+\begin{longtable}{P{1.1cm}P{4.2cm}P{1.6cm}P{2.2cm}P{1.6cm}P{1.6cm}}
+\caption{Content W64; equal set weights; FAR per 100,000 benign windows}\label{tab:extension-w64}\\\toprule
+Cond. & Representation & Recall & FAR & F1 & AP\\\midrule\endfirsthead
+\toprule
+Cond. & Representation & Recall & FAR & F1 & AP\\\midrule\endhead
+A & ID only & 0.7655 & 90.54 & 0.8439 & 0.8492\\
+B & ID only & 0.8622 & 68896.67 & 0.2573 & 0.3379\\
+C & ID only & 0.1978 & 93.00 & 0.2358 & 0.2736\\
+D & ID only & 0.6822 & 67788.42 & 0.1857 & 0.1914\\
+A & Raw & 0.6167 & 115.77 & 0.7258 & 0.7312\\
+B & Raw & 0.8541 & 65301.41 & 0.3000 & 0.3781\\
+C & Raw & 0.2101 & 91.92 & 0.2314 & 0.2661\\
+D & Raw & 0.6614 & 67982.89 & 0.1213 & 0.1648\\
+A & Raw without ID & 0.2533 & 100.13 & 0.3668 & 0.4139\\
+B & Raw without ID & 0.6794 & 66658.13 & 0.0875 & 0.2200\\
+C & Raw without ID & 0.0906 & 62.70 & 0.1466 & 0.2222\\
+D & Raw without ID & 0.6871 & 66679.05 & 0.1677 & 0.2175\\
+A & Raw + structural & 0.6515 & 84.74 & 0.7380 & 0.7428\\
+B & Raw + structural & 0.7604 & 53227.73 & 0.3179 & 0.4842\\
+C & Raw + structural & 0.1950 & 91.68 & 0.2296 & 0.2703\\
+D & Raw + structural & 0.5783 & 52902.70 & 0.1567 & 0.2976\\
+A & Structural & 0.5886 & 81.67 & 0.7072 & 0.7483\\
+B & Structural & 0.7383 & 52461.46 & 0.2435 & 0.5554\\
+C & Structural & 0.2230 & 75.82 & 0.2600 & 0.2928\\
+D & Structural & 0.6445 & 54643.37 & 0.2069 & 0.3357\\
+A & Structural without delta & 0.4910 & 89.84 & 0.6050 & 0.6789\\
+B & Structural without delta & 0.8306 & 58636.28 & 0.2861 & 0.4927\\
+C & Structural without delta & 0.2006 & 73.86 & 0.2363 & 0.2720\\
+D & Structural without delta & 0.6795 & 60669.40 & 0.1815 & 0.2745\\
+A & Structural without local counts/ranks & 0.4851 & 100.21 & 0.6147 & 0.6346\\
+B & Structural without local counts/ranks & 0.6870 & 65298.51 & 0.0948 & 0.2894\\
+C & Structural without local counts/ranks & 0.1955 & 99.41 & 0.2412 & 0.2795\\
+D & Structural without local counts/ranks & 0.6925 & 66400.30 & 0.1626 & 0.3053\\
+A & Structural without absolute payload & 0.6243 & 87.77 & 0.7317 & 0.7644\\
+B & Structural without absolute payload & 0.9243 & 66779.19 & 0.3160 & 0.4453\\
+C & Structural without absolute payload & 0.3328 & 101.16 & 0.4076 & 0.4730\\
+D & Structural without absolute payload & 0.7202 & 67775.85 & 0.2024 & 0.3138\\
+A & Structural without rank/W & 0.5308 & 79.90 & 0.6507 & 0.6837\\
+B & Structural without rank/W & 0.7998 & 59718.63 & 0.2425 & 0.5266\\
+C & Structural without rank/W & 0.2650 & 75.73 & 0.3247 & 0.3420\\
+D & Structural without rank/W & 0.6881 & 62056.45 & 0.1830 & 0.3446\\
+A & Structural without transitions & 0.5567 & 66.87 & 0.6784 & 0.7044\\
+B & Structural without transitions & 0.7137 & 53236.21 & 0.2220 & 0.5556\\
+C & Structural without transitions & 0.2419 & 76.67 & 0.2896 & 0.3210\\
+D & Structural without transitions & 0.6665 & 55254.24 & 0.2049 & 0.3679\\
+\bottomrule\end{longtable}
+\begin{longtable}{P{1.1cm}P{4.2cm}P{1.6cm}P{2.2cm}P{1.6cm}P{1.6cm}}
+\caption{Content W32; equal set weights; FAR per 100,000 benign windows}\label{tab:extension-w32}\\\toprule
+Cond. & Representation & Recall & FAR & F1 & AP\\\midrule\endfirsthead
+\toprule
+Cond. & Representation & Recall & FAR & F1 & AP\\\midrule\endhead
+A & Raw & 0.5516 & 107.46 & 0.6827 & 0.7057\\
+B & Raw & 0.7722 & 61820.20 & 0.2066 & 0.2974\\
+C & Raw & 0.2010 & 102.37 & 0.2263 & 0.2534\\
+D & Raw & 0.6019 & 62060.00 & 0.1258 & 0.1285\\
+A & Structural & 0.5760 & 140.93 & 0.6904 & 0.6952\\
+B & Structural & 0.7791 & 53054.55 & 0.2420 & 0.4196\\
+C & Structural & 0.2360 & 87.68 & 0.2765 & 0.2943\\
+D & Structural & 0.6342 & 55225.47 & 0.1659 & 0.2732\\
+\bottomrule\end{longtable}
+\begin{longtable}{P{1.1cm}P{4.2cm}P{1.6cm}P{2.2cm}P{1.6cm}P{1.6cm}}
+\caption{Content W128; equal set weights; FAR per 100,000 benign windows}\label{tab:extension-w128}\\\toprule
+Cond. & Representation & Recall & FAR & F1 & AP\\\midrule\endfirsthead
+\toprule
+Cond. & Representation & Recall & FAR & F1 & AP\\\midrule\endhead
+A & Raw & 0.4141 & 104.55 & 0.5186 & 0.6147\\
+B & Raw & 0.7353 & 61158.10 & 0.1954 & 0.3903\\
+C & Raw & 0.0702 & 71.78 & 0.1093 & 0.2021\\
+D & Raw & 0.5957 & 58708.86 & 0.1111 & 0.2516\\
+A & Structural & 0.6248 & 95.04 & 0.7339 & 0.7299\\
+B & Structural & 0.7481 & 54375.95 & 0.2468 & 0.4899\\
+C & Structural & 0.2213 & 68.53 & 0.2558 & 0.3073\\
+D & Structural & 0.6589 & 56877.92 & 0.1764 & 0.3097\\
+\bottomrule\end{longtable}
+Các bảng báo toàn bộ biến thể, kể cả biến thể bất lợi. Chênh lệch ablation hỗ trợ vai trò của một thành phần trong pipeline này, không chứng minh nguyên nhân vật lý hoặc tính độc lập xe. Không chọn lại mô hình thắng theo test rồi gán cho giả thuyết chính. Số đếm và từng capture nằm trong dữ liệu kèm theo.
+\subsection{Probe tuyến tính và đối chứng}
+Encoder của 4 nguồn và 3 seed được đóng băng. Probe dùng nhóm recording-round huấn luyện/giữ lại khác nhau và cân bằng mọi ô xe × nhãn tấn công; mô hình IDS không được cập nhật. Chance là 1/4 cho xe và 1/2 cho tấn công. Đối chứng constant, embedding ngẫu nhiên và hoán vị nhãn huấn luyện được giữ lại; hai đối chứng ngẫu nhiên có 5 lần lặp. Encoder đã thấy capture huấn luyện của chính nguồn mình; phép đo chỉ là khả năng giải mã tuyến tính hậu nghiệm, không chứng minh tổng quát hóa phiên lái độc lập hay độc lập thống kê.
+\begin{longtable}{P{3.3cm}P{1.6cm}P{4.7cm}P{3.1cm}}
+\caption{Mean balanced accuracy across frozen encoders; descriptive, not a vehicle-population CI}\label{tab:extension-probes}\\\toprule
+Representation & Target & Control & Balanced accuracy\\\midrule\endfirsthead
+\toprule
+Representation & Target & Control & Balanced accuracy\\\midrule\endhead
+raw & attack & constant & 0.5000\\
+raw & attack & learned & 0.6419\\
+raw & attack & permuted train labels & 0.5106\\
+raw & attack & random embedding & 0.5026\\
+raw & vehicle & constant & 0.2500\\
+raw & vehicle & learned & 0.9925\\
+raw & vehicle & permuted train labels & 0.2444\\
+raw & vehicle & random embedding & 0.2496\\
+structural & attack & constant & 0.5000\\
+structural & attack & learned & 0.7669\\
+structural & attack & permuted train labels & 0.4958\\
+structural & attack & random embedding & 0.5026\\
+structural & vehicle & constant & 0.2500\\
+structural & vehicle & learned & 0.9488\\
+structural & vehicle & permuted train labels & 0.2287\\
+structural & vehicle & random embedding & 0.2496\\
+\bottomrule\end{longtable}
+Probe xe có balanced accuracy Raw 0.9925 và Structural 0.9488, so với chance 0,25. Chênh lệch -0.0437 chỉ mô tả giảm khả năng giải mã tuyến tính; mức còn lại vẫn cao, nên không chứng minh loại bỏ thông tin xe. Probe tấn công tương ứng 0.6419/0.7669; không được đồng nhất phép giải mã nhãn với recall của IDS tại ngưỡng nguồn.
+\subsection{Kiểm thử ngoại bộ và dữ liệu bị loại}
+Đối với dữ liệu ngoại bộ, có 57 capture hoàn tất; mọi file thiếu, cách ly hoặc sai schema/nhãn được giữ trong ledger đầu ra. Mô hình nguồn Set 1 ở cả ba seed và ngưỡng nguồn được giữ nguyên. Thiếu thời gian vẫn được giữ là thiếu, không dựng timestamp; mọi kết quả theo thứ tự file và không khẳng định chronology vật lý. Automotive benign/DoS có nền dùng chung, nên không được coi là các phiên độc lập.
+\begin{longtable}{P{4.4cm}P{3.1cm}P{2.0cm}P{2.4cm}}
+\caption{External: pooled file counts within dataset/seed, then mean of three seeds; FAR per 100,000}\label{tab:extension-external}\\\toprule
+Dataset & Representation & Recall & FAR\\\midrule\endfirsthead
+\toprule
+Dataset & Representation & Recall & FAR\\\midrule\endhead
+CAN\_MIRGU\_attack & raw & 0.5848 & 59175.90\\
+CAN\_MIRGU\_attack & structural & 0.0546 & 2701.79\\
+CAN\_MIRGU\_benign & raw & -- & 60615.05\\
+CAN\_MIRGU\_benign & structural & -- & 6631.09\\
+CICIoV2024 & raw & 0.6462 & 100000.00\\
+CICIoV2024 & structural & 1.0000 & 100000.00\\
+Opel\_Astra\_DoS & raw & 1.0000 & 43850.24\\
+Opel\_Astra\_DoS & structural & 1.0000 & 31534.46\\
+Opel\_Astra\_benign & raw & -- & 43841.70\\
+Opel\_Astra\_benign & structural & -- & 30980.52\\
+Renault\_Clio\_DoS & raw & 0.9995 & 33102.87\\
+Renault\_Clio\_DoS & structural & 0.9984 & 188.56\\
+Renault\_Clio\_benign & raw & -- & 33443.71\\
+Renault\_Clio\_benign & structural & -- & 165.56\\
+\bottomrule\end{longtable}
+Capture chỉ có benign chỉ xác định FAR, không xác định recall hay AP hai lớp; dấu -- là không xác định, không phải số không. File SPEED của CICIoV và OTIDS chưa rõ nguồn nhãn/thứ tự vẫn bị loại; không sửa byte hoặc suy nhãn từ tên file.
+\subsection{Runtime theo cửa sổ trên máy thực nghiệm}
+\begin{longtable}{P{2.0cm}P{3.6cm}P{3.2cm}P{3.2cm}}
+\caption{Batch one; 20 warmup windows; 300 measured windows x 3 repetitions; milliseconds}\label{tab:extension-runtime}\\\toprule
+Device & Representation & Median ms & P95 ms\\\midrule\endfirsthead
+\toprule
+Device & Representation & Median ms & P95 ms\\\midrule\endhead
+cpu & raw & 6.098 & 7.524\\
+cpu & structural & 6.176 & 8.024\\
+cuda & raw & 7.537 & 9.523\\
+cuda & structural & 7.323 & 8.871\\
+\bottomrule\end{longtable}
+Phép đo gồm đọc CSV, kiểm tra/chuyển đổi, tạo cả hai biểu diễn nội dung và inference. Cache hệ điều hành và ứng dụng khác có thể ảnh hưởng kết quả. Không đo thời gian chờ thu đủ cửa sổ, hàng đợi, thời điểm gây hại hay deadline ECU; đây không phải chứng nhận triển khai thời gian thực.
+% END COMPARISON POSTHOC
+
+% End inlined results_vi.tex
+
+% Begin inlined conclusion_vi.tex
+\chapter{Kết luận và công việc còn lại}\label{chap:conclusion}
+\section{Kết luận được hỗ trợ trong bản chỉnh sửa}
+Khóa luận đặc tả và triển khai biểu diễn CAN cấu trúc kết hợp payload, mặt nạ hợp lệ, biến thiên payload cùng ID và quan hệ định danh cục bộ trong nhánh nội dung. Thành phần thời gian của thiết kế ban đầu không nằm trong kết quả được xác nhận. Đầu vào không chứa bit ID thô. Khi đổi tên định danh theo song ánh nhất quán cùng lịch sử, biểu diễn không thay đổi. Thuộc tính này hẹp hơn tính độc lập với danh tính xe.
+
+Audit đã xác định một số diễn giải trước đây không có đủ căn cứ: nhãn tấn công toàn file ngoại bộ làm thay đổi bài toán; timestamp giả khiến so sánh thời gian không hợp lệ; kiểm tra một lớp không xác định mọi chỉ số đã báo; và kết quả frame/window không cho phép xếp hạng trực tiếp. Triển khai sửa đổi làm rõ những trường hợp này, đồng thời giữ nguồn gốc dữ liệu, mô hình và dự đoán cần cho chạy lại.
+
+Số liệu lịch sử tạo động lực nghiên cứu; kết quả mới chỉ xác nhận phép so content/file-order ở Mục~\ref{sec:comparison-results}, không xác nhận nhánh timed v2.1. Cụ thể, khóa luận hiện không thể kết luận biểu diễn cấu trúc vượt ổn định đầu vào thô đã hiệu chỉnh, loại bỏ thông tin xe, chuyển giao đáng tin sang tấn công lạ hoặc đáp ứng triển khai thời gian thực. Những kết luận này phụ thuộc các thực nghiệm trong Bảng~\ref{tab:pending}.
+
+\section{Thứ tự hoàn thành}
+Ma trận năm mô hình, bốn set và ba seed theo content/file-order đã hoàn tất; timed v2.1 vẫn cần xác minh nguồn timestamp trước khi chạy. Báo cáo mọi ô A--D, kể cả thất bại và trường hợp thiếu lớp. Sau đó chạy loại trừ và probe cân bằng để kiểm tra cải thiện đến từ bỏ định danh, thêm lịch sử hay thay ngưỡng vận hành.
+
+Tiếp theo, đánh giá checkpoint nguồn cố định trên bản ghi ngoại bộ đã xác minh. CAN-MIRGU cần kiểm tra toàn file các log tấn công được tìm đệ quy. CICIoV cần tầng nội dung huấn luyện riêng và diễn giải có giới hạn về thứ tự dòng. OTIDS cần bản ghi theo thời gian và nguồn nhãn frame được xác minh trước khi bật lại đánh giá. Automotive v2 vẫn là kiểm tra theo cơ chế tấn công với lưu lượng nền dùng chung.
+
+Phép so định lượng với CANBERT+, CANLP-char-DNN và CrySyS-AssocRules/W64 đã được thực hiện dưới các bản thích ứng công bố rõ. So sánh với các bộ phát hiện quan hệ hoặc phổ quát khác vẫn cần triển khai và xác minh riêng. Tổng quan định tính chưa đủ. Thích nghi nhiều nguồn, hiệu chỉnh bằng dữ liệu lành đích và học đối kháng miền cần được báo cáo thành phần mở rộng riêng với ngân sách dữ liệu đích, không gộp vào kết luận zero-shot nghiêm ngặt.
+
+Sau các lần chạy, phải cập nhật đồng thời hai ngôn ngữ: tóm tắt, bảng số, hình, thảo luận và kết luận cùng tham chiếu các mã lần chạy hoàn tất. Kết quả âm tính có thể hỗ trợ một khóa luận chặt chẽ khi phạm vi và bằng chứng rõ ràng; thực nghiệm chưa thực hiện không thể hỗ trợ kết luận dương tính.
+Hướng mở rộng chỉ được lựa chọn sau khi đọc kết quả: entropy/Hamming cần ablation riêng; học đối kháng nhiều nguồn cần phép chia xe toàn cục và quy tắc tối ưu rõ; nhánh tái tạo cần kiểm tra báo động giả trên xe đích bình thường và rò rỉ thông tin qua các đặc trưng dẫn xuất khi che dữ liệu. Không hướng nào được coi là đã cải thiện hoặc đủ điều kiện công bố khi chưa có kết quả.
+
+% BEGIN COMPARISON CONCLUSION
+\section{Kết luận từ phép so nội dung đã xác minh}
+Phép so chính hiện thực thi theo nội dung và thứ tự file: raw 28 chiều, structural 30 chiều, W64, bốn set, ba seed và năm phương pháp. Timestamp đi lùi được giữ để kiểm toán và không dùng làm đặc trưng; không khẳng định thứ tự dòng là chronology vật lý. CANBERT+, CANLP-char-DNN và CrySyS-AssocRules/W64 là các bản thích ứng có công bố thay đổi, không dùng trực tiếp điểm số công bố gốc để xếp hạng. Ma trận 60 cell đã được xác minh; số liệu và đánh đổi recall/FAR được trình bày tại Mục~\ref{sec:comparison-results}. Kết quả này không tự trả lời các câu hỏi về loại trừ đặc trưng, probe xe, ngoại bộ hay độ trễ triển khai. Ở B, Structural trừ Raw có chênh lệch recall trung bình -0.1159 và FAR -12839.95/100.000, với trọng số ngang nhau giữa set; hai đại lượng phải được diễn giải cùng nhau.
+% END COMPARISON CONCLUSION
+
+% BEGIN COMPARISON POSTHOC_CONCLUSION
+\section{Tổng hợp bằng chứng bổ sung cho bản GVHD}
+Probe xe có balanced accuracy Raw 0.9925 và Structural 0.9488, so với chance 0,25. Chênh lệch -0.0437 chỉ mô tả giảm khả năng giải mã tuyến tính; mức còn lại vẫn cao, nên không chứng minh loại bỏ thông tin xe. Probe tấn công tương ứng 0.6419/0.7669; không được đồng nhất phép giải mã nhãn với recall của IDS tại ngưỡng nguồn.
+Các ablation và độ nhạy được báo đầy đủ tại Mục~\ref{sec:completion}. Đây là bằng chứng hậu nghiệm có giới hạn trên các bản ghi quan sát được. Giả thuyết chính và kết quả 60 lượt ban đầu được giữ nguyên; không chọn kết quả thuận lợi để thay thế tiêu chí chính. Việc đo runtime và kiểm thử ngoại bộ không giải quyết các giới hạn chronology vật lý, độc lập phiên lái và deadline ECU.
+% END COMPARISON POSTHOC_CONCLUSION
+
+% End inlined conclusion_vi.tex
+
+\appendix
+% Begin inlined appendix_vi.tex
+\chapter{Tái lập và kiểm tra bằng tay}\label{app:reproducibility}
+\section{Ví dụ đặc trưng trên bốn frame}
+Xét một bản ghi có bốn frame với ID $(A,B,A,A)$. Timestamp lần lượt là $0$; $0{,}001$; $0{,}003$; $0{,}004$ giây; payload một byte lần lượt bằng $10$, $20$, $13$, $15$ theo hệ thập phân. Mọi frame có DLC bằng một; frame thứ tư độc hại. Với $W=4$, nhãn cửa sổ bằng một.
+
+Tần suất định danh là $3/4$ cho A và $1/4$ cho B. Thứ hạng xuất hiện đầu tiên là không cho A và một cho B; chia cho hai ID phân biệt, đặc trưng thứ hạng cục bộ là $(0,1/2,0,0)$. Các cặp trước/hiện tại gồm AB, BA và AA, mỗi cặp xuất hiện một lần, nên đặc trưng chuyển tiếp là $(0,1/3,1/3,1/3)$.
+
+Hai frame đầu chưa có tiền nhiệm cùng ID. Frame thứ ba có biến thiên payload $3/255$ và khoảng cùng ID 0,003 giây. Frame thứ tư có biến thiên $2/255$ và khoảng 0,001 giây. Chỉ byte đầu hợp lệ; những vị trí biến thiên khác đều bằng không. Khoảng liên tiếp trước biến đổi log là $(0;0{,}001;0{,}002;0{,}001)$. Đổi tên A và B nhất quán giữ nguyên các giá trị cấu trúc.
+
+Nếu có cửa sổ tiếp theo, frame đầu của nó có thể có tiền nhiệm cùng ID trong cửa sổ này. Chia đầu vào thành khối đọc sau bất kỳ frame nào không được xóa lịch sử đó. Ngược lại, bắt đầu bản ghi mới phải đặt lại lịch sử. Ví dụ phân biệt ranh giới file, ranh giới cửa sổ quyết định và ranh giới đọc tùy ý.
+
+\section{Đầu ra lần chạy và mục đích}
+\begin{longtable}{P{4.7cm}P{8.2cm}}
+\caption{Đầu ra tối thiểu cho kết quả có thể tái lập}\label{tab:artifacts}\\\toprule
+Đầu ra & Nội dung / mục đích\\\midrule\endfirsthead\toprule Đầu ra & Nội dung / mục đích\\\midrule\endhead
+Manifest lần chạy & Cấu hình, lược đồ, mã băm code, môi trường và trạng thái hoàn tất\\
+Manifest dữ liệu & Đường dẫn file, kích thước, SHA-256 toàn file và vai trò phân chia\\
+Phép chia và độ phủ huấn luyện & Nhóm nguồn, số cửa sổ sẵn có/được chọn theo lớp\\
+Chỉ số cửa sổ được lấy mẫu & Lựa chọn huấn luyện chính xác không cần chép lại dữ liệu thô\\
+Checkpoint và metadata & Tham số, chiều đầu vào, seed, thời gian huấn luyện, ngưỡng nguồn\\
+File dự đoán nén & Định danh file/cửa sổ, nhãn, điểm số và hai đầu timestamp\\
+Chỉ số & Ma trận nhầm lẫn, mẫu số, F1 tấn công, AP, FAR và cờ không xác định\\
+Danh mục/loại trừ ngoại bộ & Quy tắc nhãn, tầng tương thích, dữ liệu thiếu hoặc bị tắt\\
+Tổng hợp và so sánh ghép cặp & Biến thiên seed và chênh lệch bootstrap có điều kiện theo bản ghi\\\bottomrule
+\end{longtable}
+
+\section{Danh sách kiểm tra chạy và báo cáo}
+Hướng dẫn kho mã cung cấp lệnh cụ thể. Thứ tự logic là cài phụ thuộc, kiểm thử giao thức, kiểm tra dữ liệu, huấn luyện/đánh giá chính, loại trừ, chuyển giao tầng nội dung, probe, độ nhạy cửa sổ và tổng hợp. Mỗi lần chạy dùng thư mục đầu ra mới. Phải chẩn đoán lần chạy lỗi trước báo cáo; không âm thầm gộp đầu ra chưa hoàn tất.
+
+Trước đưa bảng vào khóa luận, xác nhận đủ hai lớp khi chỉ số yêu cầu, đúng checkpoint, ngưỡng chỉ từ nguồn, file test không đổi và cùng độ dài cửa sổ. Kiểm tra số đếm theo file và cơ chế, không chỉ tổng hợp. Ba seed khởi tạo được tóm tắt bằng trung bình và độ lệch chuẩn. Bất định giữa bản ghi độc lập cần nguồn gốc đủ rõ, không thay bằng lấy mẫu lại các cửa sổ tương quan.
+
+Trước nộp, xác nhận mẫu và rubric của khoa đang áp dụng, thông tin tác giả/hướng dẫn, metadata tài liệu tham khảo, mọi tham chiếu chéo và hai tóm tắt. Kiểm tra từng bảng và hình đã render. Chưa có rubric của khóa hiện tại nên lựa chọn định dạng trong bản sửa là tạm thời, chưa phải chứng nhận tuân thủ.
+
+\section{Nghiên cứu so sánh bổ sung}
+Baseline quan hệ là đối chứng gần nhất để kiểm tra biến thiên payload cùng ID có tăng giá trị ngoài chuyển tiếp định danh hay không. Cần tái lập đúng định nghĩa đặc trưng và quy trình huấn luyện gốc, sau đó ghi rõ mọi điều chỉnh cho cửa sổ CTT và ngưỡng chỉ từ nguồn. Bộ phát hiện phổ quát dựa trên thời gian/lưu lượng cung cấp góc so sánh bổ sung, nhất là tấn công giữ nguyên payload hoặc giữ nguyên thời gian. Runner hiện không gắn tên công bố cho một phương pháp chưa tái lập.
+
+CANTransfer thuộc nghiên cứu thích nghi với lượng dữ liệu đích có nhãn được công bố rõ. ROAD có thể bổ sung đa dạng cơ chế thực tế sau khi ánh xạ nhãn và parser theo thời gian được xác minh. Nghiên cứu can-ml nhiều nguồn còn đòi hỏi giải quyết chồng lặp với bản ghi CTT. Cần ưu tiên nghiên cứu theo kết luận muốn kiểm tra; chỉ tải thêm bộ dữ liệu không chứng minh được khái quát hóa.
+% End inlined appendix_vi.tex
+
+\backmatter\phantomsection\addcontentsline{toc}{chapter}{Tài liệu tham khảo}\bibliographystyle{plainnat}\bibliography{refs}\end{document}

@@ -1,0 +1,13 @@
+target,seed,method,task,decoder,control,balanced_accuracy,chance,warnings
+Silverado,42,relative_cadv,vehicle,linear,learned,0.944375,0.25,
+Silverado,42,relative_cadv,vehicle,linear,constant,0.25,0.25,
+Silverado,42,relative_cadv,vehicle,linear,permuted,0.22375,0.25,
+Silverado,42,relative_cadv,vehicle,mlp,learned,0.9446875,0.25,
+Silverado,42,relative_cadv,vehicle,mlp,constant,0.25,0.25,
+Silverado,42,relative_cadv,vehicle,mlp,permuted,0.21281250000000002,0.25,
+Silverado,42,relative_cadv,attack,linear,learned,0.788125,0.5,
+Silverado,42,relative_cadv,attack,linear,constant,0.5,0.5,
+Silverado,42,relative_cadv,attack,linear,permuted,0.49968749999999995,0.5,
+Silverado,42,relative_cadv,attack,mlp,learned,0.7834375,0.5,Stochastic Optimizer: Maximum iterations (200) reached and the optimization hasn't converged yet.
+Silverado,42,relative_cadv,attack,mlp,constant,0.5,0.5,
+Silverado,42,relative_cadv,attack,mlp,permuted,0.39875,0.5,Stochastic Optimizer: Maximum iterations (200) reached and the optimization hasn't converged yet.

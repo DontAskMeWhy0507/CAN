@@ -1,0 +1,12 @@
+{
+  "raw": 0.05571853369474411,
+  "structural": 0.12285836040973663,
+  "raw_no_id": 0.07799471169710159,
+  "id_only": 0.08101268112659454,
+  "raw_plus_structural": 0.10034088045358658,
+  "structural_no_delta": 0.4052827060222626,
+  "structural_no_local": 0.47120338678359985,
+  "structural_no_transition": 0.08792984485626221,
+  "structural_no_payload": 0.8257746696472168,
+  "structural_no_rank_w": 0.3549405336380005
+}

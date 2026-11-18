@@ -1,0 +1,226 @@
+AUDIT KHÓA LUẬN VIỆT–ANH — VŨ TIẾN TUẤN TRUNG
+Ngày: 03/11/2026
+Phạm vi: bản Việt là bản gốc, bản Anh là bản dịch; dự kiến nộp cả hai.
+
+KẾT LUẬN
+
+Bản hiện tại chưa sẵn sàng nộp nếu mục tiêu là A+. Đề tài có nền tảng tốt, nhưng còn lỗi về tính hợp lệ thực nghiệm, mô tả phương pháp và sự đồng nhất giữa hai ngôn ngữ. Chỉnh câu chữ hoặc tăng số trang không giải quyết được các lỗi này. Không thể quy đổi thành điểm A/A+ chính thức khi chưa có rubric của đúng ngành/khóa và chưa đánh giá phần bảo vệ.
+
+Bản Anh thận trọng và gần với code hơn bản Việt ở nhiều điểm, nhưng cũng còn lỗi. Không nên dịch nguyên bản Việt hiện tại sang Anh; cần chốt một nội dung khoa học đã đối chiếu bằng chứng rồi đồng bộ cả hai bản.
+
+Đã kiểm tra: main_vi.tex (751 dòng), main.tex (860 dòng), refs.bib; PDF Việt 33 trang và Anh 36 trang; bố cục toàn bộ hai PDF ở ảnh tổng quan và phóng lớn các trang có vấn đề; notebook Phase 2–5, các module xử lý dữ liệu liên quan, CSV kết quả và README dữ liệu. Có kiểm tra mẫu/prefix dữ liệu để xác nhận vấn đề nhãn và thứ tự thời gian. Không chạy lại huấn luyện toàn bộ, không xác nhận tái lập được điểm headline từ một lần chạy sạch. Chưa sửa bản thảo, code hay kết quả gốc.
+
+Mức ưu tiên dùng trong báo cáo:
+P0: phải xử lý trước khi nộp vì ảnh hưởng trực tiếp đến tính đúng đắn.
+P1: thiếu bằng chứng quan trọng cho kết luận và mục tiêu A+.
+P2: hình thức, tài liệu tham khảo, diễn đạt và mức độ hoàn thiện.
+Đây là thứ tự sửa của audit, không phải thang điểm chính thức của trường.
+
+1. NHỮNG PHẦN ĐÃ CÓ NỀN TẢNG TỐT
+
+- Bài toán chuyển dịch xe và chuyển dịch kiểu tấn công rõ, có ý nghĩa thực tiễn.
+- Dùng bốn điều kiện A–D giúp phân biệt các kiểu chuyển dịch.
+- Có định nghĩa cửa sổ 64 frame, nhãn dương nếu có ít nhất một frame tấn công.
+- Biểu diễn 32 chiều đủ cụ thể để triển khai; có baseline Raw Transformer và Structural XGBoost.
+- So sánh raw/structural cùng kiến trúc Transformer là một kiểm soát hữu ích.
+- Bảng kết quả chính 12 dòng ở cả hai bản khớp CSV phase3_method_comparison.csv theo số chữ số đang báo cáo. Điều này xác nhận tính nhất quán khi chép bảng, chưa chứng minh tính hợp lệ của toàn pipeline.
+- Có attack precision/recall/F1, AP và FAR thay vì chỉ accuracy.
+- Có các phần đầu, lời cam đoan, tóm tắt, mục lục, danh mục hình/bảng, viết tắt, phần nền tảng, liên quan, phương pháp, kết quả và kết luận.
+- Kiểm tra tĩnh không thấy citation key bị thiếu, label trùng hoặc ref trỏ tới label không tồn tại. Tuy nhiên ref tồn tại vẫn có thể hiện sai số chương.
+- Bản Anh công khai kết quả D thấp, ngoại suy thất bại và bất nhất giữa các lần chạy. Những phần này nên được giữ và đồng bộ sang Việt.
+
+2. LỖI CẦN SỬA TRƯỚC KHI NỘP
+
+E01 — P0 — Mô tả sai kiến trúc và hàm loss ở bản Việt
+Vị trí: main_vi.tex:471,512,546–551,723; main.tex:659–661; can_research/structural.py:169–200; notebook03 phần CANTransformer/train_transformer.
+Bản Việt ghi d_model=128, 4 encoder layers và Focal Loss gamma=2. Code dùng d_model=64, 2 layers, feedforward=128, 4 heads, CrossEntropyLoss. Bản Anh mô tả đúng cấu hình này.
+Hệ quả: người đọc tái hiện theo bản Việt sẽ huấn luyện một mô hình khác mô hình tạo ra số liệu.
+Sửa: lấy cấu hình thực tế làm chuẩn, cập nhật công thức loss, kích thước embedding/pooling, sơ đồ và mọi đóng góp nhắc Focal Loss. Nếu muốn chuyển sang Focal Loss thì phải tạo run mới; không gán kết quả cũ cho cấu hình mới.
+
+E02 — P0 — Hai bản không phải một cặp dịch tương đương
+Vị trí: Việt:243,331,668–734; Anh:724–744,810–843.
+Bản Việt thiếu mục kết quả bốn set, thiếu OTIDS benign FAR rất cao, thiếu nhiều giới hạn tái lập và diễn giải threshold. Bản Việt có claim throughput >40.000 frame/s và Focal Loss mà bản Anh không có. Danh mục trích dẫn cũng khác: 30 key ở Việt và 21 ở Anh.
+Sửa: dùng bảng đối chiếu từng chương/mục, claim, bảng/hình, thông số, citation và hạn chế. Các bản có thể khác độ dài do ngôn ngữ nhưng phải giữ cùng phương pháp, số liệu và mức độ chắc chắn.
+
+E03 — P0 — Nhãn Automotive v2 đang làm sai bài toán đánh giá
+Vị trí: notebook04, cell code chứa parse_candump_log và euro_targets; README trong Automotive CAN Bus Intrusion Dataset v2-/OpelAstra và /RenaultClio.
+Parser trả attack=attack_flag cho toàn file; dosattack.log được truyền attack_flag=1. README nguồn nói file là bản sao testing.log được sửa ở một đoạn DoS khoảng 10 giây. Opel ghi đoạn tấn công từ dòng122976 đến162990; Renault từ41533 đến81533. Do đó có nhiều frame bình thường bị gán thành tấn công. Notebook còn chỉ đọc tối đa150.000 dòng; Opel chỉ bao phủ một phần đoạn DoS.
+Hệ quả: F1=1 của raw và F1 thấp hơn của structural không thể được dùng như một so sánh phát hiện DoS hợp lệ với nhãn hiện tại. Chỉ thêm disclaimer vào văn bản không sửa được metric.
+Sửa: xác minh interval và nội dung frame gốc, dựng nhãn đúng theo frame/episode, giữ ranh giới capture và đánh giá lại. Phải ghi số frame/window dương và âm thực tế. Không coi số dòng README là đủ nếu chưa kiểm tra timestamp và content tương ứng.
+
+E04 — P0 — CICIoV2024 được thêm timestamp giả rồi dùng như feature thời gian
+Vị trí: notebook04, phần CICIoV2024 có df_c['timestamp'] = np.arange(len(df_c))*0.001; README quy định dataset này dùng content/structural tier không timing.
+Khoảng cách1ms là giá trị tự tạo, không phải thời gian đo trên xe. Feeding nó vào mô hình có timing features làm thay đổi ý nghĩa đánh giá.
+Sửa: tạo nhánh đánh giá không dùng timing, huấn luyện source theo cùng tập feature đó; hoặc lấy nguồn timestamp hợp lệ. Không thay timestamp giả bằng0 rồi gọi đó là đánh giá timing đầy đủ. Báo rõ schema và giới hạn so sánh.
+
+E05 — P0 — FAR và PR-AUC có trường hợp bị gán một giá trị không đúng nghĩa
+Vị trí: compute_metrics trong notebook03/04. Hàm trả FAR=0 khi N_benign=0; trả PR_AUC=f1 khi không có probability scores hoặc chỉ có một lớp, và cả khi gặp exception.
+Hệ quả: FAR0 trên tập chỉ có attack không chứng minh không có false alarm; PR_AUC bằng F1 không phải tính diện tích/ranking từ scores. Các dòng single-class ở phase4 cho thấy PR_AUC trùng F1.
+Sửa: FAR=N/A khi không có mẫu âm; thống nhất AP/PR-AUC, tính từ continuous scores với miền áp dụng được nêu rõ. Trường hợp single-class đánh dấu không đủ cơ sở cho đánh giá phân biệt hai lớp. Bỏ fallback âm thầm đổi tên F1 thành AP; xuất N_attack,N_benign,TP,FP,TN,FN và lý do N/A.
+
+E06 — P0 — Bảng Lampe trộn frame và window; thêm một số F1 không có căn cứ
+Vị trí: main_vi.tex:626–658; main.tex:746–778; notebook05 benchmark_data.
+Số liệu Lampe dùng164.167 attack frames và6.283.750 benign frames. Transformer dùng8.430 attack windows và92.315 benign windows, mỗi window64 frames với nhãn any-attack. Prevalence và đơn vị quyết định khác nhau. Caption và cột FAR không nêu rõ sự khác biệt này.
+Ngoài ra Reported_F1=.9550 của Raw Transformer được hard-code. Từ TP=1,FN=8429,TN=92315,FP=0 trong chính notebook: accuracy=.916333; weighted F1=.876336; macro F1=.478288; attack F1≈.000237. Không giá trị nào là .9550. Structural .9950 gần weighted F1=.995111 nhưng vẫn cần định nghĩa cột và sinh tự động.
+Sửa: tách đối chiếu chỉ số bài báo khỏi bảng controlled benchmark; ghi rõ đơn vị. Muốn claim head-to-head phải chạy baseline trên cùng cửa sổ/split/labels/budget. Tạo bảng trực tiếp từ prediction/confusion matrix. Dùng tên attack-class F1, weighted F1 đúng nghĩa, tránh gọi một metric là “F1 thật” còn metric khác là “giả”. Việc tính lại confusion matrix không tương đương tái lập model.
+
+E07 — P0 — Kết luận FAR0 và “giải quyết thành công” vượt quá bằng chứng
+Vị trí: main_vi.tex:243,329–331,699–725; results/phase4_external_metrics.csv; main.tex:810.
+Structural Transformer có OTIDS benign FAR38.880/100k, tức38,88% cửa sổ bình thường bị báo động. Condition D chỉ recall13,22%, bỏ lọt khoảng86,78% cửa sổ tấn công. Không thể từ một số trace FAR0 suy ra khả năng chống báo động giả tuyệt đối hoặc bài toán transfer đã được giải quyết.
+Sửa: giới hạn kết luận theo từng set/scenario; ghi cả failure cases và số lượng mẫu. FAR quan sát bằng0 không phải bảo đảm FAR thực bằng0. Các external metric có lỗi nhãn/schema phải được sửa trước khi diễn giải cơ chế thành công/thất bại.
+
+3. CÁC THỰC NGHIỆM VÀ BẰNG CHỨNG CÒN THIẾU
+
+E08 — P1 — Run provenance và kết quả bốn set chưa được thống nhất
+Vị trí: main.tex:724–744; results/master_all_datasets_benchmark.csv; notebook03/04.
+Set1 focused F1(A,B,C,D)=(.9035,.9703,.7094,.2332); sweep=(.7741,.9635,.0976,.0010). Set3 sweep bằng0 cả bốn điều kiện; Set4 B=.3032. Đây không phải khác biệt làm tròn. Phase3 và Phase4 còn dùng giới hạn train/epoch khác nhau, external huấn luyện lại model thay vì load một checkpoint đã đóng băng. File phase4_external_metrics.csv hiện chỉ chứa OTIDS; kết quả external khác nằm trong master/notebook.
+Sửa: run ID, config, seed, dataset hash, exact file list/count, checkpoint và predictions phải nối được với từng bảng. Chạy lại bốn set theo protocol thống nhất; không âm thầm gộp các run. Nếu giữ run exploratory phải nêu rõ mục đích và lý do chọn primary run.
+
+E09 — P1 — Lấy đầu file có thể bỏ gần hết tấn công khi train
+Vị trí: notebook03 nrows=MAX_WIN_PER_FILE*64*2, max_win1000; notebook04 load_ctt_train_data max_win800.
+Phase3 đọc prefix128.000 dòng/file, Phase4 đọc102.400 dòng/file trước khi lấy mẫu. Kiểm tra prefix Phase4 của Set3 cho thấy tổng chỉ1 attack frame, tương ứng1 attack window; nhiều file tấn công không có attack trong prefix. Set1 prefix chủ yếu chỉ giữ DoS, các prefix của một số kiểu khác không có attack.
+Hệ quả: không được quy F1=0 của Set3 hoàn toàn cho khó khăn cross-vehicle nếu training gần như thiếu lớp dương. “Known attack” theo tên folder chưa chắc là attack đã thực sự được thấy trong mẫu train.
+Sửa: thống kê class×attack×file trước/sau sampling. Stream toàn file rồi sampling có kiểm soát và deterministic, hoặc chọn các đoạn đầy đủ episode theo thiết kế source-only đã công bố. Không lựa chọn train dựa trên test outcome.
+
+E10 — P1 — OTIDS Mixed không còn là chuỗi thời gian hợp lệ để thử sequence model
+Vị trí: notebook04 dùng CAN_HCRL_OTIDS_B.csv như các file tuần tự khác.
+Kiểm tra prefix1.024.000 dòng cho thấy512.363 benign frames nhưng16.000 windows đều mang nhãn attack; có511.946 bước timestamp giảm. Đây là dữ liệu đã trộn/shuffle, không đại diện chuỗi CAN liên tiếp cho timing và transition.
+Sửa: dùng capture có thứ tự thời gian gốc và provenance rõ. Không sắp xếp toàn bộ file theo timestamp một cách mù quáng khi có thể trộn nhiều capture. Không diễn giải F1=.0012 trên Mixed như failure boundary vật lý trước khi làm đúng dữ liệu.
+
+E11 — P1 — Threshold/calibration đang gây nhiễu kết luận
+Vị trí: main_vi.tex:593,611; main.tex:722.
+Raw Transformer B có AP=.9505 nhưng F1=.0002 tại argmax/default decision. Đây là dấu hiệu ranking và operating threshold khác nhau, không đủ để nói raw “không biết phân biệt” hoặc thất bại chắc chắn do ID lạ.
+Sửa: grouped source-validation cho threshold, tuyệt đối không fit vào target test; báo PR curve, phân bố score, recall tại cùng FAR budget. Nếu model chỉ có default argmax thì mô tả đúng và giới hạn kết luận. So sánh calibrated và uncalibrated có thể giúp giải thích kết quả.
+
+E12 — P1 — RQ2 chưa được trả lời đầy đủ dù có thí nghiệm sơ bộ
+Vị trí: RQ2 Việt:319, Anh:414; notebook02; main.tex:843.
+Notebook02 đã có LR ablation A/B: full .7608/.0000; ID .7611/.0000; payload .4903/.0197; timing .6618/.1544. Có raw latent vehicle probe=.7842, ID=1, payload=.9992. Vì vậy câu Anh nói hoàn toàn chưa triển khai feature ablation là quá tuyệt đối.
+Nhưng các probe này dùng random window split, chỉ raw MLP và chưa đối chiếu structural hay kiểm soát capture/attack×vehicle. Chúng chưa chứng minh biểu diễn structural làm giảm vehicle leakage.
+Sửa: đưa sơ bộ vào đúng vai trò, rồi thực hiện raw-vs-structural ablation/probe với capture groups và cân bằng cần thiết. Mở rộng A–D hoặc thu hẹp RQ cho đúng phạm vi. Thêm bảng RQ → thí nghiệm → kết quả → kết luận → giới hạn.
+
+E13 — P1 — Chưa tách tác động bỏ ID khỏi tác động thêm feature
+Vị trí: main_vi.tex:708; mô tả raw29 và structural32.
+Raw29→structural32 vừa bỏ11 ID bits, vừa thêm14 feature lịch sử/cấu trúc. Vì vậy không thể quy toàn bộ tăng F1 cho riêng loại bỏ ID.
+Sửa: raw; raw-minus-ID; raw+structural features; structural-minus-delta/timing/local-statistics/transition. Giữ kiến trúc và ngân sách train tương đương; mô tả mọi chênh lệch capacity. Không bắt buộc mọi mô hình sâu có trong README phải xuất hiện nếu chủ động thu hẹp scope và sửa research questions nhất quán.
+
+E14 — P1 — “ID-free” chưa phải “không còn thông tin xe”
+Vị trí: main_vi.tex:329,722; main.tex:655; structural.py.
+Payload, timing và tần suất vẫn có thể nhận diện xe. Bất biến với đổi tên ID nhất quán là tính chất hẹp hơn độc lập miền xe. CAN ID vẫn được dùng làm key khi trích lịch sử.
+Sửa: phát biểu chính xác raw-ID-free/ID-renaming invariance với điều kiện state và mapping rõ ràng; kiểm tra invariance và vehicle probe. Không nói “loại bỏ rủi ro rò rỉ đặc trưng xe” khi chưa có bằng chứng.
+
+E15 — P1 — Thiếu uncertainty, độ bền giữa seed và per-attack analysis
+Vị trí: main.tex:668,825,841; README success gates.
+Kết quả là point estimates, thiếu CI theo capture/episode và repeated seeds. Gate CSV chỉ có hai gate; chưa đủ để kết luận đạt toàn bộ tiêu chí kế hoạch. Set3 gần thiếu positive training còn cho thấy cần phân biệt pipeline failure và model failure.
+Sửa: nhiều seed phù hợp ngân sách, báo mean/dispersion; paired analysis theo capture hoặc episode với đơn vị độc lập hợp lệ, công khai số group. Nếu rất ít capture, nói rõ CI bị giới hạn. Báo per-attack recall/confusion và prevalence, không chỉ gộp A–D. Không bắt buộc chứng minh mọi cải thiện “statistically significant”, nhưng phải phản ánh uncertainty.
+
+E16 — P1 — Claim tốc độ và diễn giải nguyên nhân chưa có bằng chứng
+Vị trí: main_vi.tex:331,700,733.
+Thông lượng >40.000 frame/s không có bảng hardware, batch, warmup, preprocessing, thời gian đo hoặc log benchmark đi kèm trong thesis. Diễn giải impersonation “sao chép hoàn hảo timing/transition” chưa được chứng minh bằng diagnostics.
+Sửa: bỏ claim chưa có bằng chứng hoặc bổ sung benchmark end-to-end và phân biệt throughput với detection latency. Tính thời gian chờ đủ64 frame. Đặt giải thích impersonation dưới dạng giả thuyết cho tới khi nhãn/schema được sửa và có phân tích feature/attack thực.
+
+4. NỘI DUNG PHƯƠNG PHÁP VÀ TÍNH MỚI
+
+E17 — P1 — Thiếu đặc tả giúp tái lập
+Vị trí: main_vi.tex:515–566; main.tex:629–669; structural.py:72–159.
+Cần bổ sung bảng dataset/split/source-target vehicle, attack families, capture/file count, số benign/attack frame và window, label source, timestamp availability, tail handling và sample limits. Set1 train vehicle đang ghi sai là Chevrolet Traverse ở Việt:558; đúng là Chevrolet Impala.
+Feature cần làm rõ: clipping dt tại10s; dt_prev reset0 ở đầu window; same-ID history qua các window trong một lần gọi extractor và reset khi gọi lại/chunk; padding/malformed payload; DLC hiện suy từ payload string thay vì đọc DLC khai báo; chuẩn hóa ID và phạm vi11/29bit. Đây là khác biệt có thể ảnh hưởng cả training lẫn streaming inference.
+Sửa: pseudocode có state/reset rules, ví dụ vài frame tính32 features, bảng hyperparameter và model diagram. Quy định rõ decision sau khi thu đủ window; các thống kê toàn window không phải dự đoán causal tại từng frame đầu window.
+
+E18 — P1 — Threat model và scope chưa đủ rõ
+Nêu quyền attacker, vị trí giám sát, classic CAN/CAN-FD/extended identifiers được hỗ trợ hay loại trừ, giả định timestamp, kiểu tấn công ngoài phạm vi, không dùng DBC/target training, và các trường hợp thiếu nhãn. Không cần mở rộng sang mọi chuẩn; cần công bố phạm vi đang thực hiện.
+
+E19 — P1 — Related work chưa bảo vệ được novelty
+Vị trí: main.tex:595–622; main_vi.tex:474–499.
+Cần bảng các công trình gần nhất: feature đầu vào, payload/timing/graph, số source vehicles, target adaptation, split protocol, frame/window, metrics và khác biệt với đề xuất. Có dẫn công trình structural transfer gần đây nhưng chưa phân tích sát để chứng minh điểm mới.
+Dùng A–D là kế thừa benchmark, không phải phát minh protocol mới. Nêu rõ đóng góp ở tổ hợp feature/thiết kế so sánh/phân tích failure; phần32 feature là engineered representation, phần Transformer mới học tham số. Không nên giữ các gap tuyệt đối kiểu “các nghiên cứu trước đều học vẹt”.
+
+5. TRÍCH DẪN VÀ NGÔN NGỮ
+
+E20 — P1 — Nhiều metadata tài liệu tham khảo sai
+Vị trí: refs.bib:140,149–155,188,194,202.
+- OTIDS: tác giả đầu là Hyunsung Lee, không phải Hyo Jin Lee. Nguồn hội nghị: https://pstnet.ca/pst2017/www.ucalgary.ca/pst2017/files/pst2017/paper-67.pdf
+- CAN-MIRGU: Sampath Rajapaksha và Garikayi Madzudzo, không phải Sajeeva/Gerald. Bản tác giả/đại học: https://rgu-repository.worktribe.com/preview/2577488/RAJAPAKSHA%202024%20CAN-MIRGU%20%28VOR%29.pdf
+- CICIoV2024: danh sách đúng gồm Euclides Carlos Pinto Neto, Hamideh Taslimasa, Sajjad Dadkhah, Shahrear Iqbal, Pulei Xiong, Taufiq Rahman, Ali A. Ghorbani. Bản NRC: https://nrc-publications.canada.ca/eng/view/ft/?id=f3836749-f395-494d-84f6-6c15dae1dc14
+- Graph-Based Intrusion Detection System for Controller Area Networks: tác giả Riadul Islam, Rafi Ud Daula Refat, Sai Manikanta Yerram, Hafiz Malik; record hiện ghi sai tác giả/tên bài/tạp chí. Bản tác giả: https://arxiv.org/abs/2009.11440 ; xuất lại metadata theo DOI10.1109/TITS.2020.3025685 trước khi sửa volume/pages/year.
+- Automotive v2: Alexios Lekidis thay cho Apostolos Lekidis. Dataset DOI: https://doi.org/10.4121/uuid:b74b4928-c377-4585-9432-2004dfa20a5d
+Sửa: nhập BibTeX từ publisher/DOI, đối chiếu title+author+year+venue, không chỉ sửa tên key. Audit xác nhận các lỗi cụ thể này; không thay thế kiểm chứng từng claim của mọi bài hoặc kiểm tra đạo văn bằng hệ thống trường.
+
+E21 — P2 — Citation trùng và nội dung dịch không khớp
+Song2020 xuất hiện dưới hai key trùng trong cả hai bản; bản Việt còn dùng hai key cho cùng Lampe2024, tạo hai số tài liệu cho cùng công trình. Các nguồn nền tảng/citation key còn khác giữa hai ngôn ngữ.
+Sửa: một record chuẩn cho mỗi công trình; preprint và journal chỉ giữ riêng nếu thật sự dùng hai phiên bản và có lý do. Hai bản dịch phải viện dẫn cùng bằng chứng cho cùng claim.
+
+E22 — P2 — Giọng văn và thuật ngữ
+Vị trí: Việt:300,330,497,623,653,658,720–725.
+Thay “vạch trần”, “bất lực”, “giải quyết triệt để”, “cân bằng lý tưởng” bằng diễn giải trung tính với phạm vi và số liệu. Không gọi weighted F1 là gian dối chỉ vì attack recall thấp. “Không có raw-ID bits” không đồng nghĩa “bất biến vật lý”. Phân biệt precision với accuracy; FAR/100k với FPR%; attack-window recall với tỷ lệ phát hiện cuộc tấn công/episode. Sửa “khung hình/giây” thành khung tin/giây; “cửa sổ trượt không chồng lấn” nên định nghĩa stride=W. Phân biệt hãng xe, mẫu xe và tên dataset/lab.
+
+6. HÌNH THỨC PDF VÀ ĐỐI CHIẾU MẪU TRƯỜNG
+
+E23 — P1 — Đánh số chương và cross-reference sai
+Vị trí: Việt:287,347,474,502,570,715; Anh macro chap và label chap:conclusions.
+Việt dùng chapter* cho Mở đầu rồi chapter với tên chứa sẵn số: PDF trang15 hiện “Chương1” trên “Chương2...”; các chương tiếp theo tiếp tục lệch. Bảng/hình/phương trình cũng lấy counter sai so với tên chương. Anh tuyên bố6 chương nhưng chỉ4 chương đánh số; phần outline PDF trang15 trỏ Conclusion thành “Chapter4.5” do label sau chapter* bám counter trước đó.
+Sửa: thống nhất chapter/section đánh số tự động; không gõ số chương vào title. Nếu mở đầu/kết luận không đánh số theo mẫu thì dùng reference phù hợp và không gọi số chương giả. Rebuild đủ lượt rồi kiểm tra TOC, bookmarks, labels, caption, header và refs.
+
+E24 — P2 — Markdown bị in nguyên ký hiệu trong LaTeX; figure chưa hoàn thiện
+Việt có38 lần xuất hiện chuỗi ** ở source, tạo khoảng19 đoạn intended-bold không được LaTeX xử lý. PDF trang23–28 có chữ **Attack-Class...**. Đổi thành textbf/emph đúng cú pháp.
+Hai bản dùng hình PNG chứa title “Figure2”, trong khi caption bên ngoài là Hình/Figure4.2. Nhãn bên trong hình bản Việt vẫn tiếng Anh. Hình so recall còn in TP của các đơn vị frame/window khác nhau trên cùng plot. Sửa số hình nhúng, ngôn ngữ, đơn vị, caption và sinh lại chart sau khi sửa metric; ưu tiên export vector và chữ đọc được ở cỡ in.
+Một số bảng bị resize nhỏ, header dài xuống dòng, trang chỉ còn vài dòng. Cần chỉnh pagination sau khi nội dung khoa học ổn định. Thêm sơ đồ pipeline/architecture có ích hơn tăng trang bằng khoảng trắng.
+
+E25 — P1, CẦN XÁC NHẬN ÁP DỤNG — Độ dài và mẫu UET
+Bản Việt có20 trang nội dung chính (PDF11–30); bản Anh24 trang (PDF11–34), còn bao gồm bảng/hình. Tổng33/36 trang không phải số trang nội dung.
+Trang UET công bố năm2017 liên kết quy định cho hệ chuẩn/CLC: khoảng35–50 trang nội dung, loại bảng/hình/tài liệu tham khảo/phụ lục; cỡ13pt, giãn1,3; lề trên2,5/dưới3/trái3/phải2cm; tối đa4 cụm từ khóa; bibliography theo ABC. Source hiện12pt, giãn1,25, lề2/2/2,5/2cm,6 từ khóa, ieeetr theo thứ tự xuất hiện. Chưa xác nhận quy định này còn áp dụng cho đúng khóa/ngành của bạn, nên không coi đây là kết luận vi phạm chính thức.
+Nguồn trường: https://uet.edu.vn/mau-bieu-ve-trinh-bay-khoa-luan-tot-nghiep-va-tot-nghiep-cho-sinh-vien/
+Nếu cần tăng dung lượng, bổ sung phương pháp, dữ liệu, ablation, lỗi thực nghiệm và phân tích; không kéo dài bằng lặp lý thuyết. Xác nhận thêm yêu cầu bìa phụ/tóm tắt song ngữ, thứ tự front matter và chữ ký theo chương trình.
+
+7. THỨ TỰ SỬA ĐỀ XUẤT VÀ ĐIỀU KIỆN HOÀN THÀNH
+
+Đợt1 — Làm đúng dữ liệu và phép đo
+[ ] Nhãn Automotive v2 theo interval/frame đã xác minh.
+[ ] CICIoV đánh giá feature tier phù hợp timestamp thực có.
+[ ] Loại OTIDS shuffled khỏi sequence evaluation hoặc khôi phục capture provenance hợp lệ.
+[ ] FAR/AP không còn fallback sai nghĩa; có confusion matrix và counts.
+[ ] Sampling train không bỏ gần hết positive/attack families.
+[ ] Feature state nhất quán giữa train/eval/chunk; test có ý nghĩa cho nhãn, timestamp, invariance và metric edge cases.
+Điều kiện xong: dữ liệu nhỏ có ground truth được đối chiếu bằng tay; các edge case xuất đúng N/A/giá trị; đơn vị metric minh bạch.
+
+Đợt2 — Chốt run khoa học
+[ ] Freeze parser, feature extractor, split/config/seed và version.
+[ ] Lưu checkpoint và predictions; external dùng đúng checkpoint cần kiểm chứng.
+[ ] Chạy primary bốn set, các seed hợp lý và per-attack breakdown.
+[ ] Source-only threshold/calibration; không điều chỉnh bằng target labels.
+[ ] External có nhãn và schema phù hợp; per-file counts, không gộp metric thiếu ý nghĩa.
+[ ] Sinh bảng/hình tự động từ output; giải thích focused/sweep khác nhau.
+Điều kiện xong: mỗi con số truy về được input→config→checkpoint→prediction→metric.
+
+Đợt3 — Trả lời câu hỏi nghiên cứu
+[ ] RQ1: A–D với các set và uncertainty phù hợp.
+[ ] RQ2: feature-group ablation; preliminary và definitive evidence tách rõ.
+[ ] RQ3: raw-minus-ID/structural controls và kiểm tra vehicle-information claim.
+[ ] RQ4: ngoại suy hợp lệ, bao gồm failure và benign alert burden.
+[ ] Thêm threat model, pseudocode, bảng hyperparameter, dataset manifest và novelty matrix.
+[ ] Nếu giữ deployment claim: benchmark end-to-end, hardware và window/episode latency.
+Điều kiện xong: kết luận không vượt quá phạm vi thí nghiệm; negative results được giải thích sau khi loại lỗi pipeline.
+
+Đợt4 — Đồng bộ và đóng bản nộp
+[ ] Cập nhật bản Việt theo bằng chứng đúng rồi dịch đồng nhất sang Anh.
+[ ] Sửa bibliography từ nguồn gốc, gộp duplicate keys.
+[ ] Sửa counter chương, refs, **, typography, chart labels, thuật ngữ.
+[ ] Xác nhận rubric/mẫu đang áp dụng với khoa hoặc người hướng dẫn.
+[ ] Build lại cả hai PDF; kiểm tra nội dung, bố cục, ký tự, số trang, citation/refs lần cuối.
+Điều kiện xong: hai bản có cùng claim, số liệu, bảng/hình và limitations; mỗi tài liệu có đủ nội dung bắt buộc theo mẫu áp dụng.
+
+8. NHỮNG CÂU HỎI HỘI ĐỒNG CÓ KHẢ NĂNG HỎI
+
+1) Vì sao bản Việt ghi Focal Loss nhưng code dùng CrossEntropyLoss?
+2) F1 của bài báo là theo frame, của em theo window; em so sánh trực tiếp được không?
+3) Vì sao raw AP=.9505 nhưng F1≈0? Có phải vấn đề ngưỡng?
+4) Bỏ ID hay thêm14 feature mới tạo ra cải thiện?
+5) Set3 có thực sự được train với đủ attack windows không?
+6) Hai lần chạy Set1 cho kết quả C/D khác lớn; run nào tái lập được?
+7) FAR0 trên tập không có benign có ý nghĩa gì?
+8) Timestamp CICIoV lấy ở đâu? Tại sao là1ms?
+9) Payload/timing vẫn nhận dạng xe thì căn cứ nào gọi vehicle-agnostic?
+10) D recall13,22% và OTIDS FAR38,88% cho phép kết luận đến mức nào?
+11) Phần nào là đóng góp mới so với structural/graph IDS gần nhất?
+12) Thời gian chờ64 frame, feature extraction và inference cộng lại là bao nhiêu?
+
+Đánh giá cuối: có chất liệu để phát triển thành khóa luận tốt, đặc biệt nếu làm chắc phân tích transfer và failure boundaries. Hiện thiếu độ tin cậy của một số thực nghiệm và sự nhất quán song ngữ; các lỗi P0 cần được xử lý trước khi đặt mục tiêu điểm cao hoặc đóng bản nộp.

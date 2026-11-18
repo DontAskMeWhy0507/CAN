@@ -1,0 +1,17 @@
+representation,target,control,balanced_accuracy,accuracy
+raw,attack,constant,0.5,0.5
+raw,attack,learned,0.641900143678161,0.641900143678161
+raw,attack,permuted_train_labels,0.510607040229885,0.510607040229885
+raw,attack,random_embedding,0.5025862068965518,0.5025862068965518
+raw,vehicle,constant,0.25,0.25
+raw,vehicle,learned,0.992528735632184,0.992528735632184
+raw,vehicle,permuted_train_labels,0.24435704022988505,0.24435704022988505
+raw,vehicle,random_embedding,0.24961206896551724,0.24961206896551724
+structural,attack,constant,0.5,0.5
+structural,attack,learned,0.7669181034482758,0.7669181034482758
+structural,attack,permuted_train_labels,0.4958081896551724,0.4958081896551724
+structural,attack,random_embedding,0.5025862068965518,0.5025862068965518
+structural,vehicle,constant,0.25,0.25
+structural,vehicle,learned,0.9488326149425287,0.9488326149425288
+structural,vehicle,permuted_train_labels,0.2287104885057471,0.22871048850574713
+structural,vehicle,random_embedding,0.24961206896551724,0.24961206896551724

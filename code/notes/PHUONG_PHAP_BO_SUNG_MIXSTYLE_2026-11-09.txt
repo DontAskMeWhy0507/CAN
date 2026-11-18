@@ -1,0 +1,150 @@
+NGHIÊN CỨU BỔ SUNG: STRUCTURAL TRANSFORMER + MIXSTYLE
+Ngày đề xuất: 09/11/2026; hoàn tất thí nghiệm bổ sung: 10/11/2026.
+Trạng thái: ĐÃ TRIỂN KHAI VÀ CHẠY 12 FIT, 57 CAPTURE NGOẠI BỘ, PROBE VÀ RUNTIME.
+Đây là nghiên cứu hậu nghiệm, không thay kết quả chính đã đóng băng của khóa luận.
+Kết quả: W64/B recall 81,94%, FAR 64,54%, AP 0,5815. So với Structural,
+recall tăng 8,11 điểm %, nhưng FAR tăng 12,08 điểm %; chưa cải thiện đồng thời.
+Vehicle probe 95,27% (chance 25%): chưa chứng minh độc lập xe.
+Báo cáo đầy đủ: code/results/mixstyle_posthoc_2026-11-09/analysis/BAO_CAO_MIXSTYLE.txt.
+
+1. VÌ SAO CHỌN HƯỚNG NÀY
+
+Đối chiếu trực tiếp audit/primary_equal_set.csv của bản khóa luận cuối:
+W64/B: Structural recall 0.7382955361, AP 0.5554482252,
+FAR 52461.455675/100000 cửa sổ benign; Raw recall 0.8541490479,
+AP 0.3780889447, FAR 65301.408666/100000.
+Vấn đề cần cải thiện đồng thời là bỏ sót và báo động giả khi chuyển xe.
+AP cao hơn chưa đủ để giải quyết điểm vận hành.
+
+Code hiện dùng CE/AdamW và chỉ một xe nguồn trong mỗi set. Việc ghép các
+set để tạo nhiều xe nguồn có thể đưa xe đích của set này vào train từ set
+khác. Không được thực hiện rồi gọi đó là cùng phép so ban đầu.
+
+Lựa chọn nghiên cứu: thêm biến thiên thống kê đặc trưng khi huấn luyện.
+Giả thuyết cần kiểm tra là augmentation này giảm sự phụ thuộc vào phân bố
+nguồn. FAR cao và probe nhận diện xe cao chỉ gợi ý hướng nghiên cứu;
+chúng chưa chứng minh nguyên nhân hoặc đảm bảo MixStyle giải quyết được.
+
+2. CƠ SỞ HỌC THUẬT VÀ PHẠM VI
+
+[1] Zhou, K.; Yang, Y.; Qiao, Y.; Xiang, T. Domain Generalization with
+MixStyle. ICLR 2021; arXiv:2104.02008v1.
+https://arxiv.org/html/2104.02008v1
+Đã đọc phần phương pháp 2.2, mã giả A.1, phân tích A.2.
+MixStyle trộn mean/std đặc trưng giữa mẫu khi train; tắt khi test.
+Bài có thí nghiệm trộn mẫu cùng miền, nhưng vẫn trong thiết kế benchmark
+đa miền: KHÔNG diễn giải thành chứng minh cho train chỉ một xe CAN.
+
+[2] Ganin et al. Domain-Adversarial Training of Neural Networks.
+JMLR 17(59):1–35, 2016.
+https://jmlr.org/papers/v17/15-239.html
+DANN gốc dùng dữ liệu đích không nhãn. Áp dụng như vậy sẽ đổi điều kiện
+source-only của khóa luận. Không chọn làm bước thử đầu tiên.
+
+[3] Sun, B.; Saenko, K. Deep CORAL: Correlation Alignment for Deep Domain
+Adaptation. arXiv:1607.01719v1, 2016.
+https://arxiv.org/abs/1607.01719
+Đối chiếu abstract: căn chỉnh thống kê bậc hai nguồn–đích. Cũng cần phân
+biệt adaptation có dữ liệu đích với generalization không tiếp xúc đích.
+
+[4] Foret, P.; Kleiner, A.; Mobahi, H.; Neyshabur, B. Sharpness-Aware
+Minimization for Efficiently Improving Generalization. ICLR 2021.
+https://research.google/pubs/sharpness-aware-minimization-for-efficiently-improving-generalization/
+Đối chiếu abstract: tối ưu lân cận trọng số có loss thấp. Là lựa chọn khác
+cho regularization, chưa có bằng chứng từ nguồn này rằng thắng trên CAN.
+Chỉ chọn MỘT ứng viên MixStyle cho vòng đề xuất này.
+
+3. BẢN THÍCH ỨNG ĐỀ XUẤT — KHÔNG GỌI LÀ THUẬT TOÁN HOÀN TOÀN MỚI
+
+Tên mô tả: Structural Transformer + MixStyle theo lớp trên chuỗi.
+Giữ 30 chiều structural, W64, encoder hiện có và nhãn cửa sổ hiện có.
+Vị trí dự kiến: sau input_proj, trước khi cộng positional embedding.
+Với H có shape [batch,64,64], tính mean/std theo trục 64 frame của mỗi
+mẫu và mỗi kênh. Trộn hai bộ mean/std rồi áp dụng lên H đã chuẩn hóa.
+Giữ thứ tự frame; không trộn trực tiếp byte CAN, ID, mask, delta hoặc nhãn.
+
+Khác biệt có chủ đích so với bài gốc:
+- Chuỗi CAN và Transformer thay ảnh/CNN; thống kê theo trục frame.
+- Chỉ ghép các mẫu có cùng nhãn cửa sổ benign/attack trong batch nguồn.
+  Đây là giả thuyết thiết kế để hạn chế trộn hai lớp, không phải kết quả
+  của bài gốc. Cùng nhãn nhị phân vẫn có thể khác attack family.
+- Một xe nguồn; không biến capture ID thành một xe độc lập.
+- Nếu lớp chỉ có một mẫu trong batch, giữ nguyên mẫu đó.
+- Chọn cặp bằng hoán vị trong lớp, bỏ self-pair nếu có; không dùng nhãn
+  hoặc thống kê test để chọn cặp.
+- p=0.5, alpha=0.1, epsilon=1e-6; không thêm loss mới hay tham số học.
+  Mean/std detach; variance dùng population estimator (correction=0).
+- Khi eval/calibration/predict, MixStyle phải là identity tuyệt đối và
+  không nhận nhãn. Dùng cùng checkpoint cho mọi capture.
+
+Rủi ro cần đo: thống kê CAN có thể chứa tín hiệu tấn công thật. Trộn chúng
+có thể làm mất tín hiệu, đặc biệt với nhãn any-frame-positive. LayerNorm
+và vị trí chèn cũng có thể làm hiệu ứng khác CNN. Không cam kết tăng điểm.
+
+4. THIẾT KẾ PHÉP THỬ ĐÃ THỰC HIỆN
+
+Không sửa các file thực nghiệm đã đóng băng; triển khai trong module mới
+và output mới. Kế thừa split, sampled-window indices và preprocessing
+hiện tại. Dùng cùng seed 42/43/44, bốn set, 10 epoch, batch128,
+AdamW lr0.001, weight_decay0.0001 và cosine scheduler.
+
+Đầu tiên kiểm tra phần mềm trên mẫu nguồn và GPU: forward/backward hữu
+hạn; cùng nhãn khi ghép; p=0 hoặc eval bằng baseline khi cùng trọng số;
+không đổi đầu vào; checkpoint reload; không đọc test khi train/calibrate.
+Đây không phải thí nghiệm đánh giá hiệu quả.
+
+Sau đó chạy 4 set x 3 seed = 12 fit mới; tái sử dụng 24 baseline Raw/
+Structural đã xác minh. Không gọi 36 là số fit mới. Không chọn seed tốt
+nhất và không chạy lại vì điểm xấu. Một cấu hình cố định, chưa mở tìm kiếm
+siêu tham số. Nếu sửa lỗi phải ghi lại phiên bản và chạy đủ phần bị ảnh hưởng.
+
+Mỗi fit calibrate trên toàn validation nguồn, không rebalance validation;
+dùng chính choose_threshold_on_validation với FAR budget100/100000.
+Đánh giá đầy đủ A–D và lưu scores/counts/checkpoint/hash/log/runtime.
+Trung bình seed trong set, sau đó trung bình các set trọng số ngang nhau.
+Báo riêng seed variation và paired bootstrap theo capture; không xem
+capture/seed là xe độc lập. Giữ NaN cho chỉ số không xác định.
+
+Tiêu chí chính giữ nguyên Recall W64/B. Báo FAR như điều kiện đi kèm:
+- Hơn Structural về recall nhưng FAR tăng: chỉ là đánh đổi.
+- Hơn Structural về recall, FAR không tăng: cải thiện quan sát được so
+  với Structural, chưa nhất thiết hơn Raw.
+- Recall cao hơn cả Raw và Structural, FAR không cao hơn cả hai: dấu
+  hiệu mạnh hơn về cải thiện đồng thời; vẫn cần CI và kết quả từng set.
+- AP/F1/probe là phụ; không thay tiêu chí chính sau khi xem test.
+- Kể cả FAR giảm nhiều, chưa đạt ngân sách đích 0.1% thì không được nói
+  đáp ứng ngân sách triển khai. Ngân sách nguồn không bảo đảm ngân sách đích.
+
+Chạy ngoại bộ cho cả kết quả tốt lẫn xấu, không chỉ chọn bộ có lợi.
+Kết quả mới trên các test đã xem là hậu nghiệm. Muốn xác nhận mạnh hơn
+cần xe/phiên ghi mới chưa dùng để thiết kế, tách theo phiên và khóa cấu
+hình trước khi chấm. Không thể tạo holdout thật bằng cách đổi tên test cũ.
+
+5. NẾU MỤC TIÊU LÀ TRIỂN KHAI THỰC TẾ
+
+Thu một phiên benign độc lập trên xe mới để calibrate là một hướng khác
+đáng thử khi được phép tiếp xúc xe đích. Phải tách phiên calibration khỏi
+test, áp dụng cùng quyền truy cập cho baseline, và ghi là target-calibrated.
+Benign được xác nhận; không giả định mọi dữ liệu không nhãn là benign.
+Đây là bài toán khác source-only và không được dùng để thay kết quả chính.
+Với không báo động giả trong n mẫu độc lập, cận trên một phía95% vẫn là
+1 - 0.05^(1/n); n khoảng2995 mới xuống0.1%. Cửa sổ CAN thường phụ thuộc,
+do đó không thể coi 2995 cửa sổ liên tiếp là bảo đảm thống kê tương đương.
+
+Hạ ngưỡng có thể tăng recall nhưng không làm FAR giảm trên cùng scores.
+Đổi số epoch hoặc làm model lớn hơn cũng không tự giải quyết chuyển xe.
+Chỉ kết luận đạt cao hơn sau khi có phép thử đối chứng nói trên.
+
+6. TRẠNG THÁI BÀN GIAO
+
+Đã có code, 12 checkpoint, toàn bộ dự đoán, kiểm chứng nguồn số liệu, probe
+và phép đo lại tốc độ cho cả baseline và MixStyle. Notebook phân tích cuối:
+code/notebooks/11_mixstyle_analysis_executed.ipynb.
+JSON đề xuất được giữ nguyên như bản thiết kế trước khi chạy, không dùng
+trường trạng thái lịch sử trong JSON đó để suy ra trạng thái hiện tại.
+Notebook 10 giữ lịch sử lỗi tổng hợp do lẫn ngưỡng mặc định 0,5; notebook
+11 dùng bản sửa chỉ lọc ngưỡng nguồn. Code huấn luyện và dự đoán không đổi.
+Bản code runner trước sửa được khôi phục đúng SHA256 trong thư mục provenance.
+Các PDF/ZIP khóa luận đã bàn giao được giữ nguyên.
+Việc cần người dùng cung cấp chỉ phát sinh nếu muốn xác nhận trên xe/
+phiên hoàn toàn mới, hoặc chọn hướng có calibration xe đích.

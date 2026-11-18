@@ -1,0 +1,34 @@
+{
+  "status": "VERIFIED_COMPLETE",
+  "new_fits": 12,
+  "reused_baselines": 24,
+  "external_captures": 57,
+  "external_metric_rows": 513,
+  "primary_baseline_aggregates_unchanged": true,
+  "post_hoc": true,
+  "inference_labels_used": false,
+  "primary_comparisons": [
+    {
+      "condition": "B",
+      "baseline": "raw_transformer",
+      "recall_delta_pp": -3.4708580831573466,
+      "far_delta_pp": -0.7626962032670271,
+      "interpretation": "RECALL_DECREASE",
+      "sets_with_higher_recall": 1
+    },
+    {
+      "condition": "B",
+      "baseline": "structural_transformer",
+      "recall_delta_pp": 8.11449309044342,
+      "far_delta_pp": 12.0772567876303,
+      "interpretation": "INCREASED_FALSE_ALARMS_TRADEOFF",
+      "sets_with_higher_recall": 3
+    }
+  ],
+  "unperformed_secondary_studies": [],
+  "completion_date": "2026-11-10",
+  "secondary_manifest_sha256": "48e978e3be83224b38b5b200abc69640edac490b26b0b1e56ab5da7bb229f779",
+  "aggregation_fix_provenance": "provenance/aggregation_fix.json",
+  "analysis_runner_sha256": "471530e638d92b665a376db037779d1e98d3d4bb26fa4e4e107b4e3d83722ef5",
+  "report_script_sha256": "6c4ba3b9c2fca400ae079f9e4266b652374891c78079895c56ef35965d6d6a89"
+}

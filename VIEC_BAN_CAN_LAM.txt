@@ -1,0 +1,33 @@
+VIỆC BẠN CẦN LÀM — 08/11/2026
+
+Đã có dữ liệu chuẩn bị và notebook chạy năm mô hình. Đọc code/comparison/README.txt.
+
+1. Dùng bản hiện hành tại F:\00_Research. Trên Colab, giải nén
+   comparison_runner_2026-11-08.zip vào thư mục dự án trên Drive. Chép
+   ctt_comparison_data_v1.zip vào code/output/ của dự án đó. Nếu dùng archive
+   này thì không cần đưa toàn bộ CTT gốc/ROAD/SynCAN lên Drive để chạy phép so này.
+
+2. Mở theo thứ tự:
+   code/notebooks/06_prepare_comparison_data.ipynb — đường dẫn, dependencies,
+   code đúng commit và cache đầy đủ. Trên Colab chọn GPU; sửa PROJECT_HINT.
+   code/notebooks/07_run_paper_comparisons.ipynb — pilot nguồn rồi full run.
+   code/notebooks/08_analyze_paper_comparisons.ipynb — bảng và hình khi đủ ma trận.
+
+3. Full run: 4 set x 3 seed x 5 mô hình = 60 đơn vị IDS. CANBERT+ có hai bước
+   pretrain/fine-tune bên trong. Giữ nguyên config/code và output khi tiếp tục.
+   Khi Colab ngắt, chạy lại 06 để phục hồi cache local rồi tiếp tục 07.
+   Lần COMPLETE được kiểm tra và bỏ qua; epoch dở dang khởi chạy lại.
+   Chưa có kết quả full GPU; pilot CPU dùng mô hình nhỏ chỉ kiểm tra phần mềm.
+
+4. Dữ liệu CTT có timestamp đi lùi. Cache giữ nguyên thứ tự và giá trị gốc;
+   phép so này dùng content-only: raw 28/structural 30 chiều. Chế độ timing bị
+   chặn nếu có lỗi thời gian. Không gộp với timed v2.1 (raw 29/structural 32).
+
+5. Giữ toàn bộ output: manifest, môi trường, nguồn mẫu, checkpoint, score frame,
+   prediction, ngưỡng nguồn, coverage, log lỗi và summaries. Không chỉ gửi ảnh F1.
+   CANBERT+/CANLP/CrySyS ở đây là các bản thích ứng giao thức đã mô tả; không lấy
+   số công bố trên dataset khác để kết luận vượt trội. Relational chưa tái lập.
+
+Sau khi chạy xong, dùng số thật cập nhật Chương 5, hai abstract và kết luận.
+Bốn set dùng lại xe; không suy thành bốn xe đích độc lập. Mẫu/rubric và tên đề tài
+vẫn cần xác nhận với GVHD trước bản nộp cuối.

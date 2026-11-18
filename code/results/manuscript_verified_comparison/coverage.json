@@ -1,0 +1,13 @@
+{
+  "status": "COMPLETE_MATRIX",
+  "cells": 60,
+  "methods": [
+    "assoc_rules_crysys",
+    "canbertplus",
+    "canlp",
+    "raw_transformer",
+    "structural_transformer"
+  ],
+  "analysis_code_sha256": "a7ee0e2f1c5ebd6adb8357a4a16f39797eff9b79d698d561aef8d3d4ec75becc",
+  "note": "Original execution manifests retained. Native code/data/config/environment must match; only declared exact-call caching backend may differ."
+}

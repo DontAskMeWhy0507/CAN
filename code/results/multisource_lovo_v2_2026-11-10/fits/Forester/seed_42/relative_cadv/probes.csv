@@ -1,0 +1,13 @@
+target,seed,method,task,decoder,control,balanced_accuracy,chance,warnings
+Forester,42,relative_cadv,vehicle,linear,learned,0.9068750000000001,0.25,
+Forester,42,relative_cadv,vehicle,linear,constant,0.25,0.25,
+Forester,42,relative_cadv,vehicle,linear,permuted,0.25375,0.25,
+Forester,42,relative_cadv,vehicle,mlp,learned,0.9371875000000001,0.25,
+Forester,42,relative_cadv,vehicle,mlp,constant,0.25,0.25,
+Forester,42,relative_cadv,vehicle,mlp,permuted,0.27749999999999997,0.25,Stochastic Optimizer: Maximum iterations (200) reached and the optimization hasn't converged yet.
+Forester,42,relative_cadv,attack,linear,learned,0.786875,0.5,
+Forester,42,relative_cadv,attack,linear,constant,0.5,0.5,
+Forester,42,relative_cadv,attack,linear,permuted,0.5090625,0.5,
+Forester,42,relative_cadv,attack,mlp,learned,0.7753125000000001,0.5,
+Forester,42,relative_cadv,attack,mlp,constant,0.5,0.5,
+Forester,42,relative_cadv,attack,mlp,permuted,0.506875,0.5,

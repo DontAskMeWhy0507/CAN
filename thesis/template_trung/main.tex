@@ -1,0 +1,540 @@
+\documentclass[12pt, a4paper, reqno, oneside]{book}
+\usepackage[left=2.5cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{amsmath,amsxtra,amssymb,latexsym, amscd,amsthm}
+\usepackage{microtype}
+\usepackage{indentfirst}
+\usepackage{color}
+\usepackage{empheq}
+\usepackage[utf8]{inputenc}
+\usepackage[T5,T1]{fontenc}
+\usepackage[vietnamese,USenglish]{babel}
+\usepackage{amsmath}
+\usepackage[mathscr]{eucal}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{listings}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{verbatim}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{tkz-graph}
+\usetikzlibrary{positioning}
+\usepackage{float}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+% Note: subfigure is legacy and conflicts with modern subcaption; kept commented for compatibility
+% \usepackage{subfigure}
+\usepackage{pgfplots}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{rotating}
+\usepackage{longtable}
+\usepackage{supertabular}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{bbold}
+\fancyhf{}
+\fancyhead[LO,RE]{\small{\leftmark}}
+\fancyfoot[C]{\thepage}
+\usepackage{ulem}
+\usepackage{pdfpages}
+\usepackage[square,numbers]{natbib}
+\usepackage{booktabs}
+\usepackage{chngcntr}
+\usepackage{tabularray}
+\usepackage[labelfont=bf, textfont=it, justification=centering]{caption}
+\captionsetup{labelfont={color=blue, bf}, textfont={color=black, it}}
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\usepackage[hyphens,spaces,obeyspaces]{url}
+\usepackage[colorlinks,bookmarksopen,bookmarksnumbered,citecolor=blue,colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+
+\renewcommand{\baselinestretch}{1.25}
+
+\newcommand\chap[1]{%
+  \chapter*{#1}%
+  \addcontentsline{toc}{chapter}{#1}%
+  \markboth{#1}{}%
+}
+\newcommand\sect[1]{%
+  \section*{#1}%
+  \addcontentsline{toc}{section}{#1}%
+}
+
+\counterwithin{algorithm}{chapter}
+\renewcommand{\thealgorithm}{\thechapter.\arabic{algorithm}}
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
+\newtheorem{lemma}{\bf Bổ đề}[chapter]
+\newtheorem{theorem}{\bf Định lý}[chapter]
+\newtheorem{proposition}{\bf Mệnh đề}[chapter]
+\newtheorem{corollary}{\bf Hệ quả}[chapter]
+\newtheorem{definition}{\bf Định nghĩa}[chapter]
+\newtheorem{remark}{\bf Chú ý}[section]
+
+% Mức tiêu đề sâu (subsubsubsection, paragraph)
+\titleclass{\subsubsubsection}{straight}[\subsection]
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+\renewcommand\theparagraph{\thesubsubsubsection.\arabic{paragraph}}
+
+\titleformat{\subsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsection}
+  {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}%
+  {3.25ex \@plus1ex \@minus.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{6}{\parindent}%
+  {3.25ex \@plus1ex \@minus .2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\def\toclevel@subsubsubsection{4}
+\def\toclevel@paragraph{5}
+\def\toclevel@paragraph{6}
+\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
+\def\l@paragraph{\@dottedtocline{5}{10em}{5em}}
+\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
+\makeatother
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+% Thư mục hình ảnh
+\graphicspath{{./figs/}}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=single,
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  stepnumber=1, 
+}
+
+\lstdefinestyle{customasm}{
+  belowcaptionskip=1\baselineskip,
+  frame=single,
+  xleftmargin=\parindent,
+  language=[x86masm]Assembler,
+  basicstyle=\footnotesize\ttfamily,
+  commentstyle=\itshape\color{purple!40!black},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  stepnumber=1, 
+}
+
+\lstset{escapechar=@,style=customc}
+
+\definecolor{processblue}{cmyk}{0.96,0,0,0}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\definecolor{eclipseStrings}{RGB}{42,0.0,255}
+\definecolor{eclipseKeywords}{RGB}{127,0,85}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    commentstyle=\color{eclipseStrings},
+    stringstyle=\color{eclipseKeywords},
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    string=[s]{"}{"},
+    comment=[l]{:\ "},
+    morecomment=[l]{:"},
+    literate=
+        *{0}{{{\color{numb}0}}}{1}
+         {1}{{{\color{numb}1}}}{1}
+         {2}{{{\color{numb}2}}}{1}
+         {3}{{{\color{numb}3}}}{1}
+         {4}{{{\color{numb}4}}}{1}
+         {5}{{{\color{numb}5}}}{1}
+         {6}{{{\color{numb}6}}}{1}
+         {7}{{{\color{numb}7}}}{1}
+         {8}{{{\color{numb}8}}}{1}
+         {9}{{{\color{numb}9}}}{1}
+}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+
+% =========================================================================
+% TRANG BÌA NGOÀI (BÌA CHÍNH - KHUNG ĐÔI TIKZ)
+% =========================================================================
+\begin{titlepage}
+\begin{center}
+	\begin{tikzpicture}[overlay,remember picture]
+	    \draw [line width=3pt,rounded corners=0pt]
+	        ($ (current page.north west) + (20mm,-20mm) $)
+	        rectangle
+	        ($ (current page.south east) + (-15mm,20mm) $);
+	    \draw [line width=1pt,rounded corners=0pt]
+	        ($ (current page.north west) + (21.5mm,-21.5mm) $)
+	        rectangle
+	        ($ (current page.south east) + (-16.5mm,21.5mm) $);
+	\end{tikzpicture}
+	\\[1mm]
+    \centerline{\bf VIETNAM NATIONAL UNIVERSITY HANOI}
+    \centerline{\bf UNIVERSITY OF ENGINEERING AND TECHNOLOGY}
+    
+    \vspace*{1.8cm}
+    \large
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.23\linewidth]{figs/uet.jpg}
+        \end{figure}
+    \vspace*{1cm}
+    \centerline{\bf VU TIEN TUAN TRUNG}
+    \vspace*{2.5cm}
+    \centerline{\bf Vehicle-Agnostic Representation Learning }
+    \centerline{\bf for Cross-Vehicle CAN Bus }
+    \centerline{\bf Intrusion Detection}
+    \vspace*{2.5cm}
+    \centerline{\bf GRADUATION THESIS}
+    \vspace*{0.2cm}
+    \centerline{\bf Major: Information Systems}
+    
+    \vfill
+    \centerline{\bf Hanoi - 2026}
+    \vspace{13pt}
+\end{center}
+\end{titlepage}
+
+\newpage
+
+% =========================================================================
+% TRANG BÌA PHỤ (BÌA TRONG - CÓ CÁN BỘ HƯỚNG DẪN)
+% =========================================================================
+\begin{titlepage}
+\begin{center}
+	\begin{tikzpicture}[overlay,remember picture]
+	    \draw [line width=3pt,rounded corners=0pt]
+	        ($ (current page.north west) + (20mm,-20mm) $)
+	        rectangle
+	        ($ (current page.south east) + (-15mm,20mm) $);
+	    \draw [line width=1pt,rounded corners=0pt]
+	        ($ (current page.north west) + (21.5mm,-21.5mm) $)
+	        rectangle
+	        ($ (current page.south east) + (-16.5mm,21.5mm) $);
+	\end{tikzpicture}
+	\\[1mm]
+    \centerline{\bf VIETNAM NATIONAL UNIVERSITY HANOI}
+    \centerline{\bf UNIVERSITY OF ENGINEERING AND TECHNOLOGY}
+    \vspace*{1.8cm}
+    \large
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.23\linewidth]{figs/uet.jpg}
+        \end{figure}
+    \vspace*{0.9cm}
+    \large
+    \centerline{\bf VU TIEN TUAN TRUNG}
+    \vspace*{2.2cm}
+    \centerline{\bf Vehicle-Agnostic Representation Learning }
+    \centerline{\bf for Cross-Vehicle CAN Bus }
+    \centerline{\bf Intrusion Detection}
+    \vspace*{1.7cm}
+    \centerline{\bf Major: Information Systems}
+    
+    \vspace*{1.6cm}
+    \centerline{\bf Supervisor: }
+    \centerline{\bf Assoc. Prof. Nguyen Ngoc Hoa}
+    
+    \vfill
+    \centerline{\bf Hanoi - 2026}
+    \vspace{13pt}
+\end{center}
+\end{titlepage}
+
+\newpage
+\pagenumbering{gobble}
+
+% =========================================================================
+% LỜI CẢM ƠN (ACKNOWLEDGEMENTS)
+% =========================================================================
+\chapter*{Acknowledgements}
+\vspace{20pt}
+I would like to express my deepest gratitude to my supervisor, Associate Professor Nguyen Ngoc Hoa, for his invaluable guidance, unwavering support, and continuous encouragement throughout this research. His profound expertise, meticulous feedback, and visionary mentorship were instrumental in navigating the complexities of this study, making the completion of this thesis possible.
+
+I also acknowledge the use of AI-assisted tools to support document formatting, grammatical refinement, alongside AI coding assistants for syntax suggestions during implementation. All core concepts, algorithmic designs, methodologies, and conclusions presented herein are entirely my own original work.
+
+While I have strived for academic rigor, I acknowledge that this research still holds potential for further refinement. I warmly welcome and deeply appreciate any constructive critiques and insights from the examination committee, which will undoubtedly help enhance the quality of this work and guide my future endeavors.
+
+Sincere gratitude!
+
+\newpage
+
+% =========================================================================
+% LỜI CAM ĐOAN (AUTHORSHIP)
+% =========================================================================
+\chapter*{Authorship}
+\vspace{20pt}
+I declare that this thesis is my original work, conducted under the dedicated supervision of Associate Professor Nguyen Ngoc Hoa. I confirm that this document has not been submitted, either in whole or in part, for any other academic degree or professional qualification at this or any other institution.
+
+All sources, references, and related literature utilized in this study have been comprehensively acknowledged and properly cited. Furthermore, I guarantee that the empirical data and statistical analyses presented herein are the direct results of authentic, independently conducted experiments, ensuring strict methodological rigor and accuracy.
+
+I affirm that this declaration is made with the utmost academic integrity and in full compliance with the academic regulations and policies of the VNU University of Engineering and Technology.
+
+\begin{flushright}
+{\it Author}
+\hskip 1.5cm\quad
+
+\vskip 2cm
+{\bf Vu Tien Tuan Trung }  \quad\ \quad
+\end{flushright}
+\newpage
+
+% =========================================================================
+% TÓM TẮT KHÓA LUẬN (ABSTRACT)
+% =========================================================================
+\chapter*{Abstract}
+\vspace{20pt}
+% [Dán nội dung Abstract tiếng Anh vào đây]
+
+\vspace{1em}
+\noindent \textit{\textbf{Keywords:} Controller Area Network (CAN), Intrusion Detection System, Cross-Vehicle Generalization, Vehicle-Agnostic Representation, Structural Features, Deep Sequence Modeling.}
+
+\newpage
+
+% =========================================================================
+% DANH MỤC (TOC, LOF, LOT, LOA, ABBREVIATIONS)
+% =========================================================================
+\hypersetup{pageanchor=true}
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+
+\listoffigures
+\newpage
+
+\listoftables
+\newpage
+
+\begingroup
+\listofalgorithms
+\let\clearpage\relax
+\endgroup
+\newpage
+
+\chapter*{List of Abbreviations}
+\vspace{20pt}
+\begin{table}[H]
+\centering
+\begin{tabular}{|m{3cm}|m{11cm}|}
+\hline
+\textbf{Abbreviation} & \textbf{Full Description} \\ \hline
+AP & Average Precision \\ \hline
+CAN & Controller Area Network \\ \hline
+CNN & Convolutional Neural Network \\ \hline
+DBC & Database CAN (Signal Description Database) \\ \hline
+DLC & Data Length Code \\ \hline
+DoS & Denial of Service \\ \hline
+ECU & Electronic Control Unit \\ \hline
+FAR & False Alarm Rate \\ \hline
+F1 & Harmonic Mean of Precision and Recall \\ \hline
+FPR & False Positive Rate \\ \hline
+IDS & Intrusion Detection System \\ \hline
+LSTM & Long Short-Term Memory \\ \hline
+ML & Machine Learning \\ \hline
+OBD-II & On-Board Diagnostics II \\ \hline
+ROC-AUC & Receiver Operating Characteristic - Area Under Curve \\ \hline
+TPR & True Positive Rate \\ \hline
+UET & University of Engineering and Technology \\ \hline
+VNU & Vietnam National University \\ \hline
+\end{tabular}
+\end{table}
+
+\newpage
+\pagenumbering{arabic}
+\pagestyle{fancy}
+
+% =========================================================================
+% CHAPTER 1: INTRODUCTION
+% =========================================================================
+\chapter{Introduction}
+\label{chap:introduction}
+
+\section{Research Motivation}
+\label{sec:intro_motivation}
+% [Dán nội dung Động cơ nghiên cứu vào đây]
+
+\section{Problem Statement and Research Scope}
+\label{sec:intro_problem}
+% [Dán nội dung Phát biểu bài toán và Phạm vi nghiên cứu vào đây]
+
+\section{Research Questions (RQ1--RQ4)}
+\label{sec:intro_rqs}
+% [Dán nội dung 4 Câu hỏi nghiên cứu vào đây]
+
+\section{Research Contributions}
+\label{sec:intro_contributions}
+% [Dán nội dung Danh sách đóng góp vào đây]
+
+\section{Thesis Outline}
+\label{sec:intro_outline}
+% [Dán nội dung Tổ chức khóa luận vào đây]
+
+% =========================================================================
+% CHAPTER 2: BACKGROUND AND PROBLEM FORMULATION
+% =========================================================================
+\chapter{Background and Problem Formulation}
+\label{chap:background}
+
+\section{CAN Bus Protocol and In-Vehicle Threat Model}
+\label{sec:bg_can_bus}
+% [Dán nội dung Giao thức CAN và Mô hình đe dọa vào đây]
+
+\section{Window-Level Intrusion Detection Formulation}
+\label{sec:bg_windowing}
+% [Dán nội dung Công thức hóa bài toán phát hiện theo cửa sổ vào đây]
+
+\section{Cross-Vehicle Distribution Shifts (Conditions A--D)}
+\label{sec:bg_conditions}
+% [Dán nội dung 4 Điều kiện dịch chuyển miền A, B, C, D vào đây]
+
+\section{Benchmark Datasets and Data Quality Audit}
+\label{sec:bg_datasets}
+% [Dán nội dung Bộ dữ liệu can-train-and-test và dữ liệu ngoại bộ vào đây]
+
+% =========================================================================
+% CHAPTER 3: RELATED WORK
+% =========================================================================
+\chapter{Related Work}
+\label{chap:related}
+
+\section{Timing and Message Frequency Intrusion Detectors}
+\label{sec:rw_timing}
+% [Dán tổng quan các phương pháp phát hiện theo chu kỳ thời gian vào đây]
+
+\section{Sequence and Language Models for CAN Bus Traffic}
+\label{sec:rw_sequence}
+% [Dán tổng quan các mô hình chuỗi CANBERT, CANLP vào đây]
+
+\section{Graph and Relational Representations}
+\label{sec:rw_graphs}
+% [Dán tổng quan các phương pháp đồ thị và quan hệ ID vào đây]
+
+\section{Domain Generalization and Invariant Learning}
+\label{sec:rw_domain_generalization}
+% [Dán tổng quan tổng quát hóa miền, MixStyle và DANN vào đây]
+
+\section{Critical Analysis and Open Research Gaps}
+\label{sec:rw_gaps}
+% [Dán phân tích khoảng trống nghiên cứu vào đây]
+
+% =========================================================================
+% CHAPTER 4: VEHICLE-AGNOSTIC REPRESENTATION LEARNING FRAMEWORK
+% =========================================================================
+\chapter{Vehicle-Agnostic Representation Learning Framework}
+\label{chap:framework}
+
+\section{Framework Overview and System Architecture}
+\label{sec:fw_overview}
+% [Dán sơ đồ kiến trúc tổng thể của hệ thống vào đây]
+
+\section{Data Contracts and Pre-Processing Pipeline}
+\label{sec:fw_preprocessing}
+% [Dán quy trình tiền xử lý, lọc file và kiểm tra hợp đồng dữ liệu vào đây]
+
+\section{30-Dimensional Structural Feature Engineering}
+\label{sec:fw_features}
+% [Dán chi tiết định nghĩa 30 chiều đặc trưng cấu trúc vào đây]
+
+\section{Sequence Modeling with Transformer Encoder}
+\label{sec:fw_transformer}
+% [Dán kiến trúc Transformer Encoder và cơ chế tự chú ý vào đây]
+
+\section{Feature-Level Domain Regularization (MixStyle)}
+\label{sec:fw_mixstyle}
+% [Dán thuật toán và cơ chế trộn đặc trưng MixStyle vào đây]
+
+\section{Source-Only Model Training and Threshold Selection}
+\label{sec:fw_training}
+% [Dán quy trình huấn luyện nguồn và chọn ngưỡng đóng băng vào đây]
+
+% =========================================================================
+% CHAPTER 5: EXPERIMENTAL RESULTS AND ANALYSIS
+% =========================================================================
+\chapter{Experimental Results and Analysis}
+\label{chap:results}
+
+\section{Experimental Setup and Baseline Specifications}
+\label{sec:res_setup}
+% [Dán thông số phần cứng, siêu tham số và baseline đối chứng vào đây]
+
+\section{RQ1: Cross-Vehicle Transfer and Threshold Divergence}
+\label{sec:res_rq1}
+% [Dán kết quả Điều kiện B & D, phân tích Recall và AP vào đây]
+
+\section{RQ2: Representation Component Ablations and Window Sensitivity}
+\label{sec:res_rq2}
+% [Dán kết quả ablation 10 biến thể và độ nhạy W32/W64/W128 vào đây]
+
+\section{RQ3: Linear Diagnostic Probes of Latent Representations}
+\label{sec:res_rq3}
+% [Dán kết quả Linear Probing giải mã nhãn xe và nhãn tấn công vào đây]
+
+\section{RQ4: External Validation Across 57 In-Vehicle Captures}
+\label{sec:res_rq4}
+% [Dán kết quả kiểm thử trên 57 capture ngoại bộ vào đây]
+
+\section{Operational Recovery via Unsupervised Benign Warmup Calibration}
+\label{sec:res_calibration}
+% [Dán kết quả hiệu chuẩn nền lành tính K=500, ngân sách FAR 1% vào đây]
+
+\section{Computational Latency and ECU Resource Benchmarking}
+\label{sec:res_latency}
+% [Dán số liệu đo độ trễ CPU/GPU máy trạm vào đây]
+
+% =========================================================================
+% CHAPTER 6: CONCLUSION AND FUTURE WORK
+% =========================================================================
+\chap{Conclusion and Future Work}
+\label{chap:conclusion}
+
+\sect{Summary of Main Findings}
+\label{sec:concl_summary}
+% [Dán tóm tắt các phát hiện chính vào đây]
+
+\sect{Limitations and Claim Boundaries}
+\label{sec:concl_limitations}
+% [Dán phạm vi giới hạn và ranh giới nghiên cứu vào đây]
+
+\sect{Future Research Directions}
+\label{sec:concl_future}
+% [Dán hướng nghiên cứu tiếp theo (ROAD dataset, online adaptation, embedded) vào đây]
+
+% =========================================================================
+% DANH SÁCH BÀI BÁO CÔNG BỐ (PUBLICATIONS)
+% =========================================================================
+\chap{Publications}
+\label{chap:publications}
+% [Dán danh sách bài báo / báo cáo hội nghị nếu có vào đây]
+
+\newpage
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{ieeetr}
+\bibliography{refs}
+
+\end{document}

@@ -1,0 +1,588 @@
+[
+  {
+    "dataset": "Opel_Astra_benign",
+    "file": "F:\\00_Research\\code\\data\\Automotive CAN Bus Intrusion Dataset v2-\\OpelAstra\\testing.log",
+    "sha256": "ab6152c0bfd6605f513019880f117847a2051cb06f05e34db391e4d7e331df33",
+    "status": "COMPLETE",
+    "frames": 806999,
+    "windows": 12609,
+    "tail": 23,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "Opel_Astra_DoS",
+    "file": "F:\\00_Research\\code\\data\\Automotive CAN Bus Intrusion Dataset v2-\\OpelAstra\\dosattack.log",
+    "sha256": "5c0f4e2f3586195963772350c27739d25ec3d8918f7998569008c46d04affa65",
+    "status": "COMPLETE",
+    "frames": 827555,
+    "windows": 12930,
+    "tail": 35,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "Renault_Clio_benign",
+    "file": "F:\\00_Research\\code\\data\\Automotive CAN Bus Intrusion Dataset v2-\\RenaultClio\\testing.log",
+    "sha256": "16acdac326702a72941f92555f0c080786c67afda8addd324f04247895ea7b35",
+    "status": "COMPLETE",
+    "frames": 115971,
+    "windows": 1812,
+    "tail": 3,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "Renault_Clio_DoS",
+    "file": "F:\\00_Research\\code\\data\\Automotive CAN Bus Intrusion Dataset v2-\\RenaultClio\\dosattack.log",
+    "sha256": "40ce7fb5623919dea90c0a5e3e23b2619c72f26fae67a46f9c1b14866a5b0955",
+    "status": "COMPLETE",
+    "frames": 141927,
+    "windows": 2217,
+    "tail": 39,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_benign",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Benign\\Day_1\\Benign_day1_file1.log",
+    "sha256": "487562b0e5afb1994a4e94430d9a40b87f9ec1161da19b59e305d31293f23ce1",
+    "status": "COMPLETE",
+    "frames": 10000000,
+    "windows": 156250,
+    "tail": 0,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_benign",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Benign\\Day_1\\Benign_day1_file2.log",
+    "sha256": "019acba7f5d5e9b28d0bdafa17b9f44083468eb91f389b180eae50549678f124",
+    "status": "COMPLETE",
+    "frames": 10000000,
+    "windows": 156250,
+    "tail": 0,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_benign",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Benign\\Day_1\\Benign_day1_file3.log",
+    "sha256": "749692ce5b5158c6405cecd6db6279c98afa2db67032372364b269e374a29fa2",
+    "status": "COMPLETE",
+    "frames": 8494995,
+    "windows": 132734,
+    "tail": 19,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_benign",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Benign\\Day_1\\Benign_day1_file4.log",
+    "sha256": "78e8f3918186f2e3c9ce0a68ceec9995541cc706ed3bd940633ea514a9f93efc",
+    "status": "COMPLETE",
+    "frames": 10000000,
+    "windows": 156250,
+    "tail": 0,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_benign",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Benign\\Day_1\\Benign_day1_file5.log",
+    "sha256": "57ab4799d1f01d176c88513b78555191f1dba8d846d1a52c8a23ed5d5f5ae12d",
+    "status": "COMPLETE",
+    "frames": 7000000,
+    "windows": 109375,
+    "tail": 0,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_benign",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Benign\\Day_1\\Benign_day1_file6.log",
+    "sha256": "206c7d727a847804e415efe1e9bcc581463351e890541791ad901c94e2be5266",
+    "status": "COMPLETE",
+    "frames": 589705,
+    "windows": 9214,
+    "tail": 9,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_benign",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Benign\\Day_2\\Benign_day2_file1.log",
+    "sha256": "4d6104c2209bb03cb0b685d7fa4203a91c8e89d294b700f3f917176cf2d2a540",
+    "status": "COMPLETE",
+    "frames": 10110000,
+    "windows": 157968,
+    "tail": 48,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_benign",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Benign\\Day_2\\Benign_day2_file2.log",
+    "sha256": "353432da8c064fd1b1b39cae5b2a0a8d2840779abd2b24b805c74280a906da7e",
+    "status": "COMPLETE",
+    "frames": 10094091,
+    "windows": 157720,
+    "tail": 11,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_benign",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Benign\\Day_3\\Benign_day3_file1.log",
+    "sha256": "441f94a34b29529a9ff2a917445adb331831cb598e39d6ef8cd19905b9795a66",
+    "status": "COMPLETE",
+    "frames": 9807445,
+    "windows": 153241,
+    "tail": 21,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_benign",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Benign\\Day_4\\Benign_day4_file1.log",
+    "sha256": "02dad187e2d07d3d2cd610bc1b39be38e4644c73fe6d9358971c9cadbf76dd6c",
+    "status": "COMPLETE",
+    "frames": 9670832,
+    "windows": 151106,
+    "tail": 48,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_benign",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Benign\\Day_5\\Benign_day5_file1.log",
+    "sha256": "f7bbb6953411c079d7cdf10605b7c44abcbaf79026fc23fe869539469e88bcb3",
+    "status": "COMPLETE",
+    "frames": 10435392,
+    "windows": 163053,
+    "tail": 0,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_benign",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Benign\\Day_6\\Benign_day6_file1.log",
+    "sha256": "8285d177f3f1adf142588db4cf6f21112961e4a603ee816ba2da05e01b8bc4e8",
+    "status": "COMPLETE",
+    "frames": 10276962,
+    "windows": 160577,
+    "tail": 34,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Masquerade_attacks\\Break_and_fog_light_masquerade_attack.log",
+    "sha256": "81466dd0751c1590b01c695e474d1cd0a3ddc4d71a8eef4cea51571c0e7040cb",
+    "status": "COMPLETE",
+    "frames": 507995,
+    "windows": 7937,
+    "tail": 27,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Masquerade_attacks\\Break_warning_masquerade_attack.log",
+    "sha256": "0e806a0f32119a67136f3be26340f35f1bd6f16ee778c7d9889560bd078ae4d3",
+    "status": "COMPLETE",
+    "frames": 574886,
+    "windows": 8982,
+    "tail": 38,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Masquerade_attacks\\Min_speedometer_masquerade_attack_1.log",
+    "sha256": "8fb4b6135ce736469bd031f1a577a9b0a02fe469777c9a01b4df316bc0ff24dc",
+    "status": "COMPLETE",
+    "frames": 538083,
+    "windows": 8407,
+    "tail": 35,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Masquerade_attacks\\Steering_angle_masquerade_attack.log",
+    "sha256": "e137a10d70c02172c5cb5afe393b9ba994359e8a8ddc5af9aec53060ca768513",
+    "status": "COMPLETE",
+    "frames": 363350,
+    "windows": 5677,
+    "tail": 22,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Masquerade_attacks\\Wiper_warning_masquerade_attack.log",
+    "sha256": "1745b5b92dd122cb1626cb66cce1416a1ab928faa75dd476b940a5bde9cdc2ec",
+    "status": "COMPLETE",
+    "frames": 233228,
+    "windows": 3644,
+    "tail": 12,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\Break_and_fog_light_attack.log",
+    "sha256": "48335c1717b9934673d9dccb56048acbd52e858e9a0bdbf2590276a17cf8bfe0",
+    "status": "COMPLETE",
+    "frames": 508148,
+    "windows": 7939,
+    "tail": 52,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\Break_warning_attack.log",
+    "sha256": "1eb1589ea9ed2dfeb8fae059a47cd1e428e1776b3149c7e0ec4e8f1d416d7c19",
+    "status": "COMPLETE",
+    "frames": 588592,
+    "windows": 9196,
+    "tail": 48,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\Door_open_warning_attack.log",
+    "sha256": "62385cf23f2c875979a59737f8455713a5bada18f35651145e0fb4e7b02a8863",
+    "status": "COMPLETE",
+    "frames": 406609,
+    "windows": 6353,
+    "tail": 17,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\DoS_attack.log",
+    "sha256": "b1015d77704933d8bb340954e08540c7196a6de10c4462a126ba01eff2059e14",
+    "status": "COMPLETE",
+    "frames": 341787,
+    "windows": 5340,
+    "tail": 27,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\Drive_mode_changing_attack.log",
+    "sha256": "b770c4325ef936ff5e4c1e091e966880ea57df1a1b8972c851df5af2352e8445",
+    "status": "COMPLETE",
+    "frames": 238877,
+    "windows": 3732,
+    "tail": 29,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\EMS_attack.log",
+    "sha256": "28b19eb61bbc59c61bd9417cd4fcaf9fc814c3f7d1898cf5e0a1eaf028627fac",
+    "status": "COMPLETE",
+    "frames": 325678,
+    "windows": 5088,
+    "tail": 46,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\EMS_replay_attack.log",
+    "sha256": "6867d20ec5e0fb27a115261abce6ac252a4e4dfc717c60576c385a151e3088f1",
+    "status": "COMPLETE",
+    "frames": 324147,
+    "windows": 5064,
+    "tail": 51,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\EMS_replay_long_attack.log",
+    "sha256": "50b707a687aee39258374e599bac28bc4bdc005899214947c057c99817999db2",
+    "status": "COMPLETE",
+    "frames": 2051085,
+    "windows": 32048,
+    "tail": 13,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\FCA_warning_attack.log",
+    "sha256": "db652e9353208756abae57a5b0e8bcf2fc1f919966d596eb99c9022cd78db7ac",
+    "status": "COMPLETE",
+    "frames": 581637,
+    "windows": 9088,
+    "tail": 5,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\Fuzzing_random_IDs.log",
+    "sha256": "f13efdee0a73ae503a41c283116afb31f32c21d2757d2bb958cce1ca4ee55466",
+    "status": "COMPLETE",
+    "frames": 729007,
+    "windows": 11390,
+    "tail": 47,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\Fuzzing_valid_IDs.log",
+    "sha256": "0d710734f2c860340ddc26b29b7af27451fa22e1c51a1facbb1b6f5bcc99d026",
+    "status": "COMPLETE",
+    "frames": 257413,
+    "windows": 4022,
+    "tail": 5,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\Fuzzing_valid_IDs_DoS.log",
+    "sha256": "2c98d679e08250d35fa3386d37ad1940d47ad405689a44055ab09835b703084d",
+    "status": "COMPLETE",
+    "frames": 441332,
+    "windows": 6895,
+    "tail": 52,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\Gear_shifter_attack_1.log",
+    "sha256": "1b61d8857be5a315c6a8a9e0fcb262ff65820dfe77e8fecbc14d6fa49143d26c",
+    "status": "COMPLETE",
+    "frames": 438213,
+    "windows": 6847,
+    "tail": 5,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\Gear_shifter_attack_2.log",
+    "sha256": "9c20980bd6bfe8c091b155f6545b771f5880252b84223c0c2cf3902b40132af3",
+    "status": "COMPLETE",
+    "frames": 406438,
+    "windows": 6350,
+    "tail": 38,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\Max_speedometer_attack.log",
+    "sha256": "22b2745d888b74929314785624b57368b8e8237059fd02a62279c8be8e99c5fe",
+    "status": "COMPLETE",
+    "frames": 417094,
+    "windows": 6517,
+    "tail": 6,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\Min_speedometer_attack_1.log",
+    "sha256": "96bc353c2f2c8e379d378692cfbfe7a7a4fb8a8c0f69cbc74467c0437c049cb2",
+    "status": "COMPLETE",
+    "frames": 545604,
+    "windows": 8525,
+    "tail": 4,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\Min_speedometer_attack_2.log",
+    "sha256": "2770b61e238b7249ecf1ba83d9b861a7bbcc9708909d0c88cc762bae524352d6",
+    "status": "COMPLETE",
+    "frames": 578618,
+    "windows": 9040,
+    "tail": 58,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\Min_speedometer_attack_3.log",
+    "sha256": "217297e284ea045f5d28aa53d50369a641adbeb0abb30026d63816d49b69661e",
+    "status": "COMPLETE",
+    "frames": 279517,
+    "windows": 4367,
+    "tail": 29,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\Multiple_attacks_1.log",
+    "sha256": "99e27d6be4700a73d1d4e70b46c777fc25954cb9ce536667ca4ba53d76650384",
+    "status": "COMPLETE",
+    "frames": 1672671,
+    "windows": 26135,
+    "tail": 31,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\Multiple_attacks_2.log",
+    "sha256": "5200c515e60e285f146ec66b6fe004a5bf019190f6af8a556991b001b9b256dd",
+    "status": "COMPLETE",
+    "frames": 2093747,
+    "windows": 32714,
+    "tail": 51,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\Parking_break_attack.log",
+    "sha256": "d21a36ef6dda8b1da4b49c5125f060eff2f781f57a2865ef2497ab8e6ec36d71",
+    "status": "COMPLETE",
+    "frames": 146664,
+    "windows": 2291,
+    "tail": 40,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\Power_steering_attack.log",
+    "sha256": "31e47aee3ef33144e0b35f8a3fbd75eaf5f306b3402f75de6278963644fba469",
+    "status": "COMPLETE",
+    "frames": 361198,
+    "windows": 5643,
+    "tail": 46,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\Reverse_speedometer_fuzzing_attack.log",
+    "sha256": "34cd295e4cb704dd2d494dd80bcec3656e01773a39feeb52d5889a8ab442bdfa",
+    "status": "COMPLETE",
+    "frames": 177130,
+    "windows": 2767,
+    "tail": 42,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\Steering_angle_attack.log",
+    "sha256": "772462d80f0637af6cdcbed880a083b0e5777961d28c39dc693f880a2e169a13",
+    "status": "COMPLETE",
+    "frames": 369630,
+    "windows": 5775,
+    "tail": 30,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\Steering_angle_replay.log",
+    "sha256": "a9657a2fabdb0957462a8152f0054b705134a7fa844a7b1d0073a19441c0eec2",
+    "status": "COMPLETE",
+    "frames": 475808,
+    "windows": 7434,
+    "tail": 32,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Real_attacks\\Wiper_warning_attack.log",
+    "sha256": "45f759f23399700ad4fcc50ce841745aa0007c868b183721db25c8a85bb43ef1",
+    "status": "COMPLETE",
+    "frames": 233555,
+    "windows": 3649,
+    "tail": 19,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Suspension_attacks\\ID_07F_suspension_attack.log",
+    "sha256": "6c352c79bb7e1533f9d367efc48f1be449798cd2731d3beeb9e4e1ad94f97570",
+    "status": "COMPLETE",
+    "frames": 599865,
+    "windows": 9372,
+    "tail": 57,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Suspension_attacks\\ID_160_suspension_attack.log",
+    "sha256": "d47b2030f0b2fafcf27c144ae511fdb6cf3d5f240ad825c7ddf62f98a62966d4",
+    "status": "COMPLETE",
+    "frames": 591000,
+    "windows": 9234,
+    "tail": 24,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Suspension_attacks\\ID_371_suspension_attack.log",
+    "sha256": "ca96d6cb7880e7bdec6af2b9c5be073568fdd61528e403f4b1677e6ef6a26345",
+    "status": "COMPLETE",
+    "frames": 591000,
+    "windows": 9234,
+    "tail": 24,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Suspension_attacks\\ID_386_suspension_attack.log",
+    "sha256": "d88f812f9c12fa5b97dc5682ad1f0fe320dbfc6655e476a668b598a5560ac04c",
+    "status": "COMPLETE",
+    "frames": 595499,
+    "windows": 9304,
+    "tail": 43,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CAN_MIRGU_attack",
+    "file": "F:\\00_Research\\code\\data\\CAN-MIRGU\\Attack\\Suspension_attacks\\ID_541_suspension_attack.log",
+    "sha256": "25be5d683261a48636e14fab72f1e23360ba0b34b51ebc96a500eab0765ed398",
+    "status": "COMPLETE",
+    "frames": 598799,
+    "windows": 9356,
+    "tail": 15,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CICIoV2024",
+    "file": "F:\\00_Research\\code\\data\\CICIoV2024\\hexadecimal\\hexadecimal_benign.csv",
+    "sha256": "a846cf5ca89fb5b5f1d9512c6cedac88265b49ed1fa5b83c7902966a4cf5ff14",
+    "status": "COMPLETE",
+    "frames": 1223737,
+    "windows": 19120,
+    "tail": 57,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CICIoV2024",
+    "file": "F:\\00_Research\\code\\data\\CICIoV2024\\hexadecimal\\hexadecimal_DoS.csv",
+    "sha256": "d7af3d741fbb491c688eb6eff30d53d97805a9157b1702970cd1fda3c624ee63",
+    "status": "COMPLETE",
+    "frames": 74663,
+    "windows": 1166,
+    "tail": 39,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CICIoV2024",
+    "file": "F:\\00_Research\\code\\data\\CICIoV2024\\hexadecimal\\hexadecimal_spoofing-GAS.csv",
+    "sha256": "1b6be53d3c3a2142a3c93d356fb8b905ea9c537aae8aae0d6c78c1ff9ebd8b91",
+    "status": "COMPLETE",
+    "frames": 9991,
+    "windows": 156,
+    "tail": 7,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CICIoV2024",
+    "file": "F:\\00_Research\\code\\data\\CICIoV2024\\hexadecimal\\hexadecimal_spoofing-RPM.csv",
+    "sha256": "21152770835714ad21e1461c0c90fc4bf9e4d5c8fd00b6f2514e85e072b19326",
+    "status": "COMPLETE",
+    "frames": 54900,
+    "windows": 857,
+    "tail": 52,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "CICIoV2024",
+    "file": "F:\\00_Research\\code\\data\\CICIoV2024\\hexadecimal\\hexadecimal_spoofing-SPEED.csv",
+    "status": "QUARANTINED",
+    "reason": "Quarantined: DATA_6 differs from the decimal companion in 4989 of 24951 aligned rows. Verify the canonical publisher version before re-enabling; do not silently replace bytes."
+  },
+  {
+    "dataset": "CICIoV2024",
+    "file": "F:\\00_Research\\code\\data\\CICIoV2024\\hexadecimal\\hexadecimal_spoofing-STEERING_WHEEL.csv",
+    "sha256": "415d9a5a102cdb6e0845c1fd508555cae5a46075a959c4c794edd3c93fce5808",
+    "status": "COMPLETE",
+    "frames": 19977,
+    "windows": 312,
+    "tail": 9,
+    "timestamp_inversions": 0
+  },
+  {
+    "dataset": "OTIDS_converted_csv",
+    "status": "EXCLUDED",
+    "reason": "Need provenance of frame labels and original chronological captures; do not infer labels from attack filename."
+  },
+  {
+    "dataset": "OTIDS_shuffled",
+    "status": "EXCLUDED",
+    "reason": "Shuffled rows invalidate temporal windows; excluded from sequence evaluation."
+  }
+]

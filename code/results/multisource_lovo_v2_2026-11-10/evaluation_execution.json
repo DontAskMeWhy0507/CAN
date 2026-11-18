@@ -1,0 +1,15 @@
+{
+  "driver_sha256": "db80757dee2f333b2e1198abf4cd23d90c10a77b9cc862c58523e5f9b8448901",
+  "change": "Evaluation scheduling only: score all checkpoints per capture to avoid repeated disk reads.",
+  "unchanged": [
+    "48 frozen checkpoints",
+    "source/target windows",
+    "float32 features",
+    "bfloat16 inference",
+    "infer() batch size 256",
+    "source threshold rule",
+    "metrics",
+    "probe protocol"
+  ],
+  "target_model_selection": false
+}

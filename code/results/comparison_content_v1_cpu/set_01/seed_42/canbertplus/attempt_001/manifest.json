@@ -1,0 +1,78 @@
+{
+  "status": "RUNNING",
+  "signature": {
+    "config": {
+      "protocol": "ctt-content-order-comparison-v1",
+      "tier": "content",
+      "sets": [
+        "set_01",
+        "set_02",
+        "set_03",
+        "set_04"
+      ],
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "methods": [
+        "raw_transformer",
+        "structural_transformer",
+        "canbertplus",
+        "canlp",
+        "assoc_rules_crysys"
+      ],
+      "window_size": 64,
+      "sampling_seed": 20261103,
+      "train_windows_per_class_per_file": 1000,
+      "epochs": 10,
+      "batch_size": 128,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "cpu_threads": 4,
+      "far_budget_per_100k": 100.0,
+      "eval_batch_windows": 128,
+      "bert_hidden": 768,
+      "bert_layers": 6,
+      "bert_heads": 12,
+      "bert_batch_size": 8,
+      "bert_pretrain_epochs": 3,
+      "bert_finetune_epochs": 3,
+      "canlp_epochs": 30,
+      "assoc_params": {},
+      "save_frame_scores": true
+    },
+    "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+    "code": {
+      "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+      "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+      "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+      "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+      "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+      "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+      "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+      "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+      "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+      "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+      "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+      "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+    },
+    "environment": {
+      "python": "3.11.15",
+      "packages": {
+        "torch": "2.15.0",
+        "numpy": "2.4.6",
+        "pandas": "3.1.0",
+        "scipy": "1.17.1",
+        "scikit-learn": "1.9.1"
+      },
+      "device": "CPU"
+    },
+    "set": "set_01",
+    "software_validation_only": false,
+    "seed": 42,
+    "method": "canbertplus"
+  },
+  "method": "canbertplus",
+  "software_validation_only": false
+}

@@ -1,0 +1,13 @@
+,mean,mean,std,std
+target,attack,vehicle,attack,vehicle
+representation,,,,
+id_only,0.6531,0.9908,0.0165,0.0088
+raw,0.6419,0.9925,0.0169,0.0099
+raw_no_id,0.6449,0.9693,0.0157,0.0246
+raw_plus_structural,0.7451,0.9915,0.0255,0.0069
+structural,0.7669,0.9488,0.0271,0.0121
+structural_no_delta,0.6874,0.9652,0.0167,0.0225
+structural_no_local,0.7502,0.9633,0.0392,0.0125
+structural_no_payload,0.778,0.9728,0.0214,0.0023
+structural_no_rank_w,0.7669,0.9516,0.0362,0.0156
+structural_no_transition,0.7701,0.9531,0.0379,0.0143

@@ -1,0 +1,62 @@
+{
+  "status": "PASS_COMPARISON_DELIVERABLES",
+  "utc": "2026-11-08T14:10:49.909385+00:00",
+  "cells": 60,
+  "notebooks": {
+    "07_gpu_four_models_executed": {
+      "status": "COMPLETE",
+      "executed_code_cells": 3,
+      "sha256": "5259798304875f150dc1c75b8343296aac29ca0257db6de8865d90491bc7a892"
+    },
+    "09_assoc_cpu_acceleration": {
+      "status": "COMPLETE",
+      "executed_code_cells": 6,
+      "sha256": "47ca32c10d4a159b332c0fd6f316f24630966a0d7703e0f712478ecd5cb31cdd"
+    },
+    "08_merged_results_executed": {
+      "status": "COMPLETE",
+      "executed_code_cells": 3,
+      "sha256": "6723be69423036cbe955ca11a45338d39b5dfb6551c5baf7db5ce522d87342dc"
+    }
+  },
+  "pdfs": {
+    "vi": {
+      "path": "F:\\00_Research\\code\\output\\thesis_comparison_2026-11-08\\vi\\main.pdf",
+      "pages": 70,
+      "sha256": "c605b4791be4ba06d734ce705e0450c2318b39d9f33c102146b7ed00064fa0f8",
+      "visual_review_physical_pages": [
+        5,
+        39,
+        40,
+        41,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        51,
+        52,
+        60
+      ],
+      "build_no_overfull_or_undefined": true
+    },
+    "en": {
+      "path": "F:\\00_Research\\code\\output\\thesis_comparison_2026-11-08\\en\\main.pdf",
+      "pages": 71,
+      "sha256": "fe330603a915f4fa1eb28120048985fe50f296a6e980d4a9e0a11fe30f738e4b",
+      "visual_review_physical_pages": [
+        5,
+        40,
+        41,
+        44,
+        46,
+        51,
+        62
+      ],
+      "build_no_overfull_or_undefined": true
+    }
+  },
+  "tests": "2 manuscript-import guard tests passed",
+  "scope": "Completed shared-protocol five-method comparison and bilingual manuscript update; excludes outstanding ablations/probes/external-transfer/online-runtime studies."
+}

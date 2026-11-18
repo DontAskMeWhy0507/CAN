@@ -1,0 +1,25 @@
+{
+  "threshold": 0.5110207200050355,
+  "source_only": true,
+  "benign": 24,
+  "attack": 16,
+  "metrics": {
+    "Total_Windows": 40,
+    "Attack_Windows": 16,
+    "Benign_Windows": 24,
+    "TP": 0,
+    "FP": 0,
+    "TN": 24,
+    "FN": 16,
+    "Attack_F1": 0.0,
+    "Precision": null,
+    "Recall": 0.0,
+    "AP": 0.37262520617783773,
+    "PR_AUC": 0.37262520617783773,
+    "FAR_per_100k": 0.0,
+    "Accuracy": 0.6,
+    "Attack_Prevalence": 0.4,
+    "Metric_Status": "two_class",
+    "AP_Status": "ok"
+  }
+}

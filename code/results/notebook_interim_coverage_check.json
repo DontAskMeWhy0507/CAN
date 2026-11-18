@@ -1,0 +1,5 @@
+{
+  "status": "PASS",
+  "completed_groups_checked": 10,
+  "scope": "Identical evaluation denominators across completed GPU methods; no test-based tuning."
+}

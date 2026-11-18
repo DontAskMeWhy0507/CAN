@@ -1,0 +1,45 @@
+{
+  "status": "COMPLETE",
+  "software_validation_only": true,
+  "config": {
+    "protocol": "ctt-content-order-comparison-v1",
+    "tier": "content",
+    "sets": [
+      "set_01"
+    ],
+    "seeds": [
+      42
+    ],
+    "methods": [
+      "raw_transformer",
+      "structural_transformer",
+      "canbertplus",
+      "canlp",
+      "assoc_rules_crysys"
+    ],
+    "window_size": 64,
+    "sampling_seed": 20261103,
+    "train_windows_per_class_per_file": 2,
+    "epochs": 1,
+    "batch_size": 128,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "cpu_threads": 4,
+    "far_budget_per_100k": 100.0,
+    "eval_batch_windows": 128,
+    "bert_hidden": 12,
+    "bert_layers": 2,
+    "bert_heads": 4,
+    "bert_batch_size": 4,
+    "bert_pretrain_epochs": 1,
+    "bert_finetune_epochs": 1,
+    "canlp_epochs": 1,
+    "assoc_params": {
+      "k_cla": 2,
+      "n_knn": 2,
+      "n_centroid_clusters": 2,
+      "n_bound_bins": 2
+    },
+    "save_frame_scores": true
+  }
+}

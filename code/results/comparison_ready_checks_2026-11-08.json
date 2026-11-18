@@ -1,0 +1,204 @@
+{
+  "date": "2026-11-08",
+  "status": "READY_FOR_GPU_CONTENT_COMPARISON",
+  "scope": "Data and runnable notebook/code preparation, not final research performance or original-paper metric replication.",
+  "protocol": "ctt-content-order-comparison-v1",
+  "tier": "content",
+  "dimensions": {
+    "raw": 28,
+    "structural": 30
+  },
+  "data": {
+    "date": "2026-11-08",
+    "status": "PASS_CONTENT_ONLY",
+    "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+    "files": 236,
+    "frames": 193240845,
+    "windows": 3019271,
+    "timestamp_inversions": 12527,
+    "files_with_timestamp_inversions": 100,
+    "source_bytes": 7664684421,
+    "cache_bytes": 3864816900,
+    "timed_protocol_ready": false,
+    "policy": "Original file order, IDs, DLC, payload values and labels retained; no sorting or synthetic timestamps. Raw28/structural30. Physical chronology not established.",
+    "scope": "All 236 official CTT files; ROAD/SynCAN not required for the three selected byte/token/window competitors."
+  },
+  "data_manifest": "code/results/comparison_data_v1/manifest.json",
+  "tests": {
+    "command": ".venv/Scripts/python.exe -m pytest -q",
+    "passed": 40,
+    "seconds": 78.2,
+    "status": "PASS"
+  },
+  "source_pilot": {
+    "status": "PASS",
+    "device": "CPU",
+    "cells": [
+      {
+        "method": "assoc_rules_crysys",
+        "path": "code\\results\\comparison_real_source_pilot_2026-11-08_final\\set_01\\seed_42\\assoc_rules_crysys\\attempt_001\\manifest.json",
+        "status": "COMPLETE",
+        "purpose": "software_validation_only",
+        "source_training_windows": 20
+      },
+      {
+        "method": "canbertplus",
+        "path": "code\\results\\comparison_real_source_pilot_2026-11-08_final\\set_01\\seed_42\\canbertplus\\attempt_001\\manifest.json",
+        "status": "COMPLETE",
+        "purpose": "software_validation_only",
+        "source_training_windows": 20
+      },
+      {
+        "method": "canlp",
+        "path": "code\\results\\comparison_real_source_pilot_2026-11-08_final\\set_01\\seed_42\\canlp\\attempt_001\\manifest.json",
+        "status": "COMPLETE",
+        "purpose": "software_validation_only",
+        "source_training_windows": 20
+      },
+      {
+        "method": "raw_transformer",
+        "path": "code\\results\\comparison_real_source_pilot_2026-11-08_final\\set_01\\seed_42\\raw_transformer\\attempt_001\\manifest.json",
+        "status": "COMPLETE",
+        "purpose": "software_validation_only",
+        "source_training_windows": 20
+      },
+      {
+        "method": "structural_transformer",
+        "path": "code\\results\\comparison_real_source_pilot_2026-11-08_final\\set_01\\seed_42\\structural_transformer\\attempt_001\\manifest.json",
+        "status": "COMPLETE",
+        "purpose": "software_validation_only",
+        "source_training_windows": 20
+      }
+    ],
+    "A_D_evaluated": false,
+    "note": "Tiny BERT, one epoch, 20 sampled source training windows; calibration/evaluation only on sampled source validation. Not final IDS results."
+  },
+  "notebooks": {
+    "files": [
+      "code/notebooks/06_prepare_comparison_data.ipynb",
+      "code/notebooks/07_run_paper_comparisons.ipynb",
+      "code/notebooks/08_analyze_paper_comparisons.ipynb"
+    ],
+    "nbformat": "PASS",
+    "code_cells_ast": "PASS",
+    "outputs": "unexecuted",
+    "full_GPU_notebook_execution": "NOT_RUN"
+  },
+  "upstream": [
+    {
+      "name": "canbertplus",
+      "url": "https://github.com/OSUSecLab/CanBERTplus.git",
+      "commit": "4c81d9b08e6e0c17b8e70bdab518209e399f0dbe",
+      "files": {
+        "canlm.py": "8c57268cc1be7377c1f7e9cd9cac90b4fe7b4e62911e3b2d41f63114bcc4dfd2",
+        "can_finetune.py": "6f458beeecf02da97b1bd2e90aff461a930022000720ef2c85c05313df563285",
+        "can_ids.py": "247ed4c1afdbc0bc9d55f1c05322d4c00383ab4c5225df46041aeda8de326adf",
+        "config.py": "ec7d63ab4bf4ef298c56f104c0e3af3a5e62687b3c61354c238e6b15796dacf9",
+        "README.md": "49d6aa6741f40060a44a3fc552080c22b8560cd4fe3f899711b2cb96bc4e7723",
+        "requirements.txt": "e086199afbc796d7a3202388780f9b31a8d567f004180a3c8783c4ca5e068810",
+        "model/bert.py": "62bae647051027748deef908229a6acd6921a6881fcae0224d379c866179da35",
+        "model/CanLMDataset.py": "073c052c49feec759e30284c857d9a1a37074bf90332272e9f367da5afe2ddd4",
+        "model/CanTokenizer.py": "da195db5e2800617add7a76aeb72a0289fba9d93aa13a89978e07d8c46e14928",
+        "model/CanVocab.py": "4cc7905404d4491d6f3b5164cb310cddad6429e09c8b56b41c0f554581e96fe1",
+        "model/gen_vocab.py": "cedd5c16d6da8f69fe522f52279092080c74ee0f0861c7cbb5f099033c9af188",
+        "model/pretrain_tasks.py": "3ae7409f16e4d472418aec7c65a51441c1cf5ae883510942cc7bfb1d6015ff6e"
+      }
+    },
+    {
+      "name": "canlp",
+      "url": "https://github.com/adithyagowda29/CANLP.git",
+      "commit": "8df8bb74a7aa9925187f4faff05d6c8b824ba5d1",
+      "files": {
+        "LICENSE": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6",
+        "main.ipynb": "0d21e2333236ef2e7a5a0fb9da656d10a742abfe969ec7475db613cce946ae9c",
+        "README.md": "fedaf839da28ccbfe85bb9abbddf970158ae42e9b9d53a7c161fe6c0221c190e",
+        "requirements.txt": "aa0d47f3241f64d54b64e549da1a8276a206578a7c416e535faa84953f0fcd1b"
+      }
+    },
+    {
+      "name": "crysys",
+      "url": "https://github.com/CrySyS/Cross-Dataset-Study-of-Automotive-IDS-Evaluation.git",
+      "commit": "59b9f29f81b0f56f49c218cb1bd8e97552b8d22c",
+      "files": {
+        "LICENSE": "230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809",
+        "README.md": "64f74e38cea985dcaa18f3cc731d7b726ff5a436ab82de0c824acb8bc5aa938c",
+        "requirements.txt": "1e42348664b23ce115e417082cffa6d761dd9bb32f38fd2abfab6bd1f56e8dcf",
+        "unified_ids/__init__.py": "d9fe656cabe495f2596ed92982667878e4a043079b826f11bc6229bf30c294ed",
+        "unified_ids/config/config.py": "0abeaad08b51652d94c9b9235f780452bec7f31467cef3c4b34ebd1b662f4a1d",
+        "unified_ids/config/method_capabilities.py": "946a5d690266bbdaf4f8dd0919df9684050ee13db9c64866eae25ab874ff78e6",
+        "unified_ids/dataio/loaders.py": "8c4ad34406bb03a8400ad9664bbead36e447c5178192d3c2ac5ba39fb9e1fa3d",
+        "unified_ids/dataio/payload.py": "40ef8fa18229f9215ff6df1d78134c202c6ade7a9d3e5049ef5426cd0e5841e7",
+        "unified_ids/dataio/windowing.py": "052381f4a4e6d8e9dab2b91902201c6a18e5d23b28249e9f1cde2788426b036c",
+        "unified_ids/eval/core.py": "96b2db980b29b28e46ef0ceaeee086ac49a9ba2d682f6d5057e8707fdd2a0c42",
+        "unified_ids/eval/metrics.py": "041576ee5c7b9bb255c54b925a464e5beaad4b4523135b3afbd38f7926ea5a8e",
+        "unified_ids/eval/parallel.py": "be8c39770b8cd70c32c75b9bb4c562448d0fba015eff747b7d2320f79db4eb0c",
+        "unified_ids/eval/progress.py": "8f260b6a8ef5b99b6c77174448639389ca8956676b28526c738c2973f4bbc8b5",
+        "unified_ids/eval/shutdown.py": "c75025e741fb135e2cbb04ba5e788a8f6960b93965538bfb857e64de0791d331",
+        "unified_ids/eval/ui_progress.py": "234e7d982e217c26c7ded845bbfa98e3218f45cda1670b9109e6c25e9d66bee2",
+        "unified_ids/features/payload_regions.py": "f055e3aa824c267725f133663d07908d98b4fc2bf40a7d20cc2b48f7e41d978f",
+        "unified_ids/methods/assoc_rules_D_ANGELO_2023.py": "d601eb9cfb8eec52bbb667ac3861574c1670ed115fd411404a23ed7e30eac5bb",
+        "unified_ids/methods/base.py": "a95be42c9aa3ef4a26d90df4794a9289d7c7a580cd235dd742c396b58ec3f584",
+        "unified_ids/methods/daga_ngram_STABILI_2022.py": "cbc7963a4250f2aea3273abff83858c188e300941cab5a77a9d783e5aa9dc8ac",
+        "unified_ids/methods/mba_ocsvm_version2.py": "eeba33e901a9a78d5db7e415c295c3ac083d009e306d055943bc0b3f6a9db232",
+        "unified_ids/methods/registry.py": "77617d6919b15bd2ce8303d3441d80644dda362e455e069edca7b04b25d01c05",
+        "unified_ids/methods/simple_ocsvm.py": "0589bd0e0a3e62b96dc6550c0df30f992aef1fc9825d9534eb7fdd51c661a68f",
+        "unified_ids/methods/helpers/daga_paper_eval.py": "aa737dc7da0e1b59ba6eb65cd3314ab238eeb1400f53900a7fe168ec2dddb2c1",
+        "unified_ids/utils/logging.py": "fd120dad49a64ae2c9e84a5920e3a0c7e7dce2cf8c40abd7de1a807112e2473c",
+        "unified_ids/utils/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  ],
+  "environment": {
+    "python": "3.11.15",
+    "packages": {
+      "torch": "2.15.0",
+      "numpy": "2.4.6",
+      "pandas": "3.1.0",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.9.1"
+    },
+    "device": "CPU"
+  },
+  "reproduction_status": {
+    "CANBERT+": "Author BERT/MLM modules imported; source-only shared-protocol adaptation.",
+    "CANLP": "Author char TF-IDF/DNN architecture ported to PyTorch; fixed epochs/grouped source split.",
+    "AssocRules": "CrySyS implementation imported, including its heuristics; W64/stride64 adaptation, not original DAngelo reproduction."
+  },
+  "full_research_matrix": {
+    "status": "NOT_RUN",
+    "sets": 4,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "methods": 5,
+    "IDS_units": 60
+  },
+  "remaining": [
+    "Run notebook 06 then 07 pilot/full on declared GPU; notebook 08 summarizes only complete full matrix.",
+    "Report file-order/chronology limitations and supervision/budget differences.",
+    "Relational Modelling faithful reproduction and signal-level datasets remain separate future work.",
+    "Update bilingual thesis with actual complete results, including failures and tradeoffs."
+  ],
+  "historical_reports": "revision_v21_checks.json and old source bundles describe the Nov-6 snapshot; this new report governs the Nov-8 comparison runner.",
+  "file_sha256": {
+    "code/comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+    "code/comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+    "code/comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+    "code/comparison/config.json": "614cdd1e81c0790b2da46f9d66dd0b31f9d8fa74c18837509343eb6902e1b68b",
+    "code/comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+    "code/comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+    "code/comparison/README.txt": "7a225a2d0a94c3c19c881ebe0cacd57b0d40cd62229881e8522aaac4f3ec6bed",
+    "code/comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+    "code/comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+    "code/notebooks/06_prepare_comparison_data.ipynb": "32a8466f6c8da3b9388c893276cea7fab994834e7d67283cf58c962877c63a43",
+    "code/notebooks/07_run_paper_comparisons.ipynb": "bcfdc6c94e9d3a610ed6d5db60044fa056c15d8131b2db2d6d4f6a2c7cbe4874",
+    "code/notebooks/08_analyze_paper_comparisons.ipynb": "c7f1b90c70f554c026e5dba20090a99becdae57d850037105f9a2b2fe7fedb4d",
+    "code/scripts/package_comparison.py": "30df99e2eaddf99239d44b7c5b30ba39a954faf4d7e22d0c5926df9ac5b600b1",
+    "code/scripts/run_comparison.py": "ec9b404183870382b23536497075cf09c9f1a0d5ec5647f9ad26567c6f0d1f7a",
+    "code/tests/test_comparison.py": "a3c2a70ae1eb17131a30ebce0fa9207e36a489020bb5c400d61cf876520fd455",
+    "KE_HOACH_SO_SANH.txt": "da34cd3934b5565aefc85a4f879c3c2ae4a322e0f816ba288e213b75b46055aa",
+    "VIEC_BAN_CAN_LAM.txt": "7c2b64fcd4ad972c4f54189ded64d91f22acf0319c6328043e0208ad996846b9"
+  }
+}

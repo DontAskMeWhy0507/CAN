@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "pytest": "3 passed in 7.09s",
+  "grouped_evaluation_integration": "1 passed in 18.28s: identical per-window predictions, source thresholds and all metrics versus the frozen serial evaluator on controlled four-vehicle fixtures",
+  "checks": ["gradient reversal sign", "balanced source vehicle x class batches", "conditional heads receive gradients", "vehicle identity quarantine", "target vehicle embargo"],
+  "gpu_smoke": {"data": "756 real source windows, vehicles Traverse/Silverado/Forester, both classes, no Impala target windows", "precision": "bfloat16", "epochs": 2, "finite_training_and_inference": true, "epoch_task_losses": [0.6618717014789581, 0.5550621002912521]},
+  "v1_failure": "Float16 gradient overflow before the first completed fit. Old source, configuration and failure retained in multisource_lovo_2026-11-10. No target evaluation was reached.",
+  "scope": "Software validation only, not a study performance estimate",
+  "reproducibility_warning": "Memory-efficient CUDA attention backward may be nondeterministic despite fixed seeds (PyTorch warn_only=True)."
+}

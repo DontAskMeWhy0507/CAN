@@ -1,0 +1,17 @@
+{
+  "seconds": 0.21155189999990398,
+  "history": [
+    {
+      "phase": "pretrain",
+      "epoch": 1,
+      "loss": 4.934429963429769
+    },
+    {
+      "phase": "finetune",
+      "epoch": 1,
+      "loss": 0.6720929563045501
+    }
+  ],
+  "window_count": 20,
+  "frame_count": 1280
+}

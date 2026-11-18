@@ -1,0 +1,37 @@
+{
+  "seconds": 324.39980379999906,
+  "history": [
+    {
+      "phase": "pretrain",
+      "epoch": 1,
+      "loss": 0.801898983647426
+    },
+    {
+      "phase": "pretrain",
+      "epoch": 2,
+      "loss": 0.28471085891127584
+    },
+    {
+      "phase": "pretrain",
+      "epoch": 3,
+      "loss": 0.2418444245060285
+    },
+    {
+      "phase": "finetune",
+      "epoch": 1,
+      "loss": 0.7603162488644815
+    },
+    {
+      "phase": "finetune",
+      "epoch": 2,
+      "loss": 0.010906743496566814
+    },
+    {
+      "phase": "finetune",
+      "epoch": 3,
+      "loss": 0.002915423282360686
+    }
+  ],
+  "window_count": 7307,
+  "frame_count": 467648
+}

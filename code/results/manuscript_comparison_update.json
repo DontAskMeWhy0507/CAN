@@ -1,0 +1,64 @@
+{
+  "status": "COMPARISON_COMPLETE_REVIEWED",
+  "pid": 9368,
+  "utc": "2026-11-08T14:11:17.546811+00:00",
+  "sources": {
+    "vi": {
+      "path": "F:\\00_Research\\thesis\\vi\\main.tex",
+      "sha256": "f26447f849a3a7a70a02de3a0e158939bfbda5a414e4222c0aaa4a5f415c0fc4"
+    },
+    "en": {
+      "path": "F:\\00_Research\\thesis\\en\\main.tex",
+      "sha256": "c438948fbaedbc29c98f90a4b208a1a841de34508d02fd3507444b39a2398bf9"
+    }
+  },
+  "pdf_folder": "F:\\00_Research\\code\\output\\thesis_comparison_2026-11-08",
+  "remaining": [
+    "Content-compatible ablations/probes/window sensitivity",
+    "Verified external transfer",
+    "Online runtime measurement"
+  ],
+  "source_references_sha256": "d0273d44ab8ac5a1cf37e7ae7acb35f74b9f919184f078a0409bfc9f27717b3d",
+  "archive": "F:\\00_Research\\code\\output\\manuscript_comparison_2026-11-08.zip",
+  "final_checks": "F:\\00_Research\\code\\results\\manuscript_comparison_final_checks.json",
+  "pdfs": {
+    "vi": {
+      "path": "F:\\00_Research\\code\\output\\thesis_comparison_2026-11-08\\vi\\main.pdf",
+      "pages": 70,
+      "sha256": "c605b4791be4ba06d734ce705e0450c2318b39d9f33c102146b7ed00064fa0f8",
+      "visual_review_physical_pages": [
+        5,
+        39,
+        40,
+        41,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        51,
+        52,
+        60
+      ],
+      "build_no_overfull_or_undefined": true
+    },
+    "en": {
+      "path": "F:\\00_Research\\code\\output\\thesis_comparison_2026-11-08\\en\\main.pdf",
+      "pages": 71,
+      "sha256": "fe330603a915f4fa1eb28120048985fe50f296a6e980d4a9e0a11fe30f738e4b",
+      "visual_review_physical_pages": [
+        5,
+        40,
+        41,
+        44,
+        46,
+        51,
+        62
+      ],
+      "build_no_overfull_or_undefined": true
+    }
+  },
+  "archive_sha256": "07aa7c780e74ac10883e9efe85cd2f379fb45147e3956ea18d6dbfb7ac28b7d4",
+  "resolved_build_failure_log": "code/results/manuscript_update.stderr.log records the earlier, corrected build failure"
+}

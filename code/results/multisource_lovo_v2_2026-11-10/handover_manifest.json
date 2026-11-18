@@ -1,0 +1,15 @@
+{
+  "execution_status": "COMPLETE",
+  "audit_status": "PASS",
+  "fits": 48,
+  "prediction_files_checked": 3024,
+  "probe_cells": 576,
+  "vehicle_independence_demonstrated": false,
+  "files_sha256": {
+    "final_manifest.json": "bd1f7af72851196a9a2528a7d831f45ad643e5b4496f68d800f2a94b3084ac7f",
+    "INDEPENDENT_AUDIT.json": "fde273f7503f1ba8eccc59ab7951b2203385c8917479493995e0b8c6aa5e5277",
+    "NHAN_DINH_VA_BAN_GIAO_2026-11-11.txt": "162b1e5354f67b5a81af125a20235c1c1c52d47ab677702ff9b1bd704eaa52bf",
+    "summary.csv": "c0317798b6efab60464da80eb3d217205a159655125aeab913995710ab1aa64c",
+    "probe_summary.csv": "7d62e6420e947777a8ef5a54bd290d60e248c3aba2eee9a0ea77bc21b3ad20fb"
+  }
+}

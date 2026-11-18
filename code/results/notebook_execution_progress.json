@@ -1,0 +1,63 @@
+{
+  "utc": "2026-11-08T14:08:12.479013+00:00",
+  "status": "COMPLETE",
+  "finalizer_pid": 28248,
+  "gpu": {
+    "total": 48,
+    "counts": {
+      "COMPLETE": 48
+    }
+  },
+  "cpu": {
+    "total": 12,
+    "counts": {
+      "COMPLETE": 12
+    }
+  },
+  "07_gpu_four_models_executed": {
+    "notebook": "F:\\00_Research\\code\\notebooks\\07_gpu_four_models_executed.ipynb",
+    "status": "COMPLETE",
+    "pid": 27940,
+    "started_utc": "2026-11-08T06:02:41.171159+00:00",
+    "cell": 3,
+    "heartbeat_utc": "2026-11-08T13:50:31.088363+00:00",
+    "cell_source_preview": "items=[json.loads(p.read_text()) for p in OUTPUT.glob('set_*/seed_*/*/attempt_*/manifest.json')]\ncomplete=[m for m in items if m['status']=='COMPLETE']\ncells={(m['signature']['set'",
+    "finished_utc": "2026-11-08T13:50:31.088363+00:00"
+  },
+  "09_assoc_cpu_acceleration": {
+    "notebook": "F:\\00_Research\\code\\notebooks\\09_assoc_cpu_acceleration.ipynb",
+    "status": "COMPLETE",
+    "pid": 7988,
+    "started_utc": "2026-11-08T06:02:41.171159+00:00",
+    "cell": 8,
+    "heartbeat_utc": "2026-11-08T13:56:10.692558+00:00",
+    "cell_source_preview": "# Đợi notebook GPU hoàn tất trước khi gộp; lỗi GPU được báo rõ.\nimport time,json\nGPU_STATUS=CODE/'notebooks/07_gpu_four_models_executed.execution.json'\nwhile True:\n    state=json.l",
+    "finished_utc": "2026-11-08T13:56:10.692558+00:00"
+  },
+  "08_merged_results_executed": {
+    "notebook": "F:\\00_Research\\code\\notebooks\\08_merged_results_executed.ipynb",
+    "status": "COMPLETE",
+    "pid": 19328,
+    "started_utc": "2026-11-08T14:07:04.367826+00:00",
+    "cell": 3,
+    "heartbeat_utc": "2026-11-08T14:07:13.409912+00:00",
+    "cell_source_preview": "import matplotlib\nmatplotlib.use('Agg')\nimport matplotlib.pyplot as plt\nplt.rcParams.update({'font.size':16,'axes.titlesize':16,'axes.labelsize':16,'xtick.labelsize':14,'ytick.labe",
+    "finished_utc": "2026-11-08T14:07:13.409912+00:00"
+  },
+  "coverage": {
+    "status": "COMPLETE_MATRIX",
+    "cells": 60,
+    "methods": [
+      "assoc_rules_crysys",
+      "canbertplus",
+      "canlp",
+      "raw_transformer",
+      "structural_transformer"
+    ],
+    "analysis_code_sha256": "a7ee0e2f1c5ebd6adb8357a4a16f39797eff9b79d698d561aef8d3d4ec75becc",
+    "note": "Original execution manifests retained. Native code/data/config/environment must match; only declared exact-call caching backend may differ."
+  },
+  "log_note": "Subprocess console log files contain monitored excerpts; full per-cell metrics, checkpoints and manifests remain in their result roots.",
+  "archive": "F:\\00_Research\\code\\output\\notebook_comparison_executed_2026-11-08.zip",
+  "archive_sha256": "c5dc1a32549b0192e6761f9b591944fe39c85cfc3b2508259f80b17148db7f36"
+}

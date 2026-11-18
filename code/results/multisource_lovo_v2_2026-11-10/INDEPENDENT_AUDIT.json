@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "completed_fits": 48,
+  "checked_prediction_files": 3024,
+  "metrics_recomputed_from_saved_scores": true,
+  "source_thresholds_recomputed": true,
+  "maximum_observed_source_far_per_100k": 99.86662763085131,
+  "identical_test_denominators": true,
+  "vehicle_embargo_verified": true,
+  "conflicting_identities_excluded": true,
+  "checked_probe_cells": 576,
+  "probe_warning_cells": 98,
+  "final_manifest_sha256": "bd1f7af72851196a9a2528a7d831f45ad643e5b4496f68d800f2a94b3084ac7f",
+  "limitations": "Integrity and calculation audit only; does not establish independent driving sessions, unseen development data, or vehicle invariance."
+}

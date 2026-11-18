@@ -1,0 +1,8 @@
+set,seed,method,condition,file,operating_point,threshold,Total_Windows,Attack_Windows,Benign_Windows,TP,FP,TN,FN,Attack_F1,Precision,Recall,AP,PR_AUC,FAR_per_100k,Accuracy,Attack_Prevalence,Metric_Status,AP_Status
+set_01,42,structural_mixstyle,validation,data/can-train-and-test/set_01/train_01/accessory-2.csv,source_calibrated,0.39652806520462036,8,0,8,0,0,8,0,,,,,,0.0,1.0,0.0,single_class,requires_scores_and_both_classes
+set_01,42,structural_mixstyle,validation,data/can-train-and-test/set_01/train_01/attack-free-2.csv,source_calibrated,0.39652806520462036,8,0,8,0,0,8,0,,,,,,0.0,1.0,0.0,single_class,requires_scores_and_both_classes
+set_01,42,structural_mixstyle,validation,data/can-train-and-test/set_01/train_01/DoS-2.csv,source_calibrated,0.39652806520462036,16,8,8,8,0,8,0,1.0,1.0,1.0,1.0,1.0,0.0,1.0,0.5,two_class,ok
+set_01,42,structural_mixstyle,validation,data/can-train-and-test/set_01/train_01/force-neutral-2.csv,source_calibrated,0.39652806520462036,16,8,8,0,0,8,8,0.0,,0.0,0.5236381673881674,0.5236381673881674,0.0,0.5,0.5,two_class,ok
+set_01,42,structural_mixstyle,validation,data/can-train-and-test/set_01/train_01/rpm-2.csv,source_calibrated,0.39652806520462036,16,8,8,0,0,8,8,0.0,,0.0,0.5536668192918193,0.5536668192918193,0.0,0.5,0.5,two_class,ok
+set_01,42,structural_mixstyle,validation,data/can-train-and-test/set_01/train_01/standstill-2.csv,source_calibrated,0.39652806520462036,16,8,8,0,0,8,8,0.0,,0.0,0.6452266483516484,0.6452266483516484,0.0,0.5,0.5,two_class,ok
+set_01,42,structural_mixstyle,validation,ALL,source_calibrated,0.39652806520462036,80,32,48,8,0,48,24,0.4,1.0,0.25,0.5979468487161217,0.5979468487161217,0.0,0.7,0.4,two_class,ok

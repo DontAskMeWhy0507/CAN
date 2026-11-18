@@ -1,0 +1,11 @@
+# Exact local software-validation environment; platform: Windows, CPU.
+numpy==2.4.6
+pandas==3.1.0
+torch==2.15.0
+scikit-learn==1.9.1
+xgboost==3.2.0
+scipy==1.17.1
+joblib==1.6.0
+matplotlib==3.11.2
+pytest==9.2.0
+nbformat==5.11.1

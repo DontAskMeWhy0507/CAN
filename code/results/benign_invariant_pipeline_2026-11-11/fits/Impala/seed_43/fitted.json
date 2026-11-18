@@ -1,0 +1,142 @@
+{
+  "sha256": "21e062d2359014939e78bc0ae98001d364792d162ea95bb04da52b24be07e107",
+  "target": 0,
+  "seed": 43,
+  "source_vehicles": [
+    1,
+    2,
+    3
+  ],
+  "training_tokens": [
+    "e1c6a771da8ba45b48f394ad",
+    "728ffd039bc1d75ac4cae4b2",
+    "9f68edc63cef17c0b1025648",
+    "9e8f86b79414d3e022c1d0df",
+    "dbea73237c52e4a792f27854",
+    "66a2f842c23c1ba3a73cad2b",
+    "d1f20bb251355c6c4d34b2a3",
+    "678cb0e0b7746dd1594111aa",
+    "00b86f265257e2a13c335350",
+    "c591eccc1c43b1662e7a2c58",
+    "b9d544f8489c61e480313aa9",
+    "ff904317f2c156fddb78af27",
+    "4dcf891acbdcd859378b8fd6",
+    "4531cbb84308cb1bd1b7a6cc",
+    "be33d3c5b9a9a399765cd0ad",
+    "6d68c1c4679b97b0b2ec1f75",
+    "9fcc4d19dc52def6fb01c406",
+    "1fbc8440d281d38d4d2c4944",
+    "52d4eebf36d25e64143b06bf",
+    "cd54bb7c39686d4e43354434",
+    "9e7794f418566e70d0817be7",
+    "6a8178d76e081ae6762f2f44",
+    "1ef20e634252b56db0d8c8ed",
+    "5187a1ad214ecaeb99aa3c55"
+  ],
+  "training_windows": 29228,
+  "warnings": [],
+  "thresholds": {
+    "frozen_source": {
+      "0.01": 0.9787126779556274,
+      "0.001": 0.9787126779556274
+    },
+    "frozen_targetq": {
+      "0.01": 0.6440012454986573,
+      "0.001": 0.9912885427474977
+    },
+    "lr_targetq": {
+      "0.01": 0.7322665051612418,
+      "0.001": 4.263433233529532
+    },
+    "diag_lr": {
+      "0.01": -2.843958341987587,
+      "0.001": 0.13499641939593945
+    },
+    "white_lr": {
+      "0.01": -1.5172091129744263,
+      "0.001": 1.5169565095659294
+    },
+    "white_leace_lr": {
+      "0.01": -1.6124247651722154,
+      "0.001": 1.4290651276906148
+    },
+    "white_pca8_lr": {
+      "0.01": -1.7086316596361024,
+      "0.001": 1.1500034460917024
+    },
+    "white_inlp8_lr": {
+      "0.01": 0.467252345886164,
+      "0.001": 2.14621774485875
+    }
+  },
+  "projection_details": {
+    "white_leace_lr": {
+      "removed_rank": 4,
+      "cross_covariance_before": 4.699783904781396,
+      "cross_covariance_after": 4.888057325714655e-13
+    },
+    "white_pca8_lr": {},
+    "white_inlp8_lr": {
+      "dimensions": 8,
+      "log": [
+        {
+          "iteration": 1,
+          "remaining": 60
+        },
+        {
+          "iteration": 2,
+          "remaining": 56
+        },
+        {
+          "iteration": 3,
+          "remaining": 52
+        },
+        {
+          "iteration": 4,
+          "remaining": 48
+        },
+        {
+          "iteration": 5,
+          "remaining": 44
+        },
+        {
+          "iteration": 6,
+          "remaining": 40
+        },
+        {
+          "iteration": 7,
+          "remaining": 36
+        },
+        {
+          "iteration": 8,
+          "remaining": 32
+        },
+        {
+          "iteration": 9,
+          "remaining": 28
+        },
+        {
+          "iteration": 10,
+          "remaining": 24
+        },
+        {
+          "iteration": 11,
+          "remaining": 20
+        },
+        {
+          "iteration": 12,
+          "remaining": 16
+        },
+        {
+          "iteration": 13,
+          "remaining": 12
+        },
+        {
+          "iteration": 14,
+          "remaining": 8
+        }
+      ],
+      "source_fit_samples": 1200
+    }
+  }
+}

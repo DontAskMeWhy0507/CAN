@@ -1,0 +1,10 @@
+{
+  "notebook": "F:\\00_Research\\code\\notebooks\\11_import_complete_thesis_evidence.ipynb",
+  "status": "COMPLETE",
+  "pid": 23840,
+  "started_utc": "2026-11-09T08:26:53.158452+00:00",
+  "cell": 1,
+  "heartbeat_utc": "2026-11-09T08:27:40.950406+00:00",
+  "cell_source_preview": "from pathlib import Path\nimport time,json,subprocess,sys\nROOT=Path(r'F:/00_Research');CODE=ROOT/'code'\nSTATUS=CODE/'notebooks/10_complete_thesis_evidence.execution.json'\nprint('Wai",
+  "finished_utc": "2026-11-09T08:27:40.950406+00:00"
+}

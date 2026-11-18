@@ -1,0 +1,96 @@
+{
+  "date": "2026-11-08",
+  "status": "EXACT_CACHED_CPU_BACKEND_READY",
+  "tests": {
+    "passed": 49,
+    "seconds": 31.15,
+    "command": ".venv/Scripts/python.exe -m pytest -q"
+  },
+  "benchmark": {
+    "date": "2026-11-08",
+    "purpose": "software_runtime_validation_only",
+    "parameters": {
+      "window_size": 64,
+      "stride": 64,
+      "k_cla": 2,
+      "n_knn": 2,
+      "n_centroid_clusters": 2,
+      "n_bound_bins": 2,
+      "random_state": 42
+    },
+    "source_training_frames": 768,
+    "source_validation_windows": 80,
+    "exact_rule_set_match": true,
+    "exact_centroid_match": true,
+    "exact_score_match": true,
+    "max_absolute_score_error": 0.0,
+    "fit_seconds": {
+      "native": 0.7688288999997894,
+      "fast": 0.3893948000004457
+    },
+    "score_seconds_three_repeats": {
+      "native": [
+        2.739909299998544,
+        2.709988599999633,
+        2.6219904999998107
+      ],
+      "fast": [
+        0.3338242999998329,
+        0.31568459999834886,
+        0.3257312000023376
+      ]
+    },
+    "score_speedup": 8.31970839753817,
+    "fit_speedup": 1.9744200487497765,
+    "clustering_warning_counts": {
+      "native": 9,
+      "fast": 9
+    },
+    "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+    "backend_sha256": "63549407f5b038b17f10f4a6b4bc065d5b8eaa4e4ebb647c41a3dc27a58897f3",
+    "scope": "Small source-only k=2 pilot. No claim of equal speedup on full k=300 study; no accuracy result."
+  },
+  "real_source_pilot": {
+    "status": "COMPLETE",
+    "software_validation_only": true,
+    "manifest_sha256": "b476bae567c823ec3615c37958eec18a89f03581f2ed3dc96eaad831049e84fc"
+  },
+  "native_baseline_code_unchanged": true,
+  "existing_GPU_baseline_cells": [
+    {
+      "method": "raw_transformer",
+      "device": "NVIDIA GeForce RTX 5060",
+      "manifest_sha256": "2ff97227e9a45f411a2aff33ef0b3cebd330a8c4af57498b1c1495af926fb716"
+    },
+    {
+      "method": "structural_transformer",
+      "device": "NVIDIA GeForce RTX 5060",
+      "manifest_sha256": "931f18b559d9e8a6301125e9ea30391493fba1d889ce5eddc04cd6a56ffffdbc"
+    },
+    {
+      "method": "canbertplus",
+      "device": "NVIDIA GeForce RTX 5060",
+      "manifest_sha256": "d171b3860b4662bd6c4048d854f340dcbeb3fca6255b0e23c1e30e60d758d084"
+    },
+    {
+      "method": "canlp",
+      "device": "NVIDIA GeForce RTX 5060",
+      "manifest_sha256": "2d5b90db883085a3c34e48c6f6b8f5a9621f3e71d76884beadc203e72f1ab01c"
+    }
+  ],
+  "provenance_policy": "New fast output; no native run signatures rewritten. Merge validates native hashes, data, config and environment; records original execution manifests.",
+  "full_study_acceleration_measurement": "NOT_RUN; full k=300 speedup unknown",
+  "file_sha256": {
+    "code/acceleration/__init__.py": "8fee6659ca20462c07d97ab900fb799e272732a0a3dbd0091c2c7c95be8772ed",
+    "code/acceleration/assoc.py": "63549407f5b038b17f10f4a6b4bc065d5b8eaa4e4ebb647c41a3dc27a58897f3",
+    "code/acceleration/merge.py": "a7ee0e2f1c5ebd6adb8357a4a16f39797eff9b79d698d561aef8d3d4ec75becc",
+    "code/scripts/run_comparison_fast.py": "220386b20a375331ee1f0d7e3ca8b8784b269ab531cf1346a40fbaad8d1c8629",
+    "code/scripts/benchmark_assoc_speed.py": "f060e1997cf8b910de8338ea3ba98e1947274f8cecfc89b9e2f935ca9a5f5b7e",
+    "code/scripts/merge_comparison_parts.py": "0cc606ff0515f6f9fcd11bfe94f88ce6fab8fd972268ebe1354f1df15eaaf07e",
+    "code/notebooks/09_assoc_cpu_acceleration.ipynb": "b0744c89319ca1ec6790d7ac4bd4ae51f5cee8b6ed2065171a08fc592ff67a6b",
+    "code/tests/test_assoc_acceleration.py": "4439cc92db9925b873c9d7e5ee149cfec3e333edacf3699591174631c7a4d597",
+    "code/tests/test_merge_comparison_parts.py": "0148d3328a378a42e94c0f8f3edbfca0eb1238f7eb05d9364d89356dcd3be13f",
+    "TANG_TOC_ASSOC_RULES.txt": "2b2ce9877a4c71556634e1d737499a5a06959f1e320cf8889bb7bdc2be70608e",
+    "code/results/assoc_speed_check_2026-11-08.json": "81688dd00ffb29396cf81ff1b992a5264c0882fb69d33b5505c7653bf781e0be"
+  }
+}

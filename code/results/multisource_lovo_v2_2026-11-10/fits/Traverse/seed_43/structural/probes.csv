@@ -1,0 +1,13 @@
+target,seed,method,task,decoder,control,balanced_accuracy,chance,warnings
+Traverse,43,structural,vehicle,linear,learned,0.943125,0.25,
+Traverse,43,structural,vehicle,linear,constant,0.25,0.25,
+Traverse,43,structural,vehicle,linear,permuted,0.2940625,0.25,
+Traverse,43,structural,vehicle,mlp,learned,0.9446875,0.25,
+Traverse,43,structural,vehicle,mlp,constant,0.25,0.25,
+Traverse,43,structural,vehicle,mlp,permuted,0.2790625,0.25,Stochastic Optimizer: Maximum iterations (200) reached and the optimization hasn't converged yet.
+Traverse,43,structural,attack,linear,learned,0.8031250000000001,0.5,
+Traverse,43,structural,attack,linear,constant,0.5,0.5,
+Traverse,43,structural,attack,linear,permuted,0.431875,0.5,
+Traverse,43,structural,attack,mlp,learned,0.7909375000000001,0.5,Stochastic Optimizer: Maximum iterations (200) reached and the optimization hasn't converged yet.
+Traverse,43,structural,attack,mlp,constant,0.5,0.5,
+Traverse,43,structural,attack,mlp,permuted,0.4609375,0.5,Stochastic Optimizer: Maximum iterations (200) reached and the optimization hasn't converged yet.

@@ -1,0 +1,76 @@
+{
+  "train": [
+    "data/can-train-and-test/set_03/train_01/accessory-3.csv",
+    "data/can-train-and-test/set_03/train_01/attack-free-3.csv",
+    "data/can-train-and-test/set_03/train_01/DoS-3.csv",
+    "data/can-train-and-test/set_03/train_01/double-3.csv",
+    "data/can-train-and-test/set_03/train_01/force-neutral-3.csv",
+    "data/can-train-and-test/set_03/train_01/fuzzing-3.csv",
+    "data/can-train-and-test/set_03/train_01/triple-3.csv"
+  ],
+  "validation": [
+    "data/can-train-and-test/set_03/train_01/accessory-4.csv",
+    "data/can-train-and-test/set_03/train_01/attack-free-4.csv",
+    "data/can-train-and-test/set_03/train_01/DoS-4.csv",
+    "data/can-train-and-test/set_03/train_01/double-4.csv",
+    "data/can-train-and-test/set_03/train_01/force-neutral-4.csv",
+    "data/can-train-and-test/set_03/train_01/fuzzing-4.csv",
+    "data/can-train-and-test/set_03/train_01/triple-4.csv"
+  ],
+  "A": [
+    "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/DoS-1.csv",
+    "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/DoS-2.csv",
+    "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/double-1.csv",
+    "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/double-2.csv",
+    "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/force-neutral-1.csv",
+    "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/force-neutral-2.csv",
+    "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/fuzzing-1.csv",
+    "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/fuzzing-2.csv",
+    "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/triple-1.csv",
+    "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/triple-2.csv"
+  ],
+  "B": [
+    "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/DoS-1.csv",
+    "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/DoS-2.csv",
+    "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/double-1.csv",
+    "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/double-2.csv",
+    "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/force-neutral-1.csv",
+    "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/force-neutral-2.csv",
+    "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/fuzzing-1.csv",
+    "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/fuzzing-2.csv",
+    "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/triple-1.csv",
+    "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/triple-2.csv"
+  ],
+  "C": [
+    "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/interval-1.csv",
+    "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/interval-2.csv",
+    "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/rpm-1.csv",
+    "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/rpm-2.csv",
+    "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/rpm-accessory-1.csv",
+    "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/rpm-accessory-2.csv",
+    "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/speed-1.csv",
+    "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/speed-2.csv",
+    "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/speed-accessory-1.csv",
+    "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/speed-accessory-2.csv",
+    "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/standstill-1.csv",
+    "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/standstill-2.csv",
+    "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/systematic-1.csv",
+    "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/systematic-2.csv"
+  ],
+  "D": [
+    "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/interval-1.csv",
+    "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/interval-2.csv",
+    "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/rpm-1.csv",
+    "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/rpm-2.csv",
+    "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/rpm-accessory-1.csv",
+    "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/rpm-accessory-2.csv",
+    "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/speed-1.csv",
+    "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/speed-2.csv",
+    "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/speed-accessory-1.csv",
+    "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/speed-accessory-2.csv",
+    "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/standstill-1.csv",
+    "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/standstill-2.csv",
+    "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/systematic-1.csv",
+    "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/systematic-2.csv"
+  ]
+}

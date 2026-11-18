@@ -1,0 +1,42 @@
+[
+  {
+    "checked_at": "2026-11-06",
+    "language": "vi",
+    "source": "thesis/vi/main.tex",
+    "pdf": "code/output/thesis_compile_check/vi/main.pdf",
+    "pages": 57,
+    "sha256": "27dc2b8addc793d72d11d0841b1b5598b30e4cb61aa83f4356bbb359f908bab2",
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "missing_characters": false,
+    "off_page_words": [],
+    "visual_review": "All pages reviewed in rendered contact sheets; abstracts, vehicle mapping, feature and metric definitions, result tables and bibliography additionally inspected at readable scale. Changed pages were rendered and reviewed again after final layout corrections.",
+    "visual_defects_observed": [],
+    "build_warnings": [
+      "Underfull text/bibliography boxes remain; inspected visually.",
+      "Build uses locally installed Windows fonts.",
+      "Original logo ICC checksum warning; rendered logo inspected."
+    ],
+    "template_status": "Public UET formatting used provisionally; current-cohort rubric still requires author/supervisor confirmation."
+  },
+  {
+    "checked_at": "2026-11-06",
+    "language": "en",
+    "source": "thesis/en/main.tex",
+    "pdf": "code/output/thesis_compile_check/en/main.pdf",
+    "pages": 57,
+    "sha256": "aec3bf5403e3770919af0f5b38b1ad5508e1b63fedd8b32353e52909dd193bf2",
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "missing_characters": false,
+    "off_page_words": [],
+    "visual_review": "All pages reviewed in rendered contact sheets; abstracts, vehicle mapping, feature and metric definitions, result tables and bibliography additionally inspected at readable scale. Changed pages were rendered and reviewed again after final layout corrections.",
+    "visual_defects_observed": [],
+    "build_warnings": [
+      "Underfull text/bibliography boxes remain; inspected visually.",
+      "Build uses locally installed Windows fonts.",
+      "Original logo ICC checksum warning; rendered logo inspected."
+    ],
+    "template_status": "Public UET formatting used provisionally; current-cohort rubric still requires author/supervisor confirmation."
+  }
+]

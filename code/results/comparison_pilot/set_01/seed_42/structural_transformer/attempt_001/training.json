@@ -1,0 +1,11 @@
+{
+  "seconds": 0.03809960000035062,
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 0.7082985639572144
+    }
+  ],
+  "window_count": 20,
+  "frame_count": 1280
+}

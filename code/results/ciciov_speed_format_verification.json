@@ -1,0 +1,52 @@
+{
+  "scope": "All rows; positional alignment assumption checked by ID and label agreement.",
+  "rows": 24951,
+  "lexical_normalizations": 24951,
+  "observed_DATA_6": {
+    "2.0": 19962,
+    "0.0": 4989
+  },
+  "mismatches": {
+    "ID": {
+      "count": 0,
+      "first_row_index": null
+    },
+    "DATA_0": {
+      "count": 0,
+      "first_row_index": null
+    },
+    "DATA_1": {
+      "count": 0,
+      "first_row_index": null
+    },
+    "DATA_2": {
+      "count": 0,
+      "first_row_index": null
+    },
+    "DATA_3": {
+      "count": 0,
+      "first_row_index": null
+    },
+    "DATA_4": {
+      "count": 0,
+      "first_row_index": null
+    },
+    "DATA_5": {
+      "count": 0,
+      "first_row_index": null
+    },
+    "DATA_6": {
+      "count": 4989,
+      "first_row_index": 19962
+    },
+    "DATA_7": {
+      "count": 0,
+      "first_row_index": null
+    }
+  },
+  "label_mismatches": 0,
+  "hex_sha256": "ae213ebfebf39370d4a98aa552882ee6256435cd56f1f2f6514e30e32c8b6bd6",
+  "decimal_sha256": "40812845fd3abae2471c5a87deb84f3cb7cfc014696f4e90b6f48089fc5327bc",
+  "status": "REPRESENTATION_MISMATCH",
+  "raw_files_modified": false
+}

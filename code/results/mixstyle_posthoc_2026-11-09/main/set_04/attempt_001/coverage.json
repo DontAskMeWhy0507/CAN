@@ -1,0 +1,344 @@
+[
+  {
+    "condition": "validation",
+    "file": "data/can-train-and-test/set_04/train_01/accessory-4.csv",
+    "prediction": "validation_9d9f97c68217179299fb.npz",
+    "windows": 824
+  },
+  {
+    "condition": "validation",
+    "file": "data/can-train-and-test/set_04/train_01/attack-free-4.csv",
+    "prediction": "validation_f7e74e01646fbe9c62f8.npz",
+    "windows": 5250
+  },
+  {
+    "condition": "validation",
+    "file": "data/can-train-and-test/set_04/train_01/interval-4.csv",
+    "prediction": "validation_ddddc941c77f038eba7f.npz",
+    "windows": 14178
+  },
+  {
+    "condition": "validation",
+    "file": "data/can-train-and-test/set_04/train_01/rpm-4.csv",
+    "prediction": "validation_08edc52cef79410981eb.npz",
+    "windows": 10044
+  },
+  {
+    "condition": "validation",
+    "file": "data/can-train-and-test/set_04/train_01/rpm-accessory-4.csv",
+    "prediction": "validation_31d9a7ddc4e020bf9df5.npz",
+    "windows": 2734
+  },
+  {
+    "condition": "validation",
+    "file": "data/can-train-and-test/set_04/train_01/speed-4.csv",
+    "prediction": "validation_89ced3a1ea130a97259e.npz",
+    "windows": 7605
+  },
+  {
+    "condition": "validation",
+    "file": "data/can-train-and-test/set_04/train_01/speed-accessory-4.csv",
+    "prediction": "validation_20f3070697c167780bb5.npz",
+    "windows": 6061
+  },
+  {
+    "condition": "validation",
+    "file": "data/can-train-and-test/set_04/train_01/standstill-4.csv",
+    "prediction": "validation_ca780f57553128bd7cd5.npz",
+    "windows": 5510
+  },
+  {
+    "condition": "validation",
+    "file": "data/can-train-and-test/set_04/train_01/systematic-4.csv",
+    "prediction": "validation_2108d700f29ab0fda082.npz",
+    "windows": 19310
+  },
+  {
+    "condition": "A",
+    "file": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/interval-1.csv",
+    "prediction": "A_7d817f9fe7d699b9ff97.npz",
+    "windows": 13393
+  },
+  {
+    "condition": "A",
+    "file": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/interval-2.csv",
+    "prediction": "A_92790847d28c1782d535.npz",
+    "windows": 7267
+  },
+  {
+    "condition": "A",
+    "file": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/rpm-1.csv",
+    "prediction": "A_41731fcf6f2a0a10eb55.npz",
+    "windows": 7633
+  },
+  {
+    "condition": "A",
+    "file": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/rpm-2.csv",
+    "prediction": "A_c84335e2cc28a2f0d458.npz",
+    "windows": 8904
+  },
+  {
+    "condition": "A",
+    "file": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/rpm-accessory-1.csv",
+    "prediction": "A_3354afcd864022e47e4f.npz",
+    "windows": 2028
+  },
+  {
+    "condition": "A",
+    "file": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/rpm-accessory-2.csv",
+    "prediction": "A_b43e58cd5a0a7c688b4b.npz",
+    "windows": 2162
+  },
+  {
+    "condition": "A",
+    "file": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/speed-1.csv",
+    "prediction": "A_01f4810d7e63b53eb49a.npz",
+    "windows": 11828
+  },
+  {
+    "condition": "A",
+    "file": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/speed-2.csv",
+    "prediction": "A_8b168cf9ce1b94924751.npz",
+    "windows": 11169
+  },
+  {
+    "condition": "A",
+    "file": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/speed-accessory-1.csv",
+    "prediction": "A_af74b2b0ea3e928cc754.npz",
+    "windows": 4094
+  },
+  {
+    "condition": "A",
+    "file": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/speed-accessory-2.csv",
+    "prediction": "A_f968c239a51b65855fe9.npz",
+    "windows": 2574
+  },
+  {
+    "condition": "A",
+    "file": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/standstill-1.csv",
+    "prediction": "A_69d4e2d571599fc7113a.npz",
+    "windows": 4784
+  },
+  {
+    "condition": "A",
+    "file": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/standstill-2.csv",
+    "prediction": "A_2d36c1b26fadae577e1a.npz",
+    "windows": 13942
+  },
+  {
+    "condition": "A",
+    "file": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/systematic-1.csv",
+    "prediction": "A_393200a5a1203fdfb703.npz",
+    "windows": 8116
+  },
+  {
+    "condition": "A",
+    "file": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/systematic-2.csv",
+    "prediction": "A_eb95191e4c9a79edcd12.npz",
+    "windows": 9850
+  },
+  {
+    "condition": "B",
+    "file": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/interval-1.csv",
+    "prediction": "B_5e8001144450d34db55f.npz",
+    "windows": 9909
+  },
+  {
+    "condition": "B",
+    "file": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/interval-2.csv",
+    "prediction": "B_858b278f346f4f1a8b08.npz",
+    "windows": 25841
+  },
+  {
+    "condition": "B",
+    "file": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/rpm-1.csv",
+    "prediction": "B_6de3d72fc0ac7ce16017.npz",
+    "windows": 51500
+  },
+  {
+    "condition": "B",
+    "file": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/rpm-2.csv",
+    "prediction": "B_8cb4f170a8384cad819c.npz",
+    "windows": 30873
+  },
+  {
+    "condition": "B",
+    "file": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/rpm-accessory-1.csv",
+    "prediction": "B_e1d2eaa17c2bb310aae6.npz",
+    "windows": 8275
+  },
+  {
+    "condition": "B",
+    "file": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/rpm-accessory-2.csv",
+    "prediction": "B_5c55b98a65ef30f29a3f.npz",
+    "windows": 4798
+  },
+  {
+    "condition": "B",
+    "file": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/speed-1.csv",
+    "prediction": "B_11c41835b5795f6ce94e.npz",
+    "windows": 40932
+  },
+  {
+    "condition": "B",
+    "file": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/speed-2.csv",
+    "prediction": "B_f32d28b49ea0a5706fda.npz",
+    "windows": 42726
+  },
+  {
+    "condition": "B",
+    "file": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/speed-accessory-1.csv",
+    "prediction": "B_44463deaf92d7f438b82.npz",
+    "windows": 8272
+  },
+  {
+    "condition": "B",
+    "file": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/speed-accessory-2.csv",
+    "prediction": "B_e74d5447dd67598c6463.npz",
+    "windows": 4797
+  },
+  {
+    "condition": "B",
+    "file": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/standstill-1.csv",
+    "prediction": "B_fea5da3a60a2b6fdcef9.npz",
+    "windows": 18879
+  },
+  {
+    "condition": "B",
+    "file": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/standstill-2.csv",
+    "prediction": "B_60a885835149d7510c69.npz",
+    "windows": 9609
+  },
+  {
+    "condition": "B",
+    "file": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/systematic-1.csv",
+    "prediction": "B_b6d13cc3417063400be1.npz",
+    "windows": 8458
+  },
+  {
+    "condition": "B",
+    "file": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/systematic-2.csv",
+    "prediction": "B_3923041138a8c1bc9bbb.npz",
+    "windows": 7126
+  },
+  {
+    "condition": "C",
+    "file": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/DoS-1.csv",
+    "prediction": "C_709cc8aa05f2230f25d3.npz",
+    "windows": 10059
+  },
+  {
+    "condition": "C",
+    "file": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/DoS-2.csv",
+    "prediction": "C_df7a8d364d3fc65b62ff.npz",
+    "windows": 11078
+  },
+  {
+    "condition": "C",
+    "file": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/double-1.csv",
+    "prediction": "C_0f13bca4bbbf90f63afb.npz",
+    "windows": 19438
+  },
+  {
+    "condition": "C",
+    "file": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/double-2.csv",
+    "prediction": "C_1f5dbf0420c724717de3.npz",
+    "windows": 10867
+  },
+  {
+    "condition": "C",
+    "file": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/force-neutral-1.csv",
+    "prediction": "C_389ebeef8d19fde400ba.npz",
+    "windows": 8243
+  },
+  {
+    "condition": "C",
+    "file": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/force-neutral-2.csv",
+    "prediction": "C_a9d1d23cc31738f414d9.npz",
+    "windows": 7433
+  },
+  {
+    "condition": "C",
+    "file": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/fuzzing-1.csv",
+    "prediction": "C_0458e874937d71e6d732.npz",
+    "windows": 10315
+  },
+  {
+    "condition": "C",
+    "file": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/fuzzing-2.csv",
+    "prediction": "C_b97c1b9c32b927114522.npz",
+    "windows": 10159
+  },
+  {
+    "condition": "C",
+    "file": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/triple-1.csv",
+    "prediction": "C_998255502454fbfa5a80.npz",
+    "windows": 8506
+  },
+  {
+    "condition": "C",
+    "file": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/triple-2.csv",
+    "prediction": "C_7765ad824ddf4748d92d.npz",
+    "windows": 10995
+  },
+  {
+    "condition": "D",
+    "file": "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/DoS-1.csv",
+    "prediction": "D_f982634d11ab1384291b.npz",
+    "windows": 6281
+  },
+  {
+    "condition": "D",
+    "file": "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/DoS-2.csv",
+    "prediction": "D_d9d9ce83bdea50854af9.npz",
+    "windows": 6513
+  },
+  {
+    "condition": "D",
+    "file": "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/double-1.csv",
+    "prediction": "D_22bb257e0863bc220f47.npz",
+    "windows": 17071
+  },
+  {
+    "condition": "D",
+    "file": "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/double-2.csv",
+    "prediction": "D_8eff7759839cd490b234.npz",
+    "windows": 7234
+  },
+  {
+    "condition": "D",
+    "file": "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/force-neutral-1.csv",
+    "prediction": "D_0b03a938402187212f4a.npz",
+    "windows": 7954
+  },
+  {
+    "condition": "D",
+    "file": "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/force-neutral-2.csv",
+    "prediction": "D_ed3d4b526f98b14b2322.npz",
+    "windows": 7096
+  },
+  {
+    "condition": "D",
+    "file": "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/fuzzing-1.csv",
+    "prediction": "D_ed35374a246cb950cd15.npz",
+    "windows": 19312
+  },
+  {
+    "condition": "D",
+    "file": "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/fuzzing-2.csv",
+    "prediction": "D_577ecfbd8c94a380d2de.npz",
+    "windows": 18246
+  },
+  {
+    "condition": "D",
+    "file": "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/triple-1.csv",
+    "prediction": "D_c0398de882a84f1980fe.npz",
+    "windows": 27820
+  },
+  {
+    "condition": "D",
+    "file": "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/triple-2.csv",
+    "prediction": "D_aca7340038b65c0bab1f.npz",
+    "windows": 10337
+  }
+]

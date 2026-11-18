@@ -1,0 +1,104 @@
+KẾT QUẢ THỬ NGHIỆM BỔ SUNG MIXSTYLE — HOÀN TẤT 10/11/2026
+Thí nghiệm hậu nghiệm; giữ nguyên kết quả và bản khóa luận đã bàn giao.
+12 fit mới (4 set x 3 seed), 24 baseline tái sử dụng; W64/content/file-order.
+Có thêm một pilot phần mềm 2 epoch trên 80 cửa sổ; không tính vào 12 fit nghiên cứu.
+Ngưỡng chỉ chọn từ validation nguồn với FAR budget 100/100000.
+Mọi điểm dưới đây trung bình seed trong set, rồi trọng số ngang nhau giữa set.
+
+Điều kiện A
+  raw_transformer: Recall 61.67%; FAR 0.12%; AP 0.7312; F1 0.7258
+  structural_transformer: Recall 58.86%; FAR 0.08%; AP 0.7483; F1 0.7072
+  structural_mixstyle: Recall 66.75%; FAR 0.08%; AP 0.7784; F1 0.7701
+  So với raw_transformer: delta Recall +5.08 điểm %; delta FAR -0.03 điểm %; Recall cao hơn ở 2/4 set; RECALL_GAIN_WITHOUT_FAR_INCREASE.
+  So với structural_transformer: delta Recall +7.89 điểm %; delta FAR +0.00 điểm %; Recall cao hơn ở 4/4 set; INCREASED_FALSE_ALARMS_TRADEOFF.
+
+Điều kiện B
+  raw_transformer: Recall 85.41%; FAR 65.30%; AP 0.3781; F1 0.3000
+  structural_transformer: Recall 73.83%; FAR 52.46%; AP 0.5554; F1 0.2435
+  structural_mixstyle: Recall 81.94%; FAR 64.54%; AP 0.5815; F1 0.2298
+  So với raw_transformer: delta Recall -3.47 điểm %; delta FAR -0.76 điểm %; Recall cao hơn ở 1/4 set; RECALL_DECREASE.
+  So với structural_transformer: delta Recall +8.11 điểm %; delta FAR +12.08 điểm %; Recall cao hơn ở 3/4 set; INCREASED_FALSE_ALARMS_TRADEOFF.
+
+Điều kiện C
+  raw_transformer: Recall 21.01%; FAR 0.09%; AP 0.2661; F1 0.2314
+  structural_transformer: Recall 22.30%; FAR 0.08%; AP 0.2928; F1 0.2600
+  structural_mixstyle: Recall 28.38%; FAR 0.08%; AP 0.3620; F1 0.3317
+  So với raw_transformer: delta Recall +7.37 điểm %; delta FAR -0.01 điểm %; Recall cao hơn ở 4/4 set; RECALL_GAIN_WITHOUT_FAR_INCREASE.
+  So với structural_transformer: delta Recall +6.07 điểm %; delta FAR +0.00 điểm %; Recall cao hơn ở 4/4 set; INCREASED_FALSE_ALARMS_TRADEOFF.
+
+Điều kiện D
+  raw_transformer: Recall 66.14%; FAR 67.98%; AP 0.1648; F1 0.1213
+  structural_transformer: Recall 64.45%; FAR 54.64%; AP 0.3357; F1 0.2069
+  structural_mixstyle: Recall 69.82%; FAR 66.99%; AP 0.3658; F1 0.1600
+  So với raw_transformer: delta Recall +3.67 điểm %; delta FAR -0.99 điểm %; Recall cao hơn ở 1/4 set; RECALL_GAIN_WITHOUT_FAR_INCREASE.
+  So với structural_transformer: delta Recall +5.37 điểm %; delta FAR +12.35 điểm %; Recall cao hơn ở 3/4 set; INCREASED_FALSE_ALARMS_TRADEOFF.
+
+NGOẠI BỘ: 57 capture, cùng checkpoint set_01, không hiệu chỉnh xe đích.
+Bảng này gộp số đếm/cửa sổ trong mỗi dataset trước, sau đó trung bình 3 seed.
+Không so số gộp này với trung bình ngang nhau giữa capture trong bảng khác.
+CAN_MIRGU_attack
+  raw: Recall% 58.4757, FAR% 59.1759, AP 0.3711
+  structural: Recall% 5.4629, FAR% 2.7018, AP 0.4058
+  structural_mixstyle: Recall% 4.8580, FAR% 1.8267, AP 0.4168
+CAN_MIRGU_benign
+  raw: Recall% không xác định, FAR% 60.6151, AP không xác định
+  structural: Recall% không xác định, FAR% 6.6311, AP không xác định
+  structural_mixstyle: Recall% không xác định, FAR% 5.9049, AP không xác định
+CICIoV2024
+  raw: Recall% 64.6193, FAR% 100.0000, AP 0.3684
+  structural: Recall% 100.0000, FAR% 100.0000, AP 0.9123
+  structural_mixstyle: Recall% 100.0000, FAR% 100.0000, AP 0.4364
+Opel_Astra_DoS
+  raw: Recall% 100.0000, FAR% 43.8502, AP 1.0000
+  structural: Recall% 100.0000, FAR% 31.5345, AP 1.0000
+  structural_mixstyle: Recall% 100.0000, FAR% 33.4282, AP 1.0000
+Opel_Astra_benign
+  raw: Recall% không xác định, FAR% 43.8417, AP không xác định
+  structural: Recall% không xác định, FAR% 30.9805, AP không xác định
+  structural_mixstyle: Recall% không xác định, FAR% 32.8628, AP không xác định
+Renault_Clio_DoS
+  raw: Recall% 99.9468, FAR% 33.1029, AP 0.9998
+  structural: Recall% 99.8403, FAR% 0.1886, AP 0.9992
+  structural_mixstyle: Recall% 99.8403, FAR% 0.1467, AP 0.9991
+Renault_Clio_benign
+  raw: Recall% không xác định, FAR% 33.4437, AP không xác định
+  structural: Recall% không xác định, FAR% 0.1656, AP không xác định
+  structural_mixstyle: Recall% không xác định, FAR% 0.1288, AP không xác định
+
+ĐIỂM VẬN HÀNH SUY BIẾN
+set_02/42/B: toàn attack
+set_02/42/D: toàn attack
+Ngoại bộ CICIoV2024/42: toàn attack trên tập có cả hai lớp
+Ngoại bộ CICIoV2024/43: toàn attack trên tập có cả hai lớp
+Ngoại bộ CICIoV2024/44: toàn attack trên tập có cả hai lớp
+
+PROBE TRÊN ĐÚNG MẪU ĐÃ DÙNG CHO BASELINE
+  raw: vehicle balanced accuracy 99.25%; attack 64.19%.
+  structural: vehicle balanced accuracy 94.88%; attack 76.69%.
+  structural_mixstyle: vehicle balanced accuracy 95.27%; attack 77.37%.
+Chance: vehicle 25%, attack 50%; báo đủ constant/random/permuted controls trong probe_means.csv.
+Probe là khả năng giải mã tuyến tính hậu nghiệm, không chứng minh độc lập xe hoặc phiên ghi.
+
+THỜI GIAN SUY LUẬN — ĐO LẠI CẢ BA PIPELINE CÙNG PHIÊN
+  cpu/raw: median 4.481 ms; p95 6.007 ms; n=900.
+  cpu/structural: median 4.001 ms; p95 5.033 ms; n=900.
+  cpu/structural_mixstyle: median 3.785 ms; p95 4.427 ms; n=900.
+  cuda/raw: median 3.962 ms; p95 5.786 ms; n=900.
+  cuda/structural: median 3.836 ms; p95 4.617 ms; n=900.
+  cuda/structural_mixstyle: median 3.823 ms; p95 4.597 ms; n=900.
+Batch1: đọc CSV, kiểm tra, tạo cả hai biểu diễn và inference. Máy desktop dùng chung,
+đọc lặp có cache; không phải deadline ECU, độ trễ thu thập hay bằng chứng GPU huấn luyện chậm.
+
+GIỚI HẠN
+- six_method_equal_set.csv bổ sung ba đối thủ thích ứng từ bảng cũ; không dùng điểm công bố gốc để xếp hạng.
+- Một cấu hình cố định, không chọn seed/set tốt nhất. Không bảo đảm thắng phương pháp gốc.
+- Test đã xem trước nên đây là hậu nghiệm; chưa xác nhận trên xe/phiên mới độc lập.
+- Capture bootstrap là mô tả theo capture, không phải CI cho quần thể xe.
+- Đã chạy probe và đo lại runtime; các phép đo này không xác nhận bất biến xe hay thời gian thực trên ECU.
+- CUDA attention cảnh báo có thuật toán backward không tất định; cùng seed không bảo đảm tái lập bit-for-bit giữa các lần huấn luyện.
+- Không đổi criterion Recall B sang AP hoặc sang điều kiện khác nếu B thất bại.
+- Điểm tăng chỉ đáng gọi cải thiện đồng thời nếu recall tăng và FAR không tăng so cùng baseline.
+
+Nguồn phương pháp: Zhou et al., Domain Generalization with MixStyle, ICLR 2021.
+https://arxiv.org/abs/2104.02008v1
+Bản thích ứng: chuỗi sau linear projection, ghép cùng nhãn nguồn; không phải bản CNN gốc.

@@ -1,0 +1,5 @@
+device,representation,n,p50_ms,p95_ms,mean_ms,checkpoint_manifest
+cpu,raw,900,6.09829999939393,7.523864999075158,6.179757333332721,F:\00_Research\code\results\comparison_gpu4_reuse_v1\set_01\seed_42\raw_transformer\attempt_001\manifest.json
+cpu,structural,900,6.175999999868509,8.02435499972489,6.211460888878516,F:\00_Research\code\results\comparison_gpu4_reuse_v1\set_01\seed_42\structural_transformer\attempt_001\manifest.json
+cuda,raw,900,7.536599999184546,9.522614999968937,7.626347555568726,F:\00_Research\code\results\comparison_gpu4_reuse_v1\set_01\seed_42\raw_transformer\attempt_001\manifest.json
+cuda,structural,900,7.3231500000474625,8.870745001149771,7.384586444449168,F:\00_Research\code\results\comparison_gpu4_reuse_v1\set_01\seed_42\structural_transformer\attempt_001\manifest.json

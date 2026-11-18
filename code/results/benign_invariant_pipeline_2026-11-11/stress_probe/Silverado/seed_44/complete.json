@@ -1,0 +1,38 @@
+[
+  {
+    "target": "Silverado",
+    "seed": 44,
+    "method": "frozen_source",
+    "balanced_accuracy": 0.9443750000000001,
+    "n_iter": 75,
+    "training_loss": 0.0016441103750435063,
+    "warnings": []
+  },
+  {
+    "target": "Silverado",
+    "seed": 44,
+    "method": "white_leace_lr",
+    "balanced_accuracy": 0.596875,
+    "n_iter": 267,
+    "training_loss": 0.004948773182384596,
+    "warnings": []
+  },
+  {
+    "target": "Silverado",
+    "seed": 44,
+    "method": "white_pca8_lr",
+    "balanced_accuracy": 0.565625,
+    "n_iter": 883,
+    "training_loss": 0.3068133100315972,
+    "warnings": []
+  },
+  {
+    "target": "Silverado",
+    "seed": 44,
+    "method": "white_inlp8_lr",
+    "balanced_accuracy": 0.39812499999999995,
+    "n_iter": 942,
+    "training_loss": 0.33904293070513264,
+    "warnings": []
+  }
+]

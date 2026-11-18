@@ -1,0 +1,8 @@
+{
+  "status": "COMPLETE",
+  "methods": 8,
+  "target_windows": 452496,
+  "target_content_disjoint_windows": 452496,
+  "excluded_capture": "de012dd85da143b8d26a9f8b",
+  "metrics_sha256": "4bb22f055d7e69798f30a9c96897693a75d15760a1b4788239ee587b5133d2bf"
+}

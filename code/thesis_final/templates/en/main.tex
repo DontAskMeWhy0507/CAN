@@ -1,0 +1,1063 @@
+\documentclass[12pt,a4paper,oneside,openany]{extbook}
+\usepackage[fontsize=13pt]{scrextend}
+\usepackage{fix-cm}
+\usepackage[left=3cm,right=2cm,top=2.5cm,bottom=3cm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Consolas}[Scale=0.85]
+\usepackage[english,vietnamese]{babel}
+\usepackage{amsmath,amssymb,graphicx,booktabs,longtable,array,tabularx}
+\usepackage{setspace,indentfirst,fancyhdr,enumitem,microtype}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage[numbers,square,sort&compress]{natbib}
+\usepackage[hidelinks,bookmarksnumbered]{hyperref}
+\usepackage{caption}
+\usepackage{placeins}
+\captionsetup{font=small,labelfont=bf}
+\setstretch{1.3}
+\setlength{\parindent}{1cm}
+\setlength{\parskip}{6pt}
+\setlength{\headheight}{18pt}
+\setlength{\emergencystretch}{5em}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\setlist{itemsep=2pt,topsep=4pt}
+\fancyhf{}
+\fancyhead[L]{\small Undergraduate thesis: CAN intrusion detection}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\newcommand{\pending}{\textit{Pending protocol-v2.1 rerun; no confirmed result is available.}}
+\DeclareRobustCommand{\code}[1]{\texttt{\detokenize{#1}}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\frontchapter}[1]{\chapter*{#1}\phantomsection\addcontentsline{toc}{chapter}{#1}}
+\newcommand{\abstractchapter}[1]{\clearpage\phantomsection\addcontentsline{toc}{chapter}{#1}{\centering\fontsize{13}{13}\selectfont\bfseries\MakeUppercase{#1}\par}\vspace{12pt}}
+\begin{document}
+\hypersetup{pageanchor=false}
+
+\selectlanguage{english}
+\begin{titlepage}\centering
+{\fontsize{12}{12}\selectfont\bfseries VIETNAM NATIONAL UNIVERSITY, HANOI\par UNIVERSITY OF ENGINEERING AND TECHNOLOGY\par}
+\vspace{1.3cm}\includegraphics[width=3cm]{figs/uet.jpg}\par\vspace{1cm}
+{\fontsize{14}{14}\selectfont\bfseries Vu Tien Tuan Trung\par}\vspace{1.6cm}
+{\fontsize{18}{18}\selectfont\bfseries VEHICLE-AGNOSTIC REPRESENTATION LEARNING\\FOR CROSS-VEHICLE CAN BUS\\INTRUSION DETECTION\par}\vspace{1.8cm}
+{\fontsize{14}{14}\selectfont\bfseries UNDERGRADUATE THESIS\par}\vspace{0.3cm}{\fontsize{14}{14}\selectfont\bfseries Major: Information Systems\par}
+\vfill{\fontsize{12}{12}\selectfont\bfseries HANOI -- 2026\par}\end{titlepage}
+\begin{titlepage}\centering
+{\fontsize{12}{12}\selectfont\bfseries VIETNAM NATIONAL UNIVERSITY, HANOI\par UNIVERSITY OF ENGINEERING AND TECHNOLOGY\par}
+\vspace{1.3cm}\includegraphics[width=3cm]{figs/uet.jpg}\par\vspace{1cm}
+{\fontsize{14}{14}\selectfont\bfseries Vu Tien Tuan Trung\par}\vspace{1.6cm}
+{\fontsize{18}{18}\selectfont\bfseries VEHICLE-AGNOSTIC REPRESENTATION LEARNING\\FOR CROSS-VEHICLE CAN BUS\\INTRUSION DETECTION\par}\vspace{1.8cm}
+{\fontsize{14}{14}\selectfont\bfseries UNDERGRADUATE THESIS\par}\vspace{0.3cm}{\fontsize{14}{14}\selectfont\bfseries Major: Information Systems\par}
+\vspace{1.3cm}{\fontsize{14}{14}\selectfont\bfseries Supervisor: Assoc. Prof. Nguyen Ngoc Hoa\par}
+\vfill{\fontsize{12}{12}\selectfont\bfseries HANOI -- 2026\par}\end{titlepage}
+\frontmatter\hypersetup{pageanchor=true}\pagestyle{fancy}
+
+% Begin inlined front_en.tex
+\frontchapter{Acknowledgements}
+I thank Associate Professor Nguyen Ngoc Hoa for his supervision, feedback and research guidance. I also thank the researchers who released CAN security datasets and publications that enable experimental verification.
+
+AI tools supported drafting, translation, literature checking and software development. The author is responsible for checking citations, understanding and validating the implementation, conducting the experiments and confirming the final text. The results distinguish historical exploratory outputs from experiments that must be rerun under the corrected protocol.
+
+\frontchapter{Authorship declaration}
+I declare that the sources of ideas, data and prior work used in this thesis are acknowledged. I do not present unperformed experiments as completed results or attribute measurements from one configuration to another. Data limitations, validation scope and reproducibility constraints are stated in the thesis. I am responsible for checking and confirming the final submission.
+\begin{flushright}Author\\[1.5cm]Vu Tien Tuan Trung\end{flushright}
+
+\abstractchapter{Abstract}
+
+% Begin inlined abstract_en.tex
+\begingroup\fontsize{12}{12}\selectfont
+\noindent\textbf{Abstract:} This thesis examines transfer of CAN intrusion detection across vehicles and attack types. Structural inputs exclude raw ID bits while still using IDs as keys for payload history and local relations. A window is positive when at least one frame carries label 1 under the dataset annotation policy.
+
+The primary comparison uses content and file order: 28 raw dimensions, 30 structural dimensions, W64, four sets, three seeds and five methods. Reversed timestamps are retained for audit and excluded from features; physical chronology is not asserted. CANBERT+, CANLP-char-DNN and CrySyS-AssocRules/W64 are disclosed adaptations, and original published scores are not directly ranked. The 60-cell matrix has been verified; measured recall/FAR tradeoffs appear in Section~\ref{sec:comparison-results}. This comparison does not itself answer feature-ablation, vehicle-probe, external-transfer or deployment-latency questions. In B, Structural minus Raw yields mean recall difference -0.1159 and FAR difference -12839.95/100,000 under equal set weights; these quantities must be interpreted together.
+
+% BEGIN COMPARISON POSTHOC_ABSTRACT_EN
+Additional post-hoc analyses cover ten content representations, W32/W128 sensitivity, balanced probes, ledger-governed external evaluation and host runtime. Raw/Structural vehicle probes reach 0.9925/0.9488 balanced accuracy, indicating substantial remaining vehicle information; these results do not establish vehicle independence or real-time deployment readiness.
+% END COMPARISON POSTHOC_ABSTRACT_EN
+
+\noindent\textbf{\textit{Keywords:}} CAN; intrusion detection; distribution shift; structural representation.
+\par\endgroup
+% End inlined abstract_en.tex
+
+\abstractchapter{Tóm tắt}
+\selectlanguage{vietnamese}
+
+% Begin inlined ../vi/abstract_vi.tex
+\begingroup\fontsize{12}{12}\selectfont
+\noindent\textbf{Tóm tắt:} Khóa luận khảo sát chuyển giao phát hiện xâm nhập CAN khi đổi xe và kiểu tấn công. Biểu diễn structural bỏ bit ID thô ở đầu vào bộ phân loại nhưng vẫn dùng ID làm khóa lịch sử payload và quan hệ cục bộ. Nhãn cửa sổ dương khi có ít nhất một frame mang nhãn 1 theo chính sách dữ liệu.
+
+Phép so chính hiện thực thi theo nội dung và thứ tự file: raw 28 chiều, structural 30 chiều, W64, bốn set, ba seed và năm phương pháp. Timestamp đi lùi được giữ để kiểm toán và không dùng làm đặc trưng; không khẳng định thứ tự dòng là chronology vật lý. CANBERT+, CANLP-char-DNN và CrySyS-AssocRules/W64 là các bản thích ứng có công bố thay đổi, không dùng trực tiếp điểm số công bố gốc để xếp hạng. Ma trận 60 cell đã được xác minh; số liệu và đánh đổi recall/FAR được trình bày tại Mục~\ref{sec:comparison-results}. Kết quả này không tự trả lời các câu hỏi về loại trừ đặc trưng, probe xe, ngoại bộ hay độ trễ triển khai. Ở B, Structural trừ Raw có chênh lệch recall trung bình -0.1159 và FAR -12839.95/100.000, với trọng số ngang nhau giữa set; hai đại lượng phải được diễn giải cùng nhau.
+
+% BEGIN COMPARISON POSTHOC_ABSTRACT_VI
+Phân tích hậu nghiệm bổ sung đánh giá 10 biểu diễn nội dung, độ nhạy W32/W128, probe cân bằng, ngoại bộ theo ledger và runtime máy thực nghiệm. Probe xe Raw/Structural đạt 0.9925/0.9488 balanced accuracy, cho thấy vẫn còn nhiều thông tin về xe; các bằng chứng này không xác nhận độc lập xe hay khả năng triển khai thời gian thực.
+% END COMPARISON POSTHOC_ABSTRACT_VI
+
+\noindent\textbf{\textit{Từ khóa:}} CAN; phát hiện xâm nhập; chuyển dịch phân phối; biểu diễn cấu trúc.
+\par\endgroup
+% End inlined ../vi/abstract_vi.tex
+
+\selectlanguage{english}
+
+\frontchapter{Experimental status of this revision}
+The primary comparison uses content/file order under Section~\ref{sec:comparison-protocol}. All 60 cells are complete; new results appear in Section~\ref{sec:comparison-results}. Historical tables and the timed v2.1 design remain separate. Additional content-tier evidence appears in Section~\ref{sec:completion}; timing and physical-deployment claims remain unconfirmed.
+% BEGIN COMPARISON SCOPE
+New results belong only to the content/file-order branch in Section~\ref{sec:comparison-results}. Statements below about pending v2.1 confirmation refer to the timed branch and extended experiments; historical numbers are not merged into the new matrix.
+% END COMPARISON SCOPE
+
+% End inlined front_en.tex
+
+\tableofcontents\listoffigures\listoftables
+
+% Begin inlined abbreviations_en.tex
+\frontchapter{List of abbreviations}
+\begin{longtable}{P{2cm}P{11cm}}
+\toprule Symbol & Meaning\\\midrule
+AP & Average Precision\\
+CAN & Controller Area Network\\
+CI & Confidence Interval\\
+DBC & Database describing CAN signal layouts\\
+DLC & Data Length Code\\
+DoS & Denial of Service\\
+ECU & Electronic Control Unit\\
+FAR & False Alarm Rate; reported per 100,000 benign windows in this thesis\\
+FN/FP & False Negative/False Positive\\
+FPR & False Positive Rate; FP/(FP+TN)\\
+IDS & Intrusion Detection System\\
+LR & Logistic Regression\\
+PR & Precision--Recall\\
+TF & Transformer\\
+TN/TP & True Negative/True Positive\\
+XGB & XGBoost\\\bottomrule
+\end{longtable}
+% End inlined abbreviations_en.tex
+\mainmatter
+
+% Begin inlined introduction_en.tex
+\chapter{Introduction}\label{chap:introduction}
+\section{Research motivation}
+CAN connects electronic control units within a vehicle. The protocol prioritizes communication and bus arbitration but does not provide built-in cryptographic authentication for each sender. Automotive security experiments demonstrate that an attacker with suitable access can influence messages and control functions~\cite{koscher2010experimental,checkoway2011comprehensive}. A passive IDS can monitor traffic without modifying every ECU, but its detection quality must be measured under meaningful deployment conditions.
+
+IDS performance can vary substantially across datasets and evaluation settings~\cite{koltai2026trust}. A model trained on a source vehicle may exploit correlations between attack labels and that vehicle's identifiers, payloads or transmission periods; these correlations may change on a target vehicle. Degradation alone, however, does not prove ID memorization: decision thresholds, sampling, label policies and attack mechanisms may also contribute. This study therefore separates measured performance from hypotheses about its causes.
+
+This thesis uses can-train-and-test because the dataset already organizes four conditions combining known/unseen vehicles and attacks~\cite{lampe2024curated}; those conditions are not a new contribution of this thesis. Recent work has also studied identifier transitions, message history and cross-dataset evaluation~\cite{khreasat2026relational,dong2026mtff,koltai2026trust}. The question examined here is how removing raw identifier values and adding same-ID payload history and local relations affect detection when source data, sampled windows, encoder architecture and source-only threshold selection are held consistent. The aim is to identify benefits, losses and limits of the evidence rather than infer a general conclusion from one high F1 score.
+
+\section{Problem and scope}
+Given an ordered CAN capture, the system makes one benign/attack decision after each completed, non-overlapping window of 64 frames. Windows never cross file boundaries. A window is positive if it contains at least one frame assigned label 1 by the dataset; label 1 follows that dataset's policy and may mark a suspension interval without an injected malicious frame~\cite{rajapaksha2024canmirgu}. The task does not identify a compromised ECU or recover the physical meaning of each signal. Whether detection precedes harm requires a separate event-latency measurement and cannot be inferred from window F1.
+
+The model, learned normalization parameters and decision threshold are trained or chosen using source data only and remain fixed when evaluating a target vehicle. Feature extraction may use previously observed frames from the target capture, but neither target labels nor model or threshold updates are used. This is the no-target-adaptation transfer setting examined in the thesis.
+
+The implementation supports classical CAN with standard 11-bit identifiers and at most eight payload bytes. CAN-FD, extended identifiers and unknown labels are rejected. The timed branch rejects reversed timestamps; the content/file-order comparison retains timestamps for audit but excludes them from features. Structural inputs exclude global identifier values, but the extractor still uses IDs as keys for same-ID history. Accordingly, ``vehicle-agnostic'' in the thesis title denotes the research objective, not a proven property of the complete system.
+
+\section{Research questions}
+\begin{enumerate}[label=\textbf{RQ\arabic*.}]
+\item At thresholds selected under the same source-validation FAR budget, how do attack recall and test FAR change between raw and structural inputs across Conditions A--D and the four benchmark sets?
+\item With the same Transformer and source samples, how does the effect of removing raw ID bits differ from that of adding payload history, timing and local identifier relations?
+\item When raw inputs are replaced with structural inputs, how does linear decodability of vehicle labels from embeddings change, and how does that change relate to attack detection?
+\item When a frozen source model is applied to other-source datasets with verified labels and compatible schemas, for which attack mechanisms does it succeed or fail?
+\end{enumerate}
+For RQ1, Condition B (unseen vehicle, known attack) is the primary vehicle-transfer comparison; Condition D additionally tests the boundary when the attack is unseen. Attack recall at the source-selected threshold is always reported with target FAR, positive and negative window counts, and per-set results; F1, AP and the default 0.5 threshold are supplementary. Some vehicles recur across the four sets, so the sets are not four independent vehicle pairs. RQ2 requires paired ablations. RQ3 is a diagnostic using a linear probe, not a measure of all vehicle information in an embedding.
+
+\section{Working hypothesis and falsification criteria}
+The primary hypothesis is that structural inputs yield higher attack recall than raw inputs under Condition B when each Transformer uses a threshold chosen by the same FAR rule on source validation. Recall differences are paired by set and seed, averaged over three seeds within each set and then weighted equally across four sets; individual differences and target FAR remain visible. A non-positive overall mean does not support the mean-benefit hypothesis, and any non-positive set prevents a claim of consistent improvement across all four sets. Increased target FAR may make a recall gain operationally unsuitable, so a positive recall difference alone is not an overall superiority claim. Condition D and per-mechanism results test the boundary of the hypothesis, particularly for attacks that alter payload semantics while preserving transmission timing and order.
+
+A secondary hypothesis is that structural inputs reduce linear decodability of vehicle labels without losing attack signal. If the vehicle probe does not decrease, or both the attack probe and detection quality deteriorate, no useful reduction in vehicle dependence is claimed. A near-chance vehicle probe does not establish statistical independence. Exploratory target results have already been seen; these criteria are fixed before the v2.1 reruns, which are not tests on untouched targets. Reproducible negative results remain informative.
+
+\section{Contributions and evidence status}
+\begin{enumerate}
+\item A specified and implemented structural representation (30 dimensions in the content comparison; 32 in the timed specification) that excludes raw CAN-ID bits from classifier input, maintains within-file history and has been tested for invariance under a consistent one-to-one renaming of identifiers. This property does not establish vehicle independence.
+\item A protocol for raw/structural comparisons and ablations using the same Transformer, windows and source samples, with source-only threshold selection and per-file predictions retained for verification.
+\item Corrected schema and label checks, metric computation and provenance recording, together with specific problems identified in earlier exploratory outputs.
+\end{enumerate}
+In addition to methods and data validation, the four-set, three-seed, five-method content/file-order matrix is complete in Section~\ref{sec:comparison-results}. Results distinguish ranking quality from recall and FAR at source-selected thresholds; probes and external tests still require separate evidence.
+
+\section{Thesis organization}
+Chapter~\ref{chap:background} defines the data, threat model and task. Chapter~\ref{chap:related} positions the study relative to prior work. Chapter~\ref{chap:method} specifies the features and protocol. Chapter~\ref{chap:results} separates verified evidence from the completed content comparison and outstanding extended experiments. Chapter~\ref{chap:conclusion} bounds the conclusions and identifies remaining work. The appendices provide output specifications, a reproducibility checklist and hand-checkable examples.
+% End inlined introduction_en.tex
+
+% Begin inlined background_en.tex
+\chapter{Background and problem formulation}\label{chap:background}
+\section{CAN messages and IDS observations}
+CAN identifiers determine bus arbitration and identify message types; they are not authenticated sender addresses. The studied IDS observes recorded frames after transmission rather than every physical ECU state. Logged intervals also depend on capture hardware, timestamp resolution and bus load. Consequently, timing changes must not automatically be interpreted as attacks~\cite{bozdal2020evaluation,verma2024road}.
+
+Represent frame $i$ by
+\begin{equation}
+F_i=(t_i,c_i,d_i,\mathbf{b}_i,y_i),\quad d_i\in\{0,\ldots,8\},\quad y_i\in\{0,1\},
+\end{equation}
+where $t_i$ is the timestamp, $c_i$ the identifier, $d_i$ the valid payload length, $\mathbf b_i$ the padded bytes and $y_i$ the binary label after checking the dataset's annotation policy. The timestamp is capture metadata, not an authenticated payload field. Zero padding is distinguished from a genuine zero-valued byte by a validity mask.
+
+\section{Threat model}
+The attacker can inject, modify or suppress traffic within the scenarios represented by the datasets. Relevant mechanisms include flooding/DoS, fuzzing, injection/spoofing, payload modification and suspension. The IDS is passive: it neither blocks frames nor replaces authentication or safety control. Simultaneous modification of both capture logs and ground truth is outside scope because trusted evaluation labels would no longer exist.
+
+For synthetic or modified captures, conclusions apply to the generated trace rather than an unmeasured physical effect. Automotive v2 DoS replaces an interval in a copy of a benign capture. CAN-MIRGU parsing requires its trailing per-frame label. An attack-related filename is never sufficient evidence that every frame is malicious.
+
+\section{Evaluation unit and window labels}
+For window size and stride $W$, window $k$ within a file is
+\begin{equation}
+\mathcal W_k=(F_{kW},\ldots,F_{kW+W-1}),\qquad Y_k=\max_{i=kW}^{kW+W-1}y_i.
+\end{equation}
+An incomplete final window is discarded and its frame count recorded. A positive window can contain mostly label-0 frames, so window-level precision and recall are not frame-level measures. For injection-frame labels, a 64-frame window containing one frame labeled 1 is positive; a correct window alert does not localize that frame. In CAN-MIRGU suspension, the entire suspension interval is labeled 1 even though no malicious frame is injected~\cite{rajapaksha2024canmirgu}. Thus label 1 cannot always be interpreted as an injected malicious frame.
+
+Cross-study comparisons require the same decision unit, label rule, split and evaluation sample. Multiplying a FAR denominator by64 does not convert window detection into frame detection: label aggregation is nonlinear, and a window decision has no unique inverse assignment to individual frames.
+
+\section{Vehicle, attack and dataset shifts}
+
+The four conditions are benchmark subsets intended to study two kinds of shift. They do not constitute a causal experiment changing exactly one factor: recording sessions, operating states, class prevalence and attack implementations may also differ. A--B and C--D differences are therefore interpreted within this dataset.
+Let $v_s,v_t$ denote source and target vehicle domains, and $a_s,a_t$ the attack families represented in training and testing. Conditions A--D retain or change these factors. ``Known'' must be checked against the samples actually used for training: a named family whose positive windows were all removed by sampling cannot be assumed to have been learned.
+
+\begin{table}[htbp]\centering
+\caption{Four evaluation conditions inherited from the benchmark}\label{tab:conditions}
+\begin{tabular}{clll}\toprule Condition & Vehicle & Attack & Purpose\\\midrule
+A & Known & Known & Within-domain reference\\
+B & Unseen & Known & Vehicle shift\\
+C & Known & Unseen & Attack shift\\
+D & Unseen & Unseen & Combined shift\\\bottomrule\end{tabular}
+\end{table}
+
+An external dataset also changes acquisition tools, annotation conventions and environment, so it is not an intervention on vehicle alone. Traces sharing an underlying recording are not independent merely because their filenames differ.
+
+\begin{table}[htbp]\centering
+\caption{Source and target vehicles in the four sets}\label{tab:vehicle_pairs}
+\begin{tabular}{lll}\toprule Set & Source vehicle & Target vehicle\\\midrule
+1 & Chevrolet Impala & Chevrolet Silverado\\
+2 & Chevrolet Traverse & Subaru Forester\\
+3 & Chevrolet Silverado & Subaru Forester\\
+4 & Subaru Forester & Chevrolet Traverse\\\bottomrule\end{tabular}
+\end{table}
+
+The four sets reuse four vehicles and contain only three distinct target vehicles. Pooling three set directories while holding out the fourth is not an unseen-vehicle split: Set 1's test Silverado is Set 3's source. A multi-source extension must partition actual vehicle identities and original captures globally.
+
+\clearpage
+\section{Data sources and evaluation scope}
+\begin{longtable}{P{3.3cm}P{4.4cm}P{5.2cm}}
+\caption{Dataset roles and validity conditions}\label{tab:datasets}\\\toprule
+Dataset & Role & Requirement\\\midrule\endfirsthead
+\toprule Dataset & Role & Requirement\\\midrule\endhead
+can-train-and-test~\cite{lampe2024curated} & Primary four-set benchmark & Hold out source validation; preserve official tests\\
+Automotive v2~\cite{dupont2019automotive} & Opel/Renault DoS and benign traces & Interval and frame-signature labels; no whole-file labelling\\
+CAN-MIRGU~\cite{rajapaksha2024canmirgu} & Timestamped external transfer & Nested attack logs found; verify labels and full-file preflight\\
+CICIoV2024~\cite{neto2024ciciov2024} & Content-only external transfer & Hex CSVs lack measured timestamps; retain row-order limitations\\
+OTIDS~\cite{lee2017otids} & Excluded from confirmed conclusions for now & Verify converted labels; exclude shuffled derivatives\\\bottomrule
+\end{longtable}
+HCRL OTIDS is not the Car-Hacking Dataset. Its release page identifies a Kia Soul; the Hyundai label in the old notebook is not reliable provenance. A CAN-MIRGU make or model not disclosed by its source is not inferred.
+
+\section{Learning objective and representation meaning}
+The extractor $\Phi$ maps a window to $X\in\mathbb R^{W\times D}$. Classifier $f_\theta$ produces a class-one probability and decision
+\begin{equation}
+p_k=\operatorname{softmax}(f_\theta(\Phi(\mathcal W_k)))_1,
+\qquad \widehat Y_k=\mathbf{1}[p_k\geq\tau].
+\end{equation}
+Parameters $\theta$ are fitted only on source-training data. Threshold $\tau$ is selected only on source validation and frozen before testing. Fixed feature scales are not refitted on a target vehicle. Computing same-ID history from previously observed target frames is allowed: it is causal input processing rather than training with target labels.
+
+Identifier-renaming invariance differs from vehicle-domain invariance. A one-to-one renaming that preserves same-ID relations may leave structural features unchanged; a real vehicle change also changes payloads, timing and message structure. Establishing the former property does not establish the latter.
+The history dependence can be made explicit as $\Phi(\mathcal W_k;H_k)$, where $H_k$ is the state preceding the window and is empty at each file start. The shorthand $\Phi(\mathcal W_k)$ used here always includes this state rule; windows are not independently re-extracted from an empty history.
+
+% End inlined background_en.tex
+
+% Begin inlined related_en.tex
+\chapter{Related work}\label{chap:related}
+Rajapaksha et al. survey AI-based intrusion detection approaches for in-vehicle networks~\cite{rajapaksha2023survey}; this is a taxonomy source, not a matched cross-vehicle benchmark result for this thesis. Sharmin et al. find that CAN IDS studies vary in experimental conditions, features and metrics, so paper-level scores cannot be compared meaningfully without matching protocols~\cite{sharmin2024benchmark}. The discussion below therefore distinguishes inputs, prediction units, target-vehicle data budgets and splits before considering performance.
+
+\section{Timing and message-sequence detection}
+Cho and Shin use ECU clock deviations inferred from periodic message intervals to detect attacks and identify their source~\cite{cho2016fingerprint}. This requires an ECU/vehicle-specific fingerprint and is therefore distinct from the thesis's timing features without ECU identity. Chiscop et al. study message modification attacks that leave communication timing unchanged, using temporal convolutions over CAN signals~\cite{chiscop2021modification}. This motivates a payload branch but does not establish that the branch generalizes across vehicles.
+
+OTIDS analyzes timing relations associated with remote frames~\cite{lee2017otids}, illustrating timing as a detection signal without making every payload attack observable. Song et al. study a convolutional detector for in-vehicle traffic~\cite{song2020dcnn}. These approaches motivate input and architecture controls; they do not establish that all corresponding models fail on unseen vehicles.
+
+Here, timing-only and payload-only models are ablations of the same pipeline. They are not called reproductions of OTIDS or DCNN because their algorithms, inputs and protocols differ. Reproducing a published method requires its windowing, preprocessing, hyperparameters and decision mechanism to be specified faithfully.
+
+Jo and Kim combine a payload-based detector with a periodicity-based detector through a decision-fusion policy~\cite{jo2026fusion}. The accessible source was checked at the abstract level; full-text details of splits, target-data budget and latency remain unverified. Dong et al. construct separate same-ID history and inter-ID scheduling streams and fuse them with attention for state-inducing spoofing detection~\cite{dong2026mtff}. Combining payload history with temporal relations is therefore not an unstudied idea. This thesis must distinguish its single-stream 32-dimensional representation, window-level decision and source-only protocol from these approaches; a design difference alone does not establish superiority.
+
+\section{Reconstruction, Transformers and language-inspired representations}
+CANet uses per-ID LSTM subnetworks and joint states to reconstruct CAN signals~\cite{hanselmann2020canet}. This handles asynchronous messages while requiring corresponding ID and signal mappings. Its architecture does not establish unchanged applicability to a vehicle with a different identifier set; this is an input-assumption distinction, not a measured performance comparison.
+
+CAN-BERT learns ID sequences through masked-token prediction~\cite{alkhatib2022canbert}. CANBERT+ represents each message with ID, DLC and payload information, using self-supervised pretraining followed by supervised fine-tuning~\cite{won2026canbertplus}. CANBERT+ itself identifies vehicle-specific ID dictionaries and signal differences as transfer limitations. Transformers and the combination of payload with context therefore have prior art; the contribution here must be tested through the specified protocol and representation controls.
+
+CANLP uses TF-IDF and machine learning for frame-level detection~\cite{balasubramanian2025canlp}. Language-inspired representation does not necessarily mean Transformer modelling. Differences in decision units and measurement hardware prevent direct ranking of its scores or latency against 64-frame decisions.
+
+Jo and Kim predict a window's centre ID, selecting normally labelled centres for training while allowing attacks in the surrounding context~\cite{jo2025indirect}. Label-based centre selection and two-sided context differ from training only on entirely benign windows or making an instantaneous centre-frame decision. This is considered a separate method and does not replace full-text verification of their 2026 fusion paper.
+
+\section{Graph and relational representations}
+X-CANIDS decodes payloads into interpretable signals using a CAN database and then detects anomalies in those signals~\cite{jeong2024xcanids}. It is an important comparison for explainability, but its CAN-database assumption and input unit differ from the DBC-free byte/bit representation examined here. No quantitative comparison on matched datasets and protocols has been performed.
+
+Islam et al. develop graph-based CAN intrusion detection~\cite{islam2020graph}. Khreasat and González examine statistical, identifier-transition and topology features, including transfer boundaries and a calibration experiment using target-vehicle normal data~\cite{khreasat2026relational}. Identifier relations and failure-boundary analysis are therefore not novel by themselves.
+
+The distinction investigated here is the combination of same-ID payload changes, within-window relations and sequence modelling without target calibration. A transition edge describes observed message order, not a physical communication link between ECUs. Consecutive IDs may originate from different senders whose identities the dataset does not establish.
+
+\section{Transfer learning and universal IDS objectives}
+CANTransfer uses a convolutional LSTM and one-shot adaptation from limited new data~\cite{tariq2020cantransfer}. This thesis instead uses strict zero-shot evaluation. Scores from these regimes cannot establish superiority without specifying the target-data budget.
+
+Islam et al. propose a universal IDS direction combining timing/traffic statistics, multiresolution representations, deep learning and correlation checks~\cite{s26051489}. It is closely related to the generalization objective. The design examined here retains payload and same-ID changes, uses A--D and introduces a content-only tier when timestamps are absent. Design differences alone do not demonstrate performance gains.
+
+Obafemi reports cross-dataset degradation and examines features without one-hot IDs together with local statistical calibration on benign target-vehicle traffic~\cite{obafemi2026travel}. Removing raw identifier values cannot be claimed as novel on its own. Because the method uses benign target data, its scores belong to a different adaptation regime from the source-only protocol here; no matched reproduction has been performed.
+
+\section{Contrastive learning and domain-adversarial objectives}
+Hoang and Kim study SupCon ResNet with transfer learning for CAN data~\cite{hoang2022supcon}. This motivates investigating objectives, but different data and splits do not establish that contrastive loss must outperform cross-entropy here. Cross-entropy still learns encoder representations; lacking an explicit invariance regularizer does not mean representation learning is absent.
+
+Original DANN uses labelled source data and unlabelled target data~\cite{ganin2016dann}; copying that setting would change the source-only assumption. In a variant operating across multiple source domains, the domain classifier minimizes its classification loss while the encoder receives the opposite gradient, and these optimization roles must be specified separately. One probe performing near chance does not establish removal of all vehicle information. Zhao and colleagues show that invariant representations and low source error need not ensure successful adaptation under conditional shift~\cite{zhao2019invariant}. These are testable extensions, not mandatory ingredients for a useful empirical study.
+
+\section{Dataset quality and cross-domain evaluation}
+Kidmose et al. examine limitations of CAN datasets, extend can-train-and-test to v1.5 with suppress and masquerade, and warn that conventional frame-label evaluation of suppress attacks may be misleading~\cite{kidmose2025cansleuth}. Version 1.5 has not been used in the current runs. Koltai et al. evaluate five IDS approaches across seven datasets and show that results depend strongly on the dataset and evaluation protocol~\cite{koltai2026trust}. Multi-dataset evaluation alone is therefore not a novelty claim; representation, target-data budget, labels and metric units must be distinguished.
+
+In domain generalization research, Gulrajani and Lopez-Paz emphasize source-side model-selection rules and consistent comparison conditions~\cite{gulrajani2021domainbed}. This is a design principle from benchmarks outside CAN, not evidence that a particular algorithm will succeed on CAN. The thesis freezes checkpoint and threshold selection on source data before interpreting target results.
+
+\section{Comparison matrix and novelty scope}
+\begin{longtable}{P{3.4cm}P{4.3cm}P{5.2cm}}
+\caption{Qualitative positioning against related work}\label{tab:related}\\\toprule
+Work & Approach & Required comparison\\\midrule\endfirsthead
+\toprule Work & Approach & Required comparison\\\midrule\endhead
+OTIDS~\cite{lee2017otids} & Timing information & Timing ablation; not an OTIDS reproduction\\
+DCNN~\cite{song2020dcnn} & Convolutional network & Matched sequence baseline if architectures are expanded\\
+Graph IDS~\cite{islam2020graph} & Graph representation & Reproduce a graph baseline from its original specification\\
+CANTransfer~\cite{tariq2020cantransfer} & Few-shot adaptation & Report target adaptation budget separately\\
+Lampe--Meng~\cite{lampe2024curated} & Multi-vehicle benchmark & Match splits and window-level decision units\\
+Relational modelling~\cite{khreasat2026relational} & Transitions/topology & Structural-only versus payload-plus-structure\\
+Hybrid UIDS~\cite{s26051489} & Timing/volume statistics & Separate dataset, injection-frequency and calibration effects\\
+MTFF~\cite{dong2026mtff} & Same-ID history, scheduling, attention & Distinguish inputs, frame/window units and protocol\\
+Jo--Kim~\cite{jo2026fusion} & Payload and periodicity fusion & Design-level comparison pending full-text access\\
+Obafemi~\cite{obafemi2026travel} & No one-hot ID, target-benign calibration & Separate target-data budget from source-only\\
+Koltai~\cite{koltai2026trust} & Multi-dataset benchmark & Match splits and metric units before quantifying\\
+This thesis & Payload, history, structure, Transformer & Matched ablations, source-only thresholds, reproducibility\\\bottomrule
+\end{longtable}
+This matrix establishes relevance, not a ranking. Items described as required comparisons remain additional work if quantitative claims against the exact published algorithms are desired. Implemented direct baselines are Raw Transformer, Structural Transformer, Structural XGBoost and LR; they are not renamed as methods from other publications.
+
+\section{Evaluation quality and metric interpretation}
+The base-rate problem means that the probability an alert is malicious depends strongly on attack prevalence~\cite{axelsson2000base}. Weighted F1 remains a valid metric but does not isolate attack detection. Low FAR may coexist with low recall when a classifier rarely alerts. The thesis therefore reports denominators, precision, recall, F1, AP and FAR together.
+
+Saito and Rehmsmeier explain the value of precision--recall plots when positive cases are rare~\cite{saito2015pr}. Since AP depends on positive prevalence, external tables still need prevalence and class counts; this source does not imply that ROC-AUC is meaningless in all settings.
+
+Sommer and Paxson discuss difficulties in applying machine learning outside closed evaluation settings~\cite{sommer2010outside}. Here, the methodological implications are to check label provenance, temporal order, distribution changes and alert costs. Their general argument does not prove that a particular model fails without a corresponding experiment.
+% End inlined related_en.tex
+
+% Begin inlined method_en.tex
+\chapter{Method and experimental protocol}\label{chap:method}
+\section{Processing flow and responsibilities}
+Protocol v2.1 comprises data validation, window extraction, source training/calibration and frozen evaluation. These stages share modules instead of copying functions between notebooks. Notebooks launch configurations; source-code and library versions are recorded in the manifest. Target data do not feed back into model or threshold selection.
+
+\begin{figure}[htbp]\centering
+\begin{tikzpicture}[node distance=0.6cm,every node/.style={draw,rounded corners,align=center,font=\small,text width=11cm,inner sep=7pt},>=Stealth]
+\node(a){Original files and label provenance: schema, time-order and hash checks};
+\node(b)[below=of a]{Completed windows: 28 raw / 30 structural dimensions (content); 29/32 for valid timed inputs};
+\node(c)[below=of b]{Source training groups: full-file sampling and classifier fitting};
+\node(d)[below=of c]{Source validation groups: threshold selection under a FAR budget};
+\node(e)[below=of d]{Frozen checkpoints and thresholds: A--D and compatible external tests};
+\node(f)[below=of e]{Window predictions, confusion counts, metrics and reports};
+\foreach \s/\t in {a/b,b/c,c/d,d/e,e/f} \draw[->](\s)--(\t);
+\end{tikzpicture}
+\caption{Pipeline with explicit source/target boundaries. The content-only tier removes timing dimensions from both training and testing.}\label{fig:pipeline}
+\end{figure}
+
+\section{Data contract and input checks}
+The minimum schema contains \code{timestamp}, \code{arbitration_id}, \code{data_field} and \code{attack}; DLC is retained when supplied. IDs and payloads are read as strings to preserve leading zeros and hexadecimal meaning. Invalid identifiers are not repaired by deleting arbitrary characters. Odd-length payload strings, payloads exceeding eight bytes and DLC inconsistencies cause errors. Missing labels never default to benign.
+
+Only the timed branch requires finite, nondecreasing capture timestamps, including across chunks. The executed content comparison retains original timestamps for inversion audits but does not use them as features or reorder records. Missing timestamps remain missing and permit only content-tier evaluation. When record order cannot be established, even transition features require limited interpretation: removing timing does not establish that CSV row order corresponds to physical traffic.
+
+The parser does not silently sort by timestamp, because separate captures may share time origins. Invalid input stops the run and records FAILED status. This preserves evidence for investigation instead of producing a result table after silently dropping difficult records.
+
+\section{Windows, state and chunk independence}
+Each file has its own extractor holding incomplete-window frames, the preceding timestamp and per-ID history. A subsequent chunk is joined only with that file's remainder. At file end, the incomplete remainder is discarded and history does not pass to another file.
+
+In the content tier, same-ID payload history survives window and I/O chunk boundaries in file order. Timestamps do not enter model inputs. Changing chunksize must therefore leave windows and features unchanged. Tests compare whole-file extraction with several non-window-aligned chunk sizes.
+
+Frequency and transition statistics use all $W$ frames, so the earliest decision occurs at window completion. This is causal at window level, not a prediction made when its first frame arrives. Features never use frames from a later window.
+
+\section{Raw and structural features}
+The executed protocol uses 28 raw dimensions: 11 ID bits, normalized DLC, eight payload bytes and eight masks. Structural inputs have 30 dimensions as specified in Table~\ref{tab:features}. Neither includes timing. Normalization constants are fixed and never fitted to tests.
+\begin{longtable}{P{2.4cm}P{1.2cm}P{9.2cm}}
+\caption{Frame-level structural representation}\label{tab:features}\\\toprule
+Indices & Dim. & Definition\\\midrule\endfirsthead\toprule Indices & Dim. & Definition\\\midrule\endhead
+0 & 1 & $d_i/8$, with verified payload length $d_i$\\
+1--8 & 8 & $b_{i,j}/255$; positions outside DLC are zero-padded\\
+9--16 & 8 & $m_{i,j}=\mathbf{1}[j<d_i]$\\
+17--24 & 8 & $|b_{i,j}-b_{q,j}|m_{i,j}m_{q,j}/255$, where $q$ is the previous same-ID frame in the file\\
+25 & 1 & Indicator that same-ID history exists\\
+26 & 1 & Window ID frequency divided by $W$\\
+27 & 1 & Zero-based first-occurrence rank divided by number of unique IDs\\
+28 & 1 & The same local rank divided by $W$\\
+29 & 1 & Previous/current ID-pair count divided by $W-1$; zero at window start\\\bottomrule
+\end{longtable}
+Features 27 and 28 share an ordering with different denominators; they are not claimed to be independent information sources. The local-statistics ablation tests their group contribution beyond payload history. Payload differences are restricted to bytes valid in both frames, preventing padding changes from being interpreted as sensor changes.
+
+For $r_i>0$, $f_{28}/f_{27}=U_k/W$ is constant within window $k$, but $U_k$ may change between windows. This does not establish global collinearity or optimization harm. Removing dimension 28 alone tests the second encoding; removing absolute payload bytes while retaining DLC, masks and differences investigates vehicle-related cues.
+
+Bytewise differences do not measure physical signal distance: for a two-byte unsigned integer, $\texttt{00FF}\rightarrow\texttt{0100}$ increases the value by one but changes the low byte by 255. Hamming distance also changes nine bits in this example. Entropy and Hamming features are therefore candidate extensions requiring controlled comparisons, not demonstrated fixes.
+
+\subsection{Content-only tier}
+Relative to the archived timed v2.1 specification, the content tier removes raw index 28 and old structural timing indices 26 and 27. Table~\ref{tab:features} renumbers the active content dimensions from 0 to 29. Its models must be retrained on CTT with these dimensions removed. Supplying synthetic timestamps or zeros to a timing-trained model is not a matched-schema comparison. Historical and transition features still require justified row order. Without confirmation, results apply to the supplied order and do not establish real-time validity.
+
+\subsection{Identifier-renaming invariance}
+Consider a one-to-one map $g$ applied consistently to every identifier in a capture and its history while preserving timestamps and payloads. Equality $c_i=c_j$ is equivalent to $g(c_i)=g(c_j)$, preserving frequencies, first-occurrence order, transition pairs and previous same-ID positions. Structural features are consequently unchanged under this transformation. Mapped IDs must remain within the parser's supported domain.
+
+Independent per-window renaming without transforming associated history does not satisfy this argument. Real vehicle changes that alter payloads or timing also fall outside it. The invariance test verifies this narrowly defined implementation property, not cross-vehicle generalization.
+
+\section{Architecture and objective}
+The classifier follows the attention mechanism~\cite{vaswani2017attention}. Each frame vector is projected to 64 dimensions and receives a learned $W\times64$ positional embedding. Two Transformer encoder layers use four heads, feed-forward dimension 128, GELU and dropout 0.1. Mean pooling produces a 64-dimensional embedding. The head comprises LayerNorm, Linear 64-to-32, ReLU and Linear 32-to-2.
+
+For logits $z_{k,0},z_{k,1}$, training minimizes two-class cross-entropy:
+\begin{equation}
+\mathcal L(\theta)=-\frac1N\sum_{k=1}^N\log\frac{\exp z_{k,Y_k}}{\exp z_{k,0}+\exp z_{k,1}}.
+\end{equation}
+Neither Focal Loss nor contrastive loss is used in this configuration. Such variants require separate experiments and run identifiers. Raw and structural models share encoder/head architecture, while input-layer parameter counts differ with input dimension and are recorded. Matched architecture therefore does not mean identical total parameter count.
+
+\begin{table}[htbp]\centering
+\caption{Training configuration frozen before reruns}\label{tab:config}
+\begin{tabular}{ll}\toprule Parameter & Value\\\midrule
+Main window / sensitivity & 64 / 32 and 128\\
+Hidden / layers / heads & 64 / 2 / 4\\
+Feed-forward / dropout & 128 / 0.1\\
+Optimizer & AdamW\\
+Learning rate / weight decay & 0.001 / $10^{-4}$\\
+Epochs / batch size & 10 / 128\\
+Scheduler & Epoch-wise cosine\\
+Initialization seeds & 42, 43, 44\\
+Shared sampling seed & 20261103\\
+Training cap per file and class & 1,000 windows\\
+Validation FAR budget & 100 per 100,000 benign windows\\\bottomrule\end{tabular}
+\end{table}
+
+The FAR budget is a comparison design choice, not an automotive safety standard. Other budgets require separate configurations and analyses. XGBoost uses 100 trees, depth 6 and learning rate 0.1. LR uses training-only standardization and up to 2,000 optimization iterations. These conventional baselines use flattened windows and do not control inductive bias as closely as the two Transformers.
+
+Cross-entropy constrains predictions on training examples; it does not force every unseen attack into the benign class. Poor C/D performance may reflect attack coverage, representation, distribution shift or threshold choice. Without controlled evidence, historical failures cannot be assigned entirely to this loss, nor can reconstruction be guaranteed to resolve them.
+
+\section{Source splitting, sampling and leakage control}
+Source files are grouped by their trailing recording-round number, keeping all files with the same suffix together. The highest-numbered group is the default validation group. This is more conservative than random-window splitting, but metadata are still needed to establish independent driving sessions. The model is not refitted using validation after threshold selection, because that would break correspondence between checkpoint and threshold.
+
+Sampling bounds memory through separate random-priority reservoirs for each file and class. Every window receives a random key; the smallest 1,000 keys per class are retained. The complete file is read before selection is finalized. An attack near the end therefore has the same selection opportunity as an early attack. Sampling occurs after continuous-state feature extraction, never by assembling disconnected frames into artificial sequences.
+
+Selected window indices and available/selected counts by class and file are exported. All representations share the same sample. Validation and tests retain their natural prevalence and are evaluated in full. Attack-family coverage must be inspected to identify classes or mechanisms absent from the actual source sample.
+
+Version 2.1 uses separate random streams per file and class, seeded from the sampling seed and filename. Changing chunksize or file traversal order therefore preserves a file's selected windows. This changes selection relative to v2.0; versions must not be pooled.
+
+Research runs require a successful full-file preflight manifest matching the validator code, ledger and current data hashes. Preflight requires all four sets and A--D folders, records missing/excluded external files separately, and detects identical files involving source data within a set. SHA-256 does not rule out shared trace segments or establish independent driving sessions; session provenance remains a limitation to verify.
+
+\section{Thresholds, metrics and denominators}
+The default 0.5 threshold is reported alongside a source-calibrated threshold. Calibration maximizes validation recall subject to an observed FAR budget, breaking ties toward fewer false positives and then a higher threshold. Equal scores are treated together rather than arbitrarily split. A threshold above the maximum score is feasible when no positive decision satisfies the constraint; its zero recall must be disclosed.
+
+For $N_+=TP+FN$ and $N_-=TN+FP$:
+\begin{align}
+P&=TP/(TP+FP), & R&=TP/N_+,\\
+F_1&=2TP/(2TP+FP+FN), & \operatorname{FAR}_{100k}&=10^5FP/N_-.
+\end{align}
+FAR is N/A when $N_-=0$. Without positive ground truth, attack metrics are not interpreted as detection evidence. Precision is N/A when no alerts exist; with positive examples but no detections, recall and F1 are zero. AP uses continuous scores when both classes are present. It is never replaced by F1 when scores or a class are absent. The compatibility field PR\_AUC aliases AP rather than trapezoidal PR area.
+
+The selected source threshold remains fixed for A--D and compatible external tests. Its source FAR budget does not guarantee target FAR. The smallest empirical FAR increment is $10^5/N_-$; sample counts must therefore accompany low-FAR claims, especially for small validation sets.
+
+\section{Ablations, probes and uncertainty}
+\begin{longtable}{P{4cm}P{8.9cm}}
+\caption{Controlled comparisons and their purposes}\label{tab:ablations}\\\toprule
+Comparison & Purpose\\\midrule\endfirsthead\toprule Comparison & Purpose\\\midrule\endhead
+Raw vs raw-minus-ID & Isolate removal of 11 original ID bits\\
+Raw-plus-structural vs raw & Add history/structure while retaining IDs\\
+Structural vs raw-plus-structural & Test IDs with a richer feature set\\
+Structural-minus-delta & Payload changes and history flag\\
+Structural-minus-timing & Identical to structural in the content tier; not counted separately\\
+Structural-minus-local & Local frequency and rank\\
+Structural-minus-transition & Bigram frequency\\
+Structural-minus-payload & Remove absolute bytes; retain DLC/masks and history\\
+Structural-minus-rank-W & Remove content dimension 28 only; retain other statistics\\
+ID-only / raw-minus-ID & Content-modality limits; timing-only is not applicable\\
+32/64/128 frames & Window sensitivity and waiting time\\\bottomrule
+\end{longtable}
+Probes freeze the trained raw/structural encoders. Diagnostic data are split by capture group and balanced across vehicle-by-attack cells within each partition, reducing vehicle prediction from attack prevalence alone. LR predicts vehicle or attack from embeddings. Probes are post-freeze diagnostics, not target-informed checkpoint or threshold selection. Balanced chance accuracy is $1/V$ for $V$ vehicles.
+
+Probe results need constant/random embeddings as controls for decoder capacity and an attack probe to determine whether reduced vehicle information also removes useful detection signal. Hewitt and Liang proposed the control-task principle for language representations~\cite{hewitt2019probes}; applying it to CAN here is a methodological choice, not an already established CAN result.
+
+Three seeds describe initialization and optimization-order variability; they do not create three independent vehicle populations. Mean and standard deviation are reported with the same split. Paired bootstrap resamples complete captures and uses identical resamples for both models. Too few groups are reported as insufficient evidence instead of a misleading CI. With file-only metadata, intervals remain conditional descriptions because files from a shared drive may violate independence.
+
+Probes use LR with $C=1$, at most 2,000 iterations and scaling fitted on probe training data, without selecting hyperparameters on probe tests. Raw and structural encoders receive the same balanced windows. Controls comprise constant embeddings, Gaussian embeddings drawn independently for training/testing, and permuted probe-training labels; the two randomized controls use five fixed seeds. Test labels remain unchanged. Controls are reported separately, without selecting the best probe seed or claiming an exact replication of Hewitt--Liang control tasks.
+
+Paired analysis reports structural-minus-raw recall, FAR and F1 at both operating points. Whole-file bootstrap uses the same file multiplicities for both models and recomputes metrics from confusion counts. Valid replicate counts are reported; replicates lacking the relevant denominator are excluded explicitly. Fewer than three files yield no interval. Four-set averages first average seeds within each set and then weight sets equally, without weighting vehicles by window counts.
+
+\section{Reproducibility and computational cost}
+The run manifest stores schema version, configuration, Python/library versions, device and code hashes. The data manifest stores relative paths, sizes and full-file SHA-256. Every checkpoint records its dimensions, window size and threshold; prediction files retain window indices, labels, scores and start/end timestamps. New runs cannot overwrite nonempty result directories.
+
+Attention cost grows quadratically with $W$, while local statistics and history updates are linear in frame count. Runtime evaluation must include parsing, feature extraction, inference and window waiting time. GPU batch throughput alone is not online latency. This revision makes no claim of 40,000 frames/s or embedded readiness; such claims require documented scripts, hardware, batches, warmup and repeated measurements.
+The final manifest hashes checkpoints, metadata, metrics and prediction files. Aggregation rejects incomplete runs, altered outputs, incompatible code/protocols, and repeated/missing set--seed--model cells within a run. Coverage reports distinguish a completed run from a complete study matrix. The \code{run_study.py} launcher verifies and skips compatible completed units; interrupted attempts are preserved and restarted in new directories rather than assumed to resume from an unfinished epoch.
+
+The \code{benchmark_runtime.py} script measures one window per step after warmup on a disclosed capture prefix. Processing includes CSV reading, the shared extractor constructing both raw and structural features, data transfer and inference; median/p95 and repetition counts are reported. Window timestamp spans are reported separately as acquisition time. This is not event-level detection delay, excludes deployment queueing, and does not certify an ECU real-time deadline.
+
+% BEGIN COMPARISON METHOD
+\section{Executed CTT comparison: content and file order}\label{sec:comparison-protocol}
+\textbf{The executing protocol is \code{ctt-content-order-comparison-v1}.}
+The timed v2.1 design in preceding sections is a reference specification, not the schema of this five-method matrix. Scanning all 236 CTT files identified 193,240,845 data frames, 3,019,271 completed W64 windows and 12,527 timestamp decreases across 100 files. This window count covers the entire repository, including training, validation and test roles; it is not each method's test denominator. The difference of 236 from 193,241,081 lines is one header per file. Line counts and data-frame counts are distinct.
+
+The cache retains original IDs, DLCs, payloads, labels, timestamps and row order without sorting, deduplication or synthetic time. Removing zero-based raw index 28 and structural indices 26--27 leaves 28 raw and 30 structural dimensions. History features follow file order and are not interpreted as physical transmission periods. Timed execution remains blocked until timestamp provenance is resolved. The cache-manifest hash is \code{03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29}.
+
+Four sets, seeds 42/43/44 and five methods form 60 IDS units, each evaluated on A--D. CANBERT+ pretraining and fine-tuning are two phases within one unit. W64 windows do not overlap or cross files. Full-file reservoir sampling selects at most 1,000 windows per class per source training file, with sampling seed 20261103 and identical source-window indices across methods. Source validation is grouped by recording-round suffix; vocabularies, TF-IDF and all learned parameters use source data only.
+
+\subsection{Comparators, supervision and departures from publications}
+Raw and Structural Transformer share encoder architecture, source samples, CE/AdamW/Cosine, 10 epochs, batch 128 and learning rate 0.001; their principal difference is the 28/30-dimensional representation. This comparison tests the representation package and does not isolate identifier removal from each added structural feature.
+
+CANBERT+~\cite{won2026canbertplus} imports the authors' BERT/MLM modules with hidden size 768, six layers and 12 heads. The vocabulary is source-only; benign-source pretraining masks 15\% of identifiers for three epochs, followed by three epochs of frame-supervised fine-tuning with batch eight. Replacing Lightning with a PyTorch loop, shared sampling, grouped splits, W64, fixed epochs and ensuring at least one masked token per batch are disclosed adaptations. The window score is the maximum frame score and does not measure frame localization.
+
+CANLP~\cite{balasubramanian2025canlp} is adapted to character TF-IDF unigrams, at most 256 bigrams and ID/2048, followed by Dense 128/64, dropout 0.15 and two output classes. The PyTorch port uses Adam 0.001, batch 512, 30 epochs, original frame labels and maximum score/W64. TF-IDF fits only frames within sampled source-training windows. Grouped source splits, no deduplication, binary labels and fixed epochs replace the original notebook's selection procedure; the reported name is CANLP-char-DNN adapted.
+
+CrySyS-AssocRules/W64 imports the association-rule implementation from the framework~\cite{koltai2026trust}, fitting benign source data only. Window/stride 64/64 replaces the reference implementation's 900/450; relations never bridge gaps between selected samples. Default cluster count 300, distance threshold 0.3 and maximum itemset sizes three for fitting and two for scoring are retained. This is a framework-derived adapted comparator, not a claim to reproduce a different similarly named method unchanged. Pinned source commits:
+\begin{itemize}
+\item CANBERT+: \code{4c81d9b08e6e0c17b8e70bdab518209e399f0dbe}
+\item CANLP: \code{8df8bb74a7aa9925187f4faff05d6c8b824ba5d1}
+\item CrySyS: \code{59b9f29f81b0f56f49c218cb1bd8e97552b8d22c}
+\end{itemize}
+
+Supervision and compute budgets differ: the Transformers use window labels; CANBERT+ additionally uses benign pretraining and frame labels; CANLP uses frame labels; AssocRules uses benign traffic only. This compares complete pipelines under shared data/evaluation rules, not equal-budget ablations or original published scores. Adaptation qualifiers remain visible in result tables.
+
+\subsection{Thresholds, pairing, acceleration and interpretation limits}
+Source validation selects the threshold maximizing recall under a FAR budget of 100 per 100,000 benign source windows. Target labels never calibrate the threshold, and target FAR may exceed the budget. Recall is reported with FAR, attack F1, AP and TP/FP/TN/FN counts. Maximum frame score/W64 aligns the decision unit without equalizing supervision or computational cost.
+
+Paired differences subtract each opponent from Structural within each set and seed. Seeds are averaged within a set before equally weighting the four sets. B and D are discussed separately; A and C remain reported. Paired bootstrap resamples entire capture files and recomputes metrics from confusion counts. Its intervals describe conditional variation over observed files, not population-level vehicle confidence intervals. Reused vehicles across sets, dependent windows and unverified physical chronology remain limitations.
+
+Four neural methods execute on an RTX 5060; AssocRules uses an exact-call CPU cache backend. It preserves native fitting/scoring, caches ID--payload pairs and retains the native summation order for distribution checks. A source-only k=2 pilot matched scores, rules and centroids and accelerated scoring by approximately 8.3 times. This is software validation, not evidence of the same speedup at full k=300 or improved IDS quality. Recorded fit duration excludes complete data loading and evaluation and is not online latency.
+
+Four previously completed GPU cells for Set 1/seed 42 are reused only after verifying hashes, environment and scientific configuration; original manifests remain intact with separate lineage. Remaining cells execute afresh. The merger rejects pilots, missing/duplicate cells and incompatible data/code/environments; only the method list used for GPU/CPU scheduling is normalized. Execution manifests are not rewritten to appear identical.
+% END COMPARISON METHOD
+
+% End inlined method_en.tex
+
+% Begin inlined results_en.tex
+\chapter{Evidence, results and validation limits}\label{chap:results}
+\section{Evidence classes and interpretation}
+This chapter separates three kinds of evidence. Data checks and software tests establish specific properties of the corrected implementation. Historical exploratory tables describe outputs saved before correction. Protocol-v2.1 model results require new training and evaluation and are not yet available. Passing a software test does not establish detection performance, and an old score cannot be assigned to a new checkpoint or protocol.
+
+The accompanying audit identifies inconsistent configurations, prefix sampling, unreliable external labels and undefined metrics. The correction changes feature history, sampling and threshold selection as well as evaluation. Consequently, old and new scores cannot be combined into a single mean, confidence interval or improvement claim. The original files are archived to preserve their provenance.
+
+% BEGIN COMPARISON RESULTS
+\section{Verified five-method comparison results}\label{sec:comparison-results}
+All 60 cells and 240 cell--condition A--D combinations have been verified under Section~\ref{sec:comparison-protocol}. Primary entries average three seeds within each set and then equally weight four sets; windows are not pooled as vehicle weights. A dash marks an undefined metric. Historical results below remain separate.
+\begin{longtable}{P{1.2cm}P{4.0cm}P{1.7cm}P{2.2cm}P{1.7cm}P{1.7cm}}
+\caption{Content/file-order, W64; source-calibrated; equal set weights; FAR per 100,000 benign windows}\label{tab:comparison-main}\\\toprule
+Cond. & Method & Recall & FAR & F1 & AP\\\midrule\endfirsthead
+\toprule
+Cond. & Method & Recall & FAR & F1 & AP\\\midrule\endhead
+A & Raw TF & 0.6167 & 115.77 & 0.7258 & 0.7312\\
+A & Structural TF & 0.5886 & 81.67 & 0.7072 & 0.7483\\
+A & CANBERT+ adapted & 0.3843 & 79.27 & 0.4576 & 0.5335\\
+A & CANLP-char-DNN adapted & 0.1228 & 28.37 & 0.1789 & 0.5482\\
+A & CrySyS-AssocRules/W64 & 0.0000 & 0.00 & 0.0000 & 0.3338\\
+B & Raw TF & 0.8541 & 65301.41 & 0.3000 & 0.3781\\
+B & Structural TF & 0.7383 & 52461.46 & 0.2435 & 0.5554\\
+B & CANBERT+ adapted & 0.6395 & 64843.85 & 0.0593 & 0.0970\\
+B & CANLP-char-DNN adapted & 0.2854 & 29695.88 & 0.0329 & 0.0542\\
+B & CrySyS-AssocRules/W64 & 0.0000 & 0.00 & 0.0000 & 0.0591\\
+C & Raw TF & 0.2101 & 91.92 & 0.2314 & 0.2661\\
+C & Structural TF & 0.2230 & 75.82 & 0.2600 & 0.2928\\
+C & CANBERT+ adapted & 0.1037 & 62.54 & 0.1461 & 0.2218\\
+C & CANLP-char-DNN adapted & 0.0020 & 405.49 & 0.0038 & 0.2373\\
+C & CrySyS-AssocRules/W64 & 0.0000 & 0.00 & 0.0000 & 0.1732\\
+D & Raw TF & 0.6614 & 67982.89 & 0.1213 & 0.1648\\
+D & Structural TF & 0.6445 & 54643.37 & 0.2069 & 0.3357\\
+D & CANBERT+ adapted & 0.5549 & 54513.45 & 0.0644 & 0.1311\\
+D & CANLP-char-DNN adapted & 0.2491 & 25452.19 & 0.0119 & 0.0901\\
+D & CrySyS-AssocRules/W64 & 0.0000 & 0.00 & 0.0000 & 0.0912\\
+\bottomrule\end{longtable}
+\begin{longtable}{P{2.0cm}P{1.2cm}P{2.7cm}P{2.7cm}P{2.7cm}}
+\caption{Test-window denominators shared by five methods and three seeds}\label{tab:comparison-counts}\\\toprule
+Set & Cond. & Attack & Benign & Total\\\midrule\endfirsthead
+\toprule
+Set & Cond. & Attack & Benign & Total\\\midrule\endhead
+set\_01 & A & 2987 & 86114 & 89101\\
+set\_01 & B & 8430 & 92315 & 100745\\
+set\_01 & C & 8636 & 126284 & 134920\\
+set\_01 & D & 2088 & 204476 & 206564\\
+set\_02 & A & 2088 & 204476 & 206564\\
+set\_02 & B & 2578 & 129375 & 131953\\
+set\_02 & C & 1359 & 188481 & 189840\\
+set\_02 & D & 1104 & 73734 & 74838\\
+set\_03 & A & 9775 & 124217 & 133992\\
+set\_03 & B & 8834 & 98259 & 107093\\
+set\_03 & C & 6998 & 140620 & 147618\\
+set\_03 & D & 25140 & 82604 & 107744\\
+set\_04 & A & 25140 & 82604 & 107744\\
+set\_04 & B & 13782 & 258213 & 271995\\
+set\_04 & C & 8834 & 98259 & 107093\\
+set\_04 & D & 13615 & 114249 & 127864\\
+\bottomrule\end{longtable}
+\begin{longtable}{P{1.2cm}P{4.0cm}P{1.7cm}P{2.2cm}P{1.7cm}P{1.7cm}}
+\caption{Structural minus opponent; equal set weights; FAR per 100,000 benign windows}\label{tab:comparison-paired}\\\toprule
+Cond. & Method & $\Delta R$ & $\Delta$ FAR & $\Delta$ F1 & $\Delta$ AP\\\midrule\endfirsthead
+\toprule
+Cond. & Method & $\Delta R$ & $\Delta$ FAR & $\Delta$ F1 & $\Delta$ AP\\\midrule\endhead
+B & Raw TF & -0.1159 & -12839.95 & -0.0565 & 0.1774\\
+B & CANBERT+ adapted & 0.0988 & -12382.39 & 0.1842 & 0.4584\\
+B & CANLP-char-DNN adapted & 0.4529 & 22765.57 & 0.2106 & 0.5012\\
+B & CrySyS-AssocRules/W64 & 0.7383 & 52461.46 & 0.2435 & 0.4964\\
+D & Raw TF & -0.0169 & -13339.51 & 0.0856 & 0.1709\\
+D & CANBERT+ adapted & 0.0896 & 129.92 & 0.1425 & 0.2046\\
+D & CANLP-char-DNN adapted & 0.3953 & 29191.18 & 0.1950 & 0.2456\\
+D & CrySyS-AssocRules/W64 & 0.6445 & 54643.37 & 0.2069 & 0.2445\\
+\bottomrule\end{longtable}
+\subsection{Primary comparison and tradeoffs}
+Condition B: Structural minus Raw yields recall difference -0.1159, FAR difference -12839.95 per 100,000, F1 difference -0.0565 and AP difference 0.1774; recall is positive in 1/4 seed-averaged sets. This does not support increased mean recall in this condition. 
+
+Condition D: Structural minus Raw yields recall difference -0.0169, FAR difference -13339.51 per 100,000, F1 difference 0.0856 and AP difference 0.1709; recall is positive in 1/4 seed-averaged sets. This does not support increased mean recall in this condition. 
+
+Opponents in Table~\ref{tab:comparison-paired} remain reported even when they outperform Structural. Positive FAR means more false alarms, whereas positive recall/F1/AP means an increase in that metric. Differences cannot all be attributed to vehicle invariance because supervision, pretraining and architectures differ.
+Structural target FAR is 52.46\% in B and 54.64\% in D, against a source-validation budget of 0.1\%. This is an operating-point transfer failure: reducing FAR relative to Raw does not establish deployment-suitable false-alarm levels. The primary increased-recall hypothesis for B is unsupported when the B difference is nonpositive. Structural/Raw AP is 0.5554/0.3781 in B and 0.3357/0.1648 in D. Increased AP indicates better ranking within this comparison, but remains secondary and does not replace recall at the source-selected threshold. Condition-specific F1 remains separate; the primary metric is not reselected after viewing targets.
+
+AssocRules has zero recall and FAR in all 48 set--seed--condition combinations. All 12 source thresholds equal \code{1.0000000000000002}, exceeding the score range [0,1], so this operating point predicts every window as benign. Zero FAR is therefore not evidence of effective detection: this is a degenerate operating point under the source budget and current W64 adaptation. AP still measures ranking before thresholding. This does not establish failure of the original W900/stride450 algorithm; a separately designed sensitivity study is required, without using test labels to improve the reported threshold.
+
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figs/comparison_v1_Recall.png}
+\caption{Content/file-order, W64: Recall; source-calibrated; equal set weights.}\label{fig:comparison-Recall}\end{figure}
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figs/comparison_v1_FAR_per_100k.png}
+\caption{Content/file-order, W64: FAR\_per\_100k; source-calibrated; equal set weights.}\label{fig:comparison-FAR_per_100k}\end{figure}
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figs/comparison_v1_Attack_F1.png}
+\caption{Content/file-order, W64: Attack\_F1; source-calibrated; equal set weights.}\label{fig:comparison-Attack_F1}\end{figure}
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figs/comparison_v1_AP.png}
+\caption{Content/file-order, W64: AP; source-calibrated; equal set weights.}\label{fig:comparison-AP}\end{figure}
+\FloatBarrier
+\subsection{Variation, failure mechanisms and fit cost}
+\begin{longtable}{P{1.6cm}P{1.2cm}P{4.0cm}P{3.5cm}P{2.2cm}}
+\caption{B/D by set; recall mean and sample SD across three seeds; FAR per 100,000}\label{tab:comparison-sets}\\\toprule
+Set & Cond. & Method & Recall & FAR\\\midrule\endfirsthead
+\toprule
+Set & Cond. & Method & Recall & FAR\\\midrule\endhead
+set\_01 & B & Raw TF & 0.8165 $\pm$ 0.1960 & 168.99\\
+set\_01 & B & Structural TF & 0.4950 $\pm$ 0.3875 & 32.14\\
+set\_01 & B & CANBERT+ adapted & 0.5730 $\pm$ 0.5111 & 61471.41\\
+set\_01 & B & CANLP-char-DNN adapted & 0.1645 $\pm$ 0.0329 & 21741.86\\
+set\_01 & B & CrySyS-AssocRules/W64 & 0.0000 $\pm$ 0.0000 & 0.00\\
+set\_01 & D & Raw TF & 0.0714 $\pm$ 0.1170 & 10209.35\\
+set\_01 & D & Structural TF & 0.0005 $\pm$ 0.0008 & 77.43\\
+set\_01 & D & CANBERT+ adapted & 0.2344 $\pm$ 0.3023 & 20026.80\\
+set\_01 & D & CANLP-char-DNN adapted & 0.0540 $\pm$ 0.0078 & 4625.64\\
+set\_01 & D & CrySyS-AssocRules/W64 & 0.0000 $\pm$ 0.0000 & 0.00\\
+set\_02 & B & Raw TF & 1.0000 $\pm$ 0.0000 & 100000.00\\
+set\_02 & B & Structural TF & 0.9663 $\pm$ 0.0366 & 85422.22\\
+set\_02 & B & CANBERT+ adapted & 0.9984 $\pm$ 0.0024 & 99619.97\\
+set\_02 & B & CANLP-char-DNN adapted & 0.9772 $\pm$ 0.0059 & 97041.67\\
+set\_02 & B & CrySyS-AssocRules/W64 & 0.0000 $\pm$ 0.0000 & 0.00\\
+set\_02 & D & Raw TF & 1.0000 $\pm$ 0.0000 & 100000.00\\
+set\_02 & D & Structural TF & 0.8478 $\pm$ 0.1843 & 84374.46\\
+set\_02 & D & CANBERT+ adapted & 0.9943 $\pm$ 0.0084 & 99498.65\\
+set\_02 & D & CANLP-char-DNN adapted & 0.9426 $\pm$ 0.0055 & 97183.12\\
+set\_02 & D & CrySyS-AssocRules/W64 & 0.0000 $\pm$ 0.0000 & 0.00\\
+set\_03 & B & Raw TF & 0.6001 $\pm$ 0.3550 & 61036.65\\
+set\_03 & B & Structural TF & 0.9741 $\pm$ 0.0290 & 86686.55\\
+set\_03 & B & CANBERT+ adapted & 0.0027 $\pm$ 0.0024 & 35.28\\
+set\_03 & B & CANLP-char-DNN adapted & 0.0000 $\pm$ 0.0000 & 0.00\\
+set\_03 & B & CrySyS-AssocRules/W64 & 0.0000 $\pm$ 0.0000 & 0.00\\
+set\_03 & D & Raw TF & 0.5744 $\pm$ 0.4664 & 61722.19\\
+set\_03 & D & Structural TF & 0.9469 $\pm$ 0.0524 & 91180.01\\
+set\_03 & D & CANBERT+ adapted & 0.0004 $\pm$ 0.0006 & 43.18\\
+set\_03 & D & CANLP-char-DNN adapted & 0.0000 $\pm$ 0.0000 & 0.00\\
+set\_03 & D & CrySyS-AssocRules/W64 & 0.0000 $\pm$ 0.0000 & 0.00\\
+set\_04 & B & Raw TF & 1.0000 $\pm$ 0.0000 & 100000.00\\
+set\_04 & B & Structural TF & 0.5179 $\pm$ 0.2763 & 37704.92\\
+set\_04 & B & CANBERT+ adapted & 0.9838 $\pm$ 0.0276 & 98248.73\\
+set\_04 & B & CANLP-char-DNN adapted & 0.0000 $\pm$ 0.0000 & 0.00\\
+set\_04 & B & CrySyS-AssocRules/W64 & 0.0000 $\pm$ 0.0000 & 0.00\\
+set\_04 & D & Raw TF & 1.0000 $\pm$ 0.0000 & 100000.00\\
+set\_04 & D & Structural TF & 0.7827 $\pm$ 0.0870 & 42941.59\\
+set\_04 & D & CANBERT+ adapted & 0.9906 $\pm$ 0.0163 & 98485.18\\
+set\_04 & D & CANLP-char-DNN adapted & 0.0000 $\pm$ 0.0000 & 0.00\\
+set\_04 & D & CrySyS-AssocRules/W64 & 0.0000 $\pm$ 0.0000 & 0.00\\
+\bottomrule\end{longtable}
+\begin{longtable}{P{1.6cm}P{1.1cm}P{1.2cm}P{1.8cm}P{3.7cm}P{2.9cm}}
+\caption{Structural minus Raw: conditional whole-file recall bootstrap, 95 percent}\label{tab:comparison-ci}\\\toprule
+Set & Seed & Cond. & $\Delta R$ & Interval & Files; draws\\\midrule\endfirsthead
+\toprule
+Set & Seed & Cond. & $\Delta R$ & Interval & Files; draws\\\midrule\endhead
+set\_01 & 42 & B & -0.8782 & [-0.9602, -0.0012] & 8; 1000/1000\\
+set\_01 & 42 & D & -0.2064 & [-0.3391, -0.1134] & 12; 1000/1000\\
+set\_01 & 43 & B & 0.1820 & [0.0000, 0.1990] & 8; 1000/1000\\
+set\_01 & 43 & D & -0.0005 & [-0.0055, 0.0029] & 12; 1000/1000\\
+set\_01 & 44 & B & -0.2684 & [-0.2936, 0.0000] & 8; 1000/1000\\
+set\_01 & 44 & D & -0.0057 & [-0.0171, 0.0000] & 12; 1000/1000\\
+set\_02 & 42 & B & -0.0019 & [-0.0042, 0.0000] & 12; 1000/1000\\
+set\_02 & 42 & D & -0.0181 & [-0.0541, -0.0046] & 8; 1000/1000\\
+set\_02 & 43 & B & -0.0737 & [-0.1417, -0.0065] & 12; 1000/1000\\
+set\_02 & 43 & D & -0.3623 & [-0.6813, -0.1224] & 8; 1000/1000\\
+set\_02 & 44 & B & -0.0256 & [-0.0487, -0.0027] & 12; 1000/1000\\
+set\_02 & 44 & D & -0.0761 & [-0.1335, -0.0217] & 8; 1000/1000\\
+set\_03 & 42 & B & 0.1390 & [0.0407, 0.3676] & 10; 1000/1000\\
+set\_03 & 42 & D & 0.1164 & [0.0700, 0.1790] & 14; 1000/1000\\
+set\_03 & 43 & B & 0.1993 & [-0.0147, 0.3589] & 10; 1000/1000\\
+set\_03 & 43 & D & 0.0936 & [-0.0181, 0.1775] & 14; 1000/1000\\
+set\_03 & 44 & B & 0.7837 & [0.4389, 0.9840] & 10; 1000/1000\\
+set\_03 & 44 & D & 0.9076 & [0.8079, 0.9383] & 14; 1000/1000\\
+set\_04 & 42 & B & -0.2963 & [-0.3695, -0.0491] & 14; 1000/1000\\
+set\_04 & 42 & D & -0.1661 & [-0.4748, -0.0452] & 10; 1000/1000\\
+set\_04 & 43 & B & -0.3505 & [-0.4766, -0.0907] & 14; 1000/1000\\
+set\_04 & 43 & D & -0.1679 & [-0.4542, -0.0541] & 10; 1000/1000\\
+set\_04 & 44 & B & -0.7996 & [-0.9750, -0.1600] & 14; 1000/1000\\
+set\_04 & 44 & D & -0.3177 & [-0.7372, -0.1051] & 10; 1000/1000\\
+\bottomrule\end{longtable}
+\begin{longtable}{P{1.2cm}P{7.0cm}P{1.8cm}P{2.2cm}}
+\caption{Structural: eight lowest mean-recall B/D captures (descriptive); FAR per 100,000}\label{tab:comparison-failures}\\\toprule
+Cond. & Set/capture & Recall & FAR\\\midrule\endfirsthead
+\toprule
+Cond. & Set/capture & Recall & FAR\\\midrule\endhead
+B & set\_01/force-neutral-4.csv & 0.0000 & 20.78\\
+B & set\_01/force-neutral-3.csv & 0.0000 & 38.15\\
+B & set\_01/rpm-4.csv & 0.0000 & 36.44\\
+B & set\_01/rpm-3.csv & 0.0000 & 30.61\\
+B & set\_01/standstill-3.csv & 0.0000 & 24.16\\
+B & set\_01/standstill-4.csv & 0.0000 & 33.30\\
+D & set\_01/speed-3.csv & 0.0000 & 130.25\\
+D & set\_01/speed-4.csv & 0.0000 & 7.88\\
+\bottomrule\end{longtable}
+\begin{longtable}{P{6.0cm}P{6.0cm}}
+\caption{Recorded fit seconds: median [min, max] across 12 cells}\label{tab:comparison-cost}\\\toprule
+Method & Fit seconds\\\midrule\endfirsthead
+\toprule
+Method & Fit seconds\\\midrule\endhead
+Raw TF & 11.36 [6.84, 35.03]\\
+Structural TF & 7.83 [6.51, 11.16]\\
+CANBERT+ adapted & 421.37 [290.72, 508.61]\\
+CANLP-char-DNN adapted & 88.48 [69.64, 170.41]\\
+CrySyS-AssocRules/W64 & 66.52 [51.05, 85.52]\\
+\bottomrule\end{longtable}
+These durations cover the recorded fit segment in an environment with concurrent jobs, not an isolated throughput benchmark. Per-set/seed capture-bootstrap intervals are in \code{paired_capture_bootstrap.json}; counts, both operating points, per-file metrics and undefined cases are in \code{all_metrics.csv}. Bootstrap intervals are not averaged and relabelled as multi-vehicle confidence intervals. Post-hoc evidence for these measurements appears in Section~\ref{sec:completion}, subject to its data and protocol limitations.
+% END COMPARISON RESULTS
+
+\section{Verified data-quality evidence}
+\subsection{Automotive v2 interval reconstruction}
+The four local Opel/Renault captures were scanned completely. DoS labels use the first and last injected timestamps documented with the dataset, together with the expected zero-ID, eight-zero-byte signature. These checks validate the supplied logs against that explicit rule; they do not generalize the rule to other attack mechanisms.
+
+\begin{table}[htbp]\centering\small
+\caption{Full-file counts after label reconstruction; $W=64$. Incomplete final windows are excluded. These are data counts, not model results.}\label{tab:quality}
+\begin{tabular}{lrrrr}\toprule
+Capture & Frames & Attack frames & Benign windows & Attack windows\\\midrule
+
+% Begin inlined ../../code/results/latex_tables/quality_rows.tex
+Opel benign & 806,999 & 0 & 12,609 & 0 \\
+Opel DoS & 827,555 & 40,015 & 12,304 & 626 \\
+Renault benign & 115,971 & 0 & 1,812 & 0 \\
+Renault DoS & 141,927 & 40,001 & 1,591 & 626 \\
+\bottomrule
+% End inlined ../../code/results/latex_tables/quality_rows.tex
+\end{tabular}
+\end{table}
+
+The Opel interval contains 40,015 frames in the local file, one fewer than the README's stated 40,016. The observed count is retained rather than changed to match the narrative. The file hash and interval endpoints are recorded in the accompanying quality report. Before a final comparison, the difference should be checked against the exact downloaded dataset version.
+
+Attack logs contain substantial benign traffic outside the interval. Labelling every frame in an attack-named file as positive would therefore alter both class prevalence and the false-alarm denominator. Moreover, the modified attack capture shares underlying traffic with the normal test capture. Results are reported separately by capture; they are not treated as independent replications when quantifying uncertainty.
+
+\subsection{Timestamp-free and incomplete external data}
+The local CICIoV2024 hexadecimal CSVs do not supply measured timestamps. Protocol v2.1 preserves this absence and routes them to the content tier. Timing-based transfer claims are removed. Row-order assumptions remain a limitation for local structural features even after removing timing.
+
+A further export discrepancy affects the local SPEED file. Its 24,951 rows use \code{2.0} or \code{0.0} in byte column \code{DATA_6}. Lossless single-digit formatting normalization exposes 4,989 byte disagreements with the decimal companion under positional alignment, while IDs, labels and the other seven bytes agree. Neither representation is assumed to be ground truth. The SPEED hex file is quarantined pending verification of the canonical publisher version; hashes and mismatch counts are saved separately. The other five registered hexadecimal files remain eligible for content-tier preflight.
+
+A recursive recheck of the local CAN-MIRGU directory identifies attack logs in the Real, Masquerade and Suspension subfolders. The earlier non-recursive inventory was incomplete. These logs are now included through recursive discovery; full-file preflight and model evaluation remain required. Benign logs alone support false-alarm evaluation, not attack recall. Any missing or disabled files are recorded as exclusions, never as successful tests.
+
+The converted OTIDS files lack sufficient label provenance for inclusion in the confirmed experiment. In particular, the first 1,024,000 rows of the shuffled mixed derivative contain 512,363 benign frames but all 16,000 resulting 64-frame windows are positive. The same prefix has 511,946 negative timestamp differences. This is evidence of an unsuitable sequence construction, not evidence that the underlying OTIDS task is impossible. Converted and shuffled derivatives remain disabled pending chronological data and frame-label verification.
+
+\section{Historical exploratory measurements}
+\subsection{Focused Set 1 experiment}
+Table~\ref{tab:historical} reproduces the saved focused comparison without upgrading its evidential status. It is useful for identifying hypotheses and discrepancies, but it does not validate the corrected method. AP is the legacy field named PR\_AUC; the original run lacks the provenance now required for a confirmed result.
+
+\begin{table}[htbp]\centering\small
+\caption{Historical Set 1 outputs from \code{phase3_method_comparison.csv}. Not protocol-v2.1 results. FAR is per 100,000 benign windows.}\label{tab:historical}
+\begin{tabular}{clrrrrr}\toprule
+Cond. & Model & F1 & Precision & Recall & AP & FAR\\\midrule
+
+% Begin inlined ../../code/results/latex_tables/historical_rows.tex
+A & Raw TF & 0.7649 & 1.0000 & 0.6194 & 0.8146 & 0.00 \\
+A & Structural TF & 0.9035 & 1.0000 & 0.8239 & 0.9587 & 0.00 \\
+A & Structural XGB & 0.7812 & 0.9990 & 0.6414 & 0.8379 & 2.32 \\
+B & Raw TF & 0.0002 & 1.0000 & 0.0001 & 0.9505 & 0.00 \\
+B & Structural TF & 0.9703 & 0.9997 & 0.9426 & 0.9765 & 2.17 \\
+B & Structural XGB & 0.8902 & 1.0000 & 0.8021 & 0.9594 & 0.00 \\
+C & Raw TF & 0.0000 & 0.0000 & 0.0000 & 0.0643 & 0.00 \\
+C & Structural TF & 0.7094 & 1.0000 & 0.5497 & 0.8807 & 0.00 \\
+C & Structural XGB & 0.0078 & 0.9444 & 0.0039 & 0.1814 & 1.58 \\
+D & Raw TF & 0.0000 & 0.0000 & 0.0000 & 0.0115 & 0.00 \\
+D & Structural TF & 0.2332 & 0.9892 & 0.1322 & 0.6900 & 1.47 \\
+D & Structural XGB & 0.0009 & 0.0169 & 0.0005 & 0.2345 & 28.37 \\
+\bottomrule
+% End inlined ../../code/results/latex_tables/historical_rows.tex
+\end{tabular}
+\end{table}
+
+The raw model's historical B result combines AP 0.9505 with F1 0.0002. This discrepancy is compatible with ranking ability at an unsuitable operating threshold. It does not by itself prove representation collapse or ID memorization. Protocol v2.1 therefore compares both the default threshold and the source-calibrated threshold for every model. Target labels cannot be used to choose a better threshold after observing B.
+
+The historical structural D result has recall 0.1322 and F1 0.2332. Even within that exploratory run, these values do not support robust detection of unknown attacks on unknown vehicles. A discussion must retain this failure alongside the stronger B result.
+
+\subsection{Disagreement between saved runs}
+
+\begin{table}[htbp]\centering
+\caption{Historical Structural Transformer F1 for Set 1. Different sampling and training executions prevent pooling.}\label{tab:disagreement}
+\begin{tabular}{lrrrr}\toprule
+Saved experiment & A & B & C & D\\\midrule
+Focused Phase 3 & 0.9035 & 0.9703 & 0.7094 & 0.2332\\
+Multi-dataset sweep & 0.7741 & 0.9635 & 0.0976 & 0.0010\\\bottomrule
+\end{tabular}
+\end{table}
+
+The difference in C and D is too large to ignore. The saved outputs come from different sampling limits and model-training executions, without a complete common checkpoint manifest. They cannot be interpreted as a controlled seed study. The sweep also includes failures on other sets; selecting only the focused Set 1 table would hide these boundaries.
+
+Prefix truncation is particularly problematic for sparse attacks. The audited 102,400-row-per-file Set 3 training prefix contains only one attack frame, yielding one attack window. A classifier trained from such a prefix cannot support a balanced comparison of representation quality. Full-file random-priority sampling corrects this design problem; whether it improves performance remains an empirical question.
+
+\subsection{Withdrawn external interpretations}
+The historical OTIDS benign evaluation reports 38,880 false alarms per 100,000 benign windows for the Structural Transformer. The earlier interpretation of zero false alarms across external data is therefore inconsistent even with its saved outputs. Positive-only attack-window files cannot establish FAR, while benign-only data cannot establish attack recall or AP.
+
+Some historical AP fields were substituted with F1 when the required information was missing. Those values are not valid AP measurements. They are excluded from confirmed comparison tables. Automotive v2 results derived from file-wide attack labels and CICIoV timing results based on artificial timestamps are likewise withdrawn. These corrections narrow the conclusions; they do not replace invalid results with assumed improvements.
+
+\section{Published comparisons and metric reconstruction}
+Published frame-level confusion matrices and this thesis's window-level outputs have different decision units. Multiplying frame counts or assigning a window prediction to all its frames does not reconstruct the original task. A direct ranking requires matched data, labels, windows, training budgets and threshold rules.
+
+An additional arithmetic inconsistency occurred in the legacy comparison row: $TP=1$, $FN=8{,}429$, $TN=92{,}315$ and $FP=0$ imply accuracy approximately 0.9163, attack F1 approximately 0.000237 and weighted F1 approximately 0.8763. They do not imply the previously displayed ``reported F1'' of 0.9550. The unsupported field and the resulting head-to-head graphic are retired.
+
+The five published rows have now been checked against dataset 1, subset 2 in the arXiv-v1 appendix~\cite{lampe2023appendix}. Table~\ref{tab:published} shows the source column and two metrics recomputed from its confusion counts. The source F1 agrees, after rounding, with weighted F1 for four rows but attack F1 for Linear SVM; this arithmetic observation does not establish the authors' implementation choices. The exact preprint version is cited separately because equivalence to the journal appendix has not been assumed. No comparison to this thesis's window scores is made.
+
+\begin{table}[htbp]\centering\small
+\caption{Published frame-level counts audited within their own task: dataset 1, subset 2, arXiv v1. Both recomputed metrics use the same source confusion counts.}\label{tab:published}
+\begin{tabular}{llrrr}\toprule
+Model & Table & Source F1 & Attack F1 & Weighted F1\\\midrule
+
+% Begin inlined ../../code/results/latex_tables/published_rows.tex
+BIRCH & A.26 & 0.9620 & 0.0000 & 0.9620 \\
+MLP & A.28 & 0.9594 & 0.0546 & 0.9594 \\
+Logistic Regression & A.15 & 0.9539 & 0.0423 & 0.9539 \\
+Linear SVM & A.16 & 0.0432 & 0.0432 & 0.9554 \\
+Gradient Boosting & A.21 & 0.7739 & 0.1311 & 0.7739 \\
+\bottomrule
+% End inlined ../../code/results/latex_tables/published_rows.tex
+
+\end{tabular}\end{table}
+\FloatBarrier
+
+\section{Extended experiments beyond the content comparison}
+\begin{longtable}{P{2.4cm}P{5.3cm}P{5.2cm}}
+\caption{Experiments required to answer the research questions}\label{tab:pending}\\\toprule
+Question & Required evidence & Status / implementation\\\midrule\endfirsthead
+\toprule Question & Required evidence & Status / implementation\\\midrule\endhead
+RQ1 & Four sets, A--D, three seeds; counts, attack recall, target FAR, F1 and AP at both thresholds & Content/file-order complete; timed awaits verified timestamps\\
+RQ2 & ID removal versus added structure; modality and group ablations & Ten content representations executed; timing-only inapplicable\\
+RQ3 & Raw/structural paired differences and balanced frozen vehicle/attack probes & Twelve encoder pairs; balanced vehicle/attack probes and controls\\
+RQ4 & Frozen Set 1 models on verified timed external captures; separately trained content-tier models & Ledger-governed external evaluation; all exclusions retained\\
+Sensitivity & Windows 32 and 128 with the same source split & W32/W128 across four sets and three seeds completed\\
+Deployment & End-to-end latency and hardware resource measurements & CPU/GPU batch-one timing measured; ECU deadlines unverified\\\bottomrule
+\end{longtable}
+Content evidence is updated; timed execution requires verified chronology.
+
+Every final result table must identify the run directory, configuration, code hashes, data hashes, set, seed, representation, window size and operating point. AP and FAR must be accompanied by positive/negative denominators. Plots are generated from complete run outputs rather than typed manually. A missing class or dataset remains explicitly missing.
+
+\section{Confirmatory result analysis specification}
+RQ1 tables summarize paired differences by seed, by set and with equal weight across sets, after the coverage report establishes matrix completeness. Each condition reports recall, FAR, F1 and AP; the primary metric is not changed to favour observed results. File-bootstrap intervals are descriptive, while three-seed standard deviations describe initialization variability. Neither is converted into a confidence interval for a population of vehicles.
+
+The original timed design listed 13 variant names; the content study tests ten distinct representations after excluding timing-only and merging aliases. These include new controls removing absolute payload or only dimension 30 to directly investigate fingerprint and rank-encoding concerns. An ablation improvement supports a component effect in this pipeline, not a unique physical cause. RQ3 reports vehicle/attack probes and controls jointly; RQ4 reports individual captures with label provenance, feature tier and appropriate denominators. Excluded data remain visible in the exclusion ledger rather than disappearing from coverage descriptions.
+
+\section{Interpretation rules and threats to validity}
+The main comparison is paired within each set and operating point. A positive B difference alone supports, at most, that particular known-attack transfer condition. Evidence for the broader objective requires the D conditions and the external boundaries. If the calibrated raw model closes a historical gap, the discussion must attribute part of that gap to operating-point choice instead of claiming a uniquely superior representation.
+
+An improved attack detector can still encode vehicle information. A lower vehicle-probe score can also arise from a weaker representation. Both attack and vehicle probes, balanced group splits and ablations are needed to distinguish these possibilities. They remain diagnostic associations rather than complete causal proof.
+
+Internal validity is limited by label provenance, possible capture overlap and sampling. Construct validity is limited by window labels: a single attack frame makes the entire window positive, and sparse stealthy changes can differ greatly from dense injection. External validity is limited by four source/target pairs, dataset-specific attacks and the absence of physical deployment tests. Statistical validity is limited by the number of independent driving sessions; multiple seeds and many windows do not remove this limitation.
+% BEGIN COMPARISON POSTHOC
+\section{Post-hoc evidence following the primary comparison}\label{sec:completion}
+These analyses were designed after viewing the primary results. They are not independent confirmation on untouched targets and do not replace the original recall/FAR criterion. There are 144 new fits and 24 unchanged W64 baselines: ten distinct W64 representations and raw/structural at W32/W128. Payload-only equals raw-no-ID in the content tier; no-timing equals structural, so neither alias counts as independent evidence. Timing-only is excluded because chronology is unverified.
+All variants share source groups, full-file reservoir policy, seeds 42/43/44, ten epochs and a source-validation FAR budget of 100/100,000. Sampling is recomputed at W32/W128 because the decision unit changes; sensitivity therefore includes changed window labels, available samples and sequence length. Denominators are not directly equated across W.
+Encoder hyperparameters are shared, but input-projection parameter counts vary with feature dimension; total parameter counts are not exactly equal.
+\subsection{Ablations and window sensitivity}
+\begin{longtable}{P{1.1cm}P{4.2cm}P{1.6cm}P{2.2cm}P{1.6cm}P{1.6cm}}
+\caption{Content W64; equal set weights; FAR per 100,000 benign windows}\label{tab:extension-w64}\\\toprule
+Cond. & Representation & Recall & FAR & F1 & AP\\\midrule\endfirsthead
+\toprule
+Cond. & Representation & Recall & FAR & F1 & AP\\\midrule\endhead
+A & ID only & 0.7655 & 90.54 & 0.8439 & 0.8492\\
+B & ID only & 0.8622 & 68896.67 & 0.2573 & 0.3379\\
+C & ID only & 0.1978 & 93.00 & 0.2358 & 0.2736\\
+D & ID only & 0.6822 & 67788.42 & 0.1857 & 0.1914\\
+A & Raw & 0.6167 & 115.77 & 0.7258 & 0.7312\\
+B & Raw & 0.8541 & 65301.41 & 0.3000 & 0.3781\\
+C & Raw & 0.2101 & 91.92 & 0.2314 & 0.2661\\
+D & Raw & 0.6614 & 67982.89 & 0.1213 & 0.1648\\
+A & Raw without ID & 0.2533 & 100.13 & 0.3668 & 0.4139\\
+B & Raw without ID & 0.6794 & 66658.13 & 0.0875 & 0.2200\\
+C & Raw without ID & 0.0906 & 62.70 & 0.1466 & 0.2222\\
+D & Raw without ID & 0.6871 & 66679.05 & 0.1677 & 0.2175\\
+A & Raw + structural & 0.6515 & 84.74 & 0.7380 & 0.7428\\
+B & Raw + structural & 0.7604 & 53227.73 & 0.3179 & 0.4842\\
+C & Raw + structural & 0.1950 & 91.68 & 0.2296 & 0.2703\\
+D & Raw + structural & 0.5783 & 52902.70 & 0.1567 & 0.2976\\
+A & Structural & 0.5886 & 81.67 & 0.7072 & 0.7483\\
+B & Structural & 0.7383 & 52461.46 & 0.2435 & 0.5554\\
+C & Structural & 0.2230 & 75.82 & 0.2600 & 0.2928\\
+D & Structural & 0.6445 & 54643.37 & 0.2069 & 0.3357\\
+A & Structural without delta & 0.4910 & 89.84 & 0.6050 & 0.6789\\
+B & Structural without delta & 0.8306 & 58636.28 & 0.2861 & 0.4927\\
+C & Structural without delta & 0.2006 & 73.86 & 0.2363 & 0.2720\\
+D & Structural without delta & 0.6795 & 60669.40 & 0.1815 & 0.2745\\
+A & Structural without local counts/ranks & 0.4851 & 100.21 & 0.6147 & 0.6346\\
+B & Structural without local counts/ranks & 0.6870 & 65298.51 & 0.0948 & 0.2894\\
+C & Structural without local counts/ranks & 0.1955 & 99.41 & 0.2412 & 0.2795\\
+D & Structural without local counts/ranks & 0.6925 & 66400.30 & 0.1626 & 0.3053\\
+A & Structural without absolute payload & 0.6243 & 87.77 & 0.7317 & 0.7644\\
+B & Structural without absolute payload & 0.9243 & 66779.19 & 0.3160 & 0.4453\\
+C & Structural without absolute payload & 0.3328 & 101.16 & 0.4076 & 0.4730\\
+D & Structural without absolute payload & 0.7202 & 67775.85 & 0.2024 & 0.3138\\
+A & Structural without rank/W & 0.5308 & 79.90 & 0.6507 & 0.6837\\
+B & Structural without rank/W & 0.7998 & 59718.63 & 0.2425 & 0.5266\\
+C & Structural without rank/W & 0.2650 & 75.73 & 0.3247 & 0.3420\\
+D & Structural without rank/W & 0.6881 & 62056.45 & 0.1830 & 0.3446\\
+A & Structural without transitions & 0.5567 & 66.87 & 0.6784 & 0.7044\\
+B & Structural without transitions & 0.7137 & 53236.21 & 0.2220 & 0.5556\\
+C & Structural without transitions & 0.2419 & 76.67 & 0.2896 & 0.3210\\
+D & Structural without transitions & 0.6665 & 55254.24 & 0.2049 & 0.3679\\
+\bottomrule\end{longtable}
+\begin{longtable}{P{1.1cm}P{4.2cm}P{1.6cm}P{2.2cm}P{1.6cm}P{1.6cm}}
+\caption{Content W32; equal set weights; FAR per 100,000 benign windows}\label{tab:extension-w32}\\\toprule
+Cond. & Representation & Recall & FAR & F1 & AP\\\midrule\endfirsthead
+\toprule
+Cond. & Representation & Recall & FAR & F1 & AP\\\midrule\endhead
+A & Raw & 0.5516 & 107.46 & 0.6827 & 0.7057\\
+B & Raw & 0.7722 & 61820.20 & 0.2066 & 0.2974\\
+C & Raw & 0.2010 & 102.37 & 0.2263 & 0.2534\\
+D & Raw & 0.6019 & 62060.00 & 0.1258 & 0.1285\\
+A & Structural & 0.5760 & 140.93 & 0.6904 & 0.6952\\
+B & Structural & 0.7791 & 53054.55 & 0.2420 & 0.4196\\
+C & Structural & 0.2360 & 87.68 & 0.2765 & 0.2943\\
+D & Structural & 0.6342 & 55225.47 & 0.1659 & 0.2732\\
+\bottomrule\end{longtable}
+\begin{longtable}{P{1.1cm}P{4.2cm}P{1.6cm}P{2.2cm}P{1.6cm}P{1.6cm}}
+\caption{Content W128; equal set weights; FAR per 100,000 benign windows}\label{tab:extension-w128}\\\toprule
+Cond. & Representation & Recall & FAR & F1 & AP\\\midrule\endfirsthead
+\toprule
+Cond. & Representation & Recall & FAR & F1 & AP\\\midrule\endhead
+A & Raw & 0.4141 & 104.55 & 0.5186 & 0.6147\\
+B & Raw & 0.7353 & 61158.10 & 0.1954 & 0.3903\\
+C & Raw & 0.0702 & 71.78 & 0.1093 & 0.2021\\
+D & Raw & 0.5957 & 58708.86 & 0.1111 & 0.2516\\
+A & Structural & 0.6248 & 95.04 & 0.7339 & 0.7299\\
+B & Structural & 0.7481 & 54375.95 & 0.2468 & 0.4899\\
+C & Structural & 0.2213 & 68.53 & 0.2558 & 0.3073\\
+D & Structural & 0.6589 & 56877.92 & 0.1764 & 0.3097\\
+\bottomrule\end{longtable}
+Every variant is reported, including losses. Ablation differences support component effects within this pipeline, not physical causality or vehicle independence. A target-selected winner is not reassigned to the primary hypothesis. Per-capture counts remain in the accompanying data.
+\subsection{Linear probes and controls}
+Encoders from four sources and three seeds are frozen. Probe training/holdout uses separate recording-round groups and balances all vehicle-by-attack cells; IDS parameters remain unchanged. Chance is 1/4 for vehicle and 1/2 for attack. Constant, random-embedding and permuted-training-label controls are retained; both randomized controls have five repetitions. Encoders saw their own source training captures. This measures post-hoc linear decodability, not unseen-driving-session generalization or statistical independence.
+\begin{longtable}{P{3.3cm}P{1.6cm}P{4.7cm}P{3.1cm}}
+\caption{Mean balanced accuracy across frozen encoders; descriptive, not a vehicle-population CI}\label{tab:extension-probes}\\\toprule
+Representation & Target & Control & Balanced accuracy\\\midrule\endfirsthead
+\toprule
+Representation & Target & Control & Balanced accuracy\\\midrule\endhead
+raw & attack & constant & 0.5000\\
+raw & attack & learned & 0.6419\\
+raw & attack & permuted train labels & 0.5106\\
+raw & attack & random embedding & 0.5026\\
+raw & vehicle & constant & 0.2500\\
+raw & vehicle & learned & 0.9925\\
+raw & vehicle & permuted train labels & 0.2444\\
+raw & vehicle & random embedding & 0.2496\\
+structural & attack & constant & 0.5000\\
+structural & attack & learned & 0.7669\\
+structural & attack & permuted train labels & 0.4958\\
+structural & attack & random embedding & 0.5026\\
+structural & vehicle & constant & 0.2500\\
+structural & vehicle & learned & 0.9488\\
+structural & vehicle & permuted train labels & 0.2287\\
+structural & vehicle & random embedding & 0.2496\\
+\bottomrule\end{longtable}
+Vehicle-probe balanced accuracy is 0.9925 for Raw and 0.9488 for Structural, against chance 0.25. The difference -0.0437 describes reduced linear decodability only; the remaining accuracy is high and does not establish removal of vehicle information. Attack-probe values are 0.6419/0.7669; label decoding is distinct from IDS recall at the source-selected threshold.
+\subsection{External evaluation and exclusions}
+External evaluation completed 57 captures; missing, quarantined and schema/label-invalid files remain in the output ledger. Set 1 source models for all three seeds retain their source thresholds. Missing time stays missing without synthetic timestamps; results follow file order without asserting physical chronology. Automotive benign/DoS captures share background traffic and are not independent sessions.
+\begin{longtable}{P{4.4cm}P{3.1cm}P{2.0cm}P{2.4cm}}
+\caption{External: pooled file counts within dataset/seed, then mean of three seeds; FAR per 100,000}\label{tab:extension-external}\\\toprule
+Dataset & Representation & Recall & FAR\\\midrule\endfirsthead
+\toprule
+Dataset & Representation & Recall & FAR\\\midrule\endhead
+CAN\_MIRGU\_attack & raw & 0.5848 & 59175.90\\
+CAN\_MIRGU\_attack & structural & 0.0546 & 2701.79\\
+CAN\_MIRGU\_benign & raw & -- & 60615.05\\
+CAN\_MIRGU\_benign & structural & -- & 6631.09\\
+CICIoV2024 & raw & 0.6462 & 100000.00\\
+CICIoV2024 & structural & 1.0000 & 100000.00\\
+Opel\_Astra\_DoS & raw & 1.0000 & 43850.24\\
+Opel\_Astra\_DoS & structural & 1.0000 & 31534.46\\
+Opel\_Astra\_benign & raw & -- & 43841.70\\
+Opel\_Astra\_benign & structural & -- & 30980.52\\
+Renault\_Clio\_DoS & raw & 0.9995 & 33102.87\\
+Renault\_Clio\_DoS & structural & 0.9984 & 188.56\\
+Renault\_Clio\_benign & raw & -- & 33443.71\\
+Renault\_Clio\_benign & structural & -- & 165.56\\
+\bottomrule\end{longtable}
+Benign-only captures identify FAR but not recall or two-class AP; a dash is undefined, not zero. CICIoV SPEED and OTIDS derivatives lacking verified byte/label/order provenance remain excluded; bytes are not repaired and labels are not inferred from filenames.
+\subsection{Window processing time on the experimental host}
+\begin{longtable}{P{2.0cm}P{3.6cm}P{3.2cm}P{3.2cm}}
+\caption{Batch one; 20 warmup windows; 300 measured windows x 3 repetitions; milliseconds}\label{tab:extension-runtime}\\\toprule
+Device & Representation & Median ms & P95 ms\\\midrule\endfirsthead
+\toprule
+Device & Representation & Median ms & P95 ms\\\midrule\endhead
+cpu & raw & 6.098 & 7.524\\
+cpu & structural & 6.176 & 8.024\\
+cuda & raw & 7.537 & 9.523\\
+cuda & structural & 7.323 & 8.871\\
+\bottomrule\end{longtable}
+Measurement includes CSV reading, validation/conversion, both content representations and inference. OS caching and other applications may affect timing. Acquisition waits, queueing, time to harm and ECU deadlines are not measured; this does not certify real-time deployment.
+% END COMPARISON POSTHOC
+
+% End inlined results_en.tex
+
+% Begin inlined conclusion_en.tex
+\chapter{Conclusions and remaining work}\label{chap:conclusion}
+\section{Conclusions supported by the revision}
+The thesis specifies and implements a structural CAN representation combining payload, validity masks, same-ID payload changes and local identifier relations in the content tier. Timing components of the original design are outside the confirmed results. Its input excludes raw ID bits. Under consistent bijective renaming of identifiers and their histories, the representation remains unchanged. This property is narrower than independence from vehicle identity.
+
+The completed audit establishes that several previous interpretations were unsupported: external file-wide attack labels changed the task; artificial timestamps invalidated a timing comparison; single-class tests did not define all reported metrics; and frame/window results did not permit a direct ranking. The corrected implementation makes these cases explicit and preserves the data, model and prediction provenance needed for reruns.
+
+Historical results motivate investigation; new evidence confirms only the content/file-order comparison in Section~\ref{sec:comparison-results}, not timed protocol v2.1. In particular, the thesis currently cannot conclude that the structural representation consistently outperforms calibrated raw inputs, removes vehicle information, transfers reliably to unknown attacks, or meets real-time deployment requirements. These conclusions depend on the experiments in Table~\ref{tab:pending}.
+
+\section{Completion priorities}
+The five-method, four-set, three-seed content/file-order matrix is complete; timed v2.1 still requires verified timestamp provenance before execution. Report every A--D cell, including failures and missing-class cases. Then run the ablations and balanced probes to test whether gains arise from removing identifiers, adding history or changing the operating point.
+
+Next, evaluate the frozen source checkpoint on verified external captures. CAN-MIRGU requires full-file checks of the recursively discovered attack logs. CICIoV requires the separately trained content tier and a qualified interpretation of row order. OTIDS requires chronological captures and verified frame-label provenance before re-enabling evaluation. Automotive v2 results remain mechanism-specific stress tests with shared underlying traffic.
+
+CANBERT+, CANLP-char-DNN and CrySyS-AssocRules/W64 have been quantitatively compared under disclosed adaptations. Other relational or universal comparators still require separate implementation and validation. The qualitative review alone is insufficient. Multi-source adaptation, target-normal calibration and domain-adversarial learning should be reported as separate extensions with their target-data budgets, rather than merged into strict zero-shot claims.
+
+After these runs, both language versions must be updated together: abstract, numerical tables, figures, discussion and conclusions must refer to the same completed run identifiers. A negative finding can support a rigorous thesis when its scope and evidence are clear; an unperformed experiment cannot support a positive conclusion.
+Extensions should be selected after examining evidence: entropy/Hamming requires separate ablations; multi-source adversarial training requires global vehicle partitioning and explicit optimization roles; reconstruction requires checking false alarms on benign target traffic and information leakage through derived features when masking inputs. No extension is treated as an established improvement or a publication guarantee before evaluation.
+
+% BEGIN COMPARISON CONCLUSION
+\section{Conclusion from the verified content comparison}
+The primary comparison uses content and file order: 28 raw dimensions, 30 structural dimensions, W64, four sets, three seeds and five methods. Reversed timestamps are retained for audit and excluded from features; physical chronology is not asserted. CANBERT+, CANLP-char-DNN and CrySyS-AssocRules/W64 are disclosed adaptations, and original published scores are not directly ranked. The 60-cell matrix has been verified; measured recall/FAR tradeoffs appear in Section~\ref{sec:comparison-results}. This comparison does not itself answer feature-ablation, vehicle-probe, external-transfer or deployment-latency questions. In B, Structural minus Raw yields mean recall difference -0.1159 and FAR difference -12839.95/100,000 under equal set weights; these quantities must be interpreted together.
+% END COMPARISON CONCLUSION
+
+% BEGIN COMPARISON POSTHOC_CONCLUSION
+\section{Additional evidence for the supervisor review}
+Vehicle-probe balanced accuracy is 0.9925 for Raw and 0.9488 for Structural, against chance 0.25. The difference -0.0437 describes reduced linear decodability only; the remaining accuracy is high and does not establish removal of vehicle information. Attack-probe values are 0.6419/0.7669; label decoding is distinct from IDS recall at the source-selected threshold.
+All ablations and sensitivity results appear in Section~\ref{sec:completion}. This is limited post-hoc evidence over observed captures. The original hypothesis and 60-cell results remain unchanged; favourable secondary findings do not replace the primary criterion. Runtime and external evaluation do not resolve physical chronology, driving-session independence or ECU deadlines.
+% END COMPARISON POSTHOC_CONCLUSION
+
+% End inlined conclusion_en.tex
+
+\appendix
+% Begin inlined appendix_en.tex
+\chapter{Reproducibility and hand checks}\label{app:reproducibility}
+\section{A four-frame feature example}
+Consider a single capture containing four frames with IDs $(A,B,A,A)$, timestamps $(0,0.001,0.003,0.004)$ seconds and one-byte payloads $(10,20,13,15)$ in decimal. All frames have DLC one; the fourth is malicious. With $W=4$, the window label is one.
+
+Identifier frequencies are $3/4$ for A and $1/4$ for B. First-occurrence ranks are zero for A and one for B; divided by two unique IDs, the local-rank feature is $(0,1/2,0,0)$. The previous/current pairs are AB, BA and AA, each occurring once, so the transition feature is $(0,1/3,1/3,1/3)$.
+
+The first two frames have no same-ID predecessor. Frame three has payload difference $3/255$ and same-ID gap 0.003 seconds. Frame four has difference $2/255$ and gap 0.001 seconds. Only the first byte is valid; all other difference positions remain zero. Inter-arrival values before log scaling are $(0,0.001,0.002,0.001)$. Renaming A and B consistently preserves these structural values.
+
+If another window follows, its first frame may have a same-ID predecessor in this window. Splitting the input after any of these frames into I/O chunks must not erase that history. By contrast, starting a new capture resets history. This example distinguishes file boundaries, decision-window boundaries and arbitrary read boundaries.
+
+\section{Run artifacts and their purpose}
+\begin{longtable}{P{4.7cm}P{8.2cm}}
+\caption{Minimum artifacts for a reproducible result}\label{tab:artifacts}\\\toprule
+Artifact & Contents / purpose\\\midrule\endfirsthead\toprule Artifact & Contents / purpose\\\midrule\endhead
+Run manifest & Configuration, schema, code hashes, environment and completion status\\
+Data manifest & File paths, sizes, full SHA-256 and split roles\\
+Split and training coverage & Source groups and available/selected windows by class\\
+Sampled window indices & Exact training selection without serializing raw captures\\
+Model checkpoint and metadata & Parameters, input dimensions, seed, training duration and source threshold\\
+Compressed prediction files & File and window IDs, labels, scores and timestamp boundaries\\
+Metrics & Confusion counts, denominators, attack F1, AP, FAR and undefined-status flags\\
+External ledger/exclusions & Label policies, compatible tiers and missing/disabled targets\\
+Summary and paired outputs & Seed variability and conditional capture-bootstrap differences\\\bottomrule
+\end{longtable}
+
+\section{Execution and reporting checklist}
+The repository guide supplies exact commands. The logical order is dependency installation, protocol tests, data preflight, primary training/evaluation, ablations, content-tier transfer, probes, window sensitivity and summaries. Each run uses a fresh output directory. A failed run is diagnosed before reporting; unfinished outputs are not silently pooled.
+
+Before importing a table, verify both classes where the metric requires them, the exact checkpoint, source-only thresholds, unchanged test files and consistent window size. Check counts by file and mechanism, not just the aggregate. Three initialization seeds are summarized as mean and standard deviation. Independent-capture uncertainty requires adequate provenance and must not be replaced by resampling individual correlated windows.
+
+Before submission, confirm the applicable faculty template and rubric, author/supervisor details, bibliography metadata, all cross-references and both abstracts. Review every rendered table and figure. The absence of a current cohort rubric means that formatting choices in this revision are provisional, not certification of compliance.
+
+\section{Additional comparison studies}
+A relational baseline is the closest next comparison for testing whether same-ID payload changes add value beyond identifier transitions. Reproduce its original feature definitions and training procedure, then document every adaptation needed for CTT windows and source-only calibration. A timing/volume universal detector offers a complementary comparison, especially for payload-preserving versus timing-preserving attacks. Neither is implemented under a borrowed publication name in the current runner.
+
+CANTransfer belongs to an adaptation study with an explicit amount of labelled target data. ROAD can add realistic mechanism diversity after label mapping and chronological parsing are validated. A multi-source can-ml study additionally requires resolving overlap with CTT captures. These studies should be prioritized by the claim being tested; downloading more datasets alone does not establish generalization.
+% End inlined appendix_en.tex
+
+\backmatter\phantomsection\addcontentsline{toc}{chapter}{Bibliography}\bibliographystyle{plainnat}\bibliography{refs}\end{document}

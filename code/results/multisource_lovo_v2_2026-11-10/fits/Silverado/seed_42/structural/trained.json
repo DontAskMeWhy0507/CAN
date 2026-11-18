@@ -1,0 +1,107 @@
+{
+  "status": "COMPLETE",
+  "checkpoint_sha256": "349972616b585e6b40129387500c1bc03ce897e6cd9c103a288663c9c0ad6aab",
+  "seconds": 29.750248099999226,
+  "logs": [
+    {
+      "epoch": 1,
+      "task_loss": 0.23798411720365817,
+      "domain_loss": 0.0,
+      "grl_strength": 0.046035988384110764
+    },
+    {
+      "epoch": 2,
+      "task_loss": 0.06365020503497883,
+      "domain_loss": 0.0,
+      "grl_strength": 0.07606551184369877
+    },
+    {
+      "epoch": 3,
+      "task_loss": 0.04812130097291499,
+      "domain_loss": 0.0,
+      "grl_strength": 0.09047440746714573
+    },
+    {
+      "epoch": 4,
+      "task_loss": 0.031183786635145743,
+      "domain_loss": 0.0,
+      "grl_strength": 0.09638695375208083
+    },
+    {
+      "epoch": 5,
+      "task_loss": 0.02110957606055308,
+      "domain_loss": 0.0,
+      "grl_strength": 0.09865548095918669
+    },
+    {
+      "epoch": 6,
+      "task_loss": 0.01771399843385422,
+      "domain_loss": 0.0,
+      "grl_strength": 0.0995032682296138
+    },
+    {
+      "epoch": 7,
+      "task_loss": 0.010534166061331365,
+      "domain_loss": 0.0,
+      "grl_strength": 0.09981697525019842
+    },
+    {
+      "epoch": 8,
+      "task_loss": 0.006240161409940421,
+      "domain_loss": 0.0,
+      "grl_strength": 0.09993262998588906
+    },
+    {
+      "epoch": 9,
+      "task_loss": 0.00513827837802897,
+      "domain_loss": 0.0,
+      "grl_strength": 0.09997521067847051
+    },
+    {
+      "epoch": 10,
+      "task_loss": 0.004797966735785459,
+      "domain_loss": 0.0,
+      "grl_strength": 0.09999087980368865
+    }
+  ],
+  "target_vehicle": "Silverado",
+  "source_vehicles": [
+    "Impala",
+    "Traverse",
+    "Forester"
+  ],
+  "train_windows": 28113,
+  "source_cell_counts": {
+    "(0, 0)": 6000,
+    "(0, 1)": 1307,
+    "(1, 0)": 7217,
+    "(1, 1)": 4394,
+    "(2, 0)": 8499,
+    "(2, 1)": 696
+  },
+  "training_capture_tokens": [
+    "106a03f9dd85904987ca86d8",
+    "7b5f2ed05b54d5b4c525c62f",
+    "e5b1bfbfa5d8b113cf7ac5e6",
+    "deef77bd5d91a02d3be074f6",
+    "50303beb7b33cc6eb8984148",
+    "5f51e0d73c20730ce1ad7703",
+    "e1c6a771da8ba45b48f394ad",
+    "728ffd039bc1d75ac4cae4b2",
+    "9f68edc63cef17c0b1025648",
+    "9e8f86b79414d3e022c1d0df",
+    "dbea73237c52e4a792f27854",
+    "66a2f842c23c1ba3a73cad2b",
+    "d1f20bb251355c6c4d34b2a3",
+    "678cb0e0b7746dd1594111aa",
+    "6d68c1c4679b97b0b2ec1f75",
+    "9fcc4d19dc52def6fb01c406",
+    "1fbc8440d281d38d4d2c4944",
+    "52d4eebf36d25e64143b06bf",
+    "cd54bb7c39686d4e43354434",
+    "9e7794f418566e70d0817be7",
+    "6a8178d76e081ae6762f2f44",
+    "1ef20e634252b56db0d8c8ed",
+    "5187a1ad214ecaeb99aa3c55"
+  ]
+}

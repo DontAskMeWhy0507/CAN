@@ -1,0 +1,19 @@
+{
+  "post_hoc": true,
+  "methods": [
+    "diag_energy",
+    "white_energy"
+  ],
+  "hypothesis": "Source-trained attack head may suppress target-specific attack deviations",
+  "encoder": "Same12 frozen Structural checkpoints; no encoder erasure",
+  "calibration": "Same1000 normalization +1000 threshold windows, whole capture excluded",
+  "score": "Unclipped mean squared normalized64D residual; diagonal or covariance whitening with fixed0.1 shrinkage",
+  "labels_used": "Confirmed-benign calibration only; no target attack labels used in score or threshold fitting",
+  "thresholds": [
+    0.01,
+    0.001
+  ],
+  "claim": "Benign-calibrated anomaly detection, NOT vehicle-independent representation",
+  "parent_protocol": "1df901bb2bb7a9bfccc8c351e48d9a3625b5f4aadf666be59be5d329bd67fbcb",
+  "code_sha256": "6a7e687b169573663a3e83f43d56dd16db0fc36d8b431690ece51f58b252dd1e"
+}

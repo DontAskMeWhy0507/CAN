@@ -1,0 +1,41 @@
+{
+  "protocol": "can-thesis-v2.1",
+  "sets": [
+    "set_01",
+    "set_02",
+    "set_03",
+    "set_04"
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "sampling_seed": 20261103,
+  "window_size": 64,
+  "tier": "timed",
+  "chunksize": 8192,
+  "train_windows_per_class_per_file": 1000,
+  "epochs": 10,
+  "batch_size": 128,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "far_budget_per_100k": 100.0,
+  "cpu_threads": 4,
+  "models": [
+    "transformer:raw",
+    "transformer:raw_no_id",
+    "transformer:raw_plus_structural",
+    "transformer:structural",
+    "transformer:id_only",
+    "transformer:payload_only",
+    "transformer:timing_only",
+    "transformer:structural_no_delta",
+    "transformer:structural_no_timing",
+    "transformer:structural_no_local",
+    "transformer:structural_no_transition",
+    "transformer:structural_no_payload",
+    "transformer:structural_no_rank_w"
+  ],
+  "external": false
+}

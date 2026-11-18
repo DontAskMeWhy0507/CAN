@@ -1,0 +1,15 @@
+{
+  "reason": "Switch evaluation scheduling after all 48 fits completed; no training interrupted",
+  "completed_fits": 48,
+  "process_id": 9228,
+  "utc": "2026-11-10T09:59:38.8371134Z",
+  "prior_state": {
+    "stage": "EVALUATING",
+    "utc": "2026-11-10T09:59:28Z",
+    "target": "Impala",
+    "seed": 42,
+    "method": "raw",
+    "role": "validation",
+    "file": "data/can-train-and-test/set_02/train_01/speed-2.csv"
+  }
+}

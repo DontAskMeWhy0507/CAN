@@ -1,14 +1,40 @@
 # =====================================================================
 # Raw CAN Datasets (Large Data Files)
 # =====================================================================
+data/
+code/data/
 Automotive CAN Bus Intrusion Dataset v2-*/
 CAN-MIRGU/
 can-train-and-test/
 CAN_HCRL_OTIDS/
 CICIoV2024/
 
-# Temporary folder
+# Temporary and local backup folders
 tmp/
+output/
+code/output/
+revision_backup/
+thesis_revision_2026-11-06/
+review_artifacts/
+.agents/
+.licenses/
+*.bak*
+*.bak
+
+# Large precomputed features and binary data caches in results
+code/results/**/features/
+code/results/comparison_data_v1/
+
+# Heavy numerical arrays, checkpoints and caches
+*.npy
+*.npz
+*.f32
+*.joblib
+*.bin
+*.pt
+*.pth
+*.pkl
+*.h5
 
 # Raw data and log files
 *.log
@@ -18,13 +44,13 @@ tmp/
 *.csv.gz
 *.zip
 *.tar.gz
-*.bin
-*.pt
-*.pth
-*.pkl
-*.h5
 
 # Keep publication result metrics, figures, and tables in results/
+!code/results/**/*.csv
+!code/results/**/*.json
+!code/results/**/*.png
+!code/results/**/*.tex
+!code/results/**/*.txt
 !results/*.csv
 !results/*.tex
 !results/*.png
@@ -32,6 +58,7 @@ tmp/
 # =====================================================================
 # Python Environments & Cache
 # =====================================================================
+node_modules/
 .tools/
 __pycache__/
 *.py[cod]
@@ -44,6 +71,17 @@ ENV/
 
 # Jupyter Notebook Checkpoints
 .ipynb_checkpoints/
+
+# Generated LaTeX intermediates (PDFs and sources remain reviewable)
+*.aux
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.lof
+*.lot
+*.toc
+*.xdv
 
 # IDE & Operating System
 .vscode/

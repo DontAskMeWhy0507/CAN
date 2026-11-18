@@ -1,0 +1,8 @@
+lightning==2.3.2
+numpy==2.4.4
+psutil==6.0.0
+pytorch_lightning==2.3.2
+torch==2.8.0.dev20250419+cu126
+tqdm==4.66.4
+tqdm==4.67.1
+transformers==4.37.2

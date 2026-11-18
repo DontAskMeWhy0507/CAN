@@ -1,0 +1,13 @@
+target,seed,method,task,decoder,control,balanced_accuracy,chance,warnings
+Impala,43,relative_cadv,vehicle,linear,learned,0.9659374999999999,0.25,
+Impala,43,relative_cadv,vehicle,linear,constant,0.25,0.25,
+Impala,43,relative_cadv,vehicle,linear,permuted,0.2575,0.25,
+Impala,43,relative_cadv,vehicle,mlp,learned,0.9703125,0.25,
+Impala,43,relative_cadv,vehicle,mlp,constant,0.25,0.25,
+Impala,43,relative_cadv,vehicle,mlp,permuted,0.251875,0.25,Stochastic Optimizer: Maximum iterations (200) reached and the optimization hasn't converged yet.
+Impala,43,relative_cadv,attack,linear,learned,0.8053125,0.5,
+Impala,43,relative_cadv,attack,linear,constant,0.5,0.5,
+Impala,43,relative_cadv,attack,linear,permuted,0.454375,0.5,
+Impala,43,relative_cadv,attack,mlp,learned,0.809375,0.5,
+Impala,43,relative_cadv,attack,mlp,constant,0.5,0.5,
+Impala,43,relative_cadv,attack,mlp,permuted,0.50625,0.5,

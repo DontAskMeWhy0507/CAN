@@ -1,0 +1,14 @@
+{
+  "status": "COMPLETE",
+  "captures": 162,
+  "conflicting_hashes": 12,
+  "excluded_paths": 24,
+  "windows": 1983385,
+  "per_vehicle": {
+    "Impala": 390470,
+    "Traverse": 625630,
+    "Silverado": 509539,
+    "Forester": 457746
+  },
+  "planned_fits": 48
+}

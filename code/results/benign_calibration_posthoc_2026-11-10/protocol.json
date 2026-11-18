@@ -1,0 +1,18 @@
+{
+  "status": "COMPLETE",
+  "description": "Post-hoc unsupervised benign warmup quantile calibration and per-attack breakdown",
+  "reused_predictions": "comparison_gpu4_reuse_v1, mixstyle_posthoc_2026-11-09",
+  "warmup_k": [
+    200,
+    500,
+    1000
+  ],
+  "target_far_budgets": [
+    100,
+    500,
+    1000,
+    2000
+  ],
+  "zero_retraining": true,
+  "zero_target_attack_labels": true
+}

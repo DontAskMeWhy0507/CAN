@@ -1,0 +1,74 @@
+{
+  "date": "2026-11-04",
+  "software_tests": {
+    "passed": 17,
+    "seconds": 5.87,
+    "scope": "Synthetic protocol and integration checks; not research performance"
+  },
+  "notebook_schema_and_code_syntax": "6 notebooks PASS",
+  "byte_compilation": "PASS",
+  "code_sha256": {
+    "__init__.py": "aae8e24b63df89921a7134bc27b18630bfdebc8d6e1e06146520c14f217c8cdf",
+    "adapters.py": "d4975b8cb546270a8860334de62093b55500fc6f87e9225a6cbae6e278407737",
+    "data.py": "a738f4bfaa75da9c5a8385ecbd4434360955c1ccbd7437abb5b6aa2da87b2baa",
+    "experiment.py": "b5158f6be247066e5dd74f723beb7f9ecc40fcec445e509882dc3058c1c1e823",
+    "features.py": "c89fefe7f6e3d4ded7544637a796b6239516c497434cc782cf8edaeb8513224a",
+    "io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+    "metrics.py": "3c9d44cfab854d47ee135a364b69eca9a438cbc260f1730156de865559d43e0a",
+    "models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+    "preflight.py": "1555c743abd340f63c265cf45b02b437eac307a9d237acd0a69224c1c59db843",
+    "preprocess.py": "5b02d5554f39fed0da62e4093d8a04a95454b6038e2833798e79cc5350366149",
+    "structural.py": "970ba43bb6f7019f94c40b3d14c8f576d7d66ffdbe33d2b50e78bd0772369cf0"
+  },
+  "dataset_inventory": {
+    "scope": "First 128 frames only; does not certify complete chronology, labels or payloads.",
+    "files": 293,
+    "failures": 0,
+    "counts_by_dataset": {
+      "CTT": 236,
+      "CAN_MIRGU_attack": 36,
+      "CAN_MIRGU_benign": 12,
+      "CICIoV2024": 5,
+      "Opel_Astra_benign": 1,
+      "Opel_Astra_DoS": 1,
+      "Renault_Clio_benign": 1,
+      "Renault_Clio_DoS": 1
+    }
+  },
+  "full_file_checks": [
+    "4 Automotive v2 traces",
+    "24951 aligned CICIoV SPEED rows; 4989 byte mismatches; quarantined"
+  ],
+  "bibliography": "18 entries; bilingual citation/label/section parity PASS; five published rows checked against arXiv v1 appendix",
+  "pdfs": [
+    {
+      "language": "vi",
+      "pages": 46,
+      "sha256": "6db957f5cd9f3c80f8bd1ae6fe03b1de4e88ccebac3b101e2e1a4ed0a0c57665",
+      "unresolved_references": false,
+      "overfull_boxes": false,
+      "missing_characters": false,
+      "modal_times_font_pdf_points": 12.95,
+      "visual_review": "All pages inspected in contact sheets; changed pages rerendered and checked."
+    },
+    {
+      "language": "en",
+      "pages": 46,
+      "sha256": "8f707f392637fced6c92828e402bedb4e9424bb7a197d5fd3487be388dc4b291",
+      "unresolved_references": false,
+      "overfull_boxes": false,
+      "missing_characters": false,
+      "modal_times_font_pdf_points": 12.95,
+      "visual_review": "All pages inspected in contact sheets; changed pages rerendered and checked."
+    }
+  ],
+  "confirmatory_model_runs": "NOT_RUN; execute RERUN_GUIDE_VI.md",
+  "remaining": [
+    "Full-file preflight of all eligible datasets",
+    "Four sets and three seeds; primary and ablation configurations",
+    "Frozen probes; paired uncertainty; content-tier external tests; sensitivity",
+    "Canonical CICIoV SPEED export and OTIDS label/chronology provenance",
+    "Faithful closest-work baseline if claiming quantitative superiority",
+    "Current cohort rubric and final author review"
+  ]
+}

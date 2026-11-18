@@ -1,0 +1,38 @@
+[
+  {
+    "target": "Traverse",
+    "seed": 42,
+    "method": "frozen_source",
+    "balanced_accuracy": 0.938125,
+    "n_iter": 81,
+    "training_loss": 0.001595166287088677,
+    "warnings": []
+  },
+  {
+    "target": "Traverse",
+    "seed": 42,
+    "method": "white_leace_lr",
+    "balanced_accuracy": 0.5687500000000001,
+    "n_iter": 366,
+    "training_loss": 0.0041655593521999455,
+    "warnings": []
+  },
+  {
+    "target": "Traverse",
+    "seed": 42,
+    "method": "white_pca8_lr",
+    "balanced_accuracy": 0.4912500000000001,
+    "n_iter": 705,
+    "training_loss": 0.360345850787434,
+    "warnings": []
+  },
+  {
+    "target": "Traverse",
+    "seed": 42,
+    "method": "white_inlp8_lr",
+    "balanced_accuracy": 0.361875,
+    "n_iter": 1279,
+    "training_loss": 0.15469473195312458,
+    "warnings": []
+  }
+]

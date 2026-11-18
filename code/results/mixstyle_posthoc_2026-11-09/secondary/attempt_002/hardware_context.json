@@ -1,0 +1,7 @@
+{
+  "before_measurement": "NVIDIA GeForce RTX 5060, 621.14, 2 %, 963 MiB, 6934 MiB",
+  "torch": "2.11.0+cu128",
+  "numpy": "2.4.6",
+  "pandas": "3.1.0",
+  "note": "Shared Windows desktop; timing is descriptive, not a controlled automotive deadline measurement."
+}

@@ -1,0 +1,39 @@
+{
+  "status": "THESIS_READY_FOR_SUPERVISOR_REVIEW",
+  "analysis_code_sha256": "fc6e82edb6493e4fe87e8be9e50f42429c5826b0c523c815cdb3babf3924ac1d",
+  "model_cells": 168,
+  "new_fits": 144,
+  "reused": 24,
+  "external_coverage": {
+    "COMPLETE": 57,
+    "EXCLUDED": 2,
+    "QUARANTINED": 1
+  },
+  "pdfs": "F:\\00_Research\\code\\output\\thesis_completion_2026-11-09",
+  "remaining": "Supervisor academic review, faculty template/rubric confirmation; no guarantee of publication, vehicle invariance or ECU real-time readiness.",
+  "visual_review": {
+    "vi_physical_pages": [
+      5,
+      59,
+      62,
+      63
+    ],
+    "en_physical_pages": [
+      63,
+      64
+    ],
+    "scope": "Selected new tables, abstracts and interpretation pages reviewed; both complete PDFs rendered; no overfull-box warnings in final builds."
+  },
+  "pdfs_verified": {
+    "vi": {
+      "path": "F:\\00_Research\\code\\output\\thesis_completion_2026-11-09\\vi\\main.pdf",
+      "sha256": "19085f93a4bce2052a6875c6ef6f20551597221273bbf8b152b2c3f49781c883",
+      "pages": 77
+    },
+    "en": {
+      "path": "F:\\00_Research\\code\\output\\thesis_completion_2026-11-09\\en\\main.pdf",
+      "sha256": "46ab91b381e9743485ea8fd6bf933fa45ee682c55ef7dc278a1682e1ef046c23",
+      "pages": 77
+    }
+  }
+}

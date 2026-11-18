@@ -1,0 +1,118 @@
+KẾT QUẢ NGHIÊN CỨU ĐA NGUỒN VÀ ĐỐI KHÁNG XE
+Bàn giao ngày 11/11/2026 — thí nghiệm hoàn thành ngày 10/11/2026
+
+KẾT LUẬN CHÍNH
+Đã hoàn tất 48 lượt huấn luyện, đánh giá trên xe giữ ngoài và 576 ô probe.
+Cấu hình đối kháng được thử chỉ giảm nhẹ khả năng giải mã danh tính xe;
+chưa đạt mục tiêu biểu diễn độc lập xe. Giảm FAR trung bình đi kèm giảm nhẹ
+recall và AP. Không có cơ sở gọi đây là lời giải độc lập xe hoặc IDS sẵn sàng
+triển khai. Kết quả này giới hạn cấu hình đã thử, không chứng minh mọi phương
+pháp đối kháng hoặc mọi mức lambda đều thất bại.
+
+THIẾT KẾ ĐÃ THỰC CHẠY
+- Bốn phép giữ ngoài toàn bộ một xe: Impala, Traverse, Silverado, Forester.
+- Mỗi phép học từ ba xe còn lại; seed 42/43/44; bốn phương pháp; tổng48 fit.
+- Raw; Structural; Structural + đối kháng có điều kiện theo nhãn nhị phân;
+  Structural bỏ tám byte payload tuyệt đối + cùng cơ chế đối kháng.
+- Mỗi batch cân bằng ba xe nguồn × hai nhãn; epoch10 cố định, lambda tăng
+  tới xấp xỉ0.1; cùng ngân sách mẫu và cấu hình tối ưu cho các đối chứng.
+- Encoder/score đóng băng; ngưỡng tối đa recall trên validation nguồn với
+  FAR quan sát không quá100/100000 cửa sổ lành. Không hiệu chuẩn bằng xe đích.
+- W64 không chồng lặp, content-only, lịch sử theo thứ tự file cung cấp.
+- 162 capture duy nhất, 1.983.385 cửa sổ xe đích phân biệt trong bốn fold.
+  Loại 12 hash mâu thuẫn danh tính xe, tương ứng24 đường dẫn. Danh tính còn
+  lại theo metadata bộ dữ liệu; kiểm toán này không chứng minh nguồn gốc vật lý
+  của mọi trace hoặc tính độc lập giữa các chuyến lái.
+- Lần float16 ban đầu dừng trước fit đầu tiên hoàn tất do tràn gradient;
+  toàn bộ ma trận kết quả hiện hành dùng bfloat16, tham số float32.
+- Đánh giá theo nhóm chỉ tối ưu đọc đĩa. Kiểm thử so với đánh giá tuần tự
+  xác nhận cùng dự đoán, ngưỡng và metric trên fixture; kiểm tra score trên
+  mẫu nguồn của từng checkpoint xác nhận sao chép input không làm đổi score.
+
+KẾT QUẢ TRUNG BÌNH (seed trong xe, rồi trọng số ngang nhau giữa bốn xe)
+Phương pháp                 Recall%   FAR%     AP       F1       Probe xe LR%  Probe xe MLP%
+Raw                          78.85    69.84    0.2196   0.2182       99.74          99.47
+Structural                   72.11    37.02    0.6020   0.4073       94.49          93.89
+Structural + đối kháng       71.61    31.97    0.5970   0.4254       93.22          92.36
+Bỏ payload + đối kháng       65.79    29.72    0.5764   0.4148       94.74          93.96
+
+DIỄN GIẢI SO VỚI STRUCTURAL ĐA NGUỒN
+Structural + đối kháng:
+- Probe xe tuyến tính giảm1.27 điểm phần trăm; probe MLP giảm1.54 điểm phần
+  trăm (tính từ số liệu đầy đủ trước làm tròn), vẫn rất xa mức cơ hội25%.
+- FAR giảm5.05 điểm phần trăm; recall giảm0.49 điểm phần trăm.
+- AP giảm0.00497; F1 tăng0.01809. Đây là đánh đổi tại ngưỡng nguồn.
+- Attack probe tuyến tính tăng từ80.47% lên81.11%; MLP từ80.14% lên80.63%.
+  Vì vậy phép đo không cho thấy mất toàn bộ tín hiệu tấn công; đồng thời
+  thông tin danh tính xe vẫn còn dễ giải mã.
+
+Bỏ payload + đối kháng:
+- FAR thấp hơn nhưng recall giảm thêm; probe xe không giảm so với Structural.
+- Không có bằng chứng chỉ bỏ payload tuyệt đối là đủ loại thông tin xe.
+  Xác định thông tin còn nằm ở nhóm feature nào cần đối chứng riêng; không
+  suy nguyên nhân duy nhất từ bảng này.
+
+KHÁC BIỆT THEO XE — STRUCTURAL + ĐỐI KHÁNG
+Xe giữ ngoài       Recall%     FAR%
+Impala               54.26       0.4727
+Traverse             51.35       0.0584
+Silverado            85.46      47.4573
+Forester             95.40      79.9097
+FAR vẫn rất cao trên Silverado và Forester. Recall cao trên hai xe đó
+không thể được diễn giải riêng thành thành công triển khai. Các trung bình
+và độ lệch chuẩn ba seed được báo đầy đủ trong per_vehicle_results.csv.
+
+GIỚI HẠN VÀ CẢNH BÁO PROBE
+- Đây là nghiên cứu hậu nghiệm trên bốn xe đã được dùng khi phát triển bài;
+  không phải xác nhận độc lập trên xe mới. Không so trực tiếp các con số này
+  với A/B/C/D hoặc probe94.88% cũ: dữ liệu train và phép đo probe đã khác.
+- Mức cơ hội vehicle probe25%; attack probe50%. Probe-train và probe-test
+  tách recording-round, nhưng encoder đã thấy các capture probe-train của
+  nguồn và chưa xác minh các chuyến lái độc lập. Nhãn xe đích chỉ dùng cho
+  chẩn đoán sau khi encoder đóng băng, không dùng để huấn luyện IDS.
+- 98/576 ô probe có cảnh báo MLP chưa hội tụ trong200 vòng: 85 ô hoán vị,
+  12 ô attack learned và1 ô vehicle learned. Ô vehicle learned đó là
+  Structural + đối kháng, giữ ngoài Traverse, seed43, BA92.3125%.
+  Không tăng số vòng hoặc chọn lại seed sau khi thấy kết quả. Các điểm MLP
+  được diễn giải trong ngân sách tối ưu này, không là bộ giải mã tối ưu.
+- Control hằng đúng mức cơ hội. Control hoán vị không đồng loạt sát cơ hội:
+  vehicle LR của Raw có trung bình33.13%. Không tuyên bố mọi control đã
+  hoàn hảo; cần nhiều phép hoán vị/nhóm phiên độc lập nếu nghiên cứu sâu hơn.
+  Điều này không biến probe learned trên92% thành bằng chứng độc lập xe.
+- Bốn xe và ba seed không tạo12 xe độc lập. Bootstrap theo capture chỉ mô
+  tả bất định có điều kiện; không là CI cho quần thể xe. Căn chỉnh theo nhãn
+  bình thường/tấn công cũng chưa cân bằng phân bố từng attack family.
+- PyTorch cảnh báo attention backward không bảo đảm tái lập từng bit;
+  seed, phiên bản thư viện và nguồn chương trình đã được lưu.
+
+KIỂM CHỨNG SAU CHẠY
+INDEPENDENT_AUDIT.json: PASS. Đây là kiểm tra độc lập với bước ghi bảng,
+không phải một hội đồng phản biện hoặc một lần tái huấn luyện độc lập.
+- Đối chiếu hash của48 checkpoint và các artifact trong manifest cuối.
+- Kiểm tra3024 tệp dự đoán, nhãn, số cửa sổ và tính lại metric từ score.
+- Tính lại48 ngưỡng từ validation nguồn; FAR nguồn lớn nhất99.8666/100000.
+- Xác nhận cùng mẫu số test giữa các mô hình, xe đích không lọt vào train/
+  validation, các hash mâu thuẫn đã được loại, đủ576 ô probe.
+- Kiểm chứng tính toàn vẹn không đồng nghĩa xác nhận chất lượng tổng quát hóa.
+
+CÁCH DIỄN ĐẠT PHÙ HỢP TRONG KHÓA LUẬN
+"Trong đánh giá hậu nghiệm đa nguồn với một xe được giữ ngoài, điều chuẩn
+đối kháng theo lớp làm giảm nhẹ khả năng giải mã danh tính xe và giảm FAR
+trung bình so với Structural Transformer. Tuy nhiên, khả năng giải mã xe
+vẫn cao ở cả probe tuyến tính và phi tuyến, trong khi recall trung bình
+không tăng. Kết quả chưa ủng hộ mục tiêu độc lập đặc thù xe của cấu hình
+được khảo sát và cho thấy đánh đổi giữa phát hiện và báo động giả còn phụ
+thuộc mạnh vào xe đích."
+
+TỆP BÀN GIAO
+- summary.csv; per_vehicle_results.csv; all_metrics.csv: metric đầy đủ.
+- probe_summary.csv; all_probes.csv: probe và cảnh báo từng ô.
+- paired_capture_bootstrap.csv: chênh lệch ghép cặp với Structural.
+- fits/:48 checkpoint, ngưỡng, log huấn luyện, score và embedding probe.
+- frozen_protocol.json; provenance/:cấu hình, hash và mã nguồn thực chạy.
+- vehicle_identity_exclusions.json:chi tiết loại trừ danh tính mâu thuẫn.
+- INDEPENDENT_AUDIT.json:đối chiếu score, threshold và tính toàn vẹn.
+- Mã chạy: code/scripts/run_multisource_lovo.py;
+  code/scripts/evaluate_multisource_grouped.py;
+  code/scripts/audit_multisource_results.py.
+Nguồn khóa luận không được tự cập nhật bằng những kết quả này.

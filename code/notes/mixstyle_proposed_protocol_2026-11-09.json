@@ -1,0 +1,56 @@
+{
+  "status": "PROPOSED_NOT_IMPLEMENTED_NOT_RUN",
+  "study": "posthoc_structural_temporal_same_label_mixstyle_v1",
+  "post_hoc": true,
+  "target_data_used_for_training_or_calibration": false,
+  "original_primary_result_preserved": true,
+  "candidate_count": 1,
+  "sets": ["set_01", "set_02", "set_03", "set_04"],
+  "seeds": [42, 43, 44],
+  "new_fits": 12,
+  "reused_baselines": 24,
+  "representation": "structural_content_order_30",
+  "window_size": 64,
+  "sampling": "reuse_verified_original_source_window_indices",
+  "model": "CANTransformer_current_architecture",
+  "mixstyle": {
+    "placement": "after_input_projection_before_positional_embedding",
+    "statistics_axis": "within_window_frame_axis",
+    "pairing": "permutation_within_binary_source_label; self_pairs_unchanged",
+    "singleton": "identity",
+    "probability": 0.5,
+    "beta_alpha": 0.1,
+    "epsilon": 1e-6,
+    "variance_correction": 0,
+    "detach_statistics": true,
+    "evaluation": "identity_without_labels",
+    "interpretation": "CAN_adaptation_hypothesis_not_original_paper_reproduction"
+  },
+  "training": {
+    "epochs": 10,
+    "batch_size": 128,
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "scheduler": "CosineAnnealingLR",
+    "loss": "CrossEntropyLoss",
+    "preferred_device": "cuda",
+    "hyperparameter_search": false
+  },
+  "threshold": {
+    "data": "full_unrebalanced_source_validation",
+    "policy": "choose_threshold_on_validation",
+    "far_budget_per_100k": 100.0
+  },
+  "evaluation": {
+    "conditions": ["A", "B", "C", "D"],
+    "primary": "Recall_W64_B",
+    "required_companion": "FAR_per_100k",
+    "secondary": ["AP", "Attack_F1", "vehicle_probe", "runtime"],
+    "aggregation": "mean_seeds_within_set_then_equal_mean_sets",
+    "uncertainty": "seed_variation_separate_from_paired_capture_bootstrap",
+    "external": "report_successes_and_failures_without_selection",
+    "improvement_claim": "specify_baseline_and_both_recall_and_FAR_direction",
+    "independent_confirmation": "requires_new_unseen_vehicle_or_recording_sessions"
+  }
+}

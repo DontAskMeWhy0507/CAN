@@ -1,0 +1,10 @@
+{
+  "notebook": "F:\\00_Research\\code\\notebooks\\09_assoc_cpu_acceleration.ipynb",
+  "status": "COMPLETE",
+  "pid": 7988,
+  "started_utc": "2026-11-08T06:02:41.171159+00:00",
+  "cell": 8,
+  "heartbeat_utc": "2026-11-08T13:56:10.692558+00:00",
+  "cell_source_preview": "# \u0110\u1ee3i notebook GPU ho\u00e0n t\u1ea5t tr\u01b0\u1edbc khi g\u1ed9p; l\u1ed7i GPU \u0111\u01b0\u1ee3c b\u00e1o r\u00f5.\nimport time,json\nGPU_STATUS=CODE/'notebooks/07_gpu_four_models_executed.execution.json'\nwhile True:\n    state=json.l",
+  "finished_utc": "2026-11-08T13:56:10.692558+00:00"
+}

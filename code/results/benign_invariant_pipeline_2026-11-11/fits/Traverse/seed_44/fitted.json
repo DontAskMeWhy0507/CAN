@@ -1,0 +1,140 @@
+{
+  "sha256": "93357da3b6359b6ac002d3462b95c005ee00b8253b91fc425c0739df8e85ed7a",
+  "target": 1,
+  "seed": 44,
+  "source_vehicles": [
+    0,
+    2,
+    3
+  ],
+  "training_tokens": [
+    "106a03f9dd85904987ca86d8",
+    "7b5f2ed05b54d5b4c525c62f",
+    "e5b1bfbfa5d8b113cf7ac5e6",
+    "deef77bd5d91a02d3be074f6",
+    "50303beb7b33cc6eb8984148",
+    "5f51e0d73c20730ce1ad7703",
+    "00b86f265257e2a13c335350",
+    "c591eccc1c43b1662e7a2c58",
+    "b9d544f8489c61e480313aa9",
+    "ff904317f2c156fddb78af27",
+    "4dcf891acbdcd859378b8fd6",
+    "4531cbb84308cb1bd1b7a6cc",
+    "be33d3c5b9a9a399765cd0ad",
+    "6d68c1c4679b97b0b2ec1f75",
+    "9fcc4d19dc52def6fb01c406",
+    "1fbc8440d281d38d4d2c4944",
+    "52d4eebf36d25e64143b06bf",
+    "cd54bb7c39686d4e43354434",
+    "9e7794f418566e70d0817be7",
+    "6a8178d76e081ae6762f2f44",
+    "1ef20e634252b56db0d8c8ed",
+    "5187a1ad214ecaeb99aa3c55"
+  ],
+  "training_windows": 24924,
+  "warnings": [],
+  "thresholds": {
+    "frozen_source": {
+      "0.01": 0.6451199054718018,
+      "0.001": 0.6451199054718018
+    },
+    "frozen_targetq": {
+      "0.01": 0.002511463593691588,
+      "0.001": 0.11008787900209428
+    },
+    "lr_targetq": {
+      "0.01": -5.876360555303683,
+      "0.001": -2.01213952474091
+    },
+    "diag_lr": {
+      "0.01": -4.7465712063154575,
+      "0.001": 0.2524894839076544
+    },
+    "white_lr": {
+      "0.01": -3.5950244397180398,
+      "0.001": 3.240752006518218
+    },
+    "white_leace_lr": {
+      "0.01": -4.2890277007851285,
+      "0.001": 3.4689631889418124
+    },
+    "white_pca8_lr": {
+      "0.01": -3.633196891494387,
+      "0.001": 1.04353629005405
+    },
+    "white_inlp8_lr": {
+      "0.01": -0.7389951889474452,
+      "0.001": 2.8921799875658345
+    }
+  },
+  "projection_details": {
+    "white_leace_lr": {
+      "removed_rank": 4,
+      "cross_covariance_before": 3.8810347790436515,
+      "cross_covariance_after": 1.3390394765328673e-13
+    },
+    "white_pca8_lr": {},
+    "white_inlp8_lr": {
+      "dimensions": 8,
+      "log": [
+        {
+          "iteration": 1,
+          "remaining": 60
+        },
+        {
+          "iteration": 2,
+          "remaining": 56
+        },
+        {
+          "iteration": 3,
+          "remaining": 52
+        },
+        {
+          "iteration": 4,
+          "remaining": 48
+        },
+        {
+          "iteration": 5,
+          "remaining": 44
+        },
+        {
+          "iteration": 6,
+          "remaining": 40
+        },
+        {
+          "iteration": 7,
+          "remaining": 36
+        },
+        {
+          "iteration": 8,
+          "remaining": 32
+        },
+        {
+          "iteration": 9,
+          "remaining": 28
+        },
+        {
+          "iteration": 10,
+          "remaining": 24
+        },
+        {
+          "iteration": 11,
+          "remaining": 20
+        },
+        {
+          "iteration": 12,
+          "remaining": 16
+        },
+        {
+          "iteration": 13,
+          "remaining": 12
+        },
+        {
+          "iteration": 14,
+          "remaining": 8
+        }
+      ],
+      "source_fit_samples": 1200
+    }
+  }
+}

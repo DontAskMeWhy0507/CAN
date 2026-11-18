@@ -1,0 +1,38 @@
+[
+  {
+    "target": "Forester",
+    "seed": 43,
+    "method": "frozen_source",
+    "balanced_accuracy": 0.934375,
+    "n_iter": 99,
+    "training_loss": 0.0013627214802044876,
+    "warnings": []
+  },
+  {
+    "target": "Forester",
+    "seed": 43,
+    "method": "white_leace_lr",
+    "balanced_accuracy": 0.5625,
+    "n_iter": 298,
+    "training_loss": 0.004497926416431489,
+    "warnings": []
+  },
+  {
+    "target": "Forester",
+    "seed": 43,
+    "method": "white_pca8_lr",
+    "balanced_accuracy": 0.51,
+    "n_iter": 864,
+    "training_loss": 0.2753752681646819,
+    "warnings": []
+  },
+  {
+    "target": "Forester",
+    "seed": 43,
+    "method": "white_inlp8_lr",
+    "balanced_accuracy": 0.4462499999999999,
+    "n_iter": 807,
+    "training_loss": 0.39025435500732564,
+    "warnings": []
+  }
+]

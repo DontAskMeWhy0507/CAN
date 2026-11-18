@@ -1,0 +1,92 @@
+{
+  "status": "COMPLETE",
+  "signature": {
+    "config": {
+      "protocol": "ctt-content-order-comparison-v1",
+      "tier": "content",
+      "sets": [
+        "set_01"
+      ],
+      "seeds": [
+        42
+      ],
+      "methods": [
+        "assoc_rules_crysys"
+      ],
+      "window_size": 64,
+      "sampling_seed": 20261103,
+      "train_windows_per_class_per_file": 2,
+      "epochs": 1,
+      "batch_size": 128,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "cpu_threads": 4,
+      "far_budget_per_100k": 100.0,
+      "eval_batch_windows": 128,
+      "bert_hidden": 12,
+      "bert_layers": 2,
+      "bert_heads": 4,
+      "bert_batch_size": 4,
+      "bert_pretrain_epochs": 1,
+      "bert_finetune_epochs": 1,
+      "canlp_epochs": 1,
+      "assoc_params": {
+        "k_cla": 2,
+        "n_knn": 2,
+        "n_centroid_clusters": 2,
+        "n_bound_bins": 2
+      },
+      "save_frame_scores": true
+    },
+    "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+    "code": {
+      "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+      "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+      "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+      "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+      "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+      "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+      "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+      "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+      "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+      "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+      "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+      "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f",
+      "acceleration/assoc.py": "63549407f5b038b17f10f4a6b4bc065d5b8eaa4e4ebb647c41a3dc27a58897f3",
+      "acceleration/__init__.py": "8fee6659ca20462c07d97ab900fb799e272732a0a3dbd0091c2c7c95be8772ed",
+      "scripts/run_comparison_fast.py": "220386b20a375331ee1f0d7e3ca8b8784b269ab531cf1346a40fbaad8d1c8629"
+    },
+    "environment": {
+      "python": "3.11.15",
+      "packages": {
+        "torch": "2.11.0+cu128",
+        "numpy": "2.4.6",
+        "pandas": "3.1.0",
+        "scipy": "1.17.1",
+        "scikit-learn": "1.9.1"
+      },
+      "device": "NVIDIA GeForce RTX 5060"
+    },
+    "set": "set_01",
+    "software_validation_only": true,
+    "seed": 42,
+    "method": "assoc_rules_crysys"
+  },
+  "method": "assoc_rules_crysys",
+  "software_validation_only": true,
+  "artifact_hashes": {
+    "calibration.json": "796fe23cf64a668dc8046a92c4d3e8a7435174cd908920b957f1c467d981d89f",
+    "checkpoint.pt": "70a886e12863b7d3089b51c5655b9750c86b121d7644b0b7d2afe19dae62d568",
+    "coverage.csv": "02969da7b59363510b1a3ae2e01b9c115378d6be933516bf864f27d234ba26f9",
+    "metrics.csv": "ee8a070a9167140c10235d2b669355e1d57711083c6061cf9c114c91660b1642",
+    "predictions/validation/39cc381a9b2384d5.csv.gz": "d829c8cfb151320ce5f118b2a6f5de259f61c21433e6dd04d5857db0f87ed02c",
+    "predictions/validation/3b9abc3c32e0b6c5.csv.gz": "801b6f7c6ef385bf64c7976bd82b25a5c2407e23bc3c35e803bf9d2f9168d642",
+    "predictions/validation/3ca4d160d15515c7.csv.gz": "83ff5989f4788e4ae18f0b4c3a2879f33b23a269600ec19420ed5ea2058562e3",
+    "predictions/validation/66e6b834b0e341d4.csv.gz": "4193a1bce91e862bc2f2a47781272d12e89806e12c3125aa8e970300a1353bc1",
+    "predictions/validation/7ed04b9daf22136b.csv.gz": "55212dcf3057ce8de27fad49214c5d39fd81c220dcb485d72f53e6c97d208208",
+    "predictions/validation/9426a7748acf008d.csv.gz": "580961fad3a0d1b6dcb46ada4c658b4b5b948c914fb1cf75774831d2573730da",
+    "selected_source_windows.json": "954b69ebdd375d6ef3dcfb0014dcceeced4be02dee6ad830bda8917f63b06294",
+    "split.json": "da120244a259955aa0824d59006df00d2306ab2cd82bc56e77695bacc22c8655",
+    "training.json": "4b58624b4cd97a97d58fa48fdbd0dc011f1bf7ea43fd1eba6379fc06894b70eb"
+  }
+}

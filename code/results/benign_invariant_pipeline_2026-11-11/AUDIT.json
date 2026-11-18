@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "pipeline_fits": 96,
+  "capture_metric_checks": 15168,
+  "calibration_windows_per_threshold": 1000,
+  "max_calibration_far": 0.009,
+  "probe_warning_count": 133,
+  "checks": [
+    "frozen code signatures",
+    "parent manifest unchanged",
+    "capture embargo",
+    "normalization/threshold index separation",
+    "balanced record-disjoint probes",
+    "probe calibration-content exclusion",
+    "source-only fit metadata",
+    "threshold order statistics",
+    "raw-score/risk decision equivalence",
+    "frozen baseline predictions equal parent",
+    "content exclusion masks",
+    "confusion counts",
+    "aggregate recall/FAR/F1/AP/AP-risk"
+  ],
+  "limitations": [
+    "This recomputation is not an external reviewer.",
+    "Recorded driving-session independence remains unverified.",
+    "Probe failure to decode would not establish statistical independence."
+  ]
+}

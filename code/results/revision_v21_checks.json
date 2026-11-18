@@ -1,0 +1,265 @@
+{
+  "checked_at": "2026-11-06",
+  "timezone": "Asia/Bangkok",
+  "protocol": "can-thesis-v2.1",
+  "status": "IMPLEMENTATION_AND_DRAFT_READY_FOR_CONFIRMATORY_RUNS",
+  "scope": "Shared implementation, six notebooks, reproducibility workflow, bilingual six-chapter thesis and references. This is not certification of research performance, faculty acceptance or journal readiness.",
+  "software_validation": {
+    "pytest": {
+      "command": ".venv/Scripts/python.exe -m pytest -q",
+      "status": "PASS",
+      "passed": 28,
+      "elapsed_seconds": 43.78,
+      "note": "Completed during this revision. Subsequent edits concerned manuscript layout, documentation and packaging; scientific modules and tests were unchanged."
+    },
+    "syntax": {
+      "status": "PASS",
+      "python_files": 31
+    },
+    "notebooks": {
+      "status": "PASS",
+      "nbformat_validated": 6,
+      "all_unexecuted": true
+    },
+    "coverage": [
+      "chunk/file-order-invariant source sampling",
+      "timestamp/DLC validation",
+      "feature definitions and ablations",
+      "threshold and denominator handling",
+      "paired recall/FAR/F1 bootstrap",
+      "frozen probe controls",
+      "preflight completeness and changed-data rejection",
+      "summary matrix completeness, integrity, duplicate detection and equal-set aggregation"
+    ],
+    "environment": {
+      "python": "3.11.15",
+      "platform": "Windows-10-10.0.26300-SP0",
+      "packages": {
+        "numpy": "2.4.6",
+        "pandas": "3.1.0",
+        "torch": "2.15.0",
+        "scikit-learn": "1.9.1",
+        "xgboost": "3.2.0",
+        "scipy": "1.17.1",
+        "joblib": "1.6.0",
+        "matplotlib": "3.11.2",
+        "pytest": "9.2.0",
+        "nbformat": "5.11.1"
+      },
+      "test_device": "CPU"
+    }
+  },
+  "manuscript_structure": {
+    "scope": "Standalone folder shape, citation/label/section parity, bibliography keys; translation meaning and visual layout require separate review.",
+    "bibliography_entries": 39,
+    "cited_unique": 39,
+    "uncited_keys": [],
+    "sections": 42,
+    "subsections": 7,
+    "status": "PASS"
+  },
+  "pdf_checks": [
+    {
+      "checked_at": "2026-11-06",
+      "language": "vi",
+      "source": "thesis/vi/main.tex",
+      "pdf": "code/output/thesis_compile_check/vi/main.pdf",
+      "pages": 57,
+      "sha256": "27dc2b8addc793d72d11d0841b1b5598b30e4cb61aa83f4356bbb359f908bab2",
+      "unresolved_references": false,
+      "overfull_boxes": false,
+      "missing_characters": false,
+      "off_page_words": [],
+      "visual_review": "All pages reviewed in rendered contact sheets; abstracts, vehicle mapping, feature and metric definitions, result tables and bibliography additionally inspected at readable scale. Changed pages were rendered and reviewed again after final layout corrections.",
+      "visual_defects_observed": [],
+      "build_warnings": [
+        "Underfull text/bibliography boxes remain; inspected visually.",
+        "Build uses locally installed Windows fonts.",
+        "Original logo ICC checksum warning; rendered logo inspected."
+      ],
+      "template_status": "Public UET formatting used provisionally; current-cohort rubric still requires author/supervisor confirmation."
+    },
+    {
+      "checked_at": "2026-11-06",
+      "language": "en",
+      "source": "thesis/en/main.tex",
+      "pdf": "code/output/thesis_compile_check/en/main.pdf",
+      "pages": 57,
+      "sha256": "aec3bf5403e3770919af0f5b38b1ad5508e1b63fedd8b32353e52909dd193bf2",
+      "unresolved_references": false,
+      "overfull_boxes": false,
+      "missing_characters": false,
+      "off_page_words": [],
+      "visual_review": "All pages reviewed in rendered contact sheets; abstracts, vehicle mapping, feature and metric definitions, result tables and bibliography additionally inspected at readable scale. Changed pages were rendered and reviewed again after final layout corrections.",
+      "visual_defects_observed": [],
+      "build_warnings": [
+        "Underfull text/bibliography boxes remain; inspected visually.",
+        "Build uses locally installed Windows fonts.",
+        "Original logo ICC checksum warning; rendered logo inspected."
+      ],
+      "template_status": "Public UET formatting used provisionally; current-cohort rubric still requires author/supervisor confirmation."
+    }
+  ],
+  "new_reference_verification": [
+    {
+      "key": "hanselmann2020canet",
+      "url": "https://arxiv.org/pdf/1906.02492",
+      "access": "Author full text; per-ID reconstruction architecture reviewed."
+    },
+    {
+      "key": "alkhatib2022canbert",
+      "url": "https://arxiv.org/html/2210.09439v1",
+      "access": "Author full text; masked-ID vocabulary assumptions reviewed."
+    },
+    {
+      "key": "won2026canbertplus",
+      "url": "https://www.usenix.org/system/files/vehiclesec26-won.pdf",
+      "access": "Official full text; especially Section 7.1 transfer limitations."
+    },
+    {
+      "key": "balasubramanian2025canlp",
+      "url": "https://donadelden.github.io/publication/balasubramanian-canlpnlp-journal-2025/",
+      "access": "Author abstract and publication metadata; no claim of an independently reproduced model."
+    },
+    {
+      "key": "jo2025indirect",
+      "url": "https://doi.org/10.1109/ACCESS.2025.3644944",
+      "access": "Publisher-indexed text and metadata; no retained full-text PDF or reproduction."
+    },
+    {
+      "key": "hoang2022supcon",
+      "url": "https://arxiv.org/abs/2207.10814",
+      "access": "Author abstract; comparison limited to the stated contrastive/transfer approach."
+    },
+    {
+      "key": "ganin2016dann",
+      "url": "https://jmlr.org/papers/volume17/15-239/15-239.pdf",
+      "access": "Official full text; domain-adversarial objective and unlabeled-target requirement reviewed."
+    },
+    {
+      "key": "zhao2019invariant",
+      "url": "https://proceedings.mlr.press/v97/zhao19a.html",
+      "access": "Official PMLR publication page and abstract; invariant features do not alone establish transfer success."
+    }
+  ],
+  "source_access_limitations": [
+    "Jo-Kim 2026 remains limited to its accessible abstract; no claim that the full paper was read.",
+    "Bibliography/citation parity does not mean all 39 works were reproduced or fully read in this revision."
+  ],
+  "research_execution": {
+    "full_current_protocol_preflight": "NOT_RUN",
+    "confirmatory_model_runs": "NOT_RUN",
+    "planned_ids_fits": {
+      "primary": 48,
+      "ablation": 156,
+      "content": 9,
+      "window_32": 24,
+      "window_128": 24,
+      "total": 261
+    },
+    "downstream": [
+      "paired bootstrap A-D for primary",
+      "vehicle/attack probes and controls",
+      "complete summaries and figures"
+    ],
+    "runtime_benchmark": "IMPLEMENTED_NOT_MEASURED",
+    "historical_results": "Retained with explicit limitations; not protocol-v2.1 confirmation."
+  },
+  "remaining_user_actions_file": "VIEC_BAN_CAN_LAM.txt",
+  "remaining_evidence": [
+    "Complete planned preflight and study runs; update Chapter 5, both abstracts and conclusions from actual artifacts.",
+    "Confirm cohort template and registered title with supervisor.",
+    "Investigate capture/session provenance; four sets reuse four vehicles and have only three distinct target vehicles.",
+    "Keep excluded datasets excluded until canonical bytes/chronology/labels are verified.",
+    "Reproduce external methods under matched conditions before making superiority claims.",
+    "Measure processing speed on declared hardware if deployment claims are retained."
+  ],
+  "backups": [
+    "revision_backup/before_full_revision_2026-11-06.zip",
+    "revision_backup/notebooks_before_v21_2026-11-06.zip"
+  ],
+  "file_sha256": {
+    "code/configs/ablation.json": "a2d0fdacb0e3127281c88bc4ea84cfa3dc382dcd86f854422c8b6a8c1d715d0a",
+    "code/configs/content.json": "be602186e0483ae545add574398f7f7ee859455e0aacab426a193814b2bc3480",
+    "code/configs/external_datasets.json": "7d24b83e89137c0b16b8a2d200c821e549b98d380889f5ec011c83c67bece22d",
+    "code/configs/primary.json": "c575a074f96cc4bf80a74c657777bfe4f7c1ad521781a02a10a91126298364a1",
+    "code/configs/window_128.json": "d2222abcc6d67281717eb54b153ac4276d8ab32aa86a8ab385ac3e6e7c062f77",
+    "code/configs/window_32.json": "f62275837f4473bd2df341747b19b93bb76dd03fd8953d9f7ff08f3f0bb1542f",
+    "code/notebooks/02_shift_and_representation_analysis.ipynb": "01038c054e88538105593f56248f4ea9ce65d89fef0d0e706b9c5958e4affb09",
+    "code/notebooks/03_structural_id_agnostic_method.ipynb": "0542e78837fe4baa59e6d294b289c4d6c5392bebadd17e546125ad5e4ccf0283",
+    "code/notebooks/04_external_validation.ipynb": "3143f13098cb2d2aba2f07740aa7866eb9fe49fcd508dd07bab46774faefaaf1",
+    "code/notebooks/05_comparison_with_lampe2024.ipynb": "5bc9f6fccd2185f4eb5367ff80263df250100e33b46523412b26f889fb3b80a8",
+    "code/notebooks/can-train-and-test.ipynb": "c96cd29e096a6984bb83b23a4d7de8c78f978c77e2285c9797b9ac53988f4063",
+    "code/notebooks/Notebook.ipynb": "5ae4523df7a699113765e9a1d390fb6879c348d5ec1e48d2aedae678c8802c02",
+    "code/notes/REVISION_STATUS.csv": "bfd7ff85ef59cb4726b771505d5a6f6ccea5801e6bcbe166e161b1929a00f8bd",
+    "code/README.md": "a2162b3421a6f21ac0c33b00dac1a653a15f403df06b0a078fc2c5cfa94a879a",
+    "code/requirements-tested.txt": "2c2db5d1f2f68d713d838e50db615c1ea9fab2a8817dd927d4de983198e85ee8",
+    "code/requirements.txt": "0b823fbbfbbee63f4a79fdbbf84bed0bdedc687f3c90e6ce211086b07c0d74b6",
+    "code/run_baseline.py": "ecfc84b9ed6910a55c9b5d278991d00737ceb60bfa229077eb0d78e16fcacb4f",
+    "code/run_experiments.py": "6e5897b1f201364669708b2570f0f62804a0e389244ef31b7f8f247c1af30a20",
+    "code/scripts/audit_suspension_semantics.py": "54197010d24f713e579fa868f90a8e8dea9ef62675353b72b5fa6777b7fe9d11",
+    "code/scripts/benchmark_runtime.py": "140e0661a837f1e7da2c64f3f84e0d6c0a60533dd8fd38cc5f1a0ecc0e7d5027",
+    "code/scripts/check_manuscript.py": "3200ecc7f1bf6df12572fb12e432133e1cdc09145f2afc4dae50b0f5326007dd",
+    "code/scripts/inventory_data.py": "07459b0ac9b206f6c4e7fa3ffc42178b5026b547eba762c6c3eb42d88aedec98",
+    "code/scripts/package_revision.py": "abe479ec790f579fca75661f7d041ed84c062704c3ac7eda841cf9ec877b7e64",
+    "code/scripts/paired_analysis.py": "61891a54f36a3d8ed70f184bd8d4396d62f753f8551719931221ca9b522ccb9b",
+    "code/scripts/preflight.py": "a7d9ec30715b4d32f4b69f0dd9ca614abab92ed02bb712a375e41cfd846521f2",
+    "code/scripts/published_metric_audit.py": "5f3dd7c2f80c538ed2c37e64514435a09a1ced632fffc36ca97f96d1de952de2",
+    "code/scripts/rebuild_manuscript.py": "9bb6a68b8d0fb85a834e7e0dd7a97c29547ab13d1fafdef1425a0378b09c4c27",
+    "code/scripts/run_study.py": "65279efc2fd10c8bb5686a8bde5c1a0fe923faf372c2876426ac50a09e10517a",
+    "code/scripts/summarize_results.py": "26038b46c084141c083809491eafd9c7f75f81c05572034488f2620da02ef600",
+    "code/scripts/vehicle_probe.py": "e5d92a01a4c47b93b6cab4a073d6146bc04409428a85c82eb86f6e90d5bf6c62",
+    "code/scripts/verify_ciciov_representations.py": "a0caf369bdebc9958fdaa473759a1756726682e2a2222326dbd058dd0aa26daf",
+    "code/src/can_research/__init__.py": "b854c8c46b7a46647a6b9ea41a0ad7bd275508955acc4fea00422a0ed0e3d490",
+    "code/src/can_research/adapters.py": "d4975b8cb546270a8860334de62093b55500fc6f87e9225a6cbae6e278407737",
+    "code/src/can_research/data.py": "2845ccbc4192d48c315ac30ce6ee2bfc8387d7ce6ce3a1d0738b6f6bcf3955dd",
+    "code/src/can_research/experiment.py": "cb189b16e729a7c004253b238ebcc4c1efcef2d3e08b80d7a15e34d6e6e747dd",
+    "code/src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+    "code/src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+    "code/src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+    "code/src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+    "code/src/can_research/preflight.py": "4860a4853231e07d1304469a873edd0c6be1da1a546823ba530ef4508a2a1fba",
+    "code/src/can_research/preprocess.py": "4773ac6da7681d3237d3fd646b4ef36c7f64c40b4dab78c1ad946c33bf337d72",
+    "code/src/can_research/probes.py": "287437cfae1858eae0e497c4fe1033c662e32ec8d610012a47803f60de51a7f8",
+    "code/src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f",
+    "code/src/can_research/reporting.py": "2705c56c19f151ec79d3ce08f2b76b7370e26bcc7afd4cbcc37770b467fec2e5",
+    "code/src/can_research/structural.py": "970ba43bb6f7019f94c40b3d14c8f576d7d66ffdbe33d2b50e78bd0772369cf0",
+    "code/tests/test_protocol.py": "d66de805a84069abf3b133a58ad296843aa843494ab64e9cce59f063a2e32693",
+    "code/tests/test_revision_v21.py": "2fd8f5e3f84f102e02930b45aa0b0f2cd14ee03162cbaa3f1362ac343014e276",
+    "pytest.ini": "82678182117656825036083a96312fe5c5cc8468807c4ec3bf046f7785a64406",
+    "README.md": "8bfd4968741784064faaaf288e64caa2e03b7dff94cc5b82bf81086799bfbd23",
+    "RERUN_GUIDE_VI.md": "a995fc9bd44ea8b7bcb4d08263bacd76a3b5ef9baea4f6abf0d15ba8a375f425",
+    "thesis/en/main.tex": "7d4f32d1754458af0e7d3e1d2ed26da00a78bf0648f27086599c96a1d11ed702",
+    "thesis/en/refs.bib": "e66073761595f3a47e07dac7a911971d06631a8e8b1584463c9584df4e22eab2",
+    "thesis/vi/main.tex": "96e59e2b7cbdedb82e5362bba25b7efd2e3856da494916a365c46571edb76c2a",
+    "thesis/vi/refs.bib": "e66073761595f3a47e07dac7a911971d06631a8e8b1584463c9584df4e22eab2",
+    "VIEC_BAN_CAN_LAM.txt": "9c4fb72235042fd572854bc18c6448e3be0f60f1cb1964230c0a8510264e74a9",
+    "KE_HOACH_SO_SANH.txt": "254f9ebe3226380858b6245472d613d5c330d9330539e22513903f962baedcb2",
+    "code/notes/doi_thu_2026-11-06/comparison_plan.json": "0e184825740b92882c740594d15ead7bf0f4845c2b4fdaaa6d5932205287f49a"
+  },
+  "comparison_plan_update": {
+    "date": "2026-11-06",
+    "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+    "plan_file": "KE_HOACH_SO_SANH.txt",
+    "changed_files": [
+      {
+        "file": "code/scripts/package_revision.py",
+        "previous_sha256": "eee0b5b75131bedd6c971e8dd1962cde9e5a9d0f0c9dd95d4873e407614a203e",
+        "new_sha256": "abe479ec790f579fca75661f7d041ed84c062704c3ac7eda841cf9ec877b7e64"
+      },
+      {
+        "file": "RERUN_GUIDE_VI.md",
+        "previous_sha256": "0544acf9275f2a30bde70f1214b6eeffa3c253756d599508f8491da803162346",
+        "new_sha256": "a995fc9bd44ea8b7bcb4d08263bacd76a3b5ef9baea4f6abf0d15ba8a375f425"
+      },
+      {
+        "file": "VIEC_BAN_CAN_LAM.txt",
+        "previous_sha256": "4547adda777a54fdd4042227c7354c5559889e7d119ae155d451dcf56573bcde",
+        "new_sha256": "9c4fb72235042fd572854bc18c6448e3be0f60f1cb1964230c0a8510264e74a9"
+      }
+    ],
+    "backup": "revision_backup/before_comparison_plan_2026-11-06.zip",
+    "validation": "Documentation and packaging update only. Scientific modules, tests and PDFs unchanged; previous 28-test result retained, not rerun.",
+    "new_competitor_models_run": false
+  }
+}

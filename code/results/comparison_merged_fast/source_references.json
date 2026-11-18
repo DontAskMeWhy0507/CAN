@@ -1,0 +1,4926 @@
+[
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_01\\seed_42\\canbertplus\\attempt_001\\manifest.json",
+    "sha256": "d171b3860b4662bd6c4048d854f340dcbeb3fca6255b0e23c1e30e60d758d084",
+    "cell": [
+      "set_01",
+      42,
+      "canbertplus"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp",
+          "assoc_rules_crysys"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_01",
+      "software_validation_only": false,
+      "seed": 42,
+      "method": "canbertplus"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_01\\seed_42\\canlp\\attempt_001\\manifest.json",
+    "sha256": "2d5b90db883085a3c34e48c6f6b8f5a9621f3e71d76884beadc203e72f1ab01c",
+    "cell": [
+      "set_01",
+      42,
+      "canlp"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp",
+          "assoc_rules_crysys"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_01",
+      "software_validation_only": false,
+      "seed": 42,
+      "method": "canlp"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_01\\seed_42\\raw_transformer\\attempt_001\\manifest.json",
+    "sha256": "2ff97227e9a45f411a2aff33ef0b3cebd330a8c4af57498b1c1495af926fb716",
+    "cell": [
+      "set_01",
+      42,
+      "raw_transformer"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp",
+          "assoc_rules_crysys"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_01",
+      "software_validation_only": false,
+      "seed": 42,
+      "method": "raw_transformer"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_01\\seed_42\\structural_transformer\\attempt_001\\manifest.json",
+    "sha256": "931f18b559d9e8a6301125e9ea30391493fba1d889ce5eddc04cd6a56ffffdbc",
+    "cell": [
+      "set_01",
+      42,
+      "structural_transformer"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp",
+          "assoc_rules_crysys"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_01",
+      "software_validation_only": false,
+      "seed": 42,
+      "method": "structural_transformer"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_01\\seed_43\\canbertplus\\attempt_001\\manifest.json",
+    "sha256": "7b396a09c92e8a99692cda967de438c565c966dec8bb1402e6c4a3f4f459ac6e",
+    "cell": [
+      "set_01",
+      43,
+      "canbertplus"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_01",
+      "software_validation_only": false,
+      "seed": 43,
+      "method": "canbertplus"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_01\\seed_43\\canlp\\attempt_001\\manifest.json",
+    "sha256": "cea2787a09fd3f3a1e9905e9457fc145c813971b2892d54275d0e0c5dbd4855f",
+    "cell": [
+      "set_01",
+      43,
+      "canlp"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_01",
+      "software_validation_only": false,
+      "seed": 43,
+      "method": "canlp"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_01\\seed_43\\raw_transformer\\attempt_001\\manifest.json",
+    "sha256": "7fab00293049cc83ef5e37449d42662bee2c38f0a3b4030f48aa2e4f1769b819",
+    "cell": [
+      "set_01",
+      43,
+      "raw_transformer"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_01",
+      "software_validation_only": false,
+      "seed": 43,
+      "method": "raw_transformer"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_01\\seed_43\\structural_transformer\\attempt_001\\manifest.json",
+    "sha256": "df0048d3ee749077e54f703edda0837b4b8b610d3bab97e91b79f5097394509e",
+    "cell": [
+      "set_01",
+      43,
+      "structural_transformer"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_01",
+      "software_validation_only": false,
+      "seed": 43,
+      "method": "structural_transformer"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_01\\seed_44\\canbertplus\\attempt_001\\manifest.json",
+    "sha256": "0c6f85e8e530e9dbbc53c5b2a2a719500b0262d6c4ed1891c64746e58255448d",
+    "cell": [
+      "set_01",
+      44,
+      "canbertplus"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_01",
+      "software_validation_only": false,
+      "seed": 44,
+      "method": "canbertplus"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_01\\seed_44\\canlp\\attempt_001\\manifest.json",
+    "sha256": "4c0c7e22127bdbabd5a41f5f15d710d6e1eafe3768285830944646d35a2dd6d8",
+    "cell": [
+      "set_01",
+      44,
+      "canlp"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_01",
+      "software_validation_only": false,
+      "seed": 44,
+      "method": "canlp"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_01\\seed_44\\raw_transformer\\attempt_001\\manifest.json",
+    "sha256": "a383723700edb68233bf147782d445bf27a23a2056dcbb0069c406c4fa12df18",
+    "cell": [
+      "set_01",
+      44,
+      "raw_transformer"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_01",
+      "software_validation_only": false,
+      "seed": 44,
+      "method": "raw_transformer"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_01\\seed_44\\structural_transformer\\attempt_001\\manifest.json",
+    "sha256": "2f43111ca300bf57a028da0c7e505e21c0d6842301b4e504881168f8ba5bf530",
+    "cell": [
+      "set_01",
+      44,
+      "structural_transformer"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_01",
+      "software_validation_only": false,
+      "seed": 44,
+      "method": "structural_transformer"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_02\\seed_42\\canbertplus\\attempt_001\\manifest.json",
+    "sha256": "a9fa291b3f9084050a02bc91ca766694a76998419c941b6578b70571bbfa3921",
+    "cell": [
+      "set_02",
+      42,
+      "canbertplus"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_02",
+      "software_validation_only": false,
+      "seed": 42,
+      "method": "canbertplus"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_02\\seed_42\\canlp\\attempt_001\\manifest.json",
+    "sha256": "2bb9fb82296201c806fdc21f11a845651c33af5098820b30c55d69160b634a2d",
+    "cell": [
+      "set_02",
+      42,
+      "canlp"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_02",
+      "software_validation_only": false,
+      "seed": 42,
+      "method": "canlp"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_02\\seed_42\\raw_transformer\\attempt_001\\manifest.json",
+    "sha256": "f10d26cfa13b915dd7c57bf5244c26244fa5ca56a17dda44df502ba37bac2391",
+    "cell": [
+      "set_02",
+      42,
+      "raw_transformer"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_02",
+      "software_validation_only": false,
+      "seed": 42,
+      "method": "raw_transformer"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_02\\seed_42\\structural_transformer\\attempt_001\\manifest.json",
+    "sha256": "d7fd5adef9fddf5d395ba3c5a73870703a9763cc8402cc4ac8e8791eb4e0ea94",
+    "cell": [
+      "set_02",
+      42,
+      "structural_transformer"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_02",
+      "software_validation_only": false,
+      "seed": 42,
+      "method": "structural_transformer"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_02\\seed_43\\canbertplus\\attempt_001\\manifest.json",
+    "sha256": "808f17723920c6f6391217a7c1b229a32141d6365ad7a37322c7bff3c253fa7d",
+    "cell": [
+      "set_02",
+      43,
+      "canbertplus"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_02",
+      "software_validation_only": false,
+      "seed": 43,
+      "method": "canbertplus"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_02\\seed_43\\canlp\\attempt_001\\manifest.json",
+    "sha256": "81933fe54df16fc5c07569bef6b59c5147450c795cc7d32517d3f8426c4c3bd3",
+    "cell": [
+      "set_02",
+      43,
+      "canlp"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_02",
+      "software_validation_only": false,
+      "seed": 43,
+      "method": "canlp"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_02\\seed_43\\raw_transformer\\attempt_001\\manifest.json",
+    "sha256": "158b46006b0f109e7db29e03eb17e6c017b0bf93f52464a063c17acd2233983e",
+    "cell": [
+      "set_02",
+      43,
+      "raw_transformer"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_02",
+      "software_validation_only": false,
+      "seed": 43,
+      "method": "raw_transformer"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_02\\seed_43\\structural_transformer\\attempt_001\\manifest.json",
+    "sha256": "1afb115f16818de8286d14c4661712f45638dd21b1b7e12252b923aaa8824854",
+    "cell": [
+      "set_02",
+      43,
+      "structural_transformer"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_02",
+      "software_validation_only": false,
+      "seed": 43,
+      "method": "structural_transformer"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_02\\seed_44\\canbertplus\\attempt_001\\manifest.json",
+    "sha256": "e404049d0202edf37483798c544083d98fe9f5ad4de09e52f4670f5ff5c21b7e",
+    "cell": [
+      "set_02",
+      44,
+      "canbertplus"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_02",
+      "software_validation_only": false,
+      "seed": 44,
+      "method": "canbertplus"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_02\\seed_44\\canlp\\attempt_001\\manifest.json",
+    "sha256": "331112b5da6f4db29045b7919ebad94fe571828ebd045de52eba6ff2119aac29",
+    "cell": [
+      "set_02",
+      44,
+      "canlp"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_02",
+      "software_validation_only": false,
+      "seed": 44,
+      "method": "canlp"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_02\\seed_44\\raw_transformer\\attempt_001\\manifest.json",
+    "sha256": "6f555c218daa89ba1c9afe973590f864640f5abe29aa369580f62364deb9ec3e",
+    "cell": [
+      "set_02",
+      44,
+      "raw_transformer"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_02",
+      "software_validation_only": false,
+      "seed": 44,
+      "method": "raw_transformer"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_02\\seed_44\\structural_transformer\\attempt_001\\manifest.json",
+    "sha256": "d9c88672089b846088fd0a63e9ce82769d2ac233d749c2b5ebb0e4a87fb2ea19",
+    "cell": [
+      "set_02",
+      44,
+      "structural_transformer"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_02",
+      "software_validation_only": false,
+      "seed": 44,
+      "method": "structural_transformer"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_03\\seed_42\\canbertplus\\attempt_001\\manifest.json",
+    "sha256": "c7742986c349a369fdeed952d41e2cf8bdd86208514646dad19bb9f3cc0729b8",
+    "cell": [
+      "set_03",
+      42,
+      "canbertplus"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_03",
+      "software_validation_only": false,
+      "seed": 42,
+      "method": "canbertplus"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_03\\seed_42\\canlp\\attempt_001\\manifest.json",
+    "sha256": "01a3885640d092b5d856d25857bc5ccb8e63d802f26339b1c24a12119c03ecd7",
+    "cell": [
+      "set_03",
+      42,
+      "canlp"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_03",
+      "software_validation_only": false,
+      "seed": 42,
+      "method": "canlp"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_03\\seed_42\\raw_transformer\\attempt_001\\manifest.json",
+    "sha256": "262e7b4d52ceb622c92981933291f7f6e353750861fb4983767ede52c58bc799",
+    "cell": [
+      "set_03",
+      42,
+      "raw_transformer"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_03",
+      "software_validation_only": false,
+      "seed": 42,
+      "method": "raw_transformer"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_03\\seed_42\\structural_transformer\\attempt_001\\manifest.json",
+    "sha256": "3f466098cbdac2426e9eb777c6db214c858581ee6f4e4cb5b6d40a799792df5e",
+    "cell": [
+      "set_03",
+      42,
+      "structural_transformer"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_03",
+      "software_validation_only": false,
+      "seed": 42,
+      "method": "structural_transformer"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_03\\seed_43\\canbertplus\\attempt_001\\manifest.json",
+    "sha256": "6121ca16460597bcbd4d50c0c35452666bb3bb10670650aa58845a4b80577b0d",
+    "cell": [
+      "set_03",
+      43,
+      "canbertplus"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_03",
+      "software_validation_only": false,
+      "seed": 43,
+      "method": "canbertplus"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_03\\seed_43\\canlp\\attempt_001\\manifest.json",
+    "sha256": "cc7cf01e6ac46f60e470419353bfcf503b51050f8e9fec3ab60c1bbadb7de2c7",
+    "cell": [
+      "set_03",
+      43,
+      "canlp"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_03",
+      "software_validation_only": false,
+      "seed": 43,
+      "method": "canlp"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_03\\seed_43\\raw_transformer\\attempt_001\\manifest.json",
+    "sha256": "d6a84cef59eabd36ff9bc52fa6dee3847b8521ef4c3fe4e41cc7d953a41aca28",
+    "cell": [
+      "set_03",
+      43,
+      "raw_transformer"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_03",
+      "software_validation_only": false,
+      "seed": 43,
+      "method": "raw_transformer"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_03\\seed_43\\structural_transformer\\attempt_001\\manifest.json",
+    "sha256": "8d3a242b66393d7e1bcf540c2937b61eb868fc359a007287ee29208d20af395c",
+    "cell": [
+      "set_03",
+      43,
+      "structural_transformer"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_03",
+      "software_validation_only": false,
+      "seed": 43,
+      "method": "structural_transformer"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_03\\seed_44\\canbertplus\\attempt_001\\manifest.json",
+    "sha256": "297b753207639af0bfe3817f7ad48db24b8472192c34ba9bf259e0a3350c36f0",
+    "cell": [
+      "set_03",
+      44,
+      "canbertplus"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_03",
+      "software_validation_only": false,
+      "seed": 44,
+      "method": "canbertplus"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_03\\seed_44\\canlp\\attempt_001\\manifest.json",
+    "sha256": "a8a21e329edf45e1458bdd2aa46a36c65e71712593f0fffb788208f56839ca8c",
+    "cell": [
+      "set_03",
+      44,
+      "canlp"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_03",
+      "software_validation_only": false,
+      "seed": 44,
+      "method": "canlp"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_03\\seed_44\\raw_transformer\\attempt_001\\manifest.json",
+    "sha256": "0f64caabce3d605f06e4f43764c3b2f5b26e928a4e991ad31992723799633e54",
+    "cell": [
+      "set_03",
+      44,
+      "raw_transformer"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_03",
+      "software_validation_only": false,
+      "seed": 44,
+      "method": "raw_transformer"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_03\\seed_44\\structural_transformer\\attempt_001\\manifest.json",
+    "sha256": "2156aec9edd58483db664799d1bc77258b1501770ab99e70f4c9fbc506b140e9",
+    "cell": [
+      "set_03",
+      44,
+      "structural_transformer"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_03",
+      "software_validation_only": false,
+      "seed": 44,
+      "method": "structural_transformer"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_04\\seed_42\\canbertplus\\attempt_001\\manifest.json",
+    "sha256": "65ee4b22134bc8d4ec18fc18c948c155f95636d34d93050be3fff0ed21adcb63",
+    "cell": [
+      "set_04",
+      42,
+      "canbertplus"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_04",
+      "software_validation_only": false,
+      "seed": 42,
+      "method": "canbertplus"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_04\\seed_42\\canlp\\attempt_001\\manifest.json",
+    "sha256": "a48c44d2fc5c764b1d04f4af76686724388c920d99d86361483593a3d26872ae",
+    "cell": [
+      "set_04",
+      42,
+      "canlp"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_04",
+      "software_validation_only": false,
+      "seed": 42,
+      "method": "canlp"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_04\\seed_42\\raw_transformer\\attempt_001\\manifest.json",
+    "sha256": "1f6f8414277cd38bcf9995d602e0e53a3f6a88dda5cb601607ac284917e6c62f",
+    "cell": [
+      "set_04",
+      42,
+      "raw_transformer"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_04",
+      "software_validation_only": false,
+      "seed": 42,
+      "method": "raw_transformer"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_04\\seed_42\\structural_transformer\\attempt_001\\manifest.json",
+    "sha256": "001a10803ac9380bcf2376ea7722006ccf5750b06a3e60a0016050cf2cec2b0e",
+    "cell": [
+      "set_04",
+      42,
+      "structural_transformer"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_04",
+      "software_validation_only": false,
+      "seed": 42,
+      "method": "structural_transformer"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_04\\seed_43\\canbertplus\\attempt_001\\manifest.json",
+    "sha256": "116800300a8b993b0bb989fea024ab32220142ff311acf92ab863e76672c5367",
+    "cell": [
+      "set_04",
+      43,
+      "canbertplus"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_04",
+      "software_validation_only": false,
+      "seed": 43,
+      "method": "canbertplus"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_04\\seed_43\\canlp\\attempt_001\\manifest.json",
+    "sha256": "fa96e03dffa775279f54fb6dda241b8f4817cc1df342538ad848e6f27f21dd52",
+    "cell": [
+      "set_04",
+      43,
+      "canlp"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_04",
+      "software_validation_only": false,
+      "seed": 43,
+      "method": "canlp"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_04\\seed_43\\raw_transformer\\attempt_001\\manifest.json",
+    "sha256": "e97471b345ed3362fa6754fb362dafa3ae9bfc6ec308e7c3fa63dcd0b64a348e",
+    "cell": [
+      "set_04",
+      43,
+      "raw_transformer"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_04",
+      "software_validation_only": false,
+      "seed": 43,
+      "method": "raw_transformer"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_04\\seed_43\\structural_transformer\\attempt_001\\manifest.json",
+    "sha256": "8d70bbc64964355d4f0c24ee1fb01b327b5df386e9fa4c24ef0440060c2ad7ac",
+    "cell": [
+      "set_04",
+      43,
+      "structural_transformer"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_04",
+      "software_validation_only": false,
+      "seed": 43,
+      "method": "structural_transformer"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_04\\seed_44\\canbertplus\\attempt_001\\manifest.json",
+    "sha256": "7d9007b30cb2820aa17a9e3e920e5bd8927f9ce866ea0937414312bdfc141011",
+    "cell": [
+      "set_04",
+      44,
+      "canbertplus"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_04",
+      "software_validation_only": false,
+      "seed": 44,
+      "method": "canbertplus"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_04\\seed_44\\canlp\\attempt_001\\manifest.json",
+    "sha256": "f9a4ce5e76ace2d50f1d225f12a24462641daff47994be4a069241db74deef24",
+    "cell": [
+      "set_04",
+      44,
+      "canlp"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_04",
+      "software_validation_only": false,
+      "seed": 44,
+      "method": "canlp"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_04\\seed_44\\raw_transformer\\attempt_001\\manifest.json",
+    "sha256": "fc897e337bb2dfd38cb311c4406676f8a0f0dd66d6d6453ce3109c39761da17b",
+    "cell": [
+      "set_04",
+      44,
+      "raw_transformer"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_04",
+      "software_validation_only": false,
+      "seed": 44,
+      "method": "raw_transformer"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_04\\seed_44\\structural_transformer\\attempt_001\\manifest.json",
+    "sha256": "ef57ef531cc2ff68c20b5ca9976ef457f9c046111b1607158d068df5d7c27e3e",
+    "cell": [
+      "set_04",
+      44,
+      "structural_transformer"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "raw_transformer",
+          "structural_transformer",
+          "canbertplus",
+          "canlp"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_04",
+      "software_validation_only": false,
+      "seed": 44,
+      "method": "structural_transformer"
+    },
+    "execution_backend": "native"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\assoc_exact_fast_v1\\set_01\\seed_42\\assoc_rules_crysys\\attempt_001\\manifest.json",
+    "sha256": "6982904df0e746cd31a480bc8a87807b42c9f367cd63f2b950b2f25ce7b8ccb1",
+    "cell": [
+      "set_01",
+      42,
+      "assoc_rules_crysys"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "assoc_rules_crysys"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f",
+        "acceleration/assoc.py": "63549407f5b038b17f10f4a6b4bc065d5b8eaa4e4ebb647c41a3dc27a58897f3",
+        "acceleration/__init__.py": "8fee6659ca20462c07d97ab900fb799e272732a0a3dbd0091c2c7c95be8772ed",
+        "scripts/run_comparison_fast.py": "220386b20a375331ee1f0d7e3ca8b8784b269ab531cf1346a40fbaad8d1c8629"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_01",
+      "software_validation_only": false,
+      "seed": 42,
+      "method": "assoc_rules_crysys"
+    },
+    "execution_backend": "exact_cached_cpu"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\assoc_exact_fast_v1\\set_01\\seed_43\\assoc_rules_crysys\\attempt_001\\manifest.json",
+    "sha256": "fb4e8cddfb599caf1f7382bf0051b52673bc8327efa9d9d6df14ab0d81ad6071",
+    "cell": [
+      "set_01",
+      43,
+      "assoc_rules_crysys"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "assoc_rules_crysys"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f",
+        "acceleration/assoc.py": "63549407f5b038b17f10f4a6b4bc065d5b8eaa4e4ebb647c41a3dc27a58897f3",
+        "acceleration/__init__.py": "8fee6659ca20462c07d97ab900fb799e272732a0a3dbd0091c2c7c95be8772ed",
+        "scripts/run_comparison_fast.py": "220386b20a375331ee1f0d7e3ca8b8784b269ab531cf1346a40fbaad8d1c8629"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_01",
+      "software_validation_only": false,
+      "seed": 43,
+      "method": "assoc_rules_crysys"
+    },
+    "execution_backend": "exact_cached_cpu"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\assoc_exact_fast_v1\\set_01\\seed_44\\assoc_rules_crysys\\attempt_001\\manifest.json",
+    "sha256": "56093133ca37b6105b77fdd23b5ead5893afd3056c7730ff4d77b13ac460d66a",
+    "cell": [
+      "set_01",
+      44,
+      "assoc_rules_crysys"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "assoc_rules_crysys"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f",
+        "acceleration/assoc.py": "63549407f5b038b17f10f4a6b4bc065d5b8eaa4e4ebb647c41a3dc27a58897f3",
+        "acceleration/__init__.py": "8fee6659ca20462c07d97ab900fb799e272732a0a3dbd0091c2c7c95be8772ed",
+        "scripts/run_comparison_fast.py": "220386b20a375331ee1f0d7e3ca8b8784b269ab531cf1346a40fbaad8d1c8629"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_01",
+      "software_validation_only": false,
+      "seed": 44,
+      "method": "assoc_rules_crysys"
+    },
+    "execution_backend": "exact_cached_cpu"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\assoc_exact_fast_v1\\set_02\\seed_42\\assoc_rules_crysys\\attempt_001\\manifest.json",
+    "sha256": "f432da61e293628b31fbd052bcfc0f2b5a039a8fc4a5502ad5f7ce906fa4d7cc",
+    "cell": [
+      "set_02",
+      42,
+      "assoc_rules_crysys"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "assoc_rules_crysys"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f",
+        "acceleration/assoc.py": "63549407f5b038b17f10f4a6b4bc065d5b8eaa4e4ebb647c41a3dc27a58897f3",
+        "acceleration/__init__.py": "8fee6659ca20462c07d97ab900fb799e272732a0a3dbd0091c2c7c95be8772ed",
+        "scripts/run_comparison_fast.py": "220386b20a375331ee1f0d7e3ca8b8784b269ab531cf1346a40fbaad8d1c8629"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_02",
+      "software_validation_only": false,
+      "seed": 42,
+      "method": "assoc_rules_crysys"
+    },
+    "execution_backend": "exact_cached_cpu"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\assoc_exact_fast_v1\\set_02\\seed_43\\assoc_rules_crysys\\attempt_001\\manifest.json",
+    "sha256": "10964d587522ecb87f8ee2fad2eb0142b4f1971d630c73325fd9231af13ec406",
+    "cell": [
+      "set_02",
+      43,
+      "assoc_rules_crysys"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "assoc_rules_crysys"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f",
+        "acceleration/assoc.py": "63549407f5b038b17f10f4a6b4bc065d5b8eaa4e4ebb647c41a3dc27a58897f3",
+        "acceleration/__init__.py": "8fee6659ca20462c07d97ab900fb799e272732a0a3dbd0091c2c7c95be8772ed",
+        "scripts/run_comparison_fast.py": "220386b20a375331ee1f0d7e3ca8b8784b269ab531cf1346a40fbaad8d1c8629"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_02",
+      "software_validation_only": false,
+      "seed": 43,
+      "method": "assoc_rules_crysys"
+    },
+    "execution_backend": "exact_cached_cpu"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\assoc_exact_fast_v1\\set_02\\seed_44\\assoc_rules_crysys\\attempt_001\\manifest.json",
+    "sha256": "bba3379b47f03c1716f51f18084fd0cfc1893c977d220df59c890371d15142fe",
+    "cell": [
+      "set_02",
+      44,
+      "assoc_rules_crysys"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "assoc_rules_crysys"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f",
+        "acceleration/assoc.py": "63549407f5b038b17f10f4a6b4bc065d5b8eaa4e4ebb647c41a3dc27a58897f3",
+        "acceleration/__init__.py": "8fee6659ca20462c07d97ab900fb799e272732a0a3dbd0091c2c7c95be8772ed",
+        "scripts/run_comparison_fast.py": "220386b20a375331ee1f0d7e3ca8b8784b269ab531cf1346a40fbaad8d1c8629"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_02",
+      "software_validation_only": false,
+      "seed": 44,
+      "method": "assoc_rules_crysys"
+    },
+    "execution_backend": "exact_cached_cpu"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\assoc_exact_fast_v1\\set_03\\seed_42\\assoc_rules_crysys\\attempt_001\\manifest.json",
+    "sha256": "364a9ce5baf1ad0632dee3b6db3fdb7b4ab4c395c8a8396fa8587530263951ba",
+    "cell": [
+      "set_03",
+      42,
+      "assoc_rules_crysys"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "assoc_rules_crysys"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f",
+        "acceleration/assoc.py": "63549407f5b038b17f10f4a6b4bc065d5b8eaa4e4ebb647c41a3dc27a58897f3",
+        "acceleration/__init__.py": "8fee6659ca20462c07d97ab900fb799e272732a0a3dbd0091c2c7c95be8772ed",
+        "scripts/run_comparison_fast.py": "220386b20a375331ee1f0d7e3ca8b8784b269ab531cf1346a40fbaad8d1c8629"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_03",
+      "software_validation_only": false,
+      "seed": 42,
+      "method": "assoc_rules_crysys"
+    },
+    "execution_backend": "exact_cached_cpu"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\assoc_exact_fast_v1\\set_03\\seed_43\\assoc_rules_crysys\\attempt_001\\manifest.json",
+    "sha256": "1f4118638cd0a528e567e5894d3e1ce5b07d7e6bfafc56070bf64a5031dbdd10",
+    "cell": [
+      "set_03",
+      43,
+      "assoc_rules_crysys"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "assoc_rules_crysys"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f",
+        "acceleration/assoc.py": "63549407f5b038b17f10f4a6b4bc065d5b8eaa4e4ebb647c41a3dc27a58897f3",
+        "acceleration/__init__.py": "8fee6659ca20462c07d97ab900fb799e272732a0a3dbd0091c2c7c95be8772ed",
+        "scripts/run_comparison_fast.py": "220386b20a375331ee1f0d7e3ca8b8784b269ab531cf1346a40fbaad8d1c8629"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_03",
+      "software_validation_only": false,
+      "seed": 43,
+      "method": "assoc_rules_crysys"
+    },
+    "execution_backend": "exact_cached_cpu"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\assoc_exact_fast_v1\\set_03\\seed_44\\assoc_rules_crysys\\attempt_001\\manifest.json",
+    "sha256": "48c20186626b2ac43e1b0d36095de1c337d9832a3adab4c9d913ff969a7cd35e",
+    "cell": [
+      "set_03",
+      44,
+      "assoc_rules_crysys"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "assoc_rules_crysys"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f",
+        "acceleration/assoc.py": "63549407f5b038b17f10f4a6b4bc065d5b8eaa4e4ebb647c41a3dc27a58897f3",
+        "acceleration/__init__.py": "8fee6659ca20462c07d97ab900fb799e272732a0a3dbd0091c2c7c95be8772ed",
+        "scripts/run_comparison_fast.py": "220386b20a375331ee1f0d7e3ca8b8784b269ab531cf1346a40fbaad8d1c8629"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_03",
+      "software_validation_only": false,
+      "seed": 44,
+      "method": "assoc_rules_crysys"
+    },
+    "execution_backend": "exact_cached_cpu"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\assoc_exact_fast_v1\\set_04\\seed_42\\assoc_rules_crysys\\attempt_001\\manifest.json",
+    "sha256": "8700337e0188664829c77e8e2e6a754539931122f04a0c971242d13d7829ee91",
+    "cell": [
+      "set_04",
+      42,
+      "assoc_rules_crysys"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "assoc_rules_crysys"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f",
+        "acceleration/assoc.py": "63549407f5b038b17f10f4a6b4bc065d5b8eaa4e4ebb647c41a3dc27a58897f3",
+        "acceleration/__init__.py": "8fee6659ca20462c07d97ab900fb799e272732a0a3dbd0091c2c7c95be8772ed",
+        "scripts/run_comparison_fast.py": "220386b20a375331ee1f0d7e3ca8b8784b269ab531cf1346a40fbaad8d1c8629"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_04",
+      "software_validation_only": false,
+      "seed": 42,
+      "method": "assoc_rules_crysys"
+    },
+    "execution_backend": "exact_cached_cpu"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\assoc_exact_fast_v1\\set_04\\seed_43\\assoc_rules_crysys\\attempt_001\\manifest.json",
+    "sha256": "49976dd8a2dad81e8166c33fa5155e4e314644de6373b8f7416672ddf22f5e0d",
+    "cell": [
+      "set_04",
+      43,
+      "assoc_rules_crysys"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "assoc_rules_crysys"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f",
+        "acceleration/assoc.py": "63549407f5b038b17f10f4a6b4bc065d5b8eaa4e4ebb647c41a3dc27a58897f3",
+        "acceleration/__init__.py": "8fee6659ca20462c07d97ab900fb799e272732a0a3dbd0091c2c7c95be8772ed",
+        "scripts/run_comparison_fast.py": "220386b20a375331ee1f0d7e3ca8b8784b269ab531cf1346a40fbaad8d1c8629"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_04",
+      "software_validation_only": false,
+      "seed": 43,
+      "method": "assoc_rules_crysys"
+    },
+    "execution_backend": "exact_cached_cpu"
+  },
+  {
+    "manifest": "F:\\00_Research\\code\\results\\assoc_exact_fast_v1\\set_04\\seed_44\\assoc_rules_crysys\\attempt_001\\manifest.json",
+    "sha256": "53f9c8810b3bd3b22ccc148cfe8daaea51ce2922948345a2c21250fee4864645",
+    "cell": [
+      "set_04",
+      44,
+      "assoc_rules_crysys"
+    ],
+    "execution_signature": {
+      "config": {
+        "protocol": "ctt-content-order-comparison-v1",
+        "tier": "content",
+        "sets": [
+          "set_01",
+          "set_02",
+          "set_03",
+          "set_04"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "methods": [
+          "assoc_rules_crysys"
+        ],
+        "window_size": 64,
+        "sampling_seed": 20261103,
+        "train_windows_per_class_per_file": 1000,
+        "epochs": 10,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "cpu_threads": 4,
+        "far_budget_per_100k": 100.0,
+        "eval_batch_windows": 128,
+        "bert_hidden": 768,
+        "bert_layers": 6,
+        "bert_heads": 12,
+        "bert_batch_size": 8,
+        "bert_pretrain_epochs": 3,
+        "bert_finetune_epochs": 3,
+        "canlp_epochs": 30,
+        "assoc_params": {},
+        "save_frame_scores": true
+      },
+      "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+      "code": {
+        "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+        "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+        "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+        "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+        "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+        "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+        "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+        "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+        "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+        "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+        "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+        "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f",
+        "acceleration/assoc.py": "63549407f5b038b17f10f4a6b4bc065d5b8eaa4e4ebb647c41a3dc27a58897f3",
+        "acceleration/__init__.py": "8fee6659ca20462c07d97ab900fb799e272732a0a3dbd0091c2c7c95be8772ed",
+        "scripts/run_comparison_fast.py": "220386b20a375331ee1f0d7e3ca8b8784b269ab531cf1346a40fbaad8d1c8629"
+      },
+      "environment": {
+        "python": "3.11.15",
+        "packages": {
+          "torch": "2.11.0+cu128",
+          "numpy": "2.4.6",
+          "pandas": "3.1.0",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "device": "NVIDIA GeForce RTX 5060"
+      },
+      "set": "set_04",
+      "software_validation_only": false,
+      "seed": 44,
+      "method": "assoc_rules_crysys"
+    },
+    "execution_backend": "exact_cached_cpu"
+  }
+]

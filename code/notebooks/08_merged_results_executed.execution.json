@@ -1,0 +1,10 @@
+{
+  "notebook": "F:\\00_Research\\code\\notebooks\\08_merged_results_executed.ipynb",
+  "status": "COMPLETE",
+  "pid": 19328,
+  "started_utc": "2026-11-08T14:07:04.367826+00:00",
+  "cell": 3,
+  "heartbeat_utc": "2026-11-08T14:07:13.409912+00:00",
+  "cell_source_preview": "import matplotlib\nmatplotlib.use('Agg')\nimport matplotlib.pyplot as plt\nplt.rcParams.update({'font.size':16,'axes.titlesize':16,'axes.labelsize':16,'xtick.labelsize':14,'ytick.labe",
+  "finished_utc": "2026-11-08T14:07:13.409912+00:00"
+}

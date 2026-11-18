@@ -1,0 +1,15 @@
+set,seed,method,condition,file,operating_point,threshold,Total_Windows,Attack_Windows,Benign_Windows,TP,FP,TN,FN,Attack_F1,Precision,Recall,AP,PR_AUC,FAR_per_100k,Accuracy,Attack_Prevalence,Metric_Status,AP_Status
+set_01,42,canlp,validation,data/can-train-and-test/set_01/train_01/accessory-2.csv,source_calibrated,0.5110207200050355,4,0,4,0,0,4,0,,,,,,0.0,1.0,0.0,single_class,requires_scores_and_both_classes
+set_01,42,canlp,validation,data/can-train-and-test/set_01/train_01/attack-free-2.csv,source_calibrated,0.5110207200050355,4,0,4,0,0,4,0,,,,,,0.0,1.0,0.0,single_class,requires_scores_and_both_classes
+set_01,42,canlp,validation,data/can-train-and-test/set_01/train_01/DoS-2.csv,source_calibrated,0.5110207200050355,8,4,4,0,0,4,4,0.0,,0.0,0.3988095238095238,0.3988095238095238,0.0,0.5,0.5,two_class,ok
+set_01,42,canlp,validation,data/can-train-and-test/set_01/train_01/force-neutral-2.csv,source_calibrated,0.5110207200050355,8,4,4,0,0,4,4,0.0,,0.0,0.4464285714285714,0.4464285714285714,0.0,0.5,0.5,two_class,ok
+set_01,42,canlp,validation,data/can-train-and-test/set_01/train_01/rpm-2.csv,source_calibrated,0.5110207200050355,8,4,4,0,0,4,4,0.0,,0.0,0.5714285714285714,0.5714285714285714,0.0,0.5,0.5,two_class,ok
+set_01,42,canlp,validation,data/can-train-and-test/set_01/train_01/standstill-2.csv,source_calibrated,0.5110207200050355,8,4,4,0,0,4,4,0.0,,0.0,0.45,0.45,0.0,0.5,0.5,two_class,ok
+set_01,42,canlp,validation,ALL,source_calibrated,0.5110207200050355,40,16,24,0,0,24,16,0.0,,0.0,0.37262520617783773,0.37262520617783773,0.0,0.6,0.4,two_class,ok
+set_01,42,canlp,validation,data/can-train-and-test/set_01/train_01/accessory-2.csv,default_0.5,0.5,4,0,4,0,4,0,0,,,,,,100000.0,0.0,0.0,single_class,requires_scores_and_both_classes
+set_01,42,canlp,validation,data/can-train-and-test/set_01/train_01/attack-free-2.csv,default_0.5,0.5,4,0,4,0,4,0,0,,,,,,100000.0,0.0,0.0,single_class,requires_scores_and_both_classes
+set_01,42,canlp,validation,data/can-train-and-test/set_01/train_01/DoS-2.csv,default_0.5,0.5,8,4,4,4,4,0,0,0.6666666666666666,0.5,1.0,0.3988095238095238,0.3988095238095238,100000.0,0.5,0.5,two_class,ok
+set_01,42,canlp,validation,data/can-train-and-test/set_01/train_01/force-neutral-2.csv,default_0.5,0.5,8,4,4,4,4,0,0,0.6666666666666666,0.5,1.0,0.4464285714285714,0.4464285714285714,100000.0,0.5,0.5,two_class,ok
+set_01,42,canlp,validation,data/can-train-and-test/set_01/train_01/rpm-2.csv,default_0.5,0.5,8,4,4,4,4,0,0,0.6666666666666666,0.5,1.0,0.5714285714285714,0.5714285714285714,100000.0,0.5,0.5,two_class,ok
+set_01,42,canlp,validation,data/can-train-and-test/set_01/train_01/standstill-2.csv,default_0.5,0.5,8,4,4,4,4,0,0,0.6666666666666666,0.5,1.0,0.45,0.45,100000.0,0.5,0.5,two_class,ok
+set_01,42,canlp,validation,ALL,default_0.5,0.5,40,16,24,16,24,0,0,0.5714285714285714,0.4,1.0,0.37262520617783773,0.37262520617783773,100000.0,0.4,0.4,two_class,ok

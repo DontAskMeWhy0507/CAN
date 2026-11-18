@@ -1,0 +1,12 @@
+{
+  "title": "Domain Generalization with MixStyle",
+  "authors": ["Kaiyang Zhou", "Yongxin Yang", "Yu Qiao", "Tao Xiang"],
+  "venue": "ICLR 2021",
+  "version": "arXiv:2104.02008v1",
+  "url": "https://arxiv.org/pdf/2104.02008v1",
+  "accessed": "2026-11-09",
+  "local_file": "MixStyle_ICLR2021.pdf",
+  "sha256": "999c76ea36b10b3cee009b8ebd1f88d348c9b0e41ca4a70558d7d56ed77124d6",
+  "support_locations": ["Section 2.2", "Appendix A.1", "Appendix A.2"],
+  "boundary": "Original visual-domain study; does not establish effectiveness for single-source CAN intrusion detection. Temporal same-label pairing is our disclosed adaptation."
+}

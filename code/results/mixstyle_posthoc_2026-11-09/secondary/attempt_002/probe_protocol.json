@@ -1,0 +1,8 @@
+{
+  "selected_windows_match_frozen_probe": true,
+  "reference_manifest_sha256": "5c9887d8b196f7d6a0576be2d7395cc087c5aceb91e75ad33253f62d57d5c5e1",
+  "n_train": 3800,
+  "n_validation": 4640,
+  "controls_repeats": 5,
+  "scope": "Balanced post-hoc linear decodability with recording-round holdout. Encoder saw its own source training captures. Does not prove vehicle independence or independent driving sessions."
+}

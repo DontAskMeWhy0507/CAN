@@ -1,0 +1,99 @@
+{
+  "status": "COMPLETE",
+  "signature": {
+    "config": {
+      "protocol": "ctt-content-order-comparison-v1",
+      "tier": "content",
+      "sets": [
+        "set_01"
+      ],
+      "seeds": [
+        42
+      ],
+      "methods": [
+        "raw_transformer",
+        "structural_transformer",
+        "canbertplus",
+        "canlp",
+        "assoc_rules_crysys"
+      ],
+      "window_size": 64,
+      "sampling_seed": 20261103,
+      "train_windows_per_class_per_file": 2,
+      "epochs": 1,
+      "batch_size": 128,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "cpu_threads": 4,
+      "far_budget_per_100k": 100.0,
+      "eval_batch_windows": 128,
+      "bert_hidden": 12,
+      "bert_layers": 2,
+      "bert_heads": 4,
+      "bert_batch_size": 4,
+      "bert_pretrain_epochs": 1,
+      "bert_finetune_epochs": 1,
+      "canlp_epochs": 1,
+      "assoc_params": {
+        "k_cla": 2,
+        "n_knn": 2,
+        "n_centroid_clusters": 2,
+        "n_bound_bins": 2
+      },
+      "save_frame_scores": true
+    },
+    "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+    "code": {
+      "comparison/__init__.py": "5514fddc30a33d1cfec36acf58ced94218d797939caf143569420560381606f4",
+      "comparison/adapters.py": "988c0dc184d78b37dd87ff735acf8980c0506adb550c9389bd0d1ae80c587488",
+      "comparison/analysis.py": "40ee55b65eac7c47a2b899494d997e37867927b1e8f089bc881a9f2a6da02673",
+      "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+      "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+      "comparison/run.py": "29983b1f2fcc46b7d6b0acafc02c7cdd02dff24122fcc74f38ce1a92abfee947",
+      "comparison/upstream.lock.json": "1c4a7dbc7674dce2acfa84a372d7034003484c5e26213e45534dba5d53b85473",
+      "src/can_research/features.py": "0296605befa3c3617821eb05c5f99862e38abeb27b843463b98a8edc3155edba",
+      "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+      "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+      "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+      "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+    },
+    "environment": {
+      "python": "3.11.15",
+      "packages": {
+        "torch": "2.11.0+cu128",
+        "numpy": "2.4.6",
+        "pandas": "3.1.0",
+        "scipy": "1.17.1",
+        "scikit-learn": "1.9.1"
+      },
+      "device": "NVIDIA GeForce RTX 5060"
+    },
+    "set": "set_01",
+    "software_validation_only": true,
+    "seed": 42,
+    "method": "canbertplus"
+  },
+  "method": "canbertplus",
+  "software_validation_only": true,
+  "artifact_hashes": {
+    "calibration.json": "73cb905bbc0d06542804c30df23542af7f0d06623061c9b90679a68d2342478d",
+    "checkpoint.pt": "b4c35e3174243750204d18ff242d989754c1b6b97d8d332648e3bf8122a9afd2",
+    "coverage.csv": "02969da7b59363510b1a3ae2e01b9c115378d6be933516bf864f27d234ba26f9",
+    "metrics.csv": "d45dc34670f124d4871657b50e6ebb5d4c0b86c0341edf84237066aa14d6f5ca",
+    "predictions/validation/39cc381a9b2384d5.csv.gz": "7eaf227786fd5c2eaf71b4038bf3d5734febd889907cceccf6f721f4ef1fb50b",
+    "predictions/validation/39cc381a9b2384d5.frames.f32": "c32d2d476bf762c6f0833119383ad1a69887c079bae632253c4e985abee9ff2a",
+    "predictions/validation/3b9abc3c32e0b6c5.csv.gz": "b76c198e718ea8f941caf4caae6c007dce53a06c99bb4259de2276baf7be1d21",
+    "predictions/validation/3b9abc3c32e0b6c5.frames.f32": "9312ff71ed1435949dc02c338578dc161889a04de28f7a68c3a35389862ea7ac",
+    "predictions/validation/3ca4d160d15515c7.csv.gz": "56ba6ddb83c8690fbb855c0ff551f9ceee48ce1e1bc1855feec4acb20be837aa",
+    "predictions/validation/3ca4d160d15515c7.frames.f32": "6d45043747c325f67b2940bf2d2557cc0dbd9fd4454f1dd327ffd6582baea020",
+    "predictions/validation/66e6b834b0e341d4.csv.gz": "2a15ceaa78bd229d5567a90070cb731e1facce96f3fe0c54d5c7f9b6cf5fdb74",
+    "predictions/validation/66e6b834b0e341d4.frames.f32": "f8b0ad76e38c75e224c34c59d3e878d6ba9336d04ef1925a6170a5ca754fb1cc",
+    "predictions/validation/7ed04b9daf22136b.csv.gz": "39864e6e5a280fa3d07afce86c84760f1c151f1a4a6fd6d3c70efa58bfed5582",
+    "predictions/validation/7ed04b9daf22136b.frames.f32": "90a2ac99cc158ddbc2d6d6c521d0a3422ea3009b6de02db573489b354ec519df",
+    "predictions/validation/9426a7748acf008d.csv.gz": "d470568e1c83b487a3b1c594056be2ccba0e3c2a5cc90185ed387be4bcc0203f",
+    "predictions/validation/9426a7748acf008d.frames.f32": "6416bc2acd281184d463ecbea21c9246c95c77a41f06e1f845ddf4e41c9ce2a7",
+    "selected_source_windows.json": "954b69ebdd375d6ef3dcfb0014dcceeced4be02dee6ad830bda8917f63b06294",
+    "split.json": "da120244a259955aa0824d59006df00d2306ab2cd82bc56e77695bacc22c8655",
+    "training.json": "40705346e095ef7a819c1ea9a8cf14184ee8abc613740362cc334f411332ed00"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "metric_rows": 96,
+  "pipelines": 24,
+  "checked": [
+    "code signature",
+    "state hashes",
+    "benign normalization mean",
+    "calibration scores",
+    "thresholds",
+    "capture/content embargo",
+    "risk decisions",
+    "confusion counts and AP"
+  ],
+  "encoder_independence_claim": false
+}

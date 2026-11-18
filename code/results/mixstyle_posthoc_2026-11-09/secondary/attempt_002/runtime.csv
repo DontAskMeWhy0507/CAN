@@ -1,0 +1,7 @@
+device,representation,n,p50_ms,p95_ms,mean_ms,checkpoint_manifest
+cpu,raw,900,4.480849999993097,6.00706999994145,4.620537111109621,F:\00_Research\code\results\comparison_gpu4_reuse_v1\set_01\seed_42\raw_transformer\attempt_001\manifest.json
+cpu,structural,900,4.000749999988784,5.032610000051818,4.096230999995972,F:\00_Research\code\results\comparison_gpu4_reuse_v1\set_01\seed_42\structural_transformer\attempt_001\manifest.json
+cpu,structural_mixstyle,900,3.7850499999763088,4.426654999912216,3.8357158888868526,F:\00_Research\code\results\mixstyle_posthoc_2026-11-09\main\set_01\attempt_001\manifest.json
+cuda,raw,900,3.9616500000079213,5.786069999959408,4.211415777778661,F:\00_Research\code\results\comparison_gpu4_reuse_v1\set_01\seed_42\raw_transformer\attempt_001\manifest.json
+cuda,structural,900,3.836200000023382,4.616685000041797,3.9497235555582697,F:\00_Research\code\results\comparison_gpu4_reuse_v1\set_01\seed_42\structural_transformer\attempt_001\manifest.json
+cuda,structural_mixstyle,900,3.8231500000165397,4.59678999998232,3.933347888890163,F:\00_Research\code\results\mixstyle_posthoc_2026-11-09\main\set_01\attempt_001\manifest.json

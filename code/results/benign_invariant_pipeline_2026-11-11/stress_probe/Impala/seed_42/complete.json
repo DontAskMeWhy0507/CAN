@@ -1,0 +1,38 @@
+[
+  {
+    "target": "Impala",
+    "seed": 42,
+    "method": "frozen_source",
+    "balanced_accuracy": 0.9225,
+    "n_iter": 136,
+    "training_loss": 0.0012522898758518162,
+    "warnings": []
+  },
+  {
+    "target": "Impala",
+    "seed": 42,
+    "method": "white_leace_lr",
+    "balanced_accuracy": 0.54,
+    "n_iter": 270,
+    "training_loss": 0.004646377800186226,
+    "warnings": []
+  },
+  {
+    "target": "Impala",
+    "seed": 42,
+    "method": "white_pca8_lr",
+    "balanced_accuracy": 0.5325,
+    "n_iter": 1325,
+    "training_loss": 0.1784792639977104,
+    "warnings": []
+  },
+  {
+    "target": "Impala",
+    "seed": 42,
+    "method": "white_inlp8_lr",
+    "balanced_accuracy": 0.45625,
+    "n_iter": 857,
+    "training_loss": 0.3753082851027195,
+    "warnings": []
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "pytest_command": ".venv/Scripts/python.exe -m pytest code/tests/test_multisource_lovo.py -q",
+  "pytest_result": "3 passed in 36.28s",
+  "checks": ["gradient reversal sign and unchanged adversary gradient", "exact source vehicle by class batch balance and both conditional heads receive gradients", "real inventory quarantine and held-out vehicle embargo"],
+  "cuda_smoke": {"synthetic_windows": 756, "epochs": 2, "finite_predictions": true, "seconds_including_first_cuda_initialization": 44.37262129999908},
+  "warning": "PyTorch memory-efficient attention reported a non-deterministic backward kernel under warn_only=True; seeds are controlled, bitwise training reproducibility is not guaranteed.",
+  "scope": "Software checks and synthetic GPU execution only; not evidence of generalization quality."
+}

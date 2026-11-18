@@ -1,0 +1,15 @@
+{
+  "version": "2026-11-03",
+  "datasets": [
+    {"name": "Opel_Astra_benign", "enabled": true, "tiers": ["timed", "content"], "kind": "log", "glob": "data/Automotive CAN Bus Intrusion Dataset v2-/OpelAstra/testing.log", "label_source": "OpelAstra/README Normal data", "label_policy": {"mode": "benign"}},
+    {"name": "Opel_Astra_DoS", "enabled": true, "tiers": ["timed", "content"], "kind": "log", "glob": "data/Automotive CAN Bus Intrusion Dataset v2-/OpelAstra/dosattack.log", "label_source": "OpelAstra/README first and last injected timestamps; verify signature on every frame", "label_policy": {"mode": "verified_dos", "start": 1536574995.000091, "end": 1536575004.999811}},
+    {"name": "Renault_Clio_benign", "enabled": true, "tiers": ["timed", "content"], "kind": "log", "glob": "data/Automotive CAN Bus Intrusion Dataset v2-/RenaultClio/testing.log", "label_source": "RenaultClio/README Normal data", "label_policy": {"mode": "benign"}},
+    {"name": "Renault_Clio_DoS", "enabled": true, "tiers": ["timed", "content"], "kind": "log", "glob": "data/Automotive CAN Bus Intrusion Dataset v2-/RenaultClio/dosattack.log", "label_source": "RenaultClio/README first and last injected timestamps; verify signature on every frame", "label_policy": {"mode": "verified_dos", "start": 1508687506.000236, "end": 1508687515.999845}},
+    {"name": "CAN_MIRGU_benign", "enabled": true, "tiers": ["timed", "content"], "kind": "log", "glob": "data/CAN-MIRGU/Benign/**/*.log", "label_source": "trailing per-frame 0/1 label", "label_policy": {"mode": "trailing"}},
+    {"name": "CAN_MIRGU_attack", "enabled": true, "tiers": ["timed", "content"], "kind": "log", "glob": "data/CAN-MIRGU/Attack/**/*.log", "label_source": "trailing per-frame 0/1 label required; unlabeled logs rejected", "label_policy": {"mode": "trailing"}},
+    {"name": "CICIoV2024", "enabled": true, "tiers": ["content"], "kind": "ciciov", "glob": "data/CICIoV2024/hexadecimal/*.csv", "label_source": "provided label column; no measured timestamps", "excluded_files": {"hexadecimal_spoofing-SPEED.csv": "Quarantined: DATA_6 differs from the decimal companion in 4989 of 24951 aligned rows. Verify the canonical publisher version before re-enabling; do not silently replace bytes."}},
+    {"name": "OTIDS_converted_csv", "enabled": false, "tiers": ["timed", "content"], "kind": "otids", "glob": "data/CAN_HCRL_OTIDS/dataset*.csv", "label_source": "unverified converted target column", "reason": "Need provenance of frame labels and original chronological captures; do not infer labels from attack filename."},
+    {"name": "OTIDS_shuffled", "enabled": false, "tiers": ["timed", "content"], "kind": "otids", "glob": "data/CAN_HCRL_OTIDS/CAN_HCRL_OTIDS_*.csv", "label_source": "shuffled derivative", "reason": "Shuffled rows invalidate temporal windows; excluded from sequence evaluation."}
+  ]
+}
+

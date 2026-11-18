@@ -1,0 +1,35 @@
+id,issue,correction_status,remaining_evidence
+E01,Architecture and loss mismatch,Corrected in both languages and shared code,Rerun models under the corrected protocol
+E02,Bilingual content divergence,Rebuilt paired chapters shared abstracts and numeric tables,Update both versions together after model runs
+E03,Automotive whole-file attack labels,Interval/signature rules and four full-file scans completed,Rerun external inference; investigate Opel README one-frame discrepancy
+E04,CICIoV synthetic timestamps,Removed; matched source content tier configured,Rerun content tier; SPEED export quarantined pending canonical data
+E05,Undefined FAR and false AP fallback,Strict metric denominators and tests implemented,Rerun old result tables
+E06,Frame/window comparison and reported F1,Unsupported head-to-head removed; five counts verified against arXiv v1 tables A.15 A.16 A.21 A.26 A.28,No direct ranking against window scores; journal-version equivalence not assumed
+E07,External transfer overclaim,Failure cases and withdrawn interpretations in both versions,New frozen-checkpoint external evaluation
+E08,Inconsistent focused and sweep results and run provenance,Historical runs separated; shared runner saves manifests checkpoints and predictions,Full four-set three-seed benchmark
+E09,Prefix sampling and scarce positive data,Full-file random-priority sampling with independent per-file per-class RNG in v2.1 tested for chunk/order invariance,Inspect actual sampled class/mechanism coverage
+E10,Shuffled OTIDS temporal evaluation,Converted and shuffled derivatives disabled,Chronological source files and trustworthy frame labels
+E11,Threshold calibration confounds representation conclusions,Source-only FAR-constrained calibration plus default threshold and tie handling implemented and tested,Compare both operating points across all sets without target tuning
+E12,Probe and modality evidence incomplete,Frozen balanced vehicle/attack probes with constant Gaussian and permuted-label controls implemented,Run probes and five random-control seeds; establish drive-session provenance
+E13,Removal of ID confounded with added features,Thirteen representation controls configured including separate absolute-payload and rank/W ablations,Run ablation matrix
+E14,ID-free versus vehicle-independent claim,Narrow invariance statement and implementation test,Vehicle/attack probes and cross-vehicle results
+E15,Uncertainty seeds and attack breakdown,Paired capture bootstrap for recall FAR and F1 at both operating points plus equal-set summaries implemented,Run all seeds; review capture independence and per-mechanism failures
+E16,Unsupported throughput and causal story,Claims removed or reframed as hypotheses,Runtime/episode benchmark only if deployment claims are reintroduced
+E17,Insufficient method specification,Feature table architecture state rules sample protocol and hand example added,Populate full dataset manifest and result counts after preflight
+E18,Threat model and scope,Classic CAN and supported identifiers explicitly bounded,No new claim for CAN-FD or extended IDs
+E19,Novelty and closest-work controls,Related-work matrix and limited contribution statement added,Faithful relational/graph/UI DS reproduction needed for direct superiority claims
+E20,Bibliography metadata errors,Corrected canonical entries; five published confusion-count rows verified,Preprint cited separately for its exact appendix version
+E21,Duplicate citation keys and translation mismatch,Single canonical bibliography and structural parity check,Maintain parity when replacing pending results
+E22,Overstatement and terminology,Neutral scoped wording and metric distinctions,Author review of final scientific interpretation
+E23,Chapter numbering and cross-references,Automatic numbered chapters and labels,Final PDF render QA after result insertion
+E24,Literal markdown and misleading figures,Removed legacy plots from manuscript; native pipeline and shared tables,Generate new result figures from complete runs
+E25,Current UET template and content length,13pt body with 1.3 spacing; 12pt abstracts and bold italic keyword labels; public cover sizing applied provisionally,Current cohort rubric/template confirmation; completed experimental content required
+NEW01,MIRGU incomplete non-recursive inventory,Recursive inventory finds 36 attack and 12 benign logs,Full-file preflight and external scoring
+NEW02,CICIoV SPEED export mismatch,24951 rows compared; 4989 DATA_6 disagreements recorded; file quarantined,Verify canonical publisher export before re-enabling
+V2101,Incomplete preflight and provenance gate,Full matrix preflight required with validator/data hashes and identical-file detection,Run full-file preflight; session or subsequence independence remains unverified
+V2102,Four sets mistaken for independent vehicle holdouts,Source-target vehicle mapping corrected in both languages and probe code,Only three distinct target vehicles; do not claim unseen-vehicle leave-one-set-out without global split redesign
+V2103,Research outputs mixed with software checks,Research summary rejects synthetic incomplete obsolete or incompatible runs and verifies artifact hashes,Complete the 261 planned IDS fits and downstream analyses
+V2104,Related work outdated or overinterpreted,Eight primary-source references added; both bibliographies contain 39 cited entries; source access limits retained,Obtain Jo-Kim 2026 full text before expanding claims beyond abstract
+V2105,Broken notebook paths after repository reorganization,All six unexecuted notebooks resolve the common code directory and call shared modules,Run on local GPU or Colab and retain complete artifacts
+V2106,Missing runtime measurement protocol,Fixed-prefix warmup and repeated batch-one runtime script implemented without an accuracy claim,Measure on declared hardware if reporting processing speed; event delay needs separate evidence
+V2107,Release verification,28 tests passed; 31 Python files parsed including tests and entry points; six notebooks valid; bilingual structural check passed,Update both manuscripts with real results and review final PDFs after insertion

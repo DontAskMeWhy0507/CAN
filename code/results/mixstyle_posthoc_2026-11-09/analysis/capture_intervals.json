@@ -1,0 +1,4610 @@
+[
+  {
+    "set": "set_01",
+    "seed": 42,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": -0.3093404753933713,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.47420700652689873,
+      -0.10672737973588761
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 42,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -69.67508186822118,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -86.40786935884255,
+      -58.22896101565506
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 42,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.1988253107150033,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.3972196520924964,
+      -0.05447935811176627
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 42,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.24840977569467698,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0397632575757576,
+      0.40575244338241623
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 42,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 3.4837540934110596,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0,
+      7.876435137868688
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 42,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.2377084074347091,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.026429278357857758,
+      0.4858254714090374
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 42,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": -0.7884934756820877,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.8620930276423867,
+      -0.001158748551564337
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 42,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -506.95986567730057,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -767.5827033897284,
+      -319.02705667707636
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 42,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.6884874014564893,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.76463074326239,
+      0.1823353340738932
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 42,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.08967971530249111,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0,
+      0.09811948545656313
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 42,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 0.0,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 42,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.14928283999717976,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0,
+      0.171396433879124
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 42,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.02987494210282538,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.02103730904682069,
+      0.2954409481051321
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 42,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -65.72487409331349,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -80.65434389610184,
+      -53.41731875153716
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 42,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.05741550243109274,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.040044062825502984,
+      0.434915346634323
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 42,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.0002315886984715146,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0,
+      0.0016718419667963401
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 42,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 3.9593297646574386,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.7743423838907013,
+      7.782272522940929
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 42,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.00039301632081964466,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0,
+      0.0017499092227393775
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 42,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": -0.2064176245210728,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.33905985983297116,
+      -0.11339186906634051
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 42,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -30458.342299340755,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -31502.72800865151,
+      -29356.28271167289
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 42,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.013274200006159722,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.02531167314942498,
+      -0.006507909632207136
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 42,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.0,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 42,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 29.832351963066564,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      7.637573752099898,
+      56.079956931633575
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 42,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.0,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 43,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.13525276196853037,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.4773134730633859,
+      0.5279999010928637
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 43,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -87.09385233527648,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -153.96460838766353,
+      -30.851080106575438
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 43,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.12062936222209109,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.38723215245459097,
+      0.5512751407532321
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 43,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.14362236357549385,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.018288922118991018,
+      0.24573756125665794
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 43,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -2.322502728940705,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -24.27326678659016,
+      17.956075845476608
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 43,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.11779568847886335,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.011938741894088278,
+      0.2184101029177629
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 43,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": -0.04009489916963227,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.043868235561267656,
+      0.0
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 43,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 0.0,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 43,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.03253355793158197,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.03481421917067111,
+      0.0
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 43,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": -0.2220640569395017,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.24287601029680128,
+      0.0
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 43,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -96.40903428478579,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -123.06247232589735,
+      -77.54832934821204
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 43,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.1565228746038695,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.16946767288515144,
+      0.044745130335352504
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 43,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.022116720704029647,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.05443926818970977,
+      0.2567973957767523
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 43,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -91.06458458712108,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -143.34022920729865,
+      -51.69134066656799
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 43,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.04180873644632221,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.09226638700814406,
+      0.3695879423778422
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 43,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.0015053265400648483,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.0023404684168658284,
+      0.017757629791992805
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 43,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -18.21291691742421,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -38.48279798196825,
+      0.9281283533095299
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 43,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.0029471887649055034,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.0033930798616383312,
+      0.028148302047917073
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 43,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": -0.0014367816091954023,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.006097627397842606,
+      0.001242313374534935
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 43,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 16.1388133570688,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      9.365170714969851,
+      23.958075363146456
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 43,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.0027012715959487668,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.011530405546477367,
+      0.0022483945565365394
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 43,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": -0.0009578544061302683,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.0027830282980903383,
+      0.0
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 43,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -39.6134509673507,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -80.16646922011046,
+      -21.315592741739295
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 43,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.0016751626104007256,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.004893585271760481,
+      7.859662586779501e-05
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 44,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": -0.03582189487780385,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.5758512917788777,
+      0.2657910719979593
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 44,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -96.38386325103933,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -139.90743160502151,
+      -64.77033518648459
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 44,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.012559135799251497,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.47630630597493895,
+      0.21726922988055847
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 44,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.10043521928356203,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.004766211513716621,
+      0.16902859186418417
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 44,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 24.38627865387742,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      12.936011478405797,
+      36.29681358167181
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 44,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.07455491434952288,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -4.676061740649119e-07,
+      0.13386751345707942
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 44,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": -0.21886120996441283,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.23932848039934176,
+      0.0
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 44,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 0.0,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 44,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.13267988474810843,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.13893472994830908,
+      0.0
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 44,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.04958481613285881,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0,
+      0.05425124989529554
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 44,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 0.0,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 44,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.0349190114219704,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0,
+      0.0369627033043458
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 44,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.030106530801296896,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.031381897980613464,
+      0.27781886589913696
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 44,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -82.35405910487472,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -120.2852638982331,
+      -54.50064429086281
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 44,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.05724764145375559,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.05325810368201663,
+      0.40927309328416495
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 44,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.0025474756831866605,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0002598555054903848,
+      0.013197814186964541
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 44,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 15.837319058629753,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      4.244826964382018,
+      27.637867487490908
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 44,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.004540057973764014,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.00023249616746977593,
+      0.01852010798288551
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 44,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": -0.005268199233716475,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.016607787946968815,
+      0.0012181946202449029
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 44,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 36.19006631585125,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      15.07829862758956,
+      58.00723553176378
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 44,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.010168949567959072,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.03184536593285344,
+      0.0022141508332081273
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 44,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.0004789272030651341,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0,
+      0.0016835963686357386
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 44,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -0.48905495021421075,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -1.973323167089703,
+      0.0
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_01",
+    "seed": 44,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.0008960573476702509,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0,
+      0.003139882067142536
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 42,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.10249042145593867,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.09659429435575569,
+      0.3755114938416524
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 42,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -13.204483655783562,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -75.9284713228681,
+      25.331176364239425
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 42,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.11316744666359069,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.08673930187672163,
+      0.4174606900581757
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 42,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.08285440613026818,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.01675813265534209,
+      0.17455194623695708
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 42,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 12.715428705569366,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -4.862911309323339,
+      31.755230022980967
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 42,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.08334745317727382,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.020608747118303395,
+      0.19495485435190077
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 42,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.0,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 42,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 0.0,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 42,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.0,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 42,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.0019394879751745142,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0,
+      0.00420057762963498
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 42,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 1215.0724637681124,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      949.305184804296,
+      1513.1111656904318
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 42,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.00037937700618455306,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.0006251563322655768,
+      -0.0001787281864838878
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 42,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.5327446651949963,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.058383581931661904,
+      0.7157586820132228
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 42,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 43.50571145102159,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -4.880687054721913,
+      67.18546643989973
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 42,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.6384479717813051,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.041884816753926704,
+      0.7919514631987294
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 42,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.4775570272259014,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.00858585858585858,
+      0.6523902855267477
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 42,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 33.425119773345855,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -12.917393270038104,
+      53.44302994376548
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 42,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.5420469435036701,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.01815387773512718,
+      0.682275774810014
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 42,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.0,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 42,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 0.0,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 42,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.0,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 42,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.018115942028985477,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.004619404386481782,
+      0.05407632907632906
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 42,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 1562.372853771667,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      1171.9116087818752,
+      1988.5652919389443
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 42,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 7.923379240516032e-05,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.00043196836617987036,
+      0.0005150981480162652
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 43,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": -0.20067049808429122,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.40946473040083314,
+      0.06156820498550605
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 43,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -123.73090240419414,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -413.00772207719615,
+      24.33694793090155
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 43,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.13062970006126962,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.3708490471426523,
+      0.09405517927642518
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 43,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.06273946360153254,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.008514977823799216,
+      0.1185054256853177
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 43,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 33.744791564780215,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      15.420084900380655,
+      49.18970977357683
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 43,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.05475250470793769,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.0028584388979626062,
+      0.13095133302615894
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 43,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": -0.00038789759503488064,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.0008401155259269516,
+      0.0
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 43,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -224.92753623188764,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -358.7157045658769,
+      -111.73603821735779
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 43,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 6.84682976058032e-05,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      2.1124711088528568e-05,
+      0.00013791899626578694
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 43,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.07331264546159821,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.006456060319547654,
+      0.14082867930411097
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 43,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 33805.603864734294,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      30798.11882968676,
+      37255.236770471645
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 43,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.014487959316377613,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.023312248818478945,
+      -0.006570544973135942
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 43,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.16409124356144222,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.025932883578441493,
+      0.293088761963569
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 43,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 72.15581411388946,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -4.045841784976914,
+      105.51357543662755
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 43,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.24559471365638766,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.03992363821840776,
+      0.41325125328779033
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 43,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.1493745401030169,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0,
+      0.2786396773986163
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 43,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 59.42243515261485,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      24.34842875577338,
+      87.98746961778834
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 43,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.2189458129235429,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.03808853462452295,
+      0.3899683889878138
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 43,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": -0.16666666666666663,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.5436271542046668,
+      -0.001515684220511194
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 43,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -679.4694442184118,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -1666.732540663367,
+      -127.30159497300997
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 43,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.004625267392050814,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.014534497722295538,
+      3.3384499869726267e-06
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 43,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.19565217391304357,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.05510932583731294,
+      0.32923342153839025
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 43,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 35942.712995361704,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      32463.90612633847,
+      39394.1363482125
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 43,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.004558049268852008,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.011445280774317154,
+      0.00039865269726570133
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 44,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.011973180076628342,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.11192439895208402,
+      0.22552319699124354
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 44,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -81.18312173555822,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -216.19371871497358,
+      19.829056987470132
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 44,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.03663131414520504,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.1225466187854553,
+      0.2378749414022627
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 44,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": -0.08189655172413796,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.22435286947084312,
+      -0.0049031594472908014
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 44,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -25.919912361352914,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -56.333872748001475,
+      1.79137579924293
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 44,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.06691938507707285,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.21130437983117292,
+      0.005604388269181845
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 44,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": -0.0015515903801396336,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.0033604621037080285,
+      0.0
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 44,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -832.4637681159365,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -1054.2795842779026,
+      -640.4513514979988
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 44,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.0002505067359457533,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.00011275424852832421,
+      0.00042627955627513967
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 44,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.024049650892164487,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0026993685629398143,
+      0.04567781732515483
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 44,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 7655.265700483098,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      6884.237750447395,
+      8511.191346518825
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 44,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.002109187145643919,
+    "files": 12,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.0034465562264162876,
+      -0.0008133998159674998
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 44,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.019867549668874173,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.00888785521152803,
+      0.1982757107757107
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 44,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 17.508396071752593,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -31.63885143037125,
+      57.805264182602905
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 44,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.03517915309446254,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.01628002790610803,
+      0.16618014050539992
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 44,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": -0.00662251655629139,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.05769927536231884,
+      0.0015552402103466843
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 44,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -1.0611149134395532,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -18.16064712756884,
+      24.878203066517166
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 44,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.011392645094411978,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.044262871099738726,
+      0.0024645050629046915
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 44,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": -0.007246376811594235,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.03031468531468529,
+      -0.000659914912354509
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 44,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -954.7834106382361,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -1201.6749653258241,
+      -717.8958563034366
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 44,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 6.24919848914822e-05,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.0002730393168670743,
+      0.0004149549331711813
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 44,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.0688405797101449,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0183350121144475,
+      0.11717452300785632
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 44,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 7737.271814902226,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      7240.0094348377315,
+      8330.010909852215
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_02",
+    "seed": 44,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.00023676081835074386,
+    "files": 8,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.0019161629938515517,
+      0.001355647821440573
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 42,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.18158567774936063,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.012594439342186741,
+      0.5659897125185396
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 42,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -16.90589854850785,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -47.70495189238239,
+      34.617315405414274
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 42,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.1279090468948182,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.010719499134466614,
+      0.6551224160697212
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 42,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.04838874680306904,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.005812814819246321,
+      0.09799209604516847
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 42,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -13.68572739641111,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -37.12568177362486,
+      12.50798113119498
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 42,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.032075950550896404,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.005002150988589055,
+      0.07183947239137672
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 42,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.13821598369934351,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.040010650302574356,
+      0.36758017349124655
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 42,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 6361.758210443833,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      4719.8130418631135,
+      8218.191044853562
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 42,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.01203482400508915,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.004043194091691927,
+      0.03410982946938547
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 42,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": -0.0007923930269413404,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.0026788511086482973,
+      0.0
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 42,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -506.8238023997692,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -800.2477146293586,
+      -254.4481455882928
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 42,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.0005455946520234456,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.00015183698504885463,
+      0.0010244233696076555
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 42,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": -0.0005715918833952556,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.00734648052146032,
+      0.006909007589875812
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 42,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -20.622955482861606,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -53.854039487416486,
+      20.850517850719264
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 42,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.0010923185341789998,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.014162521722183422,
+      0.013326754467783884
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 42,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": -0.0010002857959416976,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.011182996098374231,
+      0.007323495123340832
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 42,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -21.334091878822356,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -39.27056185845904,
+      0.0
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 42,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.001929348395325518,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.021336388302369974,
+      0.014057666158673042
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 42,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.11626889419252184,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.06992674445820428,
+      0.17823353172964168
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 42,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 5566.316401142802,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      3408.3772181056647,
+      7550.565680300706
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 42,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.023939172497320416,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0022325600765437654,
+      0.04596197228268794
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 42,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": -0.00011933174224343368,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.0007477134753918784,
+      0.0
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 42,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -242.11902571303654,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -488.7799591080824,
+      -103.58548823865677
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 42,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.0005336871911290619,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      9.044430916105121e-05,
+      0.0011315430957165027
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 43,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.2435805626598465,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.001373898153499139,
+      0.7037509586201626
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 43,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -37.83701103713662,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -82.61470375928897,
+      4.977266395931539
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 43,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.1699750133540585,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0010057414822422562,
+      0.7968022134970053
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 43,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.024654731457800505,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.002191995375225188,
+      0.05212382497290749
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 43,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -30.591625944918974,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -53.7498314496894,
+      0.9669380483753746
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 43,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.016826948517636553,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.004163625824078682,
+      0.05224124636077693
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 43,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.25232057957889975,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.13827187290825288,
+      0.36581584079916873
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 43,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 7129.117943394493,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      5718.7565410665575,
+      8597.206565252254
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 43,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.02935651185521801,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.010077277596146832,
+      0.05030598775520189
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 43,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.0529771338012226,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0018892520097193277,
+      0.1861815471868037
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 43,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 22276.83978057989,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      19475.361634504752,
+      24573.661250083464
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 43,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.02911506247501855,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.050146830553905106,
+      -0.00288589663931781
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 43,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.04429837096313232,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.002772969840556523,
+      0.16973301335058683
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 43,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -44.0904565495662,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -96.2579563262218,
+      -5.184294709682857
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 43,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.08289423656931451,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.005392825314956398,
+      0.2727223452825997
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 43,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.029151186053158043,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0010402508947518756,
+      0.12618691929080006
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 43,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -33.42341061015503,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -62.416715878028754,
+      0.7817493664555204
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 43,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.0539465171090508,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0020558570532465802,
+      0.20068596428300545
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 43,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.19713603818615744,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.12090677936465123,
+      0.2445406420332576
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 43,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 9092.780010653238,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      7506.550753646008,
+      10829.939746175352
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 43,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.04328340512010115,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.007852084778869645,
+      0.08647857306497454
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 43,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.1035003977724741,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.009506351414603717,
+      0.14256815572326953
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 43,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 14992.010072151475,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      11694.699723510568,
+      17241.415892427227
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 43,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.0045199505751574165,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.01778297397158035,
+      0.019249154560403273
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 44,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.20982097186700766,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.0034333886591461555,
+      0.6382896667613368
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 44,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 62.79333746588631,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      32.29555695592203,
+      98.57578968427165
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 44,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.13863472257492537,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.011291069093290498,
+      0.6755896700094732
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 44,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.20501278772378517,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.022580111864978544,
+      0.3695593931430141
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 44,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 28.981540368870597,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      16.194502501158915,
+      47.01934867735937
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 44,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.1369657323956145,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.01597912814130248,
+      0.29053961224747077
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 44,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.7722436042562826,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.43144594937456887,
+      0.9788406077447194
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 44,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 56942.366602550406,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      50770.62513866092,
+      63125.58260920187
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 44,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.05579482992004056,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.3900912722931702,
+      0.2481224851849431
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 44,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": -0.011433099388725387,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.048960511223400366,
+      0.0031693659924177096
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 44,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -28286.46739738853,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -32579.78441602685,
+      -24319.575885954357
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 44,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.05992296808045988,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.033339026842903276,
+      0.08494974063567666
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 44,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.012003429551300371,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0025234180187959474,
+      0.04152400339046469
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 44,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 66.13568482434931,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      41.91611593551105,
+      88.99280254444497
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 44,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.023171386624606983,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.004974776804335517,
+      0.0758797807212419
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 44,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.0030008573878250924,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.0051069206375899375,
+      0.021449338753503917
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 44,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 11.378182335371932,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -10.83706269010289,
+      32.768314060455275
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 44,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.005705775217917201,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.009726598098055208,
+      0.0389540201818289
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 44,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.8917661097852029,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.6599780385407475,
+      0.9545113214393656
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 44,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 58061.352961115685,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      47215.32157681321,
+      65312.64443953893
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 44,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.4079263474623951,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.08067988118130304,
+      0.6977787746253863
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 44,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": -0.01579156722354813,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.19210694823848784,
+      0.03576288808191573
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 44,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -30402.8860587865,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -41903.68114633308,
+      -23723.181011568427
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_03",
+    "seed": 44,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.09201483822815715,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.016418039847987818,
+      0.13519245222778084
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 42,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.06849642004773271,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.03532639688397765,
+      0.2462034194344086
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 42,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 33.896663599825665,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -7.69103207478633,
+      74.54027286271736
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 42,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.0413410230484379,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.01957661441447705,
+      0.20096446980222807
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 42,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.02247414478918064,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.00906671354290775,
+      0.06888491465275882
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 42,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 10.895356157086823,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -1.9225813841125912,
+      24.89406833346497
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 42,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.01321995352335359,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.004753841922650418,
+      0.04545628789592974
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 42,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": -0.09904222899434045,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.13467817759488496,
+      -0.021090011929000542
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 42,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -17705.924953429916,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -31119.313450250316,
+      -11195.377077987212
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 42,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.007588764572050502,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0001002597485996449,
+      0.03231247474216799
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 42,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.19728631548396458,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.0228105425498514,
+      0.24766288933878836
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 42,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 25619.159376173935,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      21448.075685781714,
+      30558.53260625073
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 42,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.010172112939643485,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.029813806979546748,
+      0.006731946908314748
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 42,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": -0.05422232284355888,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.22978090811410976,
+      0.04885844070154505
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 42,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -24.425243489146027,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -76.47102003953478,
+      26.015675828402355
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 42,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.029951288390211217,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.15089782348851957,
+      0.03445388153686258
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 42,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.02920534299298172,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.006759034413786114,
+      0.08793610492712872
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 42,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 0.0,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -21.111116890172305,
+      19.10383792137645
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 42,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.017626766767660285,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.003450301410919146,
+      0.06809162372921407
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 42,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": -0.11465295629820049,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.3807921560465411,
+      -0.021763529672195983
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 42,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -10780.838344318108,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -13021.67278019805,
+      -9202.229963494561
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 42,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.003534037895355252,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.04551846233774484,
+      0.016282800057277894
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 42,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.05148733015056928,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.013584609902591282,
+      0.14120795778748277
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 42,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 23900.42801249902,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      22677.18291551633,
+      25148.169509386546
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 42,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.03905293300849963,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.061011536659957476,
+      -0.005934189701995078
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 43,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.1466984884645982,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.03866220937736227,
+      0.4625118893556597
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 43,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -1.2105951285652026,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -42.93687521350644,
+      33.596727529079665
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 43,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.09234572374461258,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.022449401467329273,
+      0.4378608467718422
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 43,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.0607398568019093,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.030674176901533633,
+      0.2350556058776167
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 43,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -38.739044114086475,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -64.44893309317958,
+      -7.792427195197998
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 43,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.03702677659667275,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.01731741570674234,
+      0.15865069956354774
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 43,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": -0.23523436366274852,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.37358119832601816,
+      -0.06419199880280113
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 43,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -29953.565467269276,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -45569.42975243957,
+      -21706.64069740401
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 43,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.00628072208767308,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.0069184808141511695,
+      0.036556545768186906
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 43,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.1152227543172254,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.019265122466802613,
+      0.14035286711795159
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 43,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 14354.42832080491,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      11310.013683414809,
+      15823.059471764183
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 43,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.004773444708654664,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.016112353413487625,
+      0.007383783556261632
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 43,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.019017432646592725,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.23797254689234665,
+      0.28043490678352256
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 43,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -14.248058702001856,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -48.182551623585404,
+      13.482967388099066
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 43,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.012399151922484863,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.15373393241295494,
+      0.2064930590682386
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 43,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.011659497396422913,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.04085462089987333,
+      0.0922894179909675
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 43,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -27.478398925289298,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -47.013067293817464,
+      -2.1237284176099536
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 43,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.008590400923782049,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.02332513107601975,
+      0.07342605089342692
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 43,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": -0.14050679397723098,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.432315704116102,
+      -0.02635566046700277
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 43,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -20781.801153620603,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -24082.55594675801,
+      -17659.946314320743
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 43,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.009600220468794551,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.04077673512028923,
+      0.04024960009360387
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 43,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.02739625413147262,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.03253233907925593,
+      0.11195424427841137
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 43,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 16493.798632810787,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      15591.119926806441,
+      17373.715208390342
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 43,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.03247335072463359,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.05235947382496434,
+      -0.0072723246759282085
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 44,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.05572792362768497,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.02741844729504502,
+      0.20538229666267907
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 44,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 33.89666359982567,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -1.6591166920653666,
+      82.2566773880738
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 44,
+    "condition": "A",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.03267052732419329,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.015534233825128224,
+      0.15904826315062856
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 44,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.02955449482895789,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.010706396965277276,
+      0.058050222827504445
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 44,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 9.684761028521613,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -8.44784595589866,
+      28.65831691699784
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 44,
+    "condition": "A",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.01720859799483454,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.005059417795338977,
+      0.041454059488320524
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 44,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": -0.19561747206501234,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.35631689323184046,
+      -0.05942680422246358
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 44,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -30361.755604868842,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -45194.497475523,
+      -22260.61378168036
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 44,
+    "condition": "B",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.011870774235391415,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.001095562486286734,
+      0.04604443906662436
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 44,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.6039762008416776,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.07524929068535995,
+      0.7530662184701185
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 44,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 68890.41217909245,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      54311.833177477136,
+      76848.43284935119
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 44,
+    "condition": "B",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.19067504398051427,
+    "files": 14,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.7232644013396854,
+      0.19174593825013342
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 44,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": 0.06531582522073798,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.060463485767932305,
+      0.2751937947357864
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 44,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -22.3898065317172,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -79.71205010081648,
+      24.535548550645384
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 44,
+    "condition": "C",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.040443409304813493,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.03553766846052332,
+      0.1997922127617166
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 44,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.032148517093049556,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.02094533003120158,
+      0.12027211470743847
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 44,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 5.088592393572085,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -2.7672758489358538,
+      15.581000569255941
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 44,
+    "condition": "C",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.01868307220970311,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.01352962863044276,
+      0.08381869923746824
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 44,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "Recall",
+    "estimate": -0.12214469335291955,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.4093177712746604,
+      -0.022477788783336828
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 44,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": -21014.625948585977,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -23714.068651911177,
+      -18259.729452942618
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 44,
+    "condition": "D",
+    "baseline": "raw_transformer",
+    "metric": "Attack_F1",
+    "estimate": 0.013945666522588107,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.036485281915963515,
+      0.043806808022866954
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 44,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "Recall",
+    "estimate": 0.19559309585016527,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      0.04766281355834593,
+      0.5012623118197589
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 44,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "FAR_per_100k",
+    "estimate": 78203.74795403024,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      75553.20160386486,
+      80865.44255734616
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  },
+  {
+    "set": "set_04",
+    "seed": 44,
+    "condition": "D",
+    "baseline": "structural_transformer",
+    "metric": "Attack_F1",
+    "estimate": -0.5742742481400208,
+    "files": 10,
+    "requested_replicates": 1000,
+    "valid_replicates": 1000,
+    "ci95": [
+      -0.6655315660308461,
+      -0.25863498369731486
+    ],
+    "interpretation": "b minus a; descriptive conditional whole-file interval, not vehicle-population inference"
+  }
+]

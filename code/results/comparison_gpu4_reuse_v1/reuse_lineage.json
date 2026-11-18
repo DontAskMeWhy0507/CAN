@@ -1,0 +1,26 @@
+{
+  "driver_sha256": "7b47d109fa975386fe6ac5d46324094f77b8198cec290f3a93c4d8040aa270ee",
+  "source_cells": [
+    {
+      "source": "F:\\00_Research\\code\\results\\comparison_content_v1_5models_backup\\set_01\\seed_42\\canbertplus\\attempt_001",
+      "target": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_01\\seed_42\\canbertplus\\attempt_001",
+      "manifest_sha256": "d171b3860b4662bd6c4048d854f340dcbeb3fca6255b0e23c1e30e60d758d084"
+    },
+    {
+      "source": "F:\\00_Research\\code\\results\\comparison_content_v1_5models_backup\\set_01\\seed_42\\canlp\\attempt_001",
+      "target": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_01\\seed_42\\canlp\\attempt_001",
+      "manifest_sha256": "2d5b90db883085a3c34e48c6f6b8f5a9621f3e71d76884beadc203e72f1ab01c"
+    },
+    {
+      "source": "F:\\00_Research\\code\\results\\comparison_content_v1_5models_backup\\set_01\\seed_42\\raw_transformer\\attempt_001",
+      "target": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_01\\seed_42\\raw_transformer\\attempt_001",
+      "manifest_sha256": "2ff97227e9a45f411a2aff33ef0b3cebd330a8c4af57498b1c1495af926fb716"
+    },
+    {
+      "source": "F:\\00_Research\\code\\results\\comparison_content_v1_5models_backup\\set_01\\seed_42\\structural_transformer\\attempt_001",
+      "target": "F:\\00_Research\\code\\results\\comparison_gpu4_reuse_v1\\set_01\\seed_42\\structural_transformer\\attempt_001",
+      "manifest_sha256": "931f18b559d9e8a6301125e9ea30391493fba1d889ce5eddc04cd6a56ffffdbc"
+    }
+  ],
+  "policy": "Original manifests unchanged; only independent-method scheduling differs. Full native code/data/config/seed/environment verified."
+}

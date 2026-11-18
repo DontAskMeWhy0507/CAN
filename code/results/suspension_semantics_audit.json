@@ -1,0 +1,251 @@
+{
+  "created_utc": "2026-11-04T08:19:12.998161+00:00",
+  "audit_scope": "Full scan of supplied suspension logs only; no model inference",
+  "window_size": 64,
+  "files": [
+    {
+      "file": "data/raw/CAN-MIRGU/Attack/Suspension_attacks/ID_07F_suspension_attack.log",
+      "sha256": "6c352c79bb7e1533f9d367efc48f1be449798cd2731d3beeb9e4e1ad94f97570",
+      "target_id": "07F",
+      "first_timestamp": "1683206665.477632",
+      "last_timestamp": "1683206979.838107",
+      "frame_labels": {
+        "0": 343965,
+        "1": 255900
+      },
+      "window_labels": {
+        "0": 5372,
+        "1": 4000
+      },
+      "target_id_counts_by_label": {
+        "0": 179,
+        "1": 0
+      },
+      "distinct_id_counts_by_label": {
+        "0": 56,
+        "1": 55
+      },
+      "label_intervals": [
+        {
+          "label": 0,
+          "first_timestamp": "1683206665.477632",
+          "frames": 294821,
+          "last_timestamp": "1683206820.004957"
+        },
+        {
+          "label": 1,
+          "first_timestamp": "1683206820.007964",
+          "frames": 255900,
+          "last_timestamp": "1683206954.010878"
+        },
+        {
+          "label": 0,
+          "first_timestamp": "1683206954.010879",
+          "frames": 49144,
+          "last_timestamp": "1683206979.838107"
+        }
+      ],
+      "discarded_tail_frames": 57
+    },
+    {
+      "file": "data/raw/CAN-MIRGU/Attack/Suspension_attacks/ID_160_suspension_attack.log",
+      "sha256": "d47b2030f0b2fafcf27c144ae511fdb6cf3d5f240ad825c7ddf62f98a62966d4",
+      "target_id": "160",
+      "first_timestamp": "1683205408.034354",
+      "last_timestamp": "1683205722.552396",
+      "frame_labels": {
+        "0": 428465,
+        "1": 162535
+      },
+      "window_labels": {
+        "0": 6693,
+        "1": 2541
+      },
+      "target_id_counts_by_label": {
+        "0": 22450,
+        "1": 0
+      },
+      "distinct_id_counts_by_label": {
+        "0": 56,
+        "1": 55
+      },
+      "label_intervals": [
+        {
+          "label": 0,
+          "first_timestamp": "1683205408.034354",
+          "frames": 171701,
+          "last_timestamp": "1683205498.038917"
+        },
+        {
+          "label": 1,
+          "first_timestamp": "1683205498.038918",
+          "frames": 162535,
+          "last_timestamp": "1683205588.023853"
+        },
+        {
+          "label": 0,
+          "first_timestamp": "1683205588.023854",
+          "frames": 256764,
+          "last_timestamp": "1683205722.552396"
+        }
+      ],
+      "discarded_tail_frames": 24
+    },
+    {
+      "file": "data/raw/CAN-MIRGU/Attack/Suspension_attacks/ID_371_suspension_attack.log",
+      "sha256": "ca96d6cb7880e7bdec6af2b9c5be073568fdd61528e403f4b1677e6ef6a26345",
+      "target_id": "371",
+      "first_timestamp": "1683205722.552397",
+      "last_timestamp": "1683206037.244945",
+      "frame_labels": {
+        "0": 428613,
+        "1": 162387
+      },
+      "window_labels": {
+        "0": 6696,
+        "1": 2538
+      },
+      "target_id_counts_by_label": {
+        "0": 22469,
+        "1": 0
+      },
+      "distinct_id_counts_by_label": {
+        "0": 56,
+        "1": 55
+      },
+      "label_intervals": [
+        {
+          "label": 0,
+          "first_timestamp": "1683205722.552397",
+          "frames": 171852,
+          "last_timestamp": "1683205812.557157"
+        },
+        {
+          "label": 1,
+          "first_timestamp": "1683205812.557158",
+          "frames": 162387,
+          "last_timestamp": "1683205902.548757"
+        },
+        {
+          "label": 0,
+          "first_timestamp": "1683205902.548758",
+          "frames": 256761,
+          "last_timestamp": "1683206037.244945"
+        }
+      ],
+      "discarded_tail_frames": 24
+    },
+    {
+      "file": "data/raw/CAN-MIRGU/Attack/Suspension_attacks/ID_386_suspension_attack.log",
+      "sha256": "d88f812f9c12fa5b97dc5682ad1f0fe320dbfc6655e476a668b598a5560ac04c",
+      "target_id": "386",
+      "first_timestamp": "1683206037.244947",
+      "last_timestamp": "1683206351.761562",
+      "frame_labels": {
+        "0": 428331,
+        "1": 167168
+      },
+      "window_labels": {
+        "0": 6691,
+        "1": 2613
+      },
+      "target_id_counts_by_label": {
+        "0": 11224,
+        "1": 0
+      },
+      "distinct_id_counts_by_label": {
+        "0": 56,
+        "1": 55
+      },
+      "label_intervals": [
+        {
+          "label": 0,
+          "first_timestamp": "1683206037.244947",
+          "frames": 171445,
+          "last_timestamp": "1683206127.232868"
+        },
+        {
+          "label": 1,
+          "first_timestamp": "1683206127.232869",
+          "frames": 167168,
+          "last_timestamp": "1683206217.238798"
+        },
+        {
+          "label": 0,
+          "first_timestamp": "1683206217.238800",
+          "frames": 256886,
+          "last_timestamp": "1683206351.761562"
+        }
+      ],
+      "discarded_tail_frames": 43
+    },
+    {
+      "file": "data/raw/CAN-MIRGU/Attack/Suspension_attacks/ID_541_suspension_attack.log",
+      "sha256": "25be5d683261a48636e14fab72f1e23360ba0b34b51ebc96a500eab0765ed398",
+      "target_id": "541",
+      "first_timestamp": "1683206351.761563",
+      "last_timestamp": "1683206665.477630",
+      "frame_labels": {
+        "0": 370480,
+        "1": 228319
+      },
+      "window_labels": {
+        "0": 5788,
+        "1": 3568
+      },
+      "target_id_counts_by_label": {
+        "0": 1988,
+        "1": 0
+      },
+      "distinct_id_counts_by_label": {
+        "0": 56,
+        "1": 55
+      },
+      "label_intervals": [
+        {
+          "label": 0,
+          "first_timestamp": "1683206351.761563",
+          "frames": 171937,
+          "last_timestamp": "1683206441.675182"
+        },
+        {
+          "label": 1,
+          "first_timestamp": "1683206441.675183",
+          "frames": 228319,
+          "last_timestamp": "1683206561.678556"
+        },
+        {
+          "label": 0,
+          "first_timestamp": "1683206561.679618",
+          "frames": 198543,
+          "last_timestamp": "1683206665.477630"
+        }
+      ],
+      "discarded_tail_frames": 15
+    }
+  ],
+  "interfile_timestamp_gaps": [
+    {
+      "previous": "data/raw/CAN-MIRGU/Attack/Suspension_attacks/ID_160_suspension_attack.log",
+      "following": "data/raw/CAN-MIRGU/Attack/Suspension_attacks/ID_371_suspension_attack.log",
+      "gap_seconds": "0.000001"
+    },
+    {
+      "previous": "data/raw/CAN-MIRGU/Attack/Suspension_attacks/ID_371_suspension_attack.log",
+      "following": "data/raw/CAN-MIRGU/Attack/Suspension_attacks/ID_386_suspension_attack.log",
+      "gap_seconds": "0.000002"
+    },
+    {
+      "previous": "data/raw/CAN-MIRGU/Attack/Suspension_attacks/ID_386_suspension_attack.log",
+      "following": "data/raw/CAN-MIRGU/Attack/Suspension_attacks/ID_541_suspension_attack.log",
+      "gap_seconds": "0.000001"
+    },
+    {
+      "previous": "data/raw/CAN-MIRGU/Attack/Suspension_attacks/ID_541_suspension_attack.log",
+      "following": "data/raw/CAN-MIRGU/Attack/Suspension_attacks/ID_07F_suspension_attack.log",
+      "gap_seconds": "0.000002"
+    }
+  ],
+  "interpretation": "Positive labels mark periods of suspension; the targeted ID is absent. These labels are not injected-malicious-frame labels. Near-contiguous timestamps are a dependency warning, not proof of a common drive-session identity.",
+  "primary_source": "https://www.ndss-symposium.org/wp-content/uploads/vehiclesec2024-23043-paper.pdf"
+}

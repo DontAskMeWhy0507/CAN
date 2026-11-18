@@ -1,0 +1,15 @@
+{
+  "scope": "First 128 frames only; does not certify complete chronology, labels or payloads.",
+  "files": 293,
+  "failures": 0,
+  "counts_by_dataset": {
+    "CTT": 236,
+    "CAN_MIRGU_attack": 36,
+    "CAN_MIRGU_benign": 12,
+    "CICIoV2024": 5,
+    "Opel_Astra_benign": 1,
+    "Opel_Astra_DoS": 1,
+    "Renault_Clio_benign": 1,
+    "Renault_Clio_DoS": 1
+  }
+}

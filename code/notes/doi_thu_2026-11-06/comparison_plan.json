@@ -1,0 +1,122 @@
+{
+  "date": "2026-11-06",
+  "status": "IMPLEMENTED_PENDING_FULL_GPU_RUN",
+  "plan_file": "KE_HOACH_SO_SANH.txt",
+  "core_methods": [
+    "transformer:structural",
+    "transformer:raw"
+  ],
+  "new_priority_methods": [
+    "CANBERT+",
+    "CANLP (journal/repository alignment pending)",
+    "CrySyS AssocRules (original method and adapter audit pending)"
+  ],
+  "additional_priority": "Relational Modelling faithful feature reproduction",
+  "current_launcher_includes_external_competitor_algorithms": true,
+  "current_launcher_scope": "Existing v2.1 models and ablations only; external dataset evaluation is different from adding competitor algorithms.",
+  "protocol": {
+    "sets": 4,
+    "conditions": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "window_size": 64,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "seed_policy": "Three seeds for stochastic methods. Deterministic identical fits may run once per set, with reuse explicitly reported.",
+    "primary_condition": "B",
+    "stress_condition": "D",
+    "calibration": "source validation only, FAR budget 100/100k benign windows",
+    "frame_to_window_proposal": "max attack score on 64 frames; validate on source and freeze before target evaluation",
+    "counts": "Existing primary 48 IDS fits; each stochastic competitor adds 12 units; deterministic method may add 4. Pretraining/fine-tuning stages and additional studies excluded."
+  },
+  "now": [
+    "GPU/environment check",
+    "Data preparation",
+    "Current tests and preflight"
+  ],
+  "full_runs_require": [
+    "G1",
+    "G2",
+    "G3"
+  ],
+  "stages": [
+    {
+      "id": "G0",
+      "owner": "user",
+      "task": "Prepare GPU, original data and preflight",
+      "acceptance": "GPU/environment details and complete input-check logs",
+      "status": "DATA_PREPARED_GPU_USER_ACTION",
+      "depends_on": []
+    },
+    {
+      "id": "G1",
+      "owner": "assistant_code",
+      "task": "Specify and implement competitor adapters",
+      "acceptance": "Pinned repository commits; algorithm mapping; tested adapters and actual CLI",
+      "status": "IMPLEMENTED_THREE_ADAPTERS_WITH_DOCUMENTED_ADAPTATIONS",
+      "depends_on": []
+    },
+    {
+      "id": "G2",
+      "owner": "assistant_and_user_gpu",
+      "task": "Source-only pilot",
+      "acceptance": "Correct labels/scores/window mapping; unknown-ID tests; measured resource use",
+      "status": "CPU_SOURCE_PILOT_PASSED_GPU_PILOT_PENDING",
+      "depends_on": [
+        "G0",
+        "G1"
+      ]
+    },
+    {
+      "id": "G3",
+      "owner": "assistant_code",
+      "task": "Freeze comparison protocol",
+      "acceptance": "Frozen methods/configs/source-only calibration; separate output version",
+      "status": "CONTENT_COMPARISON_IMPLEMENTED_VERSION_HASHED",
+      "depends_on": [
+        "G2"
+      ]
+    },
+    {
+      "id": "G4",
+      "owner": "user_gpu",
+      "task": "Run full matrix",
+      "acceptance": "Four sets x A-D; three seeds for stochastic methods; complete provenance",
+      "status": "PENDING_FULL_GPU_RUN",
+      "depends_on": [
+        "G3"
+      ]
+    },
+    {
+      "id": "G5",
+      "owner": "assistant_analysis",
+      "task": "Analyze paired outcomes",
+      "acceptance": "Per-set and equal-set Recall/FAR/F1/AP differences with valid denominators",
+      "status": "PENDING_FULL_GPU_RUN",
+      "depends_on": [
+        "G4"
+      ]
+    },
+    {
+      "id": "G6",
+      "owner": "assistant_and_user_gpu",
+      "task": "Explain and finalize",
+      "acceptance": "Ablations/probes/external evaluation as feasible; bilingual updated manuscript",
+      "status": "PENDING_FULL_GPU_RUN",
+      "depends_on": [
+        "G5"
+      ]
+    }
+  ],
+  "last_updated": "2026-11-08",
+  "current_launcher": "code/scripts/run_comparison.py",
+  "current_protocol": "ctt-content-order-comparison-v1",
+  "original_plan_retained_as_historical": true,
+  "actual_protocol_note": "Raw28/structural30 content-only because original CTT contains timestamp inversions; detailed implementation is in code/comparison/README.txt."
+}

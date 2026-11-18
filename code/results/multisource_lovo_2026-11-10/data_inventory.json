@@ -1,0 +1,3130 @@
+[
+  {
+    "source": "data/can-train-and-test/set_03/train_01/accessory-3.csv",
+    "source_sha256": "1e89e6f1af2b04fb547f2ca25253170c0aaec12c46bcb8811b9c1cb53f770441",
+    "source_bytes": 8444080,
+    "cache": "72a59b03df7bbdb0f92c.bin",
+    "cache_sha256": "00b86f265257e2a13c3353506db8fbfa6cfb42bafa64bf171aea7dc8a390b0cc",
+    "frames": 216573,
+    "windows": 3383,
+    "tail_frames": 61,
+    "set": "set_03",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 2,
+    "token": "00b86f265257e2a13c335350",
+    "aliases": [
+      "data/can-train-and-test/set_03/train_01/accessory-3.csv"
+    ],
+    "family": "accessory"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/triple-4.csv",
+    "source_sha256": "e58d048d0036a20078facb92ce28157cb88d62c178730dfc4ad9252a94d46d0a",
+    "source_bytes": 32986730,
+    "cache": "ff06cc1d10b8f6d06d3d.bin",
+    "cache_sha256": "0110426a9e5878551be6fb4c923e1594786636ba2f676f57089a83e116be26ae",
+    "frames": 824468,
+    "windows": 12882,
+    "tail_frames": 20,
+    "set": "set_01",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 14,
+    "vehicle": 0,
+    "token": "0110426a9e5878551be6fb4c",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/triple-4.csv"
+    ],
+    "family": "triple"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/interval-4.csv",
+    "source_sha256": "88e66ce2bbfe35d4fc137e55121d24cc2a0ff6d11a82b37901f0230220433309",
+    "source_bytes": 35226090,
+    "cache": "656d257efc23d62f4b60.bin",
+    "cache_sha256": "015a9d41d3ff97be3fa7099bffae39ffd59f7ffb904f68b78167eae001edc61e",
+    "frames": 884330,
+    "windows": 13817,
+    "tail_frames": 42,
+    "set": "set_01",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 0,
+    "token": "015a9d41d3ff97be3fa7099b",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/interval-4.csv"
+    ],
+    "family": "interval"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/rpm-1.csv",
+    "source_sha256": "3b3e35c25c81c1fc71017707b07d461fd9c6959bbe6d52cb4625f8e175b1e2ae",
+    "source_bytes": 20208928,
+    "cache": "41731fcf6f2a0a10eb55.bin",
+    "cache_sha256": "02705073ef4b4027e7733ce74a38bc0c0ba0a316781438bbf45eeb05deef6cd9",
+    "frames": 488528,
+    "windows": 7633,
+    "tail_frames": 16,
+    "set": "set_04",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "02705073ef4b4027e7733ce7",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/rpm-1.csv",
+      "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/rpm-1.csv"
+    ],
+    "family": "rpm"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/force-neutral-1.csv",
+    "source_sha256": "3167085f6eebe7695b59c32a938e02785466b1ef7cb6b74633f9f9e7d9c0ecbb",
+    "source_bytes": 48945481,
+    "cache": "0e6a0952bc14b84ddd36.bin",
+    "cache_sha256": "029ef37fb38ba9ae5d675fd9b1f38b8dbc1e5ab502e039cbb67324b1f0df4443",
+    "frames": 1257602,
+    "windows": 19650,
+    "tail_frames": 2,
+    "set": "set_03",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 64,
+    "vehicle": 2,
+    "token": "029ef37fb38ba9ae5d675fd9",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/force-neutral-1.csv"
+    ],
+    "family": "force-neutral"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/double-1.csv",
+    "source_sha256": "c71c359295855a0c273c327093b1d386e4c9e42bb6c68467d9ca141bef905e7e",
+    "source_bytes": 49377236,
+    "cache": "203e43d3889785c70bc5.bin",
+    "cache_sha256": "0481b73a8550e783a8a61bfa81045b29b5355032b89e7ec2957ad1ad203a842f",
+    "frames": 1257705,
+    "windows": 19651,
+    "tail_frames": 41,
+    "set": "set_03",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 60,
+    "vehicle": 2,
+    "token": "0481b73a8550e783a8a61bfa",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/double-1.csv"
+    ],
+    "family": "double"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/test_04_unknown_vehicle_unknown_attack/DoS-4.csv",
+    "source_sha256": "940829206518c290d16363a82c308c88b66d8613467ba1166d2ce4591659a13a",
+    "source_bytes": 26946547,
+    "cache": "2b94cc795ebfdf8e0faf.bin",
+    "cache_sha256": "0609792e6ce03d658236d7f9e3c2d7d0664cd10a9949b60a31259e8533647d1f",
+    "frames": 653469,
+    "windows": 10210,
+    "tail_frames": 29,
+    "set": "set_02",
+    "folder": "test_04_unknown_vehicle_unknown_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "0609792e6ce03d658236d7f9",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_04_unknown_vehicle_unknown_attack/DoS-4.csv"
+    ],
+    "family": "DoS"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/train_01/triple-4.csv",
+    "source_sha256": "d785ba65bce5816d85d14ce11b6d2e106c7f53fa1c9703e1fbf466763d46d39a",
+    "source_bytes": 25340409,
+    "cache": "78591a6a245b3b4c94cf.bin",
+    "cache_sha256": "06cf31e452a9a2437dc6a81c2862be98797831218158d64de16717536212827c",
+    "frames": 646528,
+    "windows": 10102,
+    "tail_frames": 0,
+    "set": "set_03",
+    "folder": "train_01",
+    "timestamp_inversions": 14,
+    "vehicle": 2,
+    "token": "06cf31e452a9a2437dc6a81c",
+    "aliases": [
+      "data/can-train-and-test/set_03/train_01/triple-4.csv"
+    ],
+    "family": "triple"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/test_03_known_vehicle_unknown_attack/force-neutral-3.csv",
+    "source_sha256": "49f2d50b936ee43def1d6b394bd17b241db1fb29b905e0d7046e62826ebc7cad",
+    "source_bytes": 164311787,
+    "cache": "8e3fc6dc80bea49d0dce.bin",
+    "cache_sha256": "06dbdf56e31d321df56ed0cd7c9deebbf494fc8062f44cd50668a2ca5a892c77",
+    "frames": 4210018,
+    "windows": 65781,
+    "tail_frames": 34,
+    "set": "set_02",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 3,
+    "vehicle": 1,
+    "token": "06dbdf56e31d321df56ed0cd",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_03_known_vehicle_unknown_attack/force-neutral-3.csv"
+    ],
+    "family": "force-neutral"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/interval-3.csv",
+    "source_sha256": "b4d7b0d73fb3dc061e6cc3626f3752b496537f7320f9d090c582982a56d7a06b",
+    "source_bytes": 31485481,
+    "cache": "c9b55bca4bd22838c970.bin",
+    "cache_sha256": "070d9395842351d5a1776ffec6c0b2ef6ce6561366fb12cc7b3a528335cb8f92",
+    "frames": 786935,
+    "windows": 12295,
+    "tail_frames": 55,
+    "set": "set_01",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 0,
+    "token": "070d9395842351d5a1776ffe",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/interval-3.csv"
+    ],
+    "family": "interval"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/double-4.csv",
+    "source_sha256": "01063c414d23ab4cab66f22e4a9af93822a2284d01c515aef65c3578e638fac5",
+    "source_bytes": 33620025,
+    "cache": "c8e8d2c5eb4195b4b77c.bin",
+    "cache_sha256": "070ff276363e8b854bc21db736bf09476f248fe4f8100fd9f964d3d678c2d64b",
+    "frames": 840014,
+    "windows": 13125,
+    "tail_frames": 14,
+    "set": "set_01",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 31,
+    "vehicle": 0,
+    "token": "070ff276363e8b854bc21db7",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/double-4.csv"
+    ],
+    "family": "double"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/force-neutral-2.csv",
+    "source_sha256": "7e9bdc9e82ce792d0616a800e01b8caed894e3b3b6ac56d803dd060b105553e5",
+    "source_bytes": 17682157,
+    "cache": "ed3d4b526f98b14b2322.bin",
+    "cache_sha256": "08a94af9e884d1f8e7015f56beec1eca623503b396b6b2ce3b510bc95ed00ef5",
+    "frames": 454206,
+    "windows": 7096,
+    "tail_frames": 62,
+    "set": "set_04",
+    "folder": "test_04_unknown_vehicle_unknown_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 1,
+    "token": "08a94af9e884d1f8e7015f56",
+    "aliases": [
+      "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/force-neutral-2.csv"
+    ],
+    "family": "force-neutral"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/systematic-4.csv",
+    "source_sha256": "43c71daa7e767c8afb218c2aadb50624c1f689d0d30c30e1b6146eb2d67f23c1",
+    "source_bytes": 22714399,
+    "cache": "260a2c29892b778f656d.bin",
+    "cache_sha256": "09ac8b944910810252bcfa2e2005844dcdcd85e9ab1567b29bcbbf07c425027e",
+    "frames": 567973,
+    "windows": 8874,
+    "tail_frames": 37,
+    "set": "set_01",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 0,
+    "token": "09ac8b944910810252bcfa2e",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/systematic-4.csv"
+    ],
+    "family": "systematic"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/DoS-2.csv",
+    "source_sha256": "774b23510ac532d48c87a95a66e03b7322a6e0cea91c288728d427444ae98175",
+    "source_bytes": 16415533,
+    "cache": "d9d9ce83bdea50854af9.bin",
+    "cache_sha256": "0ac4a3fbc29dba6df1d7ffeb07d7e42c2f4ad157a8a3e46ee3dc4d0bca34674e",
+    "frames": 416866,
+    "windows": 6513,
+    "tail_frames": 34,
+    "set": "set_04",
+    "folder": "test_04_unknown_vehicle_unknown_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 1,
+    "token": "0ac4a3fbc29dba6df1d7ffeb",
+    "aliases": [
+      "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/DoS-2.csv"
+    ],
+    "family": "DoS"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/rpm-accessory-2.csv",
+    "source_sha256": "f0585e2ff059b2b699af2b27b38e571b9b14e3dabfd88eea648761c3b14246c5",
+    "source_bytes": 5735261,
+    "cache": "b43e58cd5a0a7c688b4b.bin",
+    "cache_sha256": "0c24e4cf9e8023e85c4a3fc6b8b2f98f98e66aee49b67e04e7ef4aa238645aa5",
+    "frames": 138381,
+    "windows": 2162,
+    "tail_frames": 13,
+    "set": "set_04",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "0c24e4cf9e8023e85c4a3fc6",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/rpm-accessory-2.csv",
+      "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/rpm-accessory-2.csv"
+    ],
+    "family": "rpm-accessory"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/train_01/accessory-1.csv",
+    "source_sha256": "8c7a106bd08c5f7d4342f6e349a26f7a18781312a1e2baaf3745eb333c6650c0",
+    "source_bytes": 8293283,
+    "cache": "0b11374b7b5af072344d.bin",
+    "cache_sha256": "106a03f9dd85904987ca86d879bfb8b3c2edd0645e55e5e2500bbf89a0b3f34e",
+    "frames": 207704,
+    "windows": 3245,
+    "tail_frames": 24,
+    "set": "set_01",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 0,
+    "token": "106a03f9dd85904987ca86d8",
+    "aliases": [
+      "data/can-train-and-test/set_01/train_01/accessory-1.csv"
+    ],
+    "family": "accessory"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/rpm-accessory-1.csv",
+    "source_sha256": "daa1d3ed055700c6819127e4736bc6b359f670dc46c473f473f1a79acbb2b6be",
+    "source_bytes": 20523689,
+    "cache": "e1d2eaa17c2bb310aae6.bin",
+    "cache_sha256": "111ec1dbd28235c92acb8c0639e4f8f93a736e7954a5bf0dedf9d3af31eab17e",
+    "frames": 529658,
+    "windows": 8275,
+    "tail_frames": 58,
+    "set": "set_04",
+    "folder": "test_02_unknown_vehicle_known_attack",
+    "timestamp_inversions": 10,
+    "vehicle": 1,
+    "token": "111ec1dbd28235c92acb8c06",
+    "aliases": [
+      "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/rpm-accessory-1.csv"
+    ],
+    "family": "rpm-accessory"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/train_01/interval-2.csv",
+    "source_sha256": "41cc5e058669188f2c7a7f10042650768068373fb136e14e91487885af50d2af",
+    "source_bytes": 64337716,
+    "cache": "fa667b14e9777291193b.bin",
+    "cache_sha256": "11d547e569cfeb86c5c73e916a23e304c35cb19dddf822bb6b645b271fc17b6d",
+    "frames": 1653840,
+    "windows": 25841,
+    "tail_frames": 16,
+    "set": "set_02",
+    "folder": "train_01",
+    "timestamp_inversions": 71,
+    "vehicle": 1,
+    "token": "11d547e569cfeb86c5c73e91",
+    "aliases": [
+      "data/can-train-and-test/set_02/train_01/interval-2.csv",
+      "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/interval-2.csv"
+    ],
+    "family": "interval"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/fuzzing-4.csv",
+    "source_sha256": "9a21ead725ce94eab7900b65e73e448104aa8956c83839ed08618e385c9dfa44",
+    "source_bytes": 25940969,
+    "cache": "f606212e57dc716233a4.bin",
+    "cache_sha256": "12f7f8493ad217625f6b6f1432d0a0bf62170446b20e5c56b6313e7fb134b84d",
+    "frames": 629562,
+    "windows": 9836,
+    "tail_frames": 58,
+    "set": "set_02",
+    "folder": "test_02_unknown_vehicle_known_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "12f7f8493ad217625f6b6f14",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/fuzzing-4.csv"
+    ],
+    "family": "fuzzing"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/train_01/accessory-4.csv",
+    "source_sha256": "2309acec80bb772a12453aa83f9e67a7810ec26b9f8c5654ef28c4c6892f197d",
+    "source_bytes": 17441367,
+    "cache": "44fe4c068fb618661248.bin",
+    "cache_sha256": "1352bcba2962106510a448206c8b4cf13dd14c05a39c43931217a9c25387186b",
+    "frames": 446433,
+    "windows": 6975,
+    "tail_frames": 33,
+    "set": "set_03",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 2,
+    "token": "1352bcba2962106510a44820",
+    "aliases": [
+      "data/can-train-and-test/set_03/train_01/accessory-4.csv"
+    ],
+    "family": "accessory"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/triple-1.csv",
+    "source_sha256": "f98c27a798a1b36e52266f2c2b70ede314b26f6965ddd81e95ef874b59b14e8d",
+    "source_bytes": 20653426,
+    "cache": "9e0693d5e24efc0df428.bin",
+    "cache_sha256": "13b51b2beb82ed7e5f17e3e15141ccbdc4d9e497187f70c3da01f0e2511f1747",
+    "frames": 524898,
+    "windows": 8201,
+    "tail_frames": 34,
+    "set": "set_03",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 28,
+    "vehicle": 2,
+    "token": "13b51b2beb82ed7e5f17e3e1",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/triple-1.csv"
+    ],
+    "family": "triple"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/rpm-accessory-1.csv",
+    "source_sha256": "3060a67976155d496ae18dedae68ce90fc779b8ee0c9cc3bfd8ddf7655eb2820",
+    "source_bytes": 5349924,
+    "cache": "3354afcd864022e47e4f.bin",
+    "cache_sha256": "16da5319f2f6d65f2d2387198a307e7ba659f174b9944c6393eb0e1ffbc4b571",
+    "frames": 129817,
+    "windows": 2028,
+    "tail_frames": 25,
+    "set": "set_04",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "16da5319f2f6d65f2d238719",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/rpm-accessory-1.csv",
+      "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/rpm-accessory-1.csv"
+    ],
+    "family": "rpm-accessory"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/train_01/fuzzing-2.csv",
+    "source_sha256": "87fe955b68242b93df505b95f1c55211775c3571fa9474a9574a06a6d541b5cd",
+    "source_bytes": 45658198,
+    "cache": "4b483d1d94e65536ea23.bin",
+    "cache_sha256": "1e4153681b12b112fbbf713858b7b649e3cbd0f05502c510e3212656bc10fa7e",
+    "frames": 1167769,
+    "windows": 18246,
+    "tail_frames": 25,
+    "set": "set_02",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 1,
+    "token": "1e4153681b12b112fbbf7138",
+    "aliases": [
+      "data/can-train-and-test/set_02/train_01/fuzzing-2.csv",
+      "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/fuzzing-2.csv"
+    ],
+    "family": "fuzzing"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/train_01/attack-free-2.csv",
+    "source_sha256": "d8ea6fbcc4893273738a3d51ec30df0869512fb7fffd0cec085ee51b29155861",
+    "source_bytes": 22330967,
+    "cache": "c5350c2a71d60959dd39.bin",
+    "cache_sha256": "1eb029c2ac266223954b2a54ddd24782dbbc0041b83b64ff95e902479673ca67",
+    "frames": 573956,
+    "windows": 8968,
+    "tail_frames": 4,
+    "set": "set_02",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 1,
+    "token": "1eb029c2ac266223954b2a54",
+    "aliases": [
+      "data/can-train-and-test/set_02/train_01/attack-free-2.csv"
+    ],
+    "family": "attack-free"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/train_01/standstill-3.csv",
+    "source_sha256": "c3241f642ab9d5dc2275feb0666c55cace217ba01312bc731eb66baf82aecbf5",
+    "source_bytes": 33282459,
+    "cache": "cd7f54ac6c78848d7d50.bin",
+    "cache_sha256": "1ef20e634252b56db0d8c8ed8959f33b9278a8beb1f4fd07bce05a886951222c",
+    "frames": 810295,
+    "windows": 12660,
+    "tail_frames": 55,
+    "set": "set_04",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "1ef20e634252b56db0d8c8ed",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_04_unknown_vehicle_unknown_attack/standstill-3.csv",
+      "data/can-train-and-test/set_04/train_01/standstill-3.csv"
+    ],
+    "family": "standstill"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/train_01/interval-3.csv",
+    "source_sha256": "0469336f62387be4e62d2a655695a7d43cdc1c86673a29cfb9d63177150afdfd",
+    "source_bytes": 16318572,
+    "cache": "49c1e15829e94daeeda9.bin",
+    "cache_sha256": "1fbc8440d281d38d4d2c49443f1f972ed56ac973ae89cc774b494b9d9ad65f38",
+    "frames": 393679,
+    "windows": 6151,
+    "tail_frames": 15,
+    "set": "set_04",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "1fbc8440d281d38d4d2c4944",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/interval-3.csv",
+      "data/can-train-and-test/set_04/train_01/interval-3.csv"
+    ],
+    "family": "interval"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/speed-accessory-2.csv",
+    "source_sha256": "7b75afb72e13f3f4362ae903a5827fc3e5313513bacf269bd3d4a8a5abbd75e7",
+    "source_bytes": 6812066,
+    "cache": "f968c239a51b65855fe9.bin",
+    "cache_sha256": "27e130bf0fa9125fc24b1776b1f3d85e65904be2b62f755a7538fd8d6532c136",
+    "frames": 164771,
+    "windows": 2574,
+    "tail_frames": 35,
+    "set": "set_04",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "27e130bf0fa9125fc24b1776",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/speed-accessory-2.csv",
+      "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/speed-accessory-2.csv"
+    ],
+    "family": "speed-accessory"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/speed-accessory-2.csv",
+    "source_sha256": "8b744824ef4b34b203ee18fed3e906226713a19c3e3cb710476579d1258f3d86",
+    "source_bytes": 5866445,
+    "cache": "4b26d29390e251050647.bin",
+    "cache_sha256": "28af1358503fd14d1abe451e05d449c04af0802d650007e31c562c0741a2d3eb",
+    "frames": 149831,
+    "windows": 2341,
+    "tail_frames": 7,
+    "set": "set_03",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 5,
+    "vehicle": 2,
+    "token": "28af1358503fd14d1abe451e",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/speed-accessory-2.csv"
+    ],
+    "family": "speed-accessory"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/test_01_known_vehicle_known_attack/standstill-3.csv",
+    "source_sha256": "4b7311bddd0ec94c236b37f69c0d256f6d992cdf2f36a6a9d6bf9a7f3dcac727",
+    "source_bytes": 24921381,
+    "cache": "edcf2e6e367796a94cf6.bin",
+    "cache_sha256": "29b090f45a53089e32110db4d43063f78b7df80c124d70640a310dbf09c8c5d7",
+    "frames": 629156,
+    "windows": 9830,
+    "tail_frames": 36,
+    "set": "set_01",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 59,
+    "vehicle": 0,
+    "token": "29b090f45a53089e32110db4",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_01_known_vehicle_known_attack/standstill-3.csv"
+    ],
+    "family": "standstill"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/standstill-1.csv",
+    "source_sha256": "102ef558c86c86464f4b9a9529c7aed43a192abd29b25b3fcf91de6a679431b6",
+    "source_bytes": 20431372,
+    "cache": "3c5649a4ee4125dba486.bin",
+    "cache_sha256": "2c14bcdbe96ff44170478ad0b992b08de7e48d67120fbfe16cff5698d3da8990",
+    "frames": 524245,
+    "windows": 8191,
+    "tail_frames": 21,
+    "set": "set_03",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 36,
+    "vehicle": 2,
+    "token": "2c14bcdbe96ff44170478ad0",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/standstill-1.csv"
+    ],
+    "family": "standstill"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/speed-accessory-2.csv",
+    "source_sha256": "4c8800799f304ca8fa63f3de8fea4ac5418fbf4431b96f34987100215c10f3a9",
+    "source_bytes": 11912940,
+    "cache": "e74d5447dd67598c6463.bin",
+    "cache_sha256": "301cb590943d02df6ee65249fb9786cc2a96a159a1bc274f113d6692d8c42adb",
+    "frames": 307067,
+    "windows": 4797,
+    "tail_frames": 59,
+    "set": "set_04",
+    "folder": "test_02_unknown_vehicle_known_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 1,
+    "token": "301cb590943d02df6ee65249",
+    "aliases": [
+      "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/speed-accessory-2.csv"
+    ],
+    "family": "speed-accessory"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/test_04_unknown_vehicle_unknown_attack/DoS-3.csv",
+    "source_sha256": "208ed694b9ac1ebebfa27689ff044748f9a739630a8d4f9556bf4d66fafb322a",
+    "source_bytes": 12069656,
+    "cache": "711ec037a80029071e38.bin",
+    "cache_sha256": "316108c0a14ff2d239c7ba2321c8823a12d40f7ac497b90ea6e8836c09d11817",
+    "frames": 291582,
+    "windows": 4555,
+    "tail_frames": 62,
+    "set": "set_02",
+    "folder": "test_04_unknown_vehicle_unknown_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "316108c0a14ff2d239c7ba23",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_04_unknown_vehicle_unknown_attack/DoS-3.csv"
+    ],
+    "family": "DoS"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/train_01/systematic-4.csv",
+    "source_sha256": "95ee3059a6a82cb7d1120289ea755bd1279caeef776804de5a81fbe9c4c652b1",
+    "source_bytes": 51186865,
+    "cache": "2108d700f29ab0fda082.bin",
+    "cache_sha256": "33dce005f216dee20fc5d2fd5964e0a5d9aba236d21b9dd4d7be9bbfa07dc2a1",
+    "frames": 1235881,
+    "windows": 19310,
+    "tail_frames": 41,
+    "set": "set_04",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "33dce005f216dee20fc5d2fd",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/systematic-4.csv",
+      "data/can-train-and-test/set_04/train_01/systematic-4.csv"
+    ],
+    "family": "systematic"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/interval-2.csv",
+    "source_sha256": "50f59220793de54371088a86fa19add025e647a13c468d7e0eea61a8c9c42394",
+    "source_bytes": 39628781,
+    "cache": "c99aff81044432723c15.bin",
+    "cache_sha256": "349c6d01af081dd5776fa93c55c5ebfae6a5ea1f22f3c7c7b8ec32ce6f1f3a63",
+    "frames": 1009145,
+    "windows": 15767,
+    "tail_frames": 57,
+    "set": "set_03",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 2,
+    "token": "349c6d01af081dd5776fa93c",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/interval-2.csv"
+    ],
+    "family": "interval"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/rpm-2.csv",
+    "source_sha256": "1f84976848114e9db4505af4001af9883371b2fe76c2ffece83ef2318a71e59b",
+    "source_bytes": 76487674,
+    "cache": "8cb4f170a8384cad819c.bin",
+    "cache_sha256": "35a7db054b305e6bf2b41556458fa078e3fb21ce9af64d727706883aec7c0f17",
+    "frames": 1975925,
+    "windows": 30873,
+    "tail_frames": 53,
+    "set": "set_04",
+    "folder": "test_02_unknown_vehicle_known_attack",
+    "timestamp_inversions": 5,
+    "vehicle": 1,
+    "token": "35a7db054b305e6bf2b41556",
+    "aliases": [
+      "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/rpm-2.csv"
+    ],
+    "family": "rpm"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/triple-3.csv",
+    "source_sha256": "6a1e7cd419221a408e3896c9af6c514d79150c0a572f5834346a06dcfad29371",
+    "source_bytes": 32106501,
+    "cache": "cf29750a387cd988c85e.bin",
+    "cache_sha256": "377f10e154981b13a7f92fe4663df9013b19470cd667d77b64a6c35e78f95c9e",
+    "frames": 807996,
+    "windows": 12624,
+    "tail_frames": 60,
+    "set": "set_01",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 50,
+    "vehicle": 0,
+    "token": "377f10e154981b13a7f92fe4",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/triple-3.csv"
+    ],
+    "family": "triple"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/speed-1.csv",
+    "source_sha256": "89b0784791a1905103293ed14e25227dcb4ac58e9057e568b5966c8a12f938a0",
+    "source_bytes": 48953438,
+    "cache": "6a9d4d0dec7b03f76055.bin",
+    "cache_sha256": "379077c65137ab1ccb040ec1af1a9c2ac8611e7d0b54432b35c890e42298c790",
+    "frames": 1255235,
+    "windows": 19613,
+    "tail_frames": 3,
+    "set": "set_03",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 12,
+    "vehicle": 2,
+    "token": "379077c65137ab1ccb040ec1",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/speed-1.csv"
+    ],
+    "family": "speed"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/test_01_known_vehicle_known_attack/force-neutral-3.csv",
+    "source_sha256": "ad10c33baa0ac0be2662e6a60e73468ad70ae60e979484bffc8b1c073a5fd795",
+    "source_bytes": 36073406,
+    "cache": "648096dee5f2a7fd9e34.bin",
+    "cache_sha256": "37ae3244ec5082dd4735df728030fe048a694410770caa0cecaf4e2d7d189c66",
+    "frames": 904145,
+    "windows": 14127,
+    "tail_frames": 17,
+    "set": "set_01",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 50,
+    "vehicle": 0,
+    "token": "37ae3244ec5082dd4735df72",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_01_known_vehicle_known_attack/force-neutral-3.csv"
+    ],
+    "family": "force-neutral"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/fuzzing-1.csv",
+    "source_sha256": "667a4e9cc5f1660fc0c84318891e16e796e5c9601469c6a571f487c6f334491f",
+    "source_bytes": 27098709,
+    "cache": "0458e874937d71e6d732.bin",
+    "cache_sha256": "391103798db4677a97a7a07a3d5488a1a5e75d0f0ed29076055e540f5bb641ed",
+    "frames": 660170,
+    "windows": 10315,
+    "tail_frames": 10,
+    "set": "set_04",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "391103798db4677a97a7a07a",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/fuzzing-1.csv",
+      "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/fuzzing-1.csv"
+    ],
+    "family": "fuzzing"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/train_01/double-2.csv",
+    "source_sha256": "9b379c925030ea4b7c44b95a7c109382e8c768603781c392fa5c76d412ff4775",
+    "source_bytes": 17989421,
+    "cache": "069f99905baeab30b06c.bin",
+    "cache_sha256": "39225db5b9da1acb2c176bc9575282b4031b26c051057958de0d9d1c4f376284",
+    "frames": 463001,
+    "windows": 7234,
+    "tail_frames": 25,
+    "set": "set_02",
+    "folder": "train_01",
+    "timestamp_inversions": 82,
+    "vehicle": 1,
+    "token": "39225db5b9da1acb2c176bc9",
+    "aliases": [
+      "data/can-train-and-test/set_02/train_01/double-2.csv",
+      "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/double-2.csv"
+    ],
+    "family": "double"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/train_01/accessory-4.csv",
+    "source_sha256": "649cd634708cdc6dd2dfbcde0985ed187341395a64969ce455b327c12b77306e",
+    "source_bytes": 2166228,
+    "cache": "9d9f97c68217179299fb.bin",
+    "cache_sha256": "39577b735de1e23fbf678c26783905b74e404cde745e52bd16be34fd25d43718",
+    "frames": 52783,
+    "windows": 824,
+    "tail_frames": 47,
+    "set": "set_04",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "39577b735de1e23fbf678c26",
+    "aliases": [
+      "data/can-train-and-test/set_04/train_01/accessory-4.csv"
+    ],
+    "family": "accessory"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/fuzzing-2.csv",
+    "source_sha256": "4ff274bd94c55f1d4b5bf25a269ded31cb8515e4b1a769537576f7ac5ac4556b",
+    "source_bytes": 31187365,
+    "cache": "3ebdd51b31b1dbb0a501.bin",
+    "cache_sha256": "3f0d90e1a013f4fec1298ceea047255ae21aec6091e48c1f40d2149b25f26de4",
+    "frames": 793574,
+    "windows": 12399,
+    "tail_frames": 38,
+    "set": "set_03",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 2,
+    "token": "3f0d90e1a013f4fec1298cee",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/fuzzing-2.csv"
+    ],
+    "family": "fuzzing"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/train_01/standstill-4.csv",
+    "source_sha256": "0199f2d4bd402d5f98be494444826a03072016a88bf3bc3316b65a9ee53fc4e9",
+    "source_bytes": 14532128,
+    "cache": "ca780f57553128bd7cd5.bin",
+    "cache_sha256": "40672187cdc8d97e4842a5fa0f90fe8e377585d83fe789ab042f38df4a0dc647",
+    "frames": 352661,
+    "windows": 5510,
+    "tail_frames": 21,
+    "set": "set_04",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "40672187cdc8d97e4842a5fa",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_04_unknown_vehicle_unknown_attack/standstill-4.csv",
+      "data/can-train-and-test/set_04/train_01/standstill-4.csv"
+    ],
+    "family": "standstill"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/triple-2.csv",
+    "source_sha256": "4cea68ce533bf8ffc6e4a8df212fa80420660ce3f9b782627566090de0fd673c",
+    "source_bytes": 44629283,
+    "cache": "7540f8c34e6aa581f429.bin",
+    "cache_sha256": "41c13510b82e1bdb40794e4d90bbe8681345ab00af8b9b3071b0e79f759e6eef",
+    "frames": 1145333,
+    "windows": 17895,
+    "tail_frames": 53,
+    "set": "set_03",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 38,
+    "vehicle": 2,
+    "token": "41c13510b82e1bdb40794e4d",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/triple-2.csv"
+    ],
+    "family": "triple"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/rpm-accessory-2.csv",
+    "source_sha256": "b268ab34399040eefb191e1af31a63b17ab0a48041439c37eea47c6406d24c6c",
+    "source_bytes": 5868585,
+    "cache": "8d912b749d88c2097764.bin",
+    "cache_sha256": "4470f49cfe1ee3cf52c51cdd74d1fc954f590ebeb5583f4880e923f775d35d26",
+    "frames": 149740,
+    "windows": 2339,
+    "tail_frames": 44,
+    "set": "set_03",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 1,
+    "vehicle": 2,
+    "token": "4470f49cfe1ee3cf52c51cdd",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/rpm-accessory-2.csv"
+    ],
+    "family": "rpm-accessory"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/train_01/fuzzing-3.csv",
+    "source_sha256": "620f58ef131f9516a628bd1830b053566f826f6b6d31bd2bfe1a9e44f658620c",
+    "source_bytes": 11589336,
+    "cache": "15db07644fa7ee896094.bin",
+    "cache_sha256": "4531cbb84308cb1bd1b7a6ccc2104057fa921279adfdd7d44251f447f72a6566",
+    "frames": 296365,
+    "windows": 4630,
+    "tail_frames": 45,
+    "set": "set_03",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 2,
+    "token": "4531cbb84308cb1bd1b7a6cc",
+    "aliases": [
+      "data/can-train-and-test/set_03/train_01/fuzzing-3.csv"
+    ],
+    "family": "fuzzing"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/speed-3.csv",
+    "source_sha256": "58989ca3292a36a17f764f7baa8b75f537813bc1d71d06864164c5ef3fd089c2",
+    "source_bytes": 25236334,
+    "cache": "b67b06ba4c83bfab994d.bin",
+    "cache_sha256": "454664628608ae32d34c8486047bfc9f3481966489f06d8fa33caa300f237ad1",
+    "frames": 631438,
+    "windows": 9866,
+    "tail_frames": 14,
+    "set": "set_01",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 36,
+    "vehicle": 0,
+    "token": "454664628608ae32d34c8486",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/speed-3.csv"
+    ],
+    "family": "speed"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/systematic-2.csv",
+    "source_sha256": "af14af6b2739c301abb31537787325de1159784c766982e3901d0b27b6110659",
+    "source_bytes": 25866621,
+    "cache": "eb95191e4c9a79edcd12.bin",
+    "cache_sha256": "460a39cf206afeeed5a39272abe39621f7434564bc018e4df9b76d2b705edfda",
+    "frames": 630419,
+    "windows": 9850,
+    "tail_frames": 19,
+    "set": "set_04",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "460a39cf206afeeed5a39272",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/systematic-2.csv",
+      "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/systematic-2.csv"
+    ],
+    "family": "systematic"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/train_01/DoS-4.csv",
+    "source_sha256": "1363c0666d2deb4ac6fa4f0a85d37f10538d10cbabd580c65f7480bd80e8c89b",
+    "source_bytes": 27032916,
+    "cache": "059b68b34da3b35ddd31.bin",
+    "cache_sha256": "491d0bee46f20f0a2cff43e73f77bd810f7c4c694a4accb1b21446f16c8cd014",
+    "frames": 689028,
+    "windows": 10766,
+    "tail_frames": 4,
+    "set": "set_03",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 2,
+    "token": "491d0bee46f20f0a2cff43e7",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_02_unknown_vehicle_known_attack/DoS-4.csv",
+      "data/can-train-and-test/set_03/train_01/DoS-4.csv"
+    ],
+    "family": "DoS"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/speed-2.csv",
+    "source_sha256": "b117659dafdec10d2f6f2407d8947ea66b274ffa3f0419da738e32264f2c9b7e",
+    "source_bytes": 29358287,
+    "cache": "8b168cf9ce1b94924751.bin",
+    "cache_sha256": "49e0a2758910644b1af210705fe128273d663f7bb17e81e9a1e767707d8d4932",
+    "frames": 714871,
+    "windows": 11169,
+    "tail_frames": 55,
+    "set": "set_04",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "49e0a2758910644b1af21070",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/speed-2.csv",
+      "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/speed-2.csv"
+    ],
+    "family": "speed"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/double-3.csv",
+    "source_sha256": "f47009c1dee37e956f96af3ccd51ddc31dd95b38e1e9ac916cec43b8e03b155d",
+    "source_bytes": 28741778,
+    "cache": "2d9b9c76f84345df81d5.bin",
+    "cache_sha256": "4af0bcfee34dbdef01dcbdcb6ba0198a0631d08370602610c491f420427aca5d",
+    "frames": 699508,
+    "windows": 10929,
+    "tail_frames": 52,
+    "set": "set_02",
+    "folder": "test_02_unknown_vehicle_known_attack",
+    "timestamp_inversions": 147,
+    "vehicle": 3,
+    "token": "4af0bcfee34dbdef01dcbdcb",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/double-3.csv"
+    ],
+    "family": "double"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/test_03_known_vehicle_unknown_attack/DoS-3.csv",
+    "source_sha256": "7ecb96c2fd570f2760a8e522d70bd70cf6572ecdd76605d7c52f4babe7ab9a3f",
+    "source_bytes": 37943856,
+    "cache": "d56f9831d6e1e15d477b.bin",
+    "cache_sha256": "4bb650c96e6af1f04638af124a38cd3bd9d67eca1787bc2c9d6db172d1e0fd1a",
+    "frames": 971181,
+    "windows": 15174,
+    "tail_frames": 45,
+    "set": "set_02",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 31,
+    "vehicle": 1,
+    "token": "4bb650c96e6af1f04638af12",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_03_known_vehicle_unknown_attack/DoS-3.csv"
+    ],
+    "family": "DoS"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/test_01_known_vehicle_known_attack/DoS-3.csv",
+    "source_sha256": "92c8e8bad348dddb899c39f50db93f57b4ceaa65fc5b25c94ad0505e132aed08",
+    "source_bytes": 6146839,
+    "cache": "18a2a9866d57098588c3.bin",
+    "cache_sha256": "4daf365f8f595ef11fedf409e0adf4e9fbd3e64b2bb41d8de73536cfeacdd932",
+    "frames": 154255,
+    "windows": 2410,
+    "tail_frames": 15,
+    "set": "set_01",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 0,
+    "token": "4daf365f8f595ef11fedf409",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_01_known_vehicle_known_attack/DoS-3.csv"
+    ],
+    "family": "DoS"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/train_01/force-neutral-3.csv",
+    "source_sha256": "1ebe43e6ab149f088a117730068952bf5a495b5ec3ca04a7f7e6a7150dac63e3",
+    "source_bytes": 17513884,
+    "cache": "286b98039b1082eaafd7.bin",
+    "cache_sha256": "4dcf891acbdcd859378b8fd655493616392ddd0e77a215b81d60e36b08f7c18f",
+    "frames": 449461,
+    "windows": 7022,
+    "tail_frames": 53,
+    "set": "set_03",
+    "folder": "train_01",
+    "timestamp_inversions": 1,
+    "vehicle": 2,
+    "token": "4dcf891acbdcd859378b8fd6",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_02_unknown_vehicle_known_attack/force-neutral-3.csv",
+      "data/can-train-and-test/set_03/train_01/force-neutral-3.csv"
+    ],
+    "family": "force-neutral"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/standstill-2.csv",
+    "source_sha256": "046c12b5efdb33ba998525ff4eeab93704fb4f8f3e0ea6234c6099ac15bdcda6",
+    "source_bytes": 36627797,
+    "cache": "2d36c1b26fadae577e1a.bin",
+    "cache_sha256": "4f71642c299a2d09485232f30d599c2c4a9bf7746d71a1bb7d4055d494b19dea",
+    "frames": 892327,
+    "windows": 13942,
+    "tail_frames": 39,
+    "set": "set_04",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "4f71642c299a2d09485232f3",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/standstill-2.csv",
+      "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/standstill-2.csv"
+    ],
+    "family": "standstill"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/train_01/rpm-1.csv",
+    "source_sha256": "4a751d06e640b35ef7097078973b169ca06244a137aef089dae92595cc23d0f5",
+    "source_bytes": 33536510,
+    "cache": "d95bdaf0bec62eb86f47.bin",
+    "cache_sha256": "50303beb7b33cc6eb89841489dabbc12b267fa92eaf9cc53bfbbe4ab2a496b96",
+    "frames": 841053,
+    "windows": 13141,
+    "tail_frames": 29,
+    "set": "set_01",
+    "folder": "train_01",
+    "timestamp_inversions": 41,
+    "vehicle": 0,
+    "token": "50303beb7b33cc6eb8984148",
+    "aliases": [
+      "data/can-train-and-test/set_01/train_01/rpm-1.csv"
+    ],
+    "family": "rpm"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/train_01/systematic-3.csv",
+    "source_sha256": "8e9f525029b8f8ce989cf4eb934607b42aff1f16931f76f3be3716e0463e1d78",
+    "source_bytes": 41607364,
+    "cache": "1ec553adfb11153100dd.bin",
+    "cache_sha256": "5187a1ad214ecaeb99aa3c55cf13d2f5c62a8ed7460a88b1d69c2a5688d46d55",
+    "frames": 1012913,
+    "windows": 15826,
+    "tail_frames": 49,
+    "set": "set_04",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "5187a1ad214ecaeb99aa3c55",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/systematic-3.csv",
+      "data/can-train-and-test/set_04/train_01/systematic-3.csv"
+    ],
+    "family": "systematic"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/double-1.csv",
+    "source_sha256": "b6247dbbf68dfa7d70517479675fe2ff7b95657becbb905b57adebbd48ca4c52",
+    "source_bytes": 51341260,
+    "cache": "0f13bca4bbbf90f63afb.bin",
+    "cache_sha256": "51953e28d8d7f3a639adfe305614c875ebe008b934ad9654eca59e73ab207220",
+    "frames": 1244063,
+    "windows": 19438,
+    "tail_frames": 31,
+    "set": "set_04",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 197,
+    "vehicle": 3,
+    "token": "51953e28d8d7f3a639adfe30",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/double-1.csv",
+      "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/double-1.csv"
+    ],
+    "family": "double"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/train_01/rpm-3.csv",
+    "source_sha256": "50cf0ccbb2f6afe48fe0478c65b17f0f653b22b34989afd81de311563af92bdc",
+    "source_bytes": 28378256,
+    "cache": "c68acda044273cb88fbc.bin",
+    "cache_sha256": "52d4eebf36d25e64143b06bfba613f1e33cd2be62c02e2182e0689c63b140522",
+    "frames": 689308,
+    "windows": 10770,
+    "tail_frames": 28,
+    "set": "set_04",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "52d4eebf36d25e64143b06bf",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_04_unknown_vehicle_unknown_attack/rpm-3.csv",
+      "data/can-train-and-test/set_04/train_01/rpm-3.csv"
+    ],
+    "family": "rpm"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/train_01/force-neutral-4.csv",
+    "source_sha256": "6753e081a4d08869f8f1ed73def4f877b8af8e2612988c9b586cdf5f4275d12d",
+    "source_bytes": 64283849,
+    "cache": "34c0d65d1186d1c3c1f6.bin",
+    "cache_sha256": "56d40b9f02fe0a0a07f8cd98beea1d583ca45eb0e4877d1f7dc2e4ea6eb7960d",
+    "frames": 1646238,
+    "windows": 25722,
+    "tail_frames": 30,
+    "set": "set_03",
+    "folder": "train_01",
+    "timestamp_inversions": 5,
+    "vehicle": 2,
+    "token": "56d40b9f02fe0a0a07f8cd98",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_02_unknown_vehicle_known_attack/force-neutral-4.csv",
+      "data/can-train-and-test/set_03/train_01/force-neutral-4.csv"
+    ],
+    "family": "force-neutral"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/test_03_known_vehicle_unknown_attack/rpm-3.csv",
+    "source_sha256": "328564af7d6921fe89eddc235dd8a9b58eed35b70625dd58b2fcce22f4fdefe3",
+    "source_bytes": 48972590,
+    "cache": "87916580204009ad55b0.bin",
+    "cache_sha256": "56ee3f5f022a296ab674f0bd550af782bc5ace7fbe45fdb3d29b2218b62bce3d",
+    "frames": 1254259,
+    "windows": 19597,
+    "tail_frames": 51,
+    "set": "set_02",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 3,
+    "vehicle": 1,
+    "token": "56ee3f5f022a296ab674f0bd",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_03_known_vehicle_unknown_attack/rpm-3.csv"
+    ],
+    "family": "rpm"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/train_01/fuzzing-4.csv",
+    "source_sha256": "6bf0d6f8a1866e06a23e878700ed7d55c2363088678b9c77b33c0f41cb932645",
+    "source_bytes": 31189212,
+    "cache": "5d801c16cd047eb14df4.bin",
+    "cache_sha256": "570bf5b30d778cf0b089ed9459b92ca19d23714e7aedf480a5c58cde7f158403",
+    "frames": 795457,
+    "windows": 12429,
+    "tail_frames": 1,
+    "set": "set_03",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 2,
+    "token": "570bf5b30d778cf0b089ed94",
+    "aliases": [
+      "data/can-train-and-test/set_03/train_01/fuzzing-4.csv"
+    ],
+    "family": "fuzzing"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/standstill-1.csv",
+    "source_sha256": "29b7781848e9c284f5ec548ab3abe7eac21155133cb7ca44fee5818294c45b92",
+    "source_bytes": 12711124,
+    "cache": "69d4e2d571599fc7113a.bin",
+    "cache_sha256": "5d9a8dcf2140376c0a436666cab3f966d953d15609bfc783577a1ac99594af66",
+    "frames": 306189,
+    "windows": 4784,
+    "tail_frames": 13,
+    "set": "set_04",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "5d9a8dcf2140376c0a436666",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/standstill-1.csv",
+      "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/standstill-1.csv"
+    ],
+    "family": "standstill"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/train_01/standstill-1.csv",
+    "source_sha256": "e02c3827728ef5c74371c6f79b5ec322d96b1c9efb69b6246a3a280bb2d784f5",
+    "source_bytes": 77933700,
+    "cache": "9fae6471ae1c1f639bd2.bin",
+    "cache_sha256": "5f51e0d73c20730ce1ad770315aae61d545c4aad382d13618ae2a7e6edb4404c",
+    "frames": 1955048,
+    "windows": 30547,
+    "tail_frames": 40,
+    "set": "set_01",
+    "folder": "train_01",
+    "timestamp_inversions": 25,
+    "vehicle": 0,
+    "token": "5f51e0d73c20730ce1ad7703",
+    "aliases": [
+      "data/can-train-and-test/set_01/train_01/standstill-1.csv"
+    ],
+    "family": "standstill"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/train_01/rpm-4.csv",
+    "source_sha256": "3fa71d7301664ec3abec27e23738f3ffa6c4a75a16ed1dca18f05ce7f0f3066d",
+    "source_bytes": 26506368,
+    "cache": "08edc52cef79410981eb.bin",
+    "cache_sha256": "63854bee092163ea54d134b0f024865a42b20a7a2135f822863a44b968a16c9e",
+    "frames": 642822,
+    "windows": 10044,
+    "tail_frames": 6,
+    "set": "set_04",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "63854bee092163ea54d134b0",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_04_unknown_vehicle_unknown_attack/rpm-4.csv",
+      "data/can-train-and-test/set_04/train_01/rpm-4.csv"
+    ],
+    "family": "rpm"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/DoS-1.csv",
+    "source_sha256": "59028794894d796776b44a4f1258b1950d75f8fec78b3dc21cb51ebb9743c449",
+    "source_bytes": 26439665,
+    "cache": "709cc8aa05f2230f25d3.bin",
+    "cache_sha256": "660a91b774d7eb6102f227d1098fa8ff4140f02fbc98c9553eb48abc85e5561b",
+    "frames": 643807,
+    "windows": 10059,
+    "tail_frames": 31,
+    "set": "set_04",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "660a91b774d7eb6102f227d1",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/DoS-1.csv",
+      "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/DoS-1.csv"
+    ],
+    "family": "DoS"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/train_01/speed-1.csv",
+    "source_sha256": "1b28a4a0e39430b0009b5e1f365defd36e9ab2edfaacb93adcef47f863387dc3",
+    "source_bytes": 101978239,
+    "cache": "10b60029e67cbf3899bd.bin",
+    "cache_sha256": "66a2f842c23c1ba3a73cad2becb7dd4531873dad86b95f0ab9078ac053417a15",
+    "frames": 2619677,
+    "windows": 40932,
+    "tail_frames": 29,
+    "set": "set_02",
+    "folder": "train_01",
+    "timestamp_inversions": 6,
+    "vehicle": 1,
+    "token": "66a2f842c23c1ba3a73cad2b",
+    "aliases": [
+      "data/can-train-and-test/set_02/train_01/speed-1.csv",
+      "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/speed-1.csv"
+    ],
+    "family": "speed"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/train_01/triple-1.csv",
+    "source_sha256": "c0bd0c53d0556ceffb48fba8b3260c29b5aaf98e24ca8e8284359916904395a4",
+    "source_bytes": 69033716,
+    "cache": "c3d820a99e2e0878d6e6.bin",
+    "cache_sha256": "678cb0e0b7746dd1594111aad03fa3cb1f1645e4ae0ab415df3887ea7dfa2600",
+    "frames": 1780543,
+    "windows": 27820,
+    "tail_frames": 63,
+    "set": "set_02",
+    "folder": "train_01",
+    "timestamp_inversions": 355,
+    "vehicle": 1,
+    "token": "678cb0e0b7746dd1594111aa",
+    "aliases": [
+      "data/can-train-and-test/set_02/train_01/triple-1.csv",
+      "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/triple-1.csv"
+    ],
+    "family": "triple"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/train_01/speed-accessory-3.csv",
+    "source_sha256": "2b3b3f35c3bef25b98bc281e4436be6c928d4ec36478fff4281687248d7e13c3",
+    "source_bytes": 10308019,
+    "cache": "c60d2808ed4951aea599.bin",
+    "cache_sha256": "6a8178d76e081ae6762f2f44dd984bf43aa3f90f61374616afaaffa7b06fcbf1",
+    "frames": 249865,
+    "windows": 3904,
+    "tail_frames": 9,
+    "set": "set_04",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "6a8178d76e081ae6762f2f44",
+    "aliases": [
+      "data/can-train-and-test/set_04/train_01/speed-accessory-3.csv"
+    ],
+    "family": "speed-accessory"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/train_01/accessory-3.csv",
+    "source_sha256": "96a0ee3bb8d91028abc5cc52d414ba42fef81cc2c23530d2659f2cda6823107f",
+    "source_bytes": 1294420,
+    "cache": "810eaab2c0def1f6dd6b.bin",
+    "cache_sha256": "6d68c1c4679b97b0b2ec1f751a1f3403afe117ac50a4eb817cc10a56d79b55c2",
+    "frames": 31991,
+    "windows": 499,
+    "tail_frames": 55,
+    "set": "set_04",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "6d68c1c4679b97b0b2ec1f75",
+    "aliases": [
+      "data/can-train-and-test/set_04/train_01/accessory-3.csv"
+    ],
+    "family": "accessory"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/train_01/attack-free-1.csv",
+    "source_sha256": "2a30bf3556670ca85c18244e8448e53a98f819935e4a4563cdbdbdd84dd28542",
+    "source_bytes": 34608590,
+    "cache": "6e699b4e1d6983c143a2.bin",
+    "cache_sha256": "728ffd039bc1d75ac4cae4b261e19166f93c89079aba32221150c7299e9b0d62",
+    "frames": 889331,
+    "windows": 13895,
+    "tail_frames": 51,
+    "set": "set_02",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 1,
+    "token": "728ffd039bc1d75ac4cae4b2",
+    "aliases": [
+      "data/can-train-and-test/set_02/train_01/attack-free-1.csv"
+    ],
+    "family": "attack-free"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/train_01/interval-4.csv",
+    "source_sha256": "bbedaaa56a692ec98def2dcd7c1c8a8339a83666e2b8dd2e7be1cc15920dcfe7",
+    "source_bytes": 37622828,
+    "cache": "ddddc941c77f038eba7f.bin",
+    "cache_sha256": "7362408b773d90e6b0bfa60fc3bf17807d55bf93642e5f97e6257dcb6c550711",
+    "frames": 907454,
+    "windows": 14178,
+    "tail_frames": 62,
+    "set": "set_04",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "7362408b773d90e6b0bfa60f",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/interval-4.csv",
+      "data/can-train-and-test/set_04/train_01/interval-4.csv"
+    ],
+    "family": "interval"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/interval-2.csv",
+    "source_sha256": "ddc351412f9de37c1e9cba02d924b37bad3415c51a4198d75a411aa6e4f827e6",
+    "source_bytes": 19129124,
+    "cache": "92790847d28c1782d535.bin",
+    "cache_sha256": "739d4b516c4616625a37da5366a0a264f5be6f444a0a05e416f49d30bb136aa3",
+    "frames": 465145,
+    "windows": 7267,
+    "tail_frames": 57,
+    "set": "set_04",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "739d4b516c4616625a37da53",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/interval-2.csv",
+      "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/interval-2.csv"
+    ],
+    "family": "interval"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/rpm-2.csv",
+    "source_sha256": "977bbde49c54261e0dc7ffcfbde0ed10760104038b4a4cd4bedfdb7ad17278bb",
+    "source_bytes": 23516391,
+    "cache": "c84335e2cc28a2f0d458.bin",
+    "cache_sha256": "7835ce28f95223c41762b5011d77c99e4a2c14a4ce41b82f3fc18e81d7c6ea96",
+    "frames": 569888,
+    "windows": 8904,
+    "tail_frames": 32,
+    "set": "set_04",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "7835ce28f95223c41762b501",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/rpm-2.csv",
+      "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/rpm-2.csv"
+    ],
+    "family": "rpm"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/interval-1.csv",
+    "source_sha256": "abe87dfb4b61118fa982b823f302d5a89e0f8c531665688f90ef512a5f176fa1",
+    "source_bytes": 37062156,
+    "cache": "57c4527eff2b300b33ad.bin",
+    "cache_sha256": "78ec00820e35b6434daf9fa62e84000e240175d30ae62dc3c79a21f859729681",
+    "frames": 950657,
+    "windows": 14854,
+    "tail_frames": 1,
+    "set": "set_03",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 2,
+    "token": "78ec00820e35b6434daf9fa6",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/interval-1.csv"
+    ],
+    "family": "interval"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/systematic-2.csv",
+    "source_sha256": "16505e0842ab7147cd6f2de754317e1e819aed04f4554e4434854a458f28b48e",
+    "source_bytes": 22245063,
+    "cache": "d4231ca2597dcb164b01.bin",
+    "cache_sha256": "7b147665c766c465d13ee188a426dad55bfb3a7d8651aed8ec45568c414d6879",
+    "frames": 566869,
+    "windows": 8857,
+    "tail_frames": 21,
+    "set": "set_03",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 2,
+    "token": "7b147665c766c465d13ee188",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/systematic-2.csv"
+    ],
+    "family": "systematic"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/speed-accessory-1.csv",
+    "source_sha256": "c0171e74c245941180b51d854aab156627eee8047e9b027e5fe1d9685b6cca89",
+    "source_bytes": 6664466,
+    "cache": "f84374aac12bcc1fc081.bin",
+    "cache_sha256": "7b56de799b0a8fa76777be63b2d9420a42a21698cec3cd5f0bc74d3a8a7f4ff0",
+    "frames": 170115,
+    "windows": 2658,
+    "tail_frames": 3,
+    "set": "set_03",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 55,
+    "vehicle": 2,
+    "token": "7b56de799b0a8fa76777be63",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/speed-accessory-1.csv"
+    ],
+    "family": "speed-accessory"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/train_01/attack-free-1.csv",
+    "source_sha256": "2cebb578d240950816ef3f143f3407821e766d9c2ae00827842828a22fd27cf1",
+    "source_bytes": 77928995,
+    "cache": "ae69b2a2783ce2c925fd.bin",
+    "cache_sha256": "7b5f2ed05b54d5b4c525c62fa171ffc06dd80231e5796fee304e3d5964915ac2",
+    "frames": 1952833,
+    "windows": 30513,
+    "tail_frames": 1,
+    "set": "set_01",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 0,
+    "token": "7b5f2ed05b54d5b4c525c62f",
+    "aliases": [
+      "data/can-train-and-test/set_01/train_01/attack-free-1.csv"
+    ],
+    "family": "attack-free"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/train_01/triple-2.csv",
+    "source_sha256": "afa60d81c0b70bbea0f57bd5374e43bb00fda6a1db4b23623da8c518a2fed32f",
+    "source_bytes": 25609537,
+    "cache": "43f1d2cf882a611026c0.bin",
+    "cache_sha256": "7c8f155998bd8603c581df502b4beb0c28d8a4e3b642b665d6ffa23f51a4f859",
+    "frames": 661579,
+    "windows": 10337,
+    "tail_frames": 11,
+    "set": "set_02",
+    "folder": "train_01",
+    "timestamp_inversions": 62,
+    "vehicle": 1,
+    "token": "7c8f155998bd8603c581df50",
+    "aliases": [
+      "data/can-train-and-test/set_02/train_01/triple-2.csv",
+      "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/triple-2.csv"
+    ],
+    "family": "triple"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/force-neutral-2.csv",
+    "source_sha256": "8f0442e318853b26c16c5ba89c386594fadb96aa08ded8d5c555406a7a7bc8f7",
+    "source_bytes": 36156923,
+    "cache": "896d39bde8990275a1f6.bin",
+    "cache_sha256": "805176f2de4056a9405352545be5804b5092e2025529522945584c41f1cd3ed9",
+    "frames": 918980,
+    "windows": 14359,
+    "tail_frames": 4,
+    "set": "set_03",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 31,
+    "vehicle": 2,
+    "token": "805176f2de4056a940535254",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/force-neutral-2.csv"
+    ],
+    "family": "force-neutral"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/rpm-1.csv",
+    "source_sha256": "a90d0d51f6a6c42563d8397b8e6a45e60f317b39e52722a2e6d68da122dacad2",
+    "source_bytes": 20515493,
+    "cache": "37898fc82394167525ce.bin",
+    "cache_sha256": "828dbffe8bd6ad38f62fa67fc47e6b67b6c96acd36ad523bb03ce5ded24c95e9",
+    "frames": 524212,
+    "windows": 8190,
+    "tail_frames": 52,
+    "set": "set_03",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 32,
+    "vehicle": 2,
+    "token": "828dbffe8bd6ad38f62fa67f",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/rpm-1.csv"
+    ],
+    "family": "rpm"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/speed-4.csv",
+    "source_sha256": "a469fb06de0c2bf3273225714ab5f9a4d093b54543342b7167b765dca917f329",
+    "source_bytes": 24672614,
+    "cache": "45f38ccc2145a8bf9d12.bin",
+    "cache_sha256": "839eba2c7eb38ce17967e5bb4da0bf6c36dc55ff3df42ec9b7a7166fe3557f12",
+    "frames": 622822,
+    "windows": 9731,
+    "tail_frames": 38,
+    "set": "set_01",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 16,
+    "vehicle": 0,
+    "token": "839eba2c7eb38ce17967e5bb",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/speed-4.csv"
+    ],
+    "family": "speed"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/test_02_unknown_vehicle_known_attack/rpm-3.csv",
+    "source_sha256": "0c94040169831ced30d568887ac32db2729f02f927581fce10190c4a8f701e43",
+    "source_bytes": 24720924,
+    "cache": "8aff75b41d5ace714de9.bin",
+    "cache_sha256": "83c814c2d542d89047dbc4d6cdccc23fce32e5b331f3ebca8ef9d18585ee27fd",
+    "frames": 635397,
+    "windows": 9928,
+    "tail_frames": 5,
+    "set": "set_01",
+    "folder": "test_02_unknown_vehicle_known_attack",
+    "timestamp_inversions": 5,
+    "vehicle": 2,
+    "token": "83c814c2d542d89047dbc4d6",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_02_unknown_vehicle_known_attack/rpm-3.csv"
+    ],
+    "family": "rpm"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/test_02_unknown_vehicle_known_attack/standstill-4.csv",
+    "source_sha256": "b22a1da34c7cdc7559c913e68ebeb97ccd3e962afe722093e874201072578d86",
+    "source_bytes": 25371924,
+    "cache": "2c80aa176f9457c3e188.bin",
+    "cache_sha256": "84aba386b9503666ea15ae77f7cbfc5f9db83f25f95dd795f62f505e77b7b721",
+    "frames": 645666,
+    "windows": 10088,
+    "tail_frames": 34,
+    "set": "set_01",
+    "folder": "test_02_unknown_vehicle_known_attack",
+    "timestamp_inversions": 3,
+    "vehicle": 2,
+    "token": "84aba386b9503666ea15ae77",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_02_unknown_vehicle_known_attack/standstill-4.csv"
+    ],
+    "family": "standstill"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/triple-3.csv",
+    "source_sha256": "86fd378f3910cf9a8f940e09319028054cfa20a4a947bbfb69d259948fa86188",
+    "source_bytes": 28690515,
+    "cache": "e03612383819a8b4ee2d.bin",
+    "cache_sha256": "860b8363b2380907158b60b9bee1bf707ad925651b8d012f0936b3b96dfa4855",
+    "frames": 697350,
+    "windows": 10896,
+    "tail_frames": 6,
+    "set": "set_02",
+    "folder": "test_02_unknown_vehicle_known_attack",
+    "timestamp_inversions": 5,
+    "vehicle": 3,
+    "token": "860b8363b2380907158b60b9",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/triple-3.csv"
+    ],
+    "family": "triple"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/test_01_known_vehicle_known_attack/force-neutral-4.csv",
+    "source_sha256": "40975a1dda249bbd3622285bc53ecd46044fdf57463ada7eb4f708acd472e381",
+    "source_bytes": 33416443,
+    "cache": "9c45c9d132bdcd3283de.bin",
+    "cache_sha256": "89c6ce5bc9cd8f428227c1ba58851107a5e09613f20b3bfc6d4c08a6e3db7ebc",
+    "frames": 839873,
+    "windows": 13123,
+    "tail_frames": 1,
+    "set": "set_01",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 9,
+    "vehicle": 0,
+    "token": "89c6ce5bc9cd8f428227c1ba",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_01_known_vehicle_known_attack/force-neutral-4.csv"
+    ],
+    "family": "force-neutral"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/train_01/DoS-2.csv",
+    "source_sha256": "49bd9d93750e3da0eb0ce50bc8f7b8b8441c85d4fb1ed688f4761b5299a0c947",
+    "source_bytes": 12433196,
+    "cache": "39cc381a9b2384d5f3bd.bin",
+    "cache_sha256": "8a98e014101edc56bd700913ee3ce0368fe291986d725406ec91ce2822aada26",
+    "frames": 311045,
+    "windows": 4860,
+    "tail_frames": 5,
+    "set": "set_01",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 0,
+    "token": "8a98e014101edc56bd700913",
+    "aliases": [
+      "data/can-train-and-test/set_01/train_01/DoS-2.csv"
+    ],
+    "family": "DoS"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/DoS-1.csv",
+    "source_sha256": "902d5244a24c22c82de8c794508d1c1718d0eb1e5672fd06495759aef58fe62c",
+    "source_bytes": 15726768,
+    "cache": "f982634d11ab1384291b.bin",
+    "cache_sha256": "8b3a65f41ecd6ccc94089a778e604f6529b6eef2885d778a6f0e0f8c6a8b3743",
+    "frames": 402001,
+    "windows": 6281,
+    "tail_frames": 17,
+    "set": "set_04",
+    "folder": "test_04_unknown_vehicle_unknown_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 1,
+    "token": "8b3a65f41ecd6ccc94089a77",
+    "aliases": [
+      "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/DoS-1.csv"
+    ],
+    "family": "DoS"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/standstill-1.csv",
+    "source_sha256": "919ae76e98a85343775ae31cbf3a324f75d35e99aae4111162dc8b85fff045b0",
+    "source_bytes": 46814392,
+    "cache": "fea5da3a60a2b6fdcef9.bin",
+    "cache_sha256": "8bce00c3e6288901b21f3618f59cb82dc205ab4ca7c98009d67ed00b7a0203af",
+    "frames": 1208289,
+    "windows": 18879,
+    "tail_frames": 33,
+    "set": "set_04",
+    "folder": "test_02_unknown_vehicle_known_attack",
+    "timestamp_inversions": 18,
+    "vehicle": 1,
+    "token": "8bce00c3e6288901b21f3618",
+    "aliases": [
+      "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/standstill-1.csv"
+    ],
+    "family": "standstill"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/force-neutral-2.csv",
+    "source_sha256": "0012efd9b04b5b702d9e93cce228f35306ee12d796b833827a0d38dab0fc2065",
+    "source_bytes": 19523649,
+    "cache": "a9d1d23cc31738f414d9.bin",
+    "cache_sha256": "8fe79447cfb3787a082eb39356e8bd9a10f573d2e0c00ade1c4a0ab9b6983fd6",
+    "frames": 475757,
+    "windows": 7433,
+    "tail_frames": 45,
+    "set": "set_04",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "8fe79447cfb3787a082eb393",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/force-neutral-2.csv",
+      "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/force-neutral-2.csv"
+    ],
+    "family": "force-neutral"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/fuzzing-2.csv",
+    "source_sha256": "c2d2145a1617c9324bffe1b582e29f3beaa8c87d13efac1a03d2ae2d391fcb67",
+    "source_bytes": 26757989,
+    "cache": "b97c1b9c32b927114522.bin",
+    "cache_sha256": "9360cc5af0966751bf38a751126d2cb3bab30674054b73a96cc0c6e21fdcdf01",
+    "frames": 650196,
+    "windows": 10159,
+    "tail_frames": 20,
+    "set": "set_04",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "9360cc5af0966751bf38a751",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/fuzzing-2.csv",
+      "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/fuzzing-2.csv"
+    ],
+    "family": "fuzzing"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/force-neutral-1.csv",
+    "source_sha256": "aadd70cc456aace29b72a1fb54da3f5bc7b8ce886f65c33263c97dbaadae8de3",
+    "source_bytes": 19729364,
+    "cache": "0b03a938402187212f4a.bin",
+    "cache_sha256": "93e2ddd96062604ad2744cd62d821eac792fe8150ca555d08f535c00aafc6fe3",
+    "frames": 509087,
+    "windows": 7954,
+    "tail_frames": 31,
+    "set": "set_04",
+    "folder": "test_04_unknown_vehicle_unknown_attack",
+    "timestamp_inversions": 19,
+    "vehicle": 1,
+    "token": "93e2ddd96062604ad2744cd6",
+    "aliases": [
+      "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/force-neutral-1.csv"
+    ],
+    "family": "force-neutral"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/fuzzing-3.csv",
+    "source_sha256": "8ce69de0b9c2fe93770e1f40da32f1a904574d9c0ab97edc1269e8ff37512f6f",
+    "source_bytes": 21011389,
+    "cache": "5f87134ea46c1cf76313.bin",
+    "cache_sha256": "94503d26f046b17d4dd65c6a879dc7b723bfb39d3c84f8f76ff5a33376f569e6",
+    "frames": 510835,
+    "windows": 7981,
+    "tail_frames": 51,
+    "set": "set_02",
+    "folder": "test_02_unknown_vehicle_known_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "94503d26f046b17d4dd65c6a",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/fuzzing-3.csv"
+    ],
+    "family": "fuzzing"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/speed-2.csv",
+    "source_sha256": "641fd094cfbca8afc6b098e3f7fb3e8ece6ccea6c2cd3bf716f58a886100ab1c",
+    "source_bytes": 35782962,
+    "cache": "e90daf3bff14a3c45104.bin",
+    "cache_sha256": "9b9cdcf5b7dc0d5ac1eac6d9d673c46def290a0f521684e319dc7addf01a2147",
+    "frames": 919087,
+    "windows": 14360,
+    "tail_frames": 47,
+    "set": "set_03",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 19,
+    "vehicle": 2,
+    "token": "9b9cdcf5b7dc0d5ac1eac6d9",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/speed-2.csv"
+    ],
+    "family": "speed"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/train_01/rpm-2.csv",
+    "source_sha256": "58d212cb547e14c807a7568014c43e979f4b90c4c5711045add7df94ce44d184",
+    "source_bytes": 32540916,
+    "cache": "7ed04b9daf22136bc412.bin",
+    "cache_sha256": "9bac8b5429aa58d9b520e8e2170a67d5a4165f03d3e02653043ddd54618d7a41",
+    "frames": 822459,
+    "windows": 12850,
+    "tail_frames": 59,
+    "set": "set_01",
+    "folder": "train_01",
+    "timestamp_inversions": 19,
+    "vehicle": 0,
+    "token": "9bac8b5429aa58d9b520e8e2",
+    "aliases": [
+      "data/can-train-and-test/set_01/train_01/rpm-2.csv"
+    ],
+    "family": "rpm"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/test_04_unknown_vehicle_unknown_attack/force-neutral-3.csv",
+    "source_sha256": "43580bcfc19bcac978f8df243e6bb7c712cf9f0e90ab35ee364f8e90e7c62c74",
+    "source_bytes": 19676219,
+    "cache": "9149e0f6d1e555019a30.bin",
+    "cache_sha256": "9c4082d6ceec747caf36bb9a8c91b2a29baf19880feef2fbb20e6666d3f511dc",
+    "frames": 479368,
+    "windows": 7490,
+    "tail_frames": 8,
+    "set": "set_02",
+    "folder": "test_04_unknown_vehicle_unknown_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "9c4082d6ceec747caf36bb9a",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_04_unknown_vehicle_unknown_attack/force-neutral-3.csv"
+    ],
+    "family": "force-neutral"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/train_01/speed-3.csv",
+    "source_sha256": "8b709f3e12daec182c30207d6bb48943e95c7129ad0ff3e3674db08f47bb2c33",
+    "source_bytes": 26630485,
+    "cache": "0b2828076c277bbce896.bin",
+    "cache_sha256": "9e7794f418566e70d0817be7d1b9b8f01f0bada87a2c270e6bb4f0cbdcb9aabd",
+    "frames": 649177,
+    "windows": 10143,
+    "tail_frames": 25,
+    "set": "set_04",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "9e7794f418566e70d0817be7",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/speed-3.csv",
+      "data/can-train-and-test/set_04/train_01/speed-3.csv"
+    ],
+    "family": "speed"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/train_01/fuzzing-1.csv",
+    "source_sha256": "2238394dab9e8d7547efee6184f4492c0465d117a0c037de6fcc5c1dd1e37017",
+    "source_bytes": 48018247,
+    "cache": "4f8011fa11f0345840eb.bin",
+    "cache_sha256": "9e8f86b79414d3e022c1d0dff96bd83cafe6b6e1dd3bc8e8cb6c86f6c813765f",
+    "frames": 1235992,
+    "windows": 19312,
+    "tail_frames": 24,
+    "set": "set_02",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 1,
+    "token": "9e8f86b79414d3e022c1d0df",
+    "aliases": [
+      "data/can-train-and-test/set_02/train_01/fuzzing-1.csv",
+      "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/fuzzing-1.csv"
+    ],
+    "family": "fuzzing"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/train_01/double-1.csv",
+    "source_sha256": "7b74ad413cf299909a86e8ffe9e7240ae11c5ed237a51bb089df6f8ca3bc4e70",
+    "source_bytes": 42277599,
+    "cache": "a13e131df091f28d3665.bin",
+    "cache_sha256": "9f68edc63cef17c0b10256487fb8292b70a5c299c3b24a25cdc2b69c23efea87",
+    "frames": 1092582,
+    "windows": 17071,
+    "tail_frames": 38,
+    "set": "set_02",
+    "folder": "train_01",
+    "timestamp_inversions": 73,
+    "vehicle": 1,
+    "token": "9f68edc63cef17c0b1025648",
+    "aliases": [
+      "data/can-train-and-test/set_02/train_01/double-1.csv",
+      "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/double-1.csv"
+    ],
+    "family": "double"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/train_01/attack-free-3.csv",
+    "source_sha256": "cd4da16343a059787fabf4d2284ae8b83599c89b621c1429d37721b7ee711468",
+    "source_bytes": 37758977,
+    "cache": "8b5f2791482ca8f05c99.bin",
+    "cache_sha256": "9fcc4d19dc52def6fb01c406701c5194c9386dca0929873a8dc04430f95043b8",
+    "frames": 920346,
+    "windows": 14380,
+    "tail_frames": 26,
+    "set": "set_04",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "9fcc4d19dc52def6fb01c406",
+    "aliases": [
+      "data/can-train-and-test/set_04/train_01/attack-free-3.csv"
+    ],
+    "family": "attack-free"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/train_01/attack-free-4.csv",
+    "source_sha256": "cbc5479bfb01bd3db0e81b1fba7d24b86b855fe9679332b67b67883249689762",
+    "source_bytes": 50807622,
+    "cache": "33294f44272da0e344cf.bin",
+    "cache_sha256": "a662c434875ea976650c164cbe85c044220ce3f368ab25e9d060a5a53b1efdc9",
+    "frames": 1295306,
+    "windows": 20239,
+    "tail_frames": 10,
+    "set": "set_03",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 2,
+    "token": "a662c434875ea976650c164c",
+    "aliases": [
+      "data/can-train-and-test/set_03/train_01/attack-free-4.csv"
+    ],
+    "family": "attack-free"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/double-2.csv",
+    "source_sha256": "7a8007c4c245ff2b58511de1e417d705b1a88fc80547a23a9cc23831ded75877",
+    "source_bytes": 35800134,
+    "cache": "9c2b3321d62af5ec8ab2.bin",
+    "cache_sha256": "a71bc254c1cf74f4d545088d062f8ec9534d7eb7ab37fd3aaa58d8dd2b3eea29",
+    "frames": 920226,
+    "windows": 14378,
+    "tail_frames": 34,
+    "set": "set_03",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 28,
+    "vehicle": 2,
+    "token": "a71bc254c1cf74f4d545088d",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/double-2.csv"
+    ],
+    "family": "double"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/standstill-2.csv",
+    "source_sha256": "703f32ce1521abecf93b443a858825acfa2183c3c6f3e94c81a34ab69e0e959a",
+    "source_bytes": 23985224,
+    "cache": "60a885835149d7510c69.bin",
+    "cache_sha256": "abd2f50957e7024de84745bbba5005122d31c50c22386cf6b7488c260ab959ac",
+    "frames": 614984,
+    "windows": 9609,
+    "tail_frames": 8,
+    "set": "set_04",
+    "folder": "test_02_unknown_vehicle_known_attack",
+    "timestamp_inversions": 2,
+    "vehicle": 1,
+    "token": "abd2f50957e7024de84745bb",
+    "aliases": [
+      "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/standstill-2.csv"
+    ],
+    "family": "standstill"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/train_01/systematic-2.csv",
+    "source_sha256": "f221663a44fadc3383f8b68d9878ad1a02db2b6020e7cf0b5846dd6c3791af06",
+    "source_bytes": 17799534,
+    "cache": "bba2ae3b1f97f35ea8ea.bin",
+    "cache_sha256": "b111407faa5fc2607b50a4195a3506816be9fc7875398279e803563740c3e241",
+    "frames": 456086,
+    "windows": 7126,
+    "tail_frames": 22,
+    "set": "set_02",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 1,
+    "token": "b111407faa5fc2607b50a419",
+    "aliases": [
+      "data/can-train-and-test/set_02/train_01/systematic-2.csv",
+      "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/systematic-2.csv"
+    ],
+    "family": "systematic"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/train_01/speed-4.csv",
+    "source_sha256": "5fb4d8bcc9b3c2df21ad0803ca0e5e47fecf85f55c7bc742fd07001ffd1446e9",
+    "source_bytes": 20090330,
+    "cache": "89ced3a1ea130a97259e.bin",
+    "cache_sha256": "b1b56461641cc162953225de6b45f2f2e837b975e4955072e2478f28f21d2b4c",
+    "frames": 486777,
+    "windows": 7605,
+    "tail_frames": 57,
+    "set": "set_04",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "b1b56461641cc162953225de",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/speed-4.csv",
+      "data/can-train-and-test/set_04/train_01/speed-4.csv"
+    ],
+    "family": "speed"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/rpm-2.csv",
+    "source_sha256": "95283ea12f55d7d7dc3c6f31dfc6cf1d01d0272c9229f4c512ae0091ebb94515",
+    "source_bytes": 44699240,
+    "cache": "752c75a3bd0d24f4517a.bin",
+    "cache_sha256": "b220dc230cf49788c61647080eb0b277135c83ab5c9af6d9310616c55adf110f",
+    "frames": 1143081,
+    "windows": 17860,
+    "tail_frames": 41,
+    "set": "set_03",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 20,
+    "vehicle": 2,
+    "token": "b220dc230cf49788c6164708",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/rpm-2.csv"
+    ],
+    "family": "rpm"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/train_01/force-neutral-2.csv",
+    "source_sha256": "0dbb98ad7241286cb43fca6141ae9dafe1ca66facda796985fe5a9724224741b",
+    "source_bytes": 39540142,
+    "cache": "66e6b834b0e341d468ae.bin",
+    "cache_sha256": "b868276770f3addfe499d620050d90aa39318a087201a70176abbd68464c272c",
+    "frames": 998485,
+    "windows": 15601,
+    "tail_frames": 21,
+    "set": "set_01",
+    "folder": "train_01",
+    "timestamp_inversions": 25,
+    "vehicle": 0,
+    "token": "b868276770f3addfe499d620",
+    "aliases": [
+      "data/can-train-and-test/set_01/train_01/force-neutral-2.csv"
+    ],
+    "family": "force-neutral"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/double-4.csv",
+    "source_sha256": "99fad80e3b1e9a05e016a9a2ebc8ada9b83fc8d397d47a6392e496f2427c227d",
+    "source_bytes": 25343761,
+    "cache": "0be6e11da021364ae771.bin",
+    "cache_sha256": "b89793a3be0607c9860075dce9f30f6bfdf13cf81144a247206b586715c7b5ed",
+    "frames": 611726,
+    "windows": 9558,
+    "tail_frames": 14,
+    "set": "set_02",
+    "folder": "test_02_unknown_vehicle_known_attack",
+    "timestamp_inversions": 30,
+    "vehicle": 3,
+    "token": "b89793a3be0607c9860075dc",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/double-4.csv"
+    ],
+    "family": "double"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/train_01/standstill-2.csv",
+    "source_sha256": "0f128150dcec3b521e02ae8386393ae3fe9b3d1c2d8642f3dde0d0fc9c7cbb8c",
+    "source_bytes": 50204640,
+    "cache": "3b9abc3c32e0b6c54e11.bin",
+    "cache_sha256": "b9ced6cb36cf240395fa84d187234d8a7a642db8fbd488254612e51efbd8e210",
+    "frames": 1267144,
+    "windows": 19799,
+    "tail_frames": 8,
+    "set": "set_01",
+    "folder": "train_01",
+    "timestamp_inversions": 24,
+    "vehicle": 0,
+    "token": "b9ced6cb36cf240395fa84d1",
+    "aliases": [
+      "data/can-train-and-test/set_01/train_01/standstill-2.csv"
+    ],
+    "family": "standstill"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/train_01/DoS-3.csv",
+    "source_sha256": "00b5babb1438b578fdb6379936eda599c7ec613094a96656258a0205e02e09b2",
+    "source_bytes": 43532009,
+    "cache": "1ae0d6a89da29ea83ee7.bin",
+    "cache_sha256": "b9d544f8489c61e480313aa9c7108dbb002dad06d7e866cedc18af4a62d98d00",
+    "frames": 1100971,
+    "windows": 17202,
+    "tail_frames": 43,
+    "set": "set_03",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 2,
+    "token": "b9d544f8489c61e480313aa9",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_02_unknown_vehicle_known_attack/DoS-3.csv",
+      "data/can-train-and-test/set_03/train_01/DoS-3.csv"
+    ],
+    "family": "DoS"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/DoS-2.csv",
+    "source_sha256": "8f2451f3dc86919b395d346677908cfd04271afbbdd6c77f0e4dea94c15ab213",
+    "source_bytes": 17500768,
+    "cache": "f8c9cb2455cf4ecfea3d.bin",
+    "cache_sha256": "ba1b09a601149cfe5879dfb1ebe4f7d71251bdf24b2da697aee63560ec990f77",
+    "frames": 445731,
+    "windows": 6964,
+    "tail_frames": 35,
+    "set": "set_03",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 2,
+    "token": "ba1b09a601149cfe5879dfb1",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/DoS-2.csv"
+    ],
+    "family": "DoS"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/rpm-1.csv",
+    "source_sha256": "240270d1d8961443e87320aadff5daf926905bca17947f490f8883da0481fc41",
+    "source_bytes": 128968410,
+    "cache": "6de3d72fc0ac7ce16017.bin",
+    "cache_sha256": "bce89d1b523e4c1139162a4dafbe5da698b629985f2a0065416e012bc6971397",
+    "frames": 3296008,
+    "windows": 51500,
+    "tail_frames": 8,
+    "set": "set_04",
+    "folder": "test_02_unknown_vehicle_known_attack",
+    "timestamp_inversions": 19,
+    "vehicle": 1,
+    "token": "bce89d1b523e4c1139162a4d",
+    "aliases": [
+      "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/rpm-1.csv"
+    ],
+    "family": "rpm"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/train_01/triple-3.csv",
+    "source_sha256": "9a369ca84e150b3befab3dcc197aaca20b534b10b18e29d40c3c2a4aed8dd1fb",
+    "source_bytes": 24902700,
+    "cache": "7875308ad968b26998ea.bin",
+    "cache_sha256": "be33d3c5b9a9a399765cd0ad9066fbe5b7be20580f00b11f378c02b5c3c8b2eb",
+    "frames": 635673,
+    "windows": 9932,
+    "tail_frames": 25,
+    "set": "set_03",
+    "folder": "train_01",
+    "timestamp_inversions": 10,
+    "vehicle": 2,
+    "token": "be33d3c5b9a9a399765cd0ad",
+    "aliases": [
+      "data/can-train-and-test/set_03/train_01/triple-3.csv"
+    ],
+    "family": "triple"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/train_01/speed-accessory-4.csv",
+    "source_sha256": "69499b9f177c6197fafb542d1fb8312b449c654cb833ddd5dd8f15dbe7892806",
+    "source_bytes": 15921781,
+    "cache": "20f3070697c167780bb5.bin",
+    "cache_sha256": "bfbb00cfd4da7b8a0123adea2c23d609fc9d6d6a4741e8afb5e28b5f2cabba25",
+    "frames": 387940,
+    "windows": 6061,
+    "tail_frames": 36,
+    "set": "set_04",
+    "folder": "train_01",
+    "timestamp_inversions": 32,
+    "vehicle": 3,
+    "token": "bfbb00cfd4da7b8a0123adea",
+    "aliases": [
+      "data/can-train-and-test/set_04/train_01/speed-accessory-4.csv"
+    ],
+    "family": "speed-accessory"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/test_02_unknown_vehicle_known_attack/rpm-4.csv",
+    "source_sha256": "bac95a84dfb83dd5a416fde24f019725541d5929db1161cd414f1dd60dab989c",
+    "source_bytes": 25228648,
+    "cache": "f2bba3d6e26f134eef4e.bin",
+    "cache_sha256": "c07bd4dbfccddfc85196cc45c901388c9aaafc9cd8bd3dd729ce1cbc149b0eeb",
+    "frames": 645613,
+    "windows": 10087,
+    "tail_frames": 45,
+    "set": "set_01",
+    "folder": "test_02_unknown_vehicle_known_attack",
+    "timestamp_inversions": 2,
+    "vehicle": 2,
+    "token": "c07bd4dbfccddfc85196cc45",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_02_unknown_vehicle_known_attack/rpm-4.csv"
+    ],
+    "family": "rpm"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/train_01/double-4.csv",
+    "source_sha256": "c8cfc64d1a4d9cb6d08801e3d35f3861c8e353ade55dece9abd7752f3ca22c15",
+    "source_bytes": 64419931,
+    "cache": "c8101cb7b1f2fe9b0f62.bin",
+    "cache_sha256": "c339c5d22b556269410454853a9ec6cc4a05bfd78806306107881a9bbe0b5701",
+    "frames": 1646538,
+    "windows": 25727,
+    "tail_frames": 10,
+    "set": "set_03",
+    "folder": "train_01",
+    "timestamp_inversions": 4,
+    "vehicle": 2,
+    "token": "c339c5d22b55626941045485",
+    "aliases": [
+      "data/can-train-and-test/set_03/train_01/double-4.csv"
+    ],
+    "family": "double"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/double-3.csv",
+    "source_sha256": "655fbec4af32f74ad97296dc21b4fa3d61110f671c3b333e158c17a08d68aa13",
+    "source_bytes": 35720491,
+    "cache": "8853da4178cdddbea0d6.bin",
+    "cache_sha256": "c50265adff2f973da7a0c7feeaf00bcd0e983824b8dce265fc2137bef2f431f4",
+    "frames": 902805,
+    "windows": 14106,
+    "tail_frames": 21,
+    "set": "set_01",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 33,
+    "vehicle": 0,
+    "token": "c50265adff2f973da7a0c7fe",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/double-3.csv"
+    ],
+    "family": "double"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/triple-4.csv",
+    "source_sha256": "b817ed362e9e9a6ba32a04ce8c968d6a356e044a32239e01f5c59110250688fc",
+    "source_bytes": 25064528,
+    "cache": "a476859aa62a5779f49a.bin",
+    "cache_sha256": "c5858895ba1ac8ca5adfdcd5089f7e947adb03a51d30f060a7cdbaa8145386c9",
+    "frames": 610565,
+    "windows": 9540,
+    "tail_frames": 5,
+    "set": "set_02",
+    "folder": "test_02_unknown_vehicle_known_attack",
+    "timestamp_inversions": 8,
+    "vehicle": 3,
+    "token": "c5858895ba1ac8ca5adfdcd5",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/triple-4.csv"
+    ],
+    "family": "triple"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/train_01/attack-free-3.csv",
+    "source_sha256": "333968912abd255f163fdd93665b70dbb455181d55ff63dec6d9f8232a987171",
+    "source_bytes": 67480311,
+    "cache": "12b3eb269b9e7a53e6c8.bin",
+    "cache_sha256": "c591eccc1c43b1662e7a2c58fb024f5c961d8857c0db7d94ac3b99c122877ecb",
+    "frames": 1711471,
+    "windows": 26741,
+    "tail_frames": 47,
+    "set": "set_03",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 2,
+    "token": "c591eccc1c43b1662e7a2c58",
+    "aliases": [
+      "data/can-train-and-test/set_03/train_01/attack-free-3.csv"
+    ],
+    "family": "attack-free"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/speed-1.csv",
+    "source_sha256": "213dd48a9b5b42994497edca1cf7e6afecc444d78c00d8fd72128b4336a93940",
+    "source_bytes": 31178128,
+    "cache": "01f4810d7e63b53eb49a.bin",
+    "cache_sha256": "c68a51461902a68e66ac77229592419df61faccc769ccb022eb32a9643c3d468",
+    "frames": 757055,
+    "windows": 11828,
+    "tail_frames": 63,
+    "set": "set_04",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "c68a51461902a68e66ac7722",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/speed-1.csv",
+      "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/speed-1.csv"
+    ],
+    "family": "speed"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/test_01_known_vehicle_known_attack/rpm-3.csv",
+    "source_sha256": "188d9ec1825336ecfb44733f22f36d6a5929fd98e5e98b26a3e700e3fced8f7f",
+    "source_bytes": 32148710,
+    "cache": "50b08894d3a4e33556c8.bin",
+    "cache_sha256": "c7fd9ee97c5c661daa29aa16d45f4e6628bb0a9999549cd6d78d1d126af1155d",
+    "frames": 809398,
+    "windows": 12646,
+    "tail_frames": 54,
+    "set": "set_01",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 100,
+    "vehicle": 0,
+    "token": "c7fd9ee97c5c661daa29aa16",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_01_known_vehicle_known_attack/rpm-3.csv"
+    ],
+    "family": "rpm"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/test_01_known_vehicle_known_attack/standstill-4.csv",
+    "source_sha256": "47046c838c0374e4d1e68ebfdcb2289eb0162b763a8c565d17da6b97f3f0b2e5",
+    "source_bytes": 24598496,
+    "cache": "64eff94dcbe9555d4731.bin",
+    "cache_sha256": "cc17ea5faa8d0ae1d3fd71672fbde17baa34c1296d480c2dd5b4dd1d42d66e91",
+    "frames": 621282,
+    "windows": 9707,
+    "tail_frames": 34,
+    "set": "set_01",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 0,
+    "token": "cc17ea5faa8d0ae1d3fd7167",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_01_known_vehicle_known_attack/standstill-4.csv"
+    ],
+    "family": "standstill"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/train_01/rpm-accessory-3.csv",
+    "source_sha256": "da9867cadf9143b03ec538ebe68b23db25865a890205a6aa6bd44c5efdbd46cb",
+    "source_bytes": 6505693,
+    "cache": "a919980667079c7da6ce.bin",
+    "cache_sha256": "cd54bb7c39686d4e43354434c04fc198630aa2fe7d044a5c210339f0620c9d08",
+    "frames": 157883,
+    "windows": 2466,
+    "tail_frames": 59,
+    "set": "set_04",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "cd54bb7c39686d4e43354434",
+    "aliases": [
+      "data/can-train-and-test/set_04/train_01/rpm-accessory-3.csv"
+    ],
+    "family": "rpm-accessory"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/train_01/attack-free-2.csv",
+    "source_sha256": "f3e014d1f350d367c537c5e4783bc43894ef23764ab66ef1063f390d34a07107",
+    "source_bytes": 50651249,
+    "cache": "3ca4d160d15515c73e3f.bin",
+    "cache_sha256": "cfc622c0f26b8bf2752772b24946536a90d36ff24e4f5fc91adedee2c4342949",
+    "frames": 1265599,
+    "windows": 19774,
+    "tail_frames": 63,
+    "set": "set_01",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 0,
+    "token": "cfc622c0f26b8bf2752772b2",
+    "aliases": [
+      "data/can-train-and-test/set_01/train_01/attack-free-2.csv"
+    ],
+    "family": "attack-free"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/triple-2.csv",
+    "source_sha256": "e695091c093b28f01a94b8bf0d7b12fc8f785aabe7b6467cc9c3aae87e125978",
+    "source_bytes": 29166080,
+    "cache": "7765ad824ddf4748d92d.bin",
+    "cache_sha256": "d03261b5ae854fa153de5406242806aa2b6ed89d1bab7bd5a426e67fb899fc4f",
+    "frames": 703688,
+    "windows": 10995,
+    "tail_frames": 8,
+    "set": "set_04",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 202,
+    "vehicle": 3,
+    "token": "d03261b5ae854fa153de5406",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/triple-2.csv",
+      "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/triple-2.csv"
+    ],
+    "family": "triple"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/train_01/speed-2.csv",
+    "source_sha256": "d5ae1129ba06dfdba72bcfae9d412ca1b7dc69105cfd8d660d95417964e701ab",
+    "source_bytes": 107009933,
+    "cache": "5d52a0c66ef09767acd3.bin",
+    "cache_sha256": "d0536e9d5ba1f856e9a0de6a656c834347e8171f4757874f5c16b84cfd501af5",
+    "frames": 2734513,
+    "windows": 42726,
+    "tail_frames": 49,
+    "set": "set_02",
+    "folder": "train_01",
+    "timestamp_inversions": 6,
+    "vehicle": 1,
+    "token": "d0536e9d5ba1f856e9a0de6a",
+    "aliases": [
+      "data/can-train-and-test/set_02/train_01/speed-2.csv",
+      "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/speed-2.csv"
+    ],
+    "family": "speed"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/train_01/systematic-1.csv",
+    "source_sha256": "5a23a15bc38a1d21d6a92f3e687b7bcb8b453388c141042ffa21b5b27d696d45",
+    "source_bytes": 21093151,
+    "cache": "376b226b67bda760e405.bin",
+    "cache_sha256": "d1f20bb251355c6c4d34b2a35c3fec9ec4d2a4a88e98af10e82145f042253b69",
+    "frames": 541323,
+    "windows": 8458,
+    "tail_frames": 11,
+    "set": "set_02",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 1,
+    "token": "d1f20bb251355c6c4d34b2a3",
+    "aliases": [
+      "data/can-train-and-test/set_02/train_01/systematic-1.csv",
+      "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/systematic-1.csv"
+    ],
+    "family": "systematic"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/test_03_known_vehicle_unknown_attack/standstill-3.csv",
+    "source_sha256": "7de7cdbd4217d2540d3a1c43b05db3d4329e3512e57ec7668f920e81502655e1",
+    "source_bytes": 26832210,
+    "cache": "ba06722a8815154da8e6.bin",
+    "cache_sha256": "d255c1f33000b480251621879a90ab33d084a7637b9b09cd9aa5f92175eba89d",
+    "frames": 686802,
+    "windows": 10731,
+    "tail_frames": 18,
+    "set": "set_02",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 2,
+    "vehicle": 1,
+    "token": "d255c1f33000b48025162187",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_03_known_vehicle_unknown_attack/standstill-3.csv"
+    ],
+    "family": "standstill"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/train_01/accessory-2.csv",
+    "source_sha256": "b22085d605c916108963733bca3203cd45828ee8819c65e37e08457c5f47afc2",
+    "source_bytes": 8994937,
+    "cache": "9426a7748acf008dfc20.bin",
+    "cache_sha256": "d337bd83deedd47f29303c7dcfd5ae7c9ba39f58cf4559bf472e4e6ce9c584a0",
+    "frames": 226166,
+    "windows": 3533,
+    "tail_frames": 54,
+    "set": "set_01",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 0,
+    "token": "d337bd83deedd47f29303c7d",
+    "aliases": [
+      "data/can-train-and-test/set_01/train_01/accessory-2.csv"
+    ],
+    "family": "accessory"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/interval-1.csv",
+    "source_sha256": "869e94d03b2a1bedfb7a18aade5a432e997192e566254fcc496268ecf8910a22",
+    "source_bytes": 35498262,
+    "cache": "7d817f9fe7d699b9ff97.bin",
+    "cache_sha256": "d4934191794196315abb2931ab08cb8e32448ec874947e12c4ae446892eed303",
+    "frames": 857154,
+    "windows": 13393,
+    "tail_frames": 2,
+    "set": "set_04",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "d4934191794196315abb2931",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/interval-1.csv",
+      "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/interval-1.csv"
+    ],
+    "family": "interval"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/triple-1.csv",
+    "source_sha256": "aa7957f489d31393f708133193832393cbc627211884aaebd9ae0ad0d9550fab",
+    "source_bytes": 22566702,
+    "cache": "998255502454fbfa5a80.bin",
+    "cache_sha256": "d55e2a4d4970a6b2a958227c8590ad998cce2e2375d3a78b962fd6f4ae8b8557",
+    "frames": 544385,
+    "windows": 8506,
+    "tail_frames": 1,
+    "set": "set_04",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 821,
+    "vehicle": 3,
+    "token": "d55e2a4d4970a6b2a958227c",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/triple-1.csv",
+      "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/triple-1.csv"
+    ],
+    "family": "triple"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/speed-accessory-1.csv",
+    "source_sha256": "54f0f0b8b17874bd83ec10f7dacbe60eb641d9ce319a83135bd014dd703f570d",
+    "source_bytes": 10821031,
+    "cache": "af74b2b0ea3e928cc754.bin",
+    "cache_sha256": "d8105bff2f433a2a1c59f8d2f178d14fe6ca17013a35d26a482de8a533ffbb86",
+    "frames": 262041,
+    "windows": 4094,
+    "tail_frames": 25,
+    "set": "set_04",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "d8105bff2f433a2a1c59f8d2",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/speed-accessory-1.csv",
+      "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/speed-accessory-1.csv"
+    ],
+    "family": "speed-accessory"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/rpm-accessory-1.csv",
+    "source_sha256": "503558f060a5e28f24fd86e20a1763bf15784fbb0240ca58d79b98deca20fd18",
+    "source_bytes": 6467763,
+    "cache": "275cf1404b4dbbe9946b.bin",
+    "cache_sha256": "d9103e0e918e7057ea04c0385406202885b7897cd43b7b55d8de54d8d4095cbb",
+    "frames": 166162,
+    "windows": 2596,
+    "tail_frames": 18,
+    "set": "set_03",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 1,
+    "vehicle": 2,
+    "token": "d9103e0e918e7057ea04c038",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/rpm-accessory-1.csv"
+    ],
+    "family": "rpm-accessory"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/systematic-1.csv",
+    "source_sha256": "d2b64f3c9c45d5d677586a054456e36f85ff45261dd5cb29e1ea129bc63fde78",
+    "source_bytes": 21405711,
+    "cache": "393200a5a1203fdfb703.bin",
+    "cache_sha256": "da726db9047e3e0d0cb787cc4e75d6f185587e4f947f7c3db8e5519d5b2331f1",
+    "frames": 519433,
+    "windows": 8116,
+    "tail_frames": 9,
+    "set": "set_04",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "da726db9047e3e0d0cb787cc",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/systematic-1.csv",
+      "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/systematic-1.csv"
+    ],
+    "family": "systematic"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/train_01/interval-1.csv",
+    "source_sha256": "a76e784260232d82e3324b2aa7c4c679c76d452ccc4a39cf1d1d1d40b1f4acba",
+    "source_bytes": 24583048,
+    "cache": "1e142130a37f70eba8d4.bin",
+    "cache_sha256": "dbea73237c52e4a792f27854ca5521a99b536ae722e6b1b47ac681a3ca218ae8",
+    "frames": 634191,
+    "windows": 9909,
+    "tail_frames": 15,
+    "set": "set_02",
+    "folder": "train_01",
+    "timestamp_inversions": 3424,
+    "vehicle": 1,
+    "token": "dbea73237c52e4a792f27854",
+    "aliases": [
+      "data/can-train-and-test/set_02/train_01/interval-1.csv",
+      "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/interval-1.csv"
+    ],
+    "family": "interval"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/test_03_known_vehicle_unknown_attack/DoS-4.csv",
+    "source_sha256": "19ab9a4be24f582f3ba8340e0b63da5b030e932c015b7824906dc30a25548356",
+    "source_bytes": 20315865,
+    "cache": "5586b2844bea2f1485ff.bin",
+    "cache_sha256": "dc7370d1f4f925e453f9de9cbc97c7123e90c2dca5a5b768fced333a1decf5dd",
+    "frames": 521593,
+    "windows": 8149,
+    "tail_frames": 57,
+    "set": "set_02",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 1,
+    "token": "dc7370d1f4f925e453f9de9c",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_03_known_vehicle_unknown_attack/DoS-4.csv"
+    ],
+    "family": "DoS"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/fuzzing-1.csv",
+    "source_sha256": "bdad31183aae227764e4faa5d3cc15b731a6bcacff46eccd8043eba12a769826",
+    "source_bytes": 41368280,
+    "cache": "a57058cbef31e5fe39d4.bin",
+    "cache_sha256": "dcabb3ab1ca33a3dbb0a2059805bb13caf7ff9e80b8d92aebbd7021b7d891126",
+    "frames": 1059035,
+    "windows": 16547,
+    "tail_frames": 27,
+    "set": "set_03",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 2,
+    "token": "dcabb3ab1ca33a3dbb0a2059",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/fuzzing-1.csv"
+    ],
+    "family": "fuzzing"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/test_04_unknown_vehicle_unknown_attack/force-neutral-4.csv",
+    "source_sha256": "86c1c77904f355d64a7fbd4e2b126569d8d723d94b7a1b6d4c98e80d2fc63a87",
+    "source_bytes": 35719485,
+    "cache": "f2ed512a96b278043233.bin",
+    "cache_sha256": "dce3cc8d0b216f6c2eae15bc1fedafbbdcbbc96c49f49db375e1363dcad95c04",
+    "frames": 870399,
+    "windows": 13599,
+    "tail_frames": 63,
+    "set": "set_02",
+    "folder": "test_04_unknown_vehicle_unknown_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "dce3cc8d0b216f6c2eae15bc",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_04_unknown_vehicle_unknown_attack/force-neutral-4.csv"
+    ],
+    "family": "force-neutral"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/double-2.csv",
+    "source_sha256": "0d668e56725cca02d115754e5fe53ecf506ee94276957b534d2fffa66eed766a",
+    "source_bytes": 28552021,
+    "cache": "1f5dbf0420c724717de3.bin",
+    "cache_sha256": "dd00e96080586cfcc5425d7afcf22d819054a49296fc2b3251de4f8b7337f54f",
+    "frames": 695540,
+    "windows": 10867,
+    "tail_frames": 52,
+    "set": "set_04",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 87,
+    "vehicle": 3,
+    "token": "dd00e96080586cfcc5425d7a",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/double-2.csv",
+      "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/double-2.csv"
+    ],
+    "family": "double"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/train_01/attack-free-4.csv",
+    "source_sha256": "88313ec1cfef30e677c4c30f0a5f61d185e01d3db83547055ed20b99e9c276a6",
+    "source_bytes": 13891382,
+    "cache": "f7e74e01646fbe9c62f8.bin",
+    "cache_sha256": "de012dd85da143b8d26a9f8b510dd93112958788127b0eaa8dbf95568b883861",
+    "frames": 336011,
+    "windows": 5250,
+    "tail_frames": 11,
+    "set": "set_04",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "de012dd85da143b8d26a9f8b",
+    "aliases": [
+      "data/can-train-and-test/set_04/train_01/attack-free-4.csv"
+    ],
+    "family": "attack-free"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/speed-accessory-1.csv",
+    "source_sha256": "67ef3d0ec97c3e97a2e910a8801ec23cd46dafb857ee76c11959117847be029e",
+    "source_bytes": 20705090,
+    "cache": "44463deaf92d7f438b82.bin",
+    "cache_sha256": "de7e929386c3cb247655e6954e6079c556cb9052d195e4b076ddf15aa89aecf1",
+    "frames": 529420,
+    "windows": 8272,
+    "tail_frames": 12,
+    "set": "set_04",
+    "folder": "test_02_unknown_vehicle_known_attack",
+    "timestamp_inversions": 2,
+    "vehicle": 1,
+    "token": "de7e929386c3cb247655e695",
+    "aliases": [
+      "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/speed-accessory-1.csv"
+    ],
+    "family": "speed-accessory"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/train_01/force-neutral-1.csv",
+    "source_sha256": "b49e2e947b7ce43fb2876c64f2f558923f6bce2093c13cdb1480e86e55fc5c92",
+    "source_bytes": 28470243,
+    "cache": "038521f1732246808bc2.bin",
+    "cache_sha256": "deef77bd5d91a02d3be074f6ffb0eeac2587756e29c2d0687f847f9480bfc256",
+    "frames": 715435,
+    "windows": 11178,
+    "tail_frames": 43,
+    "set": "set_01",
+    "folder": "train_01",
+    "timestamp_inversions": 142,
+    "vehicle": 0,
+    "token": "deef77bd5d91a02d3be074f6",
+    "aliases": [
+      "data/can-train-and-test/set_01/train_01/force-neutral-1.csv"
+    ],
+    "family": "force-neutral"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/systematic-3.csv",
+    "source_sha256": "83cc53330a80df8f52dd3d1a692bacaadcea686ca33f621f284646eec490d820",
+    "source_bytes": 31109158,
+    "cache": "79f44ff94bbe32d311f8.bin",
+    "cache_sha256": "df358a7d8c951a645f4f67cd22bacf12cc40937fd01c5234337fff1608b3906b",
+    "frames": 783562,
+    "windows": 12243,
+    "tail_frames": 10,
+    "set": "set_01",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 0,
+    "token": "df358a7d8c951a645f4f67cd",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/systematic-3.csv"
+    ],
+    "family": "systematic"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/train_01/accessory-2.csv",
+    "source_sha256": "83c2973194959e95eda27ce2b72fc80a31e229eb473027d0e044053a554dcb41",
+    "source_bytes": 11956612,
+    "cache": "6d1457ebabbf5e5b02c0.bin",
+    "cache_sha256": "df5569e555fa3c14436938166427f7c42b9f48e3cf981482b8b5f55181887571",
+    "frames": 307057,
+    "windows": 4797,
+    "tail_frames": 49,
+    "set": "set_02",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 1,
+    "token": "df5569e555fa3c1443693816",
+    "aliases": [
+      "data/can-train-and-test/set_02/train_01/accessory-2.csv"
+    ],
+    "family": "accessory"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/train_01/accessory-1.csv",
+    "source_sha256": "9d810a93cbbc90c7ea5725fd457fbe12edf509a4f17c8fc7a2dc19e319b44ed9",
+    "source_bytes": 20664340,
+    "cache": "d9482a07263dfa158ba3.bin",
+    "cache_sha256": "e1c6a771da8ba45b48f394add18476e4b8e9f3cda4a7ff1fd9308f4bd63c7d4a",
+    "frames": 529370,
+    "windows": 8271,
+    "tail_frames": 26,
+    "set": "set_02",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 1,
+    "token": "e1c6a771da8ba45b48f394ad",
+    "aliases": [
+      "data/can-train-and-test/set_02/train_01/accessory-1.csv"
+    ],
+    "family": "accessory"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/test_03_known_vehicle_unknown_attack/rpm-4.csv",
+    "source_sha256": "c588b5abd7468e7e16e22d4cd7ef3e6b04d2785728adc4286d749de3ac8903f4",
+    "source_bytes": 40710182,
+    "cache": "6be7296ec439bc0dab4a.bin",
+    "cache_sha256": "e2b9253d6966236ed5f07d778c7abfbe910c9268d286ac2dda0171dcd8be5048",
+    "frames": 1052123,
+    "windows": 16439,
+    "tail_frames": 27,
+    "set": "set_02",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 3,
+    "vehicle": 1,
+    "token": "e2b9253d6966236ed5f07d77",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_03_known_vehicle_unknown_attack/rpm-4.csv"
+    ],
+    "family": "rpm"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/train_01/DoS-1.csv",
+    "source_sha256": "9f91d060363c96fcc14eb7f926c77ed1c6867dd5b1f050086136970d1a337d4b",
+    "source_bytes": 3588892,
+    "cache": "517ed01f885de8d1b8e8.bin",
+    "cache_sha256": "e5b1bfbfa5d8b113cf7ac5e6a3b8a57bc499ddedfbd06aaf70ab791eede4f598",
+    "frames": 90169,
+    "windows": 1408,
+    "tail_frames": 57,
+    "set": "set_01",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 0,
+    "token": "e5b1bfbfa5d8b113cf7ac5e6",
+    "aliases": [
+      "data/can-train-and-test/set_01/train_01/DoS-1.csv"
+    ],
+    "family": "DoS"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/force-neutral-1.csv",
+    "source_sha256": "5ac56adee0ebee07069447d3e169aa963edb0e1347b19cd90349922c545bae0a",
+    "source_bytes": 21685680,
+    "cache": "389ebeef8d19fde400ba.bin",
+    "cache_sha256": "e743a76bf4f2d02dacfca90101d71a8e7996d8322dfd16207bd88b4a7e715916",
+    "frames": 527589,
+    "windows": 8243,
+    "tail_frames": 37,
+    "set": "set_04",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "e743a76bf4f2d02dacfca901",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/force-neutral-1.csv",
+      "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/force-neutral-1.csv"
+    ],
+    "family": "force-neutral"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/rpm-accessory-2.csv",
+    "source_sha256": "8444446808179468303ad1187b9b5c96b7677177849e877eb7136304a1fa3a12",
+    "source_bytes": 11881687,
+    "cache": "5c55b98a65ef30f29a3f.bin",
+    "cache_sha256": "e753ba96daa8a3355b53945fa7d88c3dbe92b2acbfbfc21ae50c10dfb72f2098",
+    "frames": 307113,
+    "windows": 4798,
+    "tail_frames": 41,
+    "set": "set_04",
+    "folder": "test_02_unknown_vehicle_known_attack",
+    "timestamp_inversions": 2,
+    "vehicle": 1,
+    "token": "e753ba96daa8a3355b53945f",
+    "aliases": [
+      "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/rpm-accessory-2.csv"
+    ],
+    "family": "rpm-accessory"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/test_01_known_vehicle_known_attack/DoS-4.csv",
+    "source_sha256": "f1bc7ed92a3bae6f7048c76342e68424ba5b7bc70d1dd2b7c9506fd9a69515f7",
+    "source_bytes": 36625780,
+    "cache": "fbb4a81ba121b36b1288.bin",
+    "cache_sha256": "e83a379aa3bf018f5aa0e592d09875eda3b20b9b78e827b7d88be24f3b1eb838",
+    "frames": 920350,
+    "windows": 14380,
+    "tail_frames": 30,
+    "set": "set_01",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 0,
+    "token": "e83a379aa3bf018f5aa0e592",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_01_known_vehicle_known_attack/DoS-4.csv"
+    ],
+    "family": "DoS"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/train_01/rpm-accessory-4.csv",
+    "source_sha256": "7cf99f13729c16a93baa19578b505d209be4df4741c8c4a58bbc121a8f43f48a",
+    "source_bytes": 7269577,
+    "cache": "31d9a7ddc4e020bf9df5.bin",
+    "cache_sha256": "ea1003695d3c72d250d102b5ef54476f54f1f4cf4e136a9f151828bafa1d2359",
+    "frames": 175015,
+    "windows": 2734,
+    "tail_frames": 39,
+    "set": "set_04",
+    "folder": "train_01",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "ea1003695d3c72d250d102b5",
+    "aliases": [
+      "data/can-train-and-test/set_04/train_01/rpm-accessory-4.csv"
+    ],
+    "family": "rpm-accessory"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/fuzzing-4.csv",
+    "source_sha256": "beeb560b4b96875c5a6d91e8702f42d37da00eb7dfb22424ee5c9624530f2437",
+    "source_bytes": 16288587,
+    "cache": "86d1a12d1c7b23cd4ee8.bin",
+    "cache_sha256": "eb98c60a239ab9c2eea0e8bb87aa9462f36ee661e37ffe3d1b25b639348854bb",
+    "frames": 409146,
+    "windows": 6392,
+    "tail_frames": 58,
+    "set": "set_01",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 0,
+    "token": "eb98c60a239ab9c2eea0e8bb",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/fuzzing-4.csv"
+    ],
+    "family": "fuzzing"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/systematic-1.csv",
+    "source_sha256": "18905aec7575c8864e46d61bc9bf962aba766c9ae44ca2fb69e12ca9215cfb5b",
+    "source_bytes": 30539441,
+    "cache": "922c7855788b1cbeb461.bin",
+    "cache_sha256": "eec630081ce330268a4a1b87c2517e0802604a74f14d91059b1eb99c352a2d59",
+    "frames": 776168,
+    "windows": 12127,
+    "tail_frames": 40,
+    "set": "set_03",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 2,
+    "token": "eec630081ce330268a4a1b87",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/systematic-1.csv"
+    ],
+    "family": "systematic"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/test_03_known_vehicle_unknown_attack/force-neutral-4.csv",
+    "source_sha256": "57a9b962fe48fd5d80c462fcfb2af4750661006328362c78a9ca51d23adf9075",
+    "source_bytes": 103449141,
+    "cache": "1b92194d39056172f13d.bin",
+    "cache_sha256": "f2f5269b7d13fbd9c6013594967587fb74efcb8b3a3dc88879d88c7f810a8adc",
+    "frames": 2657027,
+    "windows": 41516,
+    "tail_frames": 3,
+    "set": "set_02",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 7,
+    "vehicle": 1,
+    "token": "f2f5269b7d13fbd9c6013594",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_03_known_vehicle_unknown_attack/force-neutral-4.csv"
+    ],
+    "family": "force-neutral"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/DoS-1.csv",
+    "source_sha256": "cd4dea0122734867b05922d65897357a86bdbb6fb472c793a685a1f02938eba6",
+    "source_bytes": 10033231,
+    "cache": "305551aaf1f8895cf72c.bin",
+    "cache_sha256": "f4ef644ae8f5419f490a681bec96c24a288f5ed1ebb2f74c1a854e6fe144c567",
+    "frames": 252707,
+    "windows": 3948,
+    "tail_frames": 35,
+    "set": "set_03",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 2,
+    "token": "f4ef644ae8f5419f490a681b",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/DoS-1.csv"
+    ],
+    "family": "DoS"
+  },
+  {
+    "source": "data/can-train-and-test/set_02/test_03_known_vehicle_unknown_attack/standstill-4.csv",
+    "source_sha256": "dbfe25045f85030b8a09df0774759b996e5495c6d83338e6c9a50ecd3688f3c9",
+    "source_bytes": 31117574,
+    "cache": "b7f65c73563369729441.bin",
+    "cache_sha256": "f5ca04c1e4bc30993e575db770da3089f1de1dea839b0b7e1c59b4de462c70c1",
+    "frames": 797053,
+    "windows": 12453,
+    "tail_frames": 61,
+    "set": "set_02",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 1,
+    "token": "f5ca04c1e4bc30993e575db7",
+    "aliases": [
+      "data/can-train-and-test/set_02/test_03_known_vehicle_unknown_attack/standstill-4.csv"
+    ],
+    "family": "standstill"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/fuzzing-3.csv",
+    "source_sha256": "49f3dbd5f8bfa861866b26559b32c3e666f439586e7b6bce841308aae7d148ff",
+    "source_bytes": 22710751,
+    "cache": "6497fd865c54b0f3d115.bin",
+    "cache_sha256": "f5e02c50d3b6c3808cfe133d4223a2205ebbb661a9a1a229780f08246bd8d149",
+    "frames": 573786,
+    "windows": 8965,
+    "tail_frames": 26,
+    "set": "set_01",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 0,
+    "token": "f5e02c50d3b6c3808cfe133d",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/fuzzing-3.csv"
+    ],
+    "family": "fuzzing"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/test_01_known_vehicle_known_attack/rpm-4.csv",
+    "source_sha256": "316f8b59e590685711eae40b3ab6daa19afc1ebc85825c72cc78d4b4cb19f5b8",
+    "source_bytes": 32806057,
+    "cache": "669533357a1694f39187.bin",
+    "cache_sha256": "f9a6d557071a07e07f006f8943d338e5a55b1971e87effaefc0fe33d4bf5619b",
+    "frames": 824211,
+    "windows": 12878,
+    "tail_frames": 19,
+    "set": "set_01",
+    "folder": "test_01_known_vehicle_known_attack",
+    "timestamp_inversions": 8,
+    "vehicle": 0,
+    "token": "f9a6d557071a07e07f006f89",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_01_known_vehicle_known_attack/rpm-4.csv"
+    ],
+    "family": "rpm"
+  },
+  {
+    "source": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/DoS-2.csv",
+    "source_sha256": "3e80117c3daf59a9dd325b443cb18995998361da92398fb99215db6ac9835239",
+    "source_bytes": 29190112,
+    "cache": "df7a8d364d3fc65b62ff.bin",
+    "cache_sha256": "fb63a4b8166c6919b23812d15d3eb7e95f61ccd849e6ab008e69fdd801e4cde5",
+    "frames": 709039,
+    "windows": 11078,
+    "tail_frames": 47,
+    "set": "set_04",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 0,
+    "vehicle": 3,
+    "token": "fb63a4b8166c6919b23812d1",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/DoS-2.csv",
+      "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/DoS-2.csv"
+    ],
+    "family": "DoS"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/standstill-2.csv",
+    "source_sha256": "8aed81cc1483b6c1f163fed6bc0ae9c357fa091cb564019a2514f9409e47f3fc",
+    "source_bytes": 44589095,
+    "cache": "30d9ebf61a7d6442a9e6.bin",
+    "cache_sha256": "fc2c2fa68f20d6865ddaf8ba4ba83dcb9ddeefd85fe62875df7d07d5d0138dde",
+    "frames": 1143404,
+    "windows": 17865,
+    "tail_frames": 44,
+    "set": "set_03",
+    "folder": "test_03_known_vehicle_unknown_attack",
+    "timestamp_inversions": 14,
+    "vehicle": 2,
+    "token": "fc2c2fa68f20d6865ddaf8ba",
+    "aliases": [
+      "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/standstill-2.csv"
+    ],
+    "family": "standstill"
+  },
+  {
+    "source": "data/can-train-and-test/set_01/test_02_unknown_vehicle_known_attack/standstill-3.csv",
+    "source_sha256": "5abceb1ec956c1912eb29cbd53f5dfc4fb36721f22229f7b5a77838c307000d1",
+    "source_bytes": 24800750,
+    "cache": "ae3949c569a709b6bfff.bin",
+    "cache_sha256": "fe1504755f0f30eb1c0b73977b4486500b5343878aa510c703ab3170cff49ccb",
+    "frames": 635543,
+    "windows": 9930,
+    "tail_frames": 23,
+    "set": "set_01",
+    "folder": "test_02_unknown_vehicle_known_attack",
+    "timestamp_inversions": 10,
+    "vehicle": 2,
+    "token": "fe1504755f0f30eb1c0b7397",
+    "aliases": [
+      "data/can-train-and-test/set_01/test_02_unknown_vehicle_known_attack/standstill-3.csv"
+    ],
+    "family": "standstill"
+  },
+  {
+    "source": "data/can-train-and-test/set_03/train_01/double-3.csv",
+    "source_sha256": "f098bb3a32bb16a3f60d025372a5b4265c58624022f791cd9defab96bb4e4f2c",
+    "source_bytes": 17692494,
+    "cache": "183827f695af4f35600f.bin",
+    "cache_sha256": "ff904317f2c156fddb78af27efb97bc84d712a9fbe13e9507d4dfefaf297c527",
+    "frames": 449725,
+    "windows": 7026,
+    "tail_frames": 61,
+    "set": "set_03",
+    "folder": "train_01",
+    "timestamp_inversions": 7,
+    "vehicle": 2,
+    "token": "ff904317f2c156fddb78af27",
+    "aliases": [
+      "data/can-train-and-test/set_03/train_01/double-3.csv"
+    ],
+    "family": "double"
+  }
+]

@@ -1,0 +1,95 @@
+THÍ NGHIỆM ĐA NGUỒN VÀ ĐỐI KHÁNG DANH TÍNH XE — 10/11/2026
+
+Mục tiêu: kiểm tra liệu học ba xe nguồn cùng đối kháng danh tính xe có giảm
+khả năng giải mã xe và cải thiện phát hiện trên xe giữ ngoài hay không.
+Đây là phân tích hậu nghiệm trên dữ liệu đã được khảo sát, không phải phép
+xác nhận độc lập. Không thay số liệu hay giả thuyết của giao thức A/B/C/D cũ.
+
+GIAO THỨC ĐƯỢC KHÓA TRƯỚC KHI HUẤN LUYỆN
+4 xe giữ ngoài × 3 seed (42,43,44) × 4 mô hình = 48 fit.
+1. Raw Transformer đa nguồn.
+2. Structural Transformer đa nguồn.
+3. Structural Transformer + đối kháng xe có điều kiện theo nhãn nhị phân.
+4. Structural bỏ 8 byte payload tuyệt đối + đối kháng xe cùng cấu hình.
+Biến thể thứ tư là ablation gói đầu vào trên nền đối kháng, không cô lập
+mọi tương tác giữa payload và đối kháng; muốn làm vậy cần thiết kế factorial.
+
+Mỗi fold huấn luyện từ train_01 của ba xe nguồn theo ánh xạ xe chuẩn;
+recording-round có hậu tố lớn nhất làm validation nguồn. Xe thứ tư không
+có mặt trong train, scaler, lựa chọn checkpoint hoặc hiệu chuẩn ngưỡng.
+Không gộp thư mục set thành miền: chúng dùng lại xe ở các vai trò khác nhau.
+
+Kiểm toán 236 đường dẫn cache cho 174 hash nội dung phân biệt phát hiện
+12 hash xuất hiện với hai danh tính xe theo metadata thư mục. Loại toàn bộ
+các alias của hash mâu thuẫn. Đây là xung đột danh tính trong bộ dữ liệu
+cục bộ; chưa xác định chiếc xe thật của các capture đó. Không tự sửa nhãn xe.
+Các hash còn lại được gộp một lần, giữ đầy đủ alias và nguồn gốc. Chỉ khẳng
+định loại trùng toàn capture; chưa chứng minh không có các đoạn nền chung.
+
+Giữ W64 không chồng lặp, trạng thái lịch sử trong file; content-only với
+thứ tự hàng do dataset cung cấp. Không suy từ đó ra chronology vật lý.
+Train lấy tối đa 1000 cửa sổ/lớp/file trên toàn file; mọi mô hình dùng cùng
+chỉ mục. Mỗi batch có 21 cửa sổ lấy có hoàn lại từ mỗi ô xe nguồn × nhãn,
+tổng 126. Số bước epoch = ceil(số mẫu nguồn/126); đó là lấy mẫu cân bằng,
+không phải một lượt duyệt từng mẫu đúng một lần.
+Validation/test dùng đầy đủ các cửa sổ đủ điều kiện, không rebalance.
+
+Giữ encoder d_model64, 2 lớp, 4 head; 10 epoch, AdamW lr0.001,
+weight_decay0.0001, cosine scheduler, clip gradient5. Cùng CUDA autocast
+bfloat16 (tham số float32, không GradScaler) ở cả bốn mô hình. Đây là chế độ số học của phép so mới,
+không tự nhận đồng nhất thực thi với ma trận cũ. Chốt checkpoint epoch10.
+
+Hai adversary MLP 64->64->3 dự đoán ba xe nguồn, một head cho mỗi nhãn.
+Adversary giảm CE miền; encoder nhận gradient đảo chiều với lambda tăng
+theo lịch DANN từ 0 tới xấp xỉ0.1. Loss tấn công vẫn được tối thiểu hóa.
+Không quét lambda hoặc chọn checkpoint theo kết quả xe đích. Nhãn attack
+chỉ sử dụng từ nguồn trong huấn luyện. Nhãn nhị phân không bảo đảm các
+attack family giống nhau; báo cơ cấu family và giới hạn căn chỉnh có điều kiện.
+
+Ngưỡng chọn từ validation gộp của ba xe nguồn: tối đa recall với FAR quan
+sát <=100/100000 cửa sổ lành; giữ nguyên trên xe đích. Ngân sách này không
+phải bảo đảm FAR xe đích và không phải tiêu chuẩn an toàn triển khai.
+
+TIÊU CHÍ DIỄN GIẢI
+Chính: recall xe giữ ngoài, luôn xét cùng FAR tại ngưỡng nguồn. Trung bình
+seed trong mỗi xe rồi trung bình ngang nhau bốn xe. Báo cả từng xe/seed.
+So structural_cadv với structural trước; raw là baseline đa nguồn riêng.
+Recall tăng mà FAR tăng: đánh đổi, không gọi cải thiện đồng thời.
+Recall tăng và FAR không tăng: cải thiện quan sát được trong giao thức này;
+vẫn phải báo bất định theo bản ghi và khác biệt giữa xe. Không suy ra tổng
+quát hóa cho quần thể xe từ chỉ bốn xe đã được khảo sát.
+
+Sau khi 48 encoder đóng băng, huấn luyện LR và MLP probe mới trên embedding.
+Cân bằng 4 xe × 2 nhãn ở mỗi phía; tối đa400 cửa sổ/ô. Probe-train và
+probe-test dùng recording-round train/validation nguồn chuẩn của từng xe.
+Encoder từng thấy bản ghi probe-train của các xe nguồn; vì vậy đây là giải
+mã trên recording-round giữ ngoài, không phải đánh giá phiên lái độc lập.
+Nhãn xe đích chỉ dùng trong chẩn đoán này sau khi toàn bộ mô hình đã đóng băng.
+Control: embedding hằng và hoán vị nhãn train, cùng decoder. Giữ cảnh báo
+hội tụ MLP/LR và không chọn seed probe tốt nhất. Probe vehicle chance25%,
+attack chance50%. Probe thấp phải đi kèm giữ tín hiệu tấn công và cải thiện
+IDS mới được xem là bằng chứng có ích; không chứng minh độc lập thống kê.
+
+Target test gồm toàn bộ capture xe giữ ngoài không mâu thuẫn, gộp trùng.
+Đây không phải B/D cũ. Known/unseen attack family được tính lại từ những
+file nguồn thực sự có attack; không gọi tên folder cũ là zero-day ở giao thức mới.
+
+TÁI CHẠY (từ F:\00_Research)
+.venv/Scripts/python.exe -u code/scripts/run_multisource_lovo.py --stage all
+Các stage: prepare, train, evaluate, probes, analyze.
+Hoàn thành unit được tái sử dụng. Code/config bị đổi sau khi khóa sẽ bị chặn;
+cần phiên bản output mới, không ghi đè một nghiên cứu đã đóng băng.
+live_status.json chỉ trạng thái; final_manifest.json COMPLETE mới là hoàn tất.
+Phiên bản v1 float16 dừng do tràn gradient trước fit đầu tiên hoàn tất.
+Phiên bản v2 dùng bfloat16 cho toàn bộ ma trận; giữ nguyên thiết kế thống kê,
+lưu nguồn lần lỗi, tái dùng cache feature float32 có kiểm lại hash. Kết quả
+hiện hành: code/results/multisource_lovo_v2_2026-11-10/.
+
+CƠ SỞ THAM KHẢO
+Ganin et al., Domain-Adversarial Training of Neural Networks, JMLR 2016:
+https://jmlr.org/papers/v17/15-239.html
+DANN gốc dùng đích không nhãn; ở đây chỉ đối kháng ba miền nguồn.
+Zhao et al., On Learning Invariant Representations for Domain Adaptation,
+ICML2019: https://proceedings.mlr.press/v97/zhao19a.html
+Gulrajani & Lopez-Paz, In Search of Lost Domain Generalization, ICLR2021:
+https://arxiv.org/abs/2007.01434

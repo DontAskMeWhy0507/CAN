@@ -1,0 +1,15 @@
+set,seed,method,condition,file,operating_point,threshold,Total_Windows,Attack_Windows,Benign_Windows,TP,FP,TN,FN,Attack_F1,Precision,Recall,AP,PR_AUC,FAR_per_100k,Accuracy,Attack_Prevalence,Metric_Status,AP_Status
+set_01,42,raw_transformer,validation,data/can-train-and-test/set_01/train_01/accessory-2.csv,source_calibrated,0.4016633629798889,4,0,4,0,0,4,0,,,,,,0.0,1.0,0.0,single_class,requires_scores_and_both_classes
+set_01,42,raw_transformer,validation,data/can-train-and-test/set_01/train_01/attack-free-2.csv,source_calibrated,0.4016633629798889,4,0,4,0,0,4,0,,,,,,0.0,1.0,0.0,single_class,requires_scores_and_both_classes
+set_01,42,raw_transformer,validation,data/can-train-and-test/set_01/train_01/DoS-2.csv,source_calibrated,0.4016633629798889,8,4,4,4,0,4,0,1.0,1.0,1.0,1.0,1.0,0.0,1.0,0.5,two_class,ok
+set_01,42,raw_transformer,validation,data/can-train-and-test/set_01/train_01/force-neutral-2.csv,source_calibrated,0.4016633629798889,8,4,4,1,0,4,3,0.4,1.0,0.25,0.8166666666666667,0.8166666666666667,0.0,0.625,0.5,two_class,ok
+set_01,42,raw_transformer,validation,data/can-train-and-test/set_01/train_01/rpm-2.csv,source_calibrated,0.4016633629798889,8,4,4,0,0,4,4,0.0,,0.0,0.7333333333333333,0.7333333333333333,0.0,0.5,0.5,two_class,ok
+set_01,42,raw_transformer,validation,data/can-train-and-test/set_01/train_01/standstill-2.csv,source_calibrated,0.4016633629798889,8,4,4,0,0,4,4,0.0,,0.0,0.6220238095238095,0.6220238095238095,0.0,0.5,0.5,two_class,ok
+set_01,42,raw_transformer,validation,ALL,source_calibrated,0.4016633629798889,40,16,24,5,0,24,11,0.47619047619047616,1.0,0.3125,0.6967907009057183,0.6967907009057183,0.0,0.725,0.4,two_class,ok
+set_01,42,raw_transformer,validation,data/can-train-and-test/set_01/train_01/accessory-2.csv,default_0.5,0.5,4,0,4,0,0,4,0,,,,,,0.0,1.0,0.0,single_class,requires_scores_and_both_classes
+set_01,42,raw_transformer,validation,data/can-train-and-test/set_01/train_01/attack-free-2.csv,default_0.5,0.5,4,0,4,0,0,4,0,,,,,,0.0,1.0,0.0,single_class,requires_scores_and_both_classes
+set_01,42,raw_transformer,validation,data/can-train-and-test/set_01/train_01/DoS-2.csv,default_0.5,0.5,8,4,4,0,0,4,4,0.0,,0.0,1.0,1.0,0.0,0.5,0.5,two_class,ok
+set_01,42,raw_transformer,validation,data/can-train-and-test/set_01/train_01/force-neutral-2.csv,default_0.5,0.5,8,4,4,0,0,4,4,0.0,,0.0,0.8166666666666667,0.8166666666666667,0.0,0.5,0.5,two_class,ok
+set_01,42,raw_transformer,validation,data/can-train-and-test/set_01/train_01/rpm-2.csv,default_0.5,0.5,8,4,4,0,0,4,4,0.0,,0.0,0.7333333333333333,0.7333333333333333,0.0,0.5,0.5,two_class,ok
+set_01,42,raw_transformer,validation,data/can-train-and-test/set_01/train_01/standstill-2.csv,default_0.5,0.5,8,4,4,0,0,4,4,0.0,,0.0,0.6220238095238095,0.6220238095238095,0.0,0.5,0.5,two_class,ok
+set_01,42,raw_transformer,validation,ALL,default_0.5,0.5,40,16,24,0,0,24,16,0.0,,0.0,0.6967907009057183,0.6967907009057183,0.0,0.6,0.4,two_class,ok

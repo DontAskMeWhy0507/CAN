@@ -1,0 +1,9 @@
+{
+  "source": "data/can-train-and-test/set_01/train_01/accessory-2.csv",
+  "batch_size": 1,
+  "warmup_windows_per_repeat": 20,
+  "measured_windows_per_repeat": 300,
+  "repeats": 3,
+  "baseline_measurements": "remeasured_in_same_session",
+  "scope": "CSV parse + validation + both content representations + inference; repeated cached reads. No acquisition wait, ECU deadline or training-speed claim. Sequential desktop measurement, not randomized timing trial."
+}

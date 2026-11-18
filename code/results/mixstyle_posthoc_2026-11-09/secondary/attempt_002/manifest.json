@@ -1,0 +1,36 @@
+{
+  "status": "COMPLETE",
+  "signature": {
+    "stage": "secondary",
+    "post_hoc": true,
+    "completion_date": "2026-11-10",
+    "code": {
+      "scripts/complete_mixstyle_secondary.py": "169b96a998558b27e1e166539f8c5ab9bada92e992ac5b6c3d7e669c8bb5c52f",
+      "research_mixstyle/model.py": "fe4a3f78ec8d836a3ff65fb601396d48cd3fda512478c0444eb4bcd87d3fe157",
+      "scripts/complete_content_studies.py": "5bcea57af270cbf6f38b17dfb8ce6168dff90ae16655a3c85341885e57f2b2bd",
+      "src/can_research/probes.py": "287437cfae1858eae0e497c4fe1033c662e32ec8d610012a47803f60de51a7f8",
+      "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+      "extensions/content.py": "7db6916d67698b513c6eca7e319b6735d7eddb9d3a22b277ef5cf08b29744727",
+      "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+      "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+      "scripts/run_mixstyle_study.py": "471530e638d92b665a376db037779d1e98d3d4bb26fa4e4e107b4e3d83722ef5"
+    },
+    "checkpoints": {
+      "set_01": "e37878c1cc84232cdff1b9b40f059d3f4373277b897a56d98b3e477e8bd9eaf2",
+      "set_02": "296a365c3cbea04c4bc4e11d18974d38d526170d664c1a823d17131a3ec0cc4d",
+      "set_03": "5f19cd776ca3c497491a9f013352a2cff5992d835b703f3162409663a7ec0ad1",
+      "set_04": "098b6e9da131373731e732797ea42aef21911da5272d1782630e040c2db99102"
+    },
+    "reference_probe_manifest_sha256": "5c9887d8b196f7d6a0576be2d7395cc087c5aceb91e75ad33253f62d57d5c5e1"
+  },
+  "artifact_hashes": {
+    "all_probe_results.csv": "1bcdbfa3df30998e48a11f55342529699b53c012212e73935728c75da785554e",
+    "hardware_context.json": "9749a7d4f88c0436b8efdc07b9d7701672488d0c17b999c9a8082838b76e05d8",
+    "probe_means.csv": "c94d7a6b9812afa200409fa3fd01c0483b8221704f6797892b0e68eaa0af5bb2",
+    "probe_protocol.json": "9d337cd895649b811508ec15d4c3b33581b55ebaad447e5a88cbba8e66d4caf1",
+    "probe_results.csv": "10e1c31fb1f577ebcdbf9a77757cb3c3140bc5b296eeb6f81c3154f7b61fad2f",
+    "runtime.csv": "9bb94ad81c4681cf5931b528d56249216734cf65dceeb3db360ca6a4c6d83e70",
+    "runtime_protocol.json": "71f2674febf03ea8ecf4b19cf7b14a654a66a1a1fd8cf99f4ade509eb66ff1a9",
+    "selected_probe_windows.csv.gz": "2bdce6c5e6dfc11205ea9527817b87655fd199efc874ec8431c315998b4f9eab"
+  }
+}

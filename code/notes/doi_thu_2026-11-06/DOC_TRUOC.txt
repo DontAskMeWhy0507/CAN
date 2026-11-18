@@ -1,0 +1,185 @@
+ĐỐI THỦ ĐỂ SO SÁNH CAN IDS — 06/11/2026
+
+Đã chọn 12 công trình liên quan và xác minh 7 repo công khai gắn với tác giả/nhóm benchmark. Đây là danh sách để chọn phép so sánh, chưa phải kết quả đối chứng đã chạy. Mức ưu tiên và khả thi bên dưới là đánh giá dành riêng cho dự án này.
+
+BẮT ĐẦU TỪ ĐÂU
+1. Đọc P01 Relational Modelling và P05 Obafemi để kiểm tra giới hạn tính mới: quan hệ ID, bỏ ID thô và transfer đã có tiền lệ.
+2. Đối chứng triển khai ưu tiên: P02 CANBERT+; P03 CANLP; một thuật toán trong P04 CrySyS (ví dụ AssocRules/MBA-OCSVM sau kiểm tra adapter); và P01 nếu tái lập được đúng đặc tả.
+3. Giữ Raw Transformer cùng cấu hình làm đối chứng cô lập biểu diễn. Tách P07 CANTransfer sang phép so sánh có ngân sách thích nghi.
+4. P10–P12 chỉ chạy khi bảo đảm có tín hiệu giải mã và ánh xạ phù hợp. Có code không đủ để coi mọi phương pháp chạy được nguyên trạng trên CTT raw bytes.
+
+CÁCH SO SÁNH
+Chạy hai phép riêng: (a) kiểm tra tái lập trên dữ liệu/giao thức gốc khi khả thi; (b) bản thích ứng đã mô tả trên cùng split, sample index và đơn vị window của dự án. Ghi rõ mọi khác biệt về input, nhãn huấn luyện, benign-only/supervised, vocabulary, unknown ID, scaler, cửa sổ và dữ liệu đích. Giữ metric native cho phép tái lập gốc; khi so trong dự án phải chốt quy tắc gộp frame/window trên nguồn trước test. Không lấy score tốt nhất công bố từ dataset khác đặt cạnh score của bạn để tuyên bố hơn kém.
+Báo Recall, FAR/100.000 benign windows, attack-F1, AP, mẫu số, per-capture và nhiều seed khi có ngẫu nhiên. Giữ cả mặc định và ngưỡng source-calibrated; không điều chỉnh bằng nhãn đích. Những phương pháp cần unknown-ID policy hoặc không áp dụng được phải có lý do, không âm thầm bỏ khỏi bảng.
+
+DANH SÁCH BÀI
+
+P01. Relational Modelling for Automotive Cybersecurity: Structural Transition and Graph-Topology-Based CAN Intrusion Detection
+Tác giả: Mohammad Khalaf Khreasat; Gabriel Villarrubia González. Năm: 2026. Nơi công bố: Sensors 26(10), 2964.
+DOI: 10.3390/s26102964
+Bài báo: https://www.mdpi.com/1424-8220/26/10/2964
+Code: Chưa có URL code đã xác minh cho đúng bài.
+Xác minh code: Chưa xác minh được repo chính thức.
+Ưu tiên: Rất cao — đối chiếu tính mới và đối chứng đặc trưng
+Phương pháp: Thống kê, chuyển tiếp ID và topology đồ thị trong cửa sổ; nhiều bộ phân loại.
+Dữ liệu đích/huấn luyện: Bài có nghiên cứu chuyển miền và hiệu chuẩn bằng lưu lượng lành xe đích; cần tách từng chế độ.
+So với bài của bạn: Kiểm tra payload và biến thiên cùng ID của bạn có bổ sung giá trị so với đặc trưng quan hệ hay không.
+Điều kiện tái lập: Cần đọc đúng đặc tả công thức và tái lập từng nhóm đặc trưng; không đổi tên structural_no_payload thành phương pháp gốc.
+Phạm vi đã kiểm tra: Đã đối chiếu văn bản được publisher lập chỉ mục; truy cập trực tiếp publisher bị 429 trong lượt tìm này.
+
+
+P02. CANBERT+: An Optimized Multi-Layer BERT-Based Intrusion Detection for CAN Bus
+Tác giả: Jun Yeon Won; Qadeer Ahmed; Zhiqiang Lin. Năm: 2026. Nơi công bố: USENIX VehicleSec 2026, 97–115.
+DOI: Chưa ghi DOI; dùng liên kết nguồn bên dưới.
+Bài báo: https://www.usenix.org/conference/vehiclesec26/presentation/won
+Code: https://github.com/OSUSecLab/CanBERTplus
+Xác minh code: Đã xác minh repo được toàn văn bài báo dẫn trực tiếp; có mã pretrain/fine-tune.
+Ưu tiên: Rất cao — đối chứng Transformer hiện đại
+Phương pháp: Embedding ID, DLC, payload; tiền huấn luyện tự giám sát rồi tinh chỉnh có giám sát.
+Dữ liệu đích/huấn luyện: Giao thức gốc không đồng nhất với A–D source-only. Khi chuyển vào nghiên cứu của bạn, chỉ dựng vocab, pretrain và fine-tune từ nguồn.
+So với bài của bạn: Kiểm tra lợi ích biểu diễn structural so với một Transformer CAN đã công bố.
+Điều kiện tái lập: Phải quy định xử lý ID đích chưa thấy và quyết định window. Bản thích ứng phải ghi khác biệt với giao thức gốc. Có repo chưa đồng nghĩa đã chạy được.
+Phạm vi đã kiểm tra: Đã tải toàn văn chính thức; kiểm tra mục Availability và 7.1 Limitations, README repo.
+
+
+P03. CANLP: Intrusion Detection for Controller Area Networks Using Natural Language Processing and Embedded Machine Learning
+Tác giả: Kavya Balasubramanian và cộng sự. Năm: 2025. Nơi công bố: IEEE Transactions on Dependable and Secure Computing 22(6), 7203–7214.
+DOI: 10.1109/TDSC.2025.3596516
+Bài báo: https://donadelden.github.io/publication/balasubramanian-canlpnlp-journal-2025/
+Code: https://github.com/adithyagowda29/CANLP
+Xác minh code: Đã xác minh repo cùng tên do đồng tác giả công bố; cần kiểm tra độ khớp với bản journal mở rộng.
+Ưu tiên: Cao — đối chứng biểu diễn có code
+Phương pháp: TF-IDF trên thông điệp CAN kết hợp ML/DNN, quyết định ở mức frame.
+Dữ liệu đích/huấn luyện: Chỉ fit TF-IDF/vocabulary và mô hình trên nguồn trong chế độ source-only.
+So với bài của bạn: Phân biệt lợi ích biểu diễn cấu trúc của bạn với biểu diễn token/TF-IDF.
+Điều kiện tái lập: Repo dùng Python 3.8.17; phải giữ thứ tự và ánh xạ nhãn. Không dùng tiền xử lý xóa trùng làm thay đổi luồng thời gian của phép so sánh. Phải chốt cách gộp dự đoán frame thành window bằng nguồn.
+Phạm vi đã kiểm tra: Đã đọc abstract trên trang tác giả và README code; chưa có toàn văn journal trong thư mục PDF.
+
+
+P04. CAN We Trust Your Results? A Cross-Dataset Study of Automotive IDS Evaluation
+Tác giả: Beatrix Koltai; Gergely Ács; András Gazdag. Năm: 2026. Nơi công bố: Euro S&P – ACSW26; arXiv:2606.30430.
+DOI: Chưa ghi DOI; dùng liên kết nguồn bên dưới.
+Bài báo: https://arxiv.org/abs/2606.30430
+Code: https://github.com/CrySyS/Cross-Dataset-Study-of-Automotive-IDS-Evaluation
+Xác minh code: Đã xác minh code của nhóm tác giả.
+Ưu tiên: Rất cao — nguồn framework và đối chứng
+Phương pháp: Framework xuyên bảy dataset với DAGA-Ngram, MBA-OCSVM, AssocRules, CANShield và CANet.
+Dữ liệu đích/huấn luyện: Phải đọc adapter và kế hoạch huấn luyện/kiểm tra của từng phương pháp; không suy ra mọi chế độ đều source-only.
+So với bài của bạn: Có thể dùng adapter làm điểm xuất phát để đưa phương pháp đã công bố vào cùng giao thức của bạn.
+Điều kiện tái lập: Đây là bài benchmark, không phải một thuật toán duy nhất. Các adapter có thể khác triển khai gốc. Kiểm tra đơn vị frame/window và nguồn dữ liệu tín hiệu.
+Phạm vi đã kiểm tra: Đã tải preprint; xác minh liên kết code trong bài và danh sách năm phương pháp ở README.
+
+
+P05. Do CAN Intrusion Detectors Travel? A Cross-Dataset and Zero-Day Study with Identifier-Agnostic, Locally Calibrated Ensembles
+Tác giả: Akinwole Obafemi. Năm: 2026. Nơi công bố: World Journal of Advanced Research and Reviews 31(3), 1882–1889.
+DOI: 10.30574/wjarr.2026.31.3.2509
+Bài báo: https://wjarr.com/content/do-can-intrusion-detectors-travel-cross-dataset-and-zero-day-study-identifier-agnostic
+Code: Chưa có URL code đã xác minh cho đúng bài.
+Xác minh code: Chưa xác minh được code đúng bài này. Repo obaf/Cross-Vehicle-Generalisation-of-In-Vehicle-Intrusion-Detection mô tả tám xe/ba corpora và gọi một nghiên cứu khác là độc lập; không gán repo đó cho bài này.
+Ưu tiên: Rất cao — kiểm tra phạm vi tính mới
+Phương pháp: Random forest; bỏ ID one-hot, dùng thống kê không phụ thuộc ID và hiệu chuẩn lành ở xe đích.
+Dữ liệu đích/huấn luyện: Có dùng đoạn lưu lượng lành xe đích; phải báo riêng ngân sách dữ liệu đích.
+So với bài của bạn: Cho thấy bỏ ID thô và nghiên cứu suy giảm chuyển miền đã có tiền lệ. Kiểm tra lợi ích của pipeline source-only/payload-history của bạn.
+Điều kiện tái lập: Chưa có implementation đã kiểm chứng. Chất lượng kết luận cần được đánh giá từ thí nghiệm và khả năng tái lập; không mặc định tương đương mức kiểm chứng của venue khác.
+Phạm vi đã kiểm tra: Đã tải PDF và đọc abstract; đã tìm liên kết GitHub trong toàn văn, không thấy repo phương pháp được xác nhận.
+
+
+P06. can-train-and-test: A curated CAN dataset for automotive intrusion detection
+Tác giả: Brooke Lampe; Weizhi Meng. Năm: 2024. Nơi công bố: Computers & Security 140, 103777.
+DOI: 10.1016/j.cose.2024.103777
+Bài báo: https://doi.org/10.1016/j.cose.2024.103777
+Code: https://bitbucket.org/brooke-lampe/can-benchmark/src/master/
+Xác minh code: Liên kết benchmark do bài gốc cung cấp; chưa kiểm tra checkout trong lượt này.
+Ưu tiên: Cao — mốc trên cùng dataset
+Phương pháp: Dataset và benchmark nhiều mô hình học máy.
+Dữ liệu đích/huấn luyện: Tái lập đúng phép chia/tiền xử lý; source-only hay thích nghi phải được mô tả cho run mới.
+So với bài của bạn: Xác định vị trí phương pháp của bạn trên chính bộ dữ liệu đang dùng.
+Điều kiện tái lập: Không xếp hạng trực tiếp metric frame công bố với window 64 của bạn. PDF tải về là author preprint, không mặc định phụ lục giống hệt journal.
+Phạm vi đã kiểm tra: Đã tải preprint; đã kiểm tra phần benchmark trên publisher.
+
+
+P07. CANTransfer: Transfer Learning Based Intrusion Detection on a Controller Area Network Using Convolutional LSTM Network
+Tác giả: Shahroz Tariq; Sangyup Lee; Simon S. Woo. Năm: 2020. Nơi công bố: ACM SAC 2020, 1048–1055.
+DOI: 10.1145/3341105.3373868
+Bài báo: https://doi.org/10.1145/3341105.3373868
+Code: https://github.com/shahroztariq/CANTransfer
+Xác minh code: Đã xác minh repo tác giả và citation trùng bài.
+Ưu tiên: Bổ sung — đối chứng thích nghi ít mẫu
+Phương pháp: Convolutional LSTM kết hợp transfer/one-shot learning để học tấn công mới.
+Dữ liệu đích/huấn luyện: Có bước thích nghi bằng dữ liệu mới; phải chỉ rõ lượng nhãn và dữ liệu được dùng.
+So với bài của bạn: Đánh giá đánh đổi giữa source-only và một ngân sách thích nghi được cố định trước.
+Điều kiện tái lập: Không đặt one-shot và zero-shot vào cùng một bảng hơn/kém mà che dữ liệu thích nghi. Cần môi trường riêng và kiểm tra code cũ.
+Phạm vi đã kiểm tra: Đã đọc abstract/citation và cấu trúc repo; chưa tải được toàn văn gốc từ nguồn mở trong lượt này.
+
+
+P08. Time-Based CAN Intrusion Detection Benchmark
+Tác giả: Deborah H. Blevins và cộng sự. Năm: 2021. Nơi công bố: AutoSec 2021.
+DOI: Chưa ghi DOI; dùng liên kết nguồn bên dưới.
+Bài báo: https://arxiv.org/abs/2101.05781
+Code: https://github.com/pmoriano/can-time-based-ids-benchmark
+Xác minh code: Đã xác minh repo nhóm tác giả; có code và notebook tái lập.
+Ưu tiên: Cao — đối chứng timing có nguồn rõ
+Phương pháp: Đối chiếu bốn IDS dựa trên thời gian trên ROAD.
+Dữ liệu đích/huấn luyện: Thống kê timing và ngưỡng phải fit từ dữ liệu được phép; không mặc định phân bố thời gian giữ nguyên khi đổi xe.
+So với bài của bạn: Kiểm tra payload/structure có giá trị bổ sung vượt tín hiệu timing đơn thuần.
+Điều kiện tái lập: Chỉ chạy trên dữ liệu có timestamp thật; giữ phạm vi tấn công có thể quan sát bằng timing, không dùng CICIoV content-only.
+Phạm vi đã kiểm tra: Đã tải toàn văn chính thức NDSS/AutoSec; đọc abstract và README.
+
+
+P09. CAN-BERT do it? Controller Area Network Intrusion Detection System based on BERT Language Model
+Tác giả: Natasha Alkhatib; Maria Mushtaq; Hadi Ghauch; Jean-Luc Danger. Năm: 2022. Nơi công bố: AICCSA 2022.
+DOI: 10.1109/AICCSA56895.2022.10017800
+Bài báo: https://arxiv.org/abs/2210.09439
+Code: Chưa có URL code đã xác minh cho đúng bài.
+Xác minh code: Chưa xác minh repo gốc. CANBERT+ có mô tả baseline B1 đã sửa; không coi B1 là bản gốc nguyên trạng.
+Ưu tiên: Bổ sung — đối chứng ID-only
+Phương pháp: BERT học chuỗi arbitration ID bằng masked language modelling.
+Dữ liệu đích/huấn luyện: Vocab và mô hình chỉ học từ nguồn trong chế độ source-only; phải quy định unknown ID.
+So với bài của bạn: Phân tích giới hạn của biểu diễn ID-token khi đổi xe và lợi ích thêm payload.
+Điều kiện tái lập: Cần tái lập objective và score; khác bài toán supervised Transformer hiện có.
+Phạm vi đã kiểm tra: Đã tải preprint và đọc HTML toàn văn; code gốc chưa xác minh.
+
+
+P10. CANet: An Unsupervised Intrusion Detection System for High Dimensional CAN Bus Data
+Tác giả: Markus Hanselmann; Thilo Strauss; Katharina Dormann; Holger Ulmer. Năm: 2020. Nơi công bố: IEEE Access 8, 58194–58205; preprint 2019.
+DOI: 10.1109/ACCESS.2020.2982544
+Bài báo: https://arxiv.org/abs/1906.02492
+Code: https://github.com/CrySyS/Cross-Dataset-Study-of-Automotive-IDS-Evaluation
+Xác minh code: Có adapter/implementation trong framework CrySyS; đây là triển khai của nhóm benchmark, chưa xác minh code tác giả gốc.
+Ưu tiên: Có điều kiện — reconstruction baseline
+Phương pháp: LSTM theo ID và tái tạo tín hiệu; học từ lưu lượng lành.
+Dữ liệu đích/huấn luyện: Học từ benign nguồn; ánh xạ ID/tín hiệu xe đích là vấn đề phải giải quyết rõ.
+So với bài của bạn: So sánh với một phương pháp reconstruction thay vì chỉ CE classification.
+Điều kiện tái lập: Đầu vào tín hiệu và ánh xạ ID có thể cần giải mã; không áp thẳng lên byte CTT rồi gọi là tái lập nguyên bản.
+Phạm vi đã kiểm tra: Đã tải author preprint; đối chiếu README benchmark.
+
+
+P11. CANShield: Deep-Learning-Based Intrusion Detection Framework for Controller Area Networks at the Signal Level
+Tác giả: Md Hasan Shahriar; Yang Xiao; Pablo Moriano; Wenjing Lou; Y. Thomas Hou. Năm: 2023. Nơi công bố: IEEE Internet of Things Journal 10(24), 22111–22127.
+DOI: 10.1109/JIOT.2023.3303271
+Bài báo: https://shahriar0651.github.io/assets/pdf/paper_2023_CANShield.pdf
+Code: https://github.com/shahriar0651/CANShield
+Xác minh code: Đã xác minh repo tác giả và trang publications.
+Ưu tiên: Có điều kiện — baseline signal-level
+Phương pháp: Nhiều CNN autoencoder ở các thang thời gian; ensemble reconstruction.
+Dữ liệu đích/huấn luyện: Cần tín hiệu và schema đầu vào tương thích; kiểm tra scaler và train trên benign.
+So với bài của bạn: Đối chiếu hướng phát hiện bất thường đa thang nếu có dữ liệu tín hiệu hợp lệ.
+Điều kiện tái lập: ROAD/SynCAN signal-level khác raw-byte CTT; không tuyên bố thắng nhờ thay lợi thế đầu vào hoặc thông tin giải mã.
+Phạm vi đã kiểm tra: Đã tải author copy; đọc mô tả và hướng dẫn thực thi repo.
+
+
+P12. CANtropy: Time Series Feature Extraction-Based Intrusion Detection Systems for Controller Area Networks
+Tác giả: Md Hasan Shahriar; Wenjing Lou; Y. Thomas Hou. Năm: 2023. Nơi công bố: VehicleSec 2023.
+DOI: Chưa ghi DOI; dùng liên kết nguồn bên dưới.
+Bài báo: https://www.ndss-symposium.org/ndss-paper/auto-draft-362/
+Code: https://github.com/shahriar0651/cantropy
+Xác minh code: Đã xác minh link từ trang publications của tác giả và README repo.
+Ưu tiên: Có điều kiện — đối chứng feature engineering nhẹ
+Phương pháp: Đặc trưng temporal/statistical theo tín hiệu, chọn đặc trưng và PCA anomaly detection.
+Dữ liệu đích/huấn luyện: Fit lựa chọn đặc trưng/scaler/PCA trên nguồn được phép; không dùng scaler fit xe đích trong chế độ source-only.
+So với bài của bạn: Kiểm tra lợi ích của Transformer so với một bộ phát hiện nhẹ dùng đặc trưng thủ công.
+Điều kiện tái lập: Cần đầu vào signal-level phù hợp. Phải kiểm tra các scaler đi kèm repo có khớp quy tắc source-only trước khi sử dụng.
+Phạm vi đã kiểm tra: Đã mở PDF chính thức/author copy và README; chưa chạy code.
+
+Ghi chú: năm file preprint có thể khác năm journal. download_manifest.json ghi chính xác URL và SHA-256 PDF tải về. Tải về không đồng nghĩa đã đọc toàn văn. Không có mô hình bên ngoài nào trong danh sách được chạy hoặc thêm vào pipeline trong lượt tìm tài liệu này. Không gán repo tám xe/ba corpora của tài khoản obaf cho bài WJARR nếu chưa có bằng chứng liên kết.
+

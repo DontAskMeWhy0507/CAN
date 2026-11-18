@@ -1,0 +1,74 @@
+{
+  "code": {
+    "scripts/run_multisource_lovo.py": "56e490a7ba8c42181a815723fb85647e26e8adc1f2e207bf9f28776f2130d5bd",
+    "configs/multisource_lovo_2026-11-10.json": "e756dde3f6a48de99dffea72b287c320ca697636fe1688734a34bef9c9956438",
+    "research_multisource/model.py": "6b75479ae45e857182aa17e5a0338381a5ebd3c6aefb836c6524f333685adf7b",
+    "comparison/data.py": "6b91ccd455086ca02dbfd818b78e968c70da5821cf8c9ba22df4c8541d588185",
+    "comparison/content_features.py": "493b1202f257f08e301e1a0a74e0d99bc9bec5b9227e50ea90aaa014fc68be5b",
+    "src/can_research/models.py": "fa29e4b543fdf9f28f1b878243e1945b1671df64117338f31bfa7c465973d6cd",
+    "src/can_research/metrics.py": "e027252e358a05d4a3b52523ab34ad0165208097a3ec1282eb7a99eda5bca5c0",
+    "src/can_research/io.py": "9c14e1dd2af4936d11b6ab8ef62de8ac31875d6698affa06f3e687572505ea63",
+    "src/can_research/provenance.py": "387f5bf461f5d3499c9a4a39035142139b8c1e92755b95ba95bbc993afa6ed6f"
+  },
+  "cache_manifest": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+  "config": {
+    "protocol": "ctt-multisource-lovo-conditional-adversary-v2-bfloat16",
+    "post_hoc": true,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "methods": [
+      "raw",
+      "structural",
+      "structural_cadv",
+      "relative_cadv"
+    ],
+    "epochs": 10,
+    "batch_size": 126,
+    "per_vehicle_class_batch": 21,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "lambda_max": 0.1,
+    "gradient_clip_norm": 5.0,
+    "precision": "float32 inputs and parameters, CUDA bfloat16 autocast, no GradScaler; v1 float16 aborted on gradient overflow before any completed fit",
+    "train_windows_per_class_per_file": 1000,
+    "sampling_seed": 20261110,
+    "far_budget_per_100k": 100.0,
+    "checkpoint": "fixed epoch 10; no target selection or early stopping",
+    "source_split": "canonical train_01 per vehicle; final recording suffix for source validation",
+    "target": "all unique unambiguous captures assigned to held-out vehicle; no target training/calibration",
+    "duplicates": "merge identical binary cache hashes; quarantine all hashes with inconsistent vehicle assignments",
+    "relative_features": "structural indices [0,9,...,29]; remove eight absolute payload bytes",
+    "conditional_adversary": "two MLP heads (benign/attack) predict three source vehicle identities; GRL ramps to 0.1",
+    "balanced_sampling": "21 samples with replacement from every source vehicle x binary label cell per batch; same indices across methods",
+    "probe": "four balanced vehicles x binary label; canonical source train/validation recording groups; LR and MLP plus constant/permuted controls; diagnostic only after checkpoints frozen",
+    "probe_cap_per_vehicle_class": 400,
+    "probe_mlp": "StandardScaler + MLP(64,32), Adam, alpha=0.01, max_iter=200, random_state=42, no target tuning",
+    "primary": "held-out-vehicle recall at source-calibrated threshold, jointly interpreted with target FAR",
+    "secondary": [
+      "AP",
+      "attack F1",
+      "linear and nonlinear vehicle/attack probe",
+      "per-family recall",
+      "per-vehicle seed variation",
+      "paired capture bootstrap"
+    ],
+    "limitations": [
+      "Previously inspected vehicles: exploratory, not new independent confirmation",
+      "Recording-round grouping does not establish independent drives",
+      "Content/file-order only; no physical chronology claim",
+      "Binary class alignment does not equate attack-family distributions",
+      "Probe train may overlap encoder source training captures; probe test holds out recording rounds",
+      "Probe near chance does not prove statistical independence",
+      "No original A/B/C/D claim for new multi-source folds; attack family familiarity is recomputed from source training"
+    ]
+  },
+  "environment": {
+    "python": "3.11.15",
+    "torch": "2.11.0+cu128",
+    "numpy": "2.4.6",
+    "gpu": "NVIDIA GeForce RTX 5060"
+  }
+}

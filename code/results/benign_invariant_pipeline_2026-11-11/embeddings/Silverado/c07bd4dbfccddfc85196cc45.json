@@ -1,0 +1,9 @@
+{
+  "sha256": "f62ef8ed2b5b2f3d9931dee3c65ee97dd264429b187eda599f1a40b0031c9bb9",
+  "cache_sha256": "c07bd4dbfccddfc85196cc45c901388c9aaafc9cd8bd3dd729ce1cbc149b0eeb",
+  "checkpoints": {
+    "42": "349972616b585e6b40129387500c1bc03ce897e6cd9c103a288663c9c0ad6aab",
+    "43": "ce5d0f861fadef57f406a77229dbcdf35b502ff496470ea9c0aa292d85c4e521",
+    "44": "6a5700d0f9df15bbbc7b984eaa894b83423ff37e407512a5f220074e8efd5172"
+  }
+}

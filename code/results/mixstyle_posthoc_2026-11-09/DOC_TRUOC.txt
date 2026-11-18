@@ -1,0 +1,48 @@
+THỬ NGHIỆM BỔ SUNG MIXSTYLE — HOÀN TẤT 10/11/2026
+
+Đọc analysis/BAO_CAO_MIXSTYLE.txt và analysis/final_report.json.
+Notebook kết luận: code/notebooks/11_mixstyle_analysis_executed.ipynb.
+
+12 fit nghiên cứu mới; 24 baseline tái sử dụng; 1 pilot phần mềm 2 epoch.
+57 capture ngoại bộ; không cộng seed/capture thành các xe độc lập.
+Probe dùng đúng 3.800 cửa sổ train và 4.640 cửa sổ validation của probe cũ.
+Runtime đo lại Raw, Structural và MixStyle trên CPU/GPU, batch1, 900 mẫu
+mỗi cấu hình. Đây là phép đo desktop, không chứng nhận deadline ECU.
+
+Đây là nghiên cứu hậu nghiệm. Tiêu chí chính vẫn là Recall W64/B tại ngưỡng
+chọn từ nguồn. Tăng recall kèm tăng FAR được ghi là đánh đổi. Không tuyên bố
+độc lập xe, vượt trội toàn diện hoặc bảo đảm triển khai.
+
+TÁI KIỂM TRA TỪ F:\00_Research
+  .venv/Scripts/python.exe -X utf8 code/scripts/execute_mixstyle_analysis_notebook.py
+
+Lệnh trên kiểm thử, tổng hợp lại dự đoán, xác minh công việc bổ sung đã hoàn
+tất và sinh báo cáo; không huấn luyện lại 12 IDS nếu artifact/hash còn đúng.
+
+TÁI HUẤN LUYỆN: dùng thư mục output mới, không trộn với run đã đóng băng:
+  .venv/Scripts/python.exe -X utf8 code/scripts/run_mixstyle_study.py --stage all --output code/results/mixstyle_new_reproduction
+Các helper báo cáo/probe hiện trỏ đến run gốc; muốn phân tích run mới cần
+đặt lại đường dẫn rõ ràng, không ghi đè bảng của run gốc.
+
+LỊCH SỬ KIỂM CHỨNG
+- Notebook 10 và execution.log lưu lỗi tổng hợp đầu tiên: baseline chứa
+  thêm dòng dùng ngưỡng 0,5. Không có lỗi huấn luyện hoặc dự đoán tương ứng.
+- Bản sửa lọc source_calibrated, giữ đúng 144 pooled cell A–D của 3 pipeline.
+- provenance/run_mixstyle_study_training_snapshot.py khớp hash code runner
+  đã ghi trong manifest lúc huấn luyện; provenance/aggregation_fix.json
+  ghi hash bản trước/sau sửa. Các checkpoint và dự đoán được giữ nguyên.
+- secondary/attempt_001 bị ngắt khi khởi động để chẩn đoán tài nguyên máy,
+  chưa có số đo; attempt_002 là lần hoàn tất. Không chọn lần chạy theo điểm.
+- JSON đề xuất trong code/notes là thiết kế lịch sử trước khi triển khai,
+  không phải nguồn xác định trạng thái hiện tại.
+
+DỮ LIỆU VÀ FILE
+main/: 12 checkpoint, dự đoán CTT, lựa chọn cửa sổ, ngưỡng và manifest.
+external/: 57 capture, dự đoán, ledger loại/quarantine và metric.
+secondary/: probe, controls, runtime, điều kiện phần cứng và manifest.
+analysis/: bảng sáu phương pháp, bootstrap theo capture, báo cáo kiểm chứng.
+verified_inputs.json: hash dữ liệu gốc/cache và artifact baseline.
+provenance/: bản sao lịch sử trước bổ sung và ghi nhận sửa lỗi tổng hợp.
+
+Code dùng dữ liệu và module đã có trong workspace. Thư mục này không phải
+gói độc lập chứa toàn bộ dataset. Bản khóa luận PDF/ZIP gốc không bị thay thế.

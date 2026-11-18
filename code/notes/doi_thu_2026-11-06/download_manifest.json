@@ -1,0 +1,83 @@
+[
+  {
+    "file": "CANBERTplus_2026.pdf",
+    "url": "https://www.usenix.org/system/files/vehiclesec26-won.pdf",
+    "status": "DOWNLOADED",
+    "bytes": 1137251,
+    "sha256": "b5fd8c4a98fb31430fd36aa9a62778031da32aa369d2a5edadbe5af547d5c325",
+    "reading_status": "Downloaded; full paper not automatically marked as read",
+    "pages": 20
+  },
+  {
+    "file": "CAN_BERT_2022_preprint.pdf",
+    "url": "https://arxiv.org/pdf/2210.09439",
+    "status": "DOWNLOADED",
+    "bytes": 1430502,
+    "sha256": "92338dcbd389a5a868acafd0e02a69dff770d841fbd3f36ccf94f4c01cac02ae",
+    "reading_status": "Downloaded; full paper not automatically marked as read",
+    "pages": 8
+  },
+  {
+    "file": "CANet_preprint_2019_journal2020.pdf",
+    "url": "https://arxiv.org/pdf/1906.02492",
+    "status": "DOWNLOADED",
+    "bytes": 1334887,
+    "sha256": "6cb318fad88057aecc2e726aeb16d9a39ad53c627a666bbad9abe759f4c98e2f",
+    "reading_status": "Downloaded; full paper not automatically marked as read",
+    "pages": 9
+  },
+  {
+    "file": "Koltai_2026_cross_dataset_preprint.pdf",
+    "url": "https://arxiv.org/pdf/2606.30430",
+    "status": "DOWNLOADED",
+    "bytes": 348528,
+    "sha256": "090f81c9ed5c1484fadb68027ded3a0c3d52762561d7861549bbd2a1dbf6e632",
+    "reading_status": "Downloaded; full paper not automatically marked as read",
+    "pages": 14
+  },
+  {
+    "file": "CANShield_2023_author_copy.pdf",
+    "url": "https://shahriar0651.github.io/assets/pdf/paper_2023_CANShield.pdf",
+    "status": "DOWNLOADED",
+    "bytes": 4219427,
+    "sha256": "27f7b82f97b21c845f26ecfd96cd8a0ff59c64cc65315132034b795f4705b365",
+    "reading_status": "Downloaded; full paper not automatically marked as read",
+    "pages": 17
+  },
+  {
+    "file": "Time_Based_Benchmark_2021.pdf",
+    "url": "https://www.ndss-symposium.org/wp-content/uploads/autosec2021_23013_paper.pdf",
+    "status": "DOWNLOADED",
+    "bytes": 281086,
+    "sha256": "d061cab8f1a820c6981aecb50961da3ed3ff1dea23ce87f15edf3e693e26ead9",
+    "reading_status": "Downloaded; full paper not automatically marked as read",
+    "pages": 6
+  },
+  {
+    "file": "Lampe_Meng_preprint_journal2024.pdf",
+    "url": "https://arxiv.org/pdf/2308.04972",
+    "status": "DOWNLOADED",
+    "bytes": 4201641,
+    "sha256": "97cc9f2b97103bba926c0a03bcee1491c386586639846aa1a403d692e50a5ead",
+    "reading_status": "Downloaded; full paper not automatically marked as read",
+    "pages": 41
+  },
+  {
+    "file": "Obafemi_2026.pdf",
+    "url": "https://wjarr.com/sites/default/files/fulltext_pdf/WJARR-2026-2509.pdf",
+    "status": "DOWNLOADED",
+    "bytes": 495203,
+    "sha256": "b0e302ccdfd24e7d527db01db70af4fc589e1b881caabc81b776b1fbcd4c3490",
+    "reading_status": "Downloaded; full paper not automatically marked as read",
+    "pages": 8
+  },
+  {
+    "file": "CANtropy_2023_author_copy.pdf",
+    "url": "https://shahriar0651.github.io/assets/pdf/paper_2023_CANtropy.pdf",
+    "status": "DOWNLOADED",
+    "bytes": 485916,
+    "sha256": "3de7989534289b20df59dfa885ebb23113f8132858324f2daac03560ed31e9d5",
+    "reading_status": "Downloaded; full paper not automatically marked as read",
+    "pages": 8
+  }
+]

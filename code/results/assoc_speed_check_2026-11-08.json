@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-08",
+  "purpose": "software_runtime_validation_only",
+  "parameters": {
+    "window_size": 64,
+    "stride": 64,
+    "k_cla": 2,
+    "n_knn": 2,
+    "n_centroid_clusters": 2,
+    "n_bound_bins": 2,
+    "random_state": 42
+  },
+  "source_training_frames": 768,
+  "source_validation_windows": 80,
+  "exact_rule_set_match": true,
+  "exact_centroid_match": true,
+  "exact_score_match": true,
+  "max_absolute_score_error": 0.0,
+  "fit_seconds": {
+    "native": 0.7688288999997894,
+    "fast": 0.3893948000004457
+  },
+  "score_seconds_three_repeats": {
+    "native": [
+      2.739909299998544,
+      2.709988599999633,
+      2.6219904999998107
+    ],
+    "fast": [
+      0.3338242999998329,
+      0.31568459999834886,
+      0.3257312000023376
+    ]
+  },
+  "score_speedup": 8.31970839753817,
+  "fit_speedup": 1.9744200487497765,
+  "clustering_warning_counts": {
+    "native": 9,
+    "fast": 9
+  },
+  "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+  "backend_sha256": "63549407f5b038b17f10f4a6b4bc065d5b8eaa4e4ebb647c41a3dc27a58897f3",
+  "scope": "Small source-only k=2 pilot. No claim of equal speedup on full k=300 study; no accuracy result."
+}

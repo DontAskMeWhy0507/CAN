@@ -1,0 +1,212 @@
+RÀ SOÁT CHUYÊN SÂU: KHOẢNG TRỐNG NGHIÊN CỨU VÀ BẰNG CHỨNG CẦN BỔ SUNG
+Ngày đối chiếu: 04/11/2026. Phạm vi: bản thảo VI/EN, giao thức v2, code hiện tại, dữ liệu cục bộ và nguồn nghiên cứu gốc.
+
+Kết luận đánh giá
+
+Khóa luận hiện có một câu hỏi nghiên cứu đáng làm và một pipeline đã được sửa theo hướng tái lập. Tuy nhiên, chưa có đủ kết quả v2 để xác nhận hiệu quả phương pháp. Việc phần mềm vượt kiểm thử không chứng minh tính mới, khả năng chuyển xe hoặc ưu thế của Transformer. Điểm cần nâng cấp nhất là mối nối giữa nhận định khoa học, đối chứng phù hợp và bằng chứng thực nghiệm.
+
+Ba đóng góp có thể bảo vệ sau khi hoàn tất bằng chứng: (1) một biểu diễn bất biến với phép đổi tên ID đã định nghĩa rõ; (2) đánh giá có kiểm soát về lợi ích và mất mát thông tin của biểu diễn đó; (3) xác định giới hạn chuyển giao theo cơ chế tấn công, dữ liệu và ngưỡng. Không nên đặt toàn bộ giá trị khóa luận vào tuyên bố đã tạo được IDS độc lập với mọi xe.
+
+Đây là rà soát có mục tiêu, không phải tổng quan hệ thống bao phủ mọi công bố. Các mục “đề xuất” dưới đây chưa phải chức năng đã triển khai hoặc thí nghiệm đã chạy. Báo cáo này bổ sung cho RERUN_GUIDE_VI.md; không thay số liệu chờ chạy bằng kết quả dự kiến. Chưa có rubric chính thức nên không thể xác nhận mức điểm A+.
+
+1. CÁC NGHIÊN CỨU CẦN BỔ SUNG HOẶC ĐỌC SÂU HƠN
+
+[S1] Koltai, Ács và Gazdag, 2026, CAN We Trust Your Results? A Cross-Dataset Study of Automotive IDS Evaluation.
+Nguồn: https://arxiv.org/html/2606.30430v1 ; code tác giả: https://github.com/CrySyS/Cross-Dataset-Study-of-Automotive-IDS-Evaluation
+Đã đọc các mục II-D, IV, V và phụ lục A–C. Đây là preprint, không tự ghi thành bài tạp chí. Bài đánh giá năm phương pháp trên bảy dataset, huấn luyện bằng benign và có điểm best-F1. Không đồng nhất bảng benchmark này với một checkpoint cố định chuyển từ nguồn sang đích. Giá trị đối với khóa luận: tham chiếu thiết kế benchmark và nguồn implementation; không lấy điểm công bố làm baseline cùng giao thức. Cần thêm vào chương liên quan vì nghiên cứu nhiều dataset tự nó không còn là điểm mới.
+
+[S2] Khreasat và González, 2026, Relational Modelling for Automotive Cybersecurity, Sensors 26(10), 2964, DOI 10.3390/s26102964.
+Nguồn: https://pmc.ncbi.nlm.nih.gov/articles/PMC13210679/
+Đã đọc các mục đặc trưng và 6.2–6.4. Bài đã dùng thống kê, chuyển tiếp ID và topology. Một điểm cần làm rõ trước khi tái lập: mục 6.3 nói hiệu chỉnh threshold nhưng Bảng 9 thay đổi ROC-AUC. Với nhãn và continuous scores cố định, chỉ đổi threshold không đổi ROC-AUC. Đây là chỗ đặc tả cần giải thích, chưa đủ căn cứ kết luận tác giả sai code. Không dùng nhận định “hiệu chỉnh ngưỡng làm tăng AUC” làm tiền đề cho khóa luận.
+
+[S3] Islam và cộng sự, 2026, A Hybrid Approach to Universal Intrusion Detection Systems for Automotive Security, DOI 10.3390/s26051489.
+Nguồn: https://pmc.ncbi.nlm.nih.gov/articles/PMC12986820/
+Đã đối chiếu mục 4–5. Bài có chọn độ dài segment bằng benign stability và khoảng Pearson riêng của Tesla từ attack-free calibration traces. Do vậy kết quả hybrid có thành phần sử dụng dữ liệu đích; không so ngang với điều kiện target-data budget bằng 0. Đây là đối chứng quan trọng về timing/volume và ngân sách thích nghi, không phải bằng chứng rằng payload phải bị loại trong mọi IDS.
+
+[S4] Dong, Wu và Li, 2026, Defending Against State-Inducing Spoofing Attacks in Intelligent Connected Vehicles: A Real-Time Temporal Feature Fusion Framework, DOI 10.3390/s26154758.
+Nguồn: https://pmc.ncbi.nlm.nih.gov/articles/PMC13468888/
+Đã đọc mục 4 và 5.1–5.2. MTFF kết hợp intra-ID history và inter-ID scheduling. Mục 5.1 mô tả chia 70/10/20 trong từng xe/trạng thái/kịch bản; không tự coi kết quả xe B là strict source-only transfer. Đây là nguồn mới rất gần ý tưởng tổ hợp history–timing của khóa luận. Cần đối chiếu cách biểu diễn và giao thức, không nhận “dùng lịch sử cùng ID và attention” là mới.
+
+[S5] Jo và Kim, 2026, Lightweight temporal and spatial fusion for intrusion detection in automotive controller area network, DOI 10.1016/j.adhoc.2026.104224.
+Nguồn: https://www.sciencedirect.com/science/article/pii/S1570870526000909
+Đã xác minh abstract, highlights và phần mô tả phương pháp công khai; chưa có toàn văn để kiểm tra mọi chi tiết. Phương pháp kết hợp Transformer cho DLC/payload với thời gian theo ID. Cần nêu trong related work để phân biệt “không cần DBC” với “không cần học xe đích”. Chưa dùng điểm số hoặc tuyên bố zero-shot của bài làm căn cứ định lượng.
+
+[S6] Obafemi, 2026, Do CAN Intrusion Detectors Travel? A Cross-Dataset and Zero-Day Study with Identifier-Agnostic, Locally Calibrated Ensembles, DOI 10.30574/wjarr.2026.31.3.2509.
+Nguồn: https://wjarr.com/sites/default/files/fulltext_pdf/WJARR-2026-2509.pdf
+Đã đối chiếu metadata, phương pháp và các bảng kết quả trong PDF tám trang. Có trùng ý tưởng bỏ one-hot ID, thống kê cục bộ và hiệu chỉnh bằng benign đích. Nên ghi nhận như công trình gần, nhưng chưa xác minh implementation/artifact độc lập. Không dựa vào tuyên bố “first” hay con số headline của bài để xác nhận tính mới hoặc hiệu quả cho khóa luận.
+
+[S7] Hewitt và Liang, 2019, Designing and Interpreting Probes with Control Tasks, DOI 10.18653/v1/D19-1275.
+Nguồn: https://aclanthology.org/D19-1275/
+Đây là nghiên cứu probe trong NLP, không phải bằng chứng trên CAN. Có thể vận dụng nguyên tắc đối chứng năng lực probe và khả năng ghi nhớ. Việc áp dụng sang probe xe trong báo cáo này là đề xuất phương pháp của audit.
+
+[S8] Gulrajani và Lopez-Paz, In Search of Lost Domain Generalization, arXiv:2007.01434.
+Nguồn: https://arxiv.org/abs/2007.01434
+Dùng để bổ sung lập luận về tiêu chí chọn mô hình và tính công bằng của domain-generalization evaluation. Không suy từ benchmark ảnh trong bài rằng một thuật toán nhất định sẽ tốt trên CAN.
+
+[S9] Saito và Rehmsmeier, 2015, The Precision-Recall Plot Is More Informative than the ROC Plot When Evaluating Binary Classifiers on Imbalanced Datasets, DOI 10.1371/journal.pone.0118432.
+Nguồn: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0118432
+Bổ sung cơ sở cho việc xem precision–recall khi lớp không cân bằng. Không dùng nó để nói AP không phụ thuộc prevalence hoặc mọi ROC-AUC đều vô ích.
+
+[S10] Rajapaksha và cộng sự, CAN-MIRGU, VehicleSec 2024, DOI 10.14722/vehiclesec.2024.23043.
+Nguồn: https://rgu-repository.worktribe.com/preview/2577488/RAJAPAKSHA%202024%20CAN-MIRGU%20%28VOR%29.pdf ; https://github.com/sampathrajapaksha/CAN-MIRGU
+Mục mô tả dữ liệu cạnh Hình 5 nêu rõ: suspension không có malicious frame được chèn, nên cả khoảng tấn công được gán nhãn 1. Đây là dẫn chứng cần bổ sung trực tiếp vào phần nhãn và đơn vị đánh giá; mục 6 dưới đây kiểm tra điều đó trên dữ liệu cục bộ.
+
+[S11] Kidmose, Kidmose và Meng, 2025, can-sleuth: Sleuthing out the capabilities, limitations, and performance impacts of automotive intrusion detection datasets, International Journal of Information Security 24, 193, DOI 10.1007/s10207-025-01038-8.
+Nguồn: https://link.springer.com/article/10.1007/s10207-025-01038-8
+Đã đối chiếu phần dataset availability, mục 5 và phân tích suppress. Bài nêu bản can-train-and-test-v1.5 bổ sung test_05_suppress và test_06_masquerade; suppress thiếu frame tấn công được gán nhãn theo cách thông thường. Đường dẫn tác giả công bố: https://bitbucket.org/brooke-lampe/can-train-and-test-v1.5/ . Cần thêm nguồn này vào nền tảng dataset và thiết kế thí nghiệm; chưa tải hoặc xác nhận nội dung kho v1.5 trong đợt audit.
+
+Nguồn nền đã có cần giữ: can-train-and-test/Lampe–Meng cho thiết kế A–D; ROAD cho phân loại dữ liệu/cơ chế tấn công; CANTransfer cho chế độ thích nghi ít mẫu; Axelsson cho base-rate; Sommer–Paxson cho giới hạn IDS ngoài môi trường đánh giá đóng. Không cần tăng số tài liệu bằng các bài chỉ có accuracy cao trên random split.
+
+2. TÍNH MỚI CẦN THU HẸP VÀ CHỨNG MINH BẰNG ĐỐI CHỨNG
+
+Chương related hiện đã nhận các giới hạn chung, nhưng chưa đối chiếu sâu S1, S4–S6. “Bỏ CAN-ID + thêm cấu trúc + dùng Transformer + chạy nhiều dataset” chưa đủ để xác nhận một đóng góp thuật toán mới. Từng thành phần đã có nghiên cứu gần.
+
+Khoảng trống khả thi hơn: dưới cùng dữ liệu nguồn, cùng bộ phân loại và không dùng dữ liệu đích để chọn mô hình/ngưỡng, tổ hợp payload–history–quan hệ cục bộ giúp hoặc làm hại chuyển giao theo cơ chế nào? Nếu chứng minh được bằng ablation và phân tích lỗi thì đóng góp rõ hơn một bảng nhiều mô hình không cùng giao thức.
+
+Cần thêm bảng đối chiếu với các cột: thông tin đầu vào; dùng ID làm giá trị hay làm khóa; lịch sử cùng ID; đặc trưng payload; dữ liệu đích dùng ở bước nào; đơn vị quyết định; kiểu tấn công; code có thể tái lập; khác biệt có thể kiểm chứng của khóa luận. Không đánh dấu bài “không dùng target” chỉ từ tên universal/cross-vehicle.
+
+Nếu kết quả không ủng hộ ưu thế rộng, có thể đặt trọng tâm vào “Đánh giá biểu diễn bất biến đổi tên ID cho phát hiện xâm nhập CAN xuyên phương tiện”. Một nghiên cứu chỉ ra điều kiện thất bại có tái lập vẫn có giá trị; không cần đổi kết quả thành tích cực để bảo vệ tên đề tài.
+
+3. “KHÔNG NHẬN ID THÔ” KHÔNG ĐỒNG NGHĨA “KHÔNG CÒN THÔNG TIN XE”
+
+Bằng chứng hiện có: can_research/features.py bảo toàn structural features dưới đổi tên ID một-một, nhất quán toàn capture. Đây là tính chất tốt nhưng hẹp. Payload, DLC, chu kỳ, số ID và cấu trúc xuất hiện vẫn có thể là dấu hiệu nhận diện xe.
+
+Ví dụ suy ra trực tiếp từ code: với rank r > 0, hai feature r/U và r/W cho tỷ số (r/W)/(r/U) = U/W. Với W cố định, chúng cho phép khôi phục số ID phân biệt U. Hai chiều này không chỉ là hai phép chuẩn hóa vô hại; chúng mang thông tin về độ phong phú ID, có thể liên quan xe hoặc chế độ lái. Khi mọi rank bằng 0, cửa sổ chỉ có một ID.
+
+Cần bổ sung: probe xe trên raw embedding, structural embedding và engineered features trước encoder; dùng cùng chia nhóm và cùng ngân sách probe. Thêm đối chứng embedding hằng/ngẫu nhiên để phát hiện kết quả gần chance chỉ vì mất mọi thông tin. Probe phi tuyến nhỏ là kiểm tra bổ sung; không cần biến probe thành cuộc thi tối ưu. Cần xét riêng benign và các nhóm tấn công chung giữa xe vì cân bằng xe×nhãn nhị phân chưa loại hết tương quan xe×attack-family.
+
+Cách kết luận hợp lệ: “khả năng giải mã tuyến tính nhãn xe giảm trong phép probe này”. Probe gần 0,25 không chứng minh độc lập thống kê với xe. Nếu accuracy xe giảm nhưng attack recall cũng sụp, chưa thể gọi đó là biểu diễn tốt hơn.
+
+Phép đổi ID trên log giữ nguyên timestamp chỉ kiểm tra invariance của biểu diễn. CAN-ID còn liên quan ưu tiên phân xử; đổi ID khi xe thực đang phát có thể đổi lịch truyền. Không mô tả log-renaming như một can thiệp vật lý tương đương đổi xe.
+
+4. BASELINE HIỆN TẠI CHƯA TÁCH HẾT HIỆU ỨNG BIỂU DIỄN VÀ MÔ HÌNH
+
+configs/primary.json hiện có TF-raw, TF-structural, XGBoost-structural và LR-raw. So hai Transformer là đối chứng trực tiếp hợp lý. Nhưng không được lấy XGBoost-structural so LR-raw rồi quy chênh lệch cho structural.
+
+Bổ sung chi phí vừa phải: LR-structural và XGBoost-raw, tạo bảng 3 họ classifier × 2 representation. Runner đã nhận cú pháp model:representation, nhưng hai cấu hình này chưa nằm trong primary. Nếu giữ câu hỏi chính về representation, một baseline pooled/mean features + LR hoặc MLP nhỏ sẽ kiểm tra liệu Transformer thực sự thêm giá trị ngoài feature engineering; đó là thí nghiệm bổ sung, chưa triển khai.
+
+Đối chứng thuật toán công bố: chọn ít nhất một phương pháp relational/transition có thể tái lập. Có thể bắt đầu từ implementation công khai của S1 để xem khả năng adapter, hoặc đặc tả S2 khi giải quyết được chỗ chưa rõ. Không đổi tên XGBoost trên 32 chiều thành Graph IDS. Phương pháp cần học normal profile theo xe phải được báo là baseline có thích nghi, không ép giả thành zero-shot.
+
+Cấu hình 10 epoch giống nhau kiểm soát ngân sách nhưng chưa chứng minh các mô hình đều hội tụ. Cần learning curves, tiêu chí checkpoint và ngân sách tuning chỉ ở nguồn. Nếu mở tuning, tách dữ liệu chọn hyperparameter khỏi dữ liệu cuối cùng chọn threshold khi đủ capture; nếu không đủ, ghi rõ việc tái dùng validation và giới hạn ước lượng. S8 hỗ trợ lý do phải công bố quy tắc chọn mô hình.
+
+5. CẦN CHỨNG MINH PAYLOAD HISTORY THÊM TÍN HIỆU GÌ
+
+Delta hiện là trị tuyệt đối chênh byte, không phải vận tốc thay đổi của tín hiệu vật lý. Counter hợp lệ chuyển 0x00FF thành 0x0100 tạo delta byte [1,255] dù giá trị 16-bit tăng một đơn vị. Không có DBC thì không biết byte order, đơn vị, bit-field, checksum hay rolling counter. Do đó không gọi delta là “biến thiên cảm biến độc lập xe”.
+
+Cần phân tích: (a) payload-only; (b) structural-minus-delta; (c) bỏ absolute payload nhưng giữ masked delta, timing và local structure. Mục (c) chưa có trong configs/ablation.json: ablation hiện bỏ delta nhưng vẫn giữ payload, nên chưa trả lời được lợi ích đến từ giá trị tuyệt đối hay biến thiên tương đối. Dùng cùng cửa sổ và checkpoint selection rule.
+
+Phân tích lỗi cần lấy cả false positive trong lái bình thường thay đổi trạng thái và false negative của replay/masquerade. Nếu có thể thêm một đối chứng gọn, so numeric byte delta với Hamming distance/XOR hoặc biến thiên modulo dưới giả định công bố rõ. Không mặc định cách nào tốt hơn khi chưa chạy.
+
+Quan sát bổ sung từ code: cùng-ID history cập nhật cả khi frame đến từ attacker. Có thể bị “nhiễm” bởi chuỗi payload tấn công kéo dài, khiến delta lớn ở đầu rồi nhỏ về sau. Cần đo recall theo thời gian từ đầu sự kiện, không chỉ một F1 gộp. Đây là giả thuyết kiểm tra, không phải kết luận detector đã bị đánh bại.
+
+6. PHÁT HIỆN MỚI ĐÃ KIỂM CHỨNG: NHÃN SUSPENSION KHÁC NHÃN FRAME ĐỘC HẠI
+
+Đã chạy scripts/audit_suspension_semantics.py trên toàn bộ năm log suspension cục bộ: 2.976.163 frame, trong đó 976.309 frame mang nhãn 1. Trong tất cả khoảng nhãn 1, số frame của ID bị đình chỉ bằng 0. Mỗi log có chuỗi nhãn 0→1→0 và số ID phân biệt giảm từ 56 xuống 55.
+
+File ID_160: 162.535 frame nhãn 1, không frame nào mang ID 160; có 2.541 cửa sổ dương tính W=64. Nhãn dương tính ở đây đánh dấu bối cảnh suspension của những frame còn lại. Nếu gọi 162.535 frame đó là 162.535 gói độc hại được chèn thì sai ý nghĩa. Nguồn S10 giải thích chính sách nhãn này.
+
+Kết quả đầy đủ và SHA-256 từng log: results/suspension_semantics_audit.json. Đây là kiểm tra dữ liệu, chưa có inference mô hình. Script giữ nguyên nhãn gốc.
+
+Hệ quả cần sửa trong bản thảo và báo cáo kết quả: đổi định nghĩa chung từ “cửa sổ có ít nhất một malicious frame” thành “cửa sổ có ít nhất một frame mang nhãn dương tính theo chính sách dataset”; sau đó nêu riêng injected-frame labels và attack-interval labels. Báo nhóm suspension riêng, không so trực tiếp frame recall hoặc mật độ malicious frames với injection. Các danh mục trong configs/external_datasets.json hiện gộp mọi CAN-MIRGU attack dưới một entry; báo cáo khoa học cần phân nhóm cơ chế rõ hơn.
+
+Giới hạn mô hình: same-ID interarrival chỉ được tính khi ID ấy lại xuất hiện. Khi một ID biến mất hoàn toàn, code không có bộ giám sát “time since last seen” quét tất cả ID đang vắng mặt. Mô hình có thể nhận tín hiệu gián tiếp từ lưu lượng và quan hệ ID khác, nhưng chưa có bằng chứng theo dõi trực tiếp deadline của ID bị đình chỉ. Một baseline timeout theo normal profile là đối chứng phù hợp; phải tách nếu profile cần benign xe đích.
+
+Năm log còn có timestamp biên nối gần sát nhau: theo thứ tự 160→371→386→541→07F, khoảng cách lần lượt là 0,000001; 0,000002; 0,000001; 0,000002 giây. Đây là cảnh báo về phụ thuộc giữa file, chưa chứng minh định danh cùng chuyến lái. Không coi năm log là năm xe hoặc năm thí nghiệm độc lập để tạo CI hẹp.
+
+7. “TẤN CÔNG CHƯA THẤY” CẦN XÉT THEO CƠ CHẾ
+
+Tên file khác nhau chưa bảo đảm cơ chế khác nhau. Hai attack cùng là injection nhưng khác giá trị payload/ID có thể chia sẻ artifact tần suất. Cần một bảng mechanism ledger cho từng file: fabrication/flooding, payload modification/masquerade, replay, suspension; xe; real hay synthetic; capture gốc; nhãn frame hay khoảng; attack family đã thấy ở nguồn chưa; tỷ lệ dương tính; thời lượng; injection rate nếu có nguồn xác nhận.
+
+Không suy cơ chế chỉ từ từ “spoofing”, “impersonation” hay “replay” trong tên file. Xác nhận bằng metadata hoặc bài dataset. Trong lúc chưa xác nhận, ghi “unverified mechanism”; không tự điền để hoàn chỉnh bảng.
+
+Kiểm tra thư mục cục bộ xác nhận cả bốn set chỉ có train_01 và test_01–04; chưa có hai test bổ sung nêu ở S11. Ưu tiên khảo sát bản mở rộng đó trước khi tìm một corpus hoàn toàn khác: giữ bản cũ để tái lập, tải v1.5 vào thư mục riêng, so hash/metadata phần dùng chung, rồi xác minh nhãn và capture gốc. Runner hiện hardcode A–D nên cần mở adapter/report cho test mới. Không coi bản mở rộng cùng nguồn là external dataset độc lập, và không tự đổi mọi nhãn suppress thành 1 khi thiếu interval metadata.
+
+Ưu tiên external hiện có: CAN-MIRGU tách real injection, masquerade và suspension. Automotive v2 hiện mới bật DoS và benign: phù hợp stress test flooding, chưa đủ chứng minh payload semantics. CICIoV không có timestamp chỉ hỗ trợ nhánh content với giới hạn thứ tự đã ghi. ROAD là lựa chọn bổ sung sau đó nếu cần thêm kiểm chứng payload trên nguồn khác, sau khi xác minh adapter, nhãn và quyền truy cập; chưa cần tải thêm nhiều bộ DoS chỉ để tăng số dataset.
+
+Nếu cùng phương pháp tốt ở injection dày nhưng kém ở masquerade, báo đó là ranh giới cơ chế. Đừng để hàng triệu cửa sổ của một attack dễ che các attack khó khi lấy micro average. Báo cả pooled counts, từng family và macro theo family/vehicle, với quy tắc N/A công khai.
+
+8. CẦN TÁCH LỖI XẾP HẠNG SCORE KHỎI LỖI NGƯỠNG
+
+Bảng lịch sử có tình huống raw gần như không phát hiện ở threshold cố định nhưng AP cao. Đây là dấu hiệu đáng điều tra về operating point; chưa đủ chứng minh embedding vô dụng hay nguyên nhân chính là nhớ ID. Các số này là lịch sử, không dùng thay kết quả v2.
+
+Với v2 cần báo PR curve và phân phối score theo lớp ở nguồn/đích, đánh dấu threshold nguồn trên đường đích. So raw và structural dưới cùng quy tắc ngân sách FAR nguồn, không chọn threshold tốt riêng cho target rồi gọi zero-shot. Báo đồng thời recall và FAR đích: source-FAR bằng nhau không làm target-FAR bằng nhau.
+
+Có thể tính target-optimal threshold như phân tích oracle hậu nghiệm để phân biệt ranking/threshold failure, nhưng phải ghi đây là upper-bound diagnostic dùng nhãn test, không phải kết quả triển khai. Nếu thêm target-benign adaptation, dùng tập calibration và evaluation không chồng nhau, công bố số giây/frame và thông tin nhãn đã dùng. Không có nhãn attack không đồng nghĩa không có thông tin target.
+
+Phân biệt ba thuật ngữ: probability calibration; chọn decision threshold; cập nhật normalization/profile. Hiện code v2 thực hiện chọn threshold nguồn. Không gọi chung mọi bước này là “calibration” rồi bỏ qua lượng dữ liệu mà mỗi bước dùng.
+
+9. CẦN THÊM BẰNG CHỨNG VỀ CHI PHÍ CẢNH BÁO VÀ ĐỘ TRỄ
+
+FAR=100/100.000 benign windows là tỷ lệ 0,001. Ví dụ minh họa, không phải số đo của dataset: ở 2.000 frame/s và W=64 không chồng lặp, một giờ có 112.500 cửa sổ. Nếu đều benign và tỷ lệ FP thực là 0,001 thì có khoảng 112,5 cửa sổ cảnh báo giả/giờ. Khi gộp cảnh báo liên tiếp thành sự kiện, số alert events có thể khác; phải báo cả quy tắc gộp.
+
+Bổ sung tối thiểu từ prediction timestamps: số giờ benign, false-positive windows/giờ, false-alert events/giờ, số sự kiện tấn công phát hiện/không phát hiện, latency tới cảnh báo đầu theo sự kiện. Báo các sự kiện bỏ sót riêng; không tính latency trung bình chỉ trên các sự kiện dễ bắt mà che tỷ lệ bỏ sót. Latency cần event onset đã xác minh, không lấy frame độc hại đầu của mỗi cửa sổ làm onset mới.
+
+Cửa sổ 64 frame không có độ dài thời gian cố định. Ở 2.000 frame/s, khoảng frame đầu–cuối xấp xỉ 31,5 ms trước khi cộng xử lý; đây chỉ là ví dụ tốc độ đều. Cần p50/p95/p99 thời lượng cửa sổ theo xe, parser+features+inference với batch=1 và phần cứng ghi rõ. Không dùng GPU throughput để suy độ trễ cảnh báo.
+
+AP cũng phụ thuộc prevalence và quy tắc cửa sổ. Thêm tỷ lệ positive và baseline prevalence cho từng PR plot; không so AP giữa hai bộ khác prevalence như cùng độ khó. Trên attack-only file không có đủ cơ sở tính FAR hoặc AP nhị phân có ý nghĩa; giữ N/A như code đã sửa. S9 hỗ trợ lựa chọn PR, không thay thế kiểm tra mẫu số.
+
+10. ĐỘ ĐỘC LẬP, SỐ XE VÀ KHOẢNG TIN CẬY
+
+Bốn set dùng bốn xe, không phải bốn cặp hoàn toàn độc lập hay tám xe. Theo can-train-and-test/README.md: xe đích chỉ gồm Silverado, Forester và Traverse; Forester xuất hiện ở hai set; Impala chỉ là xe nguồn. Vì vậy khả năng chuyển tới xe mới trong ma trận hiện tại được kiểm tra trên ba xe đích phân biệt. Các lần dùng lại xe/capture phải được công bố.
+
+A–D giúp mô tả shift nhưng không tự là thiết kế nhân quả. Capture, trạng thái lái, family và prevalence cũng thay đổi. A−B không phải tác động thuần của “đổi xe” nếu các yếu tố đó không được ghép cặp. A−B−C+D chỉ là tương tác mô tả trên benchmark, không chứng minh cơ chế nhân quả.
+
+Cần manifest capture/session và kiểm tra trùng/near-duplicate giữa train, validation, test và giữa các set. Hash toàn file chỉ phát hiện bản sao nguyên file, không phát hiện đoạn chung hoặc dữ liệu tấn công được tạo từ cùng benign trace. Lấy mẫu lại phải theo đơn vị capture/session có căn cứ; khi chỉ biết file thì ghi CI có điều kiện theo file.
+
+Ba seed đo bất định huấn luyện trên split cố định. Chúng không tăng số xe và không đủ cho tuyên bố phổ quát. Trình bày từng set và failure cases trước khi dùng trung bình. Với FAR rất thấp, báo N_benign và số FP; zero observed FP không đồng nghĩa xác suất báo giả bằng zero. Không dùng CI nhị thức độc lập mà bỏ qua tự tương quan của cửa sổ CAN.
+
+11. GÓI THỰC NGHIỆM NÊN ƯU TIÊN
+
+E0 — Khóa sổ nhãn và provenance trước huấn luyện.
+Đầu ra: mechanism/label ledger; source coverage theo family; capture grouping; full preflight; ghi rõ SPEED/OTIDS đang loại. Bổ sung phân biệt suspension như mục 6. Chưa có ledger đầy đủ cho mọi file, không coi báo cáo suspension là preflight toàn dự án.
+
+E1 — Kiểm chứng hiệu quả chính.
+Dùng primary hiện có: 4 set × 3 seed × 4 mô hình = 48 lần fit; mỗi fit đánh giá A–D và external theo config. Primary endpoint đề nghị: attack recall tại threshold được chọn theo cùng ngân sách FAR nguồn, luôn đi kèm FAR đích; F1/AP là bổ sung. Chốt quy tắc trước khi xem rerun. Báo riêng B và D, không chỉ gộp A–D. Nếu target đã xem ở thăm dò, ghi rõ lần này là rerun kiểm chứng sau chỉnh protocol, không gọi test hoàn toàn chưa từng tiếp xúc.
+
+E2 — Giải thích representation.
+Ưu tiên raw, raw-no-ID, raw-plus-structural, structural, structural-no-delta và thêm structural-no-absolute-payload. Bốn biến thể đầu có trong ablation; biến thể cuối chưa có. Các ablation còn lại giữ như sensitivity. Full config hiện có là 4×3×11 = 132 fits, không bắt buộc chạy hết trước khi xác nhận dữ liệu và main experiment hợp lệ. Không chọn ablation để báo dựa vào điểm target tốt.
+
+E3 — Kiểm tra cơ chế khó.
+Chạy checkpoint đóng băng trên MIRGU theo ba nhóm và phân tích lỗi/sự kiện. Khảo sát hai test bổ sung của S11 theo quy trình ở mục 7. Thêm stress test log có kiểm soát để giữ ID/timing mà đổi payload, và đối chứng benign cùng trace nếu thực hiện được theo metadata. Đây là kiểm tra tổng hợp, phải ghi synthetic; không thay cho chứng cứ xe thật. Nếu vẫn thiếu coverage payload-only trên nguồn độc lập thì bổ sung ROAD trước các dataset flooding mới.
+
+E4 — Đối chứng công bằng.
+Thêm LR-structural và XGB-raw trên 4×3 tổ hợp, tức 24 fits bổ sung. Chọn một implementation phương pháp công bố và kiểm tra fidelity trên thiết lập gốc trước khi chuyển sang CTT. Nếu phải đổi đặc trưng hoặc cơ chế quyết định, ghi “adapted baseline”, nêu khác biệt. Không cần chạy mọi CNN/LSTM/GNN chỉ để có nhiều hàng bảng.
+
+E5 — Kiểm chứng diễn giải và khả năng sử dụng.
+Probe có control; CI theo nhóm; báo false-alert burden và event latency; sensitivity W=32/128. Runtime phần cứng cần nếu giữ tuyên bố online/nhúng; nếu không đo thì giữ phạm vi offline completed-window. E5 không dùng để chọn lại model tốt nhất trên target.
+
+Không ước tính giờ GPU khi chưa có pilot đo runtime. Ghi kích thước sample, epoch và thời gian mỗi run thật rồi mới tính nguồn lực. Các lệnh đã triển khai nằm ở RERUN_GUIDE_VI.md; baseline công bố, ablation bỏ absolute payload, event-metric reporting và capture ledger đầy đủ còn cần triển khai, không có lệnh giả trong báo cáo này.
+
+12. BẢNG NHẬN ĐỊNH — BẰNG CHỨNG — CÁCH VIẾT
+
+C1 “Biểu diễn bất biến đổi tên ID”: có lập luận và test. Được viết đúng điều kiện ánh xạ toàn capture; không nâng thành đổi xe thực.
+C2 “Giảm phụ thuộc đặc thù xe”: chưa có probe v2 có control. Cần so attack utility đồng thời; trước đó chỉ là mục tiêu/giả thuyết.
+C3 “Tăng khả năng chuyển giao”: chưa có đủ v2 multi-set/seed. Cần B/D, external và FAR; không chọn Set 1 thuận lợi.
+C4 “Lợi ích đến từ bỏ ID”: chưa đủ. Cần ablation tách bỏ ID với thêm history/structure và hiệu ứng threshold.
+C5 “Transformer cần thiết”: chưa đủ. Cần cùng feature trên mô hình đơn giản; nếu không, viết Transformer là classifier được chọn, không là nguyên nhân đã chứng minh.
+C6 “Phát hiện zero-day”: hiện là unseen attack names theo split. Cần map family/mechanism, nêu chính xác phạm vi chưa thấy.
+C7 “Độc lập dữ liệu đích”: đúng với tham số/ngưỡng source-only khi run tuân thủ config. History cập nhật từ luồng test vẫn là quan sát online; phải công bố nó. Nếu fitting/threshold/profile dùng benign đích thì đổi tên chế độ.
+C8 “Nhận biết mọi frame độc hại”: không phù hợp suspension và window output. Viết rõ window labels theo dataset, không có định vị malicious frame.
+C9 “Thời gian thực/nhúng”: chưa có đo đủ. Cần W delay và end-to-end batch=1; offline F1 không trả lời.
+C10 “Kết quả thống kê chắc chắn”: chưa đủ cho tổng thể xe. Tách seed SD và capture CI, ghi ba xe đích khác nhau trong main matrix.
+C11 “Phương pháp đầu tiên/đạt SOTA”: chưa có cơ sở. Cần rà S1–S6 và tái lập cùng giao thức; hiện không dùng cách viết này.
+C12 “Hai bản dịch khớp khoa học”: cần kiểm soát thuật ngữ ở mọi chương. Giữ khác biệt identifier-renaming invariant / vehicle-agnostic; unseen-family / zero-day; source-threshold selection / target calibration; window-level / frame-level; simulated / physically executed. Số liệu và trạng thái chờ chạy phải giống nhau.
+
+13. NHỮNG CÂU HỎI HỘI ĐỒNG CÓ THỂ HỎI
+
+1) Điểm mới cụ thể khác S2, S4 và S6 ở phép biểu diễn nào, hay chỉ ở giao thức đánh giá?
+2) Nếu bỏ ID mà payload vẫn đoán được xe, vì sao tên đề tài dùng vehicle-agnostic?
+3) Raw có ranking tốt nhưng threshold nguồn thất bại thì kết luận về representation thay đổi thế nào?
+4) Có phát hiện masquerade giữ nguyên lịch truyền hay chỉ bắt injection rate?
+5) Khi ID không còn xuất hiện, feature nào báo rằng ID ấy đang bị đình chỉ?
+6) 100 FP/100.000 cửa sổ tương đương bao nhiêu cảnh báo/giờ trên từng xe?
+7) Bốn set có bao nhiêu xe đích và bao nhiêu chuyến lái thực sự độc lập?
+8) Probe xe gần chance có phải chỉ vì embedding mất cả thông tin attack?
+9) Bài universal dùng benign xe đích còn bạn không dùng: phép so nào công bằng?
+10) Nếu không thắng trên D, kết quả khoa học chính của khóa luận còn lại là gì?
+
+14. PHẠM VI HOÀN THÀNH CỦA ĐỢT RÀ SOÁT NÀY
+
+Đã bổ sung phân tích nguồn gốc, tính mới, đối chứng và thiết kế bằng chứng; đã thực hiện một full-file audit riêng cho năm suspension logs. Chưa chạy training v2, chưa tải ROAD, chưa tái lập các thuật toán công bố, chưa xác nhận điểm số mới. File RESEARCH_ADDITIONAL_REFERENCES_2026-11-04.bib chứa các mục tham khảo mới đã xác minh metadata ở mức ghi trong mục 1; chưa được nhập tự động vào refs.bib hay PDF.
+
+Ưu tiên hành động là E0→E1→E2/E3→E4→E5 theo câu hỏi và nguồn lực. Nên bổ sung dẫn chứng ngay ở những câu có nhận định tương ứng; những câu đòi hỏi số liệu của chính phương pháp phải chờ thực nghiệm. Thêm trích dẫn không thể thay thế một thí nghiệm còn thiếu.

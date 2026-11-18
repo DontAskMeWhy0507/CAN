@@ -1,0 +1,38 @@
+[
+  {
+    "condition": "validation",
+    "file": "data/can-train-and-test/set_01/train_01/accessory-2.csv",
+    "prediction": "validation_9426a7748acf008dfc20.npz",
+    "windows": 8
+  },
+  {
+    "condition": "validation",
+    "file": "data/can-train-and-test/set_01/train_01/attack-free-2.csv",
+    "prediction": "validation_3ca4d160d15515c73e3f.npz",
+    "windows": 8
+  },
+  {
+    "condition": "validation",
+    "file": "data/can-train-and-test/set_01/train_01/DoS-2.csv",
+    "prediction": "validation_39cc381a9b2384d5f3bd.npz",
+    "windows": 16
+  },
+  {
+    "condition": "validation",
+    "file": "data/can-train-and-test/set_01/train_01/force-neutral-2.csv",
+    "prediction": "validation_66e6b834b0e341d468ae.npz",
+    "windows": 16
+  },
+  {
+    "condition": "validation",
+    "file": "data/can-train-and-test/set_01/train_01/rpm-2.csv",
+    "prediction": "validation_7ed04b9daf22136bc412.npz",
+    "windows": 16
+  },
+  {
+    "condition": "validation",
+    "file": "data/can-train-and-test/set_01/train_01/standstill-2.csv",
+    "prediction": "validation_3b9abc3c32e0b6c54e11.npz",
+    "windows": 16
+  }
+]

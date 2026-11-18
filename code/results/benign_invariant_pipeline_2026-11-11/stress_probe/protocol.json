@@ -1,0 +1,14 @@
+{
+  "methods": [
+    "frozen_source",
+    "white_leace_lr",
+    "white_pca8_lr",
+    "white_inlp8_lr"
+  ],
+  "decoder": "StandardScaler + MLP(64,32), max_iter1500, random_state42; otherwise sklearn defaults",
+  "scope": "embedding",
+  "labels": "vehicle",
+  "selection_sha256": "510ada0553d15a872d9cf2af03994ffd1be8c7ea9b60fe026f338ea937206b61",
+  "rationale": "Supplementary check after some learned probes exhausted300 iterations; no detector retuning",
+  "code_sha256": "78f7dfaae6e2deecdc151b128911908253fc4c014ca672cee34b40afcd5deddd"
+}

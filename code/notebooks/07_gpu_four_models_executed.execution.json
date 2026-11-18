@@ -1,0 +1,10 @@
+{
+  "notebook": "F:\\00_Research\\code\\notebooks\\07_gpu_four_models_executed.ipynb",
+  "status": "COMPLETE",
+  "pid": 27940,
+  "started_utc": "2026-11-08T06:02:41.171159+00:00",
+  "cell": 3,
+  "heartbeat_utc": "2026-11-08T13:50:31.088363+00:00",
+  "cell_source_preview": "items=[json.loads(p.read_text()) for p in OUTPUT.glob('set_*/seed_*/*/attempt_*/manifest.json')]\ncomplete=[m for m in items if m['status']=='COMPLETE']\ncells={(m['signature']['set'",
+  "finished_utc": "2026-11-08T13:50:31.088363+00:00"
+}

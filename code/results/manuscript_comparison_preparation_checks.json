@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-08",
+  "status": "METHODS_PREPARED_RESULTS_PENDING",
+  "scientific_runner_changed": false,
+  "manuscripts": ["thesis/vi/main.tex", "thesis/en/main.tex"],
+  "backup": "revision_backup/before_comparison_manuscript_2026-11-08.zip",
+  "structure_and_citation_parity": "PASS; 39 bibliography entries, all cited; 45 sections; 9 subsections",
+  "report_import_guard_tests": "2 passed; reject incomplete notebooks; retain negative recall/increased FAR interpretation; reject mismatched denominators",
+  "prepared_pdf_pages": {"vi": 61, "en": 61},
+  "prepared_pdf_build": "PASS; no overfull boxes or undefined-reference warnings in either console log",
+  "prepared_visual_review": {"vi_physical_pages": [39, 40, 41, 42, 51], "en_physical_pages": [40, 41, 51]},
+  "pending": "Final numeric tables/figures require the complete verified matrix. Newly generated final PDFs still require visual review; selected prepared-page review is not final numeric-layout approval."
+}

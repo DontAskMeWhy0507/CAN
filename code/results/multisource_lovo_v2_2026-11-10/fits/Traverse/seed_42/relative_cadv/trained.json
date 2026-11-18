@@ -1,0 +1,106 @@
+{
+  "status": "COMPLETE",
+  "checkpoint_sha256": "31a56ba61c074aef08c8af5217ac3d64cc0d66d04281b59a4890548965f1b047",
+  "seconds": 35.77356250000048,
+  "logs": [
+    {
+      "epoch": 1,
+      "task_loss": 0.29302280049093743,
+      "domain_loss": 1.0694387260109488,
+      "grl_strength": 0.046012886209681275
+    },
+    {
+      "epoch": 2,
+      "task_loss": 0.0747244413589325,
+      "domain_loss": 1.5924279786119557,
+      "grl_strength": 0.07605315733702296
+    },
+    {
+      "epoch": 3,
+      "task_loss": 0.046986393501742205,
+      "domain_loss": 1.4028960857728514,
+      "grl_strength": 0.09046908792874692
+    },
+    {
+      "epoch": 4,
+      "task_loss": 0.0418682474133822,
+      "domain_loss": 1.1323602909993644,
+      "grl_strength": 0.09638487338966284
+    },
+    {
+      "epoch": 5,
+      "task_loss": 0.031957412239709736,
+      "domain_loss": 1.2069032782256002,
+      "grl_strength": 0.09865469784833397
+    },
+    {
+      "epoch": 6,
+      "task_loss": 0.024566046195692675,
+      "domain_loss": 1.0883370002712867,
+      "grl_strength": 0.09950297767433787
+    },
+    {
+      "epoch": 7,
+      "task_loss": 0.021187172744028045,
+      "domain_loss": 1.1197819782025886,
+      "grl_strength": 0.0998168680243688
+    },
+    {
+      "epoch": 8,
+      "task_loss": 0.019619980654702756,
+      "domain_loss": 1.0568908332574247,
+      "grl_strength": 0.09993259049402102
+    },
+    {
+      "epoch": 9,
+      "task_loss": 0.017163630016383272,
+      "domain_loss": 1.0835532046327687,
+      "grl_strength": 0.09997519614403338
+    },
+    {
+      "epoch": 10,
+      "task_loss": 0.015225250565569209,
+      "domain_loss": 1.108362250255816,
+      "grl_strength": 0.0999908744559298
+    }
+  ],
+  "target_vehicle": "Traverse",
+  "source_vehicles": [
+    "Impala",
+    "Silverado",
+    "Forester"
+  ],
+  "train_windows": 24924,
+  "source_cell_counts": {
+    "(0, 0)": 6000,
+    "(0, 1)": 1307,
+    "(1, 0)": 7000,
+    "(1, 1)": 1422,
+    "(2, 0)": 8499,
+    "(2, 1)": 696
+  },
+  "training_capture_tokens": [
+    "106a03f9dd85904987ca86d8",
+    "7b5f2ed05b54d5b4c525c62f",
+    "e5b1bfbfa5d8b113cf7ac5e6",
+    "deef77bd5d91a02d3be074f6",
+    "50303beb7b33cc6eb8984148",
+    "5f51e0d73c20730ce1ad7703",
+    "00b86f265257e2a13c335350",
+    "c591eccc1c43b1662e7a2c58",
+    "b9d544f8489c61e480313aa9",
+    "ff904317f2c156fddb78af27",
+    "4dcf891acbdcd859378b8fd6",
+    "4531cbb84308cb1bd1b7a6cc",
+    "be33d3c5b9a9a399765cd0ad",
+    "6d68c1c4679b97b0b2ec1f75",
+    "9fcc4d19dc52def6fb01c406",
+    "1fbc8440d281d38d4d2c4944",
+    "52d4eebf36d25e64143b06bf",
+    "cd54bb7c39686d4e43354434",
+    "9e7794f418566e70d0817be7",
+    "6a8178d76e081ae6762f2f44",
+    "1ef20e634252b56db0d8c8ed",
+    "5187a1ad214ecaeb99aa3c55"
+  ]
+}

@@ -1,0 +1,2377 @@
+{
+  "date": "2026-11-08",
+  "status": "PASS_CONTENT_ONLY",
+  "cache_manifest_sha256": "03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29",
+  "files": 236,
+  "frames": 193240845,
+  "windows": 3019271,
+  "timestamp_inversions": 12527,
+  "files_with_timestamp_inversions": 100,
+  "source_bytes": 7664684421,
+  "cache_bytes": 3864816900,
+  "timed_protocol_ready": false,
+  "policy": "Original file order, IDs, DLC, payload values and labels retained; no sorting or synthetic timestamps. Raw28/structural30. Physical chronology not established.",
+  "scope": "All 236 official CTT files; ROAD/SynCAN not required for the three selected byte/token/window competitors.",
+  "by_file": [
+    {
+      "source": "data/can-train-and-test/set_01/train_01/accessory-1.csv",
+      "set": "set_01",
+      "frames": 207704,
+      "windows": 3245,
+      "tail_frames": 24,
+      "attack_frames": 0,
+      "attack_windows": 0,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_01/train_01/accessory-2.csv",
+      "set": "set_01",
+      "frames": 226166,
+      "windows": 3533,
+      "tail_frames": 54,
+      "attack_frames": 0,
+      "attack_windows": 0,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_01/train_01/attack-free-1.csv",
+      "set": "set_01",
+      "frames": 1952833,
+      "windows": 30513,
+      "tail_frames": 1,
+      "attack_frames": 0,
+      "attack_windows": 0,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_01/train_01/attack-free-2.csv",
+      "set": "set_01",
+      "frames": 1265599,
+      "windows": 19774,
+      "tail_frames": 63,
+      "attack_frames": 0,
+      "attack_windows": 0,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_01/train_01/DoS-1.csv",
+      "set": "set_01",
+      "frames": 90169,
+      "windows": 1408,
+      "tail_frames": 57,
+      "attack_frames": 9139,
+      "attack_windows": 307,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_01/train_01/DoS-2.csv",
+      "set": "set_01",
+      "frames": 311045,
+      "windows": 4860,
+      "tail_frames": 5,
+      "attack_frames": 25954,
+      "attack_windows": 852,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_01/train_01/force-neutral-1.csv",
+      "set": "set_01",
+      "frames": 715435,
+      "windows": 11178,
+      "tail_frames": 43,
+      "attack_frames": 6500,
+      "attack_windows": 548,
+      "timestamp_inversions": 142
+    },
+    {
+      "source": "data/can-train-and-test/set_01/train_01/force-neutral-2.csv",
+      "set": "set_01",
+      "frames": 998485,
+      "windows": 15601,
+      "tail_frames": 21,
+      "attack_frames": 492,
+      "attack_windows": 145,
+      "timestamp_inversions": 25
+    },
+    {
+      "source": "data/can-train-and-test/set_01/train_01/rpm-1.csv",
+      "set": "set_01",
+      "frames": 841053,
+      "windows": 13141,
+      "tail_frames": 29,
+      "attack_frames": 3338,
+      "attack_windows": 271,
+      "timestamp_inversions": 41
+    },
+    {
+      "source": "data/can-train-and-test/set_01/train_01/rpm-2.csv",
+      "set": "set_01",
+      "frames": 822459,
+      "windows": 12850,
+      "tail_frames": 59,
+      "attack_frames": 374,
+      "attack_windows": 109,
+      "timestamp_inversions": 19
+    },
+    {
+      "source": "data/can-train-and-test/set_01/train_01/standstill-1.csv",
+      "set": "set_01",
+      "frames": 1955048,
+      "windows": 30547,
+      "tail_frames": 40,
+      "attack_frames": 2215,
+      "attack_windows": 181,
+      "timestamp_inversions": 25
+    },
+    {
+      "source": "data/can-train-and-test/set_01/train_01/standstill-2.csv",
+      "set": "set_01",
+      "frames": 1267144,
+      "windows": 19799,
+      "tail_frames": 8,
+      "attack_frames": 1545,
+      "attack_windows": 126,
+      "timestamp_inversions": 24
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_01_known_vehicle_known_attack/DoS-3.csv",
+      "set": "set_01",
+      "frames": 154255,
+      "windows": 2410,
+      "tail_frames": 15,
+      "attack_frames": 19223,
+      "attack_windows": 639,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_01_known_vehicle_known_attack/DoS-4.csv",
+      "set": "set_01",
+      "frames": 920350,
+      "windows": 14380,
+      "tail_frames": 30,
+      "attack_frames": 36146,
+      "attack_windows": 1204,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_01_known_vehicle_known_attack/force-neutral-3.csv",
+      "set": "set_01",
+      "frames": 904145,
+      "windows": 14127,
+      "tail_frames": 17,
+      "attack_frames": 2232,
+      "attack_windows": 190,
+      "timestamp_inversions": 50
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_01_known_vehicle_known_attack/force-neutral-4.csv",
+      "set": "set_01",
+      "frames": 839873,
+      "windows": 13123,
+      "tail_frames": 1,
+      "attack_frames": 259,
+      "attack_windows": 77,
+      "timestamp_inversions": 9
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_01_known_vehicle_known_attack/rpm-3.csv",
+      "set": "set_01",
+      "frames": 809398,
+      "windows": 12646,
+      "tail_frames": 54,
+      "attack_frames": 3596,
+      "attack_windows": 302,
+      "timestamp_inversions": 100
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_01_known_vehicle_known_attack/rpm-4.csv",
+      "set": "set_01",
+      "frames": 824211,
+      "windows": 12878,
+      "tail_frames": 19,
+      "attack_frames": 325,
+      "attack_windows": 95,
+      "timestamp_inversions": 8
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_01_known_vehicle_known_attack/standstill-3.csv",
+      "set": "set_01",
+      "frames": 629156,
+      "windows": 9830,
+      "tail_frames": 36,
+      "attack_frames": 1447,
+      "attack_windows": 428,
+      "timestamp_inversions": 59
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_01_known_vehicle_known_attack/standstill-4.csv",
+      "set": "set_01",
+      "frames": 621282,
+      "windows": 9707,
+      "tail_frames": 34,
+      "attack_frames": 52,
+      "attack_windows": 52,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_02_unknown_vehicle_known_attack/DoS-3.csv",
+      "set": "set_01",
+      "frames": 1100971,
+      "windows": 17202,
+      "tail_frames": 43,
+      "attack_frames": 157652,
+      "attack_windows": 7553,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_02_unknown_vehicle_known_attack/DoS-4.csv",
+      "set": "set_01",
+      "frames": 689028,
+      "windows": 10766,
+      "tail_frames": 4,
+      "attack_frames": 5924,
+      "attack_windows": 286,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_02_unknown_vehicle_known_attack/force-neutral-3.csv",
+      "set": "set_01",
+      "frames": 449461,
+      "windows": 7022,
+      "tail_frames": 53,
+      "attack_frames": 32,
+      "attack_windows": 32,
+      "timestamp_inversions": 1
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_02_unknown_vehicle_known_attack/force-neutral-4.csv",
+      "set": "set_01",
+      "frames": 1646238,
+      "windows": 25722,
+      "tail_frames": 30,
+      "attack_frames": 56,
+      "attack_windows": 56,
+      "timestamp_inversions": 5
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_02_unknown_vehicle_known_attack/rpm-3.csv",
+      "set": "set_01",
+      "frames": 635397,
+      "windows": 9928,
+      "tail_frames": 5,
+      "attack_frames": 126,
+      "attack_windows": 126,
+      "timestamp_inversions": 5
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_02_unknown_vehicle_known_attack/rpm-4.csv",
+      "set": "set_01",
+      "frames": 645613,
+      "windows": 10087,
+      "tail_frames": 45,
+      "attack_frames": 26,
+      "attack_windows": 26,
+      "timestamp_inversions": 2
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_02_unknown_vehicle_known_attack/standstill-3.csv",
+      "set": "set_01",
+      "frames": 635543,
+      "windows": 9930,
+      "tail_frames": 23,
+      "attack_frames": 272,
+      "attack_windows": 272,
+      "timestamp_inversions": 10
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_02_unknown_vehicle_known_attack/standstill-4.csv",
+      "set": "set_01",
+      "frames": 645666,
+      "windows": 10088,
+      "tail_frames": 34,
+      "attack_frames": 79,
+      "attack_windows": 79,
+      "timestamp_inversions": 3
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/double-3.csv",
+      "set": "set_01",
+      "frames": 902805,
+      "windows": 14106,
+      "tail_frames": 21,
+      "attack_frames": 892,
+      "attack_windows": 158,
+      "timestamp_inversions": 33
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/double-4.csv",
+      "set": "set_01",
+      "frames": 840014,
+      "windows": 13125,
+      "tail_frames": 14,
+      "attack_frames": 400,
+      "attack_windows": 73,
+      "timestamp_inversions": 31
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/fuzzing-3.csv",
+      "set": "set_01",
+      "frames": 573786,
+      "windows": 8965,
+      "tail_frames": 26,
+      "attack_frames": 5937,
+      "attack_windows": 2124,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/fuzzing-4.csv",
+      "set": "set_01",
+      "frames": 409146,
+      "windows": 6392,
+      "tail_frames": 58,
+      "attack_frames": 38,
+      "attack_windows": 38,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/interval-3.csv",
+      "set": "set_01",
+      "frames": 786935,
+      "windows": 12295,
+      "tail_frames": 55,
+      "attack_frames": 4292,
+      "attack_windows": 4291,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/interval-4.csv",
+      "set": "set_01",
+      "frames": 884330,
+      "windows": 13817,
+      "tail_frames": 42,
+      "attack_frames": 126,
+      "attack_windows": 126,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/speed-3.csv",
+      "set": "set_01",
+      "frames": 631438,
+      "windows": 9866,
+      "tail_frames": 14,
+      "attack_frames": 3729,
+      "attack_windows": 310,
+      "timestamp_inversions": 36
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/speed-4.csv",
+      "set": "set_01",
+      "frames": 622822,
+      "windows": 9731,
+      "tail_frames": 38,
+      "attack_frames": 1592,
+      "attack_windows": 132,
+      "timestamp_inversions": 16
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/systematic-3.csv",
+      "set": "set_01",
+      "frames": 783562,
+      "windows": 12243,
+      "tail_frames": 10,
+      "attack_frames": 919,
+      "attack_windows": 919,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/systematic-4.csv",
+      "set": "set_01",
+      "frames": 567973,
+      "windows": 8874,
+      "tail_frames": 37,
+      "attack_frames": 124,
+      "attack_windows": 124,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/triple-3.csv",
+      "set": "set_01",
+      "frames": 807996,
+      "windows": 12624,
+      "tail_frames": 60,
+      "attack_frames": 2194,
+      "attack_windows": 269,
+      "timestamp_inversions": 50
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_03_known_vehicle_unknown_attack/triple-4.csv",
+      "set": "set_01",
+      "frames": 824468,
+      "windows": 12882,
+      "tail_frames": 20,
+      "attack_frames": 582,
+      "attack_windows": 72,
+      "timestamp_inversions": 14
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_04_unknown_vehicle_unknown_attack/double-3.csv",
+      "set": "set_01",
+      "frames": 1106909,
+      "windows": 17295,
+      "tail_frames": 29,
+      "attack_frames": 1276,
+      "attack_windows": 277,
+      "timestamp_inversions": 15
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_04_unknown_vehicle_unknown_attack/double-4.csv",
+      "set": "set_01",
+      "frames": 1300435,
+      "windows": 20319,
+      "tail_frames": 19,
+      "attack_frames": 615,
+      "attack_windows": 132,
+      "timestamp_inversions": 9
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_04_unknown_vehicle_unknown_attack/fuzzing-3.csv",
+      "set": "set_01",
+      "frames": 495332,
+      "windows": 7739,
+      "tail_frames": 36,
+      "attack_frames": 6112,
+      "attack_windows": 306,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_04_unknown_vehicle_unknown_attack/fuzzing-4.csv",
+      "set": "set_01",
+      "frames": 619269,
+      "windows": 9676,
+      "tail_frames": 5,
+      "attack_frames": 203,
+      "attack_windows": 203,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_04_unknown_vehicle_unknown_attack/interval-3.csv",
+      "set": "set_01",
+      "frames": 891053,
+      "windows": 13922,
+      "tail_frames": 45,
+      "attack_frames": 107,
+      "attack_windows": 107,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_04_unknown_vehicle_unknown_attack/interval-4.csv",
+      "set": "set_01",
+      "frames": 857658,
+      "windows": 13400,
+      "tail_frames": 58,
+      "attack_frames": 26,
+      "attack_windows": 26,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_04_unknown_vehicle_unknown_attack/speed-3.csv",
+      "set": "set_01",
+      "frames": 2625443,
+      "windows": 41022,
+      "tail_frames": 35,
+      "attack_frames": 3141,
+      "attack_windows": 331,
+      "timestamp_inversions": 45
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_04_unknown_vehicle_unknown_attack/speed-4.csv",
+      "set": "set_01",
+      "frames": 1898360,
+      "windows": 29661,
+      "tail_frames": 56,
+      "attack_frames": 64,
+      "attack_windows": 64,
+      "timestamp_inversions": 6
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_04_unknown_vehicle_unknown_attack/systematic-3.csv",
+      "set": "set_01",
+      "frames": 507374,
+      "windows": 7927,
+      "tail_frames": 46,
+      "attack_frames": 59,
+      "attack_windows": 59,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_04_unknown_vehicle_unknown_attack/systematic-4.csv",
+      "set": "set_01",
+      "frames": 330614,
+      "windows": 5165,
+      "tail_frames": 54,
+      "attack_frames": 922,
+      "attack_windows": 308,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_04_unknown_vehicle_unknown_attack/triple-3.csv",
+      "set": "set_01",
+      "frames": 1993660,
+      "windows": 31150,
+      "tail_frames": 60,
+      "attack_frames": 606,
+      "attack_windows": 98,
+      "timestamp_inversions": 10
+    },
+    {
+      "source": "data/can-train-and-test/set_01/test_04_unknown_vehicle_unknown_attack/triple-4.csv",
+      "set": "set_01",
+      "frames": 594448,
+      "windows": 9288,
+      "tail_frames": 16,
+      "attack_frames": 1113,
+      "attack_windows": 177,
+      "timestamp_inversions": 22
+    },
+    {
+      "source": "data/can-train-and-test/set_02/train_01/accessory-1.csv",
+      "set": "set_02",
+      "frames": 529370,
+      "windows": 8271,
+      "tail_frames": 26,
+      "attack_frames": 0,
+      "attack_windows": 0,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/train_01/accessory-2.csv",
+      "set": "set_02",
+      "frames": 307057,
+      "windows": 4797,
+      "tail_frames": 49,
+      "attack_frames": 0,
+      "attack_windows": 0,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/train_01/attack-free-1.csv",
+      "set": "set_02",
+      "frames": 889331,
+      "windows": 13895,
+      "tail_frames": 51,
+      "attack_frames": 0,
+      "attack_windows": 0,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/train_01/attack-free-2.csv",
+      "set": "set_02",
+      "frames": 573956,
+      "windows": 8968,
+      "tail_frames": 4,
+      "attack_frames": 0,
+      "attack_windows": 0,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/train_01/double-1.csv",
+      "set": "set_02",
+      "frames": 1092582,
+      "windows": 17071,
+      "tail_frames": 38,
+      "attack_frames": 4955,
+      "attack_windows": 380,
+      "timestamp_inversions": 73
+    },
+    {
+      "source": "data/can-train-and-test/set_02/train_01/double-2.csv",
+      "set": "set_02",
+      "frames": 463001,
+      "windows": 7234,
+      "tail_frames": 25,
+      "attack_frames": 8900,
+      "attack_windows": 647,
+      "timestamp_inversions": 82
+    },
+    {
+      "source": "data/can-train-and-test/set_02/train_01/fuzzing-1.csv",
+      "set": "set_02",
+      "frames": 1235992,
+      "windows": 19312,
+      "tail_frames": 24,
+      "attack_frames": 113514,
+      "attack_windows": 5632,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/train_01/fuzzing-2.csv",
+      "set": "set_02",
+      "frames": 1167769,
+      "windows": 18246,
+      "tail_frames": 25,
+      "attack_frames": 6113,
+      "attack_windows": 2037,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/train_01/interval-1.csv",
+      "set": "set_02",
+      "frames": 634191,
+      "windows": 9909,
+      "tail_frames": 15,
+      "attack_frames": 15125,
+      "attack_windows": 9692,
+      "timestamp_inversions": 3424
+    },
+    {
+      "source": "data/can-train-and-test/set_02/train_01/interval-2.csv",
+      "set": "set_02",
+      "frames": 1653840,
+      "windows": 25841,
+      "tail_frames": 16,
+      "attack_frames": 1179,
+      "attack_windows": 480,
+      "timestamp_inversions": 71
+    },
+    {
+      "source": "data/can-train-and-test/set_02/train_01/speed-1.csv",
+      "set": "set_02",
+      "frames": 2619677,
+      "windows": 40932,
+      "tail_frames": 29,
+      "attack_frames": 14,
+      "attack_windows": 14,
+      "timestamp_inversions": 6
+    },
+    {
+      "source": "data/can-train-and-test/set_02/train_01/speed-2.csv",
+      "set": "set_02",
+      "frames": 2734513,
+      "windows": 42726,
+      "tail_frames": 49,
+      "attack_frames": 38,
+      "attack_windows": 38,
+      "timestamp_inversions": 6
+    },
+    {
+      "source": "data/can-train-and-test/set_02/train_01/systematic-1.csv",
+      "set": "set_02",
+      "frames": 541323,
+      "windows": 8458,
+      "tail_frames": 11,
+      "attack_frames": 37125,
+      "attack_windows": 1844,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/train_01/systematic-2.csv",
+      "set": "set_02",
+      "frames": 456086,
+      "windows": 7126,
+      "tail_frames": 22,
+      "attack_frames": 2259,
+      "attack_windows": 753,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/train_01/triple-1.csv",
+      "set": "set_02",
+      "frames": 1780543,
+      "windows": 27820,
+      "tail_frames": 63,
+      "attack_frames": 31056,
+      "attack_windows": 1979,
+      "timestamp_inversions": 355
+    },
+    {
+      "source": "data/can-train-and-test/set_02/train_01/triple-2.csv",
+      "set": "set_02",
+      "frames": 661579,
+      "windows": 10337,
+      "tail_frames": 11,
+      "attack_frames": 4059,
+      "attack_windows": 258,
+      "timestamp_inversions": 62
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_01_known_vehicle_known_attack/double-3.csv",
+      "set": "set_02",
+      "frames": 1106909,
+      "windows": 17295,
+      "tail_frames": 29,
+      "attack_frames": 1276,
+      "attack_windows": 277,
+      "timestamp_inversions": 15
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_01_known_vehicle_known_attack/double-4.csv",
+      "set": "set_02",
+      "frames": 1300435,
+      "windows": 20319,
+      "tail_frames": 19,
+      "attack_frames": 615,
+      "attack_windows": 132,
+      "timestamp_inversions": 9
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_01_known_vehicle_known_attack/fuzzing-3.csv",
+      "set": "set_02",
+      "frames": 495332,
+      "windows": 7739,
+      "tail_frames": 36,
+      "attack_frames": 6112,
+      "attack_windows": 306,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_01_known_vehicle_known_attack/fuzzing-4.csv",
+      "set": "set_02",
+      "frames": 619269,
+      "windows": 9676,
+      "tail_frames": 5,
+      "attack_frames": 203,
+      "attack_windows": 203,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_01_known_vehicle_known_attack/interval-3.csv",
+      "set": "set_02",
+      "frames": 891053,
+      "windows": 13922,
+      "tail_frames": 45,
+      "attack_frames": 107,
+      "attack_windows": 107,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_01_known_vehicle_known_attack/interval-4.csv",
+      "set": "set_02",
+      "frames": 857658,
+      "windows": 13400,
+      "tail_frames": 58,
+      "attack_frames": 26,
+      "attack_windows": 26,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_01_known_vehicle_known_attack/speed-3.csv",
+      "set": "set_02",
+      "frames": 2625443,
+      "windows": 41022,
+      "tail_frames": 35,
+      "attack_frames": 3141,
+      "attack_windows": 331,
+      "timestamp_inversions": 45
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_01_known_vehicle_known_attack/speed-4.csv",
+      "set": "set_02",
+      "frames": 1898360,
+      "windows": 29661,
+      "tail_frames": 56,
+      "attack_frames": 64,
+      "attack_windows": 64,
+      "timestamp_inversions": 6
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_01_known_vehicle_known_attack/systematic-3.csv",
+      "set": "set_02",
+      "frames": 507374,
+      "windows": 7927,
+      "tail_frames": 46,
+      "attack_frames": 59,
+      "attack_windows": 59,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_01_known_vehicle_known_attack/systematic-4.csv",
+      "set": "set_02",
+      "frames": 330614,
+      "windows": 5165,
+      "tail_frames": 54,
+      "attack_frames": 922,
+      "attack_windows": 308,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_01_known_vehicle_known_attack/triple-3.csv",
+      "set": "set_02",
+      "frames": 1993660,
+      "windows": 31150,
+      "tail_frames": 60,
+      "attack_frames": 606,
+      "attack_windows": 98,
+      "timestamp_inversions": 10
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_01_known_vehicle_known_attack/triple-4.csv",
+      "set": "set_02",
+      "frames": 594448,
+      "windows": 9288,
+      "tail_frames": 16,
+      "attack_frames": 1113,
+      "attack_windows": 177,
+      "timestamp_inversions": 22
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/double-3.csv",
+      "set": "set_02",
+      "frames": 699508,
+      "windows": 10929,
+      "tail_frames": 52,
+      "attack_frames": 2296,
+      "attack_windows": 456,
+      "timestamp_inversions": 147
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/double-4.csv",
+      "set": "set_02",
+      "frames": 611726,
+      "windows": 9558,
+      "tail_frames": 14,
+      "attack_frames": 1356,
+      "attack_windows": 248,
+      "timestamp_inversions": 30
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/fuzzing-3.csv",
+      "set": "set_02",
+      "frames": 510835,
+      "windows": 7981,
+      "tail_frames": 51,
+      "attack_frames": 870,
+      "attack_windows": 870,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/fuzzing-4.csv",
+      "set": "set_02",
+      "frames": 629562,
+      "windows": 9836,
+      "tail_frames": 58,
+      "attack_frames": 1510,
+      "attack_windows": 65,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/interval-3.csv",
+      "set": "set_02",
+      "frames": 393679,
+      "windows": 6151,
+      "tail_frames": 15,
+      "attack_frames": 788,
+      "attack_windows": 112,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/interval-4.csv",
+      "set": "set_02",
+      "frames": 907454,
+      "windows": 14178,
+      "tail_frames": 62,
+      "attack_frames": 250,
+      "attack_windows": 131,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/speed-3.csv",
+      "set": "set_02",
+      "frames": 649177,
+      "windows": 10143,
+      "tail_frames": 25,
+      "attack_frames": 333,
+      "attack_windows": 31,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/speed-4.csv",
+      "set": "set_02",
+      "frames": 486777,
+      "windows": 7605,
+      "tail_frames": 57,
+      "attack_frames": 334,
+      "attack_windows": 31,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/systematic-3.csv",
+      "set": "set_02",
+      "frames": 1012913,
+      "windows": 15826,
+      "tail_frames": 49,
+      "attack_frames": 9774,
+      "attack_windows": 421,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/systematic-4.csv",
+      "set": "set_02",
+      "frames": 1235881,
+      "windows": 19310,
+      "tail_frames": 41,
+      "attack_frames": 2205,
+      "attack_windows": 95,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/triple-3.csv",
+      "set": "set_02",
+      "frames": 697350,
+      "windows": 10896,
+      "tail_frames": 6,
+      "attack_frames": 138,
+      "attack_windows": 49,
+      "timestamp_inversions": 5
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_02_unknown_vehicle_known_attack/triple-4.csv",
+      "set": "set_02",
+      "frames": 610565,
+      "windows": 9540,
+      "tail_frames": 5,
+      "attack_frames": 195,
+      "attack_windows": 69,
+      "timestamp_inversions": 8
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_03_known_vehicle_unknown_attack/DoS-3.csv",
+      "set": "set_02",
+      "frames": 971181,
+      "windows": 15174,
+      "tail_frames": 45,
+      "attack_frames": 13599,
+      "attack_windows": 605,
+      "timestamp_inversions": 31
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_03_known_vehicle_unknown_attack/DoS-4.csv",
+      "set": "set_02",
+      "frames": 521593,
+      "windows": 8149,
+      "tail_frames": 57,
+      "attack_frames": 15093,
+      "attack_windows": 655,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_03_known_vehicle_unknown_attack/force-neutral-3.csv",
+      "set": "set_02",
+      "frames": 4210018,
+      "windows": 65781,
+      "tail_frames": 34,
+      "attack_frames": 33,
+      "attack_windows": 33,
+      "timestamp_inversions": 3
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_03_known_vehicle_unknown_attack/force-neutral-4.csv",
+      "set": "set_02",
+      "frames": 2657027,
+      "windows": 41516,
+      "tail_frames": 3,
+      "attack_frames": 17,
+      "attack_windows": 17,
+      "timestamp_inversions": 7
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_03_known_vehicle_unknown_attack/rpm-3.csv",
+      "set": "set_02",
+      "frames": 1254259,
+      "windows": 19597,
+      "tail_frames": 51,
+      "attack_frames": 13,
+      "attack_windows": 13,
+      "timestamp_inversions": 3
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_03_known_vehicle_unknown_attack/rpm-4.csv",
+      "set": "set_02",
+      "frames": 1052123,
+      "windows": 16439,
+      "tail_frames": 27,
+      "attack_frames": 17,
+      "attack_windows": 17,
+      "timestamp_inversions": 3
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_03_known_vehicle_unknown_attack/standstill-3.csv",
+      "set": "set_02",
+      "frames": 686802,
+      "windows": 10731,
+      "tail_frames": 18,
+      "attack_frames": 6,
+      "attack_windows": 6,
+      "timestamp_inversions": 2
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_03_known_vehicle_unknown_attack/standstill-4.csv",
+      "set": "set_02",
+      "frames": 797053,
+      "windows": 12453,
+      "tail_frames": 61,
+      "attack_frames": 13,
+      "attack_windows": 13,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_04_unknown_vehicle_unknown_attack/DoS-3.csv",
+      "set": "set_02",
+      "frames": 291582,
+      "windows": 4555,
+      "tail_frames": 62,
+      "attack_frames": 4569,
+      "attack_windows": 177,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_04_unknown_vehicle_unknown_attack/DoS-4.csv",
+      "set": "set_02",
+      "frames": 653469,
+      "windows": 10210,
+      "tail_frames": 29,
+      "attack_frames": 9830,
+      "attack_windows": 178,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_04_unknown_vehicle_unknown_attack/force-neutral-3.csv",
+      "set": "set_02",
+      "frames": 479368,
+      "windows": 7490,
+      "tail_frames": 8,
+      "attack_frames": 1244,
+      "attack_windows": 411,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_04_unknown_vehicle_unknown_attack/force-neutral-4.csv",
+      "set": "set_02",
+      "frames": 870399,
+      "windows": 13599,
+      "tail_frames": 63,
+      "attack_frames": 334,
+      "attack_windows": 32,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_04_unknown_vehicle_unknown_attack/rpm-3.csv",
+      "set": "set_02",
+      "frames": 689308,
+      "windows": 10770,
+      "tail_frames": 28,
+      "attack_frames": 566,
+      "attack_windows": 53,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_04_unknown_vehicle_unknown_attack/rpm-4.csv",
+      "set": "set_02",
+      "frames": 642822,
+      "windows": 10044,
+      "tail_frames": 6,
+      "attack_frames": 880,
+      "attack_windows": 192,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_04_unknown_vehicle_unknown_attack/standstill-3.csv",
+      "set": "set_02",
+      "frames": 810295,
+      "windows": 12660,
+      "tail_frames": 55,
+      "attack_frames": 513,
+      "attack_windows": 37,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_02/test_04_unknown_vehicle_unknown_attack/standstill-4.csv",
+      "set": "set_02",
+      "frames": 352661,
+      "windows": 5510,
+      "tail_frames": 21,
+      "attack_frames": 72,
+      "attack_windows": 24,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/train_01/accessory-3.csv",
+      "set": "set_03",
+      "frames": 216573,
+      "windows": 3383,
+      "tail_frames": 61,
+      "attack_frames": 0,
+      "attack_windows": 0,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/train_01/accessory-4.csv",
+      "set": "set_03",
+      "frames": 446433,
+      "windows": 6975,
+      "tail_frames": 33,
+      "attack_frames": 0,
+      "attack_windows": 0,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/train_01/attack-free-3.csv",
+      "set": "set_03",
+      "frames": 1711471,
+      "windows": 26741,
+      "tail_frames": 47,
+      "attack_frames": 0,
+      "attack_windows": 0,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/train_01/attack-free-4.csv",
+      "set": "set_03",
+      "frames": 1295306,
+      "windows": 20239,
+      "tail_frames": 10,
+      "attack_frames": 0,
+      "attack_windows": 0,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/train_01/DoS-3.csv",
+      "set": "set_03",
+      "frames": 1100971,
+      "windows": 17202,
+      "tail_frames": 43,
+      "attack_frames": 157652,
+      "attack_windows": 7553,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/train_01/DoS-4.csv",
+      "set": "set_03",
+      "frames": 689028,
+      "windows": 10766,
+      "tail_frames": 4,
+      "attack_frames": 5924,
+      "attack_windows": 286,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/train_01/double-3.csv",
+      "set": "set_03",
+      "frames": 449725,
+      "windows": 7026,
+      "tail_frames": 61,
+      "attack_frames": 296,
+      "attack_windows": 81,
+      "timestamp_inversions": 7
+    },
+    {
+      "source": "data/can-train-and-test/set_03/train_01/double-4.csv",
+      "set": "set_03",
+      "frames": 1646538,
+      "windows": 25727,
+      "tail_frames": 10,
+      "attack_frames": 356,
+      "attack_windows": 97,
+      "timestamp_inversions": 4
+    },
+    {
+      "source": "data/can-train-and-test/set_03/train_01/force-neutral-3.csv",
+      "set": "set_03",
+      "frames": 449461,
+      "windows": 7022,
+      "tail_frames": 53,
+      "attack_frames": 32,
+      "attack_windows": 32,
+      "timestamp_inversions": 1
+    },
+    {
+      "source": "data/can-train-and-test/set_03/train_01/force-neutral-4.csv",
+      "set": "set_03",
+      "frames": 1646238,
+      "windows": 25722,
+      "tail_frames": 30,
+      "attack_frames": 56,
+      "attack_windows": 56,
+      "timestamp_inversions": 5
+    },
+    {
+      "source": "data/can-train-and-test/set_03/train_01/fuzzing-3.csv",
+      "set": "set_03",
+      "frames": 296365,
+      "windows": 4630,
+      "tail_frames": 45,
+      "attack_frames": 3848,
+      "attack_windows": 227,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/train_01/fuzzing-4.csv",
+      "set": "set_03",
+      "frames": 795457,
+      "windows": 12429,
+      "tail_frames": 1,
+      "attack_frames": 172,
+      "attack_windows": 172,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/train_01/triple-3.csv",
+      "set": "set_03",
+      "frames": 635673,
+      "windows": 9932,
+      "tail_frames": 25,
+      "attack_frames": 402,
+      "attack_windows": 82,
+      "timestamp_inversions": 10
+    },
+    {
+      "source": "data/can-train-and-test/set_03/train_01/triple-4.csv",
+      "set": "set_03",
+      "frames": 646528,
+      "windows": 10102,
+      "tail_frames": 0,
+      "attack_frames": 941,
+      "attack_windows": 186,
+      "timestamp_inversions": 14
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/DoS-1.csv",
+      "set": "set_03",
+      "frames": 252707,
+      "windows": 3948,
+      "tail_frames": 35,
+      "attack_frames": 43783,
+      "attack_windows": 2092,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/DoS-2.csv",
+      "set": "set_03",
+      "frames": 445731,
+      "windows": 6964,
+      "tail_frames": 35,
+      "attack_frames": 54245,
+      "attack_windows": 2591,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/double-1.csv",
+      "set": "set_03",
+      "frames": 1257705,
+      "windows": 19651,
+      "tail_frames": 41,
+      "attack_frames": 3073,
+      "attack_windows": 284,
+      "timestamp_inversions": 60
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/double-2.csv",
+      "set": "set_03",
+      "frames": 920226,
+      "windows": 14378,
+      "tail_frames": 34,
+      "attack_frames": 1960,
+      "attack_windows": 177,
+      "timestamp_inversions": 28
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/force-neutral-1.csv",
+      "set": "set_03",
+      "frames": 1257602,
+      "windows": 19650,
+      "tail_frames": 2,
+      "attack_frames": 2970,
+      "attack_windows": 390,
+      "timestamp_inversions": 64
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/force-neutral-2.csv",
+      "set": "set_03",
+      "frames": 918980,
+      "windows": 14359,
+      "tail_frames": 4,
+      "attack_frames": 714,
+      "attack_windows": 360,
+      "timestamp_inversions": 31
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/fuzzing-1.csv",
+      "set": "set_03",
+      "frames": 1059035,
+      "windows": 16547,
+      "tail_frames": 27,
+      "attack_frames": 50522,
+      "attack_windows": 2972,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/fuzzing-2.csv",
+      "set": "set_03",
+      "frames": 793574,
+      "windows": 12399,
+      "tail_frames": 38,
+      "attack_frames": 553,
+      "attack_windows": 553,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/triple-1.csv",
+      "set": "set_03",
+      "frames": 524898,
+      "windows": 8201,
+      "tail_frames": 34,
+      "attack_frames": 2210,
+      "attack_windows": 169,
+      "timestamp_inversions": 28
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_01_known_vehicle_known_attack/triple-2.csv",
+      "set": "set_03",
+      "frames": 1145333,
+      "windows": 17895,
+      "tail_frames": 53,
+      "attack_frames": 2475,
+      "attack_windows": 187,
+      "timestamp_inversions": 38
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/DoS-1.csv",
+      "set": "set_03",
+      "frames": 643807,
+      "windows": 10059,
+      "tail_frames": 31,
+      "attack_frames": 12091,
+      "attack_windows": 452,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/DoS-2.csv",
+      "set": "set_03",
+      "frames": 709039,
+      "windows": 11078,
+      "tail_frames": 47,
+      "attack_frames": 25308,
+      "attack_windows": 959,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/double-1.csv",
+      "set": "set_03",
+      "frames": 1244063,
+      "windows": 19438,
+      "tail_frames": 31,
+      "attack_frames": 10387,
+      "attack_windows": 715,
+      "timestamp_inversions": 197
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/double-2.csv",
+      "set": "set_03",
+      "frames": 695540,
+      "windows": 10867,
+      "tail_frames": 52,
+      "attack_frames": 4614,
+      "attack_windows": 300,
+      "timestamp_inversions": 87
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/force-neutral-1.csv",
+      "set": "set_03",
+      "frames": 527589,
+      "windows": 8243,
+      "tail_frames": 37,
+      "attack_frames": 1720,
+      "attack_windows": 562,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/force-neutral-2.csv",
+      "set": "set_03",
+      "frames": 475757,
+      "windows": 7433,
+      "tail_frames": 45,
+      "attack_frames": 1379,
+      "attack_windows": 128,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/fuzzing-1.csv",
+      "set": "set_03",
+      "frames": 660170,
+      "windows": 10315,
+      "tail_frames": 10,
+      "attack_frames": 28454,
+      "attack_windows": 1224,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/fuzzing-2.csv",
+      "set": "set_03",
+      "frames": 650196,
+      "windows": 10159,
+      "tail_frames": 20,
+      "attack_frames": 6557,
+      "attack_windows": 831,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/triple-1.csv",
+      "set": "set_03",
+      "frames": 544385,
+      "windows": 8506,
+      "tail_frames": 1,
+      "attack_frames": 52917,
+      "attack_windows": 2952,
+      "timestamp_inversions": 821
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_02_unknown_vehicle_known_attack/triple-2.csv",
+      "set": "set_03",
+      "frames": 703688,
+      "windows": 10995,
+      "tail_frames": 8,
+      "attack_frames": 12762,
+      "attack_windows": 711,
+      "timestamp_inversions": 202
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/interval-1.csv",
+      "set": "set_03",
+      "frames": 950657,
+      "windows": 14854,
+      "tail_frames": 1,
+      "attack_frames": 7338,
+      "attack_windows": 3722,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/interval-2.csv",
+      "set": "set_03",
+      "frames": 1009145,
+      "windows": 15767,
+      "tail_frames": 57,
+      "attack_frames": 632,
+      "attack_windows": 321,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/rpm-1.csv",
+      "set": "set_03",
+      "frames": 524212,
+      "windows": 8190,
+      "tail_frames": 52,
+      "attack_frames": 1524,
+      "attack_windows": 204,
+      "timestamp_inversions": 32
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/rpm-2.csv",
+      "set": "set_03",
+      "frames": 1143081,
+      "windows": 17860,
+      "tail_frames": 41,
+      "attack_frames": 223,
+      "attack_windows": 118,
+      "timestamp_inversions": 20
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/rpm-accessory-1.csv",
+      "set": "set_03",
+      "frames": 166162,
+      "windows": 2596,
+      "tail_frames": 18,
+      "attack_frames": 28,
+      "attack_windows": 28,
+      "timestamp_inversions": 1
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/rpm-accessory-2.csv",
+      "set": "set_03",
+      "frames": 149740,
+      "windows": 2339,
+      "tail_frames": 44,
+      "attack_frames": 30,
+      "attack_windows": 30,
+      "timestamp_inversions": 1
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/speed-1.csv",
+      "set": "set_03",
+      "frames": 1255235,
+      "windows": 19613,
+      "tail_frames": 3,
+      "attack_frames": 603,
+      "attack_windows": 301,
+      "timestamp_inversions": 12
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/speed-2.csv",
+      "set": "set_03",
+      "frames": 919087,
+      "windows": 14360,
+      "tail_frames": 47,
+      "attack_frames": 821,
+      "attack_windows": 410,
+      "timestamp_inversions": 19
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/speed-accessory-1.csv",
+      "set": "set_03",
+      "frames": 170115,
+      "windows": 2658,
+      "tail_frames": 3,
+      "attack_frames": 3981,
+      "attack_windows": 517,
+      "timestamp_inversions": 55
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/speed-accessory-2.csv",
+      "set": "set_03",
+      "frames": 149831,
+      "windows": 2341,
+      "tail_frames": 7,
+      "attack_frames": 121,
+      "attack_windows": 121,
+      "timestamp_inversions": 5
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/standstill-1.csv",
+      "set": "set_03",
+      "frames": 524245,
+      "windows": 8191,
+      "tail_frames": 21,
+      "attack_frames": 1557,
+      "attack_windows": 205,
+      "timestamp_inversions": 36
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/standstill-2.csv",
+      "set": "set_03",
+      "frames": 1143404,
+      "windows": 17865,
+      "tail_frames": 44,
+      "attack_frames": 546,
+      "attack_windows": 273,
+      "timestamp_inversions": 14
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/systematic-1.csv",
+      "set": "set_03",
+      "frames": 776168,
+      "windows": 12127,
+      "tail_frames": 40,
+      "attack_frames": 496,
+      "attack_windows": 496,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_03_known_vehicle_unknown_attack/systematic-2.csv",
+      "set": "set_03",
+      "frames": 566869,
+      "windows": 8857,
+      "tail_frames": 21,
+      "attack_frames": 252,
+      "attack_windows": 252,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/interval-1.csv",
+      "set": "set_03",
+      "frames": 857154,
+      "windows": 13393,
+      "tail_frames": 2,
+      "attack_frames": 91684,
+      "attack_windows": 12981,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/interval-2.csv",
+      "set": "set_03",
+      "frames": 465145,
+      "windows": 7267,
+      "tail_frames": 57,
+      "attack_frames": 13592,
+      "attack_windows": 7065,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/rpm-1.csv",
+      "set": "set_03",
+      "frames": 488528,
+      "windows": 7633,
+      "tail_frames": 16,
+      "attack_frames": 4830,
+      "attack_windows": 464,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/rpm-2.csv",
+      "set": "set_03",
+      "frames": 569888,
+      "windows": 8904,
+      "tail_frames": 32,
+      "attack_frames": 468,
+      "attack_windows": 468,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/rpm-accessory-1.csv",
+      "set": "set_03",
+      "frames": 129817,
+      "windows": 2028,
+      "tail_frames": 25,
+      "attack_frames": 1348,
+      "attack_windows": 131,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/rpm-accessory-2.csv",
+      "set": "set_03",
+      "frames": 138381,
+      "windows": 2162,
+      "tail_frames": 13,
+      "attack_frames": 215,
+      "attack_windows": 215,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/speed-1.csv",
+      "set": "set_03",
+      "frames": 757055,
+      "windows": 11828,
+      "tail_frames": 63,
+      "attack_frames": 12875,
+      "attack_windows": 1181,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/speed-2.csv",
+      "set": "set_03",
+      "frames": 714871,
+      "windows": 11169,
+      "tail_frames": 55,
+      "attack_frames": 1358,
+      "attack_windows": 128,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/speed-accessory-1.csv",
+      "set": "set_03",
+      "frames": 262041,
+      "windows": 4094,
+      "tail_frames": 25,
+      "attack_frames": 1430,
+      "attack_windows": 500,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/speed-accessory-2.csv",
+      "set": "set_03",
+      "frames": 164771,
+      "windows": 2574,
+      "tail_frames": 35,
+      "attack_frames": 90,
+      "attack_windows": 9,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/standstill-1.csv",
+      "set": "set_03",
+      "frames": 306189,
+      "windows": 4784,
+      "tail_frames": 13,
+      "attack_frames": 7862,
+      "attack_windows": 727,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/standstill-2.csv",
+      "set": "set_03",
+      "frames": 892327,
+      "windows": 13942,
+      "tail_frames": 39,
+      "attack_frames": 2361,
+      "attack_windows": 226,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/systematic-1.csv",
+      "set": "set_03",
+      "frames": 519433,
+      "windows": 8116,
+      "tail_frames": 9,
+      "attack_frames": 9468,
+      "attack_windows": 405,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_03/test_04_unknown_vehicle_unknown_attack/systematic-2.csv",
+      "set": "set_03",
+      "frames": 630419,
+      "windows": 9850,
+      "tail_frames": 19,
+      "attack_frames": 2367,
+      "attack_windows": 640,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/train_01/accessory-3.csv",
+      "set": "set_04",
+      "frames": 31991,
+      "windows": 499,
+      "tail_frames": 55,
+      "attack_frames": 0,
+      "attack_windows": 0,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/train_01/accessory-4.csv",
+      "set": "set_04",
+      "frames": 52783,
+      "windows": 824,
+      "tail_frames": 47,
+      "attack_frames": 0,
+      "attack_windows": 0,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/train_01/attack-free-3.csv",
+      "set": "set_04",
+      "frames": 920346,
+      "windows": 14380,
+      "tail_frames": 26,
+      "attack_frames": 0,
+      "attack_windows": 0,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/train_01/attack-free-4.csv",
+      "set": "set_04",
+      "frames": 336011,
+      "windows": 5250,
+      "tail_frames": 11,
+      "attack_frames": 0,
+      "attack_windows": 0,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/train_01/interval-3.csv",
+      "set": "set_04",
+      "frames": 393679,
+      "windows": 6151,
+      "tail_frames": 15,
+      "attack_frames": 788,
+      "attack_windows": 112,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/train_01/interval-4.csv",
+      "set": "set_04",
+      "frames": 907454,
+      "windows": 14178,
+      "tail_frames": 62,
+      "attack_frames": 250,
+      "attack_windows": 131,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/train_01/rpm-3.csv",
+      "set": "set_04",
+      "frames": 689308,
+      "windows": 10770,
+      "tail_frames": 28,
+      "attack_frames": 566,
+      "attack_windows": 53,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/train_01/rpm-4.csv",
+      "set": "set_04",
+      "frames": 642822,
+      "windows": 10044,
+      "tail_frames": 6,
+      "attack_frames": 880,
+      "attack_windows": 192,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/train_01/rpm-accessory-3.csv",
+      "set": "set_04",
+      "frames": 157883,
+      "windows": 2466,
+      "tail_frames": 59,
+      "attack_frames": 229,
+      "attack_windows": 22,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/train_01/rpm-accessory-4.csv",
+      "set": "set_04",
+      "frames": 175015,
+      "windows": 2734,
+      "tail_frames": 39,
+      "attack_frames": 8293,
+      "attack_windows": 519,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/train_01/speed-3.csv",
+      "set": "set_04",
+      "frames": 649177,
+      "windows": 10143,
+      "tail_frames": 25,
+      "attack_frames": 333,
+      "attack_windows": 31,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/train_01/speed-4.csv",
+      "set": "set_04",
+      "frames": 486777,
+      "windows": 7605,
+      "tail_frames": 57,
+      "attack_frames": 334,
+      "attack_windows": 31,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/train_01/speed-accessory-3.csv",
+      "set": "set_04",
+      "frames": 249865,
+      "windows": 3904,
+      "tail_frames": 9,
+      "attack_frames": 205,
+      "attack_windows": 20,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/train_01/speed-accessory-4.csv",
+      "set": "set_04",
+      "frames": 387940,
+      "windows": 6061,
+      "tail_frames": 36,
+      "attack_frames": 1637,
+      "attack_windows": 150,
+      "timestamp_inversions": 32
+    },
+    {
+      "source": "data/can-train-and-test/set_04/train_01/standstill-3.csv",
+      "set": "set_04",
+      "frames": 810295,
+      "windows": 12660,
+      "tail_frames": 55,
+      "attack_frames": 513,
+      "attack_windows": 37,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/train_01/standstill-4.csv",
+      "set": "set_04",
+      "frames": 352661,
+      "windows": 5510,
+      "tail_frames": 21,
+      "attack_frames": 72,
+      "attack_windows": 24,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/train_01/systematic-3.csv",
+      "set": "set_04",
+      "frames": 1012913,
+      "windows": 15826,
+      "tail_frames": 49,
+      "attack_frames": 9774,
+      "attack_windows": 421,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/train_01/systematic-4.csv",
+      "set": "set_04",
+      "frames": 1235881,
+      "windows": 19310,
+      "tail_frames": 41,
+      "attack_frames": 2205,
+      "attack_windows": 95,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/interval-1.csv",
+      "set": "set_04",
+      "frames": 857154,
+      "windows": 13393,
+      "tail_frames": 2,
+      "attack_frames": 91684,
+      "attack_windows": 12981,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/interval-2.csv",
+      "set": "set_04",
+      "frames": 465145,
+      "windows": 7267,
+      "tail_frames": 57,
+      "attack_frames": 13592,
+      "attack_windows": 7065,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/rpm-1.csv",
+      "set": "set_04",
+      "frames": 488528,
+      "windows": 7633,
+      "tail_frames": 16,
+      "attack_frames": 4830,
+      "attack_windows": 464,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/rpm-2.csv",
+      "set": "set_04",
+      "frames": 569888,
+      "windows": 8904,
+      "tail_frames": 32,
+      "attack_frames": 468,
+      "attack_windows": 468,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/rpm-accessory-1.csv",
+      "set": "set_04",
+      "frames": 129817,
+      "windows": 2028,
+      "tail_frames": 25,
+      "attack_frames": 1348,
+      "attack_windows": 131,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/rpm-accessory-2.csv",
+      "set": "set_04",
+      "frames": 138381,
+      "windows": 2162,
+      "tail_frames": 13,
+      "attack_frames": 215,
+      "attack_windows": 215,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/speed-1.csv",
+      "set": "set_04",
+      "frames": 757055,
+      "windows": 11828,
+      "tail_frames": 63,
+      "attack_frames": 12875,
+      "attack_windows": 1181,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/speed-2.csv",
+      "set": "set_04",
+      "frames": 714871,
+      "windows": 11169,
+      "tail_frames": 55,
+      "attack_frames": 1358,
+      "attack_windows": 128,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/speed-accessory-1.csv",
+      "set": "set_04",
+      "frames": 262041,
+      "windows": 4094,
+      "tail_frames": 25,
+      "attack_frames": 1430,
+      "attack_windows": 500,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/speed-accessory-2.csv",
+      "set": "set_04",
+      "frames": 164771,
+      "windows": 2574,
+      "tail_frames": 35,
+      "attack_frames": 90,
+      "attack_windows": 9,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/standstill-1.csv",
+      "set": "set_04",
+      "frames": 306189,
+      "windows": 4784,
+      "tail_frames": 13,
+      "attack_frames": 7862,
+      "attack_windows": 727,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/standstill-2.csv",
+      "set": "set_04",
+      "frames": 892327,
+      "windows": 13942,
+      "tail_frames": 39,
+      "attack_frames": 2361,
+      "attack_windows": 226,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/systematic-1.csv",
+      "set": "set_04",
+      "frames": 519433,
+      "windows": 8116,
+      "tail_frames": 9,
+      "attack_frames": 9468,
+      "attack_windows": 405,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_01_known_vehicle_known_attack/systematic-2.csv",
+      "set": "set_04",
+      "frames": 630419,
+      "windows": 9850,
+      "tail_frames": 19,
+      "attack_frames": 2367,
+      "attack_windows": 640,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/interval-1.csv",
+      "set": "set_04",
+      "frames": 634191,
+      "windows": 9909,
+      "tail_frames": 15,
+      "attack_frames": 15125,
+      "attack_windows": 9692,
+      "timestamp_inversions": 3424
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/interval-2.csv",
+      "set": "set_04",
+      "frames": 1653840,
+      "windows": 25841,
+      "tail_frames": 16,
+      "attack_frames": 1179,
+      "attack_windows": 480,
+      "timestamp_inversions": 71
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/rpm-1.csv",
+      "set": "set_04",
+      "frames": 3296008,
+      "windows": 51500,
+      "tail_frames": 8,
+      "attack_frames": 411,
+      "attack_windows": 162,
+      "timestamp_inversions": 19
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/rpm-2.csv",
+      "set": "set_04",
+      "frames": 1975925,
+      "windows": 30873,
+      "tail_frames": 53,
+      "attack_frames": 94,
+      "attack_windows": 94,
+      "timestamp_inversions": 5
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/rpm-accessory-1.csv",
+      "set": "set_04",
+      "frames": 529658,
+      "windows": 8275,
+      "tail_frames": 58,
+      "attack_frames": 288,
+      "attack_windows": 288,
+      "timestamp_inversions": 10
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/rpm-accessory-2.csv",
+      "set": "set_04",
+      "frames": 307113,
+      "windows": 4798,
+      "tail_frames": 41,
+      "attack_frames": 56,
+      "attack_windows": 56,
+      "timestamp_inversions": 2
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/speed-1.csv",
+      "set": "set_04",
+      "frames": 2619677,
+      "windows": 40932,
+      "tail_frames": 29,
+      "attack_frames": 14,
+      "attack_windows": 14,
+      "timestamp_inversions": 6
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/speed-2.csv",
+      "set": "set_04",
+      "frames": 2734513,
+      "windows": 42726,
+      "tail_frames": 49,
+      "attack_frames": 38,
+      "attack_windows": 38,
+      "timestamp_inversions": 6
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/speed-accessory-1.csv",
+      "set": "set_04",
+      "frames": 529420,
+      "windows": 8272,
+      "tail_frames": 12,
+      "attack_frames": 50,
+      "attack_windows": 50,
+      "timestamp_inversions": 2
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/speed-accessory-2.csv",
+      "set": "set_04",
+      "frames": 307067,
+      "windows": 4797,
+      "tail_frames": 59,
+      "attack_frames": 10,
+      "attack_windows": 10,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/standstill-1.csv",
+      "set": "set_04",
+      "frames": 1208289,
+      "windows": 18879,
+      "tail_frames": 33,
+      "attack_frames": 566,
+      "attack_windows": 277,
+      "timestamp_inversions": 18
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/standstill-2.csv",
+      "set": "set_04",
+      "frames": 614984,
+      "windows": 9609,
+      "tail_frames": 8,
+      "attack_frames": 24,
+      "attack_windows": 24,
+      "timestamp_inversions": 2
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/systematic-1.csv",
+      "set": "set_04",
+      "frames": 541323,
+      "windows": 8458,
+      "tail_frames": 11,
+      "attack_frames": 37125,
+      "attack_windows": 1844,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_02_unknown_vehicle_known_attack/systematic-2.csv",
+      "set": "set_04",
+      "frames": 456086,
+      "windows": 7126,
+      "tail_frames": 22,
+      "attack_frames": 2259,
+      "attack_windows": 753,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/DoS-1.csv",
+      "set": "set_04",
+      "frames": 643807,
+      "windows": 10059,
+      "tail_frames": 31,
+      "attack_frames": 12091,
+      "attack_windows": 452,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/DoS-2.csv",
+      "set": "set_04",
+      "frames": 709039,
+      "windows": 11078,
+      "tail_frames": 47,
+      "attack_frames": 25308,
+      "attack_windows": 959,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/double-1.csv",
+      "set": "set_04",
+      "frames": 1244063,
+      "windows": 19438,
+      "tail_frames": 31,
+      "attack_frames": 10387,
+      "attack_windows": 715,
+      "timestamp_inversions": 197
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/double-2.csv",
+      "set": "set_04",
+      "frames": 695540,
+      "windows": 10867,
+      "tail_frames": 52,
+      "attack_frames": 4614,
+      "attack_windows": 300,
+      "timestamp_inversions": 87
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/force-neutral-1.csv",
+      "set": "set_04",
+      "frames": 527589,
+      "windows": 8243,
+      "tail_frames": 37,
+      "attack_frames": 1720,
+      "attack_windows": 562,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/force-neutral-2.csv",
+      "set": "set_04",
+      "frames": 475757,
+      "windows": 7433,
+      "tail_frames": 45,
+      "attack_frames": 1379,
+      "attack_windows": 128,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/fuzzing-1.csv",
+      "set": "set_04",
+      "frames": 660170,
+      "windows": 10315,
+      "tail_frames": 10,
+      "attack_frames": 28454,
+      "attack_windows": 1224,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/fuzzing-2.csv",
+      "set": "set_04",
+      "frames": 650196,
+      "windows": 10159,
+      "tail_frames": 20,
+      "attack_frames": 6557,
+      "attack_windows": 831,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/triple-1.csv",
+      "set": "set_04",
+      "frames": 544385,
+      "windows": 8506,
+      "tail_frames": 1,
+      "attack_frames": 52917,
+      "attack_windows": 2952,
+      "timestamp_inversions": 821
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_03_known_vehicle_unknown_attack/triple-2.csv",
+      "set": "set_04",
+      "frames": 703688,
+      "windows": 10995,
+      "tail_frames": 8,
+      "attack_frames": 12762,
+      "attack_windows": 711,
+      "timestamp_inversions": 202
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/DoS-1.csv",
+      "set": "set_04",
+      "frames": 402001,
+      "windows": 6281,
+      "tail_frames": 17,
+      "attack_frames": 20560,
+      "attack_windows": 910,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/DoS-2.csv",
+      "set": "set_04",
+      "frames": 416866,
+      "windows": 6513,
+      "tail_frames": 34,
+      "attack_frames": 30648,
+      "attack_windows": 1320,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/double-1.csv",
+      "set": "set_04",
+      "frames": 1092582,
+      "windows": 17071,
+      "tail_frames": 38,
+      "attack_frames": 4955,
+      "attack_windows": 380,
+      "timestamp_inversions": 73
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/double-2.csv",
+      "set": "set_04",
+      "frames": 463001,
+      "windows": 7234,
+      "tail_frames": 25,
+      "attack_frames": 8900,
+      "attack_windows": 647,
+      "timestamp_inversions": 82
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/force-neutral-1.csv",
+      "set": "set_04",
+      "frames": 509087,
+      "windows": 7954,
+      "tail_frames": 31,
+      "attack_frames": 1166,
+      "attack_windows": 452,
+      "timestamp_inversions": 19
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/force-neutral-2.csv",
+      "set": "set_04",
+      "frames": 454206,
+      "windows": 7096,
+      "tail_frames": 62,
+      "attack_frames": 0,
+      "attack_windows": 0,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/fuzzing-1.csv",
+      "set": "set_04",
+      "frames": 1235992,
+      "windows": 19312,
+      "tail_frames": 24,
+      "attack_frames": 113514,
+      "attack_windows": 5632,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/fuzzing-2.csv",
+      "set": "set_04",
+      "frames": 1167769,
+      "windows": 18246,
+      "tail_frames": 25,
+      "attack_frames": 6113,
+      "attack_windows": 2037,
+      "timestamp_inversions": 0
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/triple-1.csv",
+      "set": "set_04",
+      "frames": 1780543,
+      "windows": 27820,
+      "tail_frames": 63,
+      "attack_frames": 31056,
+      "attack_windows": 1979,
+      "timestamp_inversions": 355
+    },
+    {
+      "source": "data/can-train-and-test/set_04/test_04_unknown_vehicle_unknown_attack/triple-2.csv",
+      "set": "set_04",
+      "frames": 661579,
+      "windows": 10337,
+      "tail_frames": 11,
+      "attack_frames": 4059,
+      "attack_windows": 258,
+      "timestamp_inversions": 62
+    }
+  ]
+}

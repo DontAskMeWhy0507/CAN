@@ -1,0 +1,20 @@
+{
+  "status": "COMPLETE",
+  "artifact_hashes": {
+    "audit.json": "5ecb32ad2e57c4bde80137640784660f22b28ba835c72e3b0d1a039155b63a08",
+    "BAO_CAO_MIXSTYLE.txt": "f6b1ceae8de58914c02ccaff4d0d46dc38ba39b72b5570e866f54ca895de9045",
+    "by_set.csv": "13a7d06c8cc6448fba92419255f82e42873fa4eff91eb4246743694d5faf5e88",
+    "capture_intervals.json": "6397bc53debfb8a96411cd497e62f96385a72ee77d554bf08cb379bede1254db",
+    "comparisons.csv": "33e706ce015be4a8113c468df3c17e858c812a6885cf8b25a0ecd28ff897a98b",
+    "equal_set.csv": "02480983c34b112f18d9077e80859a5c4b7f646b17e1c338eec67e7fc36e4ecd",
+    "external_capture_metrics_verified.csv": "42e538f99c6d44c56bae09bf4a92d1fd92e4a8211bd76f1827fa2257af7e6dd8",
+    "external_dataset_mean_seed.csv": "a591fa3fa61b1306046cd281830dc0d3da06d2a62ed1b391105224884590f47a",
+    "external_dataset_seed_pooled.csv": "ecab86ca82c4f98722652e99c2c04a9c14699148779297587d4dd913af6f1ecc",
+    "final_report.json": "9cc4586fb364b209ab93075374803423f512144ce3113a62a658a7a88860e60e",
+    "metrics_verified.csv": "0dc2c859705e4eeae86f5fd1e87c56428c396a5c5eb490866bd0cbc91394c2e7",
+    "probe_means.csv": "c94d7a6b9812afa200409fa3fd01c0483b8221704f6797892b0e68eaa0af5bb2",
+    "runtime_remeasured.csv": "9bb94ad81c4681cf5931b528d56249216734cf65dceeb3db360ca6a4c6d83e70",
+    "seed_std.csv": "4cad86097a7a31714afd3df15d95793fd9fd3454b4de2666f3dbb77008c6e052",
+    "six_method_equal_set.csv": "68780a961cfa74c0a5d18e210f3249c51d8408e581468717c2549456c482fa09"
+  }
+}

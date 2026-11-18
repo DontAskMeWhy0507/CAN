@@ -1,0 +1,68 @@
+NGHIÊN CỨU ĐA NGUỒN / ĐỐI KHÁNG XE — KẾT QUẢ THỰC CHẠY
+48 fit: 4 xe giữ ngoài × 3 seed × 4 phương pháp. Ngưỡng chỉ từ validation nguồn.
+Trung bình seed trong xe, sau đó trọng số ngang nhau giữa bốn xe.
+
+                   Recall  FAR_per_100k        AP  Attack_F1  FAR_percent
+method                                                                   
+raw              0.788524  69835.317552  0.219638   0.218204    69.835318
+relative_cadv    0.657944  29721.072817  0.576370   0.414802    29.721073
+structural       0.721098  37022.546984  0.602002   0.407290    37.022547
+structural_cadv  0.716149  31974.521167  0.597035   0.425380    31.974521
+
+PROBE (encoder đóng băng; balanced accuracy):
+method           task     decoder  control 
+raw              attack   linear   constant    0.500000
+                                   learned     0.615104
+                                   permuted    0.486302
+                          mlp      constant    0.500000
+                                   learned     0.620260
+                                   permuted    0.465156
+                 vehicle  linear   constant    0.250000
+                                   learned     0.997396
+                                   permuted    0.331328
+                          mlp      constant    0.250000
+                                   learned     0.994714
+                                   permuted    0.263724
+relative_cadv    attack   linear   constant    0.500000
+                                   learned     0.799401
+                                   permuted    0.453724
+                          mlp      constant    0.500000
+                                   learned     0.802500
+                                   permuted    0.453516
+                 vehicle  linear   constant    0.250000
+                                   learned     0.947396
+                                   permuted    0.252656
+                          mlp      constant    0.250000
+                                   learned     0.939609
+                                   permuted    0.231120
+structural       attack   linear   constant    0.500000
+                                   learned     0.804714
+                                   permuted    0.478932
+                          mlp      constant    0.500000
+                                   learned     0.801354
+                                   permuted    0.451901
+                 vehicle  linear   constant    0.250000
+                                   learned     0.944870
+                                   permuted    0.263698
+                          mlp      constant    0.250000
+                                   learned     0.938932
+                                   permuted    0.274297
+structural_cadv  attack   linear   constant    0.500000
+                                   learned     0.811094
+                                   permuted    0.476172
+                          mlp      constant    0.500000
+                                   learned     0.806276
+                                   permuted    0.441042
+                 vehicle  linear   constant    0.250000
+                                   learned     0.932187
+                                   permuted    0.267370
+                          mlp      constant    0.250000
+                                   learned     0.923568
+                                   permuted    0.270026
+
+Giao thức mới, không so trực tiếp với A/B/C/D cũ hoặc probe 94,88% cũ.
+Đã loại toàn bộ hash có danh tính xe mâu thuẫn; xem vehicle_identity_exclusions.json.
+Hậu nghiệm trên xe đã được nghiên cứu; không xác nhận độc lập hoặc chứng minh độc lập thống kê.
+Probe test giữ ngoài nhóm recording-round; phiên lái độc lập chưa được xác minh.
+Cả recall, FAR và probe phải được xét đồng thời; probe thấp một mình không xác nhận thành công.
+Chi tiết từng xe/seed và CI bootstrap có điều kiện nằm trong các CSV kèm theo.
