@@ -901,11 +901,11 @@ def generate_calibration_recovery_vi() -> None:
     ax2.set_ylabel("Recall tấn công (%)")
     ax2.grid(True, linestyle="--", alpha=0.6)
 
-    # (c) Condition B per-attack F1 (K=1000, budget 1.0%)
+    # (c) Condition B per-attack F1 (K=500, budget 1.0%)
     ax3 = axes[1, 0]
     atk_b = atk_summary[
         (atk_summary.condition == "B")
-        & (atk_summary.warmup_k == 1000)
+        & (atk_summary.warmup_k == 500)
         & (atk_summary.target_far_budget == 1000)
     ]
     attacks_b = sorted(atk_b.attack_type.unique(), reverse=True)
@@ -931,11 +931,11 @@ def generate_calibration_recovery_vi() -> None:
     ax3.set_xlim(0.0, 1.05)
     ax3.grid(True, linestyle="--", alpha=0.5, axis="x")
 
-    # (d) Condition D per-attack F1 (K=1000, budget 1.0%)
+    # (d) Condition D per-attack F1 (K=500, budget 1.0%)
     ax4 = axes[1, 1]
     atk_d = atk_summary[
         (atk_summary.condition == "D")
-        & (atk_summary.warmup_k == 1000)
+        & (atk_summary.warmup_k == 500)
         & (atk_summary.target_far_budget == 1000)
     ]
     attacks_d = sorted(atk_d.attack_type.unique(), reverse=True)
@@ -1071,7 +1071,8 @@ def generate_multisource_lovo() -> None:
                 ha="center",
                 va="bottom",
                 rotation=90,
-                fontsize=9.3,
+                fontsize=9.0,
+                clip_on=False,
             )
         for b, v in zip(b_mlp, mlp_vals):
             axes[2].text(
@@ -1081,7 +1082,8 @@ def generate_multisource_lovo() -> None:
                 ha="center",
                 va="bottom",
                 rotation=90,
-                fontsize=9.3,
+                fontsize=9.0,
+                clip_on=False,
             )
 
         handles, labels = axes[2].get_legend_handles_labels()
@@ -1104,6 +1106,8 @@ def generate_multisource_lovo() -> None:
             ax.set_xticks(x)
             ax.set_xticklabels(xlabels, fontsize=10.5, rotation=24, ha="right")
             ax.set_ylim(0, 126 if idx_ax == 2 else 112)
+            if idx_ax == 2:
+                ax.set_xlim(-0.6, 3.6)
             ax.set_yticks([0, 20, 40, 60, 80, 100])
             ax.tick_params(axis="y", labelsize=10.5)
             ax.grid(axis="y", linestyle="--", alpha=0.22, zorder=0)
