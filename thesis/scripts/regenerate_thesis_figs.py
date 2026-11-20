@@ -156,7 +156,7 @@ def generate_pipeline_architecture(lang: str, out_path: Path) -> None:
             "#0369A1",
             "#F0F9FF",
             "#E0F2FE",
-            "4. PHÂN LOẠI &\nTHÍCH ỨNG XE" if is_vi else "4. CLASSIFICATION\n& ADAPTATION",
+            "4. VẬN HÀNH &\nCHẨN ĐOÁN MIỀN" if is_vi else "4. OPERATION &\nDOMAIN DIAGNOSTIC",
         ),
     ]
 
@@ -495,16 +495,16 @@ def generate_pipeline_architecture(lang: str, out_path: Path) -> None:
     b4_gap = (top_inner - 0.18 - (b4a_h + b4b_h + b4c_h + b4d_h)) / 3.0
 
     b4a_y = top_inner - b4a_h
-    _draw_box(ax, b4_x, b4a_y, b4_w, b4a_h, fc="white", ec="#0284C7", lw=1.25, r=0.08, zorder=3)
+    _draw_box(ax, b4_x, b4a_y, b4_w, b4a_h, fc="#F0FDF4", ec="#16A34A", lw=1.5, r=0.08, zorder=3)
     ax.text(
         b4_x + b4_w / 2,
         b4a_y + b4a_h - 0.34,
-        "Nhánh Chính\n(Phân loại)" if is_vi else "Primary Branch\n(Detect)",
+        "GIAI ĐOẠN II: HIỆU CHUẨN\n& LỌC SỰ KIỆN" if is_vi else "STAGE II: CALIBRATION\n& EVENT FILTERING",
         ha="center",
         va="center",
         fontsize=FS_SUB,
         fontweight="bold",
-        color="#111827",
+        color="#15803D",
         linespacing=1.08,
         zorder=4,
     )
@@ -522,7 +522,10 @@ def generate_pipeline_architecture(lang: str, out_path: Path) -> None:
     ax.text(
         b4_x + b4_w / 2,
         b4a_y + 0.78,
-        "Warmup ($K=500$):\n"
+        "Hiệu chuẩn ($K=500$):\n"
+        + r"$\tau_{\mathrm{target}}=\operatorname{Q}_{1-\alpha}(s_k)$"
+        if is_vi
+        else "Calibration ($K=500$):\n"
         + r"$\tau_{\mathrm{target}}=\operatorname{Q}_{1-\alpha}(s_k)$",
         ha="center",
         va="center",
@@ -534,7 +537,9 @@ def generate_pipeline_architecture(lang: str, out_path: Path) -> None:
     ax.text(
         b4_x + b4_w / 2,
         b4a_y + 0.24,
-        r"$m$-of-$n$ ($2/3, 3/5$) $\to \widehat{Y}_k$",
+        r"$m$-trong-$n$ ($2/3, 3/5$) $\to \widehat{Y}_k$"
+        if is_vi
+        else r"$m$-of-$n$ ($2/3, 3/5$) $\to \widehat{Y}_k$",
         ha="center",
         va="center",
         fontsize=FS_BODY,
@@ -548,7 +553,7 @@ def generate_pipeline_architecture(lang: str, out_path: Path) -> None:
     ax.text(
         b4_x + b4_w / 2,
         b4b_y + b4b_h - 0.34,
-        "Đa Nguồn\n(LOVO-cAdv)" if is_vi else "Multi-Source\n(LOVO-cAdv)",
+        "Chẩn Đoán Đa Nguồn\n(LOVO-cAdv)" if is_vi else "Multi-Source Diagnostic\n(LOVO-cAdv)",
         ha="center",
         va="center",
         fontsize=FS_SUB,
@@ -576,7 +581,7 @@ def generate_pipeline_architecture(lang: str, out_path: Path) -> None:
     ax.text(
         b4_x + b4_w / 2,
         b4c_y + b4c_h - 0.34,
-        "Triệt Tiêu &\nNăng Lượng" if is_vi else "Erasure &\nEnergy Score",
+        "Chẩn Đoán Triệt Tiêu\n(LEACE / INLP8)" if is_vi else "Erasure Diagnostic\n(LEACE / INLP8)",
         ha="center",
         va="center",
         fontsize=FS_SUB,
@@ -612,7 +617,7 @@ def generate_pipeline_architecture(lang: str, out_path: Path) -> None:
     ax.text(
         b4_x + b4_w / 2,
         b4d_y + b4d_h - 0.34,
-        "Chẩn Đoán\n(Probes)" if is_vi else "Diagnostics\n(Probes)",
+        "Chẩn Đoán Rò Rỉ Xe\n(Linear Probes)" if is_vi else "Identity Leakage Probe\n(Linear Probes)",
         ha="center",
         va="center",
         fontsize=FS_SUB,
