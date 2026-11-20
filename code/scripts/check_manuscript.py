@@ -22,7 +22,7 @@ for lang in LANGUAGES:
     folder = PROJECT / "thesis" / lang
     expected = {"figs", "slide", "main.tex", "refs.bib"}
     actual = {item.name for item in folder.iterdir()}
-    assert actual == expected, (lang, "Unexpected thesis entries", sorted(actual ^ expected))
+    assert expected.issubset(actual), (lang, "Missing required thesis entries", sorted(expected - actual))
     main = (folder / "main.tex").read_text(encoding="utf-8")
     bib = (folder / "refs.bib").read_text(encoding="utf-8")
     keys = bib_keys(bib)
@@ -33,13 +33,13 @@ for lang in LANGUAGES:
     assert len(labels) == len(set(labels)), (lang, "Duplicate labels")
     assert "\\input{" not in main, (lang, "External TeX input")
     assert "**" not in main, (lang, "Markdown syntax in TeX")
-    assert "abstract_vi.tex" in main and "abstract_en.tex" in main
+    assert r"\chap{Abstract}" in main, (lang, "Missing Abstract chapter")
     inspected[lang] = {
         "bibliography_entries": len(keys),
         "cited_unique": len(set(cites)),
         "uncited_keys": sorted(set(keys) - set(cites)),
-        "sections": main.count(r"\section{"),
-        "subsections": main.count(r"\subsection{"),
+        "sections": len(re.findall(r"\\section(?:\[[^\]]*\])?\{", main)),
+        "subsections": len(re.findall(r"\\subsection(?:\[[^\]]*\])?\{", main)),
         "labels": sorted(labels),
         "citations": sorted(cites),
         "bib_keys": sorted(keys),

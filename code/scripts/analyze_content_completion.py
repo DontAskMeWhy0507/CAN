@@ -154,7 +154,8 @@ def main():
     subprocess.run([sys.executable,str(CODE/'scripts/check_manuscript.py')],cwd=ROOT,check=True)
     pdfout=CODE/'output/thesis_completion_2026-11-09';pdfout.mkdir(parents=True,exist_ok=True)
     marker=Path(r'C:/Users/tuant/.codex/plugins/cache/openai-primary-runtime/pdf/26.1104.22356/skills/pdf/container_tools/mark_artifact_operation_started.mjs')
-    subprocess.run(['node',str(marker),'--operation-kind','edit','--expected-output-count','2','--output-format','pdf'],check=True)
+    if marker.exists():
+        subprocess.run(['node',str(marker),'--operation-kind','edit','--expected-output-count','2','--output-format','pdf'],check=True)
     for lang in ['vi','en']:
         target=pdfout/lang;target.mkdir(exist_ok=True)
         with (target/'build.log').open('w',encoding='utf-8') as log:

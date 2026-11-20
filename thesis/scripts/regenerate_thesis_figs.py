@@ -414,7 +414,7 @@ def generate_pipeline_architecture(lang: str, out_path: Path) -> None:
             "#FFFFFF",
             "#EA580C",
             "Chiếu (30 → 64)" if is_vi else "Linear (30 → 64)",
-            (r"+ MixStyle" + "\n" + r"($\alpha=0{,}1, p=0{,}5$)" if is_vi else r"+ MixStyle" + "\n" + r"($\alpha=0.1, p=0.5$)")
+            (r"+ MixStyle" + "\n" + r"($\alpha_{\text{mix}}=0{,}1, p=0{,}5$)" if is_vi else r"+ MixStyle" + "\n" + r"($\alpha_{\text{mix}}=0.1, p=0.5$)")
             + "\n"
             + r"+ PosEnc ($64 \times 64$)",
             "#C2410C",
@@ -560,9 +560,9 @@ def generate_pipeline_architecture(lang: str, out_path: Path) -> None:
     ax.text(
         b4_x + b4_w / 2,
         b4b_y + 0.38,
-        r"GRL trên $z_k \otimes \hat{y}_k$;" + "\n" + "căn chỉnh đa xe"
+        r"GRL + 2 đầu MLP;" + "\n" + r"định tuyến nhãn $Y$"
         if is_vi
-        else r"GRL on $z_k \otimes \hat{y}_k$;" + "\n" + "multi-vehicle align.",
+        else r"GRL + dual MLP heads;" + "\n" + r"routed by label $Y$",
         ha="center",
         va="center",
         fontsize=FS_BODY,
@@ -598,7 +598,7 @@ def generate_pipeline_architecture(lang: str, out_path: Path) -> None:
     ax.text(
         b4_x + b4_w / 2,
         b4c_y + 0.32,
-        r"$E(X_k)=$" + "\n" + r"$\|\Sigma_s^{-1/2}(z_k-\mu_b)\|_2^2$",
+        r"$E(X_k)=$" + "\n" + r"$\frac{1}{d}\|\Sigma_s^{-1/2}(z_k-\mu_b)\|_2^2$",
         ha="center",
         va="center",
         fontsize=FS_BODY,
@@ -1282,7 +1282,7 @@ def generate_benign_invariant() -> None:
             axes[1].text(lv + 1.6, yi - off, f"{lv:.1f}", va="center", ha="left", fontsize=11.0, zorder=4)
             axes[1].text(mv + 1.6, yi + off, f"{mv:.1f}", va="center", ha="left", fontsize=11.0, zorder=4)
         axes[1].set_title(
-            "Probe xe:\nbiểu diễn 64D" if is_vi else "Vehicle probe:\n64D embedding",
+            "Probe xe:\nbiểu diễn (64D / 8D)" if is_vi else "Vehicle probe:\nembedding (64D / 8D)",
             fontsize=12.2,
             fontweight="bold",
             pad=8,

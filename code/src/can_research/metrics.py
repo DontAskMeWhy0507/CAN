@@ -37,11 +37,16 @@ def compute_binary_metrics(y_true, y_pred=None, y_score=None, threshold=0.5):
                 AP_Status='ok' if score is not None and pos and neg else 'requires_scores_and_both_classes')
 
 
-def choose_threshold_on_validation(y, scores, far_budget=100.0):
+def choose_threshold_on_validation_with_info(y, scores, far_budget=100.0):
     """Maximize source-validation recall within an empirical FAR budget.
 
     Ties prefer fewer false alerts, then a higher threshold. This does not
     guarantee the same FAR on target data. The validation set is not rebalanced.
+    When no threshold meets ``far_budget``, falls back to
+    ``nextafter(max(scores), +inf)`` (degenerate all-negative operating point)
+    and sets ``budget_met=False`` with ``status='degenerate_threshold_exceeded_budget'``
+    so callers and result tables do not silently confuse a failed FAR budget with
+    ideal classification performance.
     """
     y, scores = np.asarray(y), np.asarray(scores, float)
     if set(np.unique(y)) != {0, 1} or y.shape != scores.shape or not np.isfinite(scores).all():
@@ -53,12 +58,24 @@ def choose_threshold_on_validation(y, scores, far_budget=100.0):
     ends = np.r_[np.flatnonzero(np.diff(s) != 0), len(s) - 1]
     tps = np.cumsum(labels == 1)[ends]
     fps = np.cumsum(labels == 0)[ends]
-    feasible = np.flatnonzero(fps * 100000 / (y == 0).sum() <= far_budget)
-    threshold = float(np.nextafter(scores.max(), np.inf))
+    n_neg = int((y == 0).sum())
+    far_per_100k = fps * 100000.0 / n_neg
+    min_achieved_far = float(far_per_100k.min())
+    feasible = np.flatnonzero(far_per_100k <= far_budget)
     if len(feasible):
         best = max(feasible, key=lambda k: (tps[k], -fps[k], s[ends[k]]))
         threshold = float(s[ends[best]])
-    return threshold
+        return dict(threshold=threshold, budget_met=True, status='ok',
+                    min_achieved_far=min_achieved_far, feasible_count=int(len(feasible)))
+    # Degenerate fallback: no candidate threshold meets far_budget.
+    threshold = float(np.nextafter(scores.max(), np.inf))
+    return dict(threshold=threshold, budget_met=False,
+                status='degenerate_threshold_exceeded_budget',
+                min_achieved_far=min_achieved_far, feasible_count=0)
+
+
+def choose_threshold_on_validation(y, scores, far_budget=100.0):
+    return float(choose_threshold_on_validation_with_info(y, scores, far_budget=far_budget)['threshold'])
 
 
 def paired_capture_bootstrap(y, a, b, groups, n_boot=1000, seed=42, metric='Attack_F1'):

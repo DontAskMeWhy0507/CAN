@@ -83,6 +83,20 @@ def select_features(raw, structural, representation, tier='timed'):
 
 
 class WindowExtractor:
+    """Extract fixed-length CAN frame windows (default W=64) for window-level
+    detection (not per-frame streaming detection).
+
+    Key modeling & timing properties:
+    - Buffering latency: A decision on a window of length ``w`` requires collecting
+      all ``w`` frames before finalizing window statistics (roughly 32-64 ms at
+      typical CAN bus rates, depending on bus load and ID mix). Decisions are made
+      at window end.
+    - Weak supervision label: Window ground truth is ``int(block.attack.max())``,
+      meaning any window containing at least one attack frame is labeled 1.
+    - Transition feature boundary: At index ``j == 0`` within a window, there is
+      no preceding frame ``ids[j - 1]`` inside the window block, so the transition
+      feature remains initialized to ``0.0``.
+    """
     def __init__(self, window_size=64, tier='timed'):
         if window_size < 2 or tier not in {'timed', 'content'}:
             raise ValueError('Invalid window configuration.')
@@ -111,6 +125,7 @@ class WindowExtractor:
             ids = [parse_id(v) for v in block.arbitration_id]
             counts, transitions = Counter(ids), Counter(zip(ids[:-1], ids[1:]))
             ranks = {v: i for i, v in enumerate(dict.fromkeys(ids))}
+            # Window-level weak supervision: labeled 1 if any frame in window is an attack
             labels[k] = int(block.attack.max())
             starts[k], ends[k] = block.timestamp.iloc[0], block.timestamp.iloc[-1]
             for j, row in enumerate(block.itertuples(index=False)):
@@ -129,7 +144,9 @@ class WindowExtractor:
                     if self.tier == 'timed':
                         structural[k, j, 27] = np.log1p(1000 * min(t - last_t, 10.))
                 structural[k, j, 26] = logdt
+                # Summary features across W-frame block, finalized at window end
                 structural[k, j, 28:31] = [counts[cid] / self.w, ranks[cid] / len(ranks), ranks[cid] / self.w]
+                # j == 0 has no preceding frame inside current window; initialized to 0.0
                 if j:
                     structural[k, j, 31] = transitions[(ids[j-1], cid)] / (self.w - 1)
                 self.history[cid], self.prev_t = (t, b, mask), t

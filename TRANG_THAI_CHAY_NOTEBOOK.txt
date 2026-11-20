@@ -1,8 +1,0 @@
-TRANG THAI NOTEBOOK: COMPLETE
-Cap nhat UTC: 2026-11-08T14:08:12.479013+00:00
-Hoan tat 60/60 luot (GPU 48/48; AssocRules 12/12).
-Notebook va dau ra duoc tu luu moi 15 giay.
-Ket qua gop: code/results/comparison_merged_fast (chi sau khi du 60 luot).
-Goi ZIP sau khi thanh cong: code/output/notebook_comparison_executed_2026-11-08.zip
-Giua cac luot, giu may chay va tranh che do ngu.
-Xem chi tiet loi/trang thai: code/results/notebook_execution_progress.json

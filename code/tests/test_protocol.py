@@ -5,7 +5,12 @@ import pandas as pd
 import pytest
 from can_research.features import WindowExtractor, extract_windows, select_features
 from can_research.io import canonical_csv, read_frames, source_split
-from can_research.metrics import compute_binary_metrics, choose_threshold_on_validation, paired_capture_bootstrap
+from can_research.metrics import (
+    compute_binary_metrics,
+    choose_threshold_on_validation,
+    choose_threshold_on_validation_with_info,
+    paired_capture_bootstrap,
+)
 
 
 def frames(n=19):
@@ -32,6 +37,25 @@ def test_threshold_ties_and_no_target_input():
     assert m['FP'] == 0 and m['TP'] == 1
     with pytest.raises(ValueError):
         choose_threshold_on_validation([1, 1], [.2, .4])
+
+
+def test_threshold_budget_met_and_degenerate_status():
+    y, s = np.array([0, 0, 1, 1]), np.array([.8, .1, .8, .9])
+    info_ok = choose_threshold_on_validation_with_info(y, s, far_budget=50000.0)
+    assert info_ok['budget_met'] is True
+    assert info_ok['status'] == 'ok'
+    assert info_ok['feasible_count'] > 0
+    assert info_ok['min_achieved_far'] <= 50000.0
+
+    # Unachievable budget (e.g. far_budget < min possible FAR when every positive prediction triggers FP)
+    # With scores [.9, .9] for negatives and [.1, .1] for positives, any positive prediction gives FAR 100%
+    y_hard = np.array([0, 0, 1, 1])
+    s_hard = np.array([.9, .9, .1, .1])
+    info_degen = choose_threshold_on_validation_with_info(y_hard, s_hard, far_budget=10.0)
+    assert info_degen['budget_met'] is False
+    assert info_degen['status'] == 'degenerate_threshold_exceeded_budget'
+    assert info_degen['threshold'] > s_hard.max()
+    assert info_degen['feasible_count'] == 0
 
 
 @pytest.mark.parametrize('tier', ['timed', 'content'])

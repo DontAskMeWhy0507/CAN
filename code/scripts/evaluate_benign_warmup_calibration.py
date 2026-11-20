@@ -13,7 +13,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-CODE = Path("F:/00_Research/code")
+CODE = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(CODE), str(CODE / "src")]
 from can_research.metrics import compute_binary_metrics
 

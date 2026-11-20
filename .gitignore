@@ -91,3 +91,7 @@ ENV/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Build directories
+build/
+**/build/
