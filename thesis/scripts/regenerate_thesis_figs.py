@@ -156,7 +156,7 @@ def generate_pipeline_architecture(lang: str, out_path: Path) -> None:
             "#0369A1",
             "#F0F9FF",
             "#E0F2FE",
-            "4. VẬN HÀNH &\nCHẨN ĐOÁN MIỀN" if is_vi else "4. OPERATION &\nDOMAIN DIAGNOSTIC",
+            "4. GIAI ĐOẠN II:\nHIỆU CHUẨN & LỌC" if is_vi else "4. STAGE II:\nCALIBRATION & FILTER",
         ),
     ]
 
@@ -413,10 +413,10 @@ def generate_pipeline_architecture(lang: str, out_path: Path) -> None:
             1.64,
             "#FFFFFF",
             "#EA580C",
-            "Chiếu (30 → 64)" if is_vi else "Linear (30 → 64)",
-            (r"+ MixStyle" + "\n" + r"($\alpha_{\text{mix}}=0{,}1, p=0{,}5$)" if is_vi else r"+ MixStyle" + "\n" + r"($\alpha_{\text{mix}}=0.1, p=0.5$)")
-            + "\n"
-            + r"+ PosEnc ($64 \times 64$)",
+            "Chiếu tuyến tính" if is_vi else "Linear Projection",
+            (r"$30 \to 64$" + "\n" + r"+ Mã hóa vị trí" + "\n" + r"($64 \times 64$)")
+            if is_vi
+            else (r"$30 \to 64$" + "\n" + r"+ PosEnc ($64 \times 64$)"),
             "#C2410C",
         ),
         (
@@ -489,149 +489,105 @@ def generate_pipeline_architecture(lang: str, out_path: Path) -> None:
         ms=10.5,
     )
 
-    # ---------------- COL 4 ----------------
+    # ---------------- COL 4 (Stage II: 3-box vertical flow) ----------------
     b4_x, b4_w = c4_x + pad_in, c4_w - 2 * pad_in
-    b4a_h, b4b_h, b4c_h, b4d_h = 2.66, 1.26, 1.56, 1.26
-    b4_gap = (top_inner - 0.18 - (b4a_h + b4b_h + b4c_h + b4d_h)) / 3.0
+    b4a_h, b4b_h, b4c_h = 2.05, 2.05, 2.05
+    badge_h = 0.46
+    b4_gap = (top_inner - 0.20 - badge_h - (b4a_h + b4b_h + b4c_h)) / 3.0
 
     b4a_y = top_inner - b4a_h
-    _draw_box(ax, b4_x, b4a_y, b4_w, b4a_h, fc="#F0FDF4", ec="#16A34A", lw=1.5, r=0.08, zorder=3)
+    _draw_box(ax, b4_x, b4a_y, b4_w, b4a_h, fc="white", ec="#0284C7", lw=1.1, r=0.08, zorder=3)
     ax.text(
         b4_x + b4_w / 2,
-        b4a_y + b4a_h - 0.34,
-        "GIAI ĐOẠN II: HIỆU CHUẨN\n& LỌC SỰ KIỆN" if is_vi else "STAGE II: CALIBRATION\n& EVENT FILTERING",
-        ha="center",
-        va="center",
-        fontsize=10.5,
-        fontweight="bold",
-        color="#15803D",
-        linespacing=1.08,
-        zorder=4,
-    )
-    ax.text(
-        b4_x + b4_w / 2,
-        b4a_y + 1.56,
-        "LayerNorm →\nLinear(64→32)\n→ ReLU → Lin(32→2)",
-        ha="center",
-        va="center",
-        fontsize=FS_BODY,
-        color="#374151",
-        linespacing=1.10,
-        zorder=4,
-    )
-    ax.text(
-        b4_x + b4_w / 2,
-        b4a_y + 0.78,
-        "Hiệu chuẩn ($K=500$):\n"
-        + r"$\tau_{\mathrm{target}}=\operatorname{Q}_{1-\alpha}(s_k)$"
-        if is_vi
-        else "Calibration ($K=500$):\n"
-        + r"$\tau_{\mathrm{target}}=\operatorname{Q}_{1-\alpha}(s_k)$",
-        ha="center",
-        va="center",
-        fontsize=FS_BODY,
-        color="#1D4ED8",
-        linespacing=1.12,
-        zorder=4,
-    )
-    ax.text(
-        b4_x + b4_w / 2,
-        b4a_y + 0.24,
-        r"$m$-trong-$n$ ($2/3, 3/5$) $\to \widehat{Y}_k$"
-        if is_vi
-        else r"$m$-of-$n$ ($2/3, 3/5$) $\to \widehat{Y}_k$",
-        ha="center",
-        va="center",
-        fontsize=11.6,
-        fontweight="bold",
-        color="#B91C1C",
-        zorder=4,
-    )
-
-    b4b_y = b4a_y - b4_gap - b4b_h
-    _draw_box(ax, b4_x, b4b_y, b4_w, b4b_h, fc="white", ec="#0284C7", lw=1.0, r=0.08, zorder=3)
-    ax.text(
-        b4_x + b4_w / 2,
-        b4b_y + b4b_h - 0.34,
-        "Chẩn Đoán Đa Nguồn\n(LOVO-cAdv)" if is_vi else "Multi-Source Diagnostic\n(LOVO-cAdv)",
+        b4a_y + b4a_h - 0.32,
+        "Đầu Phân Loại Nhị Phân" if is_vi else "Binary Classifier Head",
         ha="center",
         va="center",
         fontsize=FS_SUB,
         fontweight="bold",
         color="#111827",
-        linespacing=1.10,
+        zorder=4,
+    )
+    ax.text(
+        b4_x + b4_w / 2,
+        b4a_y + 1.15,
+        r"LayerNorm $\to$ Linear(64 $\to$ 32)" + "\n" + r"$\to$ ReLU $\to$ Linear(32 $\to$ 2)",
+        ha="center",
+        va="center",
+        fontsize=FS_BODY,
+        color="#374151",
+        linespacing=1.14,
+        zorder=4,
+    )
+    ax.text(
+        b4_x + b4_w / 2,
+        b4a_y + 0.38,
+        r"Điểm rủi ro: $s_k = P(Y_k=1 \mid X_k)$" if is_vi else r"Risk score: $s_k = P(Y_k=1 \mid X_k)$",
+        ha="center",
+        va="center",
+        fontsize=FS_BODY,
+        fontweight="bold",
+        color="#1D4ED8",
+        zorder=4,
+    )
+
+    b4b_y = b4a_y - b4_gap - b4b_h
+    _draw_box(ax, b4_x, b4b_y, b4_w, b4b_h, fc="#F0FDF4", ec="#16A34A", lw=1.3, r=0.08, zorder=3)
+    ax.text(
+        b4_x + b4_w / 2,
+        b4b_y + b4b_h - 0.32,
+        "Hiệu Chuẩn Tiền Tố Lành Tính" if is_vi else "Benign Prefix Calibration",
+        ha="center",
+        va="center",
+        fontsize=FS_SUB,
+        fontweight="bold",
+        color="#15803D",
+        zorder=4,
+    )
+    ax.text(
+        b4_x + b4_w / 2,
+        b4b_y + 1.15,
+        (r"Khởi động đích: $K = 500$ cửa sổ" + "\n" + r"($N_{\mathrm{pool}} \in [3.539, 6.000]$)"
+        if is_vi
+        else r"Target warmup: $K = 500$ windows" + "\n" + r"($N_{\mathrm{pool}} \in [3,539, 6,000]$)"),
+        ha="center",
+        va="center",
+        fontsize=FS_BODY,
+        color="#374151",
+        linespacing=1.14,
         zorder=4,
     )
     ax.text(
         b4_x + b4_w / 2,
         b4b_y + 0.38,
-        r"GRL + 2 đầu MLP;" + "\n" + r"định tuyến nhãn $Y$"
-        if is_vi
-        else r"GRL + dual MLP heads;" + "\n" + r"routed by label $Y$",
+        r"$\tau_{\mathrm{target}} = \operatorname{Q}_{1-\alpha}(s_k)$" + (r" (FAR $\leq \alpha$)" if is_vi else r" (FAR $\leq \alpha$)"),
         ha="center",
         va="center",
         fontsize=FS_BODY,
-        color="#374151",
-        linespacing=1.14,
+        fontweight="bold",
+        color="#1D4ED8",
         zorder=4,
     )
 
     b4c_y = b4b_y - b4_gap - b4c_h
-    _draw_box(ax, b4_x, b4c_y, b4_w, b4c_h, fc="white", ec="#0284C7", lw=1.0, r=0.08, zorder=3)
+    _draw_box(ax, b4_x, b4c_y, b4_w, b4c_h, fc="white", ec="#0284C7", lw=1.1, r=0.08, zorder=3)
     ax.text(
         b4_x + b4_w / 2,
-        b4c_y + b4c_h - 0.34,
-        "Chẩn Đoán Triệt Tiêu\n(LEACE / INLP8)" if is_vi else "Erasure Diagnostic\n(LEACE / INLP8)",
+        b4c_y + b4c_h - 0.32,
+        "Bộ Lọc Sự Kiện Trượt" if is_vi else "Causal Event Filter",
         ha="center",
         va="center",
         fontsize=FS_SUB,
         fontweight="bold",
         color="#111827",
-        linespacing=1.08,
         zorder=4,
     )
     ax.text(
         b4_x + b4_w / 2,
-        b4c_y + 0.78,
-        r"$\Sigma_s^{-1/2} \to$ LEACE/INLP8",
-        ha="center",
-        va="center",
-        fontsize=FS_BODY,
-        color="#374151",
-        zorder=4,
-    )
-    ax.text(
-        b4_x + b4_w / 2,
-        b4c_y + 0.32,
-        r"$E(X_k)=$" + "\n" + r"$\frac{1}{d}\|\Sigma_s^{-1/2}(z_k-\mu_b)\|_2^2$",
-        ha="center",
-        va="center",
-        fontsize=FS_BODY,
-        color="#1D4ED8",
-        linespacing=1.14,
-        zorder=4,
-    )
-
-    b4d_y = b4c_y - b4_gap - b4d_h
-    _draw_box(ax, b4_x, b4d_y, b4_w, b4d_h, fc="white", ec="#0284C7", lw=1.0, r=0.08, zorder=3)
-    ax.text(
-        b4_x + b4_w / 2,
-        b4d_y + b4d_h - 0.34,
-        "Chẩn Đoán Rò Rỉ Xe\n(Linear Probes)" if is_vi else "Identity Leakage Probe\n(Linear Probes)",
-        ha="center",
-        va="center",
-        fontsize=FS_SUB,
-        fontweight="bold",
-        color="#111827",
-        linespacing=1.10,
-        zorder=4,
-    )
-    ax.text(
-        b4_x + b4_w / 2,
-        b4d_y + 0.36,
-        r"Probe Tuyến tính/MLP:" + "\n" + r"rò rỉ xe & tách lớp ($z_k$)"
+        b4c_y + 1.15,
+        ("Lọc $m$-trong-$n$ trượt nhân quả\n(cấu hình 2/3 hoặc 3/5)"
         if is_vi
-        else r"Linear / MLP Probes:" + "\n" + r"vehicle & attack ($z_k$)",
+        else "Causal $m$-out-of-$n$ filter\n(2/3 or 3/5 config)"),
         ha="center",
         va="center",
         fontsize=FS_BODY,
@@ -639,31 +595,73 @@ def generate_pipeline_architecture(lang: str, out_path: Path) -> None:
         linespacing=1.14,
         zorder=4,
     )
+    ax.text(
+        b4_x + b4_w / 2,
+        b4c_y + 0.38,
+        "Cắt giảm FAR thêm gần 5 lần" if is_vi else "Suppresses FAR by ~5x",
+        ha="center",
+        va="center",
+        fontsize=FS_BODY,
+        color="#B91C1C",
+        fontweight="bold",
+        zorder=4,
+    )
 
-    # Clean orthogonal bus routing from z_k (Col 3 Stage 4) -> Col 4 boxes (no box edge crossing)
+    badge_y = b4c_y - b4_gap - badge_h
+    _draw_box(ax, b4_x, badge_y, b4_w, badge_h, fc="#DCFCE7", ec="#16A34A", lw=1.2, r=0.08, zorder=3)
+    ax.text(
+        b4_x + b4_w / 2,
+        badge_y + badge_h / 2,
+        r"$\widehat{Y}_k \in \{0, 1\}$: CẢNH BÁO BẢO VỆ" if is_vi else r"$\widehat{Y}_k \in \{0, 1\}$: SECURE ALERT",
+        ha="center",
+        va="center",
+        fontsize=FS_SUB,
+        fontweight="bold",
+        color="#166534",
+        zorder=4,
+    )
+
+    # Downward flow in Col 4
+    _draw_arrow(
+        ax,
+        (b4_x + b4_w / 2, b4a_y),
+        (b4_x + b4_w / 2, b4b_y + b4b_h),
+        color="#0369A1",
+        lw=1.5,
+        ms=9.5,
+    )
+    _draw_arrow(
+        ax,
+        (b4_x + b4_w / 2, b4b_y),
+        (b4_x + b4_w / 2, b4c_y + b4c_h),
+        color="#16A34A",
+        lw=1.5,
+        ms=9.5,
+    )
+    _draw_arrow(
+        ax,
+        (b4_x + b4_w / 2, b4c_y),
+        (b4_x + b4_w / 2, badge_y + badge_h),
+        color="#16A34A",
+        lw=1.5,
+        ms=9.5,
+    )
+
+    # Route z_k from Col 3 Stage 4 to Col 4 Box 1
     zk_x = b3_x + b3_w
     zk_y = s3_boxes[3][1] + s3_boxes[3][3] / 2
-    bus_x = gap34_x + gap34_w * 0.45
+    bus_x = gap34_x + gap34_w / 2
+    b4a_mid_y = b4a_y + b4a_h / 2
     ax.plot([zk_x, bus_x], [zk_y, zk_y], color="#0369A1", lw=1.6, zorder=5)
-    targets = [
-        (b4a_y + b4a_h * 0.50, 1.8, "-", "#0369A1"),
-        (b4b_y + b4b_h * 0.50, 1.3, "-", "#0284C7"),
-        (b4c_y + b4c_h * 0.50, 1.2, "--", "#0284C7"),
-        (b4d_y + b4d_h * 0.50, 1.2, "--", "#0284C7"),
-    ]
-    top_ty = targets[0][0]
-    bot_ty = targets[-1][0]
-    ax.plot([bus_x, bus_x], [min(zk_y, bot_ty), max(zk_y, top_ty)], color="#0284C7", lw=1.3, zorder=5)
-    for ty, lw_val, ls_val, col_val in targets:
-        _draw_arrow(
-            ax,
-            (bus_x, ty),
-            (b4_x, ty),
-            color=col_val,
-            lw=lw_val,
-            ls=ls_val,
-            ms=9.5,
-        )
+    ax.plot([bus_x, bus_x], [zk_y, b4a_mid_y], color="#0369A1", lw=1.6, zorder=5)
+    _draw_arrow(
+        ax,
+        (bus_x, b4a_mid_y),
+        (b4_x, b4a_mid_y),
+        color="#0369A1",
+        lw=1.6,
+        ms=10.0,
+    )
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, dpi=300, bbox_inches="tight", pad_inches=0.03)

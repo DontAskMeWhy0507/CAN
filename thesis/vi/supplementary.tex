@@ -1,0 +1,774 @@
+\documentclass[12pt, a4paper, reqno, oneside]{book}
+\usepackage[left=2.5cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{amsmath,amsxtra,amssymb,latexsym, amscd,amsthm}
+\usepackage{microtype}
+\usepackage{indentfirst}
+\usepackage{color}
+\usepackage{empheq}
+\usepackage{iftex}
+\ifXeTeX
+  \usepackage{fontspec}
+  \setmainfont[Ligatures=TeX]{Times New Roman}
+  \setsansfont[Ligatures=TeX]{Arial}
+  \usepackage[vietnamese,english]{babel}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T5]{fontenc}
+  \usepackage[vietnamese]{babel}
+\fi
+% \usepackage{amsmath} % đã được nạp ở dòng 3
+\usepackage[mathscr]{eucal}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{listings}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{verbatim}
+\usepackage{tikz}
+\usetikzlibrary{calc,positioning,arrows.meta,shapes.geometric,fit,backgrounds,decorations.pathreplacing}
+\usepackage{tkz-graph}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+% Note: subfigure is legacy and conflicts with modern subcaption; kept commented for compatibility
+% \usepackage{subfigure}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{rotating}
+\usepackage{longtable}
+\usepackage{supertabular}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage[normalem]{ulem}
+\usepackage{pdfpages}
+\usepackage[square,numbers]{natbib}
+\usepackage{booktabs}
+\usepackage{chngcntr}
+\usepackage{tabularray}
+\usepackage{placeins}
+\usepackage{enumitem}
+\usepackage{seqsplit}
+\usepackage{needspace}
+\usepackage[labelfont=bf, textfont=it, justification=centering]{caption}
+\captionsetup{labelfont={color=blue, bf}, textfont=it}
+\captionsetup[table]{position=top}
+\captionsetup[figure]{position=bottom}
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\usepackage[hyphens,spaces,obeyspaces]{url}
+\usepackage{xurl}
+\usepackage[colorlinks=true,bookmarksopen,bookmarksnumbered,citecolor=blue,linkcolor=blue,urlcolor=blue,pdftitle={Biểu diễn cấu trúc cho hệ thống phát hiện xâm nhập mạng CAN bus đa phương tiện},pdfauthor={Vũ Tiến Tuấn Trung}]{hyperref}
+\def\UrlBreaks{\do\/\do-\do_\do.\do=\do?\do&\do~}
+\def\UrlNoBreaks{\do\(\do\[\do\{\do\<\do\:}
+\setlength{\emergencystretch}{1.5em}
+
+\renewcommand{\baselinestretch}{1.25}
+\setlength{\headheight}{15pt}
+\setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{4pt}
+\setlength{\belowcaptionskip}{4pt}
+\titleformat{\section}{\normalfont\Large\bfseries\raggedright}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries\raggedright}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\bfseries\raggedright}{\thesubsubsection}{1em}{}
+
+\fancyhf{}
+\fancyhead[L]{\small{\leftmark}}
+\fancyfoot[C]{\thepage}
+
+\newcommand\chap[1]{%
+  \clearpage\phantomsection%
+  \chapter*{#1}%
+  \addcontentsline{toc}{chapter}{#1}%
+  \markboth{#1}{}%
+}
+\newcommand\sect[1]{%
+  \Needspace{5\baselineskip}%
+  \phantomsection%
+  \addcontentsline{toc}{section}{#1}%
+  \section*{#1}%
+}
+
+\renewcommand{\theequation}{\thechapter.\arabic{equation}}
+\counterwithin{algorithm}{chapter}
+\renewcommand{\thealgorithm}{\thechapter.\arabic{algorithm}}
+\floatname{algorithm}{Thuật toán}
+\renewcommand{\listalgorithmname}{Danh sách thuật toán}
+\algrenewcommand\algorithmicrequire{\textbf{Đầu vào:}}
+\algrenewcommand\algorithmicensure{\textbf{Đầu ra:}}
+\newtheorem{lemma}{\bf Bổ đề}[chapter]
+\newtheorem{theorem}{\bf Định lý}[chapter]
+\newtheorem{proposition}{\bf Mệnh đề}[chapter]
+\newtheorem{corollary}{\bf Hệ quả}[chapter]
+\newtheorem{definition}{\bf Định nghĩa}[chapter]
+\newtheorem{remark}{\bf Chú ý}[section]
+
+% Mức tiêu đề sâu (subsubsubsection, paragraph)
+\titleclass{\subsubsubsection}{straight}[\subsection]
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+\renewcommand\theparagraph{\thesubsubsubsection.\arabic{paragraph}}
+
+\titleformat{\subsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsection}
+  {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}%
+  {3.25ex \@plus1ex \@minus.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{6}{\parindent}%
+  {3.25ex \@plus1ex \@minus .2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\def\toclevel@subsubsubsection{4}
+\def\toclevel@paragraph{5}
+\def\toclevel@paragraph{6}
+\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
+\def\l@paragraph{\@dottedtocline{5}{10em}{5em}}
+\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
+\makeatother
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{2}
+
+% Thư mục hình ảnh
+\graphicspath{{./figs/}}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=single,
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  stepnumber=1, 
+}
+
+\lstdefinestyle{customasm}{
+  belowcaptionskip=1\baselineskip,
+  frame=single,
+  xleftmargin=\parindent,
+  language=[x86masm]Assembler,
+  basicstyle=\footnotesize\ttfamily,
+  commentstyle=\itshape\color{purple!40!black},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  stepnumber=1, 
+}
+
+\lstset{escapechar=@,style=customc}
+
+\definecolor{processblue}{cmyk}{0.96,0,0,0}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\definecolor{eclipseStrings}{RGB}{42,0.0,255}
+\definecolor{eclipseKeywords}{RGB}{127,0,85}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    commentstyle=\color{eclipseStrings},
+    stringstyle=\color{eclipseKeywords},
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    string=[s]{"}{"},
+    comment=[l]{:\ "},
+    morecomment=[l]{:"},
+    literate=
+        *{0}{{{\color{numb}0}}}{1}
+         {1}{{{\color{numb}1}}}{1}
+         {2}{{{\color{numb}2}}}{1}
+         {3}{{{\color{numb}3}}}{1}
+         {4}{{{\color{numb}4}}}{1}
+         {5}{{{\color{numb}5}}}{1}
+         {6}{{{\color{numb}6}}}{1}
+         {7}{{{\color{numb}7}}}{1}
+         {8}{{{\color{numb}8}}}{1}
+         {9}{{{\color{numb}9}}}{1}
+}
+
+\DeclareRobustCommand{\code}[1]{\nolinkurl{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+
+\begin{document}
+\selectlanguage{vietnamese}
+
+\frontmatter
+\begin{titlepage}
+\centering
+\vspace*{2cm}
+{\bfseries\LARGE ĐẠI HỌC QUỐC GIA HÀ NỘI\\ TRƯỜNG ĐẠI HỌC CÔNG NGHỆ\par}
+\vspace*{2.5cm}
+{\bfseries\huge TÀI LIỆU BỔ TRỢ KHÓA LUẬN\par}
+\vspace*{0.8cm}
+{\Large Chi tiết tái lập, kiểm toán độ nhạy và đối chứng mở rộng cho khóa luận tốt nghiệp\par}
+\vspace*{1.5cm}
+{\large \textbf{Đề tài:} Biểu diễn cấu trúc cho hệ thống phát hiện xâm nhập mạng CAN bus đa phương tiện\par}
+\vspace*{2cm}
+{\large \textbf{Sinh viên thực hiện:} Vũ Tiến Tuấn Trung\\
+\textbf{Giảng viên hướng dẫn:} TS. Lê Khánh Trình\par}
+\vfill
+{\large Hà Nội, năm 2026\par}
+\end{titlepage}
+
+\tableofcontents
+\listoftables
+\clearpage
+
+\mainmatter
+\appendix
+\chapter{Chi tiết tái lập và nguồn gốc bằng chứng}\label{app:reproducibility}
+\section{Nguồn gốc bằng chứng và quy mô thực nghiệm}\label{sec:app-provenance}
+Ma trận chính gồm 60 đơn vị IDS (4 set $\times$ 3 seed $\times$ 5 phương pháp). Các vòng phân tích bổ sung và mở rộng hậu nghiệm bao gồm: 144 lượt huấn luyện mới cùng 24 baseline tái sử dụng trong nghiên cứu cắt bỏ và độ nhạy cửa sổ ($W \in \{32, 64, 128\}$); 12 lượt huấn luyện \code{Structural + MixStyle}; lưới quét hiệu chuẩn nền lành tính ($K \in \{200, 500, 1000\}$ và kiểm thử đầu độc/gộp $m$-of-$n$ trên các checkpoint đóng băng); 48 lượt huấn luyện học đa nguồn LOVO kèm đối kháng có điều kiện DANN (\code{multisource\_lovo\_v2}); 96 pipeline làm trắng nền lành tính kết hợp triệt tiêu tuyến tính LEACE/INLP8 và năng lượng Mahalanobis (\code{benign\_invariant\_pipeline}); cùng 120 lượt huấn luyện kiểm chứng bổ sung (48 lượt đối chứng Timed/Content trên 136 tệp đơn điệu, 48 lượt cửa sổ đẳng lượng $64.000$ khung, và 24 lượt phương sai lấy mẫu reservoir đa seed). Mọi phép thử 57 capture ngoại bộ không tương đương 57 phiên lái độc lập. Toàn bộ bảng số liệu chi tiết, khoảng tin cậy bootstrap, phân phối điểm số nguồn, mã băm kiểm chứng tính toàn vẹn và danh mục loại trừ dữ liệu đầu vào đều được lưu trữ có hệ thống trong hồ sơ tái lập tại Phụ lục này (Mục~\ref{subsec:app-hashes}--\ref{sec:app-bd-per-file-counts}).
+
+\subsection{Mã băm toàn vẹn và phiên bản mã nguồn tham chiếu}\label{subsec:app-hashes}
+Để đảm bảo tính toàn vẹn và khả năng tái lập bit-to-bit tuyệt đối, mã băm SHA-256 của các tệp kê khai dữ liệu và mã commit Git của các phương pháp đối thủ được ghim cố định như sau:
+\begin{itemize}
+\item \textbf{Manifest cache dữ liệu CTT:} \texttt{\seqsplit{03a6bbf16efb4f583ca5566025c8bdc3cc0b65a7138a0a29f652505b2c367f29}}
+\item \textbf{CANBERT+ commit:} \texttt{\seqsplit{4c81d9b08e6e0c17b8e70bdab518209e399f0dbe}}
+\item \textbf{CANLP commit:} \texttt{\seqsplit{8df8bb74a7aa9925187f4faff05d6c8b824ba5d1}}
+\item \textbf{CrySyS-AssocRules commit:} \texttt{\seqsplit{59b9f29f81b0f56f49c218cb1bd8e97552b8d22c}}
+\end{itemize}
+
+\section{Đặc tả mở rộng sử dụng thông tin thời gian}
+Thiết kế timed v2.1 có raw 29/structural 32 chiều (bổ sung $\Delta t$ và $\Delta t_{\text{ID}}$). Ma trận chính sử dụng nhánh content-only (28/30 chiều) để đảm bảo an toàn dữ liệu trước 100 tệp có timestamp đi lùi; kết quả thực nghiệm có đối chứng đầy đủ của nhánh timed trên 136 tệp đơn điệu nghiêm ngặt được báo cáo độc lập tại Mục~\ref{subsec:timed-vs-content} (Bảng~\ref{tab:monotonic-timed-vs-content}) thuộc Chương~\ref{chap:results}.
+\section{Kiểm chứng tính nhất quán đặc trưng bằng ví dụ giải tích}
+Với $W=4$ và ID (A,B,A,A), tần suất lần lượt là (3/4,1/4,3/4,3/4); hạng xuất hiện đầu tiên chia số ID là (0,1/2,0,0), chia $W$ là (0,1/4,0,0). Các cặp AB,BA,AA xuất hiện một lần nên đặc trưng chuyển tiếp là (0,1/3,1/3,1/3). Payload một byte (10,20,13,15) cho delta cùng ID (0,0,3/255,2/255). Lịch sử tiếp tục qua biên cửa sổ/chunk và được reset khi đổi file. Không cần dựng timestamp để tính các giá trị này.
+\section{Phân biệt quy trình kiểm tra kỹ thuật và kết quả đánh giá mô hình}
+Các bảng kiểm tra trung gian và kiểm toán công thức được tách bạch hoàn toàn khỏi kết quả đánh giá chính thức của mô hình. Nghiên cứu phân biệt rõ số dòng tệp CSV (bao gồm dòng tiêu đề) với số khung tin CAN thực tế, cũng như quyết định ở cấp khung tin so với cấp cửa sổ $W=64$. Các bước kiểm thử phần mềm hay chuẩn hóa công thức độ đo chỉ nhằm bảo đảm tính chính xác kỹ thuật, không tự động cấu thành bằng chứng về năng lực phát hiện xâm nhập của mô hình.
+Kiểm toán số đếm công bố dùng đúng phụ lục arXiv v1~\cite{lampe2023appendix}, không mặc định phụ lục journal giống hệt. Các số theo frame đó không được dùng để xếp hạng với quyết định W64.
+
+\section{Tổng hợp Linear Probe trên toàn bộ 10 biến thể biểu diễn}\label{sec:app-96ckpt-probes}
+Bảng~\ref{tab:app-96ckpt-probes} báo cáo trung bình và độ lệch chuẩn giải mã tuyến tính trên 96+24 checkpoint của toàn bộ 10 biến thể biểu diễn nội dung ($4\text{ set} \times 3\text{ seed} \times 10\text{ biểu diễn} \times 2\text{ đích} = 240$ phép đo).
+
+\begin{longtable}{P{5.4cm}P{3.4cm}P{3.4cm}}
+\caption[Tổng hợp thăm dò tuyến tính trên 10 biến thể biểu diễn nội dung]{Kết quả thăm dò tuyến tính giải mã nhãn xe và tấn công trên 10 biến thể biểu diễn nội dung (trung bình $\pm$ độ lệch chuẩn Balanced Accuracy qua bốn tập và ba hạt giống)}\label{tab:app-96ckpt-probes}\\\toprule
+Biểu diễn & Probe xe (cơ hội 0,25) & Probe tấn công (cơ hội 0,50)\\\midrule
+\endfirsthead\caption[]{(tiếp theo)}\\\toprule
+Biểu diễn & Probe xe (cơ hội 0,25) & Probe tấn công (cơ hội 0,50)\\\midrule
+\endhead
+\code{raw} (28D) & 0,9925 $\pm$ 0,0099 & 0,6419 $\pm$ 0,0169\\
+\code{id\_only} (11D) & 0,9908 $\pm$ 0,0088 & 0,6531 $\pm$ 0,0165\\
+\code{raw\_plus\_structural} (41D) & 0,9915 $\pm$ 0,0069 & 0,7451 $\pm$ 0,0255\\
+\code{structural\_no\_payload} (22D) & 0,9728 $\pm$ 0,0023 & \textbf{0,7780 $\pm$ 0,0214}\\
+\code{raw\_no\_id} (17D) & 0,9693 $\pm$ 0,0246 & 0,6449 $\pm$ 0,0157\\
+\code{structural\_no\_delta} (21D) & 0,9652 $\pm$ 0,0225 & 0,6874 $\pm$ 0,0167\\
+\code{structural\_no\_local} (27D) & 0,9633 $\pm$ 0,0125 & 0,7502 $\pm$ 0,0392\\
+\code{structural\_no\_transition} (29D) & 0,9531 $\pm$ 0,0143 & 0,7701 $\pm$ 0,0379\\
+\code{structural\_no\_rank\_w} (29D) & 0,9516 $\pm$ 0,0156 & 0,7669 $\pm$ 0,0362\\
+\textbf{\code{structural}} (30D) & \textbf{0,9488 $\pm$ 0,0121} & 0,7669 $\pm$ 0,0271\\
+\bottomrule\end{longtable}
+
+\section{Kiểm toán chi tiết kết quả B và D theo từng set và seed}\label{sec:app-comparison-sets}
+{\small\renewcommand{\arraystretch}{0.88}\setlength{\tabcolsep}{6pt}
+\begin{longtable}{P{1.6cm}P{4.2cm}C{2.8cm}C{2.8cm}C{2.8cm}}
+\caption[Phân rã Average Precision (AP) và chênh lệch ghép cặp $\Delta\text{AP}$ theo từng tập dữ liệu]{Phân rã Average Precision (AP) và chênh lệch ghép cặp $\Delta\text{AP}$ giữa Structural và Raw qua 4 tập dữ liệu đối chuẩn (trung bình $\pm$ độ lệch chuẩn qua ba hạt giống ngẫu nhiên)}\label{tab:per-set-ap-breakdown}\\\toprule
+\multicolumn{5}{l}{\textbf{Bảng A.2a: Điều kiện B (Chuyển giao khác dòng xe, cùng họ tấn công)}} \\\midrule
+Tập & Cặp xe (Nguồn $\to$ Đích) & Raw TF & Structural TF & $\Delta\text{AP}$ \\\midrule
+\code{set\_01} & Impala $\to$ Silverado & $0{,}9498 \pm 0{,}0016$ & $0{,}8515 \pm 0{,}1418$ & $-0{,}0983 \pm 0{,}1408$ \\
+\code{set\_02} & Traverse $\to$ Forester & $0{,}1932 \pm 0{,}1204$ & $0{,}4176 \pm 0{,}1136$ & $+0{,}2244 \pm 0{,}2325$ \\
+\code{set\_03} & Silverado $\to$ Forester & $0{,}2631 \pm 0{,}0263$ & $0{,}7198 \pm 0{,}0516$ & $+0{,}4566 \pm 0{,}0778$ \\
+\code{set\_04} & Forester $\to$ Traverse & $0{,}1062 \pm 0{,}0427$ & $0{,}2329 \pm 0{,}0487$ & $+0{,}1267 \pm 0{,}0071$ \\\midrule
+Trung bình & 4 tập / 3 xe đích & $0{,}3781$ & $0{,}5554$ & $\mathbf{+0{,}1774}$ \\\midrule\midrule
+\multicolumn{5}{l}{\textbf{Bảng A.2b: Điều kiện D (Chuyển giao khác dòng xe \& khác họ tấn công)}} \\\midrule
+Tập & Cặp xe (Nguồn $\to$ Đích) & Raw TF & Structural TF & $\Delta\text{AP}$ \\\midrule
+\code{set\_01} & Impala $\to$ Silverado & $0{,}0523 \pm 0{,}0382$ & $0{,}0163 \pm 0{,}0017$ & $-0{,}0360 \pm 0{,}0378$ \\
+\code{set\_02} & Traverse $\to$ Forester & $0{,}0107 \pm 0{,}0010$ & $0{,}0858 \pm 0{,}0339$ & $+0{,}0751 \pm 0{,}0333$ \\
+\code{set\_03} & Silverado $\to$ Forester & $0{,}2285 \pm 0{,}0082$ & $0{,}5572 \pm 0{,}0857$ & $+0{,}3287 \pm 0{,}0836$ \\
+\code{set\_04} & Forester $\to$ Traverse & $0{,}3676 \pm 0{,}0901$ & $0{,}6834 \pm 0{,}0885$ & $+0{,}3158 \pm 0{,}0269$ \\\midrule
+Trung bình & 4 tập / 3 xe đích & $0{,}1648$ & $0{,}3357$ & $\mathbf{+0{,}1709}$ \\\bottomrule
+\end{longtable}}
+
+Bảng~\ref{tab:comparison-sets} tổng hợp kết quả chi tiết của từng set dữ liệu tại Điều kiện B và D qua 3 seed cho các phương pháp nơ-ron hoạt động. Đối thủ \code{CrySyS-AssocRules/W64} suy biến ngưỡng nguồn tại $1 + \varepsilon_{\text{mach}} > 1{,}0$ cho $\text{Recall}=0{,}0000 \pm 0{,}0000$ và $\text{FAR}=0{,}00$ trên mọi set.
+
+{\small\setlength{\tabcolsep}{3pt}
+\begin{longtable}{P{1.4cm}P{0.7cm}P{3.4cm}P{3.4cm}P{3.4cm}P{2.6cm}}
+\caption[Kết quả chi tiết tại Điều kiện B và D theo từng tập dữ liệu]{Kết quả chi tiết của các phương pháp nơ-ron tại Điều kiện B và D phân rã theo từng tập dữ liệu (Recall trung bình $\pm$ độ lệch chuẩn ba hạt giống; FAR trên $100.000$ cửa sổ trong ngoặc)}\label{tab:comparison-sets}\\\toprule
+Set & ĐK & Raw TF & Structural TF & CANBERT+ adapted & CANLP-char-DNN\\\midrule
+\endfirsthead\caption[]{(tiếp theo)}\\\toprule
+Set & ĐK & Raw TF & Structural TF & CANBERT+ adapted & CANLP-char-DNN\\\midrule
+\endhead
+\code{set\_01} & B & 0,8165 $\pm$ 0,1960 (169) & 0,4950 $\pm$ 0,3875 (32) & 0,5730 $\pm$ 0,5111 (61471) & 0,1645 $\pm$ 0,0329 (21742)\\
+\code{set\_01} & D & 0,0714 $\pm$ 0,1170 (10209) & 0,0005 $\pm$ 0,0008 (77) & 0,2344 $\pm$ 0,3023 (20027) & 0,0540 $\pm$ 0,0078 (4626)\\
+\code{set\_02} & B & 1,0000 $\pm$ 0,0000 (100000) & 0,9663 $\pm$ 0,0366 (85422) & 0,9984 $\pm$ 0,0024 (99620) & 0,9772 $\pm$ 0,0059 (97042)\\
+\code{set\_02} & D & 1,0000 $\pm$ 0,0000 (100000) & 0,8478 $\pm$ 0,1843 (84374) & 0,9943 $\pm$ 0,0084 (99499) & 0,9426 $\pm$ 0,0055 (97183)\\
+\code{set\_03} & B & 0,6001 $\pm$ 0,3550 (61037) & 0,9741 $\pm$ 0,0290 (86687) & 0,0027 $\pm$ 0,0024 (35) & 0,0000 $\pm$ 0,0000 (0)\\
+\code{set\_03} & D & 0,5744 $\pm$ 0,4664 (61722) & 0,9469 $\pm$ 0,0524 (91180) & 0,0004 $\pm$ 0,0006 (43) & 0,0000 $\pm$ 0,0000 (0)\\
+\code{set\_04} & B & 1,0000 $\pm$ 0,0000 (100000) & 0,5179 $\pm$ 0,2763 (37705) & 0,9838 $\pm$ 0,0276 (98249) & 0,0000 $\pm$ 0,0000 (0)\\
+\code{set\_04} & D & 1,0000 $\pm$ 0,0000 (100000) & 0,7827 $\pm$ 0,0870 (42942) & 0,9906 $\pm$ 0,0163 (98485) & 0,0000 $\pm$ 0,0000 (0)\\
+\bottomrule
+\multicolumn{6}{P{15.3cm}}{\footnotesize Giá trị trong bảng là Recall trung bình $\pm$ độ lệch chuẩn ba seed; số trong ngoặc là FAR trên 100.000 cửa sổ lành.}
+\end{longtable}}
+
+\section{Khoảng bootstrap recall 95\% có điều kiện theo file}\label{sec:app-comparison-ci}
+Bảng~\ref{tab:comparison-ci} cung cấp khoảng tin cậy bootstrap 95\% có điều kiện theo capture cho chênh lệch recall giữa Structural và Raw ($\Delta R = \text{Structural} - \text{Raw}$).
+
+{\small\setlength{\tabcolsep}{3pt}
+\begin{longtable}{P{1.4cm}P{1.0cm}P{1.4cm}P{4.0cm}P{1.4cm}P{4.0cm}}
+\caption[Khoảng tin cậy bootstrap 95\% chênh lệch Recall giữa Structural và Raw]{Khoảng tin cậy bootstrap 95\% có điều kiện theo tệp cho chênh lệch Recall giữa Structural và Raw ($\Delta R = \text{Structural} - \text{Raw}$) tại Điều kiện B và D}\label{tab:comparison-ci}\\\toprule
+Set & Seed & $\Delta R_B$ & 95\% CI (Điều kiện B) & $\Delta R_D$ & 95\% CI (Điều kiện D)\\\midrule
+\endfirsthead\caption[]{(tiếp theo)}\\\toprule
+Set & Seed & $\Delta R_B$ & 95\% CI (Điều kiện B) & $\Delta R_D$ & 95\% CI (Điều kiện D)\\\midrule
+\endhead
+\code{set\_01} & 42 & -0,8782 & [-0,9602, -0,0012] (8 file) & -0,2064 & [-0,3391, -0,1134] (12 file)\\
+\code{set\_01} & 43 & 0,1820 & [0,0000, 0,1990] (8 file) & -0,0005 & [-0,0055, 0,0029] (12 file)\\
+\code{set\_01} & 44 & -0,2684 & [-0,2936, 0,0000] (8 file) & -0,0057 & [-0,0171, 0,0000] (12 file)\\
+\code{set\_02} & 42 & -0,0019 & [-0,0042, 0,0000] (12 file) & -0,0181 & [-0,0541, -0,0046] (8 file)\\
+\code{set\_02} & 43 & -0,0737 & [-0,1417, -0,0065] (12 file) & -0,3623 & [-0,6813, -0,1224] (8 file)\\
+\code{set\_02} & 44 & -0,0256 & [-0,0487, -0,0027] (12 file) & -0,0761 & [-0,1335, -0,0217] (8 file)\\
+\code{set\_03} & 42 & 0,1390 & [0,0407, 0,3676] (10 file) & 0,1164 & [0,0700, 0,1790] (14 file)\\
+\code{set\_03} & 43 & 0,1993 & [-0,0147, 0,3589] (10 file) & 0,0936 & [-0,0181, 0,1775] (14 file)\\
+\code{set\_03} & 44 & 0,7837 & [0,4389, 0,9840] (10 file) & 0,9076 & [0,8079, 0,9383] (14 file)\\
+\code{set\_04} & 42 & -0,2963 & [-0,3695, -0,0491] (14 file) & -0,1661 & [-0,4748, -0,0452] (10 file)\\
+\code{set\_04} & 43 & -0,3505 & [-0,4766, -0,0907] (14 file) & -0,1679 & [-0,4542, -0,0541] (10 file)\\
+\code{set\_04} & 44 & -0,7996 & [-0,9750, -0,1600] (14 file) & -0,3177 & [-0,7372, -0,1051] (10 file)\\
+\bottomrule
+\multicolumn{6}{P{15.3cm}}{\footnotesize Ước lượng bootstrap 1.000 mẫu lặp có hoàn lại theo capture.}
+\end{longtable}}
+
+\section{Phân phối điểm số validation nguồn của AssocRules}\label{sec:app-assoc-scores}
+Bảng~\ref{tab:assoc-scores} thống kê phân phối điểm số bất thường trên tập validation nguồn của mô hình \code{CrySyS-AssocRules/W64} qua 4 set và 3 seed.
+
+{\small\setlength{\tabcolsep}{3.5pt}
+\begin{longtable}{P{1.5cm}P{1.0cm}P{1.2cm}P{1.8cm}P{1.7cm}P{1.7cm}P{2.2cm}}
+\caption[Phân phối điểm bất thường tập validation nguồn của CrySyS-AssocRules/W64]{Phân phối điểm số bất thường trên tập validation nguồn của mô hình \code{CrySyS-AssocRules/W64} theo từng tập và hạt giống (nhãn 0: lành tính; nhãn 1: tấn công)}\label{tab:assoc-scores}\\\toprule
+Set & Seed & Nhãn & N & Median & Max & Trùng max\\\midrule
+\endfirsthead\caption[]{(tiếp theo)}\\\toprule
+Set & Seed & Nhãn & N & Median & Max & Trùng max\\\midrule
+\endhead
+set\_01 & 42 & 0 & 75185 & 0,9937 & 1,0000 & 451\\
+set\_01 & 42 & 1 & 1232 & 0,9939 & 1,0000 & 395\\
+set\_01 & 43 & 0 & 75185 & 0,9968 & 1,0000 & 451\\
+set\_01 & 43 & 1 & 1232 & 0,9971 & 1,0000 & 395\\
+set\_01 & 44 & 0 & 75185 & 0,9934 & 1,0000 & 451\\
+set\_01 & 44 & 1 & 1232 & 0,9937 & 1,0000 & 395\\
+set\_02 & 42 & 0 & 121062 & 0,9972 & 1,0000 & 427\\
+set\_02 & 42 & 1 & 4213 & 1,0000 & 1,0000 & 2966\\
+set\_02 & 43 & 0 & 121062 & 0,9973 & 1,0000 & 422\\
+set\_02 & 43 & 1 & 4213 & 1,0000 & 1,0000 & 2965\\
+set\_02 & 44 & 0 & 121062 & 0,9991 & 1,0000 & 554\\
+set\_02 & 44 & 1 & 4213 & 1,0000 & 1,0000 & 2973\\
+set\_03 & 42 & 0 & 111163 & 0,9992 & 1,0000 & 493\\
+set\_03 & 42 & 1 & 797 & 0,9992 & 1,0000 & 180\\
+set\_03 & 43 & 0 & 111163 & 0,9992 & 1,0000 & 493\\
+set\_03 & 43 & 1 & 797 & 0,9992 & 1,0000 & 180\\
+set\_03 & 44 & 0 & 111163 & 0,9992 & 1,0000 & 493\\
+set\_03 & 44 & 1 & 797 & 0,9992 & 1,0000 & 180\\
+set\_04 & 42 & 0 & 70374 & 0,9990 & 1,0000 & 3305\\
+set\_04 & 42 & 1 & 1142 & 0,9987 & 1,0000 & 100\\
+set\_04 & 43 & 0 & 70374 & 0,9990 & 1,0000 & 2774\\
+set\_04 & 43 & 1 & 1142 & 0,9987 & 1,0000 & 100\\
+set\_04 & 44 & 0 & 70374 & 0,9990 & 1,0000 & 3271\\
+set\_04 & 44 & 1 & 1142 & 0,9987 & 1,0000 & 100\\
+\bottomrule\end{longtable}}
+
+\section{Kiểm toán phân bố số cửa sổ W64 từng tệp ở Điều kiện B và D}\label{sec:app-bd-per-file-counts}
+Bảng~\ref{tab:bd-per-file-counts} kiểm toán số lượng cửa sổ và biên độ mất cân bằng nhãn trên toàn bộ 88 tệp đánh giá điều kiện B và D.
+
+{\small\setlength{\tabcolsep}{3.5pt}
+\begin{longtable}{P{1.4cm}P{0.8cm}P{1.0cm}P{1.8cm}P{1.5cm}P{1.8cm}P{3.0cm}P{1.6cm}}
+\caption{Thống kê phân bố số lượng cửa sổ $W=64$ và tỷ lệ mất cân bằng nhãn trên 88 tệp đánh giá Điều kiện B và D}\label{tab:bd-per-file-counts}\\\toprule
+Set & ĐK & Số tệp & Tổng cửa sổ & Tổng (+) & Tổng (--) & Tỷ lệ (+) min / med / max & Min (--) / tệp\\\midrule
+\endfirsthead\caption[]{(tiếp theo)}\\\toprule
+Set & ĐK & Số tệp & Tổng cửa sổ & Tổng (+) & Tổng (--) & Tỷ lệ (+) min / med / max & Min (--) / tệp\\\midrule
+\endhead
+\code{set\_01} & B & 8 & 100.745 & 8.430 & 92.315 & 0,22\% / 1,03\% / 43,91\% & 6.990\\
+\code{set\_01} & D & 12 & 206.564 & 2.088 & 204.476 & 0,19\% / 0,79\% / 5,96\% & 4.857\\
+\code{set\_02} & B & 12 & 131.953 & 2.578 & 129.375 & 0,31\% / 0,82\% / 10,90\% & 6.039\\
+\code{set\_02} & D & 8 & 74.838 & 1.104 & 73.734 & 0,24\% / 1,12\% / 5,49\% & 4.378\\
+\code{set\_03} & B & 10 & 107.093 & 8.834 & 98.259 & 1,72\% / 6,65\% / 34,70\% & 5.554\\
+\code{set\_03} & D & 14 & 107.744 & 25.140 & 82.604 & 0,35\% / 6,48\% / 97,22\% & 202\\
+\code{set\_04} & B & 14 & 271.995 & 13.782 & 258.213 & 0,03\% / 0,89\% / 97,81\% & 217\\
+\code{set\_04} & D & 10 & 127.864 & 13.615 & 114.249 & 0,00\% / 8,03\% / 29,16\% & 5.193\\
+\bottomrule\end{longtable}}
+
+\chapter{Kiểm toán độ nhạy và đối chứng mở rộng}\label{app:sensitivity}
+Phụ lục này lưu trữ đầy đủ 14 bảng kiểm toán độ nhạy, mẫu số thống kê và đối chứng mở rộng được tách ra từ Chương~\ref{chap:results} nhằm giữ mạch phân tích chính cô đọng trong khi vẫn bảo toàn toàn bộ bằng chứng định lượng và khả năng kiểm chứng độc lập.
+
+\section{Tổng hợp đối chứng cắt bỏ, độ nhạy mẫu số và chênh lệch ghép cặp}
+
+\subsection{Ma trận các nhóm thực nghiệm cắt bỏ đối chứng}\label{subsec:app-ablations}
+Bảng~\ref{tab:ablations} tổng hợp có hệ thống ma trận 10 biến thể cắt bỏ đối chứng và mục tiêu kiểm định tương ứng nhằm bóc tách vai trò của từng thành phần trong biểu diễn cấu trúc.
+
+{\renewcommand{\arraystretch}{0.88}
+\begin{table}[htbp]\centering\footnotesize
+\caption{Tổng hợp các nhóm thực nghiệm cắt bỏ đối chứng và mục tiêu kiểm định tương ứng}\label{tab:ablations}
+\begin{tabular}{P{4.6cm}P{9.2cm}}
+\toprule
+Đối chứng & Mục tiêu\\\midrule
+Raw vs raw-minus-ID & Cô lập loại bỏ 11 bit ID trong feature gốc\\
+Raw-plus-structural vs raw & Kiểm tra thêm history/structure khi vẫn giữ ID\\
+Structural vs raw-plus-structural & Kiểm tra ID trên nền feature phong phú hơn\\
+Structural-minus-delta & Vai trò biến thiên payload và cờ lịch sử\\
+Structural-minus-local & Vai trò tần suất và hạng ID cục bộ\\
+Structural-minus-transition & Vai trò tần suất bigram\\
+Structural-minus-payload & Bỏ byte tuyệt đối, giữ DLC/mask và history\\
+Structural-minus-rank-W & Bỏ riêng chiều 28 của content, giữ các thống kê khác\\
+ID-only / raw-minus-ID & Giới hạn từng nhóm nội dung; timing-only không áp dụng\\
+32/64/128 frame & Độ nhạy kích thước và thời gian chờ cửa sổ\\\bottomrule
+\end{tabular}
+\end{table}}
+
+\subsection{Thống kê mẫu số cửa sổ kiểm thử đối sánh chính}\label{subsec:app-counts}
+
+Bảng~\ref{tab:comparison-counts} thống kê đầy đủ mẫu số cửa sổ kiểm thử dùng chung ($W=64$) giữa năm phương pháp và ba hạt giống trên bốn điều kiện A--D của ma trận đối sánh chính.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Thống kê mẫu số cửa sổ kiểm thử dùng chung giữa năm phương pháp và ba hạt giống trên bốn điều kiện A--D (Tấn công / Lành tính)}\label{tab:comparison-counts}
+\vspace{2pt}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Tập dữ liệu} & \textbf{Điều kiện A} & \textbf{Điều kiện B} & \textbf{Điều kiện C} & \textbf{Điều kiện D} \\
+\midrule
+\code{set\_01} & 2.987 / 86.114 & 8.430 / 92.315 & 8.636 / 126.284 & 2.088 / 204.476 \\
+\code{set\_02} & 2.088 / 204.476 & 2.578 / 129.375 & 1.359 / 188.481 & 1.104 / 73.734 \\
+\code{set\_03} & 9.775 / 124.217 & 8.834 / 98.259 & 6.998 / 140.620 & 25.140 / 82.604 \\
+\code{set\_04} & 25.140 / 82.604 & 13.782 / 258.213 & 8.834 / 98.259 & 13.615 / 114.249 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Chênh lệch ghép cặp giữa Structural và các đối thủ nơ-ron}\label{subsec:app-comparison-paired}
+Bảng~\ref{tab:comparison-paired} chi tiết hóa chênh lệch hiệu năng ghép cặp giữa Structural Transformer và các đối thủ nơ-ron hoạt động tại Điều kiện B và D (trọng số bốn tập ngang nhau).
+
+{\renewcommand{\arraystretch}{0.85}
+\begin{table}[htbp]\centering\footnotesize
+\caption[Chênh lệch ghép cặp giữa Structural và các đối thủ nơ-ron hoạt động]{Chênh lệch hiệu năng ghép cặp giữa Structural Transformer và các đối thủ nơ-ron hoạt động tại Điều kiện B và D (trọng số bốn tập bằng nhau; FAR tính trên $100.000$ cửa sổ và điểm phần trăm)}\label{tab:comparison-paired}
+\begin{tabular}{P{1.1cm}P{4.7cm}P{1.6cm}P{2.8cm}P{1.4cm}P{1.4cm}}
+\toprule
+ĐK & Đối thủ so sánh & $\Delta R$ & $\Delta$ FAR /100k (\%pt) & $\Delta$ F1 & $\Delta$ AP\\\midrule
+B & Raw TF & -0,1159 & -12839,95 (-12,84) & -0,0565 & 0,1774\\
+B & CANBERT+ adapted & 0,0988 & -12382,39 (-12,38) & 0,1842 & 0,4584\\
+B & CANLP-char-DNN adapted & 0,4529 & 22765,57 (+22,77) & 0,2106 & 0,5012\\
+D & Raw TF & -0,0169 & -13339,51 (-13,34) & 0,0856 & 0,1709\\
+D & CANBERT+ adapted & 0,0896 & 129,92 (+0,13) & 0,1425 & 0,2046\\
+D & CANLP-char-DNN adapted & 0,3953 & 29191,18 (+29,19) & 0,1950 & 0,2456\\
+\midrule
+\multicolumn{6}{P{13.4cm}}{\footnotesize \textit{Ghi chú đối chứng suy biến:} \code{CrySyS-AssocRules/W64} bị loại khỏi bảng chênh lệch hiệu quả do ngưỡng nguồn suy biến ở $1 + \varepsilon_{\text{mach}} > 1{,}0$ ($\text{Recall}=0{,}0000, \text{FAR}=0{,}00$ trên mọi tập A--D); việc lấy Structural trừ $0$ ($\Delta R = +0{,}7383$, $\Delta\text{FAR}=+52.461{,}46$ ở B; $\Delta R = +0{,}6445$, $\Delta\text{FAR}=+54.643{,}37$ ở D) chỉ mang ý nghĩa số học và không đại diện cho so sánh với một bộ phát hiện đang hoạt động. Tuy nhiên, xét trên chỉ số độc lập ngưỡng AP, Structural vẫn vượt trội CrySyS-AssocRules/W64 ($\Delta\text{AP}=+0{,}4964$ ở B và $+0{,}2445$ ở D).}\\
+\bottomrule\end{tabular}
+\end{table}}
+
+
+\subsection{Kiểm chứng độ nhạy theo tính đơn điệu timestamp}\label{subsec:monotonic-sensitivity}
+Để kiểm chứng nhận định rằng 12.527 điểm đi lùi dưới mili-giây ở 100/236 tệp CTT không làm biến chất biểu diễn \code{Structural 30D} vốn tính toán dựa trên thứ tự dòng CSV, khóa luận tách kết quả đánh giá sau hiệu chuẩn ($K=500$, ngân sách $1{,}0\%$) thành hai nhóm độc lập: 136 tệp có timestamp đơn điệu không giảm tuyệt đối (\textit{monotonic}) và 100 tệp có ít nhất một lần đi lùi (\textit{non-monotonic}). Trên điều kiện B, Structural (Structural+MixStyle) đạt $\text{AP}=0{,}6980$ ($0{,}7188$), recall $55{,}83\%$ ($62{,}53\%$), FAR $0{,}75\%$ ($0{,}90\%$) trên nhóm \textit{monotonic}, so với $\text{AP}=0{,}3548$ ($0{,}3560$), recall $30{,}74\%$ ($31{,}46\%$), FAR $0{,}94\%$ ($1{,}30\%$) trên nhóm \textit{non-monotonic}. Tuy nhiên, khi phân rã từng set cho thấy sự chênh lệch này bắt nguồn từ thành phần set và họ tấn công trong từng nhóm chứ không phải do hiện tượng đi lùi timestamp: chẳng hạn ở Set 3 điều kiện B, nhóm \textit{non-monotonic} (4 tệp) lại đạt hiệu năng cao hơn hẳn nhóm \textit{monotonic} (6 tệp): Structural+MixStyle đạt recall $76{,}61\%$, AP $0{,}9233$ so với $50{,}15\%$, AP $0{,}7221$; ngược lại ở Set 1 điều kiện B, nhóm \textit{non-monotonic} (6 tệp, chứa toàn bộ các kịch bản tấn công vật lý kín đáo như \code{force-neutral}, \code{rpm}, \code{standstill}) cho AP thấp ($0{,}008$), trong khi nhóm \textit{monotonic} (2 tệp \code{DoS}) đạt AP $0{,}9913$. Kết hợp với bằng chứng $0/12.527$ bước nhảy $>1\text{ s}$ và $99{,}84\%$ sai lệch $\le 1\text{ ms}$, điều này xác nhận thứ tự dòng CSV bảo toàn cấu trúc cục bộ của lưu lượng CAN.
+
+Nhằm kiểm chứng trực diện ảnh hưởng của đặc trưng thời gian khi loại bỏ hoàn toàn các tệp nhiễu đồng hồ, khóa luận huấn luyện và đánh giá bổ sung cặp thực nghiệm có đối chứng \code{Content (28D/30D)} so với \code{Timed (29D/32D, bổ sung }$\Delta t$\code{ và }$\Delta t_{\text{ID}}$\code{)} chỉ trên đúng $136/236$ tệp CTT đơn điệu không giảm tuyệt đối ($\text{timestamp\_inversions}=0$ ở tất cả train, validation và A--D qua cả 4 set $\times$ 3 seed = 48 lượt huấn luyện; Bảng~\ref{tab:monotonic-timed-vs-content}). Bộ trích xuất \code{Timed} vector hóa đã được kiểm chứng khớp từng bit (\textit{max diff} $= 0{,}00$) với \code{WindowExtractor(64, 'timed')}.
+
+{\small\setlength{\tabcolsep}{3.5pt}
+\textit{(Bảng đối chứng chi tiết giữa nhánh Content 28D/30D và Timed 29D/32D trên 136 tệp đơn điệu đã được nâng lên trình bày trực tiếp tại Mục~\ref{subsec:timed-vs-content}, Bảng~\ref{tab:monotonic-timed-vs-content} thuộc Chương~\ref{chap:results} để làm sáng tỏ hai chế độ vận hành của hệ thống).}
+
+Kết quả trên tập con đơn điệu nghiêm ngặt tại Bảng~\ref{tab:monotonic-timed-vs-content} khẳng định hai điểm quan trọng: (1) Lý do loại bỏ $\Delta t$ khỏi ma trận chính hoàn toàn đến từ tính liêm chính dữ liệu trước 100/236 tệp bị nhiễu đi lùi đồng hồ chứ không nhằm né tránh $\Delta t$ --- trái lại, khi kết hợp trên bus có timestamp đơn điệu sạch, bộ đôi cấu trúc không gian--thời gian \code{Timed Structural (32D)} tạo bước nhảy vượt bậc ở mọi điều kiện chuyển giao ($\text{AP}_B=0{,}9451$, recall sau hiệu chuẩn $K=500, 1{,}0\%$ đạt $74{,}60\%$ [$80{,}35\%$ khử lặp 3 xe] tại FAR $0{,}63\%$, và $\text{AP}_D=0{,}7219$, $\text{AP}_C=0{,}7537$), giảm FAR ngay tại ngưỡng nguồn ở điều kiện B từ $41{,}16\%$ xuống $2{,}46\%$, trong khi \code{Timed Raw (29D)} chỉ tăng nhẹ $\text{AP}_B$ từ $0{,}5377$ lên $0{,}5788$ với FAR nguồn vẫn $65{,}88\%$; (2) Ngược lại, nhánh \code{Content (30D)} giữ vai trò cận dưới bảo thủ an toàn trên các luồng dữ liệu thiếu timestamp đáng tin cậy (như 100 tệp CTT có đi lùi hoặc log hex thuần trên bộ ngoại bộ CICIoV2024).
+
+\subsection{Bóc tách quy tắc gộp khung tin trên CANBERT+ và CANLP-char-DNN}\label{subsec:baseline-pooling-ablation}
+Để kiểm chứng liệu điểm số thấp của các mô hình nền học theo khung tin trên Bảng~\ref{tab:comparison-main} có xuất phát từ quy tắc gộp cực đại theo cửa sổ (\code{max} qua 64 khung) như đã thảo luận ở Mục~\ref{subsec:assoc-degenerate} hay không, nghiên cứu tái tính toán trực tiếp toàn bộ chuỗi điểm xác suất cấp khung tin (\code{.frames.f32}) đã lưu trữ trên 24 lượt chạy gốc của \code{CANBERT+} và \code{CANLP-char-DNN} với ba quy tắc gộp: \code{max} (mặc định gốc), \code{top8\_mean} (trung bình 8 khung cao nhất), và \code{mean} (trung bình toàn cửa sổ), đồng thời đánh giá luôn chế độ hiệu chuẩn $K=500$ (ngân sách $1{,}0\%$) trên B và D. Bảng~\ref{tab:baseline-pooling-ablation} tổng hợp kết quả.
+
+{\small\setlength{\tabcolsep}{4pt}
+\begin{longtable}{P{3.6cm}P{1.7cm}P{0.8cm}P{1.4cm}P{2.2cm}P{1.4cm}P{1.4cm}}
+\caption[Ảnh hưởng của quy tắc gộp điểm khung tin lên CANBERT+ và CANLP]{Ảnh hưởng của các quy tắc gộp điểm số cấp khung tin lên hiệu năng của \code{CANBERT+} và \code{CANLP} (trung bình bốn tập và ba hạt giống từ chuỗi xác suất cấp khung đã lưu)}\label{tab:baseline-pooling-ablation}\\\toprule
+Phương pháp / Chế độ & Pooling & ĐK & Recall & FAR (/100k hay \%) & Attack F1 & AP\\\midrule
+\endfirsthead\caption[]{(tiếp theo)}\\\toprule
+Phương pháp / Chế độ & Pooling & ĐK & Recall & FAR & Attack F1 & AP\\\midrule
+\endhead
+CANBERT+ (ngưỡng nguồn) & \code{max} & A & 0,3843 & 79,27 /100k & 0,4576 & 0,5335\\
+CANBERT+ (ngưỡng nguồn) & \code{top8\_mean} & A & 0,4227 & 88,79 /100k & 0,5076 & 0,5447\\
+CANBERT+ (ngưỡng nguồn) & \code{mean} & A & \textbf{0,4229} & 88,77 /100k & \textbf{0,5077} & \textbf{0,5451}\\
+CANBERT+ (ngưỡng nguồn) & \code{max} & B & 0,6395 & 64,84\% & 0,0593 & 0,0970\\
+CANBERT+ (ngưỡng nguồn) & \code{mean} & B & 0,7334 & 70,99\% & 0,1011 & 0,1636\\
+CANBERT+ (ngưỡng nguồn) & \code{max} & C & 0,1037 & 62,54 /100k & 0,1461 & 0,2218\\
+CANBERT+ (ngưỡng nguồn) & \code{mean} & C & 0,1069 & 53,24 /100k & 0,1501 & 0,2256\\
+CANBERT+ ($K=500$, 1,0\%) & \code{max} & B & 0,2428 & 20,56\% & 0,1078 & 0,0997\\
+CANBERT+ ($K=500$, 1,0\%) & \code{mean} & B & 0,1183 & \textbf{1,89\%} & 0,1562 & 0,1665\\
+\midrule
+CANLP (ngưỡng nguồn) & \code{max} & A & 0,1228 & 28,37 /100k & 0,1789 & 0,5482\\
+CANLP (ngưỡng nguồn) & \code{top8\_mean} & A & 0,4122 & 119,45 /100k & 0,5578 & \textbf{0,5907}\\
+CANLP (ngưỡng nguồn) & \code{mean} & A & \textbf{0,4125} & 119,35 /100k & \textbf{0,5582} & 0,5898\\
+CANLP (ngưỡng nguồn) & \code{max} & B & 0,2854 & 29,70\% & 0,0329 & 0,0542\\
+CANLP (ngưỡng nguồn) & \code{mean} & B & 0,6238 & 60,62\% & 0,1085 & 0,1982\\
+CANLP (ngưỡng nguồn) & \code{max} & C & 0,0020 & 405,49 /100k & 0,0038 & 0,2373\\
+CANLP (ngưỡng nguồn) & \code{mean} & C & 0,1908 & 330,84 /100k & 0,2189 & 0,2836\\
+CANLP ($K=500$, 1,0\%) & \code{max} & B & 0,6578 & 68,25\% & 0,0794 & 0,0564\\
+CANLP ($K=500$, 1,0\%) & \code{mean} & B & 0,1402 & \textbf{1,77\%} & 0,1835 & 0,2011\\
+CANLP ($K=500$, 1,0\%) & \code{mean} & D & 0,1344 & \textbf{0,81\%} & 0,1858 & 0,2236\\
+\bottomrule
+\multicolumn{7}{P{13.6cm}}{\footnotesize \textit{Ghi chú:} Bảng đối chiếu các cấu hình gộp tiêu biểu; dưới quy tắc \code{mean} ở Điều kiện D (ngưỡng nguồn), \code{CANBERT+} đạt $\text{AP}_D=0{,}1490$ (Recall $0{,}5982$, FAR $61{,}84\%$), và \code{CANLP} đạt $\text{AP}_D=0{,}2201$ (Recall $0{,}3215$, FAR $28{,}64\%$), đều thấp hơn nhiều so với \code{Structural Transformer} ($\text{AP}_D=0{,}3357$ ở ngưỡng nguồn và $0{,}3411$ sau hiệu chuẩn).}\\
+\end{longtable}}
+
+Kết quả ở Bảng~\ref{tab:baseline-pooling-ablation} xác nhận hai hiện tượng rõ ràng: (1) Quy tắc \code{max} qua 64 khung khuếch đại các điểm dị biệt đơn lẻ, khiến \code{CANLP} mất ổn định cắt ngưỡng trên ngay chính xe nguồn (đổi sang \code{mean} nâng recall A từ $0{,}1228$ lên $0{,}4125$, C từ $0{,}0020$ lên $0{,}1908$), đồng thời gây bão hòa điểm $1{,}0$ khi hiệu chuẩn $K=500$ (FAR ở B giảm từ $68{,}25\%$ xuống $1{,}77\%$ với \code{mean}); (2) Tuy nhiên, ngay cả sau khi chuyển sang quy tắc \code{mean} tối ưu hơn cho cả hai đối thủ, chất lượng xếp hạng đa xe ở điều kiện B và D của \code{CANBERT+} ($\text{AP}_B=0{,}1636$, $\text{AP}_D=0{,}1490$) và \code{CANLP} ($\text{AP}_B=0{,}1982$, $\text{AP}_D=0{,}2201$) vẫn kém rất xa \code{Structural Transformer} ($0{,}5554$ ở ngưỡng nguồn và $0{,}5607$ sau hiệu chuẩn), cho thấy nút thắt cốt lõi của các đối thủ này là sự phụ thuộc vào từ vựng định danh và dạng thức ký tự của xe nguồn chứ không đơn thuần do hàm gộp.
+
+\section{Độ nhạy kích thước cửa sổ đẳng lượng và lấy mẫu reservoir}
+\subsection{Độ nhạy hiệu năng theo kích thước cửa sổ $W=32$ và $W=128$}\label{subsec:app-extension-w32}
+Bảng~\ref{tab:extension-w32} tổng hợp kết quả đánh giá độ nhạy hiệu năng khi thay đổi kích thước cửa sổ phân tích $W \in \{32, 128\}$ qua bốn điều kiện chuyển giao A--D dưới ngưỡng đóng băng từ nguồn.
+
+{\renewcommand{\arraystretch}{0.85}
+\begin{table}[htbp]
+\centering\footnotesize\setlength{\tabcolsep}{5pt}
+\caption[Độ nhạy hiệu năng theo kích thước cửa sổ $W=32$ và $W=128$]{Đánh giá độ nhạy hiệu năng khi thay đổi kích thước cửa sổ phân tích ($W=32$ và $W=128$; trọng số bốn tập ngang nhau; FAR tính trên $100.000$ cửa sổ lành)}\label{tab:extension-w32}
+\vspace{2pt}
+\begin{tabular}{cclcccc}
+\toprule
+$W$ & ĐK & Phương pháp & Recall & FAR (/100k) & F1 & AP\\\midrule
+\multirow{8}{*}{$W=32$} 
+ & A & Raw & 0,5516 & 107,46 & 0,6827 & 0,7057\\
+ & B & Raw & 0,7722 & 61820,20 & 0,2066 & 0,2974\\
+ & C & Raw & 0,2010 & 102,37 & 0,2263 & 0,2534\\
+ & D & Raw & 0,6019 & 62060,00 & 0,1258 & 0,1285\\
+ & A & Structural & 0,5760 & 140,93 & 0,6904 & 0,6952\\
+ & B & Structural & 0,7791 & 53054,55 & 0,2420 & 0,4196\\
+ & C & Structural & 0,2360 & 87,68 & 0,2765 & 0,2943\\
+ & D & Structural & 0,6342 & 55225,47 & 0,1659 & 0,2732\\\midrule
+\multirow{8}{*}{$W=128$} 
+ & A & Raw & 0,4141 & 104,55 & 0,5186 & 0,6147\\
+ & B & Raw & 0,7353 & 61158,10 & 0,1954 & 0,3903\\
+ & C & Raw & 0,0702 & 71,78 & 0,1093 & 0,2021\\
+ & D & Raw & 0,5957 & 58708,86 & 0,1111 & 0,2516\\
+ & A & Structural & 0,6248 & 95,04 & 0,7339 & 0,7299\\
+ & B & Structural & 0,7481 & 54375,95 & 0,2468 & 0,4899\\
+ & C & Structural & 0,2213 & 68,53 & 0,2558 & 0,3073\\
+ & D & Structural & 0,6589 & 56877,92 & 0,1764 & 0,3097\\
+\bottomrule
+\end{tabular}
+\end{table}}
+
+\subsection{Kiểm chứng độ nhạy cửa sổ đẳng lượng khung tin và phương sai lấy mẫu reservoir}\label{subsec:frame-equated-w-and-reservoir}
+Vì vòng chạy \code{W32/W128} ban đầu giữ cố định trần $1.000$ cửa sổ/tệp/lớp (tương ứng $32\text{k}$, $64\text{k}$ và $128\text{k}$ khung tin), Bảng~\ref{tab:frame-equated-w} kiểm chứng lại trên đúng \textbf{ngân sách đẳng lượng $64.000$ khung tin/tệp/lớp} (\code{W32 cap=2000}, \code{W64 cap=1000}, \code{W128 cap=500}) đồng thời cân bằng ngân sách khởi động hiệu chuẩn $K_{\text{khung}}=32.000$ khung ($K=1.000$, $500$ và $250$ cửa sổ tương ứng) qua $4\text{ set} \times 3\text{ seed}$. Kết quả xác nhận bất biến kép dưới điều kiện đồng lượng dữ liệu: (i) \code{Structural} vượt trội \code{Raw} về AP trên B và D ở cả ba kích thước cửa sổ ($W=32$: $0{,}4304$ so với $0{,}2794$ ở B; $W=64$: $0{,}5607$ so với $0{,}3803$; $W=128$: $0{,}4903$ so với $0{,}3679$), và (ii) $W=64$ tiếp tục là điểm tối ưu vì $W=32$ thiếu ngữ cảnh thống kê nội cửa sổ còn $W=128$ giảm một nửa số bước cập nhật gradient ($500$ so với $1.000$ cửa sổ). Bên cạnh đó, Bảng~\ref{tab:reservoir-variance} đo phương sai giữa 3 seed lấy mẫu reservoir độc lập (\code{20261103, 20261104, 20261105} tại model \code{seed=42}), cho thấy ưu thế AP của \code{Structural} so với \code{Raw} được bảo toàn ổn định ($0{,}5311 \pm 0{,}0466$ so với $0{,}3591 \pm 0{,}0334$ ở B; $0{,}3730 \pm 0{,}0252$ so với $0{,}2065 \pm 0{,}0443$ ở D).
+
+{\small\setlength{\tabcolsep}{4pt}
+\begin{longtable}{P{2.2cm}P{2.2cm}P{1.9cm}P{0.7cm}P{2.1cm}P{1.5cm}P{1.4cm}P{1.5cm}}
+\caption[Độ nhạy kích thước cửa sổ đẳng lượng $64.000$ khung/tệp/lớp]{Đánh giá độ nhạy kích thước cửa sổ dưới ngân sách dữ liệu đẳng lượng $64.000$ khung/tệp/lớp (bốn tập $\times$ ba hạt giống; hiệu chuẩn $K_{\text{khung}}=32.000$, ngân sách FAR $1{,}0\%$)}\label{tab:frame-equated-w}\\\toprule
+Cấu hình $W$ & Mô hình & Ngưỡng & ĐK & Recall (3-xe) & FAR (\%) & F1 & AP\\\midrule
+\endfirsthead\caption[]{(tiếp theo)}\\\toprule
+Cấu hình $W$ & Mô hình & Ngưỡng & ĐK & Recall (3-xe) & FAR (\%) & F1 & AP\\\midrule
+\endhead
+$W=32$ (cap 2000) & Raw & Nguồn & B & 0,7901 & 65,61\% & 0,1962 & 0,2759\\
+$W=32$ (cap 2000) & Structural & Nguồn & B & 0,8082 & 54,30\% & 0,2709 & 0,4246\\
+$W=32$ ($K=1000$) & Raw & Cal 1,0\% & B & 0,2035 (0,2184) & 0,98\% & 0,2562 & 0,2794\\
+$W=32$ ($K=1000$) & \textbf{Structural} & Cal 1,0\% & B & \textbf{0,2832} (\textbf{0,3086}) & 1,17\% & \textbf{0,3442} & \textbf{0,4304}\\
+$W=32$ ($K=1000$) & Raw & Cal 1,0\% & D & 0,0543 (0,0652) & 1,37\% & 0,0514 & 0,1058\\
+$W=32$ ($K=1000$) & \textbf{Structural} & Cal 1,0\% & D & \textbf{0,1690} (\textbf{0,1933}) & \textbf{0,89\%} & \textbf{0,2226} & \textbf{0,2767}\\
+\midrule
+$W=64$ ($K=500$) & Raw & Cal 1,0\% & B & 0,3373 (0,3922) & 1,05\% & 0,3788 & 0,3803\\
+$W=64$ ($K=500$) & \textbf{Structural} & Cal 1,0\% & B & \textbf{0,4042} (\textbf{0,4303}) & \textbf{0,85\%} & \textbf{0,4748} & \textbf{0,5607}\\
+$W=64$ ($K=500$) & Raw & Cal 1,0\% & D & 0,0979 (0,1257) & 1,08\% & 0,1195 & 0,1692\\
+$W=64$ ($K=500$) & \textbf{Structural} & Cal 1,0\% & D & \textbf{0,2071} (\textbf{0,2255}) & \textbf{0,58\%} & \textbf{0,2728} & \textbf{0,3411}\\
+\midrule
+$W=128$ (cap 500) & Raw & Nguồn & B & 0,8593 & 73,23\% & 0,2396 & 0,3657\\
+$W=128$ (cap 500) & Structural & Nguồn & B & 0,7466 & 56,50\% & 0,2681 & 0,4862\\
+$W=128$ ($K=250$) & Raw & Cal 1,0\% & B & 0,3206 (0,3669) & \textbf{0,80\%} & 0,3827 & 0,3679\\
+$W=128$ ($K=250$) & \textbf{Structural} & Cal 1,0\% & B & \textbf{0,3819} (\textbf{0,4330}) & 1,69\% & \textbf{0,4204} & \textbf{0,4903}\\
+$W=128$ ($K=250$) & Raw & Cal 1,0\% & D & 0,1155 (0,1444) & 1,49\% & 0,1384 & 0,1856\\
+$W=128$ ($K=250$) & \textbf{Structural} & Cal 1,0\% & D & \textbf{0,1968} (\textbf{0,2319}) & \textbf{0,72\%} & \textbf{0,2474} & \textbf{0,3334}\\
+\bottomrule\end{longtable}}
+
+{\small\setlength{\tabcolsep}{4pt}
+\begin{longtable}{P{2.2cm}P{2.1cm}P{0.7cm}P{2.4cm}P{2.4cm}P{2.2cm}P{2.2cm}}
+\caption[Phương sai lấy mẫu reservoir theo hạt giống lấy mẫu ($W=64$)]{Phân tích phương sai lấy mẫu reservoir qua ba hạt giống lấy mẫu độc lập (\code{sampling\_seed} $\in \{20261103,\, 20261104,\, 20261105\}$, $W=64$, \code{seed=42}, trung bình $\pm$ độ lệch chuẩn qua bốn tập)}\label{tab:reservoir-variance}\\\toprule
+Mô hình & Chế độ & ĐK & Recall & FAR (/100k) & Attack F1 & AP\\\midrule
+\endfirsthead\caption[]{(tiếp theo)}\\\toprule
+Mô hình & Chế độ & ĐK & Recall & FAR (/100k) & Attack F1 & AP\\\midrule
+\endhead
+Raw & Nguồn & B & 0,9539 $\pm$ 0,0135 & 80834 $\pm$ 7470 & 0,1916 $\pm$ 0,0968 & 0,3545 $\pm$ 0,0351\\
+Structural & Nguồn & B & 0,6878 $\pm$ 0,0914 & 55092 $\pm$ 12450 & 0,1767 $\pm$ 0,0736 & \textbf{0,5272 $\pm$ 0,0468}\\
+Raw & Cal $K=500$, 0,1\% & B & 0,2040 $\pm$ 0,1021 & 106,20 $\pm$ 42,45 & 0,2941 $\pm$ 0,0859 & 0,3591 $\pm$ 0,0334\\
+\textbf{Structural} & Cal $K=500$, 0,1\% & B & \textbf{0,2482 $\pm$ 0,0233} & \textbf{83,48 $\pm$ 11,30} & \textbf{0,3695 $\pm$ 0,0335} & \textbf{0,5311 $\pm$ 0,0466}\\
+Raw & Cal $K=500$, 1,0\% & B & 0,2490 $\pm$ 0,0848 & 779,74 $\pm$ 95,03 & 0,3266 $\pm$ 0,0626 & 0,3591 $\pm$ 0,0334\\
+\textbf{Structural} & Cal $K=500$, 1,0\% & B & \textbf{0,4261 $\pm$ 0,0495} & \textbf{627,18 $\pm$ 77,98} & \textbf{0,5242 $\pm$ 0,0441} & \textbf{0,5311 $\pm$ 0,0466}\\
+Raw & Cal $K=500$, 1,0\% & D & 0,1418 $\pm$ 0,0698 & 1075,39 $\pm$ 316,44 & 0,1630 $\pm$ 0,0578 & 0,2065 $\pm$ 0,0443\\
+\textbf{Structural} & Cal $K=500$, 1,0\% & D & \textbf{0,2018 $\pm$ 0,0259} & \textbf{510,72 $\pm$ 71,19} & \textbf{0,2756 $\pm$ 0,0303} & \textbf{0,3730 $\pm$ 0,0252}\\
+\bottomrule\end{longtable}}
+
+\section{Độ nhạy hằng số điều chuẩn của Linear Probe}\label{sec:probe-audit}
+Nhằm kiểm chứng kết quả rò rỉ theo từng nhóm đặc trưng tại Bảng~\ref{tab:input-feature-probes} không phụ thuộc vào lựa chọn đơn lẻ hằng số điều chuẩn $C$, Bảng~\ref{tab:probe-c-scaling} quét $C \in \{0{,}01,\,0{,}1,\,1{,}0,\,10{,}0\}$ trên đúng tập $3.800/4.640$ cửa sổ cân bằng. Độ chính xác giải mã xe của \code{dlc\_and\_masks\_10D} (640 chiều phẳng hóa) duy trì ổn định trong khoảng $0{,}9597\text{--}0{,}9670$ qua bốn bậc độ lớn của $C$, còn nhóm tách riêng 9 chiều \code{dlc\_masks\_9D} đạt $0{,}9580\text{--}0{,}9662$; tương tự toàn bộ 30 chiều đạt $0{,}9791\text{--}0{,}9806$, xác nhận dấu vân tay hình thái khung tin theo từng hãng xe tách biệt tuyến tính bền vững ngay cả dưới điều chuẩn $L_2$ mạnh ($C=0{,}01$). Kết quả tổng hợp probe trên đầy đủ 10 biến thể biểu diễn (96+24 checkpoint) được trình bày tại Bảng~\ref{tab:app-96ckpt-probes} ở Phụ lục~\ref{app:reproducibility}.
+
+{\small\setlength{\tabcolsep}{5pt}
+\begin{longtable}{P{4.4cm}P{1.4cm}P{1.5cm}P{1.5cm}P{1.5cm}P{1.5cm}}
+\caption{Độ nhạy hằng số điều chuẩn $C$ của bộ thăm dò tuyến tính nhận diện xe theo từng nhóm đặc trưng đầu vào (Balanced Accuracy trên $4.640$ mẫu giữ ngoài)}\label{tab:probe-c-scaling}\\\toprule
+Nhóm đặc trưng đầu vào & Chiều phẳng & $C=0,01$ & $C=0,1$ & $C=1,0$ & $C=10,0$\\\midrule
+\endfirsthead\caption[]{(tiếp theo)}\\\toprule
+Nhóm đặc trưng đầu vào & Chiều phẳng & $C=0,01$ & $C=0,1$ & $C=1,0$ & $C=10,0$\\\midrule
+\endhead
+Toàn bộ 30D (\code{all\_30D}) & 1920 & 0,9791 & 0,9804 & 0,9804 & \textbf{0,9806}\\
+\code{dlc\_and\_masks\_10D} & 640 & 0,9597 & \textbf{0,9670} & \textbf{0,9670} & 0,9647\\
+\code{dlc\_masks\_9D} (bỏ $h_i$) & 576 & 0,9580 & \textbf{0,9662} & 0,9642 & 0,9636\\
+\code{local\_stats\_3D} & 192 & 0,7463 & \textbf{0,7631} & 0,7565 & 0,7537\\
+\code{payload\_8D} & 512 & \textbf{0,7864} & 0,7782 & 0,7621 & 0,7418\\
+\code{delta\_8D} & 512 & \textbf{0,6765} & 0,6597 & 0,6498 & 0,6414\\
+\code{transition\_1D} & 64 & \textbf{0,4853} & 0,4692 & 0,4627 & 0,4623\\
+\code{has\_prev\_1D} ($h_i$) & 64 & 0,2668 & 0,2744 & 0,2746 & \textbf{0,2752}\\
+\bottomrule\end{longtable}}
+
+\section{Kết quả mở rộng của phương pháp MixStyle}\label{subsec:app-mixstyle}
+Để so sánh trực tiếp hiệu năng giữa các hướng tiếp cận, Bảng~\ref{tab:mixstyle-six} đối chiếu sáu pipeline tiêu biểu tại điều kiện chuyển xe B.
+\begin{longtable}{P{6cm}P{2cm}P{2.2cm}P{2cm}}
+\caption{So sánh hiệu năng của sáu quy trình phát hiện tại Điều kiện chuyển xe B dưới cùng giao thức đánh giá và ngưỡng nguồn}\label{tab:mixstyle-six}\\\toprule
+Pipeline & Recall & FAR (\%) & AP\\\midrule
+\endfirsthead\caption[]{(tiếp theo)}\\\toprule
+Pipeline & Recall & FAR (\%) & AP\\\midrule
+\endhead
+Raw & 0,8541 & 65,3014 & 0,3781\\
+Structural & 0,7383 & 52,4615 & 0,5554\\
+Structural + MixStyle & 0,8194 & 64,5387 & 0,5815\\
+CANBERT+ adapted & 0,6395 & 64,8438 & 0,0970\\
+CANLP-char-DNN adapted & 0,2854 & 29,6959 & 0,0542\\
+CrySyS-AssocRules/W64 & 0,0000 & 0,0000 & 0,0591\\
+\bottomrule\end{longtable}
+Bảng không xếp hạng trực tiếp các điểm công bố gốc. AssocRules có recall/FAR bằng không tại điểm dự đoán toàn benign; đó không phải phát hiện hiệu quả.
+
+\subsection{Probe, đánh giá ngoại bộ và chi phí xử lý của MixStyle}
+Kết quả thăm dò tuyến tính (Linear Probe) đo mức độ tồn lưu thông tin xe và khả năng phân tách tấn công của mô hình MixStyle được trình bày tại Bảng~\ref{tab:mixstyle-probe}.
+\begin{longtable}{P{6cm}P{3cm}P{3cm}}
+\caption[Thăm dò tuyến tính mức tồn lưu danh tính xe và tấn công của MixStyle]{Kết quả thăm dò tuyến tính nhận diện xe và tấn công của MixStyle trên $3.800$ mẫu huấn luyện và $4.640$ mẫu kiểm thử giữ ngoài theo vòng ghi (Balanced Accuracy)}\label{tab:mixstyle-probe}\\\toprule
+Pipeline & Xe & Tấn công\\\midrule
+\endfirsthead\caption[]{(tiếp theo)}\\\toprule
+Pipeline & Xe & Tấn công\\\midrule
+\endhead
+raw & 0,9925 & 0,6419\\
+structural & 0,9488 & 0,7669\\
+structural\_mixstyle & 0,9527 & 0,7737\\
+\bottomrule\end{longtable}
+Mức cơ hội là 0,25 cho xe và 0,5 cho tấn công. Probe xe MixStyle đạt 0,9527, cao hơn Structural 0,9488; phép đo không ủng hộ giảm khả năng giải mã tuyến tính danh tính xe. Attack probe tăng nhẹ lên 0,7737. Các đối chứng constant/random/permuted được giữ đủ; phiên ghi độc lập và tính bất biến xe vẫn chưa được chứng minh.
+
+Kết quả đánh giá phương pháp MixStyle trên các bộ dữ liệu ngoại bộ tại ngưỡng nguồn được tổng hợp chi tiết trong Bảng~\ref{tab:mixstyle-external}.
+\begin{longtable}{P{4.4cm}P{4.8cm}P{1.6cm}P{2.2cm}}
+\caption[Đánh giá mô hình MixStyle trên 57 bản ghi ngoại bộ tại ngưỡng nguồn]{Kết quả đánh giá phương pháp MixStyle trên các bộ dữ liệu ngoại bộ tại ngưỡng đóng băng từ nguồn (gộp cửa sổ theo bộ dữ liệu và hạt giống rồi lấy trung bình; FAR theo phần trăm)}\label{tab:mixstyle-external}\\\toprule
+Dataset & Pipeline & Recall & FAR (\%)\\\midrule
+\endfirsthead\caption[]{(tiếp theo)}\\\toprule
+Dataset & Pipeline & Recall & FAR (\%)\\\midrule
+\endhead
+CAN-MIRGU (tấn công) & raw & 0,5848 & 59,1759\\
+CAN-MIRGU (tấn công) & structural & 0,0546 & 2,7018\\
+CAN-MIRGU (tấn công) & structural\_mixstyle & 0,0486 & 1,8267\\
+CAN-MIRGU (lành tính) & raw & -- & 60,6151\\
+CAN-MIRGU (lành tính) & structural & -- & 6,6311\\
+CAN-MIRGU (lành tính) & structural\_mixstyle & -- & 5,9049\\
+CICIoV2024 & raw & 0,6462 & 100,0000\\
+CICIoV2024 & structural & 1,0000 & 100,0000\\
+CICIoV2024 & structural\_mixstyle & 1,0000 & 100,0000\\
+Opel Astra (DoS) & raw & 1,0000 & 43,8502\\
+Opel Astra (DoS) & structural & 1,0000 & 31,5345\\
+Opel Astra (DoS) & structural\_mixstyle & 1,0000 & 33,4282\\
+Opel Astra (lành tính) & raw & -- & 43,8417\\
+Opel Astra (lành tính) & structural & -- & 30,9805\\
+Opel Astra (lành tính) & structural\_mixstyle & -- & 32,8628\\
+Renault Clio (DoS) & raw & 0,9995 & 33,1029\\
+Renault Clio (DoS) & structural & 0,9984 & 0,1886\\
+Renault Clio (DoS) & structural\_mixstyle & 0,9984 & 0,1467\\
+Renault Clio (lành tính) & raw & -- & 33,4437\\
+Renault Clio (lành tính) & structural & -- & 0,1656\\
+Renault Clio (lành tính) & structural\_mixstyle & -- & 0,1288\\
+\bottomrule\end{longtable}
+MIRGU attack có recall MixStyle 0,0486 và FAR 1,8267\%, so với Structural 0,0546 và 2,7018\%: giảm báo động giả đi kèm bỏ sót nhiều hơn. CICIoV vẫn có recall và FAR đều 100\%, nghĩa là dự đoán toàn attack. Renault DoS giữ recall 0,9984 và FAR giảm từ 0,1886\% xuống 0,1467\%, nhưng chưa đạt 0,1\%. Opel FAR tăng so với Structural. Các tập benign-only giữ recall/AP không xác định; giữ nguyên loại trừ OTIDS và cách ly CICIoV SPEED.
+
+Do MixStyle chuyển về phép đồng nhất (identity) khi suy luận, chi phí suy luận của \code{Structural + MixStyle} hoàn toàn tương đương \code{Structural}. Chi phí phân rã ba thành phần trên CPU/GPU đã được trình bày tại Bảng~\ref{tab:runtime-decomp} (Chương~\ref{chap:results}, Mục~\ref{sec:runtime}).
+
+\section{Phân rã hiệu chuẩn nền lành tính và đối chứng chỉ dùng dữ liệu đích}
+Bảng~\ref{tab:cal-k-per-set} phân rã hiệu năng hiệu chuẩn nền lành tính theo từng tập dữ liệu tại ngân sách khởi động $K=500$ và mục tiêu $\alpha = 1{,}0\%$.
+
+\begin{longtable}{P{1.1cm}P{1.2cm}P{3.6cm}P{2.3cm}P{2.2cm}P{2.2cm}}
+\caption{Hiệu năng hiệu chuẩn nền lành tính phân rã theo từng tập dữ liệu tại $K=500$ và ngân sách FAR $1{,}0\%$ (trung bình $\pm$ độ lệch chuẩn ba hạt giống)}\label{tab:cal-k-per-set}\\\toprule
+ĐK & Set & Pipeline & Recall & FAR (\%) & F1\\\midrule
+\endfirsthead\caption[]{(tiếp theo)}\\\toprule
+ĐK & Set & Pipeline & Recall & FAR (\%) & F1\\\midrule
+\endhead
+B & Set 1 & Raw & 0,9314 $\pm$ 0,0010 & 0,6413 $\pm$ 0,0863 & 0,9321 $\pm$ 0,0039\\
+B & Set 1 & Structural & 0,7730 $\pm$ 0,2290 & 0,9938 $\pm$ 0,4096 & 0,8103 $\pm$ 0,1381\\
+B & Set 1 & Structural + MixStyle & 0,8844 $\pm$ 0,0617 & 1,1225 $\pm$ 0,5147 & 0,8831 $\pm$ 0,0160\\
+B & Set 2 & Raw & 0,1806 $\pm$ 0,1038 & 0,9213 $\pm$ 0,3416 & 0,2260 $\pm$ 0,1339\\
+B & Set 2 & Structural & 0,3875 $\pm$ 0,0996 & 0,6876 $\pm$ 0,1789 & 0,4504 $\pm$ 0,1081\\
+B & Set 2 & Structural + MixStyle & 0,3306 $\pm$ 0,2213 & 0,9543 $\pm$ 0,3823 & 0,3665 $\pm$ 0,2401\\
+B & Set 3 & Raw & 0,1644 $\pm$ 0,0138 & 0,6386 $\pm$ 0,5029 & 0,2670 $\pm$ 0,0211\\
+B & Set 3 & Structural & 0,2645 $\pm$ 0,2323 & 0,2704 $\pm$ 0,1984 & 0,3753 $\pm$ 0,2592\\
+B & Set 3 & Structural + MixStyle & 0,5314 $\pm$ 0,1305 & 0,2227 $\pm$ 0,1058 & 0,6773 $\pm$ 0,1020\\
+B & Set 4 & Raw & 0,0726 $\pm$ 0,0614 & 2,0025 $\pm$ 2,1866 & 0,0900 $\pm$ 0,0599\\
+B & Set 4 & Structural & 0,1919 $\pm$ 0,0215 & 1,4660 $\pm$ 0,4026 & 0,2633 $\pm$ 0,0341\\
+B & Set 4 & Structural + MixStyle & 0,1974 $\pm$ 0,0260 & 2,0014 $\pm$ 1,0755 & 0,2529 $\pm$ 0,0186\\
+\midrule
+D & Set 1 & Structural + MixStyle & 0,0027 $\pm$ 0,0019 & 0,1365 $\pm$ 0,0322 & 0,0047 $\pm$ 0,0033\\
+D & Set 2 & Structural + MixStyle & 0,1057 $\pm$ 0,0978 & 0,9910 $\pm$ 0,5286 & 0,1100 $\pm$ 0,1058\\
+D & Set 3 & Structural + MixStyle & 0,2299 $\pm$ 0,0542 & 0,4899 $\pm$ 0,0776 & 0,3673 $\pm$ 0,0703\\
+D & Set 4 & Structural + MixStyle & 0,5316 $\pm$ 0,0459 & 0,9941 $\pm$ 0,5038 & 0,6588 $\pm$ 0,0210\\
+\bottomrule\end{longtable}
+
+\subsection{Đối chứng chỉ dùng dữ liệu đích \texorpdfstring{$K=500$}{K=500} không huấn luyện nguồn}\label{subsec:target-only-k500}
+Để phản biện câu hỏi liệu có cần huấn luyện Transformer trên xe nguồn hay không một khi hệ thống đã cho phép thu thập $K=500$ cửa sổ lành tính đầu phiên trên xe đích, Bảng~\ref{tab:target-only-k500} đối chứng hai bộ dò bất thường thuần không giám sát trên cùng tập tiền tố khởi động gộp đa tệp $N_{\text{pool}} = \sum k_i \in [3.539, 6.000]$ cửa sổ lành tính của xe đích (gom $k_i = \min(500, \lfloor L_{\text{benign}}^{(i)}/2\rfloor)$ từ mỗi tệp thử nghiệm, bảo đảm cùng ngân sách quan sát với quy trình hiệu chuẩn Transformer, 0 mẫu nguồn, 0 nhãn tấn công). Trong đó, (i) \code{IsolationForest} (200 cây) khớp trên toàn bộ tiền tố gộp $N_{\text{pool}}$ và chọn ngưỡng phân vị in-sample trên vector tóm tắt cửa sổ Structural 60D (\code{mean}+\code{std}), và (ii) khoảng cách năng lượng hiệp phương sai \code{Split-Mahalanobis} chính quy hóa co $0{,}1$ trên Raw 56D (\code{mean}+\code{std}) và Structural 60D theo cơ chế tách đôi chống rò rỉ nội mẫu (\textit{split-warmup}: gom 250 cửa sổ đầu mỗi tệp làm tập ước lượng $\mu,\Sigma$ với $N_{\text{fit}} \in [1.770, 3.000]$ và 250 cửa sổ tiếp theo làm tập chọn ngưỡng phân vị out-of-sample với $N_{\text{cal}} \in [1.770, 3.000]$).
+
+{\small\setlength{\tabcolsep}{4pt}
+\begin{longtable}{P{4.2cm}P{0.7cm}P{1.1cm}P{2.2cm}P{1.5cm}P{1.4cm}P{2.1cm}}
+\caption[Đối chứng bộ phát hiện chỉ dùng dữ liệu nền đích $K=500$]{Kết quả đối chứng các bộ phát hiện thuần không giám sát chỉ sử dụng $K=500$ cửa sổ nền đích (không huấn luyện dữ liệu nguồn; giá trị trong ngoặc là trung bình ba xe đích khử lặp)}\label{tab:target-only-k500}\\\toprule
+Phương pháp (0 nguồn) & ĐK & $\alpha$ & Recall (3-xe) & FAR (\%) & F1 & AP (3-xe)\\\midrule
+\endfirsthead\caption[]{(tiếp theo)}\\\toprule
+Phương pháp (0 nguồn) & ĐK & $\alpha$ & Recall (3-xe) & FAR (\%) & F1 & AP (3-xe)\\\midrule
+\endhead
+IsolationForest St60 ($K=500$) & B & 0,1\% & 0,3174 (0,3786) & 0,195 & 0,3888 & 0,5989 (0,5945)\\
+IsolationForest St60 ($K=500$) & B & 1,0\% & 0,3889 (0,4557) & 2{,}708 & 0,3575 & 0,5989 (0,5945)\\
+Split-Mahalanobis Raw56 (250/250) & B & 0,1\% & 0,5867 (0,5858) & 1{,}825 & 0,6231 & 0,6349 (0,6206)\\
+Split-Mahalanobis Raw56 (250/250) & B & 1,0\% & 0,6561 (0,6508) & 5{,}636 & 0,5712 & 0,6349 (0,6206)\\
+Split-Mahalanobis St60 (250/250) & B & 0,1\% & \textbf{0,6581} (\textbf{0,6317}) & 1{,}225 & \textbf{0,6829} & \textbf{0,7048} (\textbf{0,6701})\\
+Split-Mahalanobis St60 (250/250) & B & 1,0\% & 0,7007 (0,6759) & 4{,}999 & 0,5968 & \textbf{0,7048} (\textbf{0,6701})\\
+\midrule
+IsolationForest St60 ($K=500$) & D & 0,1\% & 0,2405 (0,2945) & 0,122 & 0,3238 & 0,5287 (0,5274)\\
+IsolationForest St60 ($K=500$) & D & 1,0\% & 0,3931 (0,4531) & 1{,}713 & 0,4041 & 0,5287 (0,5274)\\
+Split-Mahalanobis Raw56 (250/250) & D & 0,1\% & 0,6059 (0,6299) & 1{,}165 & 0,6185 & 0,6955 (0,6845)\\
+Split-Mahalanobis Raw56 (250/250) & D & 1,0\% & 0,6588 (0,6893) & 5{,}244 & 0,5423 & 0,6955 (0,6845)\\
+Split-Mahalanobis St60 (250/250) & D & 0,1\% & \textbf{0,6244} (\textbf{0,6359}) & 1{,}530 & \textbf{0,6344} & \textbf{0,7605} (\textbf{0,7244})\\
+Split-Mahalanobis St60 (250/250) & D & 1,0\% & 0,7193 (0,7268) & 7{,}564 & 0,5547 & \textbf{0,7605} (\textbf{0,7244})\\
+\midrule
+\multicolumn{7}{P{13.4cm}}{\footnotesize Đối chiếu tham chiếu in-sample $K=500$ Mahalanobis St60: AP $\text{B}=0{,}7321$ ($\alpha=0{,}1\%$ FAR $0{,}026\%$, $\alpha=1{,}0\%$ trượt lên $6{,}291\%$); AP $\text{D}=0{,}7750$ ($\alpha=0{,}1\%$ FAR $0{,}023\%$, $\alpha=1{,}0\%$ trượt lên $1{,}959\%$).}\\
+\bottomrule\end{longtable}}
+
+Kết quả ở Bảng~\ref{tab:target-only-k500} làm nổi bật hai kết luận cân bằng quan trọng: (1) Một khi đã cho phép thu thập nền $K=500$ cửa sổ trên xe đích, mô hình mật độ đơn giản \code{Split-Mahalanobis St60} (chỉ dùng biểu diễn Structural 30 chiều ở dạng mean+std, không cần huấn luyện nguồn) đạt chất lượng xếp hạng AP vượt trội hơn Transformer huấn luyện từ nguồn (B: $0{,}7048$ so với $0{,}5845$; D: $0{,}7605$ so với $0{,}3702$ --- đặc biệt ở điều kiện D zero-day nơi bộ phân loại nhị phân nguồn quá khớp theo tấn công nguồn), và biểu diễn Structural tiếp tục thắng Raw đồng bộ trên mô hình chỉ dùng đích ($0{,}7048$ so với $0{,}6349$ ở B; $0{,}7605$ so với $0{,}6955$ ở D); (2) Tuy vậy, điểm yếu cố hữu của khoảng cách hiệp phương sai 60 chiều dù fit trên toàn bộ tiền tố gộp ($N_{\text{fit}} \approx 1.770\text{--}3.000$ cửa sổ) là \textbf{mất kiểm soát báo động giả vùng đuôi}: tại ngân sách $\alpha=0{,}1\%$ và $1{,}0\%$, \code{Split-Mahalanobis St60} trượt FAR thực nghiệm lên $1{,}225\%\text{--}4{,}999\%$ ở B và $1{,}530\%\text{--}7{,}564\%$ ở D (vượt $5\times$--$15\times$ ngân sách) do hiện tượng phi dừng giữa các chuyến lái, tự tương quan chuỗi và đặc tính phi Gauss đuôi nặng; tương tự hiện tượng trượt FAR của $E_{\text{white}}$ ($3{,}831\%$ ở Bảng~\ref{tab:benign-invariant-main}); trong khi Transformer nguồn đóng băng chỉ hiệu chuẩn \textbf{một ngưỡng vô hướng 1 chiều} giữ FAR thực sát mục tiêu ($0{,}077\%\text{--}0{,}108\%$ tại $\alpha=0{,}1\%$ và $0{,}575\%\text{--}1{,}075\%$ tại $\alpha=1{,}0\%$; riêng B đạt $0{,}102\%\text{--}1{,}075\%$). Điều này lý giải vai trò bổ trợ rõ rệt giữa giàu thông tin cấu trúc của biểu diễn 30 chiều và tính ổn định phân vị của bộ mã hóa huấn luyện sẵn.
+
+\section{Kiểm toán độ phức tạp kiến trúc, FLOPs và bộ nhớ trạng thái}\label{subsec:complexity-audit}
+Bên cạnh thời gian thực thi đo trên máy bàn, Bảng~\ref{tab:model-complexity-audit} tổng hợp số tham số, MACs/cửa sổ, FLOPs/cửa sổ, dung lượng trọng số FP32 và bộ nhớ RAM cho bảng trạng thái lịch sử $H_k$ trên chuẩn CAN 11-bit. \code{Structural Transformer} chỉ bổ sung $128$ tham số ($+0{,}17\%$) và $8.192$ MACs/cửa sổ ($+0{,}15\%$) so với \code{Raw Transformer} ($5{,}37\text{M}$ so với $5{,}36\text{M}$ MACs), cùng $130{,}00\text{ KiB}$ RAM cố định cho bảng trạng thái 2.048 ID. Trái lại, \code{CANBERT+} tiêu thụ tới $54{,}25\text{M}$ tham số ($206{,}94\text{ MiB}$ FP32) và $27{,}24\text{G}$ MACs/cửa sổ ($54{,}48\text{G}$ FLOPs do chạy khối BERT 6 tầng $H=768$ lặp 64 lần cho từng khung $10$ token) — nặng gấp $720\times$ về tham số và $5.075\times$ về MACs/cửa sổ so với \code{Structural Transformer}.
+
+{\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{P{3.45cm}P{0.95cm}P{1.65cm}P{2.20cm}P{2.25cm}P{1.90cm}P{1.70cm}}
+\caption{Thống kê độ phức tạp tĩnh của các mô hình (\code{batch=1}, $W=64$, tính trên một cửa sổ) và dung lượng bộ nhớ trạng thái $H_k$}\label{tab:model-complexity-audit}\\\toprule
+Mô hình & Chiều & Params & MACs & FLOPs & FP32 & RAM $H_k$\\\midrule
+\endfirsthead\caption[]{(tiếp theo)}\\\toprule
+Mô hình & Chiều & Params & MACs & FLOPs & FP32 & RAM $H_k$\\\midrule
+\endhead
+Raw Transformer & 28 & 75.170 & 5.359.680 & 10.719.360 & 293,63 KiB & 0,0 KiB\\
+\textbf{Structural Transformer} & \textbf{30} & \textbf{75.298} & \textbf{5.367.872} & \textbf{10.735.744} & \textbf{294,13 KiB} & \textbf{130,0 KiB}\\
+Raw + Structural & 41 & 76.002 & 5.412.928 & 10.825.856 & 296,88 KiB & 130,0 KiB\\
+Raw-no-ID & 17 & 74.466 & 5.314.624 & 10.629.248 & 290,88 KiB & 0,0 KiB\\
+Structural-no-delta & 21 & 74.722 & 5.331.008 & 10.662.016 & 291,88 KiB & 0,0 KiB\\
+Structural-no-payload & 22 & 74.786 & 5.335.104 & 10.670.208 & 292,13 KiB & 130,0 KiB\\
+CANLP-char-DNN ($d=273$) & 273 & 43.458 & 2.768.896 & 5.537.792 & 169,76 KiB & 0,0 KiB\\
+CANBERT+ (Set 1 vocab) & 10 & 54.247.853 & 27.240.881.280 & 54.481.762.560 & 206,94 MiB & 0,0 KiB\\
+\bottomrule\end{longtable}}
+
+
+
+\backmatter
+\phantomsection
+\addcontentsline{toc}{chapter}{Tài liệu tham khảo}
+\bibliographystyle{plainnat}
+\begingroup\small\setlength{\bibsep}{2.5pt}\sloppy\bibliography{refs}\endgroup
+
+\end{document}
