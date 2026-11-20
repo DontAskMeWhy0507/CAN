@@ -502,7 +502,7 @@ def generate_pipeline_architecture(lang: str, out_path: Path) -> None:
         "GIAI ĐOẠN II: HIỆU CHUẨN\n& LỌC SỰ KIỆN" if is_vi else "STAGE II: CALIBRATION\n& EVENT FILTERING",
         ha="center",
         va="center",
-        fontsize=12.0,
+        fontsize=10.5,
         fontweight="bold",
         color="#15803D",
         linespacing=1.08,

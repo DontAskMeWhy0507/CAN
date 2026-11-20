@@ -1246,7 +1246,7 @@ Các siêu tham số huấn luyện và ngân sách báo động giả chi tiế
 {\renewcommand{\arraystretch}{0.9}
 \begin{table}[htbp]\centering\footnotesize\setlength{\tabcolsep}{4.5pt}
 \caption[Phân loại có hệ thống các cơ chế thích ứng miền và đối chứng bất biến]{Phân loại có hệ thống các cơ chế thích ứng miền và đối chứng bất biến}\label{tab:adaptation-taxonomy}
-\begin{tabular}{P{2.6cm}P{2.8cm}P{1.8cm}P{2.4cm}P{1.8cm}P{3.2cm}}
+\begin{tabular}{P{2.5cm}P{2.7cm}P{2.2cm}P{2.3cm}P{1.7cm}P{3.2cm}}
 \toprule
 Nhóm vai trò & Cơ chế & Dữ liệu nguồn & Ngân sách xe đích & Trọng số mô hình & Nguyên lý cốt lõi\\\midrule
 \textbf{Giai đoạn II (Hệ thống chính)} & Hiệu chuẩn tiền tố lành tính \& lọc $m$-trong-$n$ & Đơn nguồn (1 xe) & Tiền tố lành tính không nhãn ($K$ cửa sổ/bản ghi) & Đóng băng hoàn toàn & Ước lượng phân vị ngoại mẫu 1 chiều $\tau_{\text{target}}$ kết hợp lọc sự kiện trượt $m$-trong-$n$\\
@@ -1885,7 +1885,7 @@ Relative + cAdv & 0,6579 & \textbf{29721,1} (29,72\%) & 0,5764 & 0,4148 & 94,74\
 \end{table}} Mặc dù học đa nguồn nâng AP của Structural lên 0,6020 (Raw $0{,}2196$) và nhánh đối kháng~\cite{ganin2016dann} có điều kiện (\code{cAdv}) giảm FAR nguồn xuống $31{,}97\%$ ($\text{F1}=0{,}4254$), FAR phân rã theo xe vẫn bộc lộ sự mất cân bằng giữa các nền tảng: \textit{Traverse} đạt $0{,}058\%$ (recall $51{,}35\%$, AP $0{,}6193$) và \textit{Impala} $0{,}473\%$ (recall $54{,}26\%$, AP $0{,}6314$), nhưng \textit{Silverado} tăng lên $47{,}46\%$ (recall $85{,}46\%$, AP $0{,}6485$) và \textit{Forester} tới $79{,}91\%$ (recall $95{,}40\%$, AP $0{,}4890$). Đáng chú ý, biến thể \code{Relative + cAdv} (22D, loại bỏ 8 byte payload tuyệt đối như định nghĩa tại Mục~\ref{subsec:method-lovo}) cắt giảm thêm FAR nguồn xuống mức thấp nhất trong nhóm đa nguồn ($29{,}72\%$) trong khi vẫn bảo toàn khả năng giải mã tấn công ở mức cao ($79{,}94\%$ probe tấn công, Bảng~\ref{tab:multisource-lovo}). Tuy nhiên, mức độ tồn lưu thông tin xe của toàn bộ các biến thể đối kháng vẫn ở mức cao ($93{,}22\%\text{--}94{,}74\%$ probe LR), khẳng định rằng tối ưu đối kháng đơn thuần không thể xóa bỏ hoàn toàn ranh giới giữa các miền phương tiện.
 
 \subsubsection{Làm trắng nền lành tính, triệt tiêu tuyến tính LEACE/INLP8 và điểm năng lượng Mahalanobis}\label{subsec:eval-whitening}
-Trên 96 pipeline hậu nghiệm (12 encoder LOVO đóng băng $\times$ 8 nhánh, trích tổng cộng 54.231 cửa sổ lành đối chứng trên cả 4 xe đích gồm $19.774 + 8.968 + 20.239 + 5.250$ cửa sổ; mỗi xe dành riêng một bản ghi lành tính độc lập kèm giao thức lọc trùng nội dung (loại bỏ 740 cửa sổ trùng mã băm SHA-256; Mục~\ref{subsec:method-whitening}), Bảng~\ref{tab:benign-invariant-main} và Hình~\ref{fig:benign-invariant} đối chiếu hiệu quả làm trắng nền lành, xóa tuyến tính LEACE/INLP8 và điểm năng lượng Mahalanobis $E_{\text{white}}$.
+Trên 96 pipeline hậu nghiệm (12 encoder LOVO đóng băng $\times$ 8 nhánh, trích tổng cộng 54.231 cửa sổ lành đối chứng trên cả 4 xe đích gồm $19.774 + 8.968 + 20.239 + 5.250$ cửa sổ; mỗi xe dành riêng một bản ghi lành tính độc lập kèm giao thức lọc trùng nội dung (loại bỏ 740 cửa sổ trùng mã băm SHA-256); Mục~\ref{subsec:method-whitening}), Bảng~\ref{tab:benign-invariant-main} và Hình~\ref{fig:benign-invariant} đối chiếu hiệu quả làm trắng nền lành, xóa tuyến tính LEACE/INLP8 và điểm năng lượng Mahalanobis $E_{\text{white}}$.
 
 \begin{figure}[htbp]
 \centering
