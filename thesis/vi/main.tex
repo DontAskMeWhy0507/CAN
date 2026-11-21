@@ -465,7 +465,7 @@ ECU & Electronic Control Unit (Bộ điều khiển điện tử) & ROM & Read-O
 EOF & End of Frame (Kết thúc khung CAN) & RTR & Remote Transmission Request (Yêu cầu truyền từ xa) \\
 FFN & Feed-Forward Network (Mạng truyền thẳng) & SHA-256 & Secure Hash Algorithm 256-bit \\
 FLOPs & Floating Point Operations (Phép tính dấu phẩy động) & SOF & Start of Frame (Khởi đầu khung CAN) \\
-F1 & Điểm F1 (Trung bình điều hòa Precision--Recall) & SRAM & Static Random Access Memory (Bộ nhớ RAM tĩnh) \\
+F1 & Điểm F1 (Trung bình điều hòa Precision--Recall) & SRAM & Static Random Access Memory (RAM tĩnh) \\
 FAR & False Alarm Rate (Tỷ lệ báo động giả) & TEC & Transmit Error Counter (Bộ đếm lỗi truyền) \\
 FN/FP & False Negative / False Positive & TF & Transformer \\
 FPR & False Positive Rate (Tỷ lệ dương tính giả) & TF-IDF & Term Frequency--Inverse Document Frequency \\
@@ -1316,7 +1316,7 @@ gồm 236 bản ghi thực tế thu thập trên bốn dòng xe vật lý (Chevr
 
 \begin{table}[htbp]
   \centering
-  \caption{Thống kê chia tách tập huấn luyện/validation nguồn, số lượng bản ghi kiểm thử và phân bố họ tấn công trên bốn tập \textit{can-train-and-test}}
+  \caption[Thống kê chia tách dữ liệu và phân bố họ tấn công trên bốn tập CTT]{Thống kê chia tách tập huấn luyện/validation nguồn, số lượng bản ghi kiểm thử và phân bố họ tấn công trên bốn tập \textit{can-train-and-test}}
   \label{tab:ctt-split}
   \footnotesize
   \begin{tabular}{@{}c c c c p{6.4cm}@{}}
@@ -1349,7 +1349,7 @@ Các siêu tham số huấn luyện mặc định của bộ mã hóa Transforme
 
 \begin{table}[htbp]
   \centering
-  \caption{Các siêu tham số huấn luyện và ngân sách báo động giả mặc định của thực nghiệm}
+  \caption[Siêu tham số huấn luyện và ngân sách báo động giả mặc định]{Các siêu tham số huấn luyện và ngân sách báo động giả mặc định của thực nghiệm}
   \label{tab:hyperparams}\label{tab:config}
   \footnotesize
   \begin{tabular}{@{}l l@{}}
@@ -1379,7 +1379,7 @@ Bảng~\ref{tab:main-comparison} và Hình~\ref{fig:main-comparison} báo cáo k
 
 \begin{table}[htbp]
   \centering
-  \caption{Kết quả đối sánh chính của năm phương pháp tại cửa sổ $W=64$ dưới ngưỡng đóng băng từ nguồn qua bốn điều kiện A--D (FAR tính trên 100.000 cửa sổ lành tính kèm phần trăm)}
+  \caption[Kết quả đối sánh chính năm phương pháp tại $W=64$ dưới ngưỡng nguồn]{Kết quả đối sánh chính của năm phương pháp tại cửa sổ $W=64$ dưới ngưỡng đóng băng từ nguồn qua bốn điều kiện A--D (FAR tính trên 100.000 cửa sổ lành tính kèm phần trăm)}
   \label{tab:main-comparison}
   \footnotesize
   \begin{tabular}{@{}c l c c c c@{}}
@@ -1417,7 +1417,7 @@ Bảng~\ref{tab:main-comparison} và Hình~\ref{fig:main-comparison} báo cáo k
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\textwidth]{figs/main_comparison_w64.png}
-  \caption{Kết quả đối sánh năm phương pháp ở cửa sổ $W=64$ qua bốn điều kiện A--D dưới ngưỡng nguồn (trọng số bốn tập ngang nhau).}
+  \caption[Kết quả đối sánh năm phương pháp ở cửa sổ $W=64$ qua bốn điều kiện A--D]{Kết quả đối sánh năm phương pháp ở cửa sổ $W=64$ qua bốn điều kiện A--D dưới ngưỡng nguồn (trọng số bốn tập ngang nhau).}
   \label{fig:main-comparison}
 \end{figure}
 
@@ -1429,7 +1429,7 @@ Bóc tách cơ chế thất bại của các đối thủ nền cho thấy hai n
 
 \begin{table}[htbp]
   \centering
-  \caption{Đối chứng nhánh thuần nội dung (28D/30D) và động học thời gian (29D/32D) trên 136 bản ghi CTT đơn điệu nghiêm ngặt (trung bình 4 tập $\times$ 3 hạt giống; trong ngoặc là trung bình khử lặp 3 xe đích)}
+  \caption[Đối chứng nhánh thuần nội dung và động học thời gian trên 136 bản ghi đơn điệu]{Đối chứng nhánh thuần nội dung (28D/30D) và động học thời gian (29D/32D) trên 136 bản ghi CTT đơn điệu nghiêm ngặt (trung bình 4 tập $\times$ 3 hạt giống; trong ngoặc là trung bình khử lặp 3 xe đích)}
   \label{tab:timed-vs-content}
   \footnotesize
   \begin{tabular}{@{}l c c c c c c@{}}
@@ -1463,13 +1463,13 @@ Trên luồng bus đồng hồ chuẩn, Timed Structural (32D) tạo bước nh�
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\textwidth]{figs/calibration_recovery_comparison.png}
-  \caption{Đánh giá khôi phục điểm vận hành qua hiệu chuẩn nền lành tính xe đích: (a)--(b) Đường cong Recall theo FAR thực nghiệm tại $K=500$; (c)--(d) Điểm F1 theo từng họ tấn công ở Điều kiện~B và D tại $K=500, \alpha=1{,}0\%$.}
+  \caption[Đánh giá khôi phục điểm vận hành qua hiệu chuẩn nền lành tính xe đích]{Đánh giá khôi phục điểm vận hành qua hiệu chuẩn nền lành tính xe đích: (a)--(b) Đường cong Recall theo FAR thực nghiệm tại $K=500$; (c)--(d) Điểm F1 theo từng họ tấn công ở Điều kiện~B và D tại $K=500, \alpha=1{,}0\%$.}
   \label{fig:calibration-recovery}
 \end{figure}
 
 \begin{table}[htbp]
   \centering
-  \caption{Hiệu quả khôi phục điểm vận hành qua hiệu chuẩn tiền tố lành tính ($K=500$, $N_{\text{pool}} \in [3.539, 6.000]$, ngân sách $\alpha=1{,}0\%$) và bộ lọc sự kiện trượt $m$-trong-$n$}
+  \caption[Hiệu quả khôi phục điểm vận hành qua hiệu chuẩn tiền tố lành tính và lọc trượt]{Hiệu quả khôi phục điểm vận hành qua hiệu chuẩn tiền tố lành tính ($K=500$, $N_{\text{pool}} \in [3.539, 6.000]$, ngân sách $\alpha=1{,}0\%$) và bộ lọc sự kiện trượt $m$-trong-$n$}
   \label{tab:stage2-calibration}
   \footnotesize
   \begin{tabular}{@{}c l c c c c c c@{}}
@@ -1495,7 +1495,7 @@ Trên luồng bus đồng hồ chuẩn, Timed Structural (32D) tạo bước nh�
   \end{tabular}
 \end{table}
 
-Hiệu chuẩn Giai đoạn~II mang lại bốn kết quả nổi bật:
+Hiệu chuẩn Giai đoạn~II mang lại ba kết quả nổi bật:
 \begin{enumerate}
   \item \textbf{Khôi phục kiểm soát FAR và cận sai số lý thuyết:} Tại $K=500, \alpha=1{,}0\%$ ở Điều kiện~B, Structural kéo FAR từ 52,46\% xuống 0,8545\% (Recall 40,42\%) và Structural+MixStyle đạt Recall 48,59\% với FAR trung bình $\le 1{,}0752\%$ (vượt xa mức 33,73\% của Raw và các đối thủ CANBERT+/CANLP kể cả sau khi đổi sang \textit{mean-pooling}). Khi thay đổi ngân sách khởi động trên Structural+MixStyle, Recall tăng ổn định từ 47,34\% ($K=200$, FAR 1,22\%) lên 51,41\% ($K=1000$, FAR 0,97\%). Theo bất đẳng thức DKW~\cite{massart1990dkw} ở độ tin cậy 95\% ($\delta=0{,}05$) với $N_{\text{pool}} \in [3.539, 6.000]$, sai số đồng đều tối đa bị chặn ở $\epsilon \le 2{,}28\%$--$1{,}75\%$ và sai số chuẩn nhị thức tại $\alpha=1{,}0\%$ đạt $0{,}17\%$--$0{,}13\%$. Trong thực nghiệm, FAR trung bình đạt $\le 1{,}08\%$, song vẫn phân tán giữa từng xe (thấp nhất 0,22\% ở Tập~3 và chạm 2,00\% ở Tập~4) do tính phi dừng và tự tương quan chuỗi của luồng CAN.
   \item \textbf{Hiệu quả bộ lọc sự kiện trượt $m$-trong-$n$:} Lọc trượt 2-trong-3 cắt FAR Điều kiện~B gần 5 lần xuống 0,2234\% (Precision 84,96\%, Recall 49,11\%), trong khi cấu hình 3-trong-5 tiếp tục hạ FAR xuống 0,1387\% ở B (Precision 91,31\%, F1 0,5947) và 0,0575\% ở D (Precision 60,91\%).
@@ -1506,7 +1506,7 @@ Hiệu chuẩn Giai đoạn~II mang lại bốn kết quả nổi bật:
 
 \begin{table}[htbp]
   \centering
-  \caption{Đối chứng giữa mô hình chuyển giao nguồn (hiệu chuẩn $K=500$) và các bộ phát hiện thuần không giám sát chỉ dùng tiền tố đích $K=500$ (không dữ liệu nguồn)}
+  \caption[Đối chứng giữa mô hình chuyển giao nguồn và bộ phát hiện thuần xe đích]{Đối chứng giữa mô hình chuyển giao nguồn (hiệu chuẩn $K=500$) và các bộ phát hiện thuần không giám sát chỉ dùng tiền tố đích $K=500$ (không dữ liệu nguồn)}
   \label{tab:target-only}
   \footnotesize
   \begin{tabular}{@{}l c c c c c c@{}}
@@ -1540,12 +1540,13 @@ Bảng~\ref{tab:target-only} làm sáng tỏ tính bổ trợ kiến trúc then 
 
 \begin{table}[htbp]
   \centering
-  \caption{Phân tích cắt bỏ 10 biến thể biểu diễn tại kích thước cửa sổ $W=64$ dưới ngưỡng nguồn qua bốn điều kiện A--D}
+  \caption[Phân tích cắt bỏ 10 biến thể biểu diễn tại $W=64$ qua bốn điều kiện A--D]{Phân tích cắt bỏ 10 biến thể biểu diễn tại kích thước cửa sổ $W=64$ dưới ngưỡng nguồn qua bốn điều kiện A--D}
   \label{tab:ablation-compact}
-  \footnotesize
+  \setlength{\tabcolsep}{3.5pt}
+  \resizebox{\textwidth}{!}{%
   \begin{tabular}{@{}l c c c c c c c c c@{}}
     \toprule
-    \textbf{Biến thể biểu diễn} & $\text{AP}_A$ & $\text{Rec}_B$ & $\text{FAR}_B$(\%) & $\text{F1}_B$ & $\text{AP}_B$ & $\text{AP}_C$ & $\text{Rec}_D$ & $\text{FAR}_D$(\%) & $\text{AP}_D$ \\
+    \textbf{Biến thể (Chiều)} & $\text{AP}_A$ & $\text{Rec}_B$ & $\text{FAR}_B$(\%) & $\text{F1}_B$ & $\text{AP}_B$ & $\text{AP}_C$ & $\text{Rec}_D$ & $\text{FAR}_D$(\%) & $\text{AP}_D$ \\
     \midrule
     Chỉ ID (11D) & \textbf{0,8492} & 0,8622 & 68,90 & 0,2573 & 0,3379 & 0,2736 & 0,6822 & 67,79 & 0,1914 \\
     Raw (28D) & 0,7312 & 0,8541 & 65,30 & 0,3000 & 0,3781 & 0,2661 & 0,6614 & 67,98 & 0,1648 \\
@@ -1558,7 +1559,8 @@ Bảng~\ref{tab:target-only} làm sáng tỏ tính bổ trợ kiến trúc then 
     Structural bỏ hạng/$W$ (29D) & 0,6837 & 0,7998 & 59,72 & 0,2425 & 0,5266 & 0,3420 & 0,6881 & 62,06 & 0,3446 \\
     Structural bỏ chuyển tiếp (29D) & 0,7044 & 0,7137 & 53,24 & 0,2220 & \textbf{0,5556} & 0,3210 & 0,6665 & 55,25 & \textbf{0,3679} \\
     \bottomrule
-  \end{tabular}
+  \end{tabular}%
+  }
 \end{table}
 
 Ba quy luật thiết kế nổi bật từ Bảng~\ref{tab:ablation-compact}: (1) xóa ID thô một cách cơ học (\textit{Raw bỏ ID}) làm $\text{AP}_B$ rơi từ 0,3781 xuống 0,2200; (2) \textit{thống kê cục bộ} và \textit{vi sai $\Delta\text{payload}$} là hai trụ cột quyết định khi loại bỏ chúng làm $\text{AP}_B$ tụt mạnh lần lượt về 0,2894 và 0,4927; và (3) bỏ payload tuyệt đối nâng mạnh phát hiện tấn công mới ở Điều kiện~C ($\text{AP}_C = 0{,}4730$ so với 0,2928) nhưng tăng FAR Điều kiện~B lên 66,78\%, nên không gian 30D đầy đủ giữ cân bằng tối ưu trên cả bốn điều kiện. Dưới kiểm chứng độ nhạy kích thước cửa sổ đẳng lượng (64.000 khung/tệp/lớp qua $W \in \{32, 64, 128\}$), Structural luôn vượt Raw về AP và xác lập điểm tối ưu tại $W=64$ ($\text{AP}_B = 0{,}5607$ sau hiệu chuẩn so với 0,4304 ở $W=32$ và 0,4903 ở $W=128$).
@@ -1567,7 +1569,7 @@ Ba quy luật thiết kế nổi bật từ Bảng~\ref{tab:ablation-compact}: (
 
 \begin{table}[htbp]
   \centering
-  \caption{Khả năng giải mã tuyến tính nhãn xe và nhãn tấn công từ từng nhóm đặc trưng đầu vào cô lập trên 8.440 cửa sổ cân bằng ($W=64$, 4.640 mẫu kiểm thử giữ ngoài)}
+  \caption[Khả năng giải mã tuyến tính nhãn xe và tấn công theo từng nhóm đặc trưng đầu vào]{Khả năng giải mã tuyến tính nhãn xe và nhãn tấn công từ từng nhóm đặc trưng đầu vào cô lập trên 8.440 cửa sổ cân bằng ($W=64$, 4.640 mẫu kiểm thử giữ ngoài)}
   \label{tab:input-probes}
   \footnotesize
   \begin{tabular}{@{}l c c c c@{}}
@@ -1596,7 +1598,7 @@ Ba kênh rò rỉ chính giải thích mức 94,88\%: nhóm 9 chiều hình thá
 
 \begin{table}[htbp]
   \centering
-  \caption{Đối chứng tổng hợp giữa khung đề xuất với ba nhóm phương pháp thích ứng và triệt tiêu cấp biểu diễn (Probe xe báo cáo cặp tuyến tính LR / phi tuyến MLP; dấu -- chỉ không áp dụng)}
+  \caption[Đối chứng tổng hợp với ba nhóm kỹ thuật thích ứng và triệt tiêu cấp biểu diễn]{Đối chứng tổng hợp giữa khung đề xuất với ba nhóm phương pháp thích ứng và triệt tiêu cấp biểu diễn (Probe xe báo cáo cặp tuyến tính LR / phi tuyến MLP; dấu -- chỉ không áp dụng)}
   \label{tab:adaptation-unified}
   \footnotesize
   \begin{tabular}{@{}l c c c c c@{}}
@@ -1628,7 +1630,7 @@ Ba kênh rò rỉ chính giải thích mức 94,88\%: nhóm 9 chiều hình thá
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\textwidth]{figs/benign_invariant_overview.png}
-  \caption{Đối chiếu đồng thời phát hiện tấn công ($\alpha=1{,}0\%$, lọc trùng mã băm SHA-256), thăm dò 4 xe trên biểu diễn đặc trưng (không gian 64D gốc hoặc chiếu 8D dư đối với PCA8 và INLP8) và thăm dò trên điểm rủi ro 1 chiều (mức ngẫu nhiên 25\%).}
+  \caption[Đối chiếu phát hiện tấn công và thăm dò xe sau làm trắng và triệt tiêu tuyến tính]{Đối chiếu đồng thời phát hiện tấn công ($\alpha=1{,}0\%$, lọc trùng mã băm SHA-256), thăm dò 4 xe trên biểu diễn đặc trưng (không gian 64D gốc hoặc chiếu 8D dư đối với PCA8 và INLP8) và thăm dò trên điểm rủi ro 1 chiều (mức ngẫu nhiên 25\%).}
   \label{fig:erasure-overview}
 \end{figure}
 
@@ -1640,7 +1642,7 @@ Bảng~\ref{tab:adaptation-unified} và Hình~\ref{fig:erasure-overview} xác l�
 
 \begin{table}[htbp]
   \centering
-  \caption{Đánh giá tổng quát hóa trên 57 bản ghi ngoại bộ trước và sau hiệu chuẩn nền lành tính Giai đoạn~II ($K=500, \alpha=0{,}1\%$, trung bình 3 hạt giống)}
+  \caption[Đánh giá tổng quát hóa trên 57 bản ghi ngoại bộ trước và sau hiệu chuẩn]{Đánh giá tổng quát hóa trên 57 bản ghi ngoại bộ trước và sau hiệu chuẩn nền lành tính Giai đoạn~II ($K=500, \alpha=0{,}1\%$, trung bình 3 hạt giống)}
   \label{tab:external-unified}
   \footnotesize
   \begin{tabular}{@{}l l c c c c@{}}
@@ -1672,7 +1674,7 @@ Trên các kịch bản DoS thực tế, khung hai giai đoạn hoạt động x
 
 \begin{table}[htbp]
   \centering
-  \caption{Phân rã độ trễ xử lý ba thành phần theo từng cửa sổ $W=64$ trên CPU và GPU ($N=900, \text{batch}=1$, đơn vị ms)}
+  \caption[Phân rã độ trễ xử lý ba thành phần theo cửa sổ $W=64$ trên CPU và GPU]{Phân rã độ trễ xử lý ba thành phần theo từng cửa sổ $W=64$ trên CPU và GPU ($N=900, \text{batch}=1$, đơn vị ms)}
   \label{tab:runtime-breakdown}
   \footnotesize
   \begin{tabular}{@{}l c c c c@{}}
@@ -1708,8 +1710,8 @@ Bên cạnh các kết quả đạt được, khóa luận ghi nhận bốn gi�
 \begin{itemize}
     \item \textbf{Hạn chế trước tấn công ngụy trang giữ nguyên chu kỳ và độ nhạy dữ liệu:} Trên bộ dữ liệu CAN-MIRGU, các cuộc tấn công mạo danh giữ nguyên nhịp phát và các pha đình chỉ không chèn khung tin khiến độ nhạy còn rất thấp ($0{,}65\%\text{--}3{,}08\%$ sau hiệu chuẩn); đồng thời trên bộ dữ liệu mô phỏng CICIoV2024, sự thiếu biến thiên DLC và hiện tượng thiếu lưu lượng nền gây ra phương sai lớn giữa các hạt giống khởi tạo.
     \item \textbf{Ràng buộc của cơ chế hiệu chuẩn tiền tố và độ trễ cửa sổ:} Hiệu chuẩn bằng tiền tố lành tính nhạy cảm với nguy cơ nhiễm bẩn pha khởi động ($1\%\text{--}5\%$ mẫu tấn công làm suy giảm mạnh Recall) và đòi hỏi cỡ mẫu đủ lớn ($N_{\text{pool}}\alpha \ge 1$) thay vì chỉ một phiên đơn lẻ $K = 500$ ở mức $\alpha = 0{,}1\%$. Bên cạnh đó, thiết kế cấp cửa sổ $W = 64$ đi kèm độ trễ gom đệm $32\text{--}64\text{ ms}$ và chưa định vị chính xác từng khung tin tấn công đơn lẻ.
-    \item \textbf{Khoảng cách giữa đánh giá ngoại tuyến và phần cứng ECU thực tế:} Bốn tập can-train-and-test mới bao gồm bốn xe vật lý (ba xe đích phân biệt) và các phép đo độ trễ hiện thực hiện trên máy trạm thay vì kiểm định ràng buộc thời gian thực trực tiếp trên bộ vi điều khiển ô tô.
-    \item \textbf{Đe dọa tính hợp lệ về quy mô phương tiện, dịch chuyển tiên nghiệm lớp và tồn dư biểu diễn:} Bộ đối chuẩn CTT chỉ bao gồm bốn dòng xe vật lý với ba xe đích phân biệt (Subaru Forester xuất hiện lặp ở cả Tập 2 và Tập 3); việc lấy mẫu cân bằng $50:50$ chưa bao quát độ lệch tiên nghiệm lớp thực tế; hiện tượng đảo ngược dấu thời gian ở 100 tệp CTT buộc mô hình chính vận hành ở chế độ nội dung; và các phép triệt tiêu tuyến tính vẫn để lại phần dư thông tin xe phi tuyến $42{,}01\%\text{--}57{,}17\%$ trong không gian ẩn.
+    \item \textbf{Khoảng cách giữa đánh giá ngoại tuyến và phần cứng ECU thực tế:} Các phép đo độ trễ hiện thực hiện trên máy trạm ở chế độ $\text{batch}=1$ thay vì kiểm định trực tiếp xung đột hàng đợi bus, giới hạn bộ nhớ SRAM và ràng buộc thời gian thực cứng trên vi điều khiển ô tô chuyên dụng.
+    \item \textbf{Giới hạn về quy mô phương tiện, dịch chuyển tiên nghiệm lớp và tồn dư biểu diễn:} Bộ đối chuẩn CTT mới bao gồm bốn dòng xe vật lý với ba xe đích phân biệt (Subaru Forester xuất hiện lặp ở cả Tập~2 và Tập~3); việc lấy mẫu cân bằng $50:50$ trong huấn luyện tạo dịch chuyển tiên nghiệm lớp so với luồng vận hành thực tế; hiện tượng đảo ngược dấu thời gian trên 100 bản ghi CTT buộc mô hình chính vận hành ở chế độ thuần nội dung; và các phép triệt tiêu tuyến tính vẫn để lại phần dư thông tin xe phi tuyến 42,01\%--57,17\% trong không gian ẩn.
 \end{itemize}
 
 \sect{Hướng phát triển tiếp theo}
