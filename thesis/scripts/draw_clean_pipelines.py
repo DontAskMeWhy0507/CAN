@@ -77,13 +77,13 @@ def draw_fig31_overview(out_dir: Path):
     # B2: Trích xuất 30D
     add_box(ax, 2.25, 2.85, 1.72, 1.52, fc="#E8F8F5", ec="#16A085", lw=1.4)
     ax.text(3.11, 4.10, "Trích xuất 30D", ha="center", va="center", fontsize=8.8, fontweight="bold", color="#0E6251")
-    ax.text(3.11, 3.40, "Cửa sổ W = 64\nLoại bỏ 11-bit ID\nCập nhật H_k\n(Nhánh nội dung)",
+    ax.text(3.11, 3.40, "Cửa sổ $W = 64$\nLoại bỏ 11-bit ID\nCập nhật $H_k$\n(Nhánh nội dung)",
             ha="center", va="center", fontsize=7.9, color="#2C3E50", linespacing=1.28)
 
     # B3: Huấn luyện nguồn
     add_box(ax, 4.32, 2.85, 1.98, 1.52, fc="#FEF9E7", ec="#D68910", lw=1.4)
     ax.text(5.31, 4.10, "Huấn luyện nguồn", ha="center", va="center", fontsize=8.8, fontweight="bold", color="#7E5109")
-    ax.text(5.31, 3.40, "Học Transformer f_θ\n(75.298 tham số)\nChọn τ_src trên Val\n(FAR ≤ 0,1%)",
+    ax.text(5.31, 3.40, "Học Transformer $f_\\theta$\n(75.298 tham số)\nChọn $\\tau_{\\mathrm{src}}$ trên Val\n(FAR ≤ 0,1%)",
             ha="center", va="center", fontsize=7.9, color="#2C3E50", linespacing=1.28)
 
     add_arrow(ax, 1.90, 3.61, 2.25, 3.61)
@@ -91,18 +91,18 @@ def draw_fig31_overview(out_dir: Path):
 
     # Mũi tên băng qua biên Nguồn -> Đích (GĐ I)
     add_arrow(ax, 6.30, 3.61, 7.62, 3.61, color="#1B4F72", lw=1.8)
-    add_pill(ax, 6.95, 3.61, 1.06, 0.56, "Đóng băng\nθ và τ_src", fc="#2C3E50", ec="#1C2833", fs=7.7)
+    add_pill(ax, 6.95, 3.61, 1.06, 0.56, "Đóng băng\n$\\theta$ và $\\tau_{\\mathrm{src}}$", fc="#2C3E50", ec="#1C2833", fs=7.7)
 
     # B4: Suy luận zero-shot xe đích
     add_box(ax, 7.62, 2.85, 2.85, 1.52, fc="#F5EEF8", ec="#7D3C98", lw=1.4)
     ax.text(9.045, 4.10, "Suy luận Zero-Shot trên Xe đích", ha="center", va="center", fontsize=8.8, fontweight="bold", color="#4A235A")
-    ax.text(9.045, 3.40, "Xe chưa từng quan sát (ĐK B, D, Ngoại bộ)\nTrích xuất cấu trúc 30D (nhân quả)\nChấm điểm f_θ → So sánh ngưỡng τ_src",
+    ax.text(9.045, 3.40, "Xe chưa từng quan sát (ĐK B, D, Ngoại bộ)\nTrích xuất cấu trúc 30D (nhân quả)\nChấm điểm $f_\\theta$ → So sánh ngưỡng $\\tau_{\\mathrm{src}}$",
             ha="center", va="center", fontsize=7.9, color="#2C3E50", linespacing=1.30)
 
     # B5: Hệ quả GĐ I
     add_box(ax, 10.82, 2.85, 3.18, 1.52, fc="#FDEDEC", ec="#C0392B", lw=1.5)
     ax.text(12.41, 4.10, "Phân kỳ xếp hạng & ngưỡng tĩnh", ha="center", va="center", fontsize=8.8, fontweight="bold", color="#922B21")
-    ax.text(12.41, 3.40, "• AP xếp hạng vượt trội (+17,74%pt)\n• Trôi dạt logit do đan xen đặc trưng\n• Ngưỡng tĩnh τ_src sụp đổ (FAR > 52%)",
+    ax.text(12.41, 3.40, "• AP xếp hạng vượt trội (+17,74%pt)\n• Trôi dạt logit do đan xen đặc trưng\n• Ngưỡng tĩnh $\\tau_{\\mathrm{src}}$ sụp đổ (FAR > 52%)",
             ha="center", va="center", fontsize=7.9, color="#641E16", linespacing=1.30)
 
     add_arrow(ax, 10.47, 3.61, 10.82, 3.61, color="#922B21")
@@ -114,33 +114,33 @@ def draw_fig31_overview(out_dir: Path):
     # C1: Khối cam kết nguyên tắc
     add_box(ax, 0.25, 0.35, 3.72, 1.55, fc="#F8F9F9", ec="#95A5A6", lw=1.2, ls="--")
     ax.text(2.11, 1.62, "Nguyên tắc chuyển giao an toàn", ha="center", va="center", fontsize=8.6, fontweight="bold", color="#2C3E50")
-    ax.text(0.42, 0.96, "• Không thu thập dữ liệu tấn công có nhãn trên xe đích\n• Không huấn luyện lại hay tinh chỉnh trọng số θ\n• Chỉ ước lượng 1 ngưỡng phân vị vô hướng τ_target",
+    ax.text(0.42, 0.96, "• Không thu thập dữ liệu tấn công có nhãn trên xe đích\n• Không huấn luyện lại hay tinh chỉnh trọng số $\\theta$\n• Chỉ ước lượng 1 ngưỡng phân vị vô hướng $\\tau_{\\mathrm{target}}$",
             ha="left", va="center", fontsize=7.9, color="#34495E", linespacing=1.35)
 
     # C2: Tái sử dụng f_theta
     add_box(ax, 4.32, 0.35, 1.98, 1.55, fc="#FEF9E7", ec="#D68910", lw=1.4)
-    ax.text(5.31, 1.62, "Bộ mã hóa nguồn f_θ", ha="center", va="center", fontsize=8.8, fontweight="bold", color="#7E5109")
-    ax.text(5.31, 0.96, "Giữ nguyên trọng số θ\n(Bộ nén rủi ro 1D:\n64×30 → s_k ∈ [0, 1])",
+    ax.text(5.31, 1.62, "Bộ mã hóa nguồn $f_\\theta$", ha="center", va="center", fontsize=8.8, fontweight="bold", color="#7E5109")
+    ax.text(5.31, 0.96, "Giữ nguyên trọng số $\\theta$\n(Bộ nén rủi ro 1D:\n$64\\times 30 \\rightarrow s_k \\in [0, 1]$)",
             ha="center", va="center", fontsize=7.9, color="#2C3E50", linespacing=1.30)
 
     # Mũi tên truyền f_theta từ GĐ I xuống GĐ II
     add_arrow(ax, 5.31, 2.85, 5.31, 1.90, color="#B7950B", lw=1.5, ls="--")
-    ax.text(5.40, 2.35, "Tái sử dụng θ", ha="left", va="center", fontsize=7.8, fontweight="bold", color="#7E5109")
+    ax.text(5.40, 2.35, "Tái sử dụng $\\theta$", ha="left", va="center", fontsize=7.8, fontweight="bold", color="#7E5109")
 
     # Mũi tên băng qua biên Nguồn -> Đích (GĐ II)
     add_arrow(ax, 6.30, 1.12, 7.62, 1.12, color="#1E8449", lw=1.8)
-    add_pill(ax, 6.95, 1.12, 1.06, 0.48, "Đóng băng θ", fc="#1E8449", ec="#145A32", fs=8.0)
+    add_pill(ax, 6.95, 1.12, 1.06, 0.48, "Đóng băng $\\theta$", fc="#1E8449", ec="#145A32", fs=8.0)
 
     # C3: Tiền tố lành tính đích
     add_box(ax, 7.62, 0.35, 1.92, 1.55, fc="#EAFAF1", ec="#27AE60", lw=1.4)
     ax.text(8.58, 1.62, "Tiền tố lành tính", ha="center", va="center", fontsize=8.8, fontweight="bold", color="#145A32")
-    ax.text(8.58, 0.96, "Khởi động xe đích\nK = 500 cửa sổ lành\n(không nhãn tấn công)",
+    ax.text(8.58, 0.96, "Khởi động xe đích\n$K = 500$ cửa sổ lành\n(không nhãn tấn công)",
             ha="center", va="center", fontsize=7.9, color="#2C3E50", linespacing=1.30)
 
     # C4: Hiệu chuẩn & Lọc trượt
     add_box(ax, 9.88, 0.35, 2.02, 1.55, fc="#E8F8F5", ec="#148F77", lw=1.4)
     ax.text(10.89, 1.62, "Hiệu chuẩn & Lọc", ha="center", va="center", fontsize=8.8, fontweight="bold", color="#0E6251")
-    ax.text(10.89, 0.96, "τ_target = Q_{1-α}(S_warm)\nBộ lọc trượt m-trong-n\n(2/3 hoặc 3/5 cửa sổ)",
+    ax.text(10.89, 0.96, "$\\tau_{\\mathrm{target}} = Q_{1-\\alpha}(\\mathcal{S}_{\\mathrm{warm}})$\nBộ lọc trượt $m$-trong-$n$\n(2/3 hoặc 3/5 cửa sổ)",
             ha="center", va="center", fontsize=7.9, color="#2C3E50", linespacing=1.30)
 
     # C5: Kết quả vận hành
