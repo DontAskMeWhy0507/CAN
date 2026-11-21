@@ -97,11 +97,13 @@ def generate_pipeline_architecture(lang: str, out_path: Path) -> None:
     )
 
     is_vi = lang == "vi"
-    W, H = 10.95, 8.60
+    W, H = 11.95, 8.60
     FS_HDR = 14.3
     FS_C3HDR = 14.0
     FS_SUB = 14.0
     FS_BODY = 13.9
+    FS_C4_TITLE = 9.2
+    FS_C4_BODY = 8.2
 
     fig = plt.figure(figsize=(W, H), dpi=300)
     ax = fig.add_axes([0.002, 0.002, 0.996, 0.996])
@@ -110,15 +112,15 @@ def generate_pipeline_architecture(lang: str, out_path: Path) -> None:
     ax.axis("off")
     fig.patch.set_facecolor("white")
 
-    # 4-column x-layout totaling 10.95 in (scaled for >=8.0 pt print at 0.98\textwidth = 6.366 in)
+    # 4-column x-layout totaling 11.95 in (scaled for >=8.0 pt print at 0.98\textwidth = 6.366 in)
     pad_in = 0.055
     c1_x, c1_w = 0.02, 2.00
     gap12_x, gap12_w = 2.02, 1.52
     c2_x, c2_w = 3.54, 2.50
     gap23_x, gap23_w = 6.04, 0.14
     c3_x, c3_w = 6.18, 2.20
-    gap34_x, gap34_w = 8.38, 0.15
-    c4_x, c4_w = 8.53, 2.40
+    gap34_x, gap34_w = 8.38, 0.22
+    c4_x, c4_w = 8.60, 3.30
 
     col_y, col_h = 0.06, 8.48
     hdr_h = 1.04
@@ -491,43 +493,40 @@ def generate_pipeline_architecture(lang: str, out_path: Path) -> None:
 
     # ---------------- COL 4 (Stage II: 3-box vertical flow) ----------------
     b4_x, b4_w = c4_x + pad_in, c4_w - 2 * pad_in
-    b4a_h, b4b_h, b4c_h = 2.05, 2.05, 2.05
-    badge_h = 0.46
-    b4_gap = (top_inner - 0.20 - badge_h - (b4a_h + b4b_h + b4c_h)) / 3.0
+    b4a_h, b4b_h, b4c_h = 2.15, 2.15, 2.15
+    b4_gap = (top_inner - 0.22 - (b4a_h + b4b_h + b4c_h)) / 2.0
 
     b4a_y = top_inner - b4a_h
     _draw_box(ax, b4_x, b4a_y, b4_w, b4a_h, fc="white", ec="#0284C7", lw=1.1, r=0.08, zorder=3)
     ax.text(
         b4_x + b4_w / 2,
-        b4a_y + b4a_h - 0.32,
-        "Đầu Phân Loại Nhị Phân" if is_vi else "Binary Classifier Head",
+        b4a_y + b4a_h - 0.34,
+        "Đầu phân loại nhị phân" if is_vi else "Binary Classifier Head",
         ha="center",
         va="center",
-        fontsize=FS_SUB,
+        fontsize=FS_C4_TITLE,
         fontweight="bold",
         color="#111827",
         zorder=4,
     )
-    ax.text(
-        b4_x + b4_w / 2,
-        b4a_y + 1.15,
-        r"LayerNorm $\to$ Linear(64 $\to$ 32)" + "\n" + r"$\to$ ReLU $\to$ Linear(32 $\to$ 2)",
-        ha="center",
-        va="center",
-        fontsize=FS_BODY,
-        color="#374151",
-        linespacing=1.14,
-        zorder=4,
+    b4a_text = (
+        r"LayerNorm $\to$ Linear(64$\to$32)" + "\n"
+        + r"$\to$ ReLU $\to$ Linear(32$\to$2)" + "\n"
+        + r"Điểm rủi ro: $s_k = P(Y_k=1 \mid X_k)$"
+    ) if is_vi else (
+        r"LayerNorm $\to$ Linear(64$\to$32)" + "\n"
+        + r"$\to$ ReLU $\to$ Linear(32$\to$2)" + "\n"
+        + r"Risk score: $s_k = P(Y_k=1 \mid X_k)$"
     )
     ax.text(
         b4_x + b4_w / 2,
-        b4a_y + 0.38,
-        r"Điểm rủi ro: $s_k = P(Y_k=1 \mid X_k)$" if is_vi else r"Risk score: $s_k = P(Y_k=1 \mid X_k)$",
+        b4a_y + (b4a_h - 0.34) / 2,
+        b4a_text,
         ha="center",
         va="center",
-        fontsize=FS_BODY,
-        fontweight="bold",
-        color="#1D4ED8",
+        fontsize=FS_C4_BODY,
+        color="#1F2937",
+        linespacing=1.28,
         zorder=4,
     )
 
@@ -535,37 +534,33 @@ def generate_pipeline_architecture(lang: str, out_path: Path) -> None:
     _draw_box(ax, b4_x, b4b_y, b4_w, b4b_h, fc="#F0FDF4", ec="#16A34A", lw=1.3, r=0.08, zorder=3)
     ax.text(
         b4_x + b4_w / 2,
-        b4b_y + b4b_h - 0.32,
-        "Hiệu Chuẩn Tiền Tố Lành Tính" if is_vi else "Benign Prefix Calibration",
+        b4b_y + b4b_h - 0.34,
+        "Hiệu chuẩn tiền tố lành tính" if is_vi else "Benign Prefix Calibration",
         ha="center",
         va="center",
-        fontsize=FS_SUB,
+        fontsize=FS_C4_TITLE,
         fontweight="bold",
         color="#15803D",
         zorder=4,
     )
-    ax.text(
-        b4_x + b4_w / 2,
-        b4b_y + 1.15,
-        (r"Khởi động đích: $K = 500$ cửa sổ" + "\n" + r"($N_{\mathrm{pool}} \in [3.539, 6.000]$)"
-        if is_vi
-        else r"Target warmup: $K = 500$ windows" + "\n" + r"($N_{\mathrm{pool}} \in [3,539, 6,000]$)"),
-        ha="center",
-        va="center",
-        fontsize=FS_BODY,
-        color="#374151",
-        linespacing=1.14,
-        zorder=4,
+    b4b_text = (
+        r"Tiền tố đích $K = 500$ cửa sổ" + "\n"
+        + r"(không nhãn, đóng băng $\theta$)" + "\n"
+        + r"$\tau_{\mathrm{target}} = \operatorname{Q}_{1-\alpha}(S_{\mathrm{warm}})$"
+    ) if is_vi else (
+        r"Target prefix $K = 500$ windows" + "\n"
+        + r"(unlabeled, frozen $\theta$)" + "\n"
+        + r"$\tau_{\mathrm{target}} = \operatorname{Q}_{1-\alpha}(S_{\mathrm{warm}})$"
     )
     ax.text(
         b4_x + b4_w / 2,
-        b4b_y + 0.38,
-        r"$\tau_{\mathrm{target}} = \operatorname{Q}_{1-\alpha}(s_k)$" + (r" (FAR $\leq \alpha$)" if is_vi else r" (FAR $\leq \alpha$)"),
+        b4b_y + (b4b_h - 0.34) / 2,
+        b4b_text,
         ha="center",
         va="center",
-        fontsize=FS_BODY,
-        fontweight="bold",
-        color="#1D4ED8",
+        fontsize=FS_C4_BODY,
+        color="#1F2937",
+        linespacing=1.28,
         zorder=4,
     )
 
@@ -573,51 +568,33 @@ def generate_pipeline_architecture(lang: str, out_path: Path) -> None:
     _draw_box(ax, b4_x, b4c_y, b4_w, b4c_h, fc="white", ec="#0284C7", lw=1.1, r=0.08, zorder=3)
     ax.text(
         b4_x + b4_w / 2,
-        b4c_y + b4c_h - 0.32,
-        "Bộ Lọc Sự Kiện Trượt" if is_vi else "Causal Event Filter",
+        b4c_y + b4c_h - 0.34,
+        "Bộ lọc sự kiện trượt" if is_vi else "Causal Event Filter",
         ha="center",
         va="center",
-        fontsize=FS_SUB,
+        fontsize=FS_C4_TITLE,
         fontweight="bold",
         color="#111827",
         zorder=4,
     )
-    ax.text(
-        b4_x + b4_w / 2,
-        b4c_y + 1.15,
-        ("Lọc $m$-trong-$n$ trượt nhân quả\n(cấu hình 2/3 hoặc 3/5)"
-        if is_vi
-        else "Causal $m$-out-of-$n$ filter\n(2/3 or 3/5 config)"),
-        ha="center",
-        va="center",
-        fontsize=FS_BODY,
-        color="#374151",
-        linespacing=1.14,
-        zorder=4,
+    b4c_text = (
+        r"Lọc nhân quả $m$-trong-$n$" + "\n"
+        + r"(2/3 hoặc 3/5 cửa sổ)" + "\n"
+        + r"$\to$ Quyết định cảnh báo $\widehat{Y}_k$"
+    ) if is_vi else (
+        r"Causal $m$-out-of-$n$ filter" + "\n"
+        + r"(2/3 or 3/5 windows)" + "\n"
+        + r"$\to$ Alert decision $\widehat{Y}_k$"
     )
     ax.text(
         b4_x + b4_w / 2,
-        b4c_y + 0.38,
-        "Cắt giảm FAR thêm gần 5 lần" if is_vi else "Suppresses FAR by ~5x",
+        b4c_y + (b4c_h - 0.34) / 2,
+        b4c_text,
         ha="center",
         va="center",
-        fontsize=FS_BODY,
-        color="#B91C1C",
-        fontweight="bold",
-        zorder=4,
-    )
-
-    badge_y = b4c_y - b4_gap - badge_h
-    _draw_box(ax, b4_x, badge_y, b4_w, badge_h, fc="#DCFCE7", ec="#16A34A", lw=1.2, r=0.08, zorder=3)
-    ax.text(
-        b4_x + b4_w / 2,
-        badge_y + badge_h / 2,
-        r"$\widehat{Y}_k \in \{0, 1\}$: CẢNH BÁO BẢO VỆ" if is_vi else r"$\widehat{Y}_k \in \{0, 1\}$: SECURE ALERT",
-        ha="center",
-        va="center",
-        fontsize=FS_SUB,
-        fontweight="bold",
-        color="#166534",
+        fontsize=FS_C4_BODY,
+        color="#1F2937",
+        linespacing=1.28,
         zorder=4,
     )
 
@@ -634,14 +611,6 @@ def generate_pipeline_architecture(lang: str, out_path: Path) -> None:
         ax,
         (b4_x + b4_w / 2, b4b_y),
         (b4_x + b4_w / 2, b4c_y + b4c_h),
-        color="#16A34A",
-        lw=1.5,
-        ms=9.5,
-    )
-    _draw_arrow(
-        ax,
-        (b4_x + b4_w / 2, b4c_y),
-        (b4_x + b4_w / 2, badge_y + badge_h),
         color="#16A34A",
         lw=1.5,
         ms=9.5,
