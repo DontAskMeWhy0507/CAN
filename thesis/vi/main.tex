@@ -1086,17 +1086,11 @@ Khác biệt quan trọng là giữa bất biến đổi tên ID và bất biế
 \subsection{Luồng xử lý hai giai đoạn và phân chia trách nhiệm}
 Giao thức thực nghiệm tuân thủ quy trình xử lý chặt chẽ gồm bốn giai đoạn độc lập: kiểm chứng tính toàn vẹn dữ liệu đầu vào, trích xuất đặc trưng cửa sổ, huấn luyện và hiệu chuẩn mô hình trên tập nguồn, và đánh giá hiệu năng đóng băng trên tập đích. Toàn bộ các cấu phần thuật toán được module hóa đồng bộ; cấu hình siêu tham số, phiên bản thư viện và mã nguồn thực thi được kiểm soát tường minh qua hệ thống hồ sơ cấu hình chuẩn hóa. Trong Giai đoạn 1, luồng xử lý đảm bảo nguyên tắc nhân quả một chiều: dữ liệu của phương tiện đích hoàn toàn không được sử dụng trong các bước huấn luyện, chọn mô hình hoặc tối ưu ngưỡng quyết định (Giai đoạn 2 cho phép sử dụng tiền tố lành tính không nhãn trên xe đích để hiệu chuẩn ngưỡng vận hành), như được mô hình hóa trực quan tại Hình~\ref{fig:pipeline}.
 
-\begin{figure}[htbp]\centering
-\begin{tikzpicture}[node distance=0.35cm, every node/.style={draw,rounded corners,align=center,font=\small,text width=11cm,inner sep=4.5pt},>=Stealth]
-\node (a) {File gốc và nguồn nhãn: kiểm tra schema, thứ tự thời gian, hash};
-\node (b) [below=of a] {Cửa sổ hoàn chỉnh: raw 28 / structural 30 chiều (content)};
-\node (c) [below=of b] {Nhóm train nguồn: lấy mẫu toàn file, huấn luyện classifier};
-\node (d) [below=of c] {Nhóm validation nguồn: chọn ngưỡng theo ngân sách FAR};
-\node (e) [below=of d] {Đóng băng checkpoint và ngưỡng: A--D, ngoại suy theo schema};
-\node (f) [below=of e] {Dự đoán từng cửa sổ, confusion matrix, metric và báo cáo};
-\foreach \s/\t in {a/b,b/c,c/d,d/e,e/f} \draw[->] (\s)--(\t);
-\end{tikzpicture}
-\caption[Sơ đồ luồng xử lý và ranh giới nhân quả nguồn--đích]{Sơ đồ luồng xử lý dữ liệu với ranh giới phân tách nghiêm ngặt giữa miền nguồn và miền đích trong Giai đoạn 1 (nhánh content-only loại bỏ hoàn toàn các chiều thời gian ở cả pha huấn luyện và kiểm thử; Giai đoạn 2 bổ sung khâu hiệu chuẩn nền đích mô tả tại Mục~\ref{sec:method-calibration}).}\label{fig:pipeline}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{figs/pipeline_overview_stage12.png}
+  \caption[Sơ đồ luồng xử lý nguồn--đích và ranh giới hai giai đoạn]{Sơ đồ tổng quan luồng xử lý với ranh giới nhân quả nghiêm ngặt giữa miền xe nguồn và miền xe đích qua hai giai đoạn: Giai đoạn~I đóng băng mô hình và ngưỡng nguồn ($\theta, \tau_{\text{src}}$); Giai đoạn~II giữ nguyên trọng số $\theta$ và hiệu chuẩn ngưỡng 1 chiều $\tau_{\text{target}}$ từ tiền tố lành tính không nhãn kết hợp lọc sự kiện trượt.}
+  \label{fig:pipeline}
 \end{figure}
 
 \subsection{Hợp đồng dữ liệu và nguyên tắc toàn vẹn dòng vào}
@@ -1233,9 +1227,11 @@ Với logits $z_{k,0},z_{k,1}$, mô hình tối ưu cross-entropy hai lớp:
 \end{equation}
 Để cô lập tuyệt đối tác động của không gian biểu diễn đầu vào khi đối chứng giữa các biến thể đặc trưng, cấu hình chuẩn sử dụng hàm mất mát cross-entropy nhị phân chuẩn mà không bổ sung các thành phần điều chuẩn hàm mục tiêu như Focal Loss hay học tương phản. Cách thiết lập tối giản này giữ nguyên phần thân bộ mã hóa Transformer và đầu phân loại giữa mô hình thô (75.170 tham số) và mô hình cấu trúc (75.298 tham số --- chỉ chênh đúng $2 \times 64 = 128$ trọng số tại tầng chiếu đầu vào), bảo đảm mọi chênh lệch về năng lực phân tách ở Chương~\ref{chap:results} đều bắt nguồn trực tiếp từ đặc trưng đầu vào. Toàn bộ sơ đồ luồng dữ liệu từ trích xuất đặc trưng 30 chiều, bộ mã hóa Transformer đến các nhánh phân loại và thích ứng miền được minh họa trực quan trong Hình~\ref{fig:architecture-30d}.
 
-\begin{figure}[htbp]\centering
-\includegraphics[width=0.98\textwidth]{figs/pipeline_architecture_30d.png}
-\caption[Sơ đồ kiến trúc tổng thể khung phát hiện xâm nhập cấu trúc thích ứng ngưỡng]{Sơ đồ kiến trúc tổng thể khung phát hiện xâm nhập cấu trúc thích ứng ngưỡng hai giai đoạn: (1) Đầu vào luồng CAN thô ($W=64$) kết hợp cập nhật nhân quả bảng lịch sử $H_k$; (2) Trích xuất vector 30 chiều đặc trưng cấu trúc cấp khung tin; (3) Bộ mã hóa Transformer 2 tầng ($75.298$ tham số) kết hợp gộp trung bình tạo biểu diễn ẩn cửa sổ $z_k \in \mathbb{R}^{64}$; (4) Giai đoạn II: Đầu phân loại nhị phân, hiệu chuẩn phân vị tiền tố lành tính $K=500$ ($\tau_{\text{target}}$) và bộ lọc sự kiện trượt $m$-trong-$n$ phát cảnh báo $\widehat{Y}_k$.}\label{fig:architecture-30d}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{figs/pipeline_architecture_30d.png}
+  \caption[Sơ đồ kiến trúc khung phát hiện xâm nhập cấu trúc thích ứng ngưỡng hai giai đoạn]{Sơ đồ kiến trúc chi tiết khung phát hiện xâm nhập hai giai đoạn: \textbf{Giai đoạn~I} trích xuất vector cấu trúc 30 chiều từ cửa sổ $W=64$ kèm bảng lịch sử nhân quả $H_k$ và mã hóa qua bộ Transformer đóng băng $\theta$ (75.298 tham số) xuất điểm rủi ro $s_k$; \textbf{Giai đoạn~II} tách bạch pha khởi động lành tính ($K=500$ không nhãn) để ước lượng ngưỡng phân vị $\tau_{\text{target}}$ và pha giám sát hậu khởi động kết hợp bộ lọc sự kiện trượt $m$-trong-$n$ phát cảnh báo $\hat{Y}_k$.}
+  \label{fig:architecture-30d}
 \end{figure}
 
 Các siêu tham số huấn luyện và ngân sách báo động giả chi tiết của thực nghiệm được trình bày tại Mục~\ref{sec:comparison-protocol} (Bảng~\ref{tab:config}).\par\medskip
@@ -1261,6 +1257,7 @@ Theo phân tích sai số phân vị mẫu hữu hạn (Mục~\ref{subsec:theory
 \end{equation}
 trong đó cảnh báo chính thức chỉ kích hoạt khi có ít nhất $m$ trong tối đa $n$ cửa sổ liên tiếp vượt ngưỡng ($m/n \in \{2/3, 3/5\}$). Về chi phí trực tuyến, bước hiệu chuẩn phân vị chỉ tốn $\mathcal{O}(N_{\text{pool}} \log N_{\text{pool}})$ một lần sau pha khởi động, còn bộ lọc trượt chỉ yêu cầu một bộ đệm vòng kích thước $n$. Toàn bộ quy trình được đặc tả hình thức trong Thuật toán~\ref{alg:benign-cal-mofn}.
 
+\clearpage
 \begin{algorithm}[htbp]
 \caption{Hiệu chuẩn nền lành tính gộp đa bản ghi ($N_{\text{pool}}$) kết hợp bộ lọc sự kiện trượt $m$-trong-$n$}\label{alg:benign-cal-mofn}
 {\small\linespread{1.05}\selectfont
